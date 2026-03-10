@@ -4,6 +4,12 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
+import GuepesFrelons from "./pages/GuepesFrelons.tsx";
+import Desinsectisation from "./pages/Desinsectisation.tsx";
+import Taupes from "./pages/Taupes.tsx";
+import Depigeonnage from "./pages/Depigeonnage.tsx";
+import Deratisation from "./pages/Deratisation.tsx";
+import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -16,7 +22,12 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/guepes-frelons" element={<GuepesFrelons />} />
+          <Route path="/desinsectisation" element={<Desinsectisation />} />
+          <Route path="/taupes" element={<Taupes />} />
+          <Route path="/depigeonnage" element={<Depigeonnage />} />
+          <Route path="/deratisation" element={<Deratisation />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
