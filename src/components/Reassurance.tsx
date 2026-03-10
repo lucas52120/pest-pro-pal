@@ -28,7 +28,7 @@ const Reassurance = () => {
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
           {[
-            { icon: Clock, label: "Horaires", text: "Lun-Ven bureau | Urgence 24h/24 week-end" },
+            { icon: Clock, label: "Horaires", text: "Lun–Ven : 8h–19h | Urgence & astreinte week-end" },
             { icon: MapPin, label: "Secteur", text: "Chaumont, Langres et environs (52)" },
             { icon: CheckCircle, label: "Garantie", text: "Résultat garanti, véhicules discrets" },
             { icon: Phone, label: "Contact", text: "07.88.17.45.86" },

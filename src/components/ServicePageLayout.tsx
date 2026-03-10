@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { Phone } from "lucide-react";
+import { Phone, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Reassurance from "@/components/Reassurance";
 import Footer from "@/components/Footer";
@@ -14,6 +14,7 @@ interface ServicePageLayoutProps {
   method: string;
   engagement: string;
   icon: ReactNode;
+  heroImage?: string;
 }
 
 const ServicePageLayout = ({
@@ -24,13 +25,23 @@ const ServicePageLayout = ({
   method,
   engagement,
   icon,
+  heroImage,
 }: ServicePageLayoutProps) => {
   return (
     <>
       <Navbar />
       {/* Hero */}
-      <section className="bg-primary pb-16 pt-32">
-        <div className="container-narrow px-4">
+      <section className="relative bg-primary pb-16 pt-32">
+        {heroImage && (
+          <>
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${heroImage})` }}
+            />
+            <div className="absolute inset-0 bg-primary/80" />
+          </>
+        )}
+        <div className="container-narrow relative z-10 px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -84,9 +95,13 @@ const ServicePageLayout = ({
               <h3 className="mb-4 font-heading text-lg font-bold text-primary">
                 Intervention rapide
               </h3>
-              <p className="mb-6 text-sm text-muted-foreground">
+              <p className="mb-4 text-sm text-muted-foreground">
                 Contactez-nous pour un diagnostic gratuit et une intervention dans les plus brefs délais.
               </p>
+              <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
+                <Clock className="h-4 w-4 text-accent" />
+                <span>Lun–Ven : 8h–19h | Urgence week-end</span>
+              </div>
               <a
                 href="tel:0788174586"
                 className="mb-3 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 font-heading font-bold text-accent-foreground transition-colors hover:bg-orange-hover"
