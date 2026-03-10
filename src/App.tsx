@@ -29,6 +29,7 @@ const App = () => (
           <Route path="/depigeonnage" element={<Depigeonnage />} />
           <Route path="/deratisation" element={<Deratisation />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/:city/:service" element={<CityService />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

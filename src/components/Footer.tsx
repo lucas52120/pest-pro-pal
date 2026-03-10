@@ -1,18 +1,24 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const cities = [
-  "Chaumont",
-  "Langres",
-  "Nogent",
-  "Bar-sur-Aube",
-  "Joinville",
-  "Saint-Dizier",
-  "Wassy",
-  "Bourbonne-les-Bains",
+  { name: "Chaumont", slug: "chaumont" },
+  { name: "Langres", slug: "langres" },
+  { name: "Nogent", slug: "nogent" },
+  { name: "Bar-sur-Aube", slug: "bar-sur-aube" },
+  { name: "Joinville", slug: "joinville" },
+  { name: "Saint-Dizier", slug: "saint-dizier" },
+  { name: "Wassy", slug: "wassy" },
+  { name: "Bourbonne-les-Bains", slug: "bourbonne-les-bains" },
 ];
 
-const serviceNames = ["Dératisation", "Guêpes", "Désinsectisation", "Taupes", "Pigeons"];
+const serviceLinks = [
+  { name: "Dératisation", slug: "deratisation" },
+  { name: "Guêpes", slug: "guepes-frelons" },
+  { name: "Désinsectisation", slug: "desinsectisation" },
+  { name: "Taupes", slug: "taupes" },
+  { name: "Pigeons", slug: "depigeonnage" },
+];
 
 const Footer = () => {
   return (
@@ -25,17 +31,17 @@ const Footer = () => {
           </h3>
           <div className="grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-4">
             {cities.map((city) => (
-              <div key={city}>
-                <span className="font-heading font-semibold">{city} : </span>
-                {serviceNames.map((s, i) => (
-                  <span key={s}>
+              <div key={city.slug}>
+                <span className="font-heading font-semibold">{city.name} : </span>
+                {serviceLinks.map((s, i) => (
+                  <span key={s.slug}>
                     <Link
-                      to="/contact"
+                      to={`/${city.slug}/${s.slug}`}
                       className="text-primary-foreground/60 transition-colors hover:text-accent"
                     >
-                      {s}
+                      {s.name}
                     </Link>
-                    {i < serviceNames.length - 1 && " | "}
+                    {i < serviceLinks.length - 1 && " | "}
                   </span>
                 ))}
               </div>
@@ -77,6 +83,10 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-accent" />
                 Haute-Marne (52)
+              </li>
+              <li className="flex items-center gap-2">
+                <Clock className="h-4 w-4 text-accent" />
+                Lun–Ven : 8h–19h | Urgence week-end
               </li>
             </ul>
           </div>
