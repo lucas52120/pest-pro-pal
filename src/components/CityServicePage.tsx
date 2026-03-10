@@ -1,32 +1,35 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { Phone, Clock } from "lucide-react";
+import { Phone, Clock, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Reassurance from "@/components/Reassurance";
 import Footer from "@/components/Footer";
 
-interface ServicePageLayoutProps {
-  title: string;
-  subtitle: string;
-  problem: string;
-  expertise: string;
-  method: string;
-  engagement: string;
+interface CityServicePageProps {
+  city: string;
+  department: string;
+  serviceTitle: string;
   icon: ReactNode;
   heroImage?: string;
+  metaDescription: string;
+  intro: string;
+  expertise: string;
+  method: string;
+  cta: string;
 }
 
-const ServicePageLayout = ({
-  title,
-  subtitle,
-  problem,
-  expertise,
-  method,
-  engagement,
+const CityServicePage = ({
+  city,
+  department,
+  serviceTitle,
   icon,
   heroImage,
-}: ServicePageLayoutProps) => {
+  intro,
+  expertise,
+  method,
+  cta,
+}: CityServicePageProps) => {
   return (
     <>
       <Navbar />
@@ -50,10 +53,12 @@ const ServicePageLayout = ({
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-accent/20 text-accent">
               {icon}
             </div>
-            <h1 className="mb-4 font-heading text-4xl font-extrabold text-primary-foreground md:text-5xl">
-              {title}
+            <h1 className="mb-4 font-heading text-3xl font-extrabold text-primary-foreground md:text-5xl">
+              {serviceTitle} à {city}
             </h1>
-            <p className="max-w-xl text-lg text-primary-foreground/70">{subtitle}</p>
+            <p className="max-w-xl text-lg text-primary-foreground/70">
+              FG Nuisibles — Votre expert {serviceTitle.toLowerCase()} à {city}, {department}.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -63,10 +68,9 @@ const ServicePageLayout = ({
         <div className="container-narrow grid gap-12 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-10">
             {[
-              { label: "Le Problème", content: problem },
-              { label: "L'Expertise FG Nuisibles", content: expertise },
-              { label: "Notre Méthode", content: method },
-              { label: "Notre Engagement", content: engagement },
+              { label: `${serviceTitle} à ${city}`, content: intro },
+              { label: "L'expertise FG Nuisibles", content: expertise },
+              { label: "Notre méthode d'intervention", content: method },
             ].map((block, i) => (
               <motion.div
                 key={block.label}
@@ -81,9 +85,19 @@ const ServicePageLayout = ({
                 <p className="leading-relaxed text-muted-foreground">{block.content}</p>
               </motion.div>
             ))}
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="rounded-xl bg-secondary p-6"
+            >
+              <p className="text-lg font-semibold text-primary">{cta}</p>
+            </motion.div>
           </div>
 
-          {/* Sidebar CTA */}
+          {/* Sidebar */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -93,11 +107,12 @@ const ServicePageLayout = ({
           >
             <div className="rounded-xl bg-secondary p-6 shadow-sm">
               <h3 className="mb-4 font-heading text-lg font-bold text-primary">
-                Intervention rapide
+                Intervention à {city}
               </h3>
-              <p className="mb-4 text-sm text-muted-foreground">
-                Contactez-nous pour un diagnostic gratuit et une intervention dans les plus brefs délais.
-              </p>
+              <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
+                <MapPin className="h-4 w-4 text-accent" />
+                <span>{city} et environs — {department}</span>
+              </div>
               <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 text-accent" />
                 <span>Lun–Ven : 8h–19h | Urgence week-end</span>
@@ -126,4 +141,4 @@ const ServicePageLayout = ({
   );
 };
 
-export default ServicePageLayout;
+export default CityServicePage;

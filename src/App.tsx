@@ -10,6 +10,7 @@ import Taupes from "./pages/Taupes.tsx";
 import Depigeonnage from "./pages/Depigeonnage.tsx";
 import Deratisation from "./pages/Deratisation.tsx";
 import Contact from "./pages/Contact.tsx";
+import CityService from "./pages/CityService.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/depigeonnage" element={<Depigeonnage />} />
           <Route path="/deratisation" element={<Deratisation />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/:city/:service" element={<CityService />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

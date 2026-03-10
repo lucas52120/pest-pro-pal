@@ -1,40 +1,46 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Bug, Rat, Bird, Target, Zap, ShieldCheck } from "lucide-react";
+
+import serviceGuepes from "@/assets/service-guepes.jpg";
+import serviceDesinsectisation from "@/assets/service-desinsectisation.jpg";
+import serviceTaupes from "@/assets/service-taupes.jpg";
+import serviceDepigeonnage from "@/assets/service-depigeonnage.jpg";
+import serviceDeratisation from "@/assets/service-deratisation.jpg";
+import serviceContrat from "@/assets/service-contrat.jpg";
 
 const services = [
   {
-    icon: Zap,
+    image: serviceGuepes,
     title: "Guêpes & Frelons",
     description: "Destruction de nids en toute sécurité, intervention rapide et sécurisée en hauteur.",
     path: "/guepes-frelons",
   },
   {
-    icon: Bug,
+    image: serviceDesinsectisation,
     title: "Désinsectisation",
     description: "Élimination de cafards, punaises de lit et blattes. Traitement professionnel garanti.",
     path: "/desinsectisation",
   },
   {
-    icon: Target,
+    image: serviceTaupes,
     title: "Taupes",
     description: "Piégeage traditionnel et expertise terrain pour protéger vos espaces verts.",
     path: "/taupes",
   },
   {
-    icon: Bird,
+    image: serviceDepigeonnage,
     title: "Dépigeonnage",
     description: "Protection durable des bâtiments contre les nuisances liées aux pigeons.",
     path: "/depigeonnage",
   },
   {
-    icon: Rat,
+    image: serviceDeratisation,
     title: "Dératisation",
     description: "Opérations rapides et efficaces pour éliminer rats, souris et rongeurs.",
     path: "/deratisation",
   },
   {
-    icon: ShieldCheck,
+    image: serviceContrat,
     title: "Contrat d'entretien",
     description: "Suivi régulier et préventif pour les professionnels et collectivités.",
     path: "/contact",
@@ -81,20 +87,28 @@ const Services = () => {
             <motion.div key={service.title} variants={item}>
               <Link
                 to={service.path}
-                className="group flex h-full flex-col rounded-xl bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group flex h-full flex-col overflow-hidden rounded-xl bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
-                  <service.icon className="h-6 w-6" />
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
-                <h3 className="mb-2 font-heading text-lg font-bold text-primary">
-                  {service.title}
-                </h3>
-                <p className="flex-1 text-sm text-muted-foreground">
-                  {service.description}
-                </p>
-                <span className="mt-4 font-heading text-sm font-semibold text-accent">
-                  En savoir plus →
-                </span>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="mb-2 font-heading text-lg font-bold text-primary">
+                    {service.title}
+                  </h3>
+                  <p className="flex-1 text-sm text-muted-foreground">
+                    {service.description}
+                  </p>
+                  <span className="mt-4 font-heading text-sm font-semibold text-accent">
+                    En savoir plus →
+                  </span>
+                </div>
               </Link>
             </motion.div>
           ))}
