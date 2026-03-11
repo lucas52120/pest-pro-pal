@@ -2,23 +2,23 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const cities = [
-  { name: "Chaumont", slug: "chaumont" },
-  { name: "Langres", slug: "langres" },
-  { name: "Nogent", slug: "nogent" },
-  { name: "Bar-sur-Aube", slug: "bar-sur-aube" },
-  { name: "Joinville", slug: "joinville" },
-  { name: "Saint-Dizier", slug: "saint-dizier" },
-  { name: "Wassy", slug: "wassy" },
-  { name: "Bourbonne-les-Bains", slug: "bourbonne-les-bains" },
-];
+{ name: "Chaumont", slug: "chaumont" },
+{ name: "Langres", slug: "langres" },
+{ name: "Nogent", slug: "nogent" },
+{ name: "Bar-sur-Aube", slug: "bar-sur-aube" },
+{ name: "Joinville", slug: "joinville" },
+{ name: "Saint-Dizier", slug: "saint-dizier" },
+{ name: "Wassy", slug: "wassy" },
+{ name: "Bourbonne-les-Bains", slug: "bourbonne-les-bains" }];
+
 
 const serviceLinks = [
-  { name: "Dératisation", slug: "deratisation" },
-  { name: "Guêpes", slug: "guepes-frelons" },
-  { name: "Désinsectisation", slug: "desinsectisation" },
-  { name: "Taupes", slug: "taupes" },
-  { name: "Pigeons", slug: "depigeonnage" },
-];
+{ name: "Dératisation", slug: "deratisation" },
+{ name: "Guêpes", slug: "guepes-frelons" },
+{ name: "Désinsectisation", slug: "desinsectisation" },
+{ name: "Taupes", slug: "taupes" },
+{ name: "Pigeons", slug: "depigeonnage" }];
+
 
 const Footer = () => {
   return (
@@ -30,22 +30,22 @@ const Footer = () => {
             Nos zones d'intervention
           </h3>
           <div className="grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-4">
-            {cities.map((city) => (
-              <div key={city.slug}>
+            {cities.map((city) =>
+            <div key={city.slug}>
                 <span className="font-heading font-semibold">{city.name} : </span>
-                {serviceLinks.map((s, i) => (
-                  <span key={s.slug}>
+                {serviceLinks.map((s, i) =>
+              <span key={s.slug}>
                     <Link
-                      to={`/${city.slug}/${s.slug}`}
-                      className="text-primary-foreground/60 transition-colors hover:text-accent"
-                    >
+                  to={`/${city.slug}/${s.slug}`}
+                  className="text-primary-foreground/60 transition-colors hover:text-accent">
+                  
                       {s.name}
                     </Link>
                     {i < serviceLinks.length - 1 && " | "}
                   </span>
-                ))}
+              )}
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>
@@ -78,7 +78,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-accent" />
-                <a href="mailto:contact@fgnuisibles.fr" className="hover:text-accent">contact@fgnuisibles.fr</a>
+                <a href="mailto:contact@fgnuisibles.fr" className="hover:text-accent">contact@gfnuisibles.fr</a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-accent" />
@@ -96,8 +96,8 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/10 px-4 py-4 text-center text-xs text-primary-foreground/40">
         © {new Date().getFullYear()} FG Nuisibles — Tous droits réservés
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default Footer;
