@@ -29,9 +29,15 @@ const services = [
   },
   {
     image: serviceDepigeonnage,
-    title: "Dépigeonnage",
+    title: "Dépigeonnisation",
     description: "Protection durable des bâtiments contre les nuisances liées aux pigeons.",
-    path: "/depigeonnage",
+    path: "/depigeonnisation",
+  },
+  {
+    image: serviceDepigeonnage,
+    title: "Élimination Pigeons",
+    description: "Solutions professionnelles pour vous débarrasser des pigeons et volatiles.",
+    path: "/elimination-pigeons",
   },
   {
     image: serviceDeratisation,

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Phone, Clock, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -25,11 +25,18 @@ const CityServicePage = ({
   serviceTitle,
   icon,
   heroImage,
+  metaDescription,
   intro,
   expertise,
   method,
   cta,
 }: CityServicePageProps) => {
+  useEffect(() => {
+    document.title = `${serviceTitle} — FG Nuisibles`;
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", metaDescription);
+  }, [serviceTitle, metaDescription]);
+
   return (
     <>
       <Navbar />
@@ -54,10 +61,10 @@ const CityServicePage = ({
               {icon}
             </div>
             <h1 className="mb-4 font-heading text-3xl font-extrabold text-primary-foreground md:text-5xl">
-              {serviceTitle} à {city}
+              {serviceTitle}
             </h1>
             <p className="max-w-xl text-lg text-primary-foreground/70">
-              FG Nuisibles — Votre expert {serviceTitle.toLowerCase()} à {city}, {department}.
+              FG Nuisibles — Votre expert à {city}, {department}.
             </p>
           </motion.div>
         </div>
@@ -68,7 +75,7 @@ const CityServicePage = ({
         <div className="container-narrow grid gap-12 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-10">
             {[
-              { label: `${serviceTitle} à ${city}`, content: intro },
+              { label: serviceTitle, content: intro },
               { label: "L'expertise FG Nuisibles", content: expertise },
               { label: "Notre méthode d'intervention", content: method },
             ].map((block, i) => (
