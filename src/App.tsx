@@ -7,7 +7,8 @@ import Index from "./pages/Index.tsx";
 import GuepesFrelons from "./pages/GuepesFrelons.tsx";
 import Desinsectisation from "./pages/Desinsectisation.tsx";
 import Taupes from "./pages/Taupes.tsx";
-import Depigeonnage from "./pages/Depigeonnage.tsx";
+import Depigeonnisation from "./pages/Depigeonnage.tsx";
+import EliminationPigeons from "./pages/EliminationPigeons.tsx";
 import Deratisation from "./pages/Deratisation.tsx";
 import Contact from "./pages/Contact.tsx";
 import CityService from "./pages/CityService.tsx";
@@ -26,7 +27,8 @@ const App = () => (
           <Route path="/guepes-frelons" element={<GuepesFrelons />} />
           <Route path="/desinsectisation" element={<Desinsectisation />} />
           <Route path="/taupes" element={<Taupes />} />
-          <Route path="/depigeonnage" element={<Depigeonnage />} />
+          <Route path="/depigeonnisation" element={<Depigeonnisation />} />
+          <Route path="/elimination-pigeons" element={<EliminationPigeons />} />
           <Route path="/deratisation" element={<Deratisation />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/:city/:service" element={<CityService />} />

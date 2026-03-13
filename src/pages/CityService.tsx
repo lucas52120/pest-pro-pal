@@ -13,14 +13,19 @@ const CityService = () => {
     return <NotFound />;
   }
 
-  const content = serviceData.getContent(cityData.name);
+  // Check if this city offers this service
+  if (!cityData.services.includes(serviceData.slug)) {
+    return <NotFound />;
+  }
+
+  const content = serviceData.getContent(cityData.name, cityData.department);
   const IconComponent = serviceData.icon;
 
   return (
     <CityServicePage
       city={cityData.name}
-      department="Haute-Marne (52)"
-      serviceTitle={serviceData.title}
+      department={cityData.department}
+      serviceTitle={content.seoTitle}
       icon={<IconComponent className="h-8 w-8" />}
       heroImage={serviceData.heroImage}
       metaDescription={content.metaDescription}

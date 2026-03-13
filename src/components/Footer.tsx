@@ -1,24 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-
-const cities = [
-{ name: "Chaumont", slug: "chaumont" },
-{ name: "Langres", slug: "langres" },
-{ name: "Nogent", slug: "nogent" },
-{ name: "Bar-sur-Aube", slug: "bar-sur-aube" },
-{ name: "Joinville", slug: "joinville" },
-{ name: "Saint-Dizier", slug: "saint-dizier" },
-{ name: "Wassy", slug: "wassy" },
-{ name: "Bourbonne-les-Bains", slug: "bourbonne-les-bains" }];
-
-
-const serviceLinks = [
-{ name: "Dératisation", slug: "deratisation" },
-{ name: "Guêpes", slug: "guepes-frelons" },
-{ name: "Désinsectisation", slug: "desinsectisation" },
-{ name: "Taupes", slug: "taupes" },
-{ name: "Pigeons", slug: "depigeonnage" }];
-
+import { cities, serviceDefinitions } from "@/data/cityServices";
 
 const Footer = () => {
   return (
@@ -29,23 +11,28 @@ const Footer = () => {
           <h3 className="mb-6 font-heading text-lg font-bold text-accent">
             Nos zones d'intervention
           </h3>
-          <div className="grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-4">
-            {cities.map((city) =>
-            <div key={city.slug}>
-                <span className="font-heading font-semibold">{city.name} : </span>
-                {serviceLinks.map((s, i) =>
-              <span key={s.slug}>
-                    <Link
-                  to={`/${city.slug}/${s.slug}`}
-                  className="text-primary-foreground/60 transition-colors hover:text-accent">
-                  
-                      {s.name}
-                    </Link>
-                    {i < serviceLinks.length - 1 && " | "}
-                  </span>
-              )}
-              </div>
-            )}
+          <div className="grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            {cities.map((city) => {
+              const cityServices = serviceDefinitions.filter((s) =>
+                city.services.includes(s.slug)
+              );
+              return (
+                <div key={city.slug}>
+                  <span className="font-heading font-semibold">{city.name} : </span>
+                  {cityServices.map((s, i) => (
+                    <span key={s.slug}>
+                      <Link
+                        to={`/${city.slug}/${s.slug}`}
+                        className="text-primary-foreground/60 transition-colors hover:text-accent"
+                      >
+                        {s.title}
+                      </Link>
+                      {i < cityServices.length - 1 && " | "}
+                    </span>
+                  ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -65,7 +52,8 @@ const Footer = () => {
               <li><Link to="/guepes-frelons" className="hover:text-accent">Guêpes & Frelons</Link></li>
               <li><Link to="/desinsectisation" className="hover:text-accent">Désinsectisation</Link></li>
               <li><Link to="/taupes" className="hover:text-accent">Taupes</Link></li>
-              <li><Link to="/depigeonnage" className="hover:text-accent">Dépigeonnage</Link></li>
+              <li><Link to="/depigeonnisation" className="hover:text-accent">Dépigeonnisation</Link></li>
+              <li><Link to="/elimination-pigeons" className="hover:text-accent">Élimination Pigeons</Link></li>
               <li><Link to="/deratisation" className="hover:text-accent">Dératisation</Link></li>
             </ul>
           </div>
@@ -96,8 +84,8 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/10 px-4 py-4 text-center text-xs text-primary-foreground/40">
         © {new Date().getFullYear()} FG Nuisibles — Tous droits réservés
       </div>
-    </footer>);
-
+    </footer>
+  );
 };
 
 export default Footer;
