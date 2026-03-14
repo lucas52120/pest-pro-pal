@@ -27,7 +27,7 @@ const App = () => (
           <Route path="/guepes-frelons" element={<GuepesFrelons />} />
           <Route path="/desinsectisation" element={<Desinsectisation />} />
           <Route path="/taupes" element={<Taupes />} />
-          <Route path="/depigeonnisation" element={<Depigeonnisation />} />
+          <Route path="/depigeonnage" element={<Depigeonnisation />} />
           <Route path="/elimination-pigeons" element={<EliminationPigeons />} />
           <Route path="/deratisation" element={<Deratisation />} />
           <Route path="/contact" element={<Contact />} />

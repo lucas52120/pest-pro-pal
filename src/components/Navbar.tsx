@@ -8,8 +8,7 @@ const navItems = [
   { label: "Guêpes & Frelons", path: "/guepes-frelons" },
   { label: "Désinsectisation", path: "/desinsectisation" },
   { label: "Taupes", path: "/taupes" },
-  { label: "Dépigeonnisation", path: "/depigeonnisation" },
-  { label: "Élimination Pigeons", path: "/elimination-pigeons" },
+  { label: "Dépigeonnage", path: "/depigeonnage" },
   { label: "Dératisation", path: "/deratisation" },
   { label: "Contact", path: "/contact" },
 ];
