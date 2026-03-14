@@ -5,7 +5,7 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 const Depigeonnisation = () => (
   <ServicePageLayout
     icon={<Bird className="h-8 w-8" />}
-    title="Dépigeonnisation"
+    title="Dépigeonnage"
     subtitle="Protection durable de vos bâtiments contre les pigeons et volatiles."
     heroImage={heroImage}
     problem="Les pigeons causent des dégâts importants sur les bâtiments : fientes acides qui détériorent les façades, risques sanitaires, nuisances sonores. Les collectivités et professionnels sont particulièrement touchés."
