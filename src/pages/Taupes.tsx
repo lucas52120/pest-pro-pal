@@ -8,6 +8,9 @@ const Taupes = () => (
     title="Taupes"
     subtitle="Piégeage traditionnel et expertise terrain pour vos espaces verts."
     heroImage={heroImage}
+    sidebarImage={heroImage}
+    serviceCallTitle="VOTRE JARDIN OU ESPACE VERT SUBIT UNE INVASION DE TAUPES ?"
+    serviceCallSubtitle="CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DU PIÉGEAGE DE TAUPES !"
     problem="Des monticules de terre apparaissent sur votre pelouse ou dans votre jardin ? Les taupes peuvent rapidement dégrader vos espaces verts et compromettre la stabilité de vos terrains."
     expertise="FG Nuisibles emploie la méthode traditionnelle de piégeage, la plus efficace et la plus respectueuse de l'environnement. Notre expertise terrain nous permet d'identifier les galeries actives."
     method="Repérage des galeries principales, pose de pièges mécaniques professionnels, suivi régulier et retrait des dispositifs. Aucun produit chimique utilisé."
