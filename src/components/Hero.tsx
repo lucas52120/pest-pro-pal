@@ -51,7 +51,7 @@ const Hero = () => {
 
           <h1 className="mb-6 font-heading text-4xl font-extrabold leading-tight text-primary-foreground md:text-5xl lg:text-6xl">
             Votre expert en gestion des nuisibles en{" "}
-            <span className="text-accent">Haute-Marne, Meuse, Marne et Vosges   </span>
+            <span className="text-accent text-5xl">Haute-Marne, Meuse, Marne et Vosges   </span>
           </h1>
 
           <p className="mb-8 max-w-lg text-lg text-primary-foreground/80">
