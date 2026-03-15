@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/logo-gf.png";
 
 const navItems = [
   { label: "Accueil", path: "/" },
@@ -35,12 +35,9 @@ const Navbar = () => {
         scrolled ? "bg-primary shadow-lg" : "bg-primary/95"
       }`}
     >
-      <div className="container-narrow flex items-center justify-between px-4 py-3">
+      <div className="container-narrow flex items-center justify-between px-4 py-2">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="FG Nuisibles" className="h-10 w-auto brightness-0 invert" />
-          <span className="font-heading text-xl font-bold text-primary-foreground">
-            GF NUISIBLES
-          </span>
+          <img src={logo} alt="G&F Nuisibles" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}
