@@ -30,10 +30,12 @@ export const serviceDefinitions = [
     getContent: (city: string, department: string) => ({
       metaDescription: `Désinsectisation professionnelle à ${city} en ${department}. Traitement cafards, punaises de lit, blattes. FG Nuisibles. Tél : 07.88.17.45.86.`,
       seoTitle: `Désinsectisation à ${city} en ${department}`,
-      intro: `F&G Nuisibles, située à ${city} dans le département ${department}, propose des traitements professionnels contre les insectes nuisibles : cafards, punaises de lit, blattes et autres parasites. Ces insectes se reproduisent rapidement et représentent un risque sanitaire important pour votre foyer ou vos locaux professionnels à ${city}. Notre expertise nous permet d'identifier rapidement le type d'infestation et de mettre en place le traitement le plus adapté.`,
-      expertise: `À ${city} en ${department}, nos techniciens certifiés utilisent des traitements adaptés à chaque type d'insecte. Nos solutions sont efficaces, durables et respectueuses de votre santé. Nous intervenons chez les particuliers comme chez les professionnels (hôtels, restaurants, collectivités). F&G Nuisibles garantit une discrétion totale lors de ses interventions.`,
+      serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION D'INSECTES NUISIBLES ?`,
+      serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉSINSECTISATION DU CÔTÉ DE ${city.toUpperCase()} !`,
+      intro: `G&F Nuisibles à ${city} propose des traitements professionnels contre les insectes nuisibles : cafards, punaises de lit, blattes et autres parasites. Ces insectes se reproduisent rapidement et représentent un risque sanitaire important pour votre foyer ou vos locaux professionnels à ${city}. Notre expertise nous permet d'identifier rapidement le type d'infestation et de mettre en place le traitement le plus adapté.`,
+      expertise: `À ${city} en ${department}, nos techniciens certifiés utilisent des traitements adaptés à chaque type d'insecte. Nos solutions sont efficaces, durables et respectueuses de votre santé. Nous intervenons chez les particuliers comme chez les professionnels (hôtels, restaurants, collectivités). G&F Nuisibles garantit une discrétion totale lors de ses interventions.`,
       method: `Inspection approfondie de vos locaux à ${city} pour identifier l'espèce et les zones infestées. Application de traitements ciblés (gel, pulvérisation, nébulisation) avec un suivi post-traitement assuré pour garantir l'élimination complète. Nous vous accompagnons également avec des conseils de prévention adaptés.`,
-      cta: `Appelez F&G Nuisibles au 07.88.17.45.86 pour un traitement professionnel à ${city} en ${department}. Discrétion totale, véhicules non logotés sur demande.`,
+      cta: `Appelez G&F Nuisibles au 07.88.17.45.86 pour un traitement professionnel à ${city} en ${department}. Discrétion totale, véhicules non logotés sur demande.`,
     }),
   },
   {
