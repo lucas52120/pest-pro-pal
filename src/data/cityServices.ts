@@ -46,10 +46,12 @@ export const serviceDefinitions = [
     getContent: (city: string, department: string) => ({
       metaDescription: `Dératisation à ${city} en ${department}. Élimination rats, souris, rongeurs. FG Nuisibles intervient rapidement. Tél : 07.88.17.45.86.`,
       seoTitle: `Dératisation à ${city} en ${department}`,
-      intro: `Des bruits dans les cloisons à ${city} ? Des traces de grignotage ? F&G Nuisibles, située à ${city} dans le département ${department}, intervient rapidement pour éliminer rats, souris et rongeurs de votre habitation ou de vos locaux professionnels. La présence de rongeurs est un risque sanitaire majeur et peut causer des dégâts importants sur vos installations électriques et votre isolation.`,
-      expertise: `À ${city} en ${department}, nos techniciens utilisent des méthodes sécurisées, adaptées aux foyers avec enfants et animaux domestiques. Nous identifions les points d'entrée et mettons en place des solutions durables pour éviter toute réinfestation. F&G Nuisibles vous accompagne du diagnostic à la prévention.`,
+      serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION DE RATS OU DE RONGEURS ?`,
+      serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉRATISATION DU CÔTÉ DE ${city.toUpperCase()} !`,
+      intro: `G&F Nuisibles à ${city} intervient rapidement pour éliminer rats, souris et rongeurs de votre habitation ou de vos locaux professionnels. La présence de rongeurs est un risque sanitaire majeur et peut causer des dégâts importants sur vos installations électriques et votre isolation.`,
+      expertise: `À ${city} en ${department}, nos techniciens utilisent des méthodes sécurisées, adaptées aux foyers avec enfants et animaux domestiques. Nous identifions les points d'entrée et mettons en place des solutions durables pour éviter toute réinfestation. G&F Nuisibles vous accompagne du diagnostic à la prévention.`,
       method: `Diagnostic complet à ${city} pour identifier les zones de passage et points d'entrée. Pose de dispositifs sécurisés (postes d'appâtage, pièges mécaniques). Rebouchage des accès et conseils de prévention pour une protection durable de vos locaux.`,
-      cta: `Contactez F&G Nuisibles au 07.88.17.45.86 pour une dératisation efficace à ${city} en ${department}. Discrétion assurée, garantie de résultat.`,
+      cta: `Contactez G&F Nuisibles au 07.88.17.45.86 pour une dératisation efficace à ${city} en ${department}. Discrétion assurée, garantie de résultat.`,
     }),
   },
   {
