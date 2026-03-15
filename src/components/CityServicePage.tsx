@@ -17,6 +17,8 @@ interface CityServicePageProps {
   expertise: string;
   method: string;
   cta: string;
+  serviceCallTitle: string;
+  serviceCallSubtitle: string;
 }
 
 const CityServicePage = ({
@@ -30,9 +32,11 @@ const CityServicePage = ({
   expertise,
   method,
   cta,
+  serviceCallTitle,
+  serviceCallSubtitle,
 }: CityServicePageProps) => {
   useEffect(() => {
-    document.title = `${serviceTitle} — FG Nuisibles`;
+    document.title = `${serviceTitle} — G&F Nuisibles`;
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", metaDescription);
   }, [serviceTitle, metaDescription]);
@@ -64,7 +68,26 @@ const CityServicePage = ({
               {serviceTitle}
             </h1>
             <p className="max-w-xl text-lg text-primary-foreground/70">
-              FG Nuisibles — Votre expert à {city}, {department}.
+              G&F Nuisibles — Votre expert à {city}, {department}.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Service Call Title */}
+      <section className="section-padding pb-0">
+        <div className="container-narrow text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="mb-2 font-heading text-xl font-extrabold text-primary md:text-2xl uppercase">
+              {serviceCallTitle}
+            </p>
+            <p className="font-heading text-lg text-primary/80 md:text-xl uppercase">
+              {serviceCallSubtitle}
             </p>
           </motion.div>
         </div>
@@ -76,7 +99,7 @@ const CityServicePage = ({
           <div className="lg:col-span-2 space-y-10">
             {[
               { label: serviceTitle, content: intro },
-              { label: "L'expertise FG Nuisibles", content: expertise },
+              { label: "L'expertise G&F Nuisibles", content: expertise },
               { label: "Notre méthode d'intervention", content: method },
             ].map((block, i) => (
               <motion.div

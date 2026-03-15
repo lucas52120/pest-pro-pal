@@ -13,7 +13,6 @@ const CityService = () => {
     return <NotFound />;
   }
 
-  // Check if this city offers this service
   if (!cityData.services.includes(serviceData.slug)) {
     return <NotFound />;
   }
@@ -33,6 +32,8 @@ const CityService = () => {
       expertise={content.expertise}
       method={content.method}
       cta={content.cta}
+      serviceCallTitle={content.serviceCallTitle}
+      serviceCallSubtitle={content.serviceCallSubtitle}
     />
   );
 };

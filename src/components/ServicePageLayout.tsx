@@ -15,6 +15,9 @@ interface ServicePageLayoutProps {
   engagement: string;
   icon: ReactNode;
   heroImage?: string;
+  serviceCallTitle: string;
+  serviceCallSubtitle: string;
+  sidebarImage?: string;
 }
 
 const ServicePageLayout = ({
@@ -26,6 +29,9 @@ const ServicePageLayout = ({
   engagement,
   icon,
   heroImage,
+  serviceCallTitle,
+  serviceCallSubtitle,
+  sidebarImage,
 }: ServicePageLayoutProps) => {
   return (
     <>
@@ -58,6 +64,25 @@ const ServicePageLayout = ({
         </div>
       </section>
 
+      {/* Service Call Title */}
+      <section className="section-padding pb-0">
+        <div className="container-narrow text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="mb-2 font-heading text-xl font-extrabold text-primary md:text-2xl uppercase">
+              {serviceCallTitle}
+            </p>
+            <p className="font-heading text-lg text-primary/80 md:text-xl uppercase">
+              {serviceCallSubtitle}
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Content */}
       <section className="section-padding">
         <div className="container-narrow grid gap-12 lg:grid-cols-3">
@@ -84,39 +109,57 @@ const ServicePageLayout = ({
           </div>
 
           {/* Sidebar CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="lg:sticky lg:top-28 self-start"
-          >
-            <div className="rounded-xl bg-secondary p-6 shadow-sm">
-              <h3 className="mb-4 font-heading text-lg font-bold text-primary">
-                Intervention rapide
-              </h3>
-              <p className="mb-4 text-sm text-muted-foreground">
-                Contactez-nous pour un diagnostic gratuit et une intervention dans les plus brefs délais.
-              </p>
-              <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
-                <Clock className="h-4 w-4 text-accent" />
-                <span>Lun–Ven : 8h–19h | Urgence week-end</span>
+          <div className="space-y-6 lg:sticky lg:top-28 self-start">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <div className="rounded-xl bg-secondary p-6 shadow-sm">
+                <h3 className="mb-4 font-heading text-lg font-bold text-primary">
+                  Intervention rapide
+                </h3>
+                <p className="mb-4 text-sm text-muted-foreground">
+                  Contactez-nous pour un diagnostic gratuit et une intervention dans les plus brefs délais.
+                </p>
+                <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
+                  <Clock className="h-4 w-4 text-accent" />
+                  <span>Lun–Ven : 8h–19h | Urgence week-end</span>
+                </div>
+                <a
+                  href="tel:0788174586"
+                  className="mb-3 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 font-heading font-bold text-accent-foreground transition-colors hover:bg-orange-hover"
+                >
+                  <Phone className="h-4 w-4" />
+                  07.88.17.45.86
+                </a>
+                <Link
+                  to="/contact"
+                  className="flex w-full items-center justify-center rounded-lg border-2 border-primary px-6 py-3 font-heading font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                >
+                  Devis gratuit
+                </Link>
               </div>
-              <a
-                href="tel:0788174586"
-                className="mb-3 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 font-heading font-bold text-accent-foreground transition-colors hover:bg-orange-hover"
+            </motion.div>
+
+            {/* Sidebar Image */}
+            {sidebarImage && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
               >
-                <Phone className="h-4 w-4" />
-                07.88.17.45.86
-              </a>
-              <Link
-                to="/contact"
-                className="flex w-full items-center justify-center rounded-lg border-2 border-primary px-6 py-3 font-heading font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-              >
-                Devis gratuit
-              </Link>
-            </div>
-          </motion.div>
+                <img
+                  src={sidebarImage}
+                  alt={title}
+                  className="w-full rounded-xl object-cover shadow-sm"
+                  loading="lazy"
+                />
+              </motion.div>
+            )}
+          </div>
         </div>
       </section>
 
