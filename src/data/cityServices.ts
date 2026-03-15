@@ -94,10 +94,12 @@ export const serviceDefinitions = [
     getContent: (city: string, department: string) => ({
       metaDescription: `Piégeage de taupes à ${city} en ${department}. Méthode traditionnelle, écologique et efficace. FG Nuisibles. Tél : 07.88.17.45.86.`,
       seoTitle: `Taupes à ${city} en ${department}`,
-      intro: `Des taupinières envahissent votre pelouse à ${city} ? F&G Nuisibles, située à ${city} dans le département ${department}, utilise la méthode traditionnelle de piégeage, la plus efficace et respectueuse de l'environnement. Protégez vos espaces verts avec notre expertise terrain reconnue dans toute la région.`,
-      expertise: `À ${city} en ${department}, nos techniciens identifient les galeries actives et posent des pièges mécaniques professionnels. Aucun produit chimique n'est utilisé. Notre expertise terrain garantit des résultats rapides et durables. F&G Nuisibles intervient aussi bien chez les particuliers que sur les terrains sportifs, golfs et espaces verts municipaux.`,
+      serviceCallTitle: `VOTRE JARDIN OU ESPACE VERT SUBIT UNE INVASION DE TAUPES ?`,
+      serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DU PIÉGEAGE DE TAUPES DU CÔTÉ DE ${city.toUpperCase()} !`,
+      intro: `G&F Nuisibles à ${city} utilise la méthode traditionnelle de piégeage, la plus efficace et respectueuse de l'environnement. Protégez vos espaces verts avec notre expertise terrain reconnue dans toute la région.`,
+      expertise: `À ${city} en ${department}, nos techniciens identifient les galeries actives et posent des pièges mécaniques professionnels. Aucun produit chimique n'est utilisé. Notre expertise terrain garantit des résultats rapides et durables. G&F Nuisibles intervient aussi bien chez les particuliers que sur les terrains sportifs, golfs et espaces verts municipaux.`,
       method: `Repérage des galeries principales sur votre terrain à ${city}, pose de pièges mécaniques, suivi régulier et retrait des dispositifs. Nous vous conseillons sur les mesures préventives pour protéger durablement vos espaces verts.`,
-      cta: `Contactez F&G Nuisibles au 07.88.17.45.86 pour un piégeage de taupes efficace à ${city} en ${department}. Devis gratuit, intervention rapide.`,
+      cta: `Contactez G&F Nuisibles au 07.88.17.45.86 pour un piégeage de taupes efficace à ${city} en ${department}. Devis gratuit, intervention rapide.`,
     }),
   },
 ];
