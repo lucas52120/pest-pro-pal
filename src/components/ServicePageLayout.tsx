@@ -89,7 +89,7 @@ const ServicePageLayout = ({
           <div className="lg:col-span-2 space-y-10">
             {[
               { label: "Le Problème", content: problem },
-              { label: "L'Expertise FG Nuisibles", content: expertise },
+              { label: "L'Expertise GF Nuisibles", content: expertise },
               { label: "Notre Méthode", content: method },
               { label: "Notre Engagement", content: engagement },
             ].map((block, i) => (
@@ -108,13 +108,31 @@ const ServicePageLayout = ({
             ))}
           </div>
 
-          {/* Sidebar CTA */}
+          {/* Sidebar: Image ABOVE, then Intervention rapide */}
           <div className="space-y-6 lg:sticky lg:top-28 self-start">
+            {/* Sidebar Image — now on top */}
+            {sidebarImage && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <img
+                  src={sidebarImage}
+                  alt={title}
+                  className="w-full rounded-xl object-cover shadow-sm"
+                  loading="lazy"
+                />
+              </motion.div>
+            )}
+
+            {/* Intervention rapide — now below image */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
               <div className="rounded-xl bg-secondary p-6 shadow-sm">
                 <h3 className="mb-4 font-heading text-lg font-bold text-primary">
@@ -142,23 +160,6 @@ const ServicePageLayout = ({
                 </Link>
               </div>
             </motion.div>
-
-            {/* Sidebar Image */}
-            {sidebarImage && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <img
-                  src={sidebarImage}
-                  alt={title}
-                  className="w-full rounded-xl object-cover shadow-sm"
-                  loading="lazy"
-                />
-              </motion.div>
-            )}
           </div>
         </div>
       </section>
