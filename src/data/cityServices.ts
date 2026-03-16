@@ -12,7 +12,7 @@ export const serviceDefinitions = [
     icon: Zap,
     heroImage: serviceGuepes,
     getContent: (city: string, department: string) => ({
-      metaDescription: `Destruction de nids de guêpes et frelons à ${city} en ${department}. FG Nuisibles intervient en urgence. Appelez le 07.88.17.45.86.`,
+      metaDescription: `Destruction de nids de guêpes et frelons à ${city} en ${department}. GF Nuisibles intervient en urgence. Appelez le 07.88.17.45.86.`,
       seoTitle: `Guêpes & Frelons à ${city} en ${department}`,
       serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION DE GUÊPES OU DE FRELONS ?`,
       serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DESTRUCTION DE NIDS DE GUÊPES ET FRELONS DU CÔTÉ DE ${city.toUpperCase()} !`,
@@ -28,7 +28,7 @@ export const serviceDefinitions = [
     icon: Bug,
     heroImage: serviceDesinsectisation,
     getContent: (city: string, department: string) => ({
-      metaDescription: `Désinsectisation professionnelle à ${city} en ${department}. Traitement cafards, punaises de lit, blattes. FG Nuisibles. Tél : 07.88.17.45.86.`,
+      metaDescription: `Désinsectisation professionnelle à ${city} en ${department}. Traitement cafards, punaises de lit, blattes. GF Nuisibles. Tél : 07.88.17.45.86.`,
       seoTitle: `Désinsectisation à ${city} en ${department}`,
       serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION D'INSECTES NUISIBLES ?`,
       serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉSINSECTISATION DU CÔTÉ DE ${city.toUpperCase()} !`,
@@ -44,7 +44,7 @@ export const serviceDefinitions = [
     icon: Rat,
     heroImage: serviceDeratisation,
     getContent: (city: string, department: string) => ({
-      metaDescription: `Dératisation à ${city} en ${department}. Élimination rats, souris, rongeurs. FG Nuisibles intervient rapidement. Tél : 07.88.17.45.86.`,
+      metaDescription: `Dératisation à ${city} en ${department}. Élimination rats, souris, rongeurs. GF Nuisibles intervient rapidement. Tél : 07.88.17.45.86.`,
       seoTitle: `Dératisation à ${city} en ${department}`,
       serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION DE RATS OU DE RONGEURS ?`,
       serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉRATISATION DU CÔTÉ DE ${city.toUpperCase()} !`,
@@ -60,7 +60,7 @@ export const serviceDefinitions = [
     icon: Bird,
     heroImage: serviceDepigeonnage,
     getContent: (city: string, department: string) => ({
-      metaDescription: `Dépigeonnisation à ${city} en ${department}. Protection durable des bâtiments professionnels contre les pigeons. FG Nuisibles. Tél : 07.88.17.45.86.`,
+      metaDescription: `Dépigeonnisation à ${city} en ${department}. Protection durable des bâtiments professionnels contre les pigeons. GF Nuisibles. Tél : 07.88.17.45.86.`,
       seoTitle: `Dépigeonnisation à ${city} en ${department}`,
       serviceCallTitle: `G&F NUISIBLES INTERVIENT AUPRÈS DES RESTAURANTS, ÉTABLISSEMENTS PUBLICS, COLLECTIVITÉS, SYNDICS DE COPROPRIÉTÉ DU CÔTÉ DE ${city.toUpperCase()} POUR METTRE FIN AUX DÉGÂTS CAUSÉS PAR LES PIGEONS ET AUTRES OISEAUX.`,
       serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉPIGEONNISATION EN ${department.toUpperCase()} !`,
@@ -76,7 +76,7 @@ export const serviceDefinitions = [
     icon: Bird,
     heroImage: serviceDepigeonnage,
     getContent: (city: string, department: string) => ({
-      metaDescription: `Élimination de pigeons à ${city} en ${department}. Solutions pour particuliers. FG Nuisibles. Tél : 07.88.17.45.86.`,
+      metaDescription: `Élimination de pigeons à ${city} en ${department}. Solutions pour particuliers. GF Nuisibles. Tél : 07.88.17.45.86.`,
       seoTitle: `Élimination Pigeons à ${city} en ${department}`,
       serviceCallTitle: `G&F NUISIBLES INTERVIENT CHEZ VOUS, EN PAVILLON, MAISON OU EN APPARTEMENT DU CÔTÉ DE ${city.toUpperCase()} POUR METTRE FIN AUX DÉGÂTS CAUSÉS PAR LES PIGEONS ET AUTRES OISEAUX.`,
       serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE L'ÉLIMINATION DES PIGEONS EN ${department.toUpperCase()} !`,
@@ -92,7 +92,7 @@ export const serviceDefinitions = [
     icon: Target,
     heroImage: serviceTaupes,
     getContent: (city: string, department: string) => ({
-      metaDescription: `Piégeage de taupes à ${city} en ${department}. Méthode traditionnelle, écologique et efficace. FG Nuisibles. Tél : 07.88.17.45.86.`,
+      metaDescription: `Piégeage de taupes à ${city} en ${department}. Méthode traditionnelle, écologique et efficace. GF Nuisibles. Tél : 07.88.17.45.86.`,
       seoTitle: `Taupes à ${city} en ${department}`,
       serviceCallTitle: `VOTRE JARDIN OU ESPACE VERT SUBIT UNE INVASION DE TAUPES ?`,
       serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DU PIÉGEAGE DE TAUPES DU CÔTÉ DE ${city.toUpperCase()} !`,
@@ -111,7 +111,7 @@ export interface CityData {
   name: string;
   slug: string;
   department: string;
-  services: string[]; // slugs of available services
+  services: string[];
 }
 
 export const cities: CityData[] = [

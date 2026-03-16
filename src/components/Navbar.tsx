@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/logo-gf.png";
+import logo from "@/assets/logo-gf.svg";
 
 const navItems = [
   { label: "Accueil", path: "/" },
@@ -37,7 +37,7 @@ const Navbar = () => {
     >
       <div className="container-narrow flex items-center justify-between px-4 py-2">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="G&F Nuisibles" className="h-12 w-auto" />
+          <img src={logo} alt="GF Nuisibles" className="h-14 w-auto brightness-0 invert" />
         </Link>
 
         {/* Desktop nav */}

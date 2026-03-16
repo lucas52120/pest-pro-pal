@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, Clock, MapPin, CheckCircle } from "lucide-react";
+import { Phone, Clock, MapPin, CheckCircle, ShieldCheck } from "lucide-react";
 
 const Reassurance = () => {
   return (
@@ -16,7 +16,7 @@ const Reassurance = () => {
             Besoin d'une intervention rapide ?
           </h2>
           <p className="mb-10 text-lg text-primary-foreground/70">
-            FG Nuisibles à votre service — Discrétion et efficacité garanties.
+            GF Nuisibles à votre service — Discrétion et efficacité garanties.
           </p>
         </motion.div>
 
@@ -25,12 +25,13 @@ const Reassurance = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5"
         >
           {[
             { icon: Clock, label: "Horaires", text: "Lun–Ven : 8h–19h | Urgence & astreinte week-end" },
             { icon: MapPin, label: "Secteur", text: "Chaumont, Langres et environs (52)" },
             { icon: CheckCircle, label: "Garantie", text: "Résultat garanti, véhicules discrets" },
+            { icon: ShieldCheck, label: "Certification", text: "Agréé Certibiocide — Produits professionnels homologués" },
             { icon: Phone, label: "Contact", text: "07.88.17.45.86" },
           ].map((item) => (
             <div
