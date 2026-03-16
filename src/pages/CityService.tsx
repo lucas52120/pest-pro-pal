@@ -17,7 +17,7 @@ const CityService = () => {
     return <NotFound />;
   }
 
-  const content = serviceData.getContent(cityData.name, cityData.department);
+  const content = serviceData.getContent(cityData.name, cityData.department, cityData.variation);
   const IconComponent = serviceData.icon;
 
   return (
