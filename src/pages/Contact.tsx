@@ -7,14 +7,43 @@ import { toast } from "sonner";
 
 const Contact = () => {
   const [sending, setSending] = useState(false);
+  const [consent, setConsent] = useState(false);
+  const [captchaAnswer, setCaptchaAnswer] = useState("");
+
+  // Simple math CAPTCHA
+  const captchaA = 7;
+  const captchaB = 3;
+  const captchaCorrect = captchaA + captchaB;
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (parseInt(captchaAnswer) !== captchaCorrect) {
+      toast.error("La réponse au CAPTCHA est incorrecte.");
+      return;
+    }
+
+    if (!consent) {
+      toast.error("Veuillez accepter les conditions de traitement des données.");
+      return;
+    }
+
     setSending(true);
+
+    // mailto fallback — in production, use a server-side handler
+    const formData = new FormData(e.target as HTMLFormElement);
+    const subject = encodeURIComponent(`Demande de contact - ${formData.get("nuisible") || "Non précisé"}`);
+    const body = encodeURIComponent(
+      `Nom: ${formData.get("name")}\nTéléphone: ${formData.get("phone")}\nEmail: ${formData.get("email") || "Non renseigné"}\nNuisible: ${formData.get("nuisible")}\n\nMessage:\n${formData.get("message")}`
+    );
+    window.location.href = `mailto:contact@gf-nuisibles.fr?subject=${subject}&body=${body}`;
+
     setTimeout(() => {
       setSending(false);
       toast.success("Votre demande a bien été envoyée ! Nous vous recontacterons rapidement.");
       (e.target as HTMLFormElement).reset();
+      setConsent(false);
+      setCaptchaAnswer("");
     }, 1000);
   };
 
@@ -54,7 +83,9 @@ const Contact = () => {
                 <label className="mb-1 block font-heading text-sm font-semibold text-primary">Nom *</label>
                 <input
                   required
+                  name="name"
                   type="text"
+                  maxLength={100}
                   className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent"
                   placeholder="Votre nom"
                 />
@@ -63,7 +94,9 @@ const Contact = () => {
                 <label className="mb-1 block font-heading text-sm font-semibold text-primary">Téléphone *</label>
                 <input
                   required
+                  name="phone"
                   type="tel"
+                  maxLength={20}
                   className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent"
                   placeholder="06 XX XX XX XX"
                 />
@@ -72,14 +105,19 @@ const Contact = () => {
             <div>
               <label className="mb-1 block font-heading text-sm font-semibold text-primary">Email</label>
               <input
+                name="email"
                 type="email"
+                maxLength={255}
                 className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent"
                 placeholder="votre@email.fr"
               />
             </div>
             <div>
               <label className="mb-1 block font-heading text-sm font-semibold text-primary">Type de nuisible</label>
-              <select className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent">
+              <select
+                name="nuisible"
+                className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent"
+              >
                 <option value="">Sélectionnez...</option>
                 <option>Guêpes / Frelons</option>
                 <option>Cafards / Blattes</option>
@@ -94,11 +132,44 @@ const Contact = () => {
               <label className="mb-1 block font-heading text-sm font-semibold text-primary">Message *</label>
               <textarea
                 required
+                name="message"
                 rows={5}
+                maxLength={2000}
                 className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent"
                 placeholder="Décrivez votre problème..."
               />
             </div>
+
+            {/* CAPTCHA */}
+            <div className="rounded-lg border border-border bg-secondary/50 p-4">
+              <label className="mb-2 block font-heading text-sm font-semibold text-primary">
+                Vérification anti-spam : combien font {captchaA} + {captchaB} ? *
+              </label>
+              <input
+                required
+                type="number"
+                value={captchaAnswer}
+                onChange={(e) => setCaptchaAnswer(e.target.value)}
+                className="w-24 rounded-lg border border-border bg-background px-4 py-2 text-foreground outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent"
+                placeholder="?"
+              />
+            </div>
+
+            {/* RGPD Consent */}
+            <div className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="consent"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                className="mt-1 h-4 w-4 rounded border-border text-accent focus:ring-accent"
+                required
+              />
+              <label htmlFor="consent" className="text-sm text-muted-foreground">
+                En soumettant ce formulaire, je consens au traitement des informations saisies afin de m'envoyer un mail et une newsletter commerciale. *
+              </label>
+            </div>
+
             <button
               type="submit"
               disabled={sending}

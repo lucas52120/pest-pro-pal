@@ -10,6 +10,7 @@ const navItems = [
   { label: "Taupes", path: "/taupes" },
   { label: "Dépigeonnage", path: "/depigeonnage" },
   { label: "Dératisation", path: "/deratisation" },
+  { label: "À propos", path: "/a-propos" },
   { label: "Contact", path: "/contact" },
 ];
 
