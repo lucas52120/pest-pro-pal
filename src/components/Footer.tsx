@@ -33,7 +33,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-accent" />
-                <a href="mailto:contact@gfnuisibles.fr" className="hover:text-accent">contact@gfnuisibles.fr</a>
+                <a href="mailto:contact@gf-nuisibles.fr" className="hover:text-accent">contact@gf-nuisibles.fr</a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-accent" />
@@ -81,6 +81,9 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-primary-foreground/10 px-4 py-4 text-center text-xs text-primary-foreground/40">
+        <div className="mb-2">
+          <Link to="/mentions-legales" className="hover:text-accent transition-colors">Mentions Légales</Link>
+        </div>
         © {new Date().getFullYear()} GF Nuisibles — Tous droits réservés
       </div>
     </footer>

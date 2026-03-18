@@ -12,6 +12,8 @@ import EliminationPigeons from "./pages/EliminationPigeons.tsx";
 import Deratisation from "./pages/Deratisation.tsx";
 import Contact from "./pages/Contact.tsx";
 import CityService from "./pages/CityService.tsx";
+import MentionsLegales from "./pages/MentionsLegales.tsx";
+import APropos from "./pages/APropos.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -31,6 +33,8 @@ const App = () => (
           <Route path="/elimination-pigeons" element={<EliminationPigeons />} />
           <Route path="/deratisation" element={<Deratisation />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/a-propos" element={<APropos />} />
           <Route path="/:city/:service" element={<CityService />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
