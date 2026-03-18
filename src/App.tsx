@@ -10,6 +10,7 @@ import Taupes from "./pages/Taupes.tsx";
 import Depigeonnisation from "./pages/Depigeonnage.tsx";
 import EliminationPigeons from "./pages/EliminationPigeons.tsx";
 import Deratisation from "./pages/Deratisation.tsx";
+import Esod from "./pages/Esod.tsx";
 import Contact from "./pages/Contact.tsx";
 import CityService from "./pages/CityService.tsx";
 import MentionsLegales from "./pages/MentionsLegales.tsx";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/depigeonnage" element={<Depigeonnisation />} />
           <Route path="/elimination-pigeons" element={<EliminationPigeons />} />
           <Route path="/deratisation" element={<Deratisation />} />
+          <Route path="/regulation-esod" element={<Esod />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/a-propos" element={<APropos />} />

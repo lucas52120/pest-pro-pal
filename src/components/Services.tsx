@@ -6,7 +6,7 @@ import serviceDesinsectisation from "@/assets/service-desinsectisation.jpg";
 import serviceTaupes from "@/assets/service-taupes.jpg";
 import serviceDepigeonnage from "@/assets/service-depigeonnage.jpg";
 import serviceDeratisation from "@/assets/service-deratisation.jpg";
-import serviceContrat from "@/assets/service-contrat.jpg";
+import serviceEsod from "@/assets/service-esod.jpg";
 
 const services = [
   {
@@ -40,10 +40,10 @@ const services = [
     path: "/deratisation",
   },
   {
-    image: serviceContrat,
-    title: "Contrat d'entretien",
-    description: "Suivi régulier et préventif pour les professionnels et collectivités.",
-    path: "/contact",
+    image: serviceEsod,
+    title: "Régulation ESOD",
+    description: "Gestion et régulation des animaux classés ESOD : ragondins, renards, corneilles et autres.",
+    path: "/regulation-esod",
   },
 ];
 
