@@ -33,6 +33,7 @@ const App = () => (
           <Route path="/depigeonnage" element={<Depigeonnisation />} />
           <Route path="/elimination-pigeons" element={<EliminationPigeons />} />
           <Route path="/deratisation" element={<Deratisation />} />
+          <Route path="/regulation-esod" element={<Esod />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/a-propos" element={<APropos />} />

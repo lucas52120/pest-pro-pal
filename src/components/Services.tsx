@@ -40,10 +40,10 @@ const services = [
     path: "/deratisation",
   },
   {
-    image: serviceContrat,
-    title: "Contrat d'entretien",
-    description: "Suivi régulier et préventif pour les professionnels et collectivités.",
-    path: "/contact",
+    image: serviceEsod,
+    title: "Régulation ESOD",
+    description: "Gestion et régulation des animaux classés ESOD : ragondins, renards, corneilles et autres.",
+    path: "/regulation-esod",
   },
 ];
 
