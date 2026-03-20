@@ -6,6 +6,31 @@ import serviceDepigeonnage from "@/assets/service-depigeonnage.jpg";
 import serviceTaupes from "@/assets/service-taupes.jpg";
 
 /* ──────────────────────────────────────────────
+   SEO helper — converts "Haute-Marne (52)" → "Haute-Marne 52"
+   and builds the proper preposition form for descriptions:
+   "Haute-Marne (52)" → "en Haute-Marne 52"
+   "Aube (10)" → "dans l'Aube 10"
+   etc.
+   ────────────────────────────────────────────── */
+
+function deptSeo(department: string): string {
+  return department.replace("(", "").replace(")", "").trim();
+}
+
+function deptSeoPrep(department: string): string {
+  const raw = deptSeo(department);
+  const deptMap: Record<string, string> = {
+    "Haute-Marne 52": "en Haute-Marne 52",
+    "Aube 10": "dans l'Aube 10",
+    "Côte-d'Or 21": "en Côte-d'Or 21",
+    "Marne 51": "dans la Marne 51",
+    "Vosges 88": "dans les Vosges 88",
+    "Meurthe-et-Moselle 54": "en Meurthe-et-Moselle 54",
+  };
+  return deptMap[raw] || `en ${raw}`;
+}
+
+/* ──────────────────────────────────────────────
    Variation helpers — each city gets a variation
    index (0-3) that selects a unique set of
    phrasing, synonyms and sentence order.
@@ -22,15 +47,20 @@ export const serviceDefinitions = [
     heroImage: serviceGuepes,
     getContent: (city: string, department: string, variation = 0) => {
       const v = variation % 4;
+      const ds = deptSeo(department);
+      const dp = deptSeoPrep(department);
+
+      const metaDescriptions = [
+        `Besoin d'un expert guêpes et frelons à ${city} ? GF Nuisibles intervient en 24h ${dp}. Devis gratuit, destruction discrète.`,
+        `Stop aux guêpes et frelons à ${city} ! Intervention rapide et discrète ${dp}. Devis gratuit. Appelez GF Nuisibles.`,
+        `Intervention rapide guêpes et frelons à ${city} ${dp}. Neutralisation sous 48h, devis gratuit. GF Nuisibles.`,
+        `Protégez votre maison des guêpes et frelons à ${city}. GF Nuisibles : intervention express ${dp}, devis gratuit.`,
+      ];
 
       const intros = [
-        // v0 — urgence
         `La présence d'un nid de guêpes ou de frelons à ${city} nécessite une action immédiate. GF Nuisibles, votre spécialiste en ${department}, intervient en urgence pour neutraliser ces colonies dangereuses. Les insectes piqueurs, en particulier les frelons asiatiques, peuvent provoquer des réactions allergiques sévères. Nos équipes effectuent un passage rapide à ${city} et ses environs pour sécuriser votre habitation ou vos locaux professionnels.`,
-        // v1 — sécurité
         `Votre sécurité à ${city} est notre priorité. GF Nuisibles assure la suppression de nids de guêpes et de frelons dans tout le ${department}. Ces envahisseurs volants représentent un risque sanitaire considérable, surtout en période estivale lorsque les colonies atteignent leur pic d'activité. Nous garantissons une éradication complète et un environnement sain pour votre famille ou vos collaborateurs à ${city}.`,
-        // v2 — expertise technique
         `Fort de son expertise technique, GF Nuisibles à ${city} vous propose l'élimination définitive des nids de guêpes et frelons en ${department}. Nos techniciens Certibiocide maîtrisent le retrait de nids en toiture, cheminée, arbre ou sous-sol. Chaque opération à ${city} est menée avec du matériel professionnel et des produits homologués pour une neutralisation sûre et durable.`,
-        // v3 — approche locale
         `À ${city}, en ${department}, les nids de guêpes et de frelons sont fréquents dès le printemps. GF Nuisibles vous offre une assistance technique rapide pour supprimer ces indésirables avant qu'ils ne deviennent un danger. Notre connaissance du terrain à ${city} nous permet d'intervenir efficacement, que ce soit en zone urbaine ou rurale.`,
       ];
 
@@ -49,8 +79,8 @@ export const serviceDefinitions = [
       ];
 
       return {
-        metaDescription: `Destruction de nids de guêpes et frelons à ${city} en ${department}. GF Nuisibles intervient en urgence. Appelez le 07.88.17.45.86.`,
-        seoTitle: `Guêpes & Frelons à ${city} en ${department}`,
+        metaDescription: metaDescriptions[v],
+        seoTitle: `Guêpes & Frelons ${city} ${ds} | G&F Nuisibles`,
         serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION DE GUÊPES OU DE FRELONS ?`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DESTRUCTION DE NIDS DE GUÊPES ET FRELONS DU CÔTÉ DE ${city.toUpperCase()} !`,
         intro: intros[v],
@@ -71,6 +101,15 @@ export const serviceDefinitions = [
     heroImage: serviceDesinsectisation,
     getContent: (city: string, department: string, variation = 0) => {
       const v = variation % 4;
+      const ds = deptSeo(department);
+      const dp = deptSeoPrep(department);
+
+      const metaDescriptions = [
+        `Besoin d'un expert désinsectisation à ${city} ? GF Nuisibles élimine cafards, punaises de lit ${dp}. Devis gratuit, discrétion totale.`,
+        `Stop aux insectes nuisibles à ${city} ! Traitement pro cafards et punaises ${dp}. Intervention sous 24h. GF Nuisibles.`,
+        `Intervention rapide désinsectisation à ${city} ${dp}. Élimination garantie sous 48h, devis gratuit. GF Nuisibles.`,
+        `Protégez votre logement des insectes à ${city}. GF Nuisibles : traitement discret et rapide ${dp}. Devis gratuit.`,
+      ];
 
       const intros = [
         `Une infestation d'insectes à ${city} exige une réponse rapide et professionnelle. GF Nuisibles, expert en désinsectisation en ${department}, élimine cafards, punaises de lit, blattes et autres parasites. Ces envahisseurs se reproduisent à grande vitesse et constituent un risque sanitaire majeur pour votre foyer ou vos locaux à ${city}. Notre diagnostic précis permet un traitement ciblé et efficace.`,
@@ -94,8 +133,8 @@ export const serviceDefinitions = [
       ];
 
       return {
-        metaDescription: `Désinsectisation professionnelle à ${city} en ${department}. Traitement cafards, punaises de lit, blattes. GF Nuisibles. Tél : 07.88.17.45.86.`,
-        seoTitle: `Désinsectisation à ${city} en ${department}`,
+        metaDescription: metaDescriptions[v],
+        seoTitle: `Désinsectisation ${city} ${ds} | G&F Nuisibles`,
         serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION D'INSECTES NUISIBLES ?`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉSINSECTISATION DU CÔTÉ DE ${city.toUpperCase()} !`,
         intro: intros[v],
@@ -116,6 +155,15 @@ export const serviceDefinitions = [
     heroImage: serviceDeratisation,
     getContent: (city: string, department: string, variation = 0) => {
       const v = variation % 4;
+      const ds = deptSeo(department);
+      const dp = deptSeoPrep(department);
+
+      const metaDescriptions = [
+        `Besoin d'un dératiseur à ${city} ? GF Nuisibles élimine rats et souris ${dp}. Intervention rapide 24h, devis gratuit.`,
+        `Stop aux rongeurs à ${city} ! Dératisation pro et discrète ${dp}. Résultat garanti. Appelez GF Nuisibles.`,
+        `Intervention dératisation rapide à ${city} ${dp}. Élimination rats et souris sous 48h. Devis gratuit. GF Nuisibles.`,
+        `Protégez votre habitat des rongeurs à ${city}. GF Nuisibles : dératisation efficace et discrète ${dp}. Devis gratuit.`,
+      ];
 
       const intros = [
         `Des bruits de grattement dans vos murs à ${city} ? GF Nuisibles intervient en urgence en ${department} pour l'éradication de rats, souris et rongeurs. Ces nuisibles provoquent des dégâts considérables : câbles électriques rongés, isolation détruite, risques d'incendie et contamination alimentaire. Ne laissez pas la situation s'aggraver à ${city}.`,
@@ -139,8 +187,8 @@ export const serviceDefinitions = [
       ];
 
       return {
-        metaDescription: `Dératisation à ${city} en ${department}. Élimination rats, souris, rongeurs. GF Nuisibles intervient rapidement. Tél : 07.88.17.45.86.`,
-        seoTitle: `Dératisation à ${city} en ${department}`,
+        metaDescription: metaDescriptions[v],
+        seoTitle: `Dératisation ${city} ${ds} | G&F Nuisibles`,
         serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION DE RATS OU DE RONGEURS ?`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉRATISATION DU CÔTÉ DE ${city.toUpperCase()} !`,
         intro: intros[v],
@@ -161,6 +209,15 @@ export const serviceDefinitions = [
     heroImage: serviceDepigeonnage,
     getContent: (city: string, department: string, variation = 0) => {
       const v = variation % 4;
+      const ds = deptSeo(department);
+      const dp = deptSeoPrep(department);
+
+      const metaDescriptions = [
+        `Besoin d'un expert dépigeonnisation à ${city} ? GF Nuisibles protège vos bâtiments pro ${dp}. Devis gratuit, solutions durables.`,
+        `Stop aux pigeons sur vos locaux à ${city} ! Protection professionnelle ${dp}. Intervention discrète. GF Nuisibles.`,
+        `Dépigeonnisation rapide à ${city} ${dp}. Protection durable de vos bâtiments, devis gratuit. Appelez GF Nuisibles.`,
+        `Protégez vos locaux des pigeons à ${city}. GF Nuisibles : dépigeonnisation pro et discrète ${dp}. Devis gratuit.`,
+      ];
 
       const intros = [
         `Les pigeons envahissent vos locaux professionnels à ${city} ? GF Nuisibles, spécialiste de la dépigeonnisation en ${department}, intervient auprès des restaurants, collectivités et syndics de copropriété. Les fientes acides détériorent les façades, créent des risques sanitaires et ternissent l'image de votre établissement à ${city}. Nous mettons en place des solutions pérennes et respectueuses.`,
@@ -184,8 +241,8 @@ export const serviceDefinitions = [
       ];
 
       return {
-        metaDescription: `Dépigeonnisation à ${city} en ${department}. Protection durable des bâtiments professionnels contre les pigeons. GF Nuisibles. Tél : 07.88.17.45.86.`,
-        seoTitle: `Dépigeonnisation à ${city} en ${department}`,
+        metaDescription: metaDescriptions[v],
+        seoTitle: `Dépigeonnisation ${city} ${ds} | G&F Nuisibles`,
         serviceCallTitle: `G&F NUISIBLES INTERVIENT AUPRÈS DES RESTAURANTS, ÉTABLISSEMENTS PUBLICS, COLLECTIVITÉS, SYNDICS DE COPROPRIÉTÉ DU CÔTÉ DE ${city.toUpperCase()} POUR METTRE FIN AUX DÉGÂTS CAUSÉS PAR LES PIGEONS ET AUTRES OISEAUX.`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉPIGEONNISATION EN ${department.toUpperCase()} !`,
         intro: intros[v],
@@ -206,6 +263,15 @@ export const serviceDefinitions = [
     heroImage: serviceDepigeonnage,
     getContent: (city: string, department: string, variation = 0) => {
       const v = variation % 4;
+      const ds = deptSeo(department);
+      const dp = deptSeoPrep(department);
+
+      const metaDescriptions = [
+        `Besoin d'éliminer les pigeons chez vous à ${city} ? GF Nuisibles intervient ${dp}. Devis gratuit, intervention discrète sous 24h.`,
+        `Stop aux pigeons à ${city} ! Solutions pour particuliers ${dp}. Intervention rapide et discrète. Appelez GF Nuisibles.`,
+        `Élimination de pigeons rapide à ${city} ${dp}. Protection durable de votre habitation, devis gratuit. GF Nuisibles.`,
+        `Protégez votre maison des pigeons à ${city}. GF Nuisibles : solutions efficaces et discrètes ${dp}. Devis gratuit.`,
+      ];
 
       const intros = [
         `Les pigeons envahissent votre toiture ou votre balcon à ${city} ? GF Nuisibles intervient chez les particuliers en ${department} pour mettre fin aux nuisances aviaires. Fientes corrosives, bruits incessants, risques sanitaires : ces volatiles indésirables dégradent votre cadre de vie à ${city}. Nous vous proposons des solutions efficaces et respectueuses pour retrouver la tranquillité.`,
@@ -229,8 +295,8 @@ export const serviceDefinitions = [
       ];
 
       return {
-        metaDescription: `Élimination de pigeons à ${city} en ${department}. Solutions pour particuliers. GF Nuisibles. Tél : 07.88.17.45.86.`,
-        seoTitle: `Élimination Pigeons à ${city} en ${department}`,
+        metaDescription: metaDescriptions[v],
+        seoTitle: `Élimination Pigeons ${city} ${ds} | G&F Nuisibles`,
         serviceCallTitle: `G&F NUISIBLES INTERVIENT CHEZ VOUS, EN PAVILLON, MAISON OU EN APPARTEMENT DU CÔTÉ DE ${city.toUpperCase()} POUR METTRE FIN AUX DÉGÂTS CAUSÉS PAR LES PIGEONS ET AUTRES OISEAUX.`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE L'ÉLIMINATION DES PIGEONS EN ${department.toUpperCase()} !`,
         intro: intros[v],
@@ -251,6 +317,15 @@ export const serviceDefinitions = [
     heroImage: serviceTaupes,
     getContent: (city: string, department: string, variation = 0) => {
       const v = variation % 4;
+      const ds = deptSeo(department);
+      const dp = deptSeoPrep(department);
+
+      const metaDescriptions = [
+        `Besoin d'un taupier à ${city} ? GF Nuisibles élimine les taupes ${dp} par piégeage écologique. Devis gratuit, intervention rapide.`,
+        `Stop aux taupinières à ${city} ! Piégeage professionnel et écologique ${dp}. Résultat garanti. GF Nuisibles.`,
+        `Piégeage de taupes rapide à ${city} ${dp}. Méthode écologique sans produit chimique. Devis gratuit. GF Nuisibles.`,
+        `Protégez votre jardin des taupes à ${city}. GF Nuisibles : piégeage mécanique expert ${dp}. Devis gratuit, intervention 48h.`,
+      ];
 
       const intros = [
         `Votre pelouse à ${city} est ravagée par les taupinières ? GF Nuisibles, spécialiste du piégeage de taupes en ${department}, intervient rapidement pour protéger vos espaces verts. Les taupes, bien qu'utiles pour l'aération du sol, peuvent causer des dégâts considérables sur les jardins, terrains de sport et espaces paysagers à ${city}.`,
@@ -274,8 +349,8 @@ export const serviceDefinitions = [
       ];
 
       return {
-        metaDescription: `Piégeage de taupes à ${city} en ${department}. Méthode traditionnelle, écologique et efficace. GF Nuisibles. Tél : 07.88.17.45.86.`,
-        seoTitle: `Taupes à ${city} en ${department}`,
+        metaDescription: metaDescriptions[v],
+        seoTitle: `Taupes ${city} ${ds} | G&F Nuisibles`,
         serviceCallTitle: `VOTRE JARDIN OU ESPACE VERT SUBIT UNE INVASION DE TAUPES ?`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DU PIÉGEAGE DE TAUPES DU CÔTÉ DE ${city.toUpperCase()} !`,
         intro: intros[v],
@@ -295,7 +370,7 @@ export interface CityData {
   slug: string;
   department: string;
   services: string[];
-  variation: number; // determines which content variant is used
+  variation: number;
 }
 
 export const cities: CityData[] = [
