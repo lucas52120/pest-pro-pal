@@ -159,10 +159,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Besoin d'un dératiseur à ${city} ? GF Nuisibles élimine rats et souris ${dp}. Intervention rapide 24h, devis gratuit.`,
-        `Stop aux rongeurs à ${city} ! Dératisation pro et discrète ${dp}. Résultat garanti. Appelez GF Nuisibles.`,
-        `Intervention dératisation rapide à ${city} ${dp}. Élimination rats et souris sous 48h. Devis gratuit. GF Nuisibles.`,
-        `Protégez votre habitat des rongeurs à ${city}. GF Nuisibles : dératisation efficace et discrète ${dp}. Devis gratuit.`,
+        `Extermination de rats et souris à ${city} ${dp}. Dératiseur professionnel, intervention 7j/7. Contactez G&F Nuisibles.`,
+        `Problème de rats, souris ou rongeurs à ${city} ? G&F Nuisibles, votre expert en lutte contre les rongeurs ${dp}. Devis gratuit.`,
+        `Stop aux rats à ${city} ${dp}. Intervention rapide et discrète, diagnostic gratuit. Expertise professionnelle G&F Nuisibles.`,
+        `Dératiseur professionnel à ${city} ${dp}. G&F Nuisibles élimine rats et souris sous 24h. Devis gratuit, discrétion assurée.`,
       ];
 
       const intros = [
