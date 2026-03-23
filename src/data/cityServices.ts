@@ -350,7 +350,7 @@ export const serviceDefinitions = [
 
       return {
         metaDescription: metaDescriptions[v],
-        seoTitle: `Taupes ${city} ${ds} | G&F Nuisibles`,
+        seoTitle: `Taupier à ${city} ${dp} | G&F Nuisibles`,
         serviceCallTitle: `VOTRE JARDIN OU ESPACE VERT SUBIT UNE INVASION DE TAUPES ?`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DU PIÉGEAGE DE TAUPES DU CÔTÉ DE ${city.toUpperCase()} !`,
         intro: intros[v],
