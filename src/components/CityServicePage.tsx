@@ -83,9 +83,9 @@ const CityServicePage = ({
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="mb-2 font-heading text-xl font-extrabold text-primary md:text-2xl uppercase">
+            <h2 className="mb-2 font-heading text-xl font-extrabold text-primary md:text-2xl uppercase">
               {serviceCallTitle}
-            </p>
+            </h2>
             <p className="font-heading text-lg text-primary/80 md:text-xl uppercase">
               {serviceCallSubtitle}
             </p>
@@ -109,9 +109,9 @@ const CityServicePage = ({
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <h2 className="mb-3 font-heading text-2xl font-bold text-primary">
+                <h3 className="mb-3 font-heading text-2xl font-bold text-primary">
                   {block.label}
-                </h2>
+                </h3>
                 <p className="leading-relaxed text-muted-foreground">{block.content}</p>
               </motion.div>
             ))}
@@ -136,9 +136,9 @@ const CityServicePage = ({
             className="lg:sticky lg:top-28 self-start"
           >
             <div className="rounded-xl bg-secondary p-6 shadow-sm">
-              <h3 className="mb-4 font-heading text-lg font-bold text-primary">
+              <h4 className="mb-4 font-heading text-lg font-bold text-primary">
                 Intervention à {city}
-              </h3>
+              </h4>
               <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-accent" />
                 <span>{city} et environs — {department}</span>

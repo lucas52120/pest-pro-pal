@@ -73,9 +73,9 @@ const ServicePageLayout = ({
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="mb-2 font-heading text-xl font-extrabold text-primary md:text-2xl uppercase">
+            <h2 className="mb-2 font-heading text-xl font-extrabold text-primary md:text-2xl uppercase">
               {serviceCallTitle}
-            </p>
+            </h2>
             <p className="font-heading text-lg text-primary/80 md:text-xl uppercase">
               {serviceCallSubtitle}
             </p>
@@ -100,9 +100,9 @@ const ServicePageLayout = ({
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <h2 className="mb-3 font-heading text-2xl font-bold text-primary">
+                <h3 className="mb-3 font-heading text-2xl font-bold text-primary">
                   {block.label}
-                </h2>
+                </h3>
                 <p className="leading-relaxed text-muted-foreground">{block.content}</p>
               </motion.div>
             ))}
