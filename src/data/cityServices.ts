@@ -140,7 +140,7 @@ export const serviceDefinitions = [
         intro: intros[v],
         expertise: expertises[v],
         method: methods[v],
-        cta: `Appelez GF Nuisibles au 07.88.17.45.86 pour un traitement professionnel à ${city} en ${department}. Discrétion totale, véhicules non logotés sur demande.`,
+        cta: `Appelez G&F Nuisibles au 07.88.17.45.86 pour un traitement professionnel à ${city} en ${department}. Discrétion totale, véhicules non logotés sur demande.`,
       };
     },
   },
