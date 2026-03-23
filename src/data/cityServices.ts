@@ -86,7 +86,7 @@ export const serviceDefinitions = [
         intro: intros[v],
         expertise: expertises[v],
         method: methods[v],
-        cta: `Contactez GF Nuisibles au 07.88.17.45.86 pour une intervention rapide à ${city} et ses environs en ${department}. Diagnostic gratuit, intervention garantie.`,
+        cta: `Contactez G&F Nuisibles au 07.88.17.45.86 pour une intervention rapide à ${city} et ses environs en ${department}. Diagnostic gratuit, intervention garantie.`,
       };
     },
   },
