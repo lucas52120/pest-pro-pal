@@ -25,6 +25,7 @@ const DeratisationNogent = () => {
       method="Repérage des points d'entrée et des nids. Mise en place de dispositifs adaptés : stations d'appâtage verrouillées, nasses et pièges mécaniques. Colmatage des accès et recommandations d'hygiène pour une protection longue durée."
       cta="Ne laissez pas les rongeurs s'installer à Nogent. Contactez G&F Nuisibles au 07.88.17.45.86 — intervention rapide 7j/7, diagnostic gratuit."
     />
+    </>
   );
 };
 

@@ -25,6 +25,7 @@ const DeratisationLangres = () => {
       method="Inspection minutieuse pour cartographier l'infestation. Traitement ciblé avec des produits homologués et sans danger pour votre entourage. Visite de contrôle incluse pour garantir l'éradication complète et prévenir toute réapparition."
       cta="Stop aux rats à Langres ! Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit et sans engagement. Expertise certifiée."
     />
+    </>
   );
 };
 

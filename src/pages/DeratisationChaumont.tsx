@@ -25,6 +25,7 @@ const DeratisationChaumont = () => {
       method="Diagnostic complet sur site pour identifier les zones de passage et points d'accès. Mise en place d'un plan de lutte personnalisé avec dispositifs sécurisés. Suivi post-intervention et conseils de prévention pour éviter toute récidive."
       cta="Contactez G&F Nuisibles dès maintenant pour un diagnostic gratuit à Chaumont. Intervention rapide 7j/7 — Appelez le 07.88.17.45.86."
     />
+    </>
   );
 };
 

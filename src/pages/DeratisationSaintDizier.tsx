@@ -25,6 +25,7 @@ const DeratisationSaintDizier = () => {
       method="Audit détaillé de votre site pour évaluer le niveau d'infestation. Déploiement d'un dispositif multi-techniques : appâts rodenticides sécurisés, pièges professionnels, obturation des passages. Rapport d'intervention et suivi de contrôle systématique."
       cta="Protégez votre habitat ou commerce à Saint-Dizier. Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit et une expertise professionnelle certifiée."
     />
+    </>
   );
 };
 

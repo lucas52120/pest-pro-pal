@@ -25,6 +25,7 @@ const DeratisationJoinville = () => {
       method="Visite technique pour localiser nids et chemins de passage. Installation de pièges et stations sécurisées dans les zones stratégiques. Fermeture des accès identifiés et remise d'un compte-rendu détaillé avec préconisations de prévention."
       cta="Rongeurs à Joinville ? Réagissez vite ! Contactez G&F Nuisibles au 07.88.17.45.86 — devis sans engagement et intervention sous 24h."
     />
+    </>
   );
 };
 
