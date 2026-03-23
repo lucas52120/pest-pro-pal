@@ -105,10 +105,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Traitement punaises de lit et blattes à ${city} ${dp}. Intervention 7j/7, devis gratuit. Contactez G&F Nuisibles.`,
-        `Invasion d'insectes à ${city} ? G&F Nuisibles, votre expert en désinsectisation ${dp}. Diagnostic gratuit, discrétion totale.`,
-        `Extermination insectes rampants à ${city} ${dp}. Intervention rapide, expertise professionnelle. Appelez G&F Nuisibles.`,
-        `Traitement punaises de lit et cafards à ${city} ${dp}. G&F Nuisibles intervient sous 24h. Devis gratuit, discrétion assurée.`,
+        `Traitement punaises de lit et blattes à ${city} ${dp}. G&F Nuisibles : intervention rapide 7j/7, devis gratuit, expertise certifiée.`,
+        `Invasion d'insectes à ${city} ? G&F Nuisibles, votre expert en désinsectisation ${dp}. Diagnostic gratuit, discrétion totale, solutions durables.`,
+        `Extermination d'insectes rampants à ${city} ${dp}. Contactez G&F Nuisibles pour une intervention rapide. Expertise certifiée, devis sans engagement.`,
+        `Traitement professionnel punaises de lit et cafards à ${city} ${dp}. G&F Nuisibles intervient sous 24h. Devis gratuit, discrétion assurée.`,
       ];
 
       const intros = [
