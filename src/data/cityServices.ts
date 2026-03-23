@@ -213,10 +213,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Besoin d'un expert dépigeonnisation à ${city} ? GF Nuisibles protège vos bâtiments pro ${dp}. Devis gratuit, solutions durables.`,
-        `Stop aux pigeons sur vos locaux à ${city} ! Protection professionnelle ${dp}. Intervention discrète. GF Nuisibles.`,
-        `Dépigeonnisation rapide à ${city} ${dp}. Protection durable de vos bâtiments, devis gratuit. Appelez GF Nuisibles.`,
-        `Protégez vos locaux des pigeons à ${city}. GF Nuisibles : dépigeonnisation pro et discrète ${dp}. Devis gratuit.`,
+        `Problème de pigeons à ${city} ? Pose de filets et picots professionnels ${dp}. Contactez G&F Nuisibles, devis gratuit.`,
+        `Dégâts causés par les pigeons à ${city} ? G&F Nuisibles installe des systèmes de répulsion durables ${dp}. Intervention 7j/7.`,
+        `Installation de picots anti-pigeons à ${city} ${dp}. Expertise professionnelle, diagnostic gratuit. Appelez G&F Nuisibles.`,
+        `Pose de filets anti-pigeons à ${city} ${dp}. G&F Nuisibles, votre expert en dépigeonnisation. Devis gratuit, intervention rapide.`,
       ];
 
       const intros = [
