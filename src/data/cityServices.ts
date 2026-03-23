@@ -378,13 +378,16 @@ export const cities: CityData[] = [
   { name: "Chaumont", slug: "chaumont", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 0 },
   { name: "Langres", slug: "langres", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 1 },
   { name: "Nogent", slug: "nogent", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 2 },
-  { name: "Bar-sur-Aube", slug: "bar-sur-aube", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 3 },
+  { name: "Bar-sur-Aube", slug: "bar-sur-aube", department: "Aube (10)", services: ALL_SERVICES, variation: 3 },
   { name: "Joinville", slug: "joinville", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 0 },
   { name: "Saint-Dizier", slug: "saint-dizier", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 1 },
   { name: "Wassy", slug: "wassy", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 2 },
   { name: "Bourbonne-les-Bains", slug: "bourbonne-les-bains", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 3 },
   { name: "Bologne", slug: "bologne", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 0 },
   { name: "Montier-en-Der", slug: "montier-en-der", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 1 },
+  { name: "Chalindrey", slug: "chalindrey", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 2 },
+  { name: "Froncles", slug: "froncles", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 3 },
+  { name: "Châteauvillain", slug: "chateauvillain", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 0 },
 
   // Marne (51)
   { name: "Vitry-le-François", slug: "vitry-le-francois", department: "Marne (51)", services: ["depigeonnisation", "desinsectisation", "elimination-pigeons"], variation: 2 },
