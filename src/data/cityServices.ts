@@ -51,10 +51,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Destruction nids de guêpes et frelons à ${city} ${dp}. Intervention 7j/7, diagnostic gratuit. Contactez G&F Nuisibles.`,
-        `Découverte d'un nid de guêpe ou frelons à ${city} ? G&F Nuisibles, votre expert en élimination de nids ${dp}. Devis gratuit.`,
-        `Élimination nids de guêpes à ${city} ${dp}. Intervention rapide et discrète. Expertise professionnelle G&F Nuisibles.`,
-        `Enlèvement nids de frelons à ${city} ${dp}. Contactez G&F Nuisibles pour un diagnostic gratuit, intervention 7j/7.`,
+        `Destruction nids de guêpes et frelons à ${city} ${dp}. G&F Nuisibles : intervention 7j/7, diagnostic gratuit, expertise certifiée.`,
+        `Nid de guêpes ou frelons à ${city} ? G&F Nuisibles, votre expert en élimination de nids ${dp}. Devis sans engagement, intervention sous 24h.`,
+        `Élimination professionnelle de nids de guêpes à ${city} ${dp}. Appelez G&F Nuisibles : expertise certifiée, solutions durables, devis gratuit.`,
+        `Enlèvement de nids de frelons à ${city} ${dp}. G&F Nuisibles : diagnostic gratuit, intervention sécurisée 7j/7. Solutions durables garanties.`,
       ];
 
       const intros = [
@@ -80,7 +80,7 @@ export const serviceDefinitions = [
 
       return {
         metaDescription: metaDescriptions[v],
-        seoTitle: `Guêpes & Frelons ${city} ${ds} | G&F Nuisibles`,
+        seoTitle: `Guêpes & Frelons à ${city} ${dp} | G&F Nuisibles`,
         serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION DE GUÊPES OU DE FRELONS ?`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DESTRUCTION DE NIDS DE GUÊPES ET FRELONS DU CÔTÉ DE ${city.toUpperCase()} !`,
         intro: intros[v],
@@ -105,10 +105,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Traitement punaises de lit et blattes à ${city} ${dp}. Intervention 7j/7, devis gratuit. Contactez G&F Nuisibles.`,
-        `Invasion d'insectes à ${city} ? G&F Nuisibles, votre expert en désinsectisation ${dp}. Diagnostic gratuit, discrétion totale.`,
-        `Extermination insectes rampants à ${city} ${dp}. Intervention rapide, expertise professionnelle. Appelez G&F Nuisibles.`,
-        `Traitement punaises de lit et cafards à ${city} ${dp}. G&F Nuisibles intervient sous 24h. Devis gratuit, discrétion assurée.`,
+        `Traitement punaises de lit et blattes à ${city} ${dp}. G&F Nuisibles : intervention rapide 7j/7, devis gratuit, expertise certifiée.`,
+        `Invasion d'insectes à ${city} ? G&F Nuisibles, votre expert en désinsectisation ${dp}. Diagnostic gratuit, discrétion totale, solutions durables.`,
+        `Extermination d'insectes rampants à ${city} ${dp}. Contactez G&F Nuisibles pour une intervention rapide. Expertise certifiée, devis sans engagement.`,
+        `Traitement professionnel punaises de lit et cafards à ${city} ${dp}. G&F Nuisibles intervient sous 24h. Devis gratuit, discrétion assurée.`,
       ];
 
       const intros = [
@@ -134,7 +134,7 @@ export const serviceDefinitions = [
 
       return {
         metaDescription: metaDescriptions[v],
-        seoTitle: `Désinsectisation ${city} ${ds} | G&F Nuisibles`,
+        seoTitle: `Désinsectisation à ${city} ${dp} | G&F Nuisibles`,
         serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION D'INSECTES NUISIBLES ?`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉSINSECTISATION DU CÔTÉ DE ${city.toUpperCase()} !`,
         intro: intros[v],
@@ -159,10 +159,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Extermination de rats et souris à ${city} ${dp}. Dératiseur professionnel, intervention 7j/7. Contactez G&F Nuisibles.`,
-        `Problème de rats, souris ou rongeurs à ${city} ? G&F Nuisibles, votre expert en lutte contre les rongeurs ${dp}. Devis gratuit.`,
-        `Stop aux rats à ${city} ${dp}. Intervention rapide et discrète, diagnostic gratuit. Expertise professionnelle G&F Nuisibles.`,
-        `Dératiseur professionnel à ${city} ${dp}. G&F Nuisibles élimine rats et souris sous 24h. Devis gratuit, discrétion assurée.`,
+        `Extermination de rats et souris à ${city} ${dp}. G&F Nuisibles, dératiseur professionnel : intervention rapide 7j/7, diagnostic gratuit.`,
+        `Problème de rats ou rongeurs à ${city} ? G&F Nuisibles, expert en lutte contre les rongeurs ${dp}. Devis sans engagement, solutions durables.`,
+        `Stop aux rats à ${city} ${dp}. G&F Nuisibles : intervention discrète sous 24h, diagnostic gratuit. Expertise professionnelle certifiée.`,
+        `Dératiseur professionnel à ${city} ${dp}. G&F Nuisibles élimine rats et souris. Devis gratuit, intervention rapide, résultats garantis.`,
       ];
 
       const intros = [
@@ -188,7 +188,7 @@ export const serviceDefinitions = [
 
       return {
         metaDescription: metaDescriptions[v],
-        seoTitle: `Dératisation ${city} ${ds} | G&F Nuisibles`,
+        seoTitle: `Dératisation à ${city} ${dp} | G&F Nuisibles`,
         serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION DE RATS OU DE RONGEURS ?`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉRATISATION DU CÔTÉ DE ${city.toUpperCase()} !`,
         intro: intros[v],
@@ -213,10 +213,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Problème de pigeons à ${city} ? Pose de filets et picots professionnels ${dp}. Contactez G&F Nuisibles, devis gratuit.`,
-        `Dégâts causés par les pigeons à ${city} ? G&F Nuisibles installe des systèmes de répulsion durables ${dp}. Intervention 7j/7.`,
-        `Installation de picots anti-pigeons à ${city} ${dp}. Expertise professionnelle, diagnostic gratuit. Appelez G&F Nuisibles.`,
-        `Pose de filets anti-pigeons à ${city} ${dp}. G&F Nuisibles, votre expert en dépigeonnisation. Devis gratuit, intervention rapide.`,
+        `Problème de pigeons à ${city} ? Pose de filets et picots anti-pigeons ${dp}. Contactez G&F Nuisibles : devis gratuit, expertise certifiée.`,
+        `Dégâts causés par les pigeons à ${city} ? G&F Nuisibles installe des systèmes de répulsion durables ${dp}. Intervention rapide 7j/7, devis gratuit.`,
+        `Installation de picots et filets anti-pigeons à ${city} ${dp}. G&F Nuisibles, votre expert en dépigeonnisation. Diagnostic gratuit, solutions durables.`,
+        `Pose de filets anti-pigeons à ${city} ${dp}. G&F Nuisibles : expertise certifiée en dépigeonnisation. Devis sans engagement, intervention rapide.`,
       ];
 
       const intros = [
@@ -242,7 +242,7 @@ export const serviceDefinitions = [
 
       return {
         metaDescription: metaDescriptions[v],
-        seoTitle: `Dépigeonnisation ${city} ${ds} | G&F Nuisibles`,
+        seoTitle: `Dépigeonnisation à ${city} ${dp} | G&F Nuisibles`,
         serviceCallTitle: `G&F NUISIBLES INTERVIENT AUPRÈS DES RESTAURANTS, ÉTABLISSEMENTS PUBLICS, COLLECTIVITÉS, SYNDICS DE COPROPRIÉTÉ DU CÔTÉ DE ${city.toUpperCase()} POUR METTRE FIN AUX DÉGÂTS CAUSÉS PAR LES PIGEONS ET AUTRES OISEAUX.`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉPIGEONNISATION EN ${department.toUpperCase()} !`,
         intro: intros[v],
@@ -267,10 +267,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Besoin d'une élimination de pigeons à ${city} ? G&F Nuisibles intervient ${dp}. Diagnostic gratuit, intervention 7j/7.`,
-        `Dégâts causés par les pigeons à ${city} ? Votre expert en régulation de pigeons ${dp}. Contactez G&F Nuisibles.`,
-        `Lutte contre les pigeons à ${city} ${dp}. Intervention rapide et discrète, devis gratuit. Expertise G&F Nuisibles.`,
-        `Service pour vous débarrasser des pigeons à ${city} ${dp}. G&F Nuisibles intervient sous 24h. Diagnostic gratuit.`,
+        `Besoin d'éliminer des pigeons à ${city} ? G&F Nuisibles intervient chez les particuliers ${dp}. Diagnostic gratuit, intervention discrète 7j/7.`,
+        `Dégâts causés par les pigeons chez vous à ${city} ? Votre expert en régulation de pigeons ${dp}. Contactez G&F Nuisibles, devis sans engagement.`,
+        `Lutte contre les pigeons à ${city} ${dp}. G&F Nuisibles : intervention rapide et discrète chez les particuliers. Devis gratuit, solutions durables.`,
+        `Service pour vous débarrasser des pigeons à ${city} ${dp}. G&F Nuisibles intervient sous 24h. Diagnostic gratuit, expertise professionnelle.`,
       ];
 
       const intros = [
@@ -296,7 +296,7 @@ export const serviceDefinitions = [
 
       return {
         metaDescription: metaDescriptions[v],
-        seoTitle: `Élimination Pigeons ${city} ${ds} | G&F Nuisibles`,
+        seoTitle: `Élimination Pigeons à ${city} ${dp} | G&F Nuisibles`,
         serviceCallTitle: `G&F NUISIBLES INTERVIENT CHEZ VOUS, EN PAVILLON, MAISON OU EN APPARTEMENT DU CÔTÉ DE ${city.toUpperCase()} POUR METTRE FIN AUX DÉGÂTS CAUSÉS PAR LES PIGEONS ET AUTRES OISEAUX.`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE L'ÉLIMINATION DES PIGEONS EN ${department.toUpperCase()} !`,
         intro: intros[v],
@@ -321,10 +321,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Piégeage de taupes à ${city} ${dp}. Taupier professionnel, intervention 7j/7. Contactez G&F Nuisibles, devis gratuit.`,
-        `Stop aux taupinières à ${city} ? G&F Nuisibles, votre expert en régulation de taupes ${dp}. Diagnostic gratuit.`,
-        `Taupier professionnel à ${city} ${dp}. Piégeage écologique sans produit chimique. Expertise professionnelle G&F Nuisibles.`,
-        `Stop aux taupinières à ${city} ${dp}. G&F Nuisibles intervient sous 48h, méthode mécanique. Devis gratuit, intervention rapide.`,
+        `Piégeage de taupes à ${city} ${dp}. G&F Nuisibles, taupier professionnel : intervention rapide 7j/7, devis gratuit, méthode écologique.`,
+        `Stop aux taupinières à ${city} ? G&F Nuisibles, votre expert en régulation de taupes ${dp}. Diagnostic gratuit, piégeage mécanique professionnel.`,
+        `Taupier professionnel à ${city} ${dp}. G&F Nuisibles : piégeage écologique sans produit chimique. Expertise certifiée, intervention sous 48h.`,
+        `Régulation de taupes à ${city} ${dp}. G&F Nuisibles intervient avec des pièges mécaniques professionnels. Devis gratuit, résultats garantis.`,
       ];
 
       const intros = [
@@ -350,7 +350,7 @@ export const serviceDefinitions = [
 
       return {
         metaDescription: metaDescriptions[v],
-        seoTitle: `Taupes ${city} ${ds} | G&F Nuisibles`,
+        seoTitle: `Taupier à ${city} ${dp} | G&F Nuisibles`,
         serviceCallTitle: `VOTRE JARDIN OU ESPACE VERT SUBIT UNE INVASION DE TAUPES ?`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DU PIÉGEAGE DE TAUPES DU CÔTÉ DE ${city.toUpperCase()} !`,
         intro: intros[v],
@@ -378,13 +378,16 @@ export const cities: CityData[] = [
   { name: "Chaumont", slug: "chaumont", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 0 },
   { name: "Langres", slug: "langres", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 1 },
   { name: "Nogent", slug: "nogent", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 2 },
-  { name: "Bar-sur-Aube", slug: "bar-sur-aube", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 3 },
+  { name: "Bar-sur-Aube", slug: "bar-sur-aube", department: "Aube (10)", services: ALL_SERVICES, variation: 3 },
   { name: "Joinville", slug: "joinville", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 0 },
   { name: "Saint-Dizier", slug: "saint-dizier", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 1 },
   { name: "Wassy", slug: "wassy", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 2 },
   { name: "Bourbonne-les-Bains", slug: "bourbonne-les-bains", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 3 },
   { name: "Bologne", slug: "bologne", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 0 },
   { name: "Montier-en-Der", slug: "montier-en-der", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 1 },
+  { name: "Chalindrey", slug: "chalindrey", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 2 },
+  { name: "Froncles", slug: "froncles", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 3 },
+  { name: "Châteauvillain", slug: "chateauvillain", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 0 },
 
   // Marne (51)
   { name: "Vitry-le-François", slug: "vitry-le-francois", department: "Marne (51)", services: ["depigeonnisation", "desinsectisation", "elimination-pigeons"], variation: 2 },
