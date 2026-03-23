@@ -9,6 +9,8 @@ const DESCRIPTION = "Souris ou rats à Nogent ? Faites appel à G&F Nuisibles, v
 const DeratisationNogent = () => {
 
   return (
+    <>
+    <SEO title={TITLE} description={DESCRIPTION} />
     <CityServicePage
       city="Nogent"
       department="Haute-Marne (52)"
