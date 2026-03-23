@@ -1,17 +1,12 @@
-import { useEffect } from "react";
 import { Rat } from "lucide-react";
 import CityServicePage from "@/components/CityServicePage";
+import SEO from "@/components/SEO";
 import heroImage from "@/assets/service-deratisation.jpg";
 
 const TITLE = "Dératisation à Nogent en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Souris ou rats à Nogent ? Faites appel à G&F Nuisibles, votre expert en extermination de rongeurs en Haute-Marne. Solutions durables et devis sans engagement.";
 
 const DeratisationNogent = () => {
-  useEffect(() => {
-    document.title = TITLE;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", DESCRIPTION);
-  }, []);
 
   return (
     <CityServicePage
