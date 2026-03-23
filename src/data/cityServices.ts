@@ -159,10 +159,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Extermination de rats et souris à ${city} ${dp}. Dératiseur professionnel, intervention 7j/7. Contactez G&F Nuisibles.`,
-        `Problème de rats, souris ou rongeurs à ${city} ? G&F Nuisibles, votre expert en lutte contre les rongeurs ${dp}. Devis gratuit.`,
-        `Stop aux rats à ${city} ${dp}. Intervention rapide et discrète, diagnostic gratuit. Expertise professionnelle G&F Nuisibles.`,
-        `Dératiseur professionnel à ${city} ${dp}. G&F Nuisibles élimine rats et souris sous 24h. Devis gratuit, discrétion assurée.`,
+        `Extermination de rats et souris à ${city} ${dp}. G&F Nuisibles, dératiseur professionnel : intervention rapide 7j/7, diagnostic gratuit.`,
+        `Problème de rats ou rongeurs à ${city} ? G&F Nuisibles, expert en lutte contre les rongeurs ${dp}. Devis sans engagement, solutions durables.`,
+        `Stop aux rats à ${city} ${dp}. G&F Nuisibles : intervention discrète sous 24h, diagnostic gratuit. Expertise professionnelle certifiée.`,
+        `Dératiseur professionnel à ${city} ${dp}. G&F Nuisibles élimine rats et souris. Devis gratuit, intervention rapide, résultats garantis.`,
       ];
 
       const intros = [
