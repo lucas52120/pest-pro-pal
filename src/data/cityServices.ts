@@ -194,7 +194,7 @@ export const serviceDefinitions = [
         intro: intros[v],
         expertise: expertises[v],
         method: methods[v],
-        cta: `Contactez GF Nuisibles au 07.88.17.45.86 pour une dératisation efficace à ${city} en ${department}. Discrétion assurée, garantie de résultat.`,
+        cta: `Contactez G&F Nuisibles au 07.88.17.45.86 pour une dératisation efficace à ${city} en ${department}. Discrétion assurée, garantie de résultat.`,
       };
     },
   },
