@@ -296,7 +296,7 @@ export const serviceDefinitions = [
 
       return {
         metaDescription: metaDescriptions[v],
-        seoTitle: `Élimination Pigeons ${city} ${ds} | G&F Nuisibles`,
+        seoTitle: `Élimination Pigeons à ${city} ${dp} | G&F Nuisibles`,
         serviceCallTitle: `G&F NUISIBLES INTERVIENT CHEZ VOUS, EN PAVILLON, MAISON OU EN APPARTEMENT DU CÔTÉ DE ${city.toUpperCase()} POUR METTRE FIN AUX DÉGÂTS CAUSÉS PAR LES PIGEONS ET AUTRES OISEAUX.`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE L'ÉLIMINATION DES PIGEONS EN ${department.toUpperCase()} !`,
         intro: intros[v],
