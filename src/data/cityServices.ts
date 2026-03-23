@@ -51,10 +51,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Destruction nids de guêpes et frelons à ${city} ${dp}. Intervention 7j/7, diagnostic gratuit. Contactez G&F Nuisibles.`,
-        `Découverte d'un nid de guêpe ou frelons à ${city} ? G&F Nuisibles, votre expert en élimination de nids ${dp}. Devis gratuit.`,
-        `Élimination nids de guêpes à ${city} ${dp}. Intervention rapide et discrète. Expertise professionnelle G&F Nuisibles.`,
-        `Enlèvement nids de frelons à ${city} ${dp}. Contactez G&F Nuisibles pour un diagnostic gratuit, intervention 7j/7.`,
+        `Destruction nids de guêpes et frelons à ${city} ${dp}. G&F Nuisibles : intervention 7j/7, diagnostic gratuit, expertise certifiée.`,
+        `Nid de guêpes ou frelons à ${city} ? G&F Nuisibles, votre expert en élimination de nids ${dp}. Devis sans engagement, intervention sous 24h.`,
+        `Élimination professionnelle de nids de guêpes à ${city} ${dp}. Appelez G&F Nuisibles : expertise certifiée, solutions durables, devis gratuit.`,
+        `Enlèvement de nids de frelons à ${city} ${dp}. G&F Nuisibles : diagnostic gratuit, intervention sécurisée 7j/7. Solutions durables garanties.`,
       ];
 
       const intros = [
