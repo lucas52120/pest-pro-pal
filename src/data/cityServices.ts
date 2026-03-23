@@ -188,7 +188,7 @@ export const serviceDefinitions = [
 
       return {
         metaDescription: metaDescriptions[v],
-        seoTitle: `Dératisation ${city} ${ds} | G&F Nuisibles`,
+        seoTitle: `Dératisation à ${city} ${dp} | G&F Nuisibles`,
         serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION DE RATS OU DE RONGEURS ?`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉRATISATION DU CÔTÉ DE ${city.toUpperCase()} !`,
         intro: intros[v],
