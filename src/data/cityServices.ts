@@ -356,7 +356,7 @@ export const serviceDefinitions = [
         intro: intros[v],
         expertise: expertises[v],
         method: methods[v],
-        cta: `Contactez GF Nuisibles au 07.88.17.45.86 pour un piégeage de taupes efficace à ${city} en ${department}. Devis gratuit, intervention rapide.`,
+        cta: `Contactez G&F Nuisibles au 07.88.17.45.86 pour un piégeage de taupes efficace à ${city} en ${department}. Devis gratuit, intervention rapide.`,
       };
     },
   },
