@@ -213,10 +213,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Problème de pigeons à ${city} ? Pose de filets et picots professionnels ${dp}. Contactez G&F Nuisibles, devis gratuit.`,
-        `Dégâts causés par les pigeons à ${city} ? G&F Nuisibles installe des systèmes de répulsion durables ${dp}. Intervention 7j/7.`,
-        `Installation de picots anti-pigeons à ${city} ${dp}. Expertise professionnelle, diagnostic gratuit. Appelez G&F Nuisibles.`,
-        `Pose de filets anti-pigeons à ${city} ${dp}. G&F Nuisibles, votre expert en dépigeonnisation. Devis gratuit, intervention rapide.`,
+        `Problème de pigeons à ${city} ? Pose de filets et picots anti-pigeons ${dp}. Contactez G&F Nuisibles : devis gratuit, expertise certifiée.`,
+        `Dégâts causés par les pigeons à ${city} ? G&F Nuisibles installe des systèmes de répulsion durables ${dp}. Intervention rapide 7j/7, devis gratuit.`,
+        `Installation de picots et filets anti-pigeons à ${city} ${dp}. G&F Nuisibles, votre expert en dépigeonnisation. Diagnostic gratuit, solutions durables.`,
+        `Pose de filets anti-pigeons à ${city} ${dp}. G&F Nuisibles : expertise certifiée en dépigeonnisation. Devis sans engagement, intervention rapide.`,
       ];
 
       const intros = [
