@@ -136,9 +136,9 @@ const CityServicePage = ({
             className="lg:sticky lg:top-28 self-start"
           >
             <div className="rounded-xl bg-secondary p-6 shadow-sm">
-              <h3 className="mb-4 font-heading text-lg font-bold text-primary">
+              <h4 className="mb-4 font-heading text-lg font-bold text-primary">
                 Intervention à {city}
-              </h3>
+              </h4>
               <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-accent" />
                 <span>{city} et environs — {department}</span>
