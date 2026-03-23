@@ -1,19 +1,16 @@
-import { useEffect } from "react";
 import { Rat } from "lucide-react";
 import CityServicePage from "@/components/CityServicePage";
+import SEO from "@/components/SEO";
 import heroImage from "@/assets/service-deratisation.jpg";
 
 const TITLE = "Dératisation à Nogent en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Souris ou rats à Nogent ? Faites appel à G&F Nuisibles, votre expert en extermination de rongeurs en Haute-Marne. Solutions durables et devis sans engagement.";
 
 const DeratisationNogent = () => {
-  useEffect(() => {
-    document.title = TITLE;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", DESCRIPTION);
-  }, []);
 
   return (
+    <>
+    <SEO title={TITLE} description={DESCRIPTION} />
     <CityServicePage
       city="Nogent"
       department="Haute-Marne (52)"
@@ -28,6 +25,7 @@ const DeratisationNogent = () => {
       method="Repérage des points d'entrée et des nids. Mise en place de dispositifs adaptés : stations d'appâtage verrouillées, nasses et pièges mécaniques. Colmatage des accès et recommandations d'hygiène pour une protection longue durée."
       cta="Ne laissez pas les rongeurs s'installer à Nogent. Contactez G&F Nuisibles au 07.88.17.45.86 — intervention rapide 7j/7, diagnostic gratuit."
     />
+    </>
   );
 };
 

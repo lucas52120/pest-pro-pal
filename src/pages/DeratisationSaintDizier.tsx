@@ -1,19 +1,16 @@
-import { useEffect } from "react";
 import { Rat } from "lucide-react";
 import CityServicePage from "@/components/CityServicePage";
+import SEO from "@/components/SEO";
 import heroImage from "@/assets/service-deratisation.jpg";
 
 const TITLE = "Dératisation à Saint-Dizier en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Stop aux rats à Saint-Dizier ! G&F Nuisibles, dératiseur certifié en Haute-Marne 52, vous garantit une élimination totale. Intervention rapide 7j/7.";
 
 const DeratisationSaintDizier = () => {
-  useEffect(() => {
-    document.title = TITLE;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", DESCRIPTION);
-  }, []);
 
   return (
+    <>
+    <SEO title={TITLE} description={DESCRIPTION} />
     <CityServicePage
       city="Saint-Dizier"
       department="Haute-Marne (52)"
@@ -28,6 +25,7 @@ const DeratisationSaintDizier = () => {
       method="Audit détaillé de votre site pour évaluer le niveau d'infestation. Déploiement d'un dispositif multi-techniques : appâts rodenticides sécurisés, pièges professionnels, obturation des passages. Rapport d'intervention et suivi de contrôle systématique."
       cta="Protégez votre habitat ou commerce à Saint-Dizier. Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit et une expertise professionnelle certifiée."
     />
+    </>
   );
 };
 

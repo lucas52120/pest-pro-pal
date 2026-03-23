@@ -1,19 +1,16 @@
-import { useEffect } from "react";
 import { Rat } from "lucide-react";
 import CityServicePage from "@/components/CityServicePage";
+import SEO from "@/components/SEO";
 import heroImage from "@/assets/service-deratisation.jpg";
 
 const TITLE = "Dératisation à Joinville en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Besoin d'un dératiseur à Joinville ? G&F Nuisibles élimine rats et souris avec des méthodes sécurisées et durables. Diagnostic gratuit, expertise certifiée.";
 
 const DeratisationJoinville = () => {
-  useEffect(() => {
-    document.title = TITLE;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", DESCRIPTION);
-  }, []);
 
   return (
+    <>
+    <SEO title={TITLE} description={DESCRIPTION} />
     <CityServicePage
       city="Joinville"
       department="Haute-Marne (52)"
@@ -28,6 +25,7 @@ const DeratisationJoinville = () => {
       method="Visite technique pour localiser nids et chemins de passage. Installation de pièges et stations sécurisées dans les zones stratégiques. Fermeture des accès identifiés et remise d'un compte-rendu détaillé avec préconisations de prévention."
       cta="Rongeurs à Joinville ? Réagissez vite ! Contactez G&F Nuisibles au 07.88.17.45.86 — devis sans engagement et intervention sous 24h."
     />
+    </>
   );
 };
 
