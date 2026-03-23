@@ -38,6 +38,11 @@ const App = () => (
           <Route path="/depigeonnage" element={<Depigeonnisation />} />
           <Route path="/elimination-pigeons" element={<EliminationPigeons />} />
           <Route path="/deratisation" element={<Deratisation />} />
+          <Route path="/deratisation-chaumont" element={<DeratisationChaumont />} />
+          <Route path="/deratisation-langres" element={<DeratisationLangres />} />
+          <Route path="/deratisation-nogent" element={<DeratisationNogent />} />
+          <Route path="/deratisation-saint-dizier" element={<DeratisationSaintDizier />} />
+          <Route path="/deratisation-joinville" element={<DeratisationJoinville />} />
           <Route path="/regulation-esod" element={<Esod />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
