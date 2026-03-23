@@ -9,6 +9,8 @@ const DESCRIPTION = "Rats ou souris à Chaumont ? G&F Nuisibles, dératiseur pro
 const DeratisationChaumont = () => {
 
   return (
+    <>
+    <SEO title={TITLE} description={DESCRIPTION} />
     <CityServicePage
       city="Chaumont"
       department="Haute-Marne (52)"
