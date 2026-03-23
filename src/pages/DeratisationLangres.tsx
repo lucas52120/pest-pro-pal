@@ -9,6 +9,8 @@ const DESCRIPTION = "Problème de rats ou rongeurs à Langres ? G&F Nuisibles as
 const DeratisationLangres = () => {
 
   return (
+    <>
+    <SEO title={TITLE} description={DESCRIPTION} />
     <CityServicePage
       city="Langres"
       department="Haute-Marne (52)"
