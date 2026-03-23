@@ -71,6 +71,76 @@ import DesinsectisationChateauvillain from "./pages/DesinsectisationChateauvilla
 import DepigeonnageChateauvillain from "./pages/DepigeonnageChateauvillain.tsx";
 import TaupesChateauvillain from "./pages/TaupesChateauvillain.tsx";
 
+// Troyes (Aube 10)
+import DeratisationTroyes from "./pages/DeratisationTroyes.tsx";
+import GuepesFrelonsTroyes from "./pages/GuepesFrelonsTroyes.tsx";
+import DesinsectisationTroyes from "./pages/DesinsectisationTroyes.tsx";
+import DepigeonnageTroyes from "./pages/DepigeonnageTroyes.tsx";
+import TaupesTroyes from "./pages/TaupesTroyes.tsx";
+
+// Bar-sur-Aube (Aube 10)
+import DeratisationBarSurAube from "./pages/DeratisationBarSurAube.tsx";
+import GuepesFrelonsBarSurAube from "./pages/GuepesFrelonsBarSurAube.tsx";
+import DesinsectisationBarSurAube from "./pages/DesinsectisationBarSurAube.tsx";
+import DepigeonnageBarSurAube from "./pages/DepigeonnageBarSurAube.tsx";
+import TaupesBarSurAube from "./pages/TaupesBarSurAube.tsx";
+
+// Vitry-le-François (Marne 51)
+import DeratisationVitryLeFrancois from "./pages/DeratisationVitryLeFrancois.tsx";
+import GuepesFrelonsVitryLeFrancois from "./pages/GuepesFrelonsVitryLeFrancois.tsx";
+import DesinsectisationVitryLeFrancois from "./pages/DesinsectisationVitryLeFrancois.tsx";
+import DepigeonnageVitryLeFrancois from "./pages/DepigeonnageVitryLeFrancois.tsx";
+import TaupesVitryLeFrancois from "./pages/TaupesVitryLeFrancois.tsx";
+
+// Châlons-en-Champagne (Marne 51)
+import DeratisationChalonsEnChampagne from "./pages/DeratisationChalonsEnChampagne.tsx";
+import GuepesFrelonsChalonsEnChampagne from "./pages/GuepesFrelonsChalonsEnChampagne.tsx";
+import DesinsectisationChalonsEnChampagne from "./pages/DesinsectisationChalonsEnChampagne.tsx";
+import DepigeonnageChalonsEnChampagne from "./pages/DepigeonnageChalonsEnChampagne.tsx";
+import TaupesChalonsEnChampagne from "./pages/TaupesChalonsEnChampagne.tsx";
+
+// Vittel (Vosges 88)
+import DeratisationVittel from "./pages/DeratisationVittel.tsx";
+import GuepesFrelonsVittel from "./pages/GuepesFrelonsVittel.tsx";
+import DesinsectisationVittel from "./pages/DesinsectisationVittel.tsx";
+import DepigeonnageVittel from "./pages/DepigeonnageVittel.tsx";
+import TaupesVittel from "./pages/TaupesVittel.tsx";
+
+// Neufchâteau (Vosges 88)
+import DeratisationNeufchateau from "./pages/DeratisationNeufchateau.tsx";
+import GuepesFrelonsNeufchateau from "./pages/GuepesFrelonsNeufchateau.tsx";
+import DesinsectisationNeufchateau from "./pages/DesinsectisationNeufchateau.tsx";
+import DepigeonnageNeufchateau from "./pages/DepigeonnageNeufchateau.tsx";
+import TaupesNeufchateau from "./pages/TaupesNeufchateau.tsx";
+
+// Dijon (Côte-d'Or 21)
+import DeratisationDijon from "./pages/DeratisationDijon.tsx";
+import GuepesFrelonsDijon from "./pages/GuepesFrelonsDijon.tsx";
+import DesinsectisationDijon from "./pages/DesinsectisationDijon.tsx";
+import DepigeonnageDijon from "./pages/DepigeonnageDijon.tsx";
+import TaupesDijon from "./pages/TaupesDijon.tsx";
+
+// Beaune (Côte-d'Or 21)
+import DeratisationBeaune from "./pages/DeratisationBeaune.tsx";
+import GuepesFrelonsBeaune from "./pages/GuepesFrelonsBeaune.tsx";
+import DesinsectisationBeaune from "./pages/DesinsectisationBeaune.tsx";
+import DepigeonnageBeaune from "./pages/DepigeonnageBeaune.tsx";
+import TaupesBeaune from "./pages/TaupesBeaune.tsx";
+
+// Châtillon-sur-Seine (Côte-d'Or 21)
+import DeratisationChatillonSurSeine from "./pages/DeratisationChatillonSurSeine.tsx";
+import GuepesFrelonsChatillonSurSeine from "./pages/GuepesFrelonsChatillonSurSeine.tsx";
+import DesinsectisationChatillonSurSeine from "./pages/DesinsectisationChatillonSurSeine.tsx";
+import DepigeonnageChatillonSurSeine from "./pages/DepigeonnageChatillonSurSeine.tsx";
+import TaupesChatillonSurSeine from "./pages/TaupesChatillonSurSeine.tsx";
+
+// Nancy (Meurthe-et-Moselle 54)
+import DeratisationNancy from "./pages/DeratisationNancy.tsx";
+import GuepesFrelonsNancy from "./pages/GuepesFrelonsNancy.tsx";
+import DesinsectisationNancy from "./pages/DesinsectisationNancy.tsx";
+import DepigeonnageNancy from "./pages/DepigeonnageNancy.tsx";
+import TaupesNancy from "./pages/TaupesNancy.tsx";
+
 const queryClient = new QueryClient();
 
 const App = () => (
