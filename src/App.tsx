@@ -216,6 +216,76 @@ const App = () => (
           <Route path="/depigeonnage-chateauvillain" element={<DepigeonnageChateauvillain />} />
           <Route path="/taupes-chateauvillain" element={<TaupesChateauvillain />} />
 
+          {/* Troyes */}
+          <Route path="/deratisation-troyes" element={<DeratisationTroyes />} />
+          <Route path="/guepes-frelons-troyes" element={<GuepesFrelonsTroyes />} />
+          <Route path="/desinsectisation-troyes" element={<DesinsectisationTroyes />} />
+          <Route path="/depigeonnage-troyes" element={<DepigeonnageTroyes />} />
+          <Route path="/taupes-troyes" element={<TaupesTroyes />} />
+
+          {/* Bar-sur-Aube */}
+          <Route path="/deratisation-bar-sur-aube" element={<DeratisationBarSurAube />} />
+          <Route path="/guepes-frelons-bar-sur-aube" element={<GuepesFrelonsBarSurAube />} />
+          <Route path="/desinsectisation-bar-sur-aube" element={<DesinsectisationBarSurAube />} />
+          <Route path="/depigeonnage-bar-sur-aube" element={<DepigeonnageBarSurAube />} />
+          <Route path="/taupes-bar-sur-aube" element={<TaupesBarSurAube />} />
+
+          {/* Vitry-le-François */}
+          <Route path="/deratisation-vitry-le-francois" element={<DeratisationVitryLeFrancois />} />
+          <Route path="/guepes-frelons-vitry-le-francois" element={<GuepesFrelonsVitryLeFrancois />} />
+          <Route path="/desinsectisation-vitry-le-francois" element={<DesinsectisationVitryLeFrancois />} />
+          <Route path="/depigeonnage-vitry-le-francois" element={<DepigeonnageVitryLeFrancois />} />
+          <Route path="/taupes-vitry-le-francois" element={<TaupesVitryLeFrancois />} />
+
+          {/* Châlons-en-Champagne */}
+          <Route path="/deratisation-chalons-en-champagne" element={<DeratisationChalonsEnChampagne />} />
+          <Route path="/guepes-frelons-chalons-en-champagne" element={<GuepesFrelonsChalonsEnChampagne />} />
+          <Route path="/desinsectisation-chalons-en-champagne" element={<DesinsectisationChalonsEnChampagne />} />
+          <Route path="/depigeonnage-chalons-en-champagne" element={<DepigeonnageChalonsEnChampagne />} />
+          <Route path="/taupes-chalons-en-champagne" element={<TaupesChalonsEnChampagne />} />
+
+          {/* Vittel */}
+          <Route path="/deratisation-vittel" element={<DeratisationVittel />} />
+          <Route path="/guepes-frelons-vittel" element={<GuepesFrelonsVittel />} />
+          <Route path="/desinsectisation-vittel" element={<DesinsectisationVittel />} />
+          <Route path="/depigeonnage-vittel" element={<DepigeonnageVittel />} />
+          <Route path="/taupes-vittel" element={<TaupesVittel />} />
+
+          {/* Neufchâteau */}
+          <Route path="/deratisation-neufchateau" element={<DeratisationNeufchateau />} />
+          <Route path="/guepes-frelons-neufchateau" element={<GuepesFrelonsNeufchateau />} />
+          <Route path="/desinsectisation-neufchateau" element={<DesinsectisationNeufchateau />} />
+          <Route path="/depigeonnage-neufchateau" element={<DepigeonnageNeufchateau />} />
+          <Route path="/taupes-neufchateau" element={<TaupesNeufchateau />} />
+
+          {/* Dijon */}
+          <Route path="/deratisation-dijon" element={<DeratisationDijon />} />
+          <Route path="/guepes-frelons-dijon" element={<GuepesFrelonsDijon />} />
+          <Route path="/desinsectisation-dijon" element={<DesinsectisationDijon />} />
+          <Route path="/depigeonnage-dijon" element={<DepigeonnageDijon />} />
+          <Route path="/taupes-dijon" element={<TaupesDijon />} />
+
+          {/* Beaune */}
+          <Route path="/deratisation-beaune" element={<DeratisationBeaune />} />
+          <Route path="/guepes-frelons-beaune" element={<GuepesFrelonsBeaune />} />
+          <Route path="/desinsectisation-beaune" element={<DesinsectisationBeaune />} />
+          <Route path="/depigeonnage-beaune" element={<DepigeonnageBeaune />} />
+          <Route path="/taupes-beaune" element={<TaupesBeaune />} />
+
+          {/* Châtillon-sur-Seine */}
+          <Route path="/deratisation-chatillon-sur-seine" element={<DeratisationChatillonSurSeine />} />
+          <Route path="/guepes-frelons-chatillon-sur-seine" element={<GuepesFrelonsChatillonSurSeine />} />
+          <Route path="/desinsectisation-chatillon-sur-seine" element={<DesinsectisationChatillonSurSeine />} />
+          <Route path="/depigeonnage-chatillon-sur-seine" element={<DepigeonnageChatillonSurSeine />} />
+          <Route path="/taupes-chatillon-sur-seine" element={<TaupesChatillonSurSeine />} />
+
+          {/* Nancy */}
+          <Route path="/deratisation-nancy" element={<DeratisationNancy />} />
+          <Route path="/guepes-frelons-nancy" element={<GuepesFrelonsNancy />} />
+          <Route path="/desinsectisation-nancy" element={<DesinsectisationNancy />} />
+          <Route path="/depigeonnage-nancy" element={<DepigeonnageNancy />} />
+          <Route path="/taupes-nancy" element={<TaupesNancy />} />
+
           <Route path="/:city/:service" element={<CityService />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
