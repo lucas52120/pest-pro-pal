@@ -105,10 +105,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Besoin d'un expert désinsectisation à ${city} ? GF Nuisibles élimine cafards, punaises de lit ${dp}. Devis gratuit, discrétion totale.`,
-        `Stop aux insectes nuisibles à ${city} ! Traitement pro cafards et punaises ${dp}. Intervention sous 24h. GF Nuisibles.`,
-        `Intervention rapide désinsectisation à ${city} ${dp}. Élimination garantie sous 48h, devis gratuit. GF Nuisibles.`,
-        `Protégez votre logement des insectes à ${city}. GF Nuisibles : traitement discret et rapide ${dp}. Devis gratuit.`,
+        `Traitement punaises de lit et blattes à ${city} ${dp}. Intervention 7j/7, devis gratuit. Contactez G&F Nuisibles.`,
+        `Invasion d'insectes à ${city} ? G&F Nuisibles, votre expert en désinsectisation ${dp}. Diagnostic gratuit, discrétion totale.`,
+        `Extermination insectes rampants à ${city} ${dp}. Intervention rapide, expertise professionnelle. Appelez G&F Nuisibles.`,
+        `Traitement punaises de lit et cafards à ${city} ${dp}. G&F Nuisibles intervient sous 24h. Devis gratuit, discrétion assurée.`,
       ];
 
       const intros = [
