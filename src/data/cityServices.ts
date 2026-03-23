@@ -248,7 +248,7 @@ export const serviceDefinitions = [
         intro: intros[v],
         expertise: expertises[v],
         method: methods[v],
-        cta: `Appelez GF Nuisibles au 07.88.17.45.86 pour protéger vos bâtiments professionnels à ${city} en ${department}. Devis gratuit sur site, solutions pérennes garanties.`,
+        cta: `Appelez G&F Nuisibles au 07.88.17.45.86 pour protéger vos bâtiments professionnels à ${city} en ${department}. Devis gratuit sur site, solutions pérennes garanties.`,
       };
     },
   },
