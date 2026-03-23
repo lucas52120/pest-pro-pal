@@ -321,10 +321,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Piégeage de taupes à ${city} ${dp}. Taupier professionnel, intervention 7j/7. Contactez G&F Nuisibles, devis gratuit.`,
-        `Stop aux taupinières à ${city} ? G&F Nuisibles, votre expert en régulation de taupes ${dp}. Diagnostic gratuit.`,
-        `Taupier professionnel à ${city} ${dp}. Piégeage écologique sans produit chimique. Expertise professionnelle G&F Nuisibles.`,
-        `Stop aux taupinières à ${city} ${dp}. G&F Nuisibles intervient sous 48h, méthode mécanique. Devis gratuit, intervention rapide.`,
+        `Piégeage de taupes à ${city} ${dp}. G&F Nuisibles, taupier professionnel : intervention rapide 7j/7, devis gratuit, méthode écologique.`,
+        `Stop aux taupinières à ${city} ? G&F Nuisibles, votre expert en régulation de taupes ${dp}. Diagnostic gratuit, piégeage mécanique professionnel.`,
+        `Taupier professionnel à ${city} ${dp}. G&F Nuisibles : piégeage écologique sans produit chimique. Expertise certifiée, intervention sous 48h.`,
+        `Régulation de taupes à ${city} ${dp}. G&F Nuisibles intervient avec des pièges mécaniques professionnels. Devis gratuit, résultats garantis.`,
       ];
 
       const intros = [
