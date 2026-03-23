@@ -9,6 +9,8 @@ const DESCRIPTION = "Stop aux rats à Saint-Dizier ! G&F Nuisibles, dératiseur 
 const DeratisationSaintDizier = () => {
 
   return (
+    <>
+    <SEO title={TITLE} description={DESCRIPTION} />
     <CityServicePage
       city="Saint-Dizier"
       department="Haute-Marne (52)"
