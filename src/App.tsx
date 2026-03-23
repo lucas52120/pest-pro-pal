@@ -16,6 +16,11 @@ import CityService from "./pages/CityService.tsx";
 import MentionsLegales from "./pages/MentionsLegales.tsx";
 import APropos from "./pages/APropos.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import DeratisationChaumont from "./pages/DeratisationChaumont.tsx";
+import DeratisationLangres from "./pages/DeratisationLangres.tsx";
+import DeratisationNogent from "./pages/DeratisationNogent.tsx";
+import DeratisationSaintDizier from "./pages/DeratisationSaintDizier.tsx";
+import DeratisationJoinville from "./pages/DeratisationJoinville.tsx";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +38,11 @@ const App = () => (
           <Route path="/depigeonnage" element={<Depigeonnisation />} />
           <Route path="/elimination-pigeons" element={<EliminationPigeons />} />
           <Route path="/deratisation" element={<Deratisation />} />
+          <Route path="/deratisation-chaumont" element={<DeratisationChaumont />} />
+          <Route path="/deratisation-langres" element={<DeratisationLangres />} />
+          <Route path="/deratisation-nogent" element={<DeratisationNogent />} />
+          <Route path="/deratisation-saint-dizier" element={<DeratisationSaintDizier />} />
+          <Route path="/deratisation-joinville" element={<DeratisationJoinville />} />
           <Route path="/regulation-esod" element={<Esod />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
