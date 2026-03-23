@@ -134,7 +134,7 @@ export const serviceDefinitions = [
 
       return {
         metaDescription: metaDescriptions[v],
-        seoTitle: `Désinsectisation ${city} ${ds} | G&F Nuisibles`,
+        seoTitle: `Désinsectisation à ${city} ${dp} | G&F Nuisibles`,
         serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION D'INSECTES NUISIBLES ?`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉSINSECTISATION DU CÔTÉ DE ${city.toUpperCase()} !`,
         intro: intros[v],
