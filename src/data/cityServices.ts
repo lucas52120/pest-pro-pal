@@ -80,7 +80,7 @@ export const serviceDefinitions = [
 
       return {
         metaDescription: metaDescriptions[v],
-        seoTitle: `Guêpes & Frelons ${city} ${ds} | G&F Nuisibles`,
+        seoTitle: `Guêpes & Frelons à ${city} ${dp} | G&F Nuisibles`,
         serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION DE GUÊPES OU DE FRELONS ?`,
         serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DESTRUCTION DE NIDS DE GUÊPES ET FRELONS DU CÔTÉ DE ${city.toUpperCase()} !`,
         intro: intros[v],
