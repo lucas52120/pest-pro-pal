@@ -1,17 +1,12 @@
-import { useEffect } from "react";
 import { Rat } from "lucide-react";
 import CityServicePage from "@/components/CityServicePage";
+import SEO from "@/components/SEO";
 import heroImage from "@/assets/service-deratisation.jpg";
 
 const TITLE = "Dératisation à Saint-Dizier en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Stop aux rats à Saint-Dizier ! G&F Nuisibles, dératiseur certifié en Haute-Marne 52, vous garantit une élimination totale. Intervention rapide 7j/7.";
 
 const DeratisationSaintDizier = () => {
-  useEffect(() => {
-    document.title = TITLE;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", DESCRIPTION);
-  }, []);
 
   return (
     <CityServicePage
