@@ -321,10 +321,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Besoin d'un taupier à ${city} ? GF Nuisibles élimine les taupes ${dp} par piégeage écologique. Devis gratuit, intervention rapide.`,
-        `Stop aux taupinières à ${city} ! Piégeage professionnel et écologique ${dp}. Résultat garanti. GF Nuisibles.`,
-        `Piégeage de taupes rapide à ${city} ${dp}. Méthode écologique sans produit chimique. Devis gratuit. GF Nuisibles.`,
-        `Protégez votre jardin des taupes à ${city}. GF Nuisibles : piégeage mécanique expert ${dp}. Devis gratuit, intervention 48h.`,
+        `Piégeage de taupes à ${city} ${dp}. Taupier professionnel, intervention 7j/7. Contactez G&F Nuisibles, devis gratuit.`,
+        `Stop aux taupinières à ${city} ? G&F Nuisibles, votre expert en régulation de taupes ${dp}. Diagnostic gratuit.`,
+        `Taupier professionnel à ${city} ${dp}. Piégeage écologique sans produit chimique. Expertise professionnelle G&F Nuisibles.`,
+        `Stop aux taupinières à ${city} ${dp}. G&F Nuisibles intervient sous 48h, méthode mécanique. Devis gratuit, intervention rapide.`,
       ];
 
       const intros = [
