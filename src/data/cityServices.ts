@@ -267,10 +267,10 @@ export const serviceDefinitions = [
       const dp = deptSeoPrep(department);
 
       const metaDescriptions = [
-        `Besoin d'éliminer les pigeons chez vous à ${city} ? GF Nuisibles intervient ${dp}. Devis gratuit, intervention discrète sous 24h.`,
-        `Stop aux pigeons à ${city} ! Solutions pour particuliers ${dp}. Intervention rapide et discrète. Appelez GF Nuisibles.`,
-        `Élimination de pigeons rapide à ${city} ${dp}. Protection durable de votre habitation, devis gratuit. GF Nuisibles.`,
-        `Protégez votre maison des pigeons à ${city}. GF Nuisibles : solutions efficaces et discrètes ${dp}. Devis gratuit.`,
+        `Besoin d'une élimination de pigeons à ${city} ? G&F Nuisibles intervient ${dp}. Diagnostic gratuit, intervention 7j/7.`,
+        `Dégâts causés par les pigeons à ${city} ? Votre expert en régulation de pigeons ${dp}. Contactez G&F Nuisibles.`,
+        `Lutte contre les pigeons à ${city} ${dp}. Intervention rapide et discrète, devis gratuit. Expertise G&F Nuisibles.`,
+        `Service pour vous débarrasser des pigeons à ${city} ${dp}. G&F Nuisibles intervient sous 24h. Diagnostic gratuit.`,
       ];
 
       const intros = [
