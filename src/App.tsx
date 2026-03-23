@@ -16,6 +16,11 @@ import CityService from "./pages/CityService.tsx";
 import MentionsLegales from "./pages/MentionsLegales.tsx";
 import APropos from "./pages/APropos.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import DeratisationChaumont from "./pages/DeratisationChaumont.tsx";
+import DeratisationLangres from "./pages/DeratisationLangres.tsx";
+import DeratisationNogent from "./pages/DeratisationNogent.tsx";
+import DeratisationSaintDizier from "./pages/DeratisationSaintDizier.tsx";
+import DeratisationJoinville from "./pages/DeratisationJoinville.tsx";
 
 const queryClient = new QueryClient();
 
