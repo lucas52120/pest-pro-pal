@@ -9,6 +9,8 @@ const DESCRIPTION = "Besoin d'un dératiseur à Joinville ? G&F Nuisibles élimi
 const DeratisationJoinville = () => {
 
   return (
+    <>
+    <SEO title={TITLE} description={DESCRIPTION} />
     <CityServicePage
       city="Joinville"
       department="Haute-Marne (52)"
