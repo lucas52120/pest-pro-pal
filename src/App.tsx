@@ -136,7 +136,12 @@ const App = () => (
           <Route path="/depigeonnage" element={<Depigeonnisation />} />
           <Route path="/elimination-pigeons" element={<EliminationPigeons />} />
           <Route path="/deratisation" element={<Deratisation />} />
+          {/* Chaumont — tous les services */}
           <Route path="/deratisation-chaumont" element={<DeratisationChaumont />} />
+          <Route path="/guepes-frelons-chaumont" element={<GuepesFrelonsChaumont />} />
+          <Route path="/desinsectisation-chaumont" element={<DesinsectisationChaumont />} />
+          <Route path="/services/depigeonnisation/chaumont" element={<DepigeonnisationChaumont />} />
+          <Route path="/taupes-chaumont" element={<TaupesChaumont />} />
           <Route path="/deratisation-langres" element={<DeratisationLangres />} />
           <Route path="/deratisation-nogent" element={<DeratisationNogent />} />
           <Route path="/deratisation-saint-dizier" element={<DeratisationSaintDizier />} />
