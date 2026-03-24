@@ -1,17 +1,19 @@
 import { Rat } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
-import SEO from "@/components/SEO";
 import heroImage from "@/assets/service-deratisation.jpg";
 
 const TITLE = "Dératisation à Langres en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Problème de rats ou rongeurs à Langres ? G&F Nuisibles assure une lutte contre les rongeurs rapide et durable. Diagnostic gratuit, intervention 7j/7.";
 
 const DeratisationLangres = () => {
-
   return (
     <>
-    <SEO title={TITLE} description={DESCRIPTION} />
-    <CityServicePage
+      <Helmet>
+        <title>{TITLE}</title>
+        <meta name="description" content={DESCRIPTION} />
+      </Helmet>
+      <CityServicePage
       city="Langres"
       department="Haute-Marne (52)"
       serviceTitle={TITLE}

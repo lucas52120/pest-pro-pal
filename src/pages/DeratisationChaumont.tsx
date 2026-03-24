@@ -1,17 +1,19 @@
 import { Rat } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
-import SEO from "@/components/SEO";
 import heroImage from "@/assets/service-deratisation.jpg";
 
 const TITLE = "Dératisation à Chaumont en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Rats ou souris à Chaumont ? G&F Nuisibles, dératiseur professionnel en Haute-Marne 52, intervient 7j/7 pour une extermination efficace. Devis gratuit.";
 
 const DeratisationChaumont = () => {
-
   return (
     <>
-    <SEO title={TITLE} description={DESCRIPTION} />
-    <CityServicePage
+      <Helmet>
+        <title>{TITLE}</title>
+        <meta name="description" content={DESCRIPTION} />
+      </Helmet>
+      <CityServicePage
       city="Chaumont"
       department="Haute-Marne (52)"
       serviceTitle={TITLE}
