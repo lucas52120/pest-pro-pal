@@ -120,6 +120,30 @@ import DepigeonnisationChatillonSurSeine from "./pages/DepigeonnisationChatillon
 import DeratisationNancy from "./pages/DeratisationNancy.tsx";
 import DepigeonnisationNancy from "./pages/DepigeonnisationNancy.tsx";
 
+// Élimination Pigeons — Pages villes (particuliers)
+import EliminationPigeonsChaumont from "./pages/EliminationPigeonsChaumont.tsx";
+import EliminationPigeonsLangres from "./pages/EliminationPigeonsLangres.tsx";
+import EliminationPigeonsNogent from "./pages/EliminationPigeonsNogent.tsx";
+import EliminationPigeonsJoinville from "./pages/EliminationPigeonsJoinville.tsx";
+import EliminationPigeonsSaintDizier from "./pages/EliminationPigeonsSaintDizier.tsx";
+import EliminationPigeonsWassy from "./pages/EliminationPigeonsWassy.tsx";
+import EliminationPigeonsBourbonne from "./pages/EliminationPigeonsBourbonne.tsx";
+import EliminationPigeonsBologne from "./pages/EliminationPigeonsBologne.tsx";
+import EliminationPigeonsMontierEnDer from "./pages/EliminationPigeonsMontierEnDer.tsx";
+import EliminationPigeonsChalindrey from "./pages/EliminationPigeonsChalindrey.tsx";
+import EliminationPigeonsFroncles from "./pages/EliminationPigeonsFroncles.tsx";
+import EliminationPigeonsChateauvillain from "./pages/EliminationPigeonsChateauvillain.tsx";
+import EliminationPigeonsBarSurAube from "./pages/EliminationPigeonsBarSurAube.tsx";
+import EliminationPigeonsTroyes from "./pages/EliminationPigeonsTroyes.tsx";
+import EliminationPigeonsVitryLeFrancois from "./pages/EliminationPigeonsVitryLeFrancois.tsx";
+import EliminationPigeonsChalonsEnChampagne from "./pages/EliminationPigeonsChalonsEnChampagne.tsx";
+import EliminationPigeonsDijon from "./pages/EliminationPigeonsDijon.tsx";
+import EliminationPigeonsBeaune from "./pages/EliminationPigeonsBeaune.tsx";
+import EliminationPigeonsChatillonSurSeine from "./pages/EliminationPigeonsChatillonSurSeine.tsx";
+import EliminationPigeonsVittel from "./pages/EliminationPigeonsVittel.tsx";
+import EliminationPigeonsNeufchateau from "./pages/EliminationPigeonsNeufchateau.tsx";
+import EliminationPigeonsNancy from "./pages/EliminationPigeonsNancy.tsx";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -244,6 +268,30 @@ const App = () => (
           {/* Nancy — Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-nancy" element={<DeratisationNancy />} />
           <Route path="/services/depigeonnisation/nancy" element={<DepigeonnisationNancy />} />
+
+          {/* Élimination Pigeons — Pages villes (particuliers) */}
+          <Route path="/services/elimination-pigeons/chaumont" element={<EliminationPigeonsChaumont />} />
+          <Route path="/services/elimination-pigeons/langres" element={<EliminationPigeonsLangres />} />
+          <Route path="/services/elimination-pigeons/nogent" element={<EliminationPigeonsNogent />} />
+          <Route path="/services/elimination-pigeons/joinville" element={<EliminationPigeonsJoinville />} />
+          <Route path="/services/elimination-pigeons/saint-dizier" element={<EliminationPigeonsSaintDizier />} />
+          <Route path="/services/elimination-pigeons/wassy" element={<EliminationPigeonsWassy />} />
+          <Route path="/services/elimination-pigeons/bourbonne-les-bains" element={<EliminationPigeonsBourbonne />} />
+          <Route path="/services/elimination-pigeons/bologne" element={<EliminationPigeonsBologne />} />
+          <Route path="/services/elimination-pigeons/montier-en-der" element={<EliminationPigeonsMontierEnDer />} />
+          <Route path="/services/elimination-pigeons/chalindrey" element={<EliminationPigeonsChalindrey />} />
+          <Route path="/services/elimination-pigeons/froncles" element={<EliminationPigeonsFroncles />} />
+          <Route path="/services/elimination-pigeons/chateauvillain" element={<EliminationPigeonsChateauvillain />} />
+          <Route path="/services/elimination-pigeons/bar-sur-aube" element={<EliminationPigeonsBarSurAube />} />
+          <Route path="/services/elimination-pigeons/troyes" element={<EliminationPigeonsTroyes />} />
+          <Route path="/services/elimination-pigeons/vitry-le-francois" element={<EliminationPigeonsVitryLeFrancois />} />
+          <Route path="/services/elimination-pigeons/chalons-en-champagne" element={<EliminationPigeonsChalonsEnChampagne />} />
+          <Route path="/services/elimination-pigeons/dijon" element={<EliminationPigeonsDijon />} />
+          <Route path="/services/elimination-pigeons/beaune" element={<EliminationPigeonsBeaune />} />
+          <Route path="/services/elimination-pigeons/chatillon-sur-seine" element={<EliminationPigeonsChatillonSurSeine />} />
+          <Route path="/services/elimination-pigeons/vittel" element={<EliminationPigeonsVittel />} />
+          <Route path="/services/elimination-pigeons/neufchateau" element={<EliminationPigeonsNeufchateau />} />
+          <Route path="/services/elimination-pigeons/nancy" element={<EliminationPigeonsNancy />} />
 
           <Route path="/:city/:service" element={<CityService />} />
           <Route path="*" element={<NotFound />} />
