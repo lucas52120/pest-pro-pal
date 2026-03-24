@@ -269,6 +269,30 @@ const App = () => (
           <Route path="/deratisation-nancy" element={<DeratisationNancy />} />
           <Route path="/services/depigeonnisation/nancy" element={<DepigeonnisationNancy />} />
 
+          {/* Élimination Pigeons — Pages villes (particuliers) */}
+          <Route path="/services/elimination-pigeons/chaumont" element={<EliminationPigeonsChaumont />} />
+          <Route path="/services/elimination-pigeons/langres" element={<EliminationPigeonsLangres />} />
+          <Route path="/services/elimination-pigeons/nogent" element={<EliminationPigeonsNogent />} />
+          <Route path="/services/elimination-pigeons/joinville" element={<EliminationPigeonsJoinville />} />
+          <Route path="/services/elimination-pigeons/saint-dizier" element={<EliminationPigeonsSaintDizier />} />
+          <Route path="/services/elimination-pigeons/wassy" element={<EliminationPigeonsWassy />} />
+          <Route path="/services/elimination-pigeons/bourbonne-les-bains" element={<EliminationPigeonsBourbonne />} />
+          <Route path="/services/elimination-pigeons/bologne" element={<EliminationPigeonsBologne />} />
+          <Route path="/services/elimination-pigeons/montier-en-der" element={<EliminationPigeonsMontierEnDer />} />
+          <Route path="/services/elimination-pigeons/chalindrey" element={<EliminationPigeonsChalindrey />} />
+          <Route path="/services/elimination-pigeons/froncles" element={<EliminationPigeonsFroncles />} />
+          <Route path="/services/elimination-pigeons/chateauvillain" element={<EliminationPigeonsChateauvillain />} />
+          <Route path="/services/elimination-pigeons/bar-sur-aube" element={<EliminationPigeonsBarSurAube />} />
+          <Route path="/services/elimination-pigeons/troyes" element={<EliminationPigeonsTroyes />} />
+          <Route path="/services/elimination-pigeons/vitry-le-francois" element={<EliminationPigeonsVitryLeFrancois />} />
+          <Route path="/services/elimination-pigeons/chalons-en-champagne" element={<EliminationPigeonsChalonsEnChampagne />} />
+          <Route path="/services/elimination-pigeons/dijon" element={<EliminationPigeonsDijon />} />
+          <Route path="/services/elimination-pigeons/beaune" element={<EliminationPigeonsBeaune />} />
+          <Route path="/services/elimination-pigeons/chatillon-sur-seine" element={<EliminationPigeonsChatillonSurSeine />} />
+          <Route path="/services/elimination-pigeons/vittel" element={<EliminationPigeonsVittel />} />
+          <Route path="/services/elimination-pigeons/neufchateau" element={<EliminationPigeonsNeufchateau />} />
+          <Route path="/services/elimination-pigeons/nancy" element={<EliminationPigeonsNancy />} />
+
           <Route path="/:city/:service" element={<CityService />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
