@@ -120,6 +120,30 @@ import DepigeonnisationChatillonSurSeine from "./pages/DepigeonnisationChatillon
 import DeratisationNancy from "./pages/DeratisationNancy.tsx";
 import DepigeonnisationNancy from "./pages/DepigeonnisationNancy.tsx";
 
+// Élimination Pigeons — Pages villes (particuliers)
+import EliminationPigeonsChaumont from "./pages/EliminationPigeonsChaumont.tsx";
+import EliminationPigeonsLangres from "./pages/EliminationPigeonsLangres.tsx";
+import EliminationPigeonsNogent from "./pages/EliminationPigeonsNogent.tsx";
+import EliminationPigeonsJoinville from "./pages/EliminationPigeonsJoinville.tsx";
+import EliminationPigeonsSaintDizier from "./pages/EliminationPigeonsSaintDizier.tsx";
+import EliminationPigeonsWassy from "./pages/EliminationPigeonsWassy.tsx";
+import EliminationPigeonsBourbonne from "./pages/EliminationPigeonsBourbonne.tsx";
+import EliminationPigeonsBologne from "./pages/EliminationPigeonsBologne.tsx";
+import EliminationPigeonsMontierEnDer from "./pages/EliminationPigeonsMontierEnDer.tsx";
+import EliminationPigeonsChalindrey from "./pages/EliminationPigeonsChalindrey.tsx";
+import EliminationPigeonsFroncles from "./pages/EliminationPigeonsFroncles.tsx";
+import EliminationPigeonsChateauvillain from "./pages/EliminationPigeonsChateauvillain.tsx";
+import EliminationPigeonsBarSurAube from "./pages/EliminationPigeonsBarSurAube.tsx";
+import EliminationPigeonsTroyes from "./pages/EliminationPigeonsTroyes.tsx";
+import EliminationPigeonsVitryLeFrancois from "./pages/EliminationPigeonsVitryLeFrancois.tsx";
+import EliminationPigeonsChalonsEnChampagne from "./pages/EliminationPigeonsChalonsEnChampagne.tsx";
+import EliminationPigeonsDijon from "./pages/EliminationPigeonsDijon.tsx";
+import EliminationPigeonsBeaune from "./pages/EliminationPigeonsBeaune.tsx";
+import EliminationPigeonsChatillonSurSeine from "./pages/EliminationPigeonsChatillonSurSeine.tsx";
+import EliminationPigeonsVittel from "./pages/EliminationPigeonsVittel.tsx";
+import EliminationPigeonsNeufchateau from "./pages/EliminationPigeonsNeufchateau.tsx";
+import EliminationPigeonsNancy from "./pages/EliminationPigeonsNancy.tsx";
+
 const queryClient = new QueryClient();
 
 const App = () => (
