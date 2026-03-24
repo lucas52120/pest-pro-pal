@@ -17,6 +17,10 @@ import MentionsLegales from "./pages/MentionsLegales.tsx";
 import APropos from "./pages/APropos.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import DeratisationChaumont from "./pages/DeratisationChaumont.tsx";
+import GuepesFrelonsChaumont from "./pages/GuepesFrelonsChaumont.tsx";
+import DesinsectisationChaumont from "./pages/DesinsectisationChaumont.tsx";
+import DepigeonnisationChaumont from "./pages/DepigeonnisationChaumont.tsx";
+import TaupesChaumont from "./pages/TaupesChaumont.tsx";
 import DeratisationLangres from "./pages/DeratisationLangres.tsx";
 import DeratisationNogent from "./pages/DeratisationNogent.tsx";
 import DeratisationSaintDizier from "./pages/DeratisationSaintDizier.tsx";
@@ -132,7 +136,12 @@ const App = () => (
           <Route path="/depigeonnage" element={<Depigeonnisation />} />
           <Route path="/elimination-pigeons" element={<EliminationPigeons />} />
           <Route path="/deratisation" element={<Deratisation />} />
+          {/* Chaumont — tous les services */}
           <Route path="/deratisation-chaumont" element={<DeratisationChaumont />} />
+          <Route path="/guepes-frelons-chaumont" element={<GuepesFrelonsChaumont />} />
+          <Route path="/desinsectisation-chaumont" element={<DesinsectisationChaumont />} />
+          <Route path="/services/depigeonnisation/chaumont" element={<DepigeonnisationChaumont />} />
+          <Route path="/taupes-chaumont" element={<TaupesChaumont />} />
           <Route path="/deratisation-langres" element={<DeratisationLangres />} />
           <Route path="/deratisation-nogent" element={<DeratisationNogent />} />
           <Route path="/deratisation-saint-dizier" element={<DeratisationSaintDizier />} />
