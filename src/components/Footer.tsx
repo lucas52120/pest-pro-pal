@@ -65,7 +65,7 @@ const Footer = () => {
                   {cityServices.map((s, i) => (
                     <span key={s.slug}>
                       <Link
-                        to={`/${city.slug}/${s.slug}`}
+                        to={s.slug === "depigeonnisation" ? `/services/depigeonnisation/${city.slug}` : `/${city.slug}/${s.slug}`}
                         className="text-primary-foreground/60 transition-colors hover:text-accent"
                       >
                         {s.title}

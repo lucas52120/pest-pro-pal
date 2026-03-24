@@ -3,10 +3,10 @@ import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
-const TITLE = "Dépigeonnage à Wassy en Haute-Marne 52 | G&F Nuisibles";
-const DESCRIPTION = "Pigeons à Wassy ? G&F Nuisibles installe des protections anti-pigeons en Haute-Marne 52. Solution durable garantie.";
+const TITLE = "Dépigeonnisation à Wassy en Haute-Marne 52 | G&F Nuisibles";
+const DESCRIPTION = "Pigeons à Wassy ? G&F Nuisibles installe des protections anti-pigeons en Haute-Marne 52. Dépigeonnage durable garanti.";
 
-const DepigeonnageWassy = () => {
+const DepigeonnisationWassy = () => {
   return (
     <>
       <Helmet>
@@ -22,8 +22,8 @@ const DepigeonnageWassy = () => {
         metaDescription={DESCRIPTION}
         serviceCallTitle="PIGEONS ENVAHISSANTS À WASSY ?"
         serviceCallSubtitle="G&F NUISIBLES MET FIN AUX NUISANCES DES PIGEONS !"
-        intro="À Wassy, les pigeons causent des dégradations importantes sur les bâtiments et posent des risques sanitaires. G&F Nuisibles vous propose des solutions de dépigeonnage durables et respectueuses pour protéger vos structures."
-        expertise="Nous intervenons à Wassy et dans toute la Haute-Marne pour le dépigeonnage de bâtiments résidentiels, commerciaux et publics. Solutions durables adaptées à chaque configuration architecturale."
+        intro="À Wassy, les pigeons causent des dégradations importantes sur les bâtiments et posent des risques sanitaires. G&F Nuisibles vous propose des solutions de dépigeonnisation durables et respectueuses pour protéger vos structures."
+        expertise="Nous intervenons à Wassy et dans toute la Haute-Marne pour la dépigeonnisation de bâtiments résidentiels, commerciaux et publics. Solutions durables adaptées à chaque configuration architecturale."
         method="Audit du site et évaluation de la population de pigeons. Installation de dispositifs anti-pigeons : pics, filets, fils tendus, répulsifs. Nettoyage et désinfection des zones souillées. Suivi de l'efficacité."
         cta="Problème de pigeons à Wassy ? Appelez G&F Nuisibles au 07.88.17.45.86 pour une solution durable."
       />
@@ -31,4 +31,4 @@ const DepigeonnageWassy = () => {
   );
 };
 
-export default DepigeonnageWassy;
+export default DepigeonnisationWassy;

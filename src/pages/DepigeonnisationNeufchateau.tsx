@@ -3,10 +3,10 @@ import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
-const TITLE = "Dépigeonnage à Neufchâteau dans les Vosges 88 | G&F Nuisibles";
-const DESCRIPTION = "Pigeons à Neufchâteau ? G&F Nuisibles installe des solutions anti-pigeons durables dans les Vosges 88. Devis gratuit, intervention rapide.";
+const TITLE = "Dépigeonnisation à Neufchâteau dans les Vosges 88 | G&F Nuisibles";
+const DESCRIPTION = "Pigeons à Neufchâteau ? G&F Nuisibles installe des solutions anti-pigeons durables dans les Vosges 88. Dépigeonnage garanti.";
 
-const DepigeonnageNeufchateau = () => {
+const DepigeonnisationNeufchateau = () => {
   return (
     <>
       <Helmet>
@@ -23,7 +23,7 @@ const DepigeonnageNeufchateau = () => {
         serviceCallTitle="PIGEONS ENVAHISSANTS À NEUFCHÂTEAU ?"
         serviceCallSubtitle="G&F NUISIBLES PROTÈGE VOS BÂTIMENTS DURABLEMENT !"
         intro="Les pigeons causent des nuisances importantes à Neufchâteau : fientes corrosives, dégradation des façades, risques sanitaires. G&F Nuisibles met en place des dispositifs professionnels pour éloigner durablement ces volatiles."
-        expertise="Experts en dépigeonnage en Vosges (88), nous proposons des solutions adaptées à chaque type de bâtiment : pics anti-pigeons, filets de protection, systèmes de répulsion électrique et capture."
+        expertise="Experts en dépigeonnisation dans les Vosges (88), nous proposons des solutions adaptées à chaque type de bâtiment : pics anti-pigeons, filets de protection, systèmes de répulsion électrique et capture."
         method="Évaluation de la situation et cartographie des zones touchées. Installation de dispositifs anti-perchage et anti-nidification. Nettoyage et désinfection des zones souillées. Suivi de l'efficacité du dispositif."
         cta="Protégez vos bâtiments à Neufchâteau. Appelez le 07.88.17.45.86 pour une solution anti-pigeons professionnelle et durable."
       />
@@ -31,4 +31,4 @@ const DepigeonnageNeufchateau = () => {
   );
 };
 
-export default DepigeonnageNeufchateau;
+export default DepigeonnisationNeufchateau;

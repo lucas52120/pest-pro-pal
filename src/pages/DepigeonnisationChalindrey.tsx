@@ -3,10 +3,10 @@ import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
-const TITLE = "Dépigeonnage à Chalindrey en Haute-Marne 52 | G&F Nuisibles";
+const TITLE = "Dépigeonnisation à Chalindrey en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Dépigeonnage professionnel à Chalindrey (52). G&F Nuisibles protège vos bâtiments des pigeons. Devis gratuit.";
 
-const DepigeonnageChalindrey = () => {
+const DepigeonnisationChalindrey = () => {
   return (
     <>
       <Helmet>
@@ -23,7 +23,7 @@ const DepigeonnageChalindrey = () => {
         serviceCallTitle="PIGEONS ENVAHISSANTS À CHALINDREY ?"
         serviceCallSubtitle="G&F NUISIBLES MET FIN AUX NUISANCES DES PIGEONS !"
         intro="Les pigeons s'installent sur les toitures et façades de Chalindrey, provoquant salissures, dégâts et nuisances sonores. G&F Nuisibles installe des dispositifs professionnels pour éloigner durablement ces volatiles."
-        expertise="Nous intervenons à Chalindrey et dans toute la Haute-Marne pour le dépigeonnage de bâtiments résidentiels, commerciaux et publics. Solutions durables adaptées à chaque configuration architecturale."
+        expertise="Nous intervenons à Chalindrey et dans toute la Haute-Marne pour la dépigeonnisation de bâtiments résidentiels, commerciaux et publics. Solutions durables adaptées à chaque configuration architecturale."
         method="Audit du site et évaluation de la population de pigeons. Installation de dispositifs anti-pigeons : pics, filets, fils tendus, répulsifs. Nettoyage et désinfection des zones souillées. Suivi de l'efficacité."
         cta="Problème de pigeons à Chalindrey ? Appelez G&F Nuisibles au 07.88.17.45.86 pour une solution durable."
       />
@@ -31,4 +31,4 @@ const DepigeonnageChalindrey = () => {
   );
 };
 
-export default DepigeonnageChalindrey;
+export default DepigeonnisationChalindrey;

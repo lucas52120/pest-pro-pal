@@ -3,10 +3,10 @@ import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
-const TITLE = "Dépigeonnage à Châlons-en-Champagne dans la Marne 51 | G&F | G&F Nuisibles";
-const DESCRIPTION = "Pigeons à Châlons-en-Champagne ? G&F Nuisibles installe des solutions anti-pigeons durables dans la Marne 51. Devis gratuit, intervention rapide.";
+const TITLE = "Dépigeonnisation à Châlons-en-Champagne | G&F Nuisibles";
+const DESCRIPTION = "Pigeons à Châlons-en-Champagne ? G&F Nuisibles installe des solutions anti-pigeons durables dans la Marne 51. Devis gratuit.";
 
-const DepigeonnageChalonsEnChampagne = () => {
+const DepigeonnisationChalonsEnChampagne = () => {
   return (
     <>
       <Helmet>
@@ -23,12 +23,12 @@ const DepigeonnageChalonsEnChampagne = () => {
         serviceCallTitle="PIGEONS ENVAHISSANTS À CHÂLONS-EN-CHAMPAGNE ?"
         serviceCallSubtitle="G&F NUISIBLES PROTÈGE VOS BÂTIMENTS DURABLEMENT !"
         intro="Les pigeons causent des nuisances importantes à Châlons-en-Champagne : fientes corrosives, dégradation des façades, risques sanitaires. G&F Nuisibles met en place des dispositifs professionnels pour éloigner durablement ces volatiles."
-        expertise="Experts en dépigeonnage en Marne (51), nous proposons des solutions adaptées à chaque type de bâtiment : pics anti-pigeons, filets de protection, systèmes de répulsion électrique et capture."
+        expertise="Experts en dépigeonnisation dans la Marne (51), nous proposons des solutions adaptées à chaque type de bâtiment : pics anti-pigeons, filets de protection, systèmes de répulsion électrique et capture."
         method="Évaluation de la situation et cartographie des zones touchées. Installation de dispositifs anti-perchage et anti-nidification. Nettoyage et désinfection des zones souillées. Suivi de l'efficacité du dispositif."
-        cta="Protégez vos bâtiments à Châlons-en-Champagne. Appelez le 07.88.17.45.86 pour une solution anti-pigeons professionnelle et durable."
+        cta="Protégez vos bâtiments à Châlons-en-Champagne. Appelez le 07.88.17.45.86 pour un dépigeonnage professionnel et durable."
       />
     </>
   );
 };
 
-export default DepigeonnageChalonsEnChampagne;
+export default DepigeonnisationChalonsEnChampagne;

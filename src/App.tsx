@@ -26,95 +26,95 @@ import DeratisationJoinville from "./pages/DeratisationJoinville.tsx";
 import DeratisationWassy from "./pages/DeratisationWassy.tsx";
 import GuepesFrelonsWassy from "./pages/GuepesFrelonsWassy.tsx";
 import DesinsectisationWassy from "./pages/DesinsectisationWassy.tsx";
-import DepigeonnageWassy from "./pages/DepigeonnageWassy.tsx";
+import DepigeonnisationWassy from "./pages/DepigeonnisationWassy.tsx";
 import TaupesWassy from "./pages/TaupesWassy.tsx";
 
 // Bourbonne-les-Bains
 import DeratisationBourbonne from "./pages/DeratisationBourbonne.tsx";
 import GuepesFrelonsBourbonne from "./pages/GuepesFrelonsBourbonne.tsx";
 import DesinsectisationBourbonne from "./pages/DesinsectisationBourbonne.tsx";
-import DepigeonnageBourbonne from "./pages/DepigeonnageBourbonne.tsx";
+import DepigeonnisationBourbonne from "./pages/DepigeonnisationBourbonne.tsx";
 import TaupesBourbonne from "./pages/TaupesBourbonne.tsx";
 
 // Bologne
 import DeratisationBologne from "./pages/DeratisationBologne.tsx";
 import GuepesFrelonsBologne from "./pages/GuepesFrelonsBologne.tsx";
 import DesinsectisationBologne from "./pages/DesinsectisationBologne.tsx";
-import DepigeonnageBologne from "./pages/DepigeonnageBologne.tsx";
+import DepigeonnisationBologne from "./pages/DepigeonnisationBologne.tsx";
 import TaupesBologne from "./pages/TaupesBologne.tsx";
 
 // Montier-en-Der
 import DeratisationMontierEnDer from "./pages/DeratisationMontierEnDer.tsx";
 import GuepesFrelonsMontierEnDer from "./pages/GuepesFrelonsMontierEnDer.tsx";
 import DesinsectisationMontierEnDer from "./pages/DesinsectisationMontierEnDer.tsx";
-import DepigeonnageMontierEnDer from "./pages/DepigeonnageMontierEnDer.tsx";
+import DepigeonnisationMontierEnDer from "./pages/DepigeonnisationMontierEnDer.tsx";
 import TaupesMontierEnDer from "./pages/TaupesMontierEnDer.tsx";
 
 // Chalindrey
 import DeratisationChalindrey from "./pages/DeratisationChalindrey.tsx";
 import GuepesFrelonsChalindrey from "./pages/GuepesFrelonsChalindrey.tsx";
 import DesinsectisationChalindrey from "./pages/DesinsectisationChalindrey.tsx";
-import DepigeonnageChalindrey from "./pages/DepigeonnageChalindrey.tsx";
+import DepigeonnisationChalindrey from "./pages/DepigeonnisationChalindrey.tsx";
 import TaupesChalindrey from "./pages/TaupesChalindrey.tsx";
 
 // Froncles
 import DeratisationFroncles from "./pages/DeratisationFroncles.tsx";
 import GuepesFrelonsFroncles from "./pages/GuepesFrelonsFroncles.tsx";
 import DesinsectisationFroncles from "./pages/DesinsectisationFroncles.tsx";
-import DepigeonnageFroncles from "./pages/DepigeonnageFroncles.tsx";
+import DepigeonnisationFroncles from "./pages/DepigeonnisationFroncles.tsx";
 import TaupesFroncles from "./pages/TaupesFroncles.tsx";
 
 // Châteauvillain
 import DeratisationChateauvillain from "./pages/DeratisationChateauvillain.tsx";
 import GuepesFrelonsChateauvillain from "./pages/GuepesFrelonsChateauvillain.tsx";
 import DesinsectisationChateauvillain from "./pages/DesinsectisationChateauvillain.tsx";
-import DepigeonnageChateauvillain from "./pages/DepigeonnageChateauvillain.tsx";
+import DepigeonnisationChateauvillain from "./pages/DepigeonnisationChateauvillain.tsx";
 import TaupesChateauvillain from "./pages/TaupesChateauvillain.tsx";
 
-// Troyes (Aube 10) — Dératisation + Dépigeonnage uniquement
+// Troyes (Aube 10) — Dératisation + Dépigeonnisation uniquement
 import DeratisationTroyes from "./pages/DeratisationTroyes.tsx";
-import DepigeonnageTroyes from "./pages/DepigeonnageTroyes.tsx";
+import DepigeonnisationTroyes from "./pages/DepigeonnisationTroyes.tsx";
 
 // Bar-sur-Aube (Aube 10) — Tous les services
 import DeratisationBarSurAube from "./pages/DeratisationBarSurAube.tsx";
 import GuepesFrelonsBarSurAube from "./pages/GuepesFrelonsBarSurAube.tsx";
 import DesinsectisationBarSurAube from "./pages/DesinsectisationBarSurAube.tsx";
-import DepigeonnageBarSurAube from "./pages/DepigeonnageBarSurAube.tsx";
+import DepigeonnisationBarSurAube from "./pages/DepigeonnisationBarSurAube.tsx";
 import TaupesBarSurAube from "./pages/TaupesBarSurAube.tsx";
 
-// Vitry-le-François (Marne 51) — Désinsectisation + Dépigeonnage uniquement
+// Vitry-le-François (Marne 51) — Désinsectisation + Dépigeonnisation uniquement
 import DesinsectisationVitryLeFrancois from "./pages/DesinsectisationVitryLeFrancois.tsx";
-import DepigeonnageVitryLeFrancois from "./pages/DepigeonnageVitryLeFrancois.tsx";
+import DepigeonnisationVitryLeFrancois from "./pages/DepigeonnisationVitryLeFrancois.tsx";
 
-// Châlons-en-Champagne (Marne 51) — Dératisation + Dépigeonnage uniquement
+// Châlons-en-Champagne (Marne 51) — Dératisation + Dépigeonnisation uniquement
 import DeratisationChalonsEnChampagne from "./pages/DeratisationChalonsEnChampagne.tsx";
-import DepigeonnageChalonsEnChampagne from "./pages/DepigeonnageChalonsEnChampagne.tsx";
+import DepigeonnisationChalonsEnChampagne from "./pages/DepigeonnisationChalonsEnChampagne.tsx";
 
-// Vittel (Vosges 88) — Désinsectisation + Dératisation + Dépigeonnage
+// Vittel (Vosges 88) — Désinsectisation + Dératisation + Dépigeonnisation
 import DeratisationVittel from "./pages/DeratisationVittel.tsx";
 import DesinsectisationVittel from "./pages/DesinsectisationVittel.tsx";
-import DepigeonnageVittel from "./pages/DepigeonnageVittel.tsx";
+import DepigeonnisationVittel from "./pages/DepigeonnisationVittel.tsx";
 
-// Neufchâteau (Vosges 88) — Désinsectisation + Dératisation + Dépigeonnage
+// Neufchâteau (Vosges 88) — Désinsectisation + Dératisation + Dépigeonnisation
 import DeratisationNeufchateau from "./pages/DeratisationNeufchateau.tsx";
 import DesinsectisationNeufchateau from "./pages/DesinsectisationNeufchateau.tsx";
-import DepigeonnageNeufchateau from "./pages/DepigeonnageNeufchateau.tsx";
+import DepigeonnisationNeufchateau from "./pages/DepigeonnisationNeufchateau.tsx";
 
-// Dijon (Côte-d'Or 21) — Dératisation + Dépigeonnage uniquement
+// Dijon (Côte-d'Or 21) — Dératisation + Dépigeonnisation uniquement
 import DeratisationDijon from "./pages/DeratisationDijon.tsx";
-import DepigeonnageDijon from "./pages/DepigeonnageDijon.tsx";
+import DepigeonnisationDijon from "./pages/DepigeonnisationDijon.tsx";
 
-// Beaune (Côte-d'Or 21) — Dératisation + Dépigeonnage uniquement
+// Beaune (Côte-d'Or 21) — Dératisation + Dépigeonnisation uniquement
 import DeratisationBeaune from "./pages/DeratisationBeaune.tsx";
-import DepigeonnageBeaune from "./pages/DepigeonnageBeaune.tsx";
+import DepigeonnisationBeaune from "./pages/DepigeonnisationBeaune.tsx";
 
-// Châtillon-sur-Seine (Côte-d'Or 21) — Dératisation + Dépigeonnage uniquement
+// Châtillon-sur-Seine (Côte-d'Or 21) — Dératisation + Dépigeonnisation uniquement
 import DeratisationChatillonSurSeine from "./pages/DeratisationChatillonSurSeine.tsx";
-import DepigeonnageChatillonSurSeine from "./pages/DepigeonnageChatillonSurSeine.tsx";
+import DepigeonnisationChatillonSurSeine from "./pages/DepigeonnisationChatillonSurSeine.tsx";
 
-// Nancy (Meurthe-et-Moselle 54) — Dératisation + Dépigeonnage uniquement
+// Nancy (Meurthe-et-Moselle 54) — Dératisation + Dépigeonnisation uniquement
 import DeratisationNancy from "./pages/DeratisationNancy.tsx";
-import DepigeonnageNancy from "./pages/DepigeonnageNancy.tsx";
+import DepigeonnisationNancy from "./pages/DepigeonnisationNancy.tsx";
 
 const queryClient = new QueryClient();
 
@@ -146,95 +146,95 @@ const App = () => (
           <Route path="/deratisation-wassy" element={<DeratisationWassy />} />
           <Route path="/guepes-frelons-wassy" element={<GuepesFrelonsWassy />} />
           <Route path="/desinsectisation-wassy" element={<DesinsectisationWassy />} />
-          <Route path="/depigeonnage-wassy" element={<DepigeonnageWassy />} />
+          <Route path="/services/depigeonnisation/wassy" element={<DepigeonnisationWassy />} />
           <Route path="/taupes-wassy" element={<TaupesWassy />} />
 
           {/* Bourbonne-les-Bains — tous les services */}
           <Route path="/deratisation-bourbonne" element={<DeratisationBourbonne />} />
           <Route path="/guepes-frelons-bourbonne" element={<GuepesFrelonsBourbonne />} />
           <Route path="/desinsectisation-bourbonne" element={<DesinsectisationBourbonne />} />
-          <Route path="/depigeonnage-bourbonne" element={<DepigeonnageBourbonne />} />
+          <Route path="/services/depigeonnisation/bourbonne-les-bains" element={<DepigeonnisationBourbonne />} />
           <Route path="/taupes-bourbonne" element={<TaupesBourbonne />} />
 
           {/* Bologne — tous les services */}
           <Route path="/deratisation-bologne" element={<DeratisationBologne />} />
           <Route path="/guepes-frelons-bologne" element={<GuepesFrelonsBologne />} />
           <Route path="/desinsectisation-bologne" element={<DesinsectisationBologne />} />
-          <Route path="/depigeonnage-bologne" element={<DepigeonnageBologne />} />
+          <Route path="/services/depigeonnisation/bologne" element={<DepigeonnisationBologne />} />
           <Route path="/taupes-bologne" element={<TaupesBologne />} />
 
           {/* Montier-en-Der — tous les services */}
           <Route path="/deratisation-montier-en-der" element={<DeratisationMontierEnDer />} />
           <Route path="/guepes-frelons-montier-en-der" element={<GuepesFrelonsMontierEnDer />} />
           <Route path="/desinsectisation-montier-en-der" element={<DesinsectisationMontierEnDer />} />
-          <Route path="/depigeonnage-montier-en-der" element={<DepigeonnageMontierEnDer />} />
+          <Route path="/services/depigeonnisation/montier-en-der" element={<DepigeonnisationMontierEnDer />} />
           <Route path="/taupes-montier-en-der" element={<TaupesMontierEnDer />} />
 
           {/* Chalindrey — tous les services */}
           <Route path="/deratisation-chalindrey" element={<DeratisationChalindrey />} />
           <Route path="/guepes-frelons-chalindrey" element={<GuepesFrelonsChalindrey />} />
           <Route path="/desinsectisation-chalindrey" element={<DesinsectisationChalindrey />} />
-          <Route path="/depigeonnage-chalindrey" element={<DepigeonnageChalindrey />} />
+          <Route path="/services/depigeonnisation/chalindrey" element={<DepigeonnisationChalindrey />} />
           <Route path="/taupes-chalindrey" element={<TaupesChalindrey />} />
 
           {/* Froncles — tous les services */}
           <Route path="/deratisation-froncles" element={<DeratisationFroncles />} />
           <Route path="/guepes-frelons-froncles" element={<GuepesFrelonsFroncles />} />
           <Route path="/desinsectisation-froncles" element={<DesinsectisationFroncles />} />
-          <Route path="/depigeonnage-froncles" element={<DepigeonnageFroncles />} />
+          <Route path="/services/depigeonnisation/froncles" element={<DepigeonnisationFroncles />} />
           <Route path="/taupes-froncles" element={<TaupesFroncles />} />
 
           {/* Châteauvillain — tous les services */}
           <Route path="/deratisation-chateauvillain" element={<DeratisationChateauvillain />} />
           <Route path="/guepes-frelons-chateauvillain" element={<GuepesFrelonsChateauvillain />} />
           <Route path="/desinsectisation-chateauvillain" element={<DesinsectisationChateauvillain />} />
-          <Route path="/depigeonnage-chateauvillain" element={<DepigeonnageChateauvillain />} />
+          <Route path="/services/depigeonnisation/chateauvillain" element={<DepigeonnisationChateauvillain />} />
           <Route path="/taupes-chateauvillain" element={<TaupesChateauvillain />} />
 
-          {/* Troyes — Dératisation + Dépigeonnage */}
+          {/* Troyes — Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-troyes" element={<DeratisationTroyes />} />
-          <Route path="/depigeonnage-troyes" element={<DepigeonnageTroyes />} />
+          <Route path="/services/depigeonnisation/troyes" element={<DepigeonnisationTroyes />} />
 
           {/* Bar-sur-Aube — tous les services */}
           <Route path="/deratisation-bar-sur-aube" element={<DeratisationBarSurAube />} />
           <Route path="/guepes-frelons-bar-sur-aube" element={<GuepesFrelonsBarSurAube />} />
           <Route path="/desinsectisation-bar-sur-aube" element={<DesinsectisationBarSurAube />} />
-          <Route path="/depigeonnage-bar-sur-aube" element={<DepigeonnageBarSurAube />} />
+          <Route path="/services/depigeonnisation/bar-sur-aube" element={<DepigeonnisationBarSurAube />} />
           <Route path="/taupes-bar-sur-aube" element={<TaupesBarSurAube />} />
 
-          {/* Vitry-le-François — Désinsectisation + Dépigeonnage */}
+          {/* Vitry-le-François — Désinsectisation + Dépigeonnisation */}
           <Route path="/desinsectisation-vitry-le-francois" element={<DesinsectisationVitryLeFrancois />} />
-          <Route path="/depigeonnage-vitry-le-francois" element={<DepigeonnageVitryLeFrancois />} />
+          <Route path="/services/depigeonnisation/vitry-le-francois" element={<DepigeonnisationVitryLeFrancois />} />
 
-          {/* Châlons-en-Champagne — Dératisation + Dépigeonnage */}
+          {/* Châlons-en-Champagne — Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-chalons-en-champagne" element={<DeratisationChalonsEnChampagne />} />
-          <Route path="/depigeonnage-chalons-en-champagne" element={<DepigeonnageChalonsEnChampagne />} />
+          <Route path="/services/depigeonnisation/chalons-en-champagne" element={<DepigeonnisationChalonsEnChampagne />} />
 
-          {/* Vittel — Désinsectisation + Dératisation + Dépigeonnage */}
+          {/* Vittel — Désinsectisation + Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-vittel" element={<DeratisationVittel />} />
           <Route path="/desinsectisation-vittel" element={<DesinsectisationVittel />} />
-          <Route path="/depigeonnage-vittel" element={<DepigeonnageVittel />} />
+          <Route path="/services/depigeonnisation/vittel" element={<DepigeonnisationVittel />} />
 
-          {/* Neufchâteau — Désinsectisation + Dératisation + Dépigeonnage */}
+          {/* Neufchâteau — Désinsectisation + Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-neufchateau" element={<DeratisationNeufchateau />} />
           <Route path="/desinsectisation-neufchateau" element={<DesinsectisationNeufchateau />} />
-          <Route path="/depigeonnage-neufchateau" element={<DepigeonnageNeufchateau />} />
+          <Route path="/services/depigeonnisation/neufchateau" element={<DepigeonnisationNeufchateau />} />
 
-          {/* Dijon — Dératisation + Dépigeonnage */}
+          {/* Dijon — Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-dijon" element={<DeratisationDijon />} />
-          <Route path="/depigeonnage-dijon" element={<DepigeonnageDijon />} />
+          <Route path="/services/depigeonnisation/dijon" element={<DepigeonnisationDijon />} />
 
-          {/* Beaune — Dératisation + Dépigeonnage */}
+          {/* Beaune — Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-beaune" element={<DeratisationBeaune />} />
-          <Route path="/depigeonnage-beaune" element={<DepigeonnageBeaune />} />
+          <Route path="/services/depigeonnisation/beaune" element={<DepigeonnisationBeaune />} />
 
-          {/* Châtillon-sur-Seine — Dératisation + Dépigeonnage */}
+          {/* Châtillon-sur-Seine — Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-chatillon-sur-seine" element={<DeratisationChatillonSurSeine />} />
-          <Route path="/depigeonnage-chatillon-sur-seine" element={<DepigeonnageChatillonSurSeine />} />
+          <Route path="/services/depigeonnisation/chatillon-sur-seine" element={<DepigeonnisationChatillonSurSeine />} />
 
-          {/* Nancy — Dératisation + Dépigeonnage */}
+          {/* Nancy — Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-nancy" element={<DeratisationNancy />} />
-          <Route path="/depigeonnage-nancy" element={<DepigeonnageNancy />} />
+          <Route path="/services/depigeonnisation/nancy" element={<DepigeonnisationNancy />} />
 
           <Route path="/:city/:service" element={<CityService />} />
           <Route path="*" element={<NotFound />} />
