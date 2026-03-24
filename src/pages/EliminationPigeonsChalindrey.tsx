@@ -1,0 +1,32 @@
+import { Bird } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+import CityServicePage from "@/components/CityServicePage";
+import heroImage from "@/assets/service-depigeonnage.jpg";
+
+const TITLE = "Élimination de pigeons à Chalindrey en Haute-Marne 52 | G&F Nuisibles";
+const DESCRIPTION = "Retrouvez un toit sain à Chalindrey. Nos experts interviennent chez les particuliers pour l'éloignement durable des oiseaux. Intervention rapide 7j/7.";
+
+const EliminationPigeonsChalindrey = () => (
+  <>
+    <Helmet>
+      <title>{TITLE}</title>
+      <meta name="description" content={DESCRIPTION} />
+    </Helmet>
+    <CityServicePage
+      city="Chalindrey"
+      department="Haute-Marne (52)"
+      serviceTitle={TITLE}
+      icon={<Bird className="h-8 w-8" />}
+      heroImage={heroImage}
+      metaDescription={DESCRIPTION}
+      serviceCallTitle="PIGEONS NICHÉS DANS VOS COMBLES À CHALINDREY ?"
+      serviceCallSubtitle="G&F NUISIBLES SÉCURISE VOTRE TOITURE !"
+      intro="À Chalindrey, les pigeons pénètrent dans les combles et greniers des maisons, détériorant l'isolation et souillant les espaces de stockage. Les particuliers sont souvent démunis face à ces invasions. G&F Nuisibles intervient avec des méthodes professionnelles adaptées."
+      expertise="Notre savoir-faire couvre la sécurisation complète des toitures résidentielles : obturation des accès, filets de protection, pics anti-perchage. Des techniques non-létales qui respectent les volatiles tout en protégeant votre domicile."
+      method="Inspection détaillée de votre toiture et de vos combles. Identification et fermeture de tous les points d'entrée. Pose de dispositifs de protection durable. Désinfection complète des zones contaminées."
+      cta="Sécurisez vos combles à Chalindrey. Contactez G&F Nuisibles au 07.88.17.45.86 pour une intervention rapide."
+    />
+  </>
+);
+
+export default EliminationPigeonsChalindrey;
