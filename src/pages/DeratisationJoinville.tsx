@@ -1,17 +1,19 @@
 import { Rat } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
-import SEO from "@/components/SEO";
 import heroImage from "@/assets/service-deratisation.jpg";
 
 const TITLE = "Dératisation à Joinville en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Besoin d'un dératiseur à Joinville ? G&F Nuisibles élimine rats et souris avec des méthodes sécurisées et durables. Diagnostic gratuit, expertise certifiée.";
 
 const DeratisationJoinville = () => {
-
   return (
     <>
-    <SEO title={TITLE} description={DESCRIPTION} />
-    <CityServicePage
+      <Helmet>
+        <title>{TITLE}</title>
+        <meta name="description" content={DESCRIPTION} />
+      </Helmet>
+      <CityServicePage
       city="Joinville"
       department="Haute-Marne (52)"
       serviceTitle={TITLE}
