@@ -22,9 +22,13 @@ import DesinsectisationChaumont from "./pages/DesinsectisationChaumont.tsx";
 import DepigeonnisationChaumont from "./pages/DepigeonnisationChaumont.tsx";
 import TaupesChaumont from "./pages/TaupesChaumont.tsx";
 import DeratisationLangres from "./pages/DeratisationLangres.tsx";
+import GuepesFrelonsLangres from "./pages/GuepesFrelonsLangres.tsx";
 import DeratisationNogent from "./pages/DeratisationNogent.tsx";
+import GuepesFrelonsNogent from "./pages/GuepesFrelonsNogent.tsx";
 import DeratisationSaintDizier from "./pages/DeratisationSaintDizier.tsx";
+import GuepesFrelonsSaintDizier from "./pages/GuepesFrelonsSaintDizier.tsx";
 import DeratisationJoinville from "./pages/DeratisationJoinville.tsx";
+import GuepesFrelonsJoinville from "./pages/GuepesFrelonsJoinville.tsx";
 
 // Wassy
 import DeratisationWassy from "./pages/DeratisationWassy.tsx";
