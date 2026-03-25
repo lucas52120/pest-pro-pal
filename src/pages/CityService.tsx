@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
 import { cities, serviceDefinitions } from "@/data/cityServices";
 import NotFound from "@/pages/NotFound";
@@ -21,20 +22,26 @@ const CityService = () => {
   const IconComponent = serviceData.icon;
 
   return (
-    <CityServicePage
-      city={cityData.name}
-      department={cityData.department}
-      serviceTitle={content.seoTitle}
-      icon={<IconComponent className="h-8 w-8" />}
-      heroImage={serviceData.heroImage}
-      metaDescription={content.metaDescription}
-      intro={content.intro}
-      expertise={content.expertise}
-      method={content.method}
-      cta={content.cta}
-      serviceCallTitle={content.serviceCallTitle}
-      serviceCallSubtitle={content.serviceCallSubtitle}
-    />
+    <>
+      <Helmet>
+        <title>{content.seoTitle}</title>
+        <meta name="description" content={content.metaDescription} />
+      </Helmet>
+      <CityServicePage
+        city={cityData.name}
+        department={cityData.department}
+        serviceTitle={content.seoTitle}
+        icon={<IconComponent className="h-8 w-8" />}
+        heroImage={serviceData.heroImage}
+        metaDescription={content.metaDescription}
+        intro={content.intro}
+        expertise={content.expertise}
+        method={content.method}
+        cta={content.cta}
+        serviceCallTitle={content.serviceCallTitle}
+        serviceCallSubtitle={content.serviceCallSubtitle}
+      />
+    </>
   );
 };
 
