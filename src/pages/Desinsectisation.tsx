@@ -21,7 +21,8 @@ const Desinsectisation = () => (
     expertise="GF Nuisibles utilise des traitements professionnels adaptés à chaque type d'insecte. Nos solutions sont efficaces, durables et respectueuses de votre santé."
     method="Inspection approfondie pour identifier l'espèce et les zones infestées, puis application de traitements ciblés (gel, pulvérisation, nébulisation). Un suivi post-traitement est assuré."
     engagement="Discrétion totale pour les professionnels (hôtels, restaurants, collectivités). Véhicules non logotés sur demande. Garantie de résultat."
-  />
+    />
+  </>
 );
 
 export default Desinsectisation;

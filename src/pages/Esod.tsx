@@ -21,7 +21,8 @@ const Esod = () => (
     expertise="GF Nuisibles est habilité à intervenir dans le cadre réglementaire strict de la régulation des ESOD. Nous maîtrisons les techniques de piégeage agréées et respectons scrupuleusement la législation en vigueur (arrêtés préfectoraux, périodes autorisées, méthodes homologuées)."
     method="Diagnostic terrain pour identifier les espèces et évaluer l'ampleur des dégâts, mise en place de dispositifs de piégeage conformes à la réglementation, relevés réguliers des pièges, compte-rendu d'intervention et déclaration auprès des autorités compétentes."
     engagement="Intervention sur devis après évaluation sur site. Nous accompagnons les particuliers, agriculteurs, collectivités et gestionnaires d'espaces naturels sur l'ensemble de la Haute-Marne (52) et départements limitrophes."
-  />
+    />
+  </>
 );
 
 export default Esod;

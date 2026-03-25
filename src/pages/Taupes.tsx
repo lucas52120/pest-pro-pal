@@ -21,7 +21,8 @@ const Taupes = () => (
     expertise="GF Nuisibles emploie la méthode traditionnelle de piégeage, la plus efficace et la plus respectueuse de l'environnement. Notre expertise terrain nous permet d'identifier les galeries actives."
     method="Repérage des galeries principales, pose de pièges mécaniques professionnels, suivi régulier et retrait des dispositifs. Aucun produit chimique utilisé."
     engagement="Intervention sur devis, suivi personnalisé. Nous intervenons sur l'ensemble de la Haute-Marne pour les particuliers et les professionnels."
-  />
+    />
+  </>
 );
 
 export default Taupes;
