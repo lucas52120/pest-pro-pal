@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Guêpes & Frelons à Wassy en Haute-Marne 52 | G&F Nuisibles";
+const TITLE = "Destruction de nids de Guêpes & Frelons à Wassy";
 const DESCRIPTION = "Nid de guêpes à Wassy ? G&F Nuisibles détruit nids de guêpes et frelons en Haute-Marne 52. Urgence 7j/7.";
 
 const GuepesFrelonsWassy = () => {

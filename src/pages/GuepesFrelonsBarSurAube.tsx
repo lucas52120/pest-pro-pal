@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Guêpes et frelons à Bar-sur-Aube dans l'Aube 10 | G&F Nuisibles";
+const TITLE = "Destruction de nids de Guêpes & Frelons à Bar-sur-Aube";
 const DESCRIPTION = "Nid de guêpes ou frelons à Bar-sur-Aube ? G&F Nuisibles intervient en urgence dans l'Aube 10. Destruction sécurisée, devis gratuit.";
 
 const GuepesFrelonsBarSurAube = () => {

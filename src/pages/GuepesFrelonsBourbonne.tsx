@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Guêpes & Frelons à Bourbonne-les-Bains en Haute-Marne 52 | G&F Nuisibles";
+const TITLE = "Destruction de nids de Guêpes & Frelons à Bourbonne-les-Bains";
 const DESCRIPTION = "Destruction nid de frelons à Bourbonne-les-Bains (52). G&F Nuisibles intervient en urgence. Sécurité garantie, devis gratuit.";
 
 const GuepesFrelonsBourbonne = () => {
