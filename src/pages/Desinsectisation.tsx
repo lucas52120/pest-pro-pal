@@ -1,9 +1,15 @@
 import { Bug } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
 const Desinsectisation = () => (
-  <ServicePageLayout
+  <>
+    <Helmet>
+      <title>Expert Désinsectisation Haute-Marne et Meuse | GF Nuisibles</title>
+      <meta name="description" content="Invasion d'insectes ? GF Nuisibles élimine cafards, blattes, punaises de lit et fourmis en Haute-Marne et Meuse. Diagnostic & devis gratuit 7j/7." />
+    </Helmet>
+    <ServicePageLayout
     icon={<Bug className="h-8 w-8" />}
     title="Désinsectisation"
     subtitle="Traitement professionnel contre cafards, punaises de lit et blattes."
@@ -15,7 +21,8 @@ const Desinsectisation = () => (
     expertise="GF Nuisibles utilise des traitements professionnels adaptés à chaque type d'insecte. Nos solutions sont efficaces, durables et respectueuses de votre santé."
     method="Inspection approfondie pour identifier l'espèce et les zones infestées, puis application de traitements ciblés (gel, pulvérisation, nébulisation). Un suivi post-traitement est assuré."
     engagement="Discrétion totale pour les professionnels (hôtels, restaurants, collectivités). Véhicules non logotés sur demande. Garantie de résultat."
-  />
+    />
+  </>
 );
 
 export default Desinsectisation;

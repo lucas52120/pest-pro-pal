@@ -1,9 +1,15 @@
 import { Zap } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImage from "@/assets/service-guepes.jpg";
 
 const GuepesFrelons = () => (
-  <ServicePageLayout
+  <>
+    <Helmet>
+      <title>Destruction Guêpes & Frelons Haute-Marne 52 | GF Nuisibles</title>
+      <meta name="description" content="Votre expert en destruction de nid de guêpes & frelons en Haute-Marne 52. Diagnostic GRATUIT, intervention rapide et efficace 7j/7 appelez-nous !" />
+    </Helmet>
+    <ServicePageLayout
     icon={<Zap className="h-8 w-8" />}
     title="Guêpes & Frelons"
     subtitle="Destruction de nids de guêpes et frelons en toute sécurité en Haute-Marne."
@@ -15,7 +21,8 @@ const GuepesFrelons = () => (
     expertise="GF Nuisibles intervient rapidement pour la destruction de nids de guêpes, frelons européens et frelons asiatiques. Nos techniciens sont équipés pour intervenir en hauteur et dans les zones difficiles d'accès (toitures, cheminées, arbres)."
     method="Après un diagnostic précis de la situation, nous procédons à la neutralisation du nid avec des produits professionnels homologués. L'intervention est rapide et sécurisée pour vous et votre entourage."
     engagement="Intervention garantie, même en urgence le week-end. Nous nous déplaçons sur Chaumont, Langres et l'ensemble de la Haute-Marne (52)."
-  />
+    />
+  </>
 );
 
 export default GuepesFrelons;
