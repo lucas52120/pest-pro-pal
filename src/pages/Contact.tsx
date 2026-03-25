@@ -12,19 +12,9 @@ const Contact = () => {
   const [sending, setSending] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [consent, setConsent] = useState(false);
-  const [captchaAnswer, setCaptchaAnswer] = useState("");
-
-  const captchaA = 7;
-  const captchaB = 3;
-  const captchaCorrect = captchaA + captchaB;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (parseInt(captchaAnswer) !== captchaCorrect) {
-      toast.error("La réponse au CAPTCHA est incorrecte.");
-      return;
-    }
 
     if (!consent) {
       toast.error("Veuillez accepter les conditions de traitement des données.");
