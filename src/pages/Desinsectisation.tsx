@@ -1,9 +1,15 @@
 import { Bug } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
 const Desinsectisation = () => (
-  <ServicePageLayout
+  <>
+    <Helmet>
+      <title>Expert Désinsectisation Haute-Marne et Meuse | GF Nuisibles</title>
+      <meta name="description" content="Invasion d'insectes ? GF Nuisibles élimine cafards, blattes, punaises de lit et fourmis en Haute-Marne et Meuse. Diagnostic & devis gratuit 7j/7." />
+    </Helmet>
+    <ServicePageLayout
     icon={<Bug className="h-8 w-8" />}
     title="Désinsectisation"
     subtitle="Traitement professionnel contre cafards, punaises de lit et blattes."

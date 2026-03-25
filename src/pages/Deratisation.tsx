@@ -1,9 +1,15 @@
 import { Rat } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImage from "@/assets/service-deratisation.jpg";
 
 const Deratisation = () => (
-  <ServicePageLayout
+  <>
+    <Helmet>
+      <title>Dératisation | Particuliers & Professionnels | GF Nuisibles</title>
+      <meta name="description" content="Invasion de rongeurs ? GF Nuisibles intervient 7j/7 en Haute-Marne, Marne, Meuse, Vosges, Côte-d'Or, Aube. Pros ou particuliers. Diagnostic & devis GRATUIT !" />
+    </Helmet>
+    <ServicePageLayout
     icon={<Rat className="h-8 w-8" />}
     title="Dératisation"
     subtitle="Élimination rapide et efficace des rats, souris et rongeurs."

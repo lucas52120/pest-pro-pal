@@ -1,9 +1,15 @@
 import { ShieldAlert } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImage from "@/assets/service-esod.jpg";
 
 const Esod = () => (
-  <ServicePageLayout
+  <>
+    <Helmet>
+      <title>Régulation des espèces ESOD Haute-Marne 52 | GF Nuisibles</title>
+      <meta name="description" content="Dégâts de fouine, loir ou ragondin ? GF Nuisibles régule les ESOD en Haute-Marne. Pros & particuliers, diagnostic et devis GRATUIT 7j/7. Appelez-nous !" />
+    </Helmet>
+    <ServicePageLayout
     icon={<ShieldAlert className="h-8 w-8" />}
     title="Régulation des animaux classés ESOD"
     subtitle="Gestion et régulation des Espèces Susceptibles d'Occasionner des Dégâts : ragondins, renards, corneilles, pies et autres."

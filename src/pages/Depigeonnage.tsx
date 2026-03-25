@@ -1,9 +1,15 @@
 import { Bird } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
 const Depigeonnisation = () => (
-  <ServicePageLayout
+  <>
+    <Helmet>
+      <title>Solution de dépigeonnage | Votre expert GF Nuisibles</title>
+      <meta name="description" content="Dégâts de pigeons ? GF Nuisibles contrôle leur présence : Haute-Marne, Marne, Meuse, Vosges, Côte-d'Or, Aube. Pros/Partics. Diagnostic & Devis GRATUIT 7j/7" />
+    </Helmet>
+    <ServicePageLayout
     icon={<Bird className="h-8 w-8" />}
     title="Dépigeonnage"
     subtitle="Protection durable de vos bâtiments contre les pigeons et volatiles."

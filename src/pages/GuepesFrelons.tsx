@@ -1,9 +1,15 @@
 import { Zap } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImage from "@/assets/service-guepes.jpg";
 
 const GuepesFrelons = () => (
-  <ServicePageLayout
+  <>
+    <Helmet>
+      <title>Destruction Guêpes & Frelons Haute-Marne 52 | GF Nuisibles</title>
+      <meta name="description" content="Votre expert en destruction de nid de guêpes & frelons en Haute-Marne 52. Diagnostic GRATUIT, intervention rapide et efficace 7j/7 appelez-nous !" />
+    </Helmet>
+    <ServicePageLayout
     icon={<Zap className="h-8 w-8" />}
     title="Guêpes & Frelons"
     subtitle="Destruction de nids de guêpes et frelons en toute sécurité en Haute-Marne."

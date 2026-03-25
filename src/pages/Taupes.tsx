@@ -1,9 +1,15 @@
 import { Target } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImage from "@/assets/service-taupes.jpg";
 
 const Taupes = () => (
-  <ServicePageLayout
+  <>
+    <Helmet>
+      <title>Taupier Haute-Marne 52 | Expert Anti-Taupes | GF Nuisibles</title>
+      <meta name="description" content="Votre pelouse est envahie par les taupes ? Piégeage mécanique traditionnel sans produits chimiques pour jardins et espaces verts. Devis gratuit 7j/7" />
+    </Helmet>
+    <ServicePageLayout
     icon={<Target className="h-8 w-8" />}
     title="Taupes"
     subtitle="Piégeage traditionnel et expertise terrain pour vos espaces verts."
