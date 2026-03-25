@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Guêpes et Frelons à Chaumont en Haute-Marne 52 | G&F Nuisibles";
+const TITLE = "Destruction de nids de Guêpes & Frelons à Chaumont";
 const DESCRIPTION = "Nid de guêpes ou frelons à Chaumont ? G&F Nuisibles intervient en urgence en Haute-Marne 52. Destruction sécurisée, devis gratuit 7j/7.";
 
 const GuepesFrelonsChaumont = () => {

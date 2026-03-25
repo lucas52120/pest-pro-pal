@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Guêpes & Frelons à Bologne en Haute-Marne 52 | G&F Nuisibles";
+const TITLE = "Destruction de nids de Guêpes & Frelons à Bologne";
 const DESCRIPTION = "Guêpes ou frelons à Bologne ? G&F Nuisibles, spécialiste Haute-Marne 52, neutralise les nids rapidement. Appelez-nous !";
 
 const GuepesFrelonsBologne = () => {
