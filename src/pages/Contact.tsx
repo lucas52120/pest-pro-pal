@@ -172,21 +172,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* CAPTCHA */}
-              <div className="rounded-lg border border-border bg-secondary/50 p-4">
-                <label className="mb-2 block font-heading text-sm font-semibold text-primary">
-                  Vérification anti-spam : combien font {captchaA} + {captchaB} ? *
-                </label>
-                <input
-                  required
-                  type="number"
-                  value={captchaAnswer}
-                  onChange={(e) => setCaptchaAnswer(e.target.value)}
-                  className="w-24 rounded-lg border border-border bg-background px-4 py-2 text-foreground outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent"
-                  placeholder="?"
-                />
-              </div>
-
               {/* RGPD Consent */}
               <div className="flex items-start gap-3">
                 <input
