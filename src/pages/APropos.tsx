@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Shield, Users, MapPin, Clock, Award } from "lucide-react";
 import vanImage from "@/assets/van-gf.png";
@@ -7,6 +8,10 @@ import vanImage from "@/assets/van-gf.png";
 const APropos = () => {
   return (
     <>
+      <Helmet>
+        <title>À Propos de GF Nuisibles | Expert Local contre les nuisibles</title>
+        <meta name="description" content="Découvrez GF nuisible votre expert local de gestion des nuisibles en Haute-Marne et communes limitrophes pour les professionnels ou particuliers" />
+      </Helmet>
       <Navbar />
       <section className="bg-primary pb-16 pt-32">
         <div className="container-narrow px-4">
