@@ -54,6 +54,10 @@ const Contact = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Contact GF Nuisibles | Devis ou Renseignement Gratuit</title>
+        <meta name="description" content="Besoin d'un renseignement ? Contactez GF Nuisibles en Haute-Marne et communes limitrophes. Diagnostic et devis gratuit 7j/7. Intervention rapide !" />
+      </Helmet>
       <Navbar />
       <section className="bg-primary pb-16 pt-32">
         <div className="container-narrow px-4">
