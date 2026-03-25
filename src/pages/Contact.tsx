@@ -1,4 +1,5 @@
 import { useState, FormEvent } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -11,19 +12,9 @@ const Contact = () => {
   const [sending, setSending] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [consent, setConsent] = useState(false);
-  const [captchaAnswer, setCaptchaAnswer] = useState("");
-
-  const captchaA = 7;
-  const captchaB = 3;
-  const captchaCorrect = captchaA + captchaB;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (parseInt(captchaAnswer) !== captchaCorrect) {
-      toast.error("La réponse au CAPTCHA est incorrecte.");
-      return;
-    }
 
     if (!consent) {
       toast.error("Veuillez accepter les conditions de traitement des données.");
@@ -63,6 +54,10 @@ const Contact = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Contact GF Nuisibles | Devis ou Renseignement Gratuit</title>
+        <meta name="description" content="Besoin d'un renseignement ? Contactez GF Nuisibles en Haute-Marne et communes limitrophes. Diagnostic et devis gratuit 7j/7. Intervention rapide !" />
+      </Helmet>
       <Navbar />
       <section className="bg-primary pb-16 pt-32">
         <div className="container-narrow px-4">
@@ -174,21 +169,6 @@ const Contact = () => {
                   maxLength={2000}
                   className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent"
                   placeholder="Décrivez votre problème..."
-                />
-              </div>
-
-              {/* CAPTCHA */}
-              <div className="rounded-lg border border-border bg-secondary/50 p-4">
-                <label className="mb-2 block font-heading text-sm font-semibold text-primary">
-                  Vérification anti-spam : combien font {captchaA} + {captchaB} ? *
-                </label>
-                <input
-                  required
-                  type="number"
-                  value={captchaAnswer}
-                  onChange={(e) => setCaptchaAnswer(e.target.value)}
-                  className="w-24 rounded-lg border border-border bg-background px-4 py-2 text-foreground outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent"
-                  placeholder="?"
                 />
               </div>
 
