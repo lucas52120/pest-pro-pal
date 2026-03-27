@@ -2,30 +2,9 @@ import { Bug } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 const TITLE = "Destruction de nids de Guêpes & Frelons à Chaumont";
 const DESCRIPTION = "Nid de guêpes ou frelons à Chaumont ? G&F Nuisibles intervient en urgence en Haute-Marne 52. Destruction sécurisée, devis gratuit 7j/7.";
-
-const faqs = [
-  {
-    question: "Quel est le prix pour détruire un nid de frelons à Chaumont ?",
-    answer: "Nos tarifs pour une destruction de nid à Chaumont débutent à partir de 75 €. Le prix dépend de la hauteur et de l'accessibilité du nid. Nous validons toujours un prix ferme avec vous avant l'intervention : aucune mauvaise surprise sur la facture finale.",
-  },
-  {
-    question: "Est-il dangereux de détruire le nid soi-même ?",
-    answer: "Oui, c'est extrêmement dangereux. Les méthodes artisanales ou les bombes du commerce provoquent souvent des attaques collectives massives. Nos techniciens à Chaumont utilisent des combinaisons spécial et du matériel professionnel pour neutraliser le nid en toute sécurité.",
-  },
-  {
-    question: "Comment différencier un nid de guêpes d'un nid de frelons ?",
-    answer: "La guêpe est petite et jaune vif, tandis que le frelon est bien plus gros et bruyant. Le frelon asiatique se reconnaît à ses pattes jaunes et son corps très sombre. Leurs nids ressemblent à de grosses boules de papier mâché souvent haut perchées. Dans tous les cas, gardez une distance de sécurité de 5 mètres.",
-  },
-];
 
 const GuepesFrelonsChaumont = () => {
   return (
@@ -48,26 +27,6 @@ const GuepesFrelonsChaumont = () => {
         method="Localisation précise du nid et évaluation des risques. Traitement par injection d'insecticide professionnel ou retrait mécanique. Vérification de l'élimination complète de la colonie. Conseils de prévention."
         cta="Nid de guêpes à Chaumont ? Appelez G&F Nuisibles au 07.88.17.45.86 pour une intervention rapide et sécurisée."
       />
-
-      <section className="py-16">
-        <div className="container-narrow px-4">
-          <h2 className="mb-8 font-heading text-2xl font-extrabold text-primary md:text-3xl">
-            Foire aux questions : Nids de guêpes et frelons à Chaumont
-          </h2>
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`}>
-                <AccordionTrigger className="text-left text-primary font-semibold">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
     </>
   );
 };
