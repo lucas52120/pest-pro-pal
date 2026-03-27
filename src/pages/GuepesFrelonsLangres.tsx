@@ -6,6 +6,21 @@ import heroImage from "@/assets/service-guepes.jpg";
 const TITLE = "Destruction de nids de Guêpes & Frelons à Langres";
 const DESCRIPTION = "Nid de guêpes ou frelons à Langres ? G&F Nuisibles intervient en urgence en Haute-Marne 52. Destruction sécurisée, devis gratuit 7j/7.";
 
+const FAQ_ITEMS: FaqItem[] = [
+  {
+    question: "Quel est le coût pour éliminer un nid de frelons à Langres ?",
+    answer: "Pour une intervention sur des frelons à Langres, nos prix débutent à 110 €. S'il s'agit d'un nid de guêpes, le tarif commence à 70 €. Le montant final est ajusté selon l'emplacement et la hauteur du nid. Nous vous garantissons une transparence totale avec un tarif fixe annoncé avant chaque opération.",
+  },
+  {
+    question: "Est-ce imprudent de tenter de détruire un nid de frelons asiatiques seul ?",
+    answer: "C'est une prise de risque inutile et réelle. Une éradication improvisée avec des produits classiques provoque souvent une réaction de défense massive de la colonie. En Haute-Marne, nos experts disposent de combinaisons spéciales et de perches haute pression pour neutraliser les nids en toute sécurité.",
+  },
+  {
+    question: "Comment identifier la présence de guêpes ou de frelons ?",
+    answer: "La guêpe est petite et jaune vif, tandis que le frelon est bien plus gros. Le frelon asiatique possède des pattes jaunes et un corps sombre. Leurs nids ressemblent à de grosses boules de papier mâché. À Langres, gardez toujours une distance de 5 mètres.",
+  },
+];
+
 const GuepesFrelonsLangres = () => {
   return (
     <>
