@@ -10,7 +10,7 @@ const DESCRIPTION = "Guêpes ou frelons à Nogent ? G&F Nuisibles, spécialiste 
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Tarifs pour la destruction de nids de frelons ou guêpes à Nogent ?",
-    answer: "Nos forfaits à Nogent commencent à 70 € pour les guêpes et à 110 € pour les frelons. Le prix varie selon la complexité technique de l'accès. Nous nous engageons sur un prix ferme communiqué avant d'intervenir.",
+    answer: "Nos forfaits à Nogent commencent à 85 € pour les guêpes et à 110 € pour les frelons. Le prix varie selon la complexité technique de l'accès. Nous nous engageons sur un prix ferme communiqué avant d'intervenir.",
   },
   {
     question: "Quels sont les dangers d'un nid de guêpes près d'une habitation ?",

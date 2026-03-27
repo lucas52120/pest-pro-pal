@@ -10,7 +10,7 @@ const DESCRIPTION = "Nid de guêpes ou frelons à Langres ? G&F Nuisibles interv
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Quel est le coût pour éliminer un nid de frelons à Langres ?",
-    answer: "Pour une intervention sur des frelons à Langres, nos prix débutent à 110 €. S'il s'agit d'un nid de guêpes, le tarif commence à 70 €. Le montant final est ajusté selon l'emplacement et la hauteur du nid. Nous vous garantissons une transparence totale avec un tarif fixe annoncé avant chaque opération.",
+    answer: "Pour une intervention sur des frelons à Langres, nos prix débutent à 110 €. S'il s'agit d'un nid de guêpes, le tarif commence à 85 €. Le montant final est ajusté selon l'emplacement et la hauteur du nid. Nous vous garantissons une transparence totale avec un tarif fixe annoncé avant chaque opération.",
   },
   {
     question: "Est-ce imprudent de tenter de détruire un nid de frelons asiatiques seul ?",

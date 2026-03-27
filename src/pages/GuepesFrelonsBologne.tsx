@@ -10,7 +10,7 @@ const DESCRIPTION = "Guêpes ou frelons à Bologne ? G&F Nuisibles, spécialiste
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Quel budget prévoir pour un nid de frelons à Bologne ?",
-    answer: "Pour neutraliser des frelons à Bologne, prévoyez un tarif à partir de 110 €. Pour les guêpes, l'intervention débute à 70 €. Un prix définitif vous est toujours annoncé avant le début des travaux pour éviter toute surprise.",
+    answer: "Pour neutraliser des frelons à Bologne, prévoyez un tarif à partir de 110 €. Pour les guêpes, l'intervention débute à 85 €. Un prix définitif vous est toujours annoncé avant le début des travaux pour éviter toute surprise.",
   },
   {
     question: "Peut-on détruire un nid avec de l'eau ou du feu ?",
