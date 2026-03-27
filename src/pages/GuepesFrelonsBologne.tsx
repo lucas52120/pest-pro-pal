@@ -42,6 +42,7 @@ const GuepesFrelonsBologne = () => {
         expertise="Nos techniciens qualifiés interviennent à Bologne et dans toute la Haute-Marne pour la destruction de nids de guêpes, frelons européens et frelons asiatiques. Intervention sécurisée, rapide et garantie."
         method="Repérage et évaluation du nid, sécurisation du périmètre, traitement par insecticide professionnel et retrait du nid. Intervention possible en hauteur et dans les zones difficiles d'accès."
         cta="Nid de guêpes ou frelons à Bologne ? Appelez G&F Nuisibles au 07.88.17.45.86 pour une intervention d'urgence."
+        faqItems={FAQ_ITEMS}
       />
     </>
   );

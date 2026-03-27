@@ -42,6 +42,7 @@ const GuepesFrelonsBarSurAube = () => {
         expertise="Formés à la destruction de nids en hauteur, sous toiture et dans les cavités, nos techniciens interviennent avec des équipements de protection adaptés. Nous traitons guêpes communes, frelons européens et frelons asiatiques en Aube (10)."
         method="Repérage du nid et sécurisation du périmètre. Application d'un insecticide professionnel directement dans le nid. Retrait du nid si accessible. Vérification de l'élimination complète de la colonie."
         cta="Un nid chez vous à Bar-sur-Aube ? Appelez immédiatement le 07.88.17.45.86 pour une intervention d'urgence."
+        faqItems={FAQ_ITEMS}
       />
     </>
   );
