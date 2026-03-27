@@ -1,10 +1,26 @@
 import { Zap } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
+import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
 const TITLE = "Destruction de nids de Guêpes & Frelons à Froncles";
 const DESCRIPTION = "Guêpes ou frelons à Froncles ? G&F Nuisibles, spécialiste Haute-Marne 52, neutralise les nids rapidement. Appelez-nous !";
+
+const FAQ_ITEMS: FaqItem[] = [
+  {
+    question: "Quel prix pour un nid de guêpes ou frelons à Froncles ?",
+    answer: "Le tarif d'une intervention à Froncles débute à 85 € pour les guêpes et à 110 € pour les frelons. Chaque situation est unique, c'est pourquoi nous fixons un prix définitif avec vous avant toute manipulation du nid.",
+  },
+  {
+    question: "Est-ce que vous intervenez le week-end en cas d'urgence à Froncles ?",
+    answer: "Oui, nous assurons des interventions d'urgence 7j/7 en Haute-Marne. Si un nid de frelons devient une menace immédiate pour votre famille ou vos clients à Froncles, nous nous déplaçons rapidement pour sécuriser les lieux.",
+  },
+  {
+    question: "Comment éviter que les guêpes ne reviennent l'année prochaine ?",
+    answer: "Il est impossible d'empêcher totalement la nature de reprendre ses droits, mais une destruction totale du nid actuel à Froncles avant l'envol des reines réduit fortement la population locale. Nous pouvons aussi vous conseiller sur la pose de pièges sélectifs au printemps.",
+  },
+];
 
 const GuepesFrelonsFroncles = () => {
   return (
@@ -26,6 +42,7 @@ const GuepesFrelonsFroncles = () => {
         expertise="Nos techniciens qualifiés interviennent à Froncles et dans toute la Haute-Marne pour la destruction de nids de guêpes, frelons européens et frelons asiatiques. Intervention sécurisée, rapide et garantie."
         method="Repérage et évaluation du nid, sécurisation du périmètre, traitement par insecticide professionnel et retrait du nid. Intervention possible en hauteur et dans les zones difficiles d'accès."
         cta="Nid de guêpes ou frelons à Froncles ? Appelez G&F Nuisibles au 07.88.17.45.86 pour une intervention d'urgence."
+        faqItems={FAQ_ITEMS}
       />
     </>
   );

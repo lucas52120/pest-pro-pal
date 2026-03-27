@@ -1,10 +1,26 @@
 import { Zap } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
+import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
 const TITLE = "Destruction de nids de Guêpes & Frelons à Joinville";
 const DESCRIPTION = "Destruction nid de frelons à Joinville (52). G&F Nuisibles intervient en urgence. Sécurité garantie, devis gratuit.";
+
+const FAQ_ITEMS: FaqItem[] = [
+  {
+    question: "Quel est le tarif pour détruire un nid de frelons à Joinville ?",
+    answer: "À Joinville, l'intervention sur un nid de frelons débute à 110 €, tandis que pour les guêpes, le prix commence à 85 €. Le coût final est déterminé par l'accessibilité du nid (en hauteur, sous toiture, etc.). Nous validons systématiquement un prix définitif avec vous avant toute action.",
+  },
+  {
+    question: "Est-ce que les pompiers interviennent encore pour les nids à Joinville ?",
+    answer: "Non, les pompiers de la Haute-Marne n'interviennent plus pour les nids de guêpes et frelons sur le domaine privé. Ils vous redirigeront vers des professionnels certifiés comme GF Nuisibles, équipés pour neutraliser les colonies en toute sécurité.",
+  },
+  {
+    question: "Votre intervention est-elle garantie si les insectes reviennent ?",
+    answer: "Absolument. Chaque traitement réalisé à Joinville est garanti. Si le nid traité présente encore une activité 48h après notre passage, nous revenons gratuitement pour finaliser l'éradication. Votre satisfaction et votre sécurité sont nos priorités.",
+  },
+];
 
 const GuepesFrelonsJoinville = () => {
   return (
@@ -26,6 +42,7 @@ const GuepesFrelonsJoinville = () => {
         expertise="Nos techniciens qualifiés interviennent à Joinville et dans toute la Haute-Marne pour la destruction de nids de guêpes, frelons européens et frelons asiatiques. Intervention sécurisée, rapide et garantie."
         method="Repérage et évaluation du nid, sécurisation du périmètre, traitement par insecticide professionnel et retrait du nid. Intervention possible en hauteur et dans les zones difficiles d'accès."
         cta="Nid de guêpes ou frelons à Joinville ? Appelez G&F Nuisibles au 07.88.17.45.86 pour une intervention d'urgence."
+        faqItems={FAQ_ITEMS}
       />
     </>
   );
