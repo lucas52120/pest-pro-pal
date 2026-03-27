@@ -143,17 +143,18 @@ const CityServicePage = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
+                className="rounded-xl border border-slate-100 bg-slate-50 p-8 shadow-sm"
               >
-                <h3 className="mb-3 font-heading text-2xl font-bold text-primary">
+                <h3 className="mb-6 font-heading text-2xl font-extrabold text-primary">
                   Questions fréquentes
                 </h3>
                 <Accordion type="single" collapsible className="w-full">
                   {faqItems.map((faq, index) => (
                     <AccordionItem key={index} value={`faq-${index}`}>
-                      <AccordionTrigger className="text-left font-semibold text-primary">
+                      <AccordionTrigger className="text-left font-semibold text-primary hover:underline [&>svg]:text-accent">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground leading-relaxed">
+                      <AccordionContent className="pl-4 text-muted-foreground leading-relaxed">
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>
