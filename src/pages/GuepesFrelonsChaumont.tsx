@@ -10,7 +10,7 @@ const DESCRIPTION = "Nid de guêpes ou frelons à Chaumont ? G&F Nuisibles inter
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Quel est le prix pour détruire un nid de frelons à Chaumont ?",
-    answer: "Nos tarifs pour une destruction de nid à Chaumont débutent à partir de 75 €. Le prix dépend de la hauteur et de l'accessibilité du nid. Nous validons toujours un prix ferme avec vous avant l'intervention : aucune mauvaise surprise sur la facture finale.",
+    answer: "Nos tarifs pour une destruction de nid à Chaumont débutent à partir de 85 €. Le prix dépend de la hauteur et de l'accessibilité du nid. Nous validons toujours un prix ferme avec vous avant l'intervention : aucune mauvaise surprise sur la facture finale.",
   },
   {
     question: "Est-il dangereux de détruire le nid soi-même ?",

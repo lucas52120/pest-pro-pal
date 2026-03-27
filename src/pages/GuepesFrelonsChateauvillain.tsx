@@ -10,7 +10,7 @@ const DESCRIPTION = "Nid de guêpes à Châteauvillain ? G&F Nuisibles détruit 
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Prix d'une intervention guêpes/frelons à Châteauvillain ?",
-    answer: "Le coût à Châteauvillain commence à 70 € pour les guêpes et 110 € pour les frelons. La hauteur et les moyens techniques nécessaires font varier ce tarif. Le prix est fixé et validé avec vous avant toute manipulation.",
+    answer: "Le coût à Châteauvillain commence à 85 € pour les guêpes et 110 € pour les frelons. La hauteur et les moyens techniques nécessaires font varier ce tarif. Le prix est fixé et validé avec vous avant toute manipulation.",
   },
   {
     question: "Que faire si je découvre un nid dans mon grenier à Châteauvillain ?",
