@@ -46,6 +46,7 @@ const CityServicePage = ({
   cta,
   serviceCallTitle,
   serviceCallSubtitle,
+  faqItems,
 }: CityServicePageProps) => {
   useEffect(() => {
     document.title = serviceTitle;
