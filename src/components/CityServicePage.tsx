@@ -5,6 +5,17 @@ import { Phone, Clock, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Reassurance from "@/components/Reassurance";
 import Footer from "@/components/Footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
 
 interface CityServicePageProps {
   city: string;
@@ -19,6 +30,7 @@ interface CityServicePageProps {
   cta: string;
   serviceCallTitle: string;
   serviceCallSubtitle: string;
+  faqItems?: FaqItem[];
 }
 
 const CityServicePage = ({
