@@ -7,6 +7,21 @@ import heroImage from "@/assets/service-guepes.jpg";
 const TITLE = "Destruction de nids de Guêpes & Frelons à Châteauvillain";
 const DESCRIPTION = "Nid de guêpes à Châteauvillain ? G&F Nuisibles détruit nids de guêpes et frelons en Haute-Marne 52. Urgence 7j/7.";
 
+const FAQ_ITEMS: FaqItem[] = [
+  {
+    question: "Prix d'une intervention guêpes/frelons à Châteauvillain ?",
+    answer: "Le coût à Châteauvillain commence à 70 € pour les guêpes et 110 € pour les frelons. La hauteur et les moyens techniques nécessaires font varier ce tarif. Le prix est fixé et validé avec vous avant toute manipulation.",
+  },
+  {
+    question: "Que faire si je découvre un nid dans mon grenier à Châteauvillain ?",
+    answer: "Ne bouchez pas le trou de sortie, les insectes chercheraient une autre issue à l'intérieur. En Haute-Marne, nous intervenons rapidement pour éliminer la colonie avec des produits certifiés Certibiocide, inaccessibles au public.",
+  },
+  {
+    question: "Pourquoi les frelons asiatiques sont-ils plus problématiques ?",
+    answer: "Ils sont plus agressifs et leurs colonies sont beaucoup plus vastes. À Châteauvillain, leurs nids peuvent atteindre la taille d'un ballon de basket en quelques semaines seulement. Contactez un expert dès les premiers signes.",
+  },
+];
+
 const GuepesFrelonsChateauvillain = () => {
   return (
     <>
