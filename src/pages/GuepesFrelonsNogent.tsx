@@ -7,6 +7,21 @@ import heroImage from "@/assets/service-guepes.jpg";
 const TITLE = "Destruction de nids de Guêpes & Frelons à Nogent";
 const DESCRIPTION = "Guêpes ou frelons à Nogent ? G&F Nuisibles, spécialiste Haute-Marne 52, neutralise les nids rapidement. Appelez-nous !";
 
+const FAQ_ITEMS: FaqItem[] = [
+  {
+    question: "Tarifs pour la destruction de nids de frelons ou guêpes à Nogent ?",
+    answer: "Nos forfaits à Nogent commencent à 70 € pour les guêpes et à 110 € pour les frelons. Le prix varie selon la complexité technique de l'accès. Nous nous engageons sur un prix ferme communiqué avant d'intervenir.",
+  },
+  {
+    question: "Quels sont les dangers d'un nid de guêpes près d'une habitation ?",
+    answer: "Le risque principal est la piqûre multiple, grave pour les enfants ou les personnes allergiques. À Nogent, nos techniciens interviennent 7j/7 avec du matériel pro pour éradiquer la menace sans mettre votre entourage en péril.",
+  },
+  {
+    question: "Comment sont structurés les nids de frelons ?",
+    answer: "Le nid ressemble à une grosse lanterne de papier grisâtre. Le frelon européen préfère les endroits sombres, tandis que le frelon asiatique construit souvent en pleine lumière. Dans le 52, restez vigilant si vous observez un gros insecte bruyant.",
+  },
+];
+
 const GuepesFrelonsNogent = () => {
   return (
     <>
