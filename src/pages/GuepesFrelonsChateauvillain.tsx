@@ -1,6 +1,7 @@
 import { Zap } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import CityServicePage from "@/components/CityServicePage";
+import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
 const TITLE = "Destruction de nids de Guêpes & Frelons à Châteauvillain";
