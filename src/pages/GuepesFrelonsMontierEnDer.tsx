@@ -23,11 +23,54 @@ const FAQ_ITEMS: FaqItem[] = [
 ];
 
 const GuepesFrelonsMontierEnDer = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "G&F Nuisibles",
+        "telephone": "07.88.17.45.86",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Montier-en-Der",
+          "addressRegion": "Haute-Marne",
+          "postalCode": "52220",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": TITLE,
+        "description": DESCRIPTION,
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "G&F Nuisibles"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Montier-en-Der"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": FAQ_ITEMS.map((item) => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
         city="Montier-en-Der"
