@@ -23,6 +23,48 @@ const FAQ_ITEMS: FaqItem[] = [
 ];
 
 const GuepesFrelonsJoinville = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "G&F Nuisibles",
+        "telephone": "07.88.17.45.86",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Joinville",
+          "addressRegion": "Haute-Marne",
+          "postalCode": "52300",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": TITLE,
+        "description": DESCRIPTION,
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "G&F Nuisibles"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Joinville"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": FAQ_ITEMS.map((item) => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
       <Helmet>
