@@ -70,6 +70,7 @@ const GuepesFrelonsBarSurAube = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
         city="Bar-sur-Aube"
