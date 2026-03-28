@@ -10,7 +10,7 @@ const DESCRIPTION = "Nid de guêpes ou frelons à Bar-sur-Aube ? G&F Nuisibles i
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Quel est le prix d'une intervention sur un nid de guêpes à Bar-sur-Aube ?",
-    answer: "À Bar-sur-Aube, l'élimination d'un nid de guêpes est facturée à partir de 70 €. Pour les frelons, le coût démarre à 110 €. Le devis dépend de l'accessibilité du site. Aucun frais caché : le tarif validé ensemble est celui appliqué sur votre facture finale.",
+    answer: "À Bar-sur-Aube, l'élimination d'un nid de guêpes est facturée à partir de 85 €. Pour les frelons, le coût démarre à 110 €. Le devis dépend de l'accessibilité du site. Aucun frais caché : le tarif validé ensemble est celui appliqué sur votre facture finale.",
   },
   {
     question: "Pourquoi ne pas utiliser une bombe insecticide du commerce ?",
