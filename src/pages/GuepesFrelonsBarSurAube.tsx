@@ -10,7 +10,7 @@ const DESCRIPTION = "Nid de guêpes ou frelons à Bar-sur-Aube ? G&F Nuisibles i
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Quel est le prix d'une intervention sur un nid de guêpes à Bar-sur-Aube ?",
-    answer: "À Bar-sur-Aube, l'élimination d'un nid de guêpes est facturée à partir de 70 €. Pour les frelons, le coût démarre à 110 €. Le devis dépend de l'accessibilité du site. Aucun frais caché : le tarif validé ensemble est celui appliqué sur votre facture finale.",
+    answer: "À Bar-sur-Aube, l'élimination d'un nid de guêpes est facturée à partir de 85 €. Pour les frelons, le coût démarre à 110 €. Le devis dépend de l'accessibilité du site. Aucun frais caché : le tarif validé ensemble est celui appliqué sur votre facture finale.",
   },
   {
     question: "Pourquoi ne pas utiliser une bombe insecticide du commerce ?",
@@ -23,11 +23,54 @@ const FAQ_ITEMS: FaqItem[] = [
 ];
 
 const GuepesFrelonsBarSurAube = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "G&F Nuisibles",
+        "telephone": "07.88.17.45.86",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bar-sur-Aube",
+          "addressRegion": "Aube",
+          "postalCode": "10200",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": TITLE,
+        "description": DESCRIPTION,
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "G&F Nuisibles"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Bar-sur-Aube"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": FAQ_ITEMS.map((item) => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
         city="Bar-sur-Aube"
