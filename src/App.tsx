@@ -23,12 +23,24 @@ import DepigeonnisationChaumont from "./pages/DepigeonnisationChaumont.tsx";
 import TaupesChaumont from "./pages/TaupesChaumont.tsx";
 import DeratisationLangres from "./pages/DeratisationLangres.tsx";
 import GuepesFrelonsLangres from "./pages/GuepesFrelonsLangres.tsx";
+import DesinsectisationLangres from "./pages/DesinsectisationLangres.tsx";
+import DepigeonnisationLangres from "./pages/DepigeonnisationLangres.tsx";
+import TaupesLangres from "./pages/TaupesLangres.tsx";
 import DeratisationNogent from "./pages/DeratisationNogent.tsx";
 import GuepesFrelonsNogent from "./pages/GuepesFrelonsNogent.tsx";
+import DesinsectisationNogent from "./pages/DesinsectisationNogent.tsx";
+import DepigeonnisationNogent from "./pages/DepigeonnisationNogent.tsx";
+import TaupesNogent from "./pages/TaupesNogent.tsx";
 import DeratisationSaintDizier from "./pages/DeratisationSaintDizier.tsx";
 import GuepesFrelonsSaintDizier from "./pages/GuepesFrelonsSaintDizier.tsx";
+import DesinsectisationSaintDizier from "./pages/DesinsectisationSaintDizier.tsx";
+import DepigeonnisationSaintDizier from "./pages/DepigeonnisationSaintDizier.tsx";
+import TaupesSaintDizier from "./pages/TaupesSaintDizier.tsx";
 import DeratisationJoinville from "./pages/DeratisationJoinville.tsx";
 import GuepesFrelonsJoinville from "./pages/GuepesFrelonsJoinville.tsx";
+import DesinsectisationJoinville from "./pages/DesinsectisationJoinville.tsx";
+import DepigeonnisationJoinville from "./pages/DepigeonnisationJoinville.tsx";
+import TaupesJoinville from "./pages/TaupesJoinville.tsx";
 
 // Wassy
 import DeratisationWassy from "./pages/DeratisationWassy.tsx";
@@ -170,14 +182,30 @@ const App = () => (
           <Route path="/desinsectisation-chaumont" element={<DesinsectisationChaumont />} />
           <Route path="/services/depigeonnisation/chaumont" element={<DepigeonnisationChaumont />} />
           <Route path="/taupes-chaumont" element={<TaupesChaumont />} />
+          {/* Langres — tous les services */}
           <Route path="/deratisation-langres" element={<DeratisationLangres />} />
           <Route path="/guepes-frelons-langres" element={<GuepesFrelonsLangres />} />
+          <Route path="/desinsectisation-langres" element={<DesinsectisationLangres />} />
+          <Route path="/services/depigeonnisation/langres" element={<DepigeonnisationLangres />} />
+          <Route path="/taupes-langres" element={<TaupesLangres />} />
+          {/* Nogent — tous les services */}
           <Route path="/deratisation-nogent" element={<DeratisationNogent />} />
           <Route path="/guepes-frelons-nogent" element={<GuepesFrelonsNogent />} />
+          <Route path="/desinsectisation-nogent" element={<DesinsectisationNogent />} />
+          <Route path="/services/depigeonnisation/nogent" element={<DepigeonnisationNogent />} />
+          <Route path="/taupes-nogent" element={<TaupesNogent />} />
+          {/* Saint-Dizier — tous les services */}
           <Route path="/deratisation-saint-dizier" element={<DeratisationSaintDizier />} />
           <Route path="/guepes-frelons-saint-dizier" element={<GuepesFrelonsSaintDizier />} />
+          <Route path="/desinsectisation-saint-dizier" element={<DesinsectisationSaintDizier />} />
+          <Route path="/services/depigeonnisation/saint-dizier" element={<DepigeonnisationSaintDizier />} />
+          <Route path="/taupes-saint-dizier" element={<TaupesSaintDizier />} />
+          {/* Joinville — tous les services */}
           <Route path="/deratisation-joinville" element={<DeratisationJoinville />} />
           <Route path="/guepes-frelons-joinville" element={<GuepesFrelonsJoinville />} />
+          <Route path="/desinsectisation-joinville" element={<DesinsectisationJoinville />} />
+          <Route path="/services/depigeonnisation/joinville" element={<DepigeonnisationJoinville />} />
+          <Route path="/taupes-joinville" element={<TaupesJoinville />} />
           <Route path="/regulation-esod" element={<Esod />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
