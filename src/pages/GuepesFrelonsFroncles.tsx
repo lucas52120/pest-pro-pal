@@ -32,14 +32,17 @@ const GuepesFrelonsFroncles = () => {
     "@graph": [
       {
         "@type": "LocalBusiness",
+        "@id": "https://pest-pro-pal.lovable.app/#organization",
         name: "G&F Nuisibles",
         telephone: "07.88.17.45.86",
         priceRange: "$$",
+        image: "https://pest-pro-pal.lovable.app/og-image.png",
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Froncles",
+          streetAddress: "27 rue principale",
+          addressLocality: "Montsaon",
+          postalCode: "52000",
           addressRegion: "Haute-Marne",
-          postalCode: "52320",
           addressCountry: "FR",
         },
       },
@@ -48,8 +51,7 @@ const GuepesFrelonsFroncles = () => {
         name: TITLE,
         description: DESCRIPTION,
         provider: {
-          "@type": "LocalBusiness",
-          name: "G&F Nuisibles",
+          "@id": "https://pest-pro-pal.lovable.app/#organization",
         },
         areaServed: {
           "@type": "City",
