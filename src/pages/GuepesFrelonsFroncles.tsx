@@ -5,20 +5,24 @@ import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
 const TITLE = "Destruction de nids de Guêpes & Frelons à Froncles";
-const DESCRIPTION = "Guêpes ou frelons à Froncles ? G&F Nuisibles, spécialiste Haute-Marne 52, neutralise les nids rapidement. Appelez-nous !";
+const DESCRIPTION =
+  "Guêpes ou frelons à Froncles ? G&F Nuisibles, spécialiste Haute-Marne 52, neutralise les nids rapidement. Appelez-nous !";
 
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Quel prix pour un nid de guêpes ou frelons à Froncles ?",
-    answer: "Le tarif d'une intervention à Froncles débute à 85 € pour les guêpes et à 110 € pour les frelons. Chaque situation est unique, c'est pourquoi nous fixons un prix définitif avec vous avant toute manipulation du nid.",
+    answer:
+      "Le tarif d'une intervention à Froncles débute à 85 € pour les guêpes et à 110 € pour les frelons. Chaque situation est unique, c'est pourquoi nous fixons un prix définitif avec vous avant toute manipulation du nid.",
   },
   {
     question: "Est-ce que vous intervenez le week-end en cas d'urgence à Froncles ?",
-    answer: "Oui, nous assurons des interventions d'urgence 7j/7 en Haute-Marne. Si un nid de frelons devient une menace immédiate pour votre famille ou vos clients à Froncles, nous nous déplaçons rapidement pour sécuriser les lieux.",
+    answer:
+      "Oui, nous assurons des interventions d'urgence 7j/7 en Haute-Marne. Si un nid de frelons devient une menace immédiate pour votre famille ou vos clients à Froncles, nous nous déplaçons rapidement pour sécuriser les lieux.",
   },
   {
     question: "Comment éviter que les guêpes ne reviennent l'année prochaine ?",
-    answer: "Il est impossible d'empêcher totalement la nature de reprendre ses droits, mais une destruction totale du nid actuel à Froncles avant l'envol des reines réduit fortement la population locale. Nous pouvons aussi vous conseiller sur la pose de pièges sélectifs au printemps.",
+    answer:
+      "Il est impossible d'empêcher totalement la nature de reprendre ses droits, mais une destruction totale du nid actuel à Froncles avant l'envol des reines réduit fortement la population locale. Nous pouvons aussi vous conseiller sur la pose de pièges sélectifs au printemps.",
   },
 ];
 
@@ -28,41 +32,42 @@ const GuepesFrelonsFroncles = () => {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
-        "address": {
+        name: "G&F Nuisibles",
+        telephone: "07.88.17.45.86",
+        priceRange: "$$",
+        address: {
           "@type": "PostalAddress",
-          "addressLocality": "Froncles",
-          "addressRegion": "Haute-Marne",
-          "postalCode": "52320",
-          "addressCountry": "FR"
-        }
+          addressLocality: "Froncles",
+          addressRegion: "Haute-Marne",
+          postalCode: "52320",
+          addressCountry: "FR",
+        },
       },
       {
         "@type": "Service",
-        "name": TITLE,
-        "description": DESCRIPTION,
-        "provider": {
+        name: TITLE,
+        description: DESCRIPTION,
+        provider: {
           "@type": "LocalBusiness",
-          "name": "G&F Nuisibles"
+          name: "G&F Nuisibles",
         },
-        "areaServed": {
+        areaServed: {
           "@type": "City",
-          "name": "Froncles"
-        }
+          name: "Froncles",
+        },
       },
       {
         "@type": "FAQPage",
-        "mainEntity": FAQ_ITEMS.map((item) => ({
+        mainEntity: FAQ_ITEMS.map((item) => ({
           "@type": "Question",
-          "name": item.question,
-          "acceptedAnswer": {
+          name: item.question,
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": item.answer
-          }
-        }))
-      }
-    ]
+            text: item.answer,
+          },
+        })),
+      },
+    ],
   };
 
   return (
