@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Phone, Clock, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -48,19 +48,6 @@ const CityServicePage = ({
   serviceCallSubtitle,
   faqItems,
 }: CityServicePageProps) => {
-  useEffect(() => {
-    document.title = serviceTitle;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", metaDescription);
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", serviceTitle);
-    const twTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twTitle) twTitle.setAttribute("content", serviceTitle);
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute("content", metaDescription);
-    const twDesc = document.querySelector('meta[name="twitter:description"]');
-    if (twDesc) twDesc.setAttribute("content", metaDescription);
-  }, [serviceTitle, metaDescription]);
 
   return (
     <>
