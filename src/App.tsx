@@ -191,11 +191,11 @@ const App = () => (
           <Route path="/taupes-wassy" element={<TaupesWassy />} />
 
           {/* Bourbonne-les-Bains — tous les services */}
-          <Route path="/deratisation-bourbonne-les-bains" element={<DeratisationBourbonne />} />
-          <Route path="/guepes-frelons-bourbonne-les-bains" element={<GuepesFrelonsBourbonne />} />
-          <Route path="/desinsectisation-bourbonne-les-bains" element={<DesinsectisationBourbonne />} />
+          <Route path="/deratisation-bourbonne" element={<DeratisationBourbonne />} />
+          <Route path="/guepes-frelons-bourbonne" element={<GuepesFrelonsBourbonne />} />
+          <Route path="/desinsectisation-bourbonne" element={<DesinsectisationBourbonne />} />
           <Route path="/services/depigeonnisation/bourbonne-les-bains" element={<DepigeonnisationBourbonne />} />
-          <Route path="/taupes-bourbonne-les-bains" element={<TaupesBourbonne />} />
+          <Route path="/taupes-bourbonne" element={<TaupesBourbonne />} />
 
           {/* Bologne — tous les services */}
           <Route path="/deratisation-bologne" element={<DeratisationBologne />} />
