@@ -27,8 +27,14 @@ import DeratisationNogent from "./pages/DeratisationNogent.tsx";
 import GuepesFrelonsNogent from "./pages/GuepesFrelonsNogent.tsx";
 import DeratisationSaintDizier from "./pages/DeratisationSaintDizier.tsx";
 import GuepesFrelonsSaintDizier from "./pages/GuepesFrelonsSaintDizier.tsx";
+import DesinsectisationSaintDizier from "./pages/DesinsectisationSaintDizier.tsx";
+import DepigeonnisationSaintDizier from "./pages/DepigeonnisationSaintDizier.tsx";
+import TaupesSaintDizier from "./pages/TaupesSaintDizier.tsx";
 import DeratisationJoinville from "./pages/DeratisationJoinville.tsx";
 import GuepesFrelonsJoinville from "./pages/GuepesFrelonsJoinville.tsx";
+import DesinsectisationJoinville from "./pages/DesinsectisationJoinville.tsx";
+import DepigeonnisationJoinville from "./pages/DepigeonnisationJoinville.tsx";
+import TaupesJoinville from "./pages/TaupesJoinville.tsx";
 
 // Wassy
 import DeratisationWassy from "./pages/DeratisationWassy.tsx";
