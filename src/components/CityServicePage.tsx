@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { Phone, Clock, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
