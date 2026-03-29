@@ -35,9 +35,10 @@ const GuepesFrelonsWassy = () => {
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Wassy",
+          "streetAddress": "27 rue principale",
+          "addressLocality": "Montsaon",
+          "postalCode": "52000",
           "addressRegion": "Haute-Marne",
-          "postalCode": "52130",
           "addressCountry": "FR"
         }
       },

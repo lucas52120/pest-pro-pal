@@ -28,13 +28,17 @@ const GuepesFrelonsMontierEnDer = () => {
     "@graph": [
       {
         "@type": "LocalBusiness",
+        "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
         "telephone": "07.88.17.45.86",
+        "priceRange": "$$",
+        "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Montier-en-Der",
+          "streetAddress": "27 rue principale",
+          "addressLocality": "Montsaon",
+          "postalCode": "52000",
           "addressRegion": "Haute-Marne",
-          "postalCode": "52220",
           "addressCountry": "FR"
         }
       },
@@ -43,8 +47,7 @@ const GuepesFrelonsMontierEnDer = () => {
         "name": TITLE,
         "description": DESCRIPTION,
         "provider": {
-          "@type": "LocalBusiness",
-          "name": "G&F Nuisibles"
+          "@id": "https://pest-pro-pal.lovable.app/#organization"
         },
         "areaServed": {
           "@type": "City",
