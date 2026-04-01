@@ -33,6 +33,7 @@ const ServicePageLayout = ({
   serviceCallTitle,
   serviceCallSubtitle,
   sidebarImage,
+  children,
 }: ServicePageLayoutProps) => {
   return (
     <>
