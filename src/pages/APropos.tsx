@@ -36,16 +36,32 @@ const APropos = () => {
             className="space-y-6"
           >
             <h2 className="font-heading text-2xl font-bold text-primary">
-              Qui sommes-nous ?
+              Qui se cache derrière G&F Nuisibles ?
             </h2>
             <p className="leading-relaxed text-muted-foreground">
-              <strong>G&F Nuisibles</strong> est une entreprise spécialisée dans la gestion et l'élimination des nuisibles, implantée au cœur de la <strong>Haute-Marne (52)</strong>. Nous intervenons auprès des <strong>particuliers et professionnels</strong> sur l'ensemble du département : <strong>Chaumont, Langres, Saint-Dizier</strong> et toutes les communes environnantes.
+              L'aventure de <strong>G&F Nuisibles</strong> a commencé il y a plusieurs années avec une idée simple : mettre une longue expérience du terrain au service des habitants de notre région. Basé à <strong>Montsaon (52)</strong>, je ne suis pas une franchise nationale anonyme, mais un artisan local qui a fait de la lutte contre les nuisibles son métier et sa passion.
+            </p>
+
+            <h3 className="font-heading text-xl font-semibold text-primary">
+              Bien plus qu'un simple applicateur : une expertise complète
+            </h3>
+            <p className="leading-relaxed text-muted-foreground">
+              Ce qui me distingue, c'est une approche globale du monde animal et de la régulation. Mon savoir-faire ne s'arrête pas à la chimie, il repose sur des compétences certifiées et une maîtrise technique rare :
+            </p>
+            <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
+              <li><strong>Agréé Certibiocide</strong> : Pour l'utilisation responsable et sécurisée des traitements professionnels.</li>
+              <li><strong>Piégeur agréé</strong> : Détenteur de l'agrément de piégeur et du certificat de capacité, je maîtrise les méthodes de capture traditionnelles et réglementées.</li>
+              <li><strong>Fauconnier de métier</strong> : Cette spécialité me permet d'avoir une vision unique sur le comportement des volatiles et des prédateurs, offrant des solutions alternatives et expertes pour le dépigeonnage.</li>
+            </ul>
+
+            <h3 className="font-heading text-xl font-semibold text-primary">
+              Une réactivité à toute épreuve sur 4 départements
+            </h3>
+            <p className="leading-relaxed text-muted-foreground">
+              Parce qu'un problème de nuisibles n'attend pas, j'ai choisi de rayonner largement pour ne laisser personne sans solution. Depuis mon siège de <strong>Montsaon</strong>, j'interviens dans un rayon de <strong>150 km</strong>.
             </p>
             <p className="leading-relaxed text-muted-foreground">
-              Notre mission : vous offrir un service de <strong>dératisation, désinsectisation, dépigeonnage</strong> et <strong>destruction de nids de guêpes et frelons</strong> rapide, efficace et respectueux de l'environnement. Agréés <strong>Certibiocide</strong>, nous utilisons exclusivement des produits professionnels homologués pour garantir votre sécurité et celle de votre entourage.
-            </p>
-            <p className="leading-relaxed text-muted-foreground">
-              Ce qui nous distingue, c'est notre <strong>réactivité</strong> et notre <strong>connaissance du terrain</strong>. Basés localement, nous comprenons les problématiques spécifiques de notre région et nous nous déplaçons rapidement, y compris en urgence le week-end, pour répondre à vos besoins dans les meilleurs délais.
+              Que vous soyez à <strong>Chaumont</strong>, <strong>Saint-Dizier</strong> ou <strong>Langres</strong>, ou plus loin vers <strong>Dijon</strong>, <strong>Nancy</strong>, <strong>Vittel</strong> ou <strong>Bar-le-Duc</strong>, je me déplace rapidement chez les particuliers comme chez les professionnels (commerces, industries, collectivités).
             </p>
           </motion.div>
 
@@ -81,7 +97,7 @@ const APropos = () => {
               {
                 icon: <MapPin className="h-8 w-8" />,
                 title: "Proximité locale",
-                desc: "Implantés en Haute-Marne, nous connaissons parfaitement le territoire de Chaumont à Saint-Dizier en passant par Langres.",
+                desc: "Intervention dans un rayon de 150km (52, 21, 54, 88, 10).",
               },
               {
                 icon: <Clock className="h-8 w-8" />,
@@ -91,7 +107,7 @@ const APropos = () => {
               {
                 icon: <Shield className="h-8 w-8" />,
                 title: "Agréé Certibiocide",
-                desc: "Nos techniciens sont certifiés et utilisent uniquement des produits professionnels homologués par le ministère.",
+                desc: "Nos techniciens sont certifiés et utilisent uniquement des produits professionnels homologués par le ministère. Piégeur agréé et Fauconnier de métier.",
               },
               {
                 icon: <Users className="h-8 w-8" />,
