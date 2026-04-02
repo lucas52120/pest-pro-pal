@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/logo-gf-new.png";
+import logo from "@/assets/logo-gf.svg";
 
 const navItems = [
   { label: "Accueil", path: "/" },
@@ -36,23 +36,18 @@ const Navbar = () => {
         scrolled ? "bg-primary shadow-lg" : "bg-primary/95"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 lg:px-8">
-        {/* Logo – left */}
-        <Link to="/" className="flex shrink-0 items-center">
-          <img
-            src={logo}
-            alt="G&F Nuisibles"
-            className="h-14 w-auto lg:h-20"
-          />
+      <div className="container-narrow flex items-center justify-between px-4 py-2">
+        <Link to="/" className="flex items-center gap-2">
+          <img src={logo} alt="GF Nuisibles" className="h-14 w-auto brightness-0 invert" />
         </Link>
 
-        {/* Desktop nav – center */}
-        <div className="hidden flex-1 items-center justify-center gap-8 lg:flex">
+        {/* Desktop nav */}
+        <div className="hidden items-center gap-5 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
-              className={`whitespace-nowrap font-heading text-base font-semibold transition-colors hover:text-accent ${
+              className={`font-heading text-sm font-medium transition-colors hover:text-accent ${
                 location.pathname === item.path
                   ? "text-accent"
                   : "text-primary-foreground/80"
@@ -63,10 +58,10 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Phone CTA – right */}
+        {/* Phone CTA */}
         <a
           href="tel:0788174586"
-          className="hidden shrink-0 items-center gap-2 rounded-lg bg-accent px-4 py-2 font-heading text-sm font-bold text-accent-foreground transition-colors hover:bg-orange-hover md:flex"
+          className="hidden items-center gap-2 rounded-lg bg-accent px-4 py-2 font-heading text-sm font-bold text-accent-foreground transition-colors hover:bg-orange-hover md:flex"
         >
           <Phone className="h-4 w-4" />
           07.88.17.45.86
