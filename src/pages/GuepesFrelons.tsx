@@ -162,7 +162,7 @@ const GuepesFrelons = () => {
 
               {/* Q2 */}
               <AccordionItem value="q2" data-value="q2" className="border-none">
-                <AccordionTrigger className="flex items-center gap-3 py-5 text-left hover:no-underline [&[data-state=open]>svg.plus-icon]:hidden [&[data-state=closed]>svg.minus-icon]:hidden [&>svg.chevron]:hidden">
+                <AccordionTrigger className="justify-start gap-3 py-5 text-left hover:no-underline [&[data-state=open]>svg.plus-icon]:hidden [&[data-state=closed]>svg.minus-icon]:hidden [&>svg.chevron]:hidden">
                   <Plus className="plus-icon h-5 w-5 shrink-0 text-accent" />
                   <Minus className="minus-icon h-5 w-5 shrink-0 text-accent" />
                   <h3 className="font-heading text-xl font-bold text-foreground">
