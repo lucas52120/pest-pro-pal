@@ -13,6 +13,9 @@ const Footer = () => {
             <p className="text-sm text-primary-foreground/60">
               Expert en gestion des nuisibles en Haute-Marne. Intervention rapide, discrète et garantie.
             </p>
+            <p className="mt-2 text-sm text-primary-foreground/60">
+              Haute-Marne et communes limitrophes.
+            </p>
           </div>
           <div>
             <h4 className="mb-4 font-heading font-bold">Services</h4>
@@ -22,6 +25,7 @@ const Footer = () => {
               <li><Link to="/taupes" className="hover:text-accent">Taupes</Link></li>
               <li><Link to="/depigeonnage" className="hover:text-accent">Dépigeonnage</Link></li>
               <li><Link to="/deratisation" className="hover:text-accent">Dératisation</Link></li>
+              <li><Link to="/esod" className="hover:text-accent">Régulation ESOD</Link></li>
             </ul>
           </div>
           <div>
@@ -54,7 +58,7 @@ const Footer = () => {
           <h3 className="mb-6 font-heading text-lg font-bold text-accent">
             Nos zones d'intervention
           </h3>
-          <div className="grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 text-[0.8rem] sm:grid-cols-2 lg:grid-cols-3">
             {cities.map((city) => {
               const cityServices = serviceDefinitions.filter((s) =>
                 city.services.includes(s.slug)
