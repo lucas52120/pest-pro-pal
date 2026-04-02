@@ -17,7 +17,7 @@ const APropos = () => {
         <div className="container-narrow px-4">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 className="mb-4 font-heading text-4xl font-extrabold text-primary-foreground md:text-5xl">
-              G&F Nuisibles : L'expertise d'un artisan local au service de votre sérénité
+              À propos de G&F Nuisibles
             </h1>
             <p className="max-w-xl text-lg text-primary-foreground/70">
               Votre expert en lutte contre les nuisibles en Haute-Marne (52)
@@ -39,13 +39,13 @@ const APropos = () => {
               Qui sommes-nous ?
             </h2>
             <p className="leading-relaxed text-muted-foreground">
-              L'aventure de <strong>G&F Nuisibles</strong> a commencé il y a plusieurs années avec une idée simple : mettre une longue expérience du terrain au service des habitants de notre région. Basé à <strong>Montsaon (52)</strong>, je ne suis pas une franchise anonyme, mais un <strong>artisan local</strong> qui a fait de la lutte contre les nuisibles son métier et sa passion.
+              <strong>G&F Nuisibles</strong> est une entreprise spécialisée dans la gestion et l'élimination des nuisibles, implantée au cœur de la <strong>Haute-Marne (52)</strong>. Nous intervenons auprès des <strong>particuliers et professionnels</strong> sur l'ensemble du département : <strong>Chaumont, Langres, Saint-Dizier</strong> et toutes les communes environnantes.
             </p>
             <p className="leading-relaxed text-muted-foreground">
-              Ce qui me distingue, c'est une approche globale du monde animal et de la régulation. Mon savoir-faire repose sur des compétences certifiées et une maîtrise technique rare : je suis agréé <strong>Certibiocide</strong>, mais aussi <strong>piégeur agréé</strong> (détenteur du certificat de capacité). Ma spécialité de <strong>fauconnier</strong> me permet d'avoir une vision unique sur le comportement des nuisibles et d'offrir des solutions expertes, notamment pour le <strong>dépigeonnage</strong>.
+              Notre mission : vous offrir un service de <strong>dératisation, désinsectisation, dépigeonnage</strong> et <strong>destruction de nids de guêpes et frelons</strong> rapide, efficace et respectueux de l'environnement. Agréés <strong>Certibiocide</strong>, nous utilisons exclusivement des produits professionnels homologués pour garantir votre sécurité et celle de votre entourage.
             </p>
             <p className="leading-relaxed text-muted-foreground">
-              Parce qu'un problème n'attend pas, j'interviens dans un <strong>rayon de 150 km</strong> autour de Montsaon. Que vous soyez à <strong>Chaumont, Saint-Dizier ou Langres</strong>, ou plus loin vers <strong>Dijon, Nancy, Vittel ou Bar-le-Duc</strong>, je me déplace rapidement chez les particuliers comme chez les professionnels pour vous apporter une solution durable et efficace.
+              Ce qui nous distingue, c'est notre <strong>réactivité</strong> et notre <strong>connaissance du terrain</strong>. Basés localement, nous comprenons les problématiques spécifiques de notre région et nous nous déplaçons rapidement, y compris en urgence le week-end, pour répondre à vos besoins dans les meilleurs délais.
             </p>
           </motion.div>
 
@@ -81,7 +81,7 @@ const APropos = () => {
               {
                 icon: <MapPin className="h-8 w-8" />,
                 title: "Proximité locale",
-                desc: "Intervention dans un rayon de 150km autour de Montsaon (52, 21, 54, 88, 10).",
+                desc: "Implantés en Haute-Marne, nous connaissons parfaitement le territoire de Chaumont à Saint-Dizier en passant par Langres.",
               },
               {
                 icon: <Clock className="h-8 w-8" />,
@@ -91,7 +91,7 @@ const APropos = () => {
               {
                 icon: <Shield className="h-8 w-8" />,
                 title: "Agréé Certibiocide",
-                desc: "Nos techniciens sont certifiés et utilisent uniquement des produits professionnels homologués par le ministère. Piégeur agréé et Fauconnier de métier.",
+                desc: "Nos techniciens sont certifiés et utilisent uniquement des produits professionnels homologués par le ministère.",
               },
               {
                 icon: <Users className="h-8 w-8" />,
