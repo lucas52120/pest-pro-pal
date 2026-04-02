@@ -1,13 +1,10 @@
 import { Zap, Plus, Minus } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { useCallback, useRef } from "react";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { AccordionContent, AccordionItem } from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
 import heroImage from "@/assets/service-guepes.jpg";
 import comparatifFrelons from "@/assets/comparatif-frelons.png";
 import guepeVol from "@/assets/guepe-vol.jpg";
@@ -17,19 +14,19 @@ import nidFrelonAsiatique from "@/assets/nid-frelon-asiatique.jpg";
 const FAQ_ITEMS = [
   {
     question: "Quelles différences entre frelon européen et frelon asiatique ?",
-    answer: `Il est essentiel de savoir les distinguer, car leur comportement et la dangerosité du nid diffèrent. À Chaumont, et ses communes alentour en Haute-Marne, nous rencontrons de plus en plus de frelons asiatiques, particulièrement agressifs près de leur colonie.\n\nLe Frelon Européen (Vespa crabro) : C'est le plus grand (entre 25 et 35 mm). Il ressemble à une grosse guêpe. Son corps est taché de roux, de noir et de jaune. Ses pattes sont brunes. Il est plutôt pacifique, sauf si l'on s'approche trop près du nid.\n\nLe Frelon Asiatique (Vespa velutina) : Plus petit que son cousin européen (entre 20 et 30 mm), il est très sombre. On le reconnaît à son thorax noir, son segment abdominal orangé et surtout ses pattes aux extrémités jaunes (d'où son surnom de frelon à pattes jaunes).`,
+    answer: `Il est essentiel de savoir les distinguer, car leur comportement et la dangerosité du nid diffèrent. À Chaumont, et ses communes alentour en Haute-Marne, nous rencontrons de plus en plus de frelons asiatiques, particulièrement agressifs près de leur colonie. Le Frelon Européen (Vespa crabro) : C'est le plus grand (entre 25 et 35 mm). Il ressemble à une grosse guêpe. Son corps est taché de roux, de noir et de jaune. Le Frelon Asiatique (Vespa velutina) : Plus petit (entre 20 et 30 mm), il est très sombre. On le reconnaît à son thorax noir, son segment abdominal orangé et ses pattes aux extrémités jaunes.`,
   },
   {
     question: "Caractéristiques physiques : comment reconnaître l'insecte qui vous envahit ?",
-    answer: "Fiche d'identité et morphologie des guêpes et frelons.",
+    answer: "La Guêpe (Vespula) : Petite et élancée (10-19 mm), jaune vif et noir profond. Le Frelon Européen (Vespa crabro) : Le géant (25-35 mm), teintes rousses, abdomen jaune rayé de noir. Le Frelon Asiatique (Vespa velutina) : Plus sombre et plus petit (20-30 mm), thorax noir mat, face orangée, pattes jaune vif.",
   },
   {
     question: "Comment déceler la présence d'un nid chez vous ?",
-    answer: `Parfois, le nid est invisible, caché dans une cloison ou sous une toiture. Voici les signes qui doivent vous alerter.\n\nSi vous remarquez la présence d'un nid chez vous à Chaumont, Langres ou n'importe où dans le 52, contactez-nous immédiatement pour un diagnostic.`,
+    answer: "Parfois, le nid est invisible, caché dans une cloison ou sous une toiture. Le va-et-vient incessant d'insectes au même endroit, un grattage ou bourdonnement sourd derrière un plafond sont des signes d'alerte. Contactez-nous immédiatement pour un diagnostic à Chaumont, Langres ou dans le 52.",
   },
   {
     question: "Comportement et Agressivité",
-    answer: "Comprendre le comportement des guêpes et frelons pour mieux s'en protéger.",
+    answer: "La Guêpe est opportuniste et curieuse. Le Frelon Européen est plutôt pacifique, actif la nuit. Le Frelon Asiatique est très territorial et déclenche des attaques collectives dès que l'on s'approche à moins de 5 mètres de son nid. Le frelon asiatique est aussi un prédateur redoutable pour les abeilles.",
   },
 ];
 
@@ -81,17 +78,37 @@ const jsonLd = {
   ],
 };
 
-const GuepesFrelons = () => {
-  const accordionRef = useRef<HTMLDivElement>(null);
+const FaqTrigger = ({
+  children,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>) => (
+  <AccordionPrimitive.Header className="flex">
+    <AccordionPrimitive.Trigger
+      className={cn(
+        "group flex w-full items-center gap-3 py-5 text-left transition-all hover:no-underline",
+        className
+      )}
+      {...props}
+    >
+      <Plus className="h-5 w-5 shrink-0 text-accent group-data-[state=open]:hidden" />
+      <Minus className="h-5 w-5 shrink-0 text-accent group-data-[state=closed]:hidden" />
+      {children}
+    </AccordionPrimitive.Trigger>
+  </AccordionPrimitive.Header>
+);
 
+const GuepesFrelons = () => {
   const handleValueChange = useCallback((value: string) => {
     if (!value) return;
     setTimeout(() => {
-      const el = document.querySelector(`[data-state="open"][data-value="${value}"]`);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      const trigger = document.querySelector(
+        `[data-state="open"][data-value="${value}"]`
+      ) as HTMLElement | null;
+      if (trigger) {
+        trigger.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-    }, 150);
+    }, 200);
   }, []);
 
   return (
@@ -124,23 +141,20 @@ const GuepesFrelons = () => {
               Tout savoir sur les guêpes et frelons
             </h2>
 
-            <Accordion
+            <AccordionPrimitive.Root
               type="single"
               collapsible
-              className="w-full space-y-4"
-              ref={accordionRef}
+              className="w-full space-y-2"
               onValueChange={handleValueChange}
             >
               {/* Accordéon 1 */}
-              <AccordionItem value="item-1" data-value="item-1" className="border-none">
-                <AccordionTrigger className="flex items-center gap-3 py-4 text-left hover:no-underline [&[data-state=open]>svg.plus-icon]:hidden [&[data-state=closed]>svg.minus-icon]:hidden">
-                  <Plus className="plus-icon h-5 w-5 shrink-0 text-accent" />
-                  <Minus className="minus-icon h-5 w-5 shrink-0 text-accent" />
+              <AccordionItem value="item-1" data-value="item-1" className="border-b border-border">
+                <FaqTrigger>
                   <h3 className="font-heading text-xl font-bold text-foreground">
                     Quelles différences entre frelon européen et frelon asiatique ?
                   </h3>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 text-base leading-relaxed text-foreground">
+                </FaqTrigger>
+                <AccordionContent className="text-base leading-relaxed text-foreground">
                   <p className="mb-4">
                     Il est essentiel de savoir les distinguer, car leur comportement et la dangerosité du nid diffèrent. À Chaumont, et ses communes alentour en Haute-Marne, nous rencontrons de plus en plus de frelons asiatiques, particulièrement agressifs près de leur colonie.
                   </p>
@@ -162,15 +176,13 @@ const GuepesFrelons = () => {
               </AccordionItem>
 
               {/* Accordéon 2 */}
-              <AccordionItem value="item-2" data-value="item-2" className="border-none">
-                <AccordionTrigger className="flex items-center gap-3 py-4 text-left hover:no-underline [&[data-state=open]>svg.plus-icon]:hidden [&[data-state=closed]>svg.minus-icon]:hidden">
-                  <Plus className="plus-icon h-5 w-5 shrink-0 text-accent" />
-                  <Minus className="minus-icon h-5 w-5 shrink-0 text-accent" />
+              <AccordionItem value="item-2" data-value="item-2" className="border-b border-border">
+                <FaqTrigger>
                   <h3 className="font-heading text-xl font-bold text-foreground">
                     Caractéristiques physiques : comment reconnaître l'insecte qui vous envahit ?
                   </h3>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 text-base leading-relaxed text-foreground">
+                </FaqTrigger>
+                <AccordionContent className="text-base leading-relaxed text-foreground">
                   <h4 className="mb-3 text-lg font-bold text-primary">Fiche d'identité et Morphologie</h4>
 
                   <div className="mb-8 flex flex-col gap-6 md:flex-row">
@@ -199,7 +211,7 @@ const GuepesFrelons = () => {
 
                   <h4 className="mb-3 text-lg font-bold text-primary">Reconnaître les nids et leurs endroits</h4>
                   <p className="mb-3">
-                    Chaque espèce a ses préférences pour installer sa colonie. Grâce à vos informations, voici où les débusquer :
+                    Chaque espèce a ses préférences pour installer sa colonie. Voici où les débusquer :
                   </p>
                   <div className="flex flex-col gap-6 md:flex-row">
                     <div className="flex-1 space-y-3">
@@ -228,15 +240,13 @@ const GuepesFrelons = () => {
               </AccordionItem>
 
               {/* Accordéon 3 */}
-              <AccordionItem value="item-3" data-value="item-3" className="border-none">
-                <AccordionTrigger className="flex items-center gap-3 py-4 text-left hover:no-underline [&[data-state=open]>svg.plus-icon]:hidden [&[data-state=closed]>svg.minus-icon]:hidden">
-                  <Plus className="plus-icon h-5 w-5 shrink-0 text-accent" />
-                  <Minus className="minus-icon h-5 w-5 shrink-0 text-accent" />
+              <AccordionItem value="item-3" data-value="item-3" className="border-b border-border">
+                <FaqTrigger>
                   <h3 className="font-heading text-xl font-bold text-foreground">
                     Comment déceler la présence d'un nid chez vous ?
                   </h3>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 text-base leading-relaxed text-foreground">
+                </FaqTrigger>
+                <AccordionContent className="text-base leading-relaxed text-foreground">
                   <p className="mb-4">
                     Parfois, le nid est invisible, caché dans une cloison ou sous une toiture. Voici les signes qui doivent vous alerter :
                   </p>
@@ -278,15 +288,13 @@ const GuepesFrelons = () => {
               </AccordionItem>
 
               {/* Accordéon 4 */}
-              <AccordionItem value="item-4" data-value="item-4" className="border-none">
-                <AccordionTrigger className="flex items-center gap-3 py-4 text-left hover:no-underline [&[data-state=open]>svg.plus-icon]:hidden [&[data-state=closed]>svg.minus-icon]:hidden">
-                  <Plus className="plus-icon h-5 w-5 shrink-0 text-accent" />
-                  <Minus className="minus-icon h-5 w-5 shrink-0 text-accent" />
+              <AccordionItem value="item-4" data-value="item-4" className="border-b border-border">
+                <FaqTrigger>
                   <h3 className="font-heading text-xl font-bold text-foreground">
                     Comportement et Agressivité
                   </h3>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 text-base leading-relaxed text-foreground">
+                </FaqTrigger>
+                <AccordionContent className="text-base leading-relaxed text-foreground">
                   <div className="space-y-4">
                     <p>
                       <strong>La Guêpe :</strong> Opportuniste et curieuse, elle s'invite à vos tables. Elle devient agressive si on tente de la chasser brusquement.
@@ -308,7 +316,7 @@ const GuepesFrelons = () => {
                   </div>
                 </AccordionContent>
               </AccordionItem>
-            </Accordion>
+            </AccordionPrimitive.Root>
           </div>
         </section>
       </ServicePageLayout>
