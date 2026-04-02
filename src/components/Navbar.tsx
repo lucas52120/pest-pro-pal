@@ -43,10 +43,6 @@ const Navbar = () => {
             src={logo}
             alt="G&F Nuisibles"
             className="h-14 w-auto lg:h-20"
-            style={{
-              filter:
-                "brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg)",
-            }}
           />
         </Link>
 
