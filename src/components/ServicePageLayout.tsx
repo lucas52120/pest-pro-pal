@@ -18,7 +18,6 @@ interface ServicePageLayoutProps {
   serviceCallTitle: string;
   serviceCallSubtitle: string;
   sidebarImage?: string;
-  children?: ReactNode;
 }
 
 const ServicePageLayout = ({
@@ -33,7 +32,6 @@ const ServicePageLayout = ({
   serviceCallTitle,
   serviceCallSubtitle,
   sidebarImage,
-  children,
 }: ServicePageLayoutProps) => {
   return (
     <>
@@ -166,7 +164,6 @@ const ServicePageLayout = ({
         </div>
       </section>
 
-      {children}
       <Reassurance />
       <Footer />
     </>
