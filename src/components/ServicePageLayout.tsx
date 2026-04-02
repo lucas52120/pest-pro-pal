@@ -166,7 +166,10 @@ const ServicePageLayout = ({
         </div>
       </section>
 
+      {children}
+
       <Reassurance />
+      <Footer />
       <Footer />
     </>
   );
