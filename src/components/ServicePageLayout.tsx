@@ -18,6 +18,7 @@ interface ServicePageLayoutProps {
   serviceCallTitle: string;
   serviceCallSubtitle: string;
   sidebarImage?: string;
+  children?: ReactNode;
 }
 
 const ServicePageLayout = ({
