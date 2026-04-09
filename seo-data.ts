@@ -360,6 +360,7 @@ export const cities: CityData[] = [
   { name: "Froncles", slug: "froncles", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 3 },
   { name: "Châteauvillain", slug: "chateauvillain", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 0 },
   { name: "Arc-en-Barrois", slug: "arc-en-barrois", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 1 },
+  { name: "Semoutiers-Montsaon", slug: "semoutiers-montsaon", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 2 },
 
   // Marne (51)
   { name: "Vitry-le-François", slug: "vitry-le-francois", department: "Marne (51)", services: ["depigeonnisation", "desinsectisation", "elimination-pigeons"], variation: 2 },

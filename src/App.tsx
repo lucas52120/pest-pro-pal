@@ -99,6 +99,14 @@ import DepigeonnisationArcEnBarrois from "./pages/DepigeonnisationArcEnBarrois.t
 import TaupesArcEnBarrois from "./pages/TaupesArcEnBarrois.tsx";
 import EliminationPigeonsArcEnBarrois from "./pages/EliminationPigeonsArcEnBarrois.tsx";
 
+// Semoutiers-Montsaon
+import DeratisationSemoutiersMontsaon from "./pages/DeratisationSemoutiersMontsaon.tsx";
+import GuepesFrelonsSemoutiersMontsaon from "./pages/GuepesFrelonsSemoutiersMontsaon.tsx";
+import DesinsectisationSemoutiersMontsaon from "./pages/DesinsectisationSemoutiersMontsaon.tsx";
+import DepigeonnisationSemoutiersMontsaon from "./pages/DepigeonnisationSemoutiersMontsaon.tsx";
+import TaupesSemoutiersMontsaon from "./pages/TaupesSemoutiersMontsaon.tsx";
+import EliminationPigeonsSemoutiersMontsaon from "./pages/EliminationPigeonsSemoutiersMontsaon.tsx";
+
 // Troyes (Aube 10) — Dératisation + Dépigeonnisation uniquement
 import DeratisationTroyes from "./pages/DeratisationTroyes.tsx";
 import DepigeonnisationTroyes from "./pages/DepigeonnisationTroyes.tsx";
@@ -275,6 +283,14 @@ const App = () => (
           <Route path="/services/depigeonnisation/arc-en-barrois" element={<DepigeonnisationArcEnBarrois />} />
           <Route path="/taupes-arc-en-barrois" element={<TaupesArcEnBarrois />} />
           <Route path="/services/elimination-pigeons/arc-en-barrois" element={<EliminationPigeonsArcEnBarrois />} />
+
+          {/* Semoutiers-Montsaon — tous les services */}
+          <Route path="/deratisation-semoutiers-montsaon" element={<DeratisationSemoutiersMontsaon />} />
+          <Route path="/guepes-frelons-semoutiers-montsaon" element={<GuepesFrelonsSemoutiersMontsaon />} />
+          <Route path="/desinsectisation-semoutiers-montsaon" element={<DesinsectisationSemoutiersMontsaon />} />
+          <Route path="/services/depigeonnisation/semoutiers-montsaon" element={<DepigeonnisationSemoutiersMontsaon />} />
+          <Route path="/taupes-semoutiers-montsaon" element={<TaupesSemoutiersMontsaon />} />
+          <Route path="/services/elimination-pigeons/semoutiers-montsaon" element={<EliminationPigeonsSemoutiersMontsaon />} />
 
           {/* Troyes — Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-troyes" element={<DeratisationTroyes />} />
