@@ -91,6 +91,14 @@ import DesinsectisationChateauvillain from "./pages/DesinsectisationChateauvilla
 import DepigeonnisationChateauvillain from "./pages/DepigeonnisationChateauvillain.tsx";
 import TaupesChateauvillain from "./pages/TaupesChateauvillain.tsx";
 
+// Arc-en-Barrois
+import DeratisationArcEnBarrois from "./pages/DeratisationArcEnBarrois.tsx";
+import GuepesFrelonsArcEnBarrois from "./pages/GuepesFrelonsArcEnBarrois.tsx";
+import DesinsectisationArcEnBarrois from "./pages/DesinsectisationArcEnBarrois.tsx";
+import DepigeonnisationArcEnBarrois from "./pages/DepigeonnisationArcEnBarrois.tsx";
+import TaupesArcEnBarrois from "./pages/TaupesArcEnBarrois.tsx";
+import EliminationPigeonsArcEnBarrois from "./pages/EliminationPigeonsArcEnBarrois.tsx";
+
 // Troyes (Aube 10) — Dératisation + Dépigeonnisation uniquement
 import DeratisationTroyes from "./pages/DeratisationTroyes.tsx";
 import DepigeonnisationTroyes from "./pages/DepigeonnisationTroyes.tsx";
@@ -259,6 +267,14 @@ const App = () => (
           <Route path="/desinsectisation-chateauvillain" element={<DesinsectisationChateauvillain />} />
           <Route path="/services/depigeonnisation/chateauvillain" element={<DepigeonnisationChateauvillain />} />
           <Route path="/taupes-chateauvillain" element={<TaupesChateauvillain />} />
+
+          {/* Arc-en-Barrois — tous les services */}
+          <Route path="/deratisation-arc-en-barrois" element={<DeratisationArcEnBarrois />} />
+          <Route path="/guepes-frelons-arc-en-barrois" element={<GuepesFrelonsArcEnBarrois />} />
+          <Route path="/desinsectisation-arc-en-barrois" element={<DesinsectisationArcEnBarrois />} />
+          <Route path="/services/depigeonnisation/arc-en-barrois" element={<DepigeonnisationArcEnBarrois />} />
+          <Route path="/taupes-arc-en-barrois" element={<TaupesArcEnBarrois />} />
+          <Route path="/services/elimination-pigeons/arc-en-barrois" element={<EliminationPigeonsArcEnBarrois />} />
 
           {/* Troyes — Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-troyes" element={<DeratisationTroyes />} />
