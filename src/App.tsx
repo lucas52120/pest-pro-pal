@@ -91,6 +91,14 @@ import DesinsectisationChateauvillain from "./pages/DesinsectisationChateauvilla
 import DepigeonnisationChateauvillain from "./pages/DepigeonnisationChateauvillain.tsx";
 import TaupesChateauvillain from "./pages/TaupesChateauvillain.tsx";
 
+// Arc-en-Barrois
+import DeratisationArcEnBarrois from "./pages/DeratisationArcEnBarrois.tsx";
+import GuepesFrelonsArcEnBarrois from "./pages/GuepesFrelonsArcEnBarrois.tsx";
+import DesinsectisationArcEnBarrois from "./pages/DesinsectisationArcEnBarrois.tsx";
+import DepigeonnisationArcEnBarrois from "./pages/DepigeonnisationArcEnBarrois.tsx";
+import TaupesArcEnBarrois from "./pages/TaupesArcEnBarrois.tsx";
+import EliminationPigeonsArcEnBarrois from "./pages/EliminationPigeonsArcEnBarrois.tsx";
+
 // Troyes (Aube 10) — Dératisation + Dépigeonnisation uniquement
 import DeratisationTroyes from "./pages/DeratisationTroyes.tsx";
 import DepigeonnisationTroyes from "./pages/DepigeonnisationTroyes.tsx";
