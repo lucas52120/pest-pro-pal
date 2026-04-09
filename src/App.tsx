@@ -284,6 +284,14 @@ const App = () => (
           <Route path="/taupes-arc-en-barrois" element={<TaupesArcEnBarrois />} />
           <Route path="/services/elimination-pigeons/arc-en-barrois" element={<EliminationPigeonsArcEnBarrois />} />
 
+          {/* Semoutiers-Montsaon — tous les services */}
+          <Route path="/deratisation-semoutiers-montsaon" element={<DeratisationSemoutiersMontsaon />} />
+          <Route path="/guepes-frelons-semoutiers-montsaon" element={<GuepesFrelonsSemoutiersMontsaon />} />
+          <Route path="/desinsectisation-semoutiers-montsaon" element={<DesinsectisationSemoutiersMontsaon />} />
+          <Route path="/services/depigeonnisation/semoutiers-montsaon" element={<DepigeonnisationSemoutiersMontsaon />} />
+          <Route path="/taupes-semoutiers-montsaon" element={<TaupesSemoutiersMontsaon />} />
+          <Route path="/services/elimination-pigeons/semoutiers-montsaon" element={<EliminationPigeonsSemoutiersMontsaon />} />
+
           {/* Troyes — Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-troyes" element={<DeratisationTroyes />} />
           <Route path="/services/depigeonnisation/troyes" element={<DepigeonnisationTroyes />} />
