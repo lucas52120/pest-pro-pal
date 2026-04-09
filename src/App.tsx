@@ -99,6 +99,14 @@ import DepigeonnisationArcEnBarrois from "./pages/DepigeonnisationArcEnBarrois.t
 import TaupesArcEnBarrois from "./pages/TaupesArcEnBarrois.tsx";
 import EliminationPigeonsArcEnBarrois from "./pages/EliminationPigeonsArcEnBarrois.tsx";
 
+// Semoutiers-Montsaon
+import DeratisationSemoutiersMontsaon from "./pages/DeratisationSemoutiersMontsaon.tsx";
+import GuepesFrelonsSemoutiersMontsaon from "./pages/GuepesFrelonsSemoutiersMontsaon.tsx";
+import DesinsectisationSemoutiersMontsaon from "./pages/DesinsectisationSemoutiersMontsaon.tsx";
+import DepigeonnisationSemoutiersMontsaon from "./pages/DepigeonnisationSemoutiersMontsaon.tsx";
+import TaupesSemoutiersMontsaon from "./pages/TaupesSemoutiersMontsaon.tsx";
+import EliminationPigeonsSemoutiersMontsaon from "./pages/EliminationPigeonsSemoutiersMontsaon.tsx";
+
 // Troyes (Aube 10) — Dératisation + Dépigeonnisation uniquement
 import DeratisationTroyes from "./pages/DeratisationTroyes.tsx";
 import DepigeonnisationTroyes from "./pages/DepigeonnisationTroyes.tsx";
