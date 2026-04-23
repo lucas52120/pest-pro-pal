@@ -360,7 +360,6 @@ const App = () => (
           <Route path="/services/elimination-pigeons/neufchateau" element={<EliminationPigeonsNeufchateau />} />
           <Route path="/services/elimination-pigeons/nancy" element={<EliminationPigeonsNancy />} />
 
-          <Route path="/:city/:service" element={<CityService />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
