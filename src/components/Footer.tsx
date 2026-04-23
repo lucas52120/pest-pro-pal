@@ -324,6 +324,8 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/10 px-4 py-4 text-center text-xs text-primary-foreground/40">
         <div className="mb-2">
           <Link to="/mentions-legales" className="hover:text-accent transition-colors">Mentions Légales</Link>
+          <span className="mx-2 text-primary-foreground/30">|</span>
+          <Link to="/plan-du-site" className="hover:text-accent transition-colors">Plan du site</Link>
         </div>
         © {new Date().getFullYear()} GF Nuisibles — Tous droits réservés
       </div>
