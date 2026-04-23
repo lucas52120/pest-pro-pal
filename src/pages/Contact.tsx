@@ -8,6 +8,43 @@ import { toast } from "sonner";
 
 const FORMSPARK_URL = "https://submit-form.com/cbVnrVxCc";
 
+const SITE_URL = "https://www.gf-nuisibles.fr";
+const PHONE_DISPLAY = "07.65.25.67.92";
+const PHONE_TEL = "0765256792";
+const EMAIL = "contact@gf-nuisibles.fr";
+
+const contactJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "url": `${SITE_URL}/contact`,
+  "name": "Contact GF Nuisibles | Devis ou Renseignement Gratuit",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/#organization`,
+    "name": "G&F Nuisibles",
+    "url": SITE_URL,
+    "telephone": PHONE_DISPLAY,
+    "email": EMAIL,
+    "image": `${SITE_URL}/og-image.png`,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "27 rue principale",
+      "addressLocality": "Montsaon",
+      "postalCode": "52000",
+      "addressRegion": "Haute-Marne",
+      "addressCountry": "FR",
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": PHONE_DISPLAY,
+      "email": EMAIL,
+      "contactType": "customer service",
+      "areaServed": "FR",
+      "availableLanguage": ["French"],
+    },
+  },
+};
+
 const Contact = () => {
   const [sending, setSending] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -57,6 +94,8 @@ const Contact = () => {
       <Helmet>
         <title>Contact GF Nuisibles | Devis ou Renseignement Gratuit</title>
         <meta name="description" content="Besoin d'un renseignement ? Contactez GF Nuisibles en Haute-Marne et communes limitrophes. Diagnostic et devis gratuit 7j/7. Intervention rapide !" />
+        <link rel="canonical" href="https://www.gf-nuisibles.fr/contact" />
+        <script type="application/ld+json">{JSON.stringify(contactJsonLd)}</script>
       </Helmet>
       <Navbar />
       <section className="bg-primary pb-16 pt-32">
@@ -111,9 +150,10 @@ const Contact = () => {
             >
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="mb-1 block font-heading text-sm font-semibold text-primary">Nom *</label>
+                  <label htmlFor="name" className="mb-1 block font-heading text-sm font-semibold text-primary">Nom *</label>
                   <input
                     required
+                    id="name"
                     name="name"
                     type="text"
                     maxLength={100}
@@ -122,9 +162,10 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block font-heading text-sm font-semibold text-primary">Téléphone *</label>
+                  <label htmlFor="phone" className="mb-1 block font-heading text-sm font-semibold text-primary">Téléphone *</label>
                   <input
                     required
+                    id="phone"
                     name="phone"
                     type="tel"
                     maxLength={20}
@@ -134,8 +175,9 @@ const Contact = () => {
                 </div>
               </div>
               <div>
-                <label className="mb-1 block font-heading text-sm font-semibold text-primary">Email</label>
+                <label htmlFor="email" className="mb-1 block font-heading text-sm font-semibold text-primary">Email</label>
                 <input
+                  id="email"
                   name="email"
                   type="email"
                   maxLength={255}
@@ -144,8 +186,9 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label className="mb-1 block font-heading text-sm font-semibold text-primary">Type de nuisible</label>
+                <label htmlFor="nuisible" className="mb-1 block font-heading text-sm font-semibold text-primary">Type de nuisible</label>
                 <select
+                  id="nuisible"
                   name="nuisible"
                   className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent"
                 >
@@ -161,9 +204,10 @@ const Contact = () => {
                 </select>
               </div>
               <div>
-                <label className="mb-1 block font-heading text-sm font-semibold text-primary">Message *</label>
+                <label htmlFor="message" className="mb-1 block font-heading text-sm font-semibold text-primary">Message *</label>
                 <textarea
                   required
+                  id="message"
                   name="message"
                   rows={5}
                   maxLength={2000}
