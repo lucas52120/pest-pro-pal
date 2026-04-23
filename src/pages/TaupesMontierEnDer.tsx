@@ -25,7 +25,7 @@ const TaupesMontierEnDer = () => {
         intro="À Montier-en-Der, les taupes ravagent pelouses et jardins avec leurs galeries souterraines. G&F Nuisibles intervient avec des méthodes de piégeage professionnel pour éliminer ces nuisibles et préserver vos espaces verts."
         expertise="G&F Nuisibles intervient à Montier-en-Der et en Haute-Marne pour le piégeage professionnel des taupes. Nos taupiers expérimentés traitent jardins, parcs, terrains de sport et exploitations agricoles."
         method="Repérage des galeries actives et évaluation de l'étendue de l'infestation. Pose de pièges professionnels dans les galeries principales. Contrôle régulier et retrait des captures. Conseils de prévention."
-        cta="Taupes dans votre jardin à Montier-en-Der ? Contactez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit."
+        cta="Taupes dans votre jardin à Montier-en-Der ? Contactez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit."
       />
     </>
   );

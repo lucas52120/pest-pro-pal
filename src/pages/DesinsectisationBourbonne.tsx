@@ -25,7 +25,7 @@ const DesinsectisationBourbonne = () => {
         intro="Les insectes nuisibles sont un fléau courant à Bourbonne-les-Bains. Blattes, punaises, mites ou fourmis : quelle que soit l'espèce, G&F Nuisibles dispose des traitements adaptés pour les éliminer définitivement."
         expertise="G&F Nuisibles intervient à Bourbonne-les-Bains et en Haute-Marne contre tous les insectes nuisibles : cafards, punaises de lit, puces, fourmis, mites. Diagnostic précis et traitement ciblé pour chaque situation."
         method="Inspection approfondie pour identifier les espèces et les foyers. Application de traitements professionnels (gel, pulvérisation, nébulisation) adaptés à chaque insecte. Suivi post-traitement pour garantir l'éradication complète."
-        cta="Invasion d'insectes à Bourbonne-les-Bains ? Contactez G&F Nuisibles au 07.88.17.45.86 pour un diagnostic gratuit."
+        cta="Invasion d'insectes à Bourbonne-les-Bains ? Contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic gratuit."
       />
     </>
   );

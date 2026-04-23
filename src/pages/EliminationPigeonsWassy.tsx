@@ -24,7 +24,7 @@ const EliminationPigeonsWassy = () => (
       intro="À Wassy, les pigeons colonisent les combles et toitures des maisons, provoquant des dégâts sur l'isolation et la charpente. Leurs déjections sont un vecteur de maladies pour votre famille. G&F Nuisibles propose des solutions ciblées pour les particuliers."
       expertise="Experts de la protection des habitations, nous intervenons sur les toitures, greniers et façades pour éloigner durablement les pigeons. Nos techniques non-létales respectent les volatiles tout en sécurisant votre domicile."
       method="Inspection de votre toiture et des combles pour localiser les accès. Fermeture des entrées, pose de filets et pics anti-perchage. Désinfection des zones contaminées par les fientes. Suivi pour assurer la pérennité de la protection."
-      cta="Sécurisez votre toiture à Wassy. Contactez G&F Nuisibles au 07.88.17.45.86 pour une intervention rapide."
+      cta="Sécurisez votre toiture à Wassy. Contactez G&F Nuisibles au 07.65.25.67.92 pour une intervention rapide."
     />
   </>
 );

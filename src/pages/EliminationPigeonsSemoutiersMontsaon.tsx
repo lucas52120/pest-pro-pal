@@ -24,7 +24,7 @@ const EliminationPigeonsSemoutiersMontsaon = () => (
       intro="À Semoutiers-Montsaon, les pigeons colonisent toitures, greniers et dépendances des habitations, laissant fientes et parasites. G&F Nuisibles, basé sur votre commune, intervient chez les particuliers pour installer des protections discrètes et efficaces."
       expertise="Nous équipons votre maison à Semoutiers-Montsaon de dispositifs anti-pigeons adaptés : filets sur les ouvertures, pics sur les corniches, répulsifs discrets. Des solutions non-létales pour retrouver la tranquillité de votre habitat et protéger la santé de votre famille."
       method="Visite à domicile à Semoutiers-Montsaon pour analyser les zones de nidification et de perchage. Pose de protections personnalisées sur toiture, balcons et façades. Nettoyage des surfaces souillées. Suivi pour garantir un résultat durable."
-      cta="Retrouvez votre tranquillité à Semoutiers-Montsaon. Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit."
+      cta="Retrouvez votre tranquillité à Semoutiers-Montsaon. Appelez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit."
     />
   </>
 );

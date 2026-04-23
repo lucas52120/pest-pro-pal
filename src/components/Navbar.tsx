@@ -65,11 +65,11 @@ const Navbar = () => {
 
         {/* Phone CTA — flush right */}
         <a
-          href="tel:0788174586"
+          href="tel:0765256792"
           className="hidden flex-shrink-0 items-center gap-2 rounded-lg bg-accent px-5 py-2.5 font-heading text-base font-bold text-accent-foreground transition-colors hover:bg-orange-hover md:flex"
         >
           <Phone className="h-5 w-5" />
-          07.88.17.45.86
+          07.65.25.67.92
         </a>
 
         {/* Mobile toggle */}
@@ -99,11 +99,11 @@ const Navbar = () => {
               </Link>
             ))}
             <a
-              href="tel:0788174586"
+              href="tel:0765256792"
               className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-3 font-heading text-sm font-bold text-accent-foreground"
             >
               <Phone className="h-4 w-4" />
-              07.88.17.45.86
+              07.65.25.67.92
             </a>
           </div>
         </div>

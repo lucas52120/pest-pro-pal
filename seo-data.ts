@@ -83,7 +83,7 @@ export const serviceDefinitionsData: ServiceDefinitionData[] = [
         intro: intros[v],
         expertise: expertises[v],
         method: methods[v],
-        cta: `Contactez G&F Nuisibles au 07.88.17.45.86 pour une intervention rapide à ${city} et ses environs en ${department}. Diagnostic gratuit, intervention garantie.`,
+        cta: `Contactez G&F Nuisibles au 07.65.25.67.92 pour une intervention rapide à ${city} et ses environs en ${department}. Diagnostic gratuit, intervention garantie.`,
       };
     },
   },
@@ -132,7 +132,7 @@ export const serviceDefinitionsData: ServiceDefinitionData[] = [
         intro: intros[v],
         expertise: expertises[v],
         method: methods[v],
-        cta: `Appelez G&F Nuisibles au 07.88.17.45.86 pour un traitement professionnel à ${city} en ${department}. Discrétion totale, véhicules non logotés sur demande.`,
+        cta: `Appelez G&F Nuisibles au 07.65.25.67.92 pour un traitement professionnel à ${city} en ${department}. Discrétion totale, véhicules non logotés sur demande.`,
       };
     },
   },
@@ -181,7 +181,7 @@ export const serviceDefinitionsData: ServiceDefinitionData[] = [
         intro: intros[v],
         expertise: expertises[v],
         method: methods[v],
-        cta: `Contactez G&F Nuisibles au 07.88.17.45.86 pour une dératisation efficace à ${city} en ${department}. Discrétion assurée, garantie de résultat.`,
+        cta: `Contactez G&F Nuisibles au 07.65.25.67.92 pour une dératisation efficace à ${city} en ${department}. Discrétion assurée, garantie de résultat.`,
       };
     },
   },
@@ -230,7 +230,7 @@ export const serviceDefinitionsData: ServiceDefinitionData[] = [
         intro: intros[v],
         expertise: expertises[v],
         method: methods[v],
-        cta: `Appelez G&F Nuisibles au 07.88.17.45.86 pour protéger vos bâtiments professionnels à ${city} en ${department}. Devis gratuit sur site, solutions pérennes garanties.`,
+        cta: `Appelez G&F Nuisibles au 07.65.25.67.92 pour protéger vos bâtiments professionnels à ${city} en ${department}. Devis gratuit sur site, solutions pérennes garanties.`,
       };
     },
   },
@@ -279,7 +279,7 @@ export const serviceDefinitionsData: ServiceDefinitionData[] = [
         intro: intros[v],
         expertise: expertises[v],
         method: methods[v],
-        cta: `Contactez G&F Nuisibles au 07.88.17.45.86 pour l'élimination des pigeons chez vous à ${city} en ${department}. Devis gratuit, intervention rapide et discrète.`,
+        cta: `Contactez G&F Nuisibles au 07.65.25.67.92 pour l'élimination des pigeons chez vous à ${city} en ${department}. Devis gratuit, intervention rapide et discrète.`,
       };
     },
   },
@@ -328,7 +328,7 @@ export const serviceDefinitionsData: ServiceDefinitionData[] = [
         intro: intros[v],
         expertise: expertises[v],
         method: methods[v],
-        cta: `Contactez G&F Nuisibles au 07.88.17.45.86 pour un piégeage de taupes efficace à ${city} en ${department}. Devis gratuit, intervention rapide.`,
+        cta: `Contactez G&F Nuisibles au 07.65.25.67.92 pour un piégeage de taupes efficace à ${city} en ${department}. Devis gratuit, intervention rapide.`,
       };
     },
   },

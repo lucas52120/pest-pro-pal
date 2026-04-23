@@ -61,11 +61,11 @@ const Hero = () => {
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <a
-              href="tel:0788174586"
+              href="tel:0765256792"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-4 font-heading text-lg font-bold text-accent-foreground shadow-lg transition-all hover:bg-orange-hover hover:shadow-xl">
               
               <Phone className="h-5 w-5" />
-              Appeler le 07.88.17.45.86
+              Appeler le 07.65.25.67.92
             </a>
             <a
               href="/contact"

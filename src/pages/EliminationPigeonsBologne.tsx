@@ -24,7 +24,7 @@ const EliminationPigeonsBologne = () => (
       intro="À Bologne, les pigeons détériorent les façades des pavillons et créent un environnement insalubre avec leurs déjections. Les particuliers constatent des dégâts sur leur crépi, leurs volets et leurs gouttières. G&F Nuisibles intervient pour protéger votre habitation."
       expertise="Notre expertise cible les besoins des particuliers : protection de façade par pics inox, répulsifs discrets pour balcons, filets pour combles et greniers. Chaque solution préserve l'apparence de votre maison tout en repoussant les volatiles."
       method="Évaluation complète de votre pavillon et identification des zones à risque. Pose de dispositifs anti-pigeons adaptés à l'architecture de votre maison. Nettoyage des surfaces dégradées. Garantie de résultat pour votre sérénité."
-      cta="Protégez votre façade à Bologne. Contactez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit."
+      cta="Protégez votre façade à Bologne. Contactez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit."
     />
   </>
 );

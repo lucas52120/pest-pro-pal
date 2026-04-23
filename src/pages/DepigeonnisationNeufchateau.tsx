@@ -30,7 +30,7 @@ const DepigeonnisationNeufchateau = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -79,7 +79,7 @@ const DepigeonnisationNeufchateau = () => {
         intro="Les pigeons causent des nuisances importantes à Neufchâteau : fientes corrosives, dégradation des façades, risques sanitaires. G&F Nuisibles met en place des dispositifs professionnels pour éloigner durablement ces volatiles."
         expertise="Experts en dépigeonnisation dans les Vosges (88), nous proposons des solutions adaptées à chaque type de bâtiment : pics anti-pigeons, filets de protection, systèmes de répulsion électrique et capture."
         method="Évaluation de la situation et cartographie des zones touchées. Installation de dispositifs anti-perchage et anti-nidification. Nettoyage et désinfection des zones souillées. Suivi de l'efficacité du dispositif."
-        cta="Protégez vos bâtiments à Neufchâteau. Appelez le 07.88.17.45.86 pour une solution anti-pigeons professionnelle et durable."
+        cta="Protégez vos bâtiments à Neufchâteau. Appelez le 07.65.25.67.92 pour une solution anti-pigeons professionnelle et durable."
         faqItems={FAQ_ITEMS}
       />
     </>

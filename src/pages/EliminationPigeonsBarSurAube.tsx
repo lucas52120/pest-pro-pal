@@ -24,7 +24,7 @@ const EliminationPigeonsBarSurAube = () => (
       intro="À Bar-sur-Aube, les pigeons colonisent les balcons, toitures et rebords de fenêtres des habitations. Fientes, bruits matinaux et parasites perturbent la vie de famille. G&F Nuisibles propose aux particuliers des solutions d'élimination adaptées et durables."
       expertise="Spécialistes de la protection résidentielle dans l'Aube, nous équipons votre habitation de filets discrets, pics anti-perchage et répulsifs ciblés. Des solutions non-létales qui respectent les volatiles tout en vous rendant votre tranquillité."
       method="Diagnostic à domicile pour évaluer l'ampleur de l'invasion. Pose de dispositifs de protection sur balcons, corniches et toiture. Nettoyage complet des fientes et désinfection. Suivi pour garantir un résultat durable."
-      cta="Protégez votre foyer à Bar-sur-Aube. Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit à domicile."
+      cta="Protégez votre foyer à Bar-sur-Aube. Appelez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit à domicile."
     />
   </>
 );

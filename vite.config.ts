@@ -108,7 +108,7 @@ function buildStaticBody(content: {
         <h4>Intervention à ${escHtml(city)}</h4>
         <p>${escHtml(city)} et environs — ${escHtml(department)}</p>
         <p>Lun–Ven : 8h–19h | Urgence week-end</p>
-        <a href="tel:0788174586">07.88.17.45.86</a>
+        <a href="tel:0765256792">07.65.25.67.92</a>
         <a href="/contact">Devis gratuit</a>
       </aside>
     </main>

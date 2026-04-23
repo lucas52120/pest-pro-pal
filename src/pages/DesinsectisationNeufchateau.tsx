@@ -25,7 +25,7 @@ const DesinsectisationNeufchateau = () => {
         intro="À Neufchâteau, les infestations d'insectes sont fréquentes et peuvent vite devenir incontrôlables. Blattes, mites, punaises ou chenilles processionnaires, G&F Nuisibles dispose des solutions professionnelles pour chaque situation."
         expertise="Spécialiste de la lutte anti-insectes en Vosges (88), notre équipe combine expertise terrain et produits de dernière génération. Chaque opération est adaptée à l'espèce ciblée et à la configuration des lieux."
         method="Inspection minutieuse et identification des foyers. Application de traitements professionnels : gel appât, pulvérisation ciblée ou fumigation. Plan de prévention personnalisé et contrôle de suivi."
-        cta="Débarrassez-vous des insectes à Neufchâteau. Appelez le 07.88.17.45.86 pour un diagnostic gratuit et une intervention efficace."
+        cta="Débarrassez-vous des insectes à Neufchâteau. Appelez le 07.65.25.67.92 pour un diagnostic gratuit et une intervention efficace."
       />
     </>
   );

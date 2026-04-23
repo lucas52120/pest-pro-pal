@@ -30,7 +30,7 @@ const DeratisationSemoutiersMontsaon = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -79,7 +79,7 @@ const DeratisationSemoutiersMontsaon = () => {
         intro="À Semoutiers-Montsaon, l'environnement rural favorise la présence de rats bruns et souris dans les habitations, granges et dépendances. G&F Nuisibles, implanté directement sur la commune à Montsaon, est votre allié le plus réactif pour stopper une infestation de rongeurs avant qu'elle ne s'aggrave."
         expertise="Nous intervenons chez les particuliers, exploitants agricoles et professionnels de Semoutiers-Montsaon. Nos protocoles certifiés couvrent toutes les espèces de rongeurs avec des solutions adaptées : postes d'appâtage sécurisés, pièges mécaniques et obturation des accès."
         method="Audit détaillé de votre bâtiment à Semoutiers-Montsaon pour cartographier l'infestation et identifier les points d'entrée. Mise en place d'un dispositif multi-techniques. Rapport d'intervention avec suivi de contrôle régulier jusqu'à résolution complète."
-        cta="Rongeurs à Semoutiers-Montsaon ? Appelez votre voisin G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit et une dératisation express."
+        cta="Rongeurs à Semoutiers-Montsaon ? Appelez votre voisin G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit et une dératisation express."
         faqItems={FAQ_ITEMS}
       />
     </>

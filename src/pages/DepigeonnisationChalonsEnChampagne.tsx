@@ -30,7 +30,7 @@ const DepigeonnisationChalonsEnChampagne = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -79,7 +79,7 @@ const DepigeonnisationChalonsEnChampagne = () => {
         intro="Les pigeons causent des nuisances importantes à Châlons-en-Champagne : fientes corrosives, dégradation des façades, risques sanitaires. G&F Nuisibles met en place des dispositifs professionnels pour éloigner durablement ces volatiles."
         expertise="Experts en dépigeonnisation dans la Marne (51), nous proposons des solutions adaptées à chaque type de bâtiment : pics anti-pigeons, filets de protection, systèmes de répulsion électrique et capture."
         method="Évaluation de la situation et cartographie des zones touchées. Installation de dispositifs anti-perchage et anti-nidification. Nettoyage et désinfection des zones souillées. Suivi de l'efficacité du dispositif."
-        cta="Protégez vos bâtiments à Châlons-en-Champagne. Appelez le 07.88.17.45.86 pour un dépigeonnage professionnel et durable."
+        cta="Protégez vos bâtiments à Châlons-en-Champagne. Appelez le 07.65.25.67.92 pour un dépigeonnage professionnel et durable."
         faqItems={FAQ_ITEMS}
       />
     </>

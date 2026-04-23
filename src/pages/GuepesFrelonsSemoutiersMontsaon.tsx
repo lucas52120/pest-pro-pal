@@ -30,7 +30,7 @@ const GuepesFrelonsSemoutiersMontsaon = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -79,7 +79,7 @@ const GuepesFrelonsSemoutiersMontsaon = () => {
         intro="Semoutiers-Montsaon, commune où G&F Nuisibles est implanté, bénéficie d'une réactivité maximale pour la destruction de nids de guêpes et frelons. En plein cœur de la Haute-Marne, notre équipe se déplace en quelques minutes pour sécuriser votre propriété et éliminer tout nid dangereux."
         expertise="Nos techniciens Certibiocide interviennent en toiture, cheminée, arbre ou sous-sol à Semoutiers-Montsaon. Nous utilisons des biocides homologués et du matériel professionnel pour une neutralisation complète, y compris sur les nids de frelons asiatiques en zones difficiles d'accès."
         method="Inspection sur place à Semoutiers-Montsaon pour localiser et identifier l'espèce. Traitement ciblé par insecticide professionnel, retrait sécurisé du nid et désinfection de la zone. Conseils de prévention pour éviter toute réinstallation."
-        cta="Nid de guêpes ou frelons à Semoutiers-Montsaon ? Appelez votre voisin G&F Nuisibles au 07.88.17.45.86 pour une intervention immédiate."
+        cta="Nid de guêpes ou frelons à Semoutiers-Montsaon ? Appelez votre voisin G&F Nuisibles au 07.65.25.67.92 pour une intervention immédiate."
         faqItems={FAQ_ITEMS}
       />
     </>

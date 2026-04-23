@@ -24,7 +24,7 @@ const EliminationPigeonsMontierEnDer = () => (
       intro="À Montier-en-Der, les pigeons perturbent le quotidien des habitants en souillant balcons, fenêtres et terrasses. Les nuisances sonores et les fientes acides dégradent progressivement votre habitation. G&F Nuisibles apporte une solution concrète aux particuliers."
       expertise="Nous protégeons votre maison avec des dispositifs adaptés : filets pour balcons et loggias, pics discrets sur les appuis de fenêtres, répulsifs pour terrasses. Des solutions pensées pour le confort de votre famille au quotidien."
       method="Visite de votre domicile pour cartographier les zones touchées. Installation sur mesure de protections anti-pigeons. Nettoyage et traitement des surfaces contaminées. Suivi personnalisé pour une efficacité dans la durée."
-      cta="Libérez votre maison à Montier-en-Der. Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit."
+      cta="Libérez votre maison à Montier-en-Der. Appelez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit."
     />
   </>
 );

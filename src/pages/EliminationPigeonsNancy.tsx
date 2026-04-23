@@ -24,7 +24,7 @@ const EliminationPigeonsNancy = () => (
       intro="À Nancy, les pigeons colonisent les toits et greniers des habitations, causant des infiltrations et des dégâts sur l'isolation. Les particuliers sont confrontés à des nuisances sanitaires et olfactives. G&F Nuisibles intervient pour sécuriser votre domicile en Meurthe-et-Moselle."
       expertise="Notre expertise couvre la protection complète des habitations résidentielles : sécurisation des toitures, obturation des accès aux combles, pose de dispositifs anti-perchage. Des solutions durables pour la tranquillité de votre famille."
       method="Inspection de votre toiture et des combles pour localiser les entrées utilisées par les pigeons. Fermeture des accès et pose de protections anti-perchage. Décontamination des zones touchées. Suivi pour garantir l'efficacité dans le temps."
-      cta="Sécurisez votre toit à Nancy. Contactez G&F Nuisibles au 07.88.17.45.86 pour une intervention rapide chez vous."
+      cta="Sécurisez votre toit à Nancy. Contactez G&F Nuisibles au 07.65.25.67.92 pour une intervention rapide chez vous."
     />
   </>
 );

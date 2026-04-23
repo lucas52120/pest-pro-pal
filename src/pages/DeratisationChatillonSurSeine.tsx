@@ -30,7 +30,7 @@ const DeratisationChatillonSurSeine = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -79,7 +79,7 @@ const DeratisationChatillonSurSeine = () => {
         intro="Châtillon-sur-Seine et ses environs sont régulièrement touchés par des infestations de rongeurs. Rats bruns, souris ou mulots colonisent caves, greniers et locaux professionnels. G&F Nuisibles intervient rapidement pour une dératisation efficace et durable."
         expertise="Nos techniciens certifiés maîtrisent toutes les espèces de rongeurs présentes en Côte-d'Or (21). Nous intervenons chez les particuliers, entreprises, restaurants et collectivités avec des protocoles conformes aux normes sanitaires."
         method="Inspection complète pour identifier les points d'entrée et le niveau d'infestation. Mise en place de postes d'appâtage sécurisés, pièges mécaniques et obturation des accès. Suivi de contrôle inclus."
-        cta="Protégez votre habitat à Châtillon-sur-Seine. Contactez G&F Nuisibles au 07.88.17.45.86 pour un diagnostic gratuit et une intervention rapide."
+        cta="Protégez votre habitat à Châtillon-sur-Seine. Contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic gratuit et une intervention rapide."
         faqItems={FAQ_ITEMS}
       />
     </>

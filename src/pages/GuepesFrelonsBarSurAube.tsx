@@ -30,7 +30,7 @@ const GuepesFrelonsBarSurAube = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -87,7 +87,7 @@ const GuepesFrelonsBarSurAube = () => {
         intro="Les guêpes et frelons représentent un danger réel à Bar-sur-Aube et ses alentours. Un nid mal situé peut provoquer des piqûres graves voire des réactions allergiques. G&F Nuisibles neutralise tous les nids en toute sécurité."
         expertise="Formés à la destruction de nids en hauteur, sous toiture et dans les cavités, nos techniciens interviennent avec des équipements de protection adaptés. Nous traitons guêpes communes, frelons européens et frelons asiatiques en Aube (10)."
         method="Repérage du nid et sécurisation du périmètre. Application d'un insecticide professionnel directement dans le nid. Retrait du nid si accessible. Vérification de l'élimination complète de la colonie."
-        cta="Un nid chez vous à Bar-sur-Aube ? Appelez immédiatement le 07.88.17.45.86 pour une intervention d'urgence."
+        cta="Un nid chez vous à Bar-sur-Aube ? Appelez immédiatement le 07.65.25.67.92 pour une intervention d'urgence."
         faqItems={FAQ_ITEMS}
       />
     </>

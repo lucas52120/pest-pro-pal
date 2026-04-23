@@ -24,7 +24,7 @@ const DesinsectisationSaintDizier = () => (
       intro="À Saint-Dizier, cafards, punaises de lit, puces et autres insectes nuisibles peuvent envahir votre habitat ou local professionnel. G&F Nuisibles intervient avec des traitements ciblés et certifiés pour une élimination complète et durable."
       expertise="Spécialistes de la désinsectisation en Haute-Marne, nous traitons tous les types d'insectes rampants et volants à Saint-Dizier. Nos protocoles respectent les normes sanitaires et sont compatibles avec la présence d'enfants et d'animaux."
       method="Inspection complète pour identifier l'espèce et les zones infestées. Application de traitements professionnels (gel, pulvérisation, nébulisation). Suivi post-traitement et conseils d'hygiène préventive."
-      cta="Insectes nuisibles à Saint-Dizier ? Contactez G&F Nuisibles au 07.88.17.45.86 pour un diagnostic gratuit."
+      cta="Insectes nuisibles à Saint-Dizier ? Contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic gratuit."
     />
   </>
 );

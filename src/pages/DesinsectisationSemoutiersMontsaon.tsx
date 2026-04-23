@@ -24,7 +24,7 @@ const DesinsectisationSemoutiersMontsaon = () => (
       intro="Basé directement à Montsaon, G&F Nuisibles est le prestataire le plus réactif pour traiter les infestations d'insectes à Semoutiers-Montsaon. Cafards, punaises de lit, puces ou blattes : nous déployons des traitements professionnels certifiés pour une éradication complète de votre habitat."
       expertise="Spécialiste de la désinsectisation en Haute-Marne, G&F Nuisibles adapte son protocole à chaque espèce identifiée à Semoutiers-Montsaon. Nos traitements par gel, pulvérisation ou nébulisation sont sécurisés pour les enfants et animaux domestiques."
       method="Diagnostic minutieux de votre logement à Semoutiers-Montsaon pour localiser les foyers d'infestation. Application de biocides professionnels ciblés selon l'espèce. Suivi post-traitement et recommandations d'hygiène préventive pour éviter toute récidive."
-      cta="Insectes à Semoutiers-Montsaon ? Contactez G&F Nuisibles au 07.88.17.45.86 pour un diagnostic gratuit et un traitement rapide."
+      cta="Insectes à Semoutiers-Montsaon ? Contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic gratuit et un traitement rapide."
     />
   </>
 );
