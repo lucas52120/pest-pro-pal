@@ -150,9 +150,10 @@ const Contact = () => {
             >
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="mb-1 block font-heading text-sm font-semibold text-primary">Nom *</label>
+                  <label htmlFor="name" className="mb-1 block font-heading text-sm font-semibold text-primary">Nom *</label>
                   <input
                     required
+                    id="name"
                     name="name"
                     type="text"
                     maxLength={100}
@@ -161,9 +162,10 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block font-heading text-sm font-semibold text-primary">Téléphone *</label>
+                  <label htmlFor="phone" className="mb-1 block font-heading text-sm font-semibold text-primary">Téléphone *</label>
                   <input
                     required
+                    id="phone"
                     name="phone"
                     type="tel"
                     maxLength={20}
@@ -173,8 +175,9 @@ const Contact = () => {
                 </div>
               </div>
               <div>
-                <label className="mb-1 block font-heading text-sm font-semibold text-primary">Email</label>
+                <label htmlFor="email" className="mb-1 block font-heading text-sm font-semibold text-primary">Email</label>
                 <input
+                  id="email"
                   name="email"
                   type="email"
                   maxLength={255}
@@ -183,8 +186,9 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label className="mb-1 block font-heading text-sm font-semibold text-primary">Type de nuisible</label>
+                <label htmlFor="nuisible" className="mb-1 block font-heading text-sm font-semibold text-primary">Type de nuisible</label>
                 <select
+                  id="nuisible"
                   name="nuisible"
                   className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent"
                 >
@@ -200,9 +204,10 @@ const Contact = () => {
                 </select>
               </div>
               <div>
-                <label className="mb-1 block font-heading text-sm font-semibold text-primary">Message *</label>
+                <label htmlFor="message" className="mb-1 block font-heading text-sm font-semibold text-primary">Message *</label>
                 <textarea
                   required
+                  id="message"
                   name="message"
                   rows={5}
                   maxLength={2000}
