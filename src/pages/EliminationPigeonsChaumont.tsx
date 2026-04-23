@@ -12,11 +12,12 @@ const EliminationPigeonsChaumont = () => {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://pest-pro-pal.lovable.app/#organization",
+        "@id": "https://www.gf-nuisibles.fr/#organization",
+        "url": "https://www.gf-nuisibles.fr",
         "name": "G&F Nuisibles",
         "telephone": "07.65.25.67.92",
         "priceRange": "$$",
-        "image": "https://pest-pro-pal.lovable.app/og-image.png",
+        "image": "https://www.gf-nuisibles.fr/og-image.png",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "27 rue principale",
@@ -28,9 +29,10 @@ const EliminationPigeonsChaumont = () => {
       },
       {
         "@type": "Service",
+        "url": "https://www.gf-nuisibles.fr/services/elimination-pigeons/chaumont",
         "name": TITLE,
         "description": DESCRIPTION,
-        "provider": { "@id": "https://pest-pro-pal.lovable.app/#organization" },
+        "provider": { "@id": "https://www.gf-nuisibles.fr/#organization" },
         "areaServed": { "@type": "City", "name": "Chaumont" }
       }
     ]
@@ -41,6 +43,7 @@ const EliminationPigeonsChaumont = () => {
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
+        <link rel="canonical" href="https://www.gf-nuisibles.fr/services/elimination-pigeons/chaumont" />
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage
