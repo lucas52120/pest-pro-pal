@@ -301,33 +301,22 @@ const Footer = () => {
             Nos zones d'intervention
           </h3>
           <div className="grid gap-4 text-[0.8125rem] leading-relaxed sm:grid-cols-2 lg:grid-cols-3">
-            {cities.map((city) => {
-              const cityServices = serviceDefinitions.filter((s) =>
-                city.services.includes(s.slug)
-              );
-              return (
-                <div key={city.slug}>
-                  <span className="font-heading font-semibold">{city.name} : </span>
-                  {cityServices.map((s, i) => (
-                    <span key={s.slug}>
-                      <Link
-                        to={
-                          s.slug === "depigeonnisation"
-                            ? `/services/depigeonnisation/${city.slug}`
-                            : s.slug === "elimination-pigeons"
-                              ? `/services/elimination-pigeons/${city.slug}`
-                              : `/${s.slug}-${city.slug}`
-                        }
-                        className="text-primary-foreground/60 transition-colors hover:text-accent"
-                      >
-                        {s.title}
-                      </Link>
-                      {i < cityServices.length - 1 && " | "}
-                    </span>
-                  ))}
-                </div>
-              );
-            })}
+            {CITY_FOOTER.map((city) => (
+              <div key={city.name}>
+                <span className="font-heading font-semibold">{city.name} : </span>
+                {city.links.map((link, i) => (
+                  <span key={link.to}>
+                    <Link
+                      to={link.to}
+                      className="text-primary-foreground/60 transition-colors hover:text-accent"
+                    >
+                      {link.label}
+                    </Link>
+                    {i < city.links.length - 1 && " | "}
+                  </span>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </div>
