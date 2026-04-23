@@ -6,11 +6,42 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 const TITLE = "Élimination de pigeons à Vittel dans les Vosges 88 | G&F Nuisibles";
 const DESCRIPTION = "Besoin d'une élimination de pigeons à Vittel ? Protégez votre façade et votre santé. G&F Nuisibles : pics et répulsifs spécial particuliers.";
 
-const EliminationPigeonsVittel = () => (
+const EliminationPigeonsVittel = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://pest-pro-pal.lovable.app/#organization",
+        "name": "G&F Nuisibles",
+        "telephone": "07.65.25.67.92",
+        "priceRange": "$$",
+        "image": "https://pest-pro-pal.lovable.app/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "27 rue principale",
+          "addressLocality": "Montsaon",
+          "postalCode": "52000",
+          "addressRegion": "Haute-Marne",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": TITLE,
+        "description": DESCRIPTION,
+        "provider": { "@id": "https://pest-pro-pal.lovable.app/#organization" },
+        "areaServed": { "@type": "City", "name": "Vittel" }
+      }
+    ]
+  };
+
+  return (
   <>
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage
       city="Vittel"
@@ -27,6 +58,7 @@ const EliminationPigeonsVittel = () => (
       cta="Préservez votre maison à Vittel. Contactez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit."
     />
   </>
-);
+  );
+};
 
 export default EliminationPigeonsVittel;

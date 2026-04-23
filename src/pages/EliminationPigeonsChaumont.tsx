@@ -6,11 +6,42 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 const TITLE = "Élimination de pigeons à Chaumont en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Pigeons sur votre balcon à Chaumont ? G&F Nuisibles protège votre maison contre les nuisances sonores et les fientes. Devis gratuit et pose de filets.";
 
-const EliminationPigeonsChaumont = () => (
+const EliminationPigeonsChaumont = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://pest-pro-pal.lovable.app/#organization",
+        "name": "G&F Nuisibles",
+        "telephone": "07.65.25.67.92",
+        "priceRange": "$$",
+        "image": "https://pest-pro-pal.lovable.app/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "27 rue principale",
+          "addressLocality": "Montsaon",
+          "postalCode": "52000",
+          "addressRegion": "Haute-Marne",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": TITLE,
+        "description": DESCRIPTION,
+        "provider": { "@id": "https://pest-pro-pal.lovable.app/#organization" },
+        "areaServed": { "@type": "City", "name": "Chaumont" }
+      }
+    ]
+  };
+
+  return (
   <>
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage
       city="Chaumont"
@@ -27,6 +58,7 @@ const EliminationPigeonsChaumont = () => (
       cta="Protégez votre maison à Chaumont. Appelez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic gratuit à domicile."
     />
   </>
-);
+  );
+};
 
 export default EliminationPigeonsChaumont;

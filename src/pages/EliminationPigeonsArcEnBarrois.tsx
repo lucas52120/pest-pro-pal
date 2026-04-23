@@ -6,11 +6,42 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 const TITLE = "Élimination de pigeons à Arc-en-Barrois en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Pigeons sur votre toiture à Arc-en-Barrois ? G&F Nuisibles protège votre habitation des fientes et nuisances. Pose de filets et pics, devis gratuit.";
 
-const EliminationPigeonsArcEnBarrois = () => (
+const EliminationPigeonsArcEnBarrois = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://pest-pro-pal.lovable.app/#organization",
+        "name": "G&F Nuisibles",
+        "telephone": "07.65.25.67.92",
+        "priceRange": "$$",
+        "image": "https://pest-pro-pal.lovable.app/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "27 rue principale",
+          "addressLocality": "Montsaon",
+          "postalCode": "52000",
+          "addressRegion": "Haute-Marne",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": TITLE,
+        "description": DESCRIPTION,
+        "provider": { "@id": "https://pest-pro-pal.lovable.app/#organization" },
+        "areaServed": { "@type": "City", "name": "Arc-en-Barrois" }
+      }
+    ]
+  };
+
+  return (
   <>
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage
       city="Arc-en-Barrois"
@@ -27,6 +58,7 @@ const EliminationPigeonsArcEnBarrois = () => (
       cta="Retrouvez votre tranquillité à Arc-en-Barrois. Appelez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit à domicile."
     />
   </>
-);
+  );
+};
 
 export default EliminationPigeonsArcEnBarrois;

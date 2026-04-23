@@ -6,11 +6,42 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 const TITLE = "Élimination de pigeons à Nogent en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Stop aux nuisances des pigeons dans votre jardin ou terrasse à Nogent. Solutions de protection efficaces pour votre habitat. Diagnostic offert.";
 
-const EliminationPigeonsNogent = () => (
+const EliminationPigeonsNogent = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://pest-pro-pal.lovable.app/#organization",
+        "name": "G&F Nuisibles",
+        "telephone": "07.65.25.67.92",
+        "priceRange": "$$",
+        "image": "https://pest-pro-pal.lovable.app/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "27 rue principale",
+          "addressLocality": "Montsaon",
+          "postalCode": "52000",
+          "addressRegion": "Haute-Marne",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": TITLE,
+        "description": DESCRIPTION,
+        "provider": { "@id": "https://pest-pro-pal.lovable.app/#organization" },
+        "areaServed": { "@type": "City", "name": "Nogent" }
+      }
+    ]
+  };
+
+  return (
   <>
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage
       city="Nogent"
@@ -27,6 +58,7 @@ const EliminationPigeonsNogent = () => (
       cta="Profitez de votre jardin à Nogent sans nuisances. Appelez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic offert."
     />
   </>
-);
+  );
+};
 
 export default EliminationPigeonsNogent;
