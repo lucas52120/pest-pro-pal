@@ -6,11 +6,48 @@ import { Shield, Users, MapPin, Clock, Award } from "lucide-react";
 import vanImage from "@/assets/van-gf.png";
 
 const APropos = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://www.gf-nuisibles.fr/a-propos#aboutpage",
+        "url": "https://www.gf-nuisibles.fr/a-propos",
+        "name": "À Propos de GF Nuisibles | Expert Local contre les nuisibles",
+        "description":
+          "Découvrez GF nuisible votre expert local de gestion des nuisibles en Haute-Marne et communes limitrophes pour les professionnels ou particuliers",
+        "isPartOf": { "@id": "https://www.gf-nuisibles.fr/#organization" },
+        "about": { "@id": "https://www.gf-nuisibles.fr/#organization" },
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.gf-nuisibles.fr/#organization",
+        "url": "https://www.gf-nuisibles.fr",
+        "name": "G&F Nuisibles",
+        "telephone": "07.65.25.67.92",
+        "image": "https://www.gf-nuisibles.fr/og-image.png",
+        "priceRange": "$$",
+        "description":
+          "Découvrez GF nuisible votre expert local de gestion des nuisibles en Haute-Marne et communes limitrophes pour les professionnels ou particuliers",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "27 rue principale",
+          "addressLocality": "Montsaon",
+          "postalCode": "52000",
+          "addressRegion": "Haute-Marne",
+          "addressCountry": "FR",
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <Helmet>
         <title>À Propos de GF Nuisibles | Expert Local contre les nuisibles</title>
         <meta name="description" content="Découvrez GF nuisible votre expert local de gestion des nuisibles en Haute-Marne et communes limitrophes pour les professionnels ou particuliers" />
+        <link rel="canonical" href="https://www.gf-nuisibles.fr/a-propos" />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <Navbar />
       <section className="bg-primary pb-16 pt-32">
