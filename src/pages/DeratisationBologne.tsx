@@ -12,11 +12,11 @@ const DeratisationBologne = () => {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://pest-pro-pal.lovable.app/#organization",
+        "@id": "https://www.gf-nuisibles.fr/#organization",
         "name": "G&F Nuisibles",
         "telephone": "07.65.25.67.92",
         "priceRange": "$$",
-        "image": "https://pest-pro-pal.lovable.app/og-image.png",
+        "image": "https://www.gf-nuisibles.fr/og-image.png",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "27 rue principale",
@@ -29,8 +29,9 @@ const DeratisationBologne = () => {
       {
         "@type": "Service",
         "name": TITLE,
+        "url": "https://www.gf-nuisibles.fr/deratisation-bologne",
         "description": DESCRIPTION,
-        "provider": { "@id": "https://pest-pro-pal.lovable.app/#organization" },
+        "provider": { "@id": "https://www.gf-nuisibles.fr/#organization" },
         "areaServed": { "@type": "City", "name": "Bologne" }
       }
     ]
@@ -41,6 +42,7 @@ const DeratisationBologne = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
+        <link rel="canonical" href="https://www.gf-nuisibles.fr/deratisation-bologne" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage

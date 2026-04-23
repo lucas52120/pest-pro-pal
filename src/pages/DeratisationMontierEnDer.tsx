@@ -27,9 +27,9 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://pest-pro-pal.lovable.app/#organization",
+      "@id": "https://www.gf-nuisibles.fr/#organization",
       "name": "G&F Nuisibles",
-      "url": "https://pest-pro-pal.lovable.app",
+      "url": "https://www.gf-nuisibles.fr",
       "telephone": "07 65 25 67 92",
       "priceRange": "$$",
       "address": {
@@ -39,13 +39,14 @@ const jsonLd = {
         "postalCode": "52000",
         "addressCountry": "FR"
       },
-      "image": "https://pest-pro-pal.lovable.app/og-image.png"
+      "image": "https://www.gf-nuisibles.fr/og-image.png"
     },
     {
       "@type": "Service",
       "name": TITLE,
+        "url": "https://www.gf-nuisibles.fr/deratisation-montier-en-der",
       "description": DESCRIPTION,
-      "provider": { "@id": "https://pest-pro-pal.lovable.app/#organization" },
+      "provider": { "@id": "https://www.gf-nuisibles.fr/#organization" },
       "areaServed": { "@type": "City", "name": "Montier-en-Der" }
     },
     {
@@ -65,6 +66,7 @@ const DeratisationMontierEnDer = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
+        <link rel="canonical" href="https://www.gf-nuisibles.fr/deratisation-montier-en-der" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage

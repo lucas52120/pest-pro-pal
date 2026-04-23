@@ -44,6 +44,7 @@ const jsonLd = {
     {
       "@type": "Service",
       "name": TITLE,
+        "url": "https://www.gf-nuisibles.fr/deratisation-chateauvillain",
       "description": DESCRIPTION,
       "provider": { "@id": "https://www.gf-nuisibles.fr/#organization" },
       "areaServed": { "@type": "City", "name": "Châteauvillain" }
