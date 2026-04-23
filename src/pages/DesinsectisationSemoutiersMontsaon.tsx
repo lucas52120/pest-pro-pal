@@ -6,11 +6,42 @@ import heroImage from "@/assets/service-desinsectisation.jpg";
 const TITLE = "Désinsectisation à Semoutiers-Montsaon en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Cafards ou punaises à Semoutiers-Montsaon ? G&F Nuisibles, implanté sur place, éradique tous les insectes nuisibles. Expertise certifiée, diagnostic offert.";
 
-const DesinsectisationSemoutiersMontsaon = () => (
+const DesinsectisationSemoutiersMontsaon = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://pest-pro-pal.lovable.app/#organization",
+        "name": "G&F Nuisibles",
+        "telephone": "07.65.25.67.92",
+        "priceRange": "$$",
+        "image": "https://pest-pro-pal.lovable.app/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "27 rue principale",
+          "addressLocality": "Montsaon",
+          "postalCode": "52000",
+          "addressRegion": "Haute-Marne",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": TITLE,
+        "description": DESCRIPTION,
+        "provider": { "@id": "https://pest-pro-pal.lovable.app/#organization" },
+        "areaServed": { "@type": "City", "name": "Semoutiers-Montsaon" }
+      }
+    ]
+  };
+
+  return (
   <>
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage
       city="Semoutiers-Montsaon"
@@ -27,6 +58,7 @@ const DesinsectisationSemoutiersMontsaon = () => (
       cta="Insectes à Semoutiers-Montsaon ? Contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic gratuit et un traitement rapide."
     />
   </>
-);
+  );
+};
 
 export default DesinsectisationSemoutiersMontsaon;

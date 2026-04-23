@@ -6,11 +6,42 @@ import heroImage from "@/assets/service-taupes.jpg";
 const TITLE = "Taupier à Semoutiers-Montsaon en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Taupes à Semoutiers-Montsaon ? G&F Nuisibles, taupier implanté sur place en Haute-Marne 52. Piégeage mécanique écologique, résultats rapides garantis.";
 
-const TaupesSemoutiersMontsaon = () => (
+const TaupesSemoutiersMontsaon = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://pest-pro-pal.lovable.app/#organization",
+        "name": "G&F Nuisibles",
+        "telephone": "07.65.25.67.92",
+        "priceRange": "$$",
+        "image": "https://pest-pro-pal.lovable.app/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "27 rue principale",
+          "addressLocality": "Montsaon",
+          "postalCode": "52000",
+          "addressRegion": "Haute-Marne",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": TITLE,
+        "description": DESCRIPTION,
+        "provider": { "@id": "https://pest-pro-pal.lovable.app/#organization" },
+        "areaServed": { "@type": "City", "name": "Semoutiers-Montsaon" }
+      }
+    ]
+  };
+
+  return (
   <>
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage
       city="Semoutiers-Montsaon"
@@ -27,6 +58,7 @@ const TaupesSemoutiersMontsaon = () => (
       cta="Taupes à Semoutiers-Montsaon ? Appelez G&F Nuisibles au 07.65.25.67.92 pour un piégeage professionnel, écologique et garanti."
     />
   </>
-);
+  );
+};
 
 export default TaupesSemoutiersMontsaon;

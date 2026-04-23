@@ -7,11 +7,41 @@ const TITLE = "Dépigeonnisation à Vitry-le-François dans la Marne 51 | G&F Nu
 const DESCRIPTION = "Nuisances de pigeons à Vitry-le-François ? G&F Nuisibles, expert dans la Marne 51, protège vos façades et toitures. Diagnostic gratuit 7j/7.";
 
 const DepigeonnisationVitryLeFrancois = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://pest-pro-pal.lovable.app/#organization",
+        "name": "G&F Nuisibles",
+        "telephone": "07.65.25.67.92",
+        "priceRange": "$$",
+        "image": "https://pest-pro-pal.lovable.app/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "27 rue principale",
+          "addressLocality": "Montsaon",
+          "postalCode": "52000",
+          "addressRegion": "Haute-Marne",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": TITLE,
+        "description": DESCRIPTION,
+        "provider": { "@id": "https://pest-pro-pal.lovable.app/#organization" },
+        "areaServed": { "@type": "City", "name": "Vitry-le-François" }
+      }
+    ]
+  };
+
   return (
     <>
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
         city="Vitry-le-François"

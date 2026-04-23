@@ -7,11 +7,41 @@ const TITLE = "Désinsectisation à Vittel dans les Vosges 88 | G&F Nuisibles";
 const DESCRIPTION = "Cafards, punaises ou fourmis à Vittel ? G&F Nuisibles, désinsectiseur certifié dans les Vosges 88, éradique tous les insectes. Devis gratuit.";
 
 const DesinsectisationVittel = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://pest-pro-pal.lovable.app/#organization",
+        "name": "G&F Nuisibles",
+        "telephone": "07.65.25.67.92",
+        "priceRange": "$$",
+        "image": "https://pest-pro-pal.lovable.app/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "27 rue principale",
+          "addressLocality": "Montsaon",
+          "postalCode": "52000",
+          "addressRegion": "Haute-Marne",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": TITLE,
+        "description": DESCRIPTION,
+        "provider": { "@id": "https://pest-pro-pal.lovable.app/#organization" },
+        "areaServed": { "@type": "City", "name": "Vittel" }
+      }
+    ]
+  };
+
   return (
     <>
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
         city="Vittel"

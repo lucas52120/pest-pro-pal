@@ -6,11 +6,42 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 const TITLE = "Dépigeonnisation à Langres en Haute-Marne 52 | G&F Nuisibles";
 const DESCRIPTION = "Pigeons à Langres ? G&F Nuisibles, expert en dépigeonnage en Haute-Marne 52, protège vos bâtiments durablement. Diagnostic gratuit 7j/7.";
 
-const DepigeonnisationLangres = () => (
+const DepigeonnisationLangres = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://pest-pro-pal.lovable.app/#organization",
+        "name": "G&F Nuisibles",
+        "telephone": "07.65.25.67.92",
+        "priceRange": "$$",
+        "image": "https://pest-pro-pal.lovable.app/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "27 rue principale",
+          "addressLocality": "Montsaon",
+          "postalCode": "52000",
+          "addressRegion": "Haute-Marne",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": TITLE,
+        "description": DESCRIPTION,
+        "provider": { "@id": "https://pest-pro-pal.lovable.app/#organization" },
+        "areaServed": { "@type": "City", "name": "Langres" }
+      }
+    ]
+  };
+
+  return (
   <>
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage
       city="Langres"
@@ -27,6 +58,7 @@ const DepigeonnisationLangres = () => (
       cta="Pigeons à Langres ? Contactez G&F Nuisibles au 07.65.25.67.92 pour une dépigeonnisation professionnelle garantie."
     />
   </>
-);
+  );
+};
 
 export default DepigeonnisationLangres;
