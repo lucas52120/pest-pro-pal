@@ -25,7 +25,7 @@ const DesinsectisationMontierEnDer = () => {
         intro="À Montier-en-Der, cafards, punaises de lit, puces et autres insectes nuisibles peuvent rapidement envahir votre logement ou vos locaux. G&F Nuisibles vous propose des solutions de désinsectisation professionnelles, efficaces et durables."
         expertise="G&F Nuisibles intervient à Montier-en-Der et en Haute-Marne contre tous les insectes nuisibles : cafards, punaises de lit, puces, fourmis, mites. Diagnostic précis et traitement ciblé pour chaque situation."
         method="Inspection approfondie pour identifier les espèces et les foyers. Application de traitements professionnels (gel, pulvérisation, nébulisation) adaptés à chaque insecte. Suivi post-traitement pour garantir l'éradication complète."
-        cta="Invasion d'insectes à Montier-en-Der ? Contactez G&F Nuisibles au 07.88.17.45.86 pour un diagnostic gratuit."
+        cta="Invasion d'insectes à Montier-en-Der ? Contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic gratuit."
       />
     </>
   );

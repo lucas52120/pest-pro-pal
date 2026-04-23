@@ -30,7 +30,7 @@ const DeratisationSaintDizier = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -87,7 +87,7 @@ const DeratisationSaintDizier = () => {
         intro="Saint-Dizier, avec ses zones industrielles et résidentielles, offre un terrain propice aux infestations de rongeurs. Rats bruns, rats noirs ou souris domestiques prolifèrent vite et menacent votre santé comme vos installations. G&F Nuisibles vous propose une dératisation complète et garantie."
         expertise="Nous intervenons auprès des particuliers, entreprises, restaurants et collectivités de Saint-Dizier. Notre expertise couvre l'ensemble des espèces de rongeurs présentes en Haute-Marne, avec des protocoles conformes aux normes sanitaires en vigueur."
         method="Audit détaillé de votre site pour évaluer le niveau d'infestation. Déploiement d'un dispositif multi-techniques : appâts rodenticides sécurisés, pièges professionnels, obturation des passages. Rapport d'intervention et suivi de contrôle systématique."
-        cta="Protégez votre habitat ou commerce à Saint-Dizier. Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit et une expertise professionnelle certifiée."
+        cta="Protégez votre habitat ou commerce à Saint-Dizier. Appelez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit et une expertise professionnelle certifiée."
         faqItems={FAQ_ITEMS}
       />
     </>

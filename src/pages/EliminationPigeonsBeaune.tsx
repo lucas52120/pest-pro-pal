@@ -24,7 +24,7 @@ const EliminationPigeonsBeaune = () => (
       intro="À Beaune, les pigeons pénètrent dans les combles et sous les tuiles des habitations, provoquant des dégâts sur la charpente et l'isolation. Les particuliers subissent aussi les nuisances olfactives et sonores. G&F Nuisibles intervient pour sécuriser votre domicile."
       expertise="Notre savoir-faire en Côte-d'Or nous permet de traiter efficacement les invasions résidentielles. Obturation des accès, pose de filets et pics anti-perchage, le tout dans le respect de l'architecture locale et des volatiles."
       method="Inspection approfondie de votre toiture et de vos combles. Fermeture de tous les points d'entrée utilisés par les pigeons. Installation de dispositifs de protection durable. Décontamination complète des zones souillées."
-      cta="Sécurisez votre toiture à Beaune. Contactez G&F Nuisibles au 07.88.17.45.86 pour une intervention rapide."
+      cta="Sécurisez votre toiture à Beaune. Contactez G&F Nuisibles au 07.65.25.67.92 pour une intervention rapide."
     />
   </>
 );

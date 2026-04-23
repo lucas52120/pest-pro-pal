@@ -30,7 +30,7 @@ const DepigeonnisationSemoutiersMontsaon = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -79,7 +79,7 @@ const DepigeonnisationSemoutiersMontsaon = () => {
         intro="À Semoutiers-Montsaon, les pigeons envahissent toitures, façades et bâtiments agricoles, causant dégradations et risques sanitaires. G&F Nuisibles, votre expert de proximité basé sur la commune, met en place des dispositifs professionnels pour protéger durablement vos locaux."
         expertise="Nous intervenons sur tous types de bâtiments à Semoutiers-Montsaon : habitations, exploitations agricoles, commerces et bâtiments communaux. Nos méthodes non-létales (filets, pics, fil tendu) sont conformes à la réglementation et garantissent une protection pérenne."
         method="Analyse complète du site à Semoutiers-Montsaon pour identifier les zones de perchage et nidification. Pose de dispositifs anti-pigeons sur mesure. Décontamination des surfaces souillées. Suivi et garantie d'efficacité."
-        cta="Pigeons à Semoutiers-Montsaon ? Contactez G&F Nuisibles au 07.88.17.45.86 pour un diagnostic gratuit et une dépigeonnisation professionnelle."
+        cta="Pigeons à Semoutiers-Montsaon ? Contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic gratuit et une dépigeonnisation professionnelle."
         faqItems={FAQ_ITEMS}
       />
     </>

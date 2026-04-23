@@ -30,7 +30,7 @@ const GuepesFrelonsChateauvillain = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -87,7 +87,7 @@ const GuepesFrelonsChateauvillain = () => {
         intro="À Châteauvillain, les nids de guêpes et de frelons représentent un danger réel pour les habitants. G&F Nuisibles intervient rapidement pour neutraliser et retirer les nids en toute sécurité, que ce soit chez vous ou dans vos locaux professionnels."
         expertise="Nos techniciens qualifiés interviennent à Châteauvillain et dans toute la Haute-Marne pour la destruction de nids de guêpes, frelons européens et frelons asiatiques. Intervention sécurisée, rapide et garantie."
         method="Repérage et évaluation du nid, sécurisation du périmètre, traitement par insecticide professionnel et retrait du nid. Intervention possible en hauteur et dans les zones difficiles d'accès."
-        cta="Nid de guêpes ou frelons à Châteauvillain ? Appelez G&F Nuisibles au 07.88.17.45.86 pour une intervention d'urgence."
+        cta="Nid de guêpes ou frelons à Châteauvillain ? Appelez G&F Nuisibles au 07.65.25.67.92 pour une intervention d'urgence."
         faqItems={FAQ_ITEMS}
       />
     </>

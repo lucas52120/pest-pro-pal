@@ -24,7 +24,7 @@ const EliminationPigeonsNeufchateau = () => (
       intro="À Neufchâteau, les pigeons s'installent sur les balcons, fenêtres et toits des habitations résidentielles. Les fientes salissent vos espaces de vie et les nuisances sonores troublent votre quotidien. G&F Nuisibles propose aux particuliers une élimination efficace et respectueuse."
       expertise="Nous équipons votre maison ou appartement de protections adaptées : filets pour balcons et loggias, pics sur les corniches, répulsifs pour les terrasses. Des méthodes non-létales qui préservent les oiseaux tout en protégeant votre foyer."
       method="Visite à domicile pour analyser les points de perchage et de nidification. Installation de dispositifs sur mesure adaptés à votre habitation. Nettoyage complet des zones souillées. Suivi post-intervention pour un résultat pérenne."
-      cta="Retrouvez votre tranquillité à Neufchâteau. Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit."
+      cta="Retrouvez votre tranquillité à Neufchâteau. Appelez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit."
     />
   </>
 );

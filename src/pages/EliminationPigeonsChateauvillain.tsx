@@ -24,7 +24,7 @@ const EliminationPigeonsChateauvillain = () => (
       intro="À Châteauvillain, les pigeons causent des dégradations visibles sur les façades des maisons : fientes corrosives, nids dans les gouttières, bruits incessants. Les particuliers méritent une solution professionnelle pour protéger leur bien. G&F Nuisibles est votre allié."
       expertise="Nous installons des dispositifs durables et esthétiques pour les habitations : pics inox quasi invisibles, répulsifs sur mesure, filets pour les ouvertures. Chaque intervention respecte le cachet de votre maison tout en éliminant les nuisances."
       method="Visite de votre domicile pour un bilan complet des dégâts et des zones à protéger. Installation de systèmes anti-pigeons adaptés à votre architecture. Remise en état des surfaces souillées. Garantie d'efficacité sur la durée."
-      cta="Préservez votre maison à Châteauvillain. Contactez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit."
+      cta="Préservez votre maison à Châteauvillain. Contactez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit."
     />
   </>
 );

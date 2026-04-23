@@ -30,7 +30,7 @@ const GuepesFrelonsChaumont = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -87,7 +87,7 @@ const GuepesFrelonsChaumont = () => {
         intro="À Chaumont, les guêpes et frelons s'installent sous les toitures, dans les combles ou les jardins. Leurs piqûres représentent un danger réel, surtout pour les personnes allergiques. G&F Nuisibles détruit les nids en toute sécurité avec un équipement professionnel adapté."
         expertise="Nos techniciens certifiés interviennent à Chaumont et dans toute la Haute-Marne pour la destruction de nids de guêpes, frelons européens et frelons asiatiques. Chaque intervention est sécurisée et garantie."
         method="Localisation précise du nid et évaluation des risques. Traitement par injection d'insecticide professionnel ou retrait mécanique. Vérification de l'élimination complète de la colonie. Conseils de prévention."
-        cta="Nid de guêpes à Chaumont ? Appelez G&F Nuisibles au 07.88.17.45.86 pour une intervention rapide et sécurisée."
+        cta="Nid de guêpes à Chaumont ? Appelez G&F Nuisibles au 07.65.25.67.92 pour une intervention rapide et sécurisée."
         faqItems={FAQ_ITEMS}
       />
     </>

@@ -24,7 +24,7 @@ const EliminationPigeonsBourbonne = () => (
       intro="À Bourbonne-les-Bains, les pigeons envahissent les jardins, terrasses et dépendances des particuliers. Leurs fientes abîment le mobilier extérieur et les plantations. G&F Nuisibles vous aide à reconquérir vos espaces de vie en plein air."
       expertise="Nous adaptons nos solutions à chaque configuration : répulsifs pour terrasses couvertes, filets pour pergolas, pics pour murets et appuis de fenêtres. Votre jardin et votre terrasse redeviennent des espaces agréables pour votre famille."
       method="Analyse des habitudes des pigeons autour de votre propriété. Installation de protections discrètes sur les zones ciblées. Nettoyage des fientes et désinfection. Conseils personnalisés pour maintenir votre habitat protégé."
-      cta="Profitez de votre extérieur à Bourbonne. Appelez G&F Nuisibles au 07.88.17.45.86 pour un diagnostic offert."
+      cta="Profitez de votre extérieur à Bourbonne. Appelez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic offert."
     />
   </>
 );

@@ -29,7 +29,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/60">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-accent" />
-                <a href="tel:0788174586" className="hover:text-accent">07.88.17.45.86</a>
+                <a href="tel:0765256792" className="hover:text-accent">07.65.25.67.92</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-accent" />

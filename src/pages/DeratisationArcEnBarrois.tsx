@@ -30,7 +30,7 @@ const DeratisationArcEnBarrois = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -79,7 +79,7 @@ const DeratisationArcEnBarrois = () => {
         intro="Arc-en-Barrois, avec son environnement rural et forestier, est un territoire où rats bruns et souris domestiques trouvent facilement refuge dans les habitations et dépendances. G&F Nuisibles, votre dératiseur de proximité basé à Montsaon, intervient rapidement pour stopper l'infestation avant qu'elle ne s'aggrave."
         expertise="Nous intervenons chez les particuliers, agriculteurs et professionnels d'Arc-en-Barrois et alentours. Nos protocoles conformes aux normes sanitaires couvrent toutes les espèces de rongeurs présentes en Haute-Marne, avec des solutions adaptées à chaque configuration de bâtiment."
         method="Audit complet de votre site à Arc-en-Barrois pour évaluer le niveau d'infestation et identifier les points d'entrée. Déploiement de postes d'appâtage sécurisés et de pièges professionnels. Obturation des accès. Rapport d'intervention et suivi de contrôle systématique."
-        cta="Protégez votre habitation à Arc-en-Barrois. Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit et une dératisation certifiée."
+        cta="Protégez votre habitation à Arc-en-Barrois. Appelez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit et une dératisation certifiée."
         faqItems={FAQ_ITEMS}
       />
     </>

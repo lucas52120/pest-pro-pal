@@ -30,7 +30,7 @@ const DeratisationChalonsEnChampagne = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -87,7 +87,7 @@ const DeratisationChalonsEnChampagne = () => {
         intro="À Châlons-en-Champagne, les rongeurs trouvent des conditions idéales pour proliférer. Que ce soit dans les habitations ou les commerces, une infestation non traitée peut causer des dégâts considérables. G&F Nuisibles propose une éradication complète et garantie."
         expertise="Spécialistes de la lutte anti-rongeurs en Marne (51), nos équipes utilisent des techniques éprouvées adaptées à chaque situation. Notre approche combine efficacité immédiate et prévention à long terme."
         method="Audit détaillé de votre site pour évaluer l'ampleur de l'infestation. Déploiement d'un dispositif multi-techniques : rodenticides sécurisés, pièges professionnels, colmatage des passages. Rapport et suivi systématique."
-        cta="Ne laissez pas les rongeurs s'installer à Châlons-en-Champagne. Appelez le 07.88.17.45.86 pour une expertise certifiée et un devis sans engagement."
+        cta="Ne laissez pas les rongeurs s'installer à Châlons-en-Champagne. Appelez le 07.65.25.67.92 pour une expertise certifiée et un devis sans engagement."
         faqItems={FAQ_ITEMS}
       />
     </>

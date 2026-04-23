@@ -24,7 +24,7 @@ const EliminationPigeonsSaintDizier = () => (
       intro="À Saint-Dizier, les pigeons s'installent sur les balcons, terrasses et rebords des habitations résidentielles. Fientes, bruits et parasites perturbent votre quotidien et menacent la santé de votre famille. G&F Nuisibles intervient rapidement chez les particuliers."
       expertise="Nous équipons votre maison ou appartement de dispositifs anti-pigeons discrets : filets sur les balcons, pics sur les corniches, répulsifs adaptés aux habitations. Des solutions non-létales pour retrouver la tranquillité chez vous."
       method="Visite à domicile pour analyser les zones de nidification autour de votre habitation. Pose de protections personnalisées sur balcons, terrasses et toiture. Nettoyage et désinfection des surfaces touchées. Suivi pour garantir un résultat durable."
-      cta="Retrouvez votre tranquillité à Saint-Dizier. Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit à domicile."
+      cta="Retrouvez votre tranquillité à Saint-Dizier. Appelez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit à domicile."
     />
   </>
 );

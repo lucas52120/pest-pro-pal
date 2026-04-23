@@ -30,7 +30,7 @@ const GuepesFrelonsArcEnBarrois = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -79,7 +79,7 @@ const GuepesFrelonsArcEnBarrois = () => {
         intro="Arc-en-Barrois, nichée au cœur de la forêt haut-marnaise, est un territoire propice à l'installation des guêpes et frelons dès les beaux jours. G&F Nuisibles, basé à proximité à Montsaon, intervient en urgence pour supprimer les nids dangereux sur votre propriété ou vos locaux professionnels."
         expertise="Nos techniciens certifiés Certibiocide maîtrisent le retrait de nids en toiture, cheminée, arbre et sous-sol à Arc-en-Barrois. Nous utilisons exclusivement des biocides homologués et du matériel professionnel pour une élimination sûre, y compris en hauteur et en zones difficiles d'accès."
         method="Diagnostic sur place à Arc-en-Barrois pour localiser et identifier l'espèce. Application d'un traitement ciblé, puis retrait sécurisé du nid. Désinfection de la zone et conseils de prévention pour éviter toute réinstallation en Haute-Marne."
-        cta="Nid de guêpes ou frelons à Arc-en-Barrois ? Appelez G&F Nuisibles au 07.88.17.45.86 pour une intervention rapide et sécurisée."
+        cta="Nid de guêpes ou frelons à Arc-en-Barrois ? Appelez G&F Nuisibles au 07.65.25.67.92 pour une intervention rapide et sécurisée."
         faqItems={FAQ_ITEMS}
       />
     </>

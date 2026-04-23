@@ -25,7 +25,7 @@ const TaupesBologne = () => {
         intro="Bologne et ses environs verdoyants attirent les taupes qui dégradent vos terrains. Nos taupiers professionnels utilisent des techniques de piégeage éprouvées pour une élimination complète et respectueuse."
         expertise="G&F Nuisibles intervient à Bologne et en Haute-Marne pour le piégeage professionnel des taupes. Nos taupiers expérimentés traitent jardins, parcs, terrains de sport et exploitations agricoles."
         method="Repérage des galeries actives et évaluation de l'étendue de l'infestation. Pose de pièges professionnels dans les galeries principales. Contrôle régulier et retrait des captures. Conseils de prévention."
-        cta="Taupes dans votre jardin à Bologne ? Contactez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit."
+        cta="Taupes dans votre jardin à Bologne ? Contactez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit."
       />
     </>
   );

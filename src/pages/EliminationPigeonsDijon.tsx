@@ -24,7 +24,7 @@ const EliminationPigeonsDijon = () => (
       intro="À Dijon, les pigeons s'installent sur les balcons et rebords des immeubles et maisons de ville. Leurs fientes acides endommagent les garde-corps et les menuiseries, tandis que les nuisances sonores perturbent votre quotidien. G&F Nuisibles protège les particuliers efficacement."
       expertise="Experts de la protection résidentielle en Côte-d'Or, nous installons des dispositifs discrets pour tous types d'habitations : filets pour balcons, pics pour corniches, répulsifs pour terrasses. Des solutions non-létales pour le confort de votre famille."
       method="Visite à domicile pour identifier les zones de nidification et de perchage. Pose de protections personnalisées sur balcons, fenêtres et toiture. Nettoyage et désinfection des surfaces contaminées. Suivi garanti."
-      cta="Protégez votre habitation à Dijon. Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit à domicile."
+      cta="Protégez votre habitation à Dijon. Appelez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit à domicile."
     />
   </>
 );

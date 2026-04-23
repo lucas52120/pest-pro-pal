@@ -41,7 +41,7 @@ const jsonLd = {
       "@id": "https://pest-pro-pal.lovable.app/#organization",
       name: "G&F Nuisibles",
       image: "https://pest-pro-pal.lovable.app/logo-gf.svg",
-      telephone: "+33788174586",
+      telephone: "+33765256792",
       address: {
         "@type": "PostalAddress",
         streetAddress: "27 rue principale",

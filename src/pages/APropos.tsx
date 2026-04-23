@@ -156,10 +156,10 @@ const APropos = () => {
               Que vous soyez confronté à une invasion de rats à Chaumont, un nid de frelons à Langres ou des pigeons à Saint-Dizier, G&F Nuisibles dispose de l'expertise et des équipements adaptés pour résoudre votre problème durablement.
             </p>
             <a
-              href="tel:0788174586"
+              href="tel:0765256792"
               className="inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-4 font-heading font-bold text-accent-foreground transition-colors hover:bg-orange-hover"
             >
-              Appelez-nous : 07.88.17.45.86
+              Appelez-nous : 07.65.25.67.92
             </a>
           </motion.div>
         </div>

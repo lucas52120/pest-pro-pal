@@ -25,7 +25,7 @@ const TaupesChaumont = () => {
         intro="À Chaumont, les taupes dégradent pelouses, jardins et espaces verts avec leurs galeries souterraines et monticules de terre. G&F Nuisibles intervient avec des méthodes de piégeage traditionnelles, efficaces et respectueuses de l'environnement."
         expertise="Nos taupiers expérimentés interviennent à Chaumont et dans toute la Haute-Marne. Nous traitons jardins de particuliers, parcs, terrains de sport et exploitations agricoles sans aucun produit chimique."
         method="Repérage des galeries actives et évaluation de l'étendue de l'infestation. Pose de pièges mécaniques professionnels dans les galeries principales. Contrôle régulier et retrait des captures. Conseils de prévention."
-        cta="Taupes à Chaumont ? Appelez G&F Nuisibles au 07.88.17.45.86 pour un piégeage professionnel garanti."
+        cta="Taupes à Chaumont ? Appelez G&F Nuisibles au 07.65.25.67.92 pour un piégeage professionnel garanti."
       />
     </>
   );

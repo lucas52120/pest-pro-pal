@@ -24,7 +24,7 @@ const EliminationPigeonsChalonsEnChampagne = () => (
       intro="À Châlons-en-Champagne, les pigeons dégradent les façades et les balcons des habitations résidentielles. Les fientes acides attaquent les enduits et les menuiseries, diminuant la valeur de votre bien. G&F Nuisibles intervient pour préserver votre patrimoine immobilier."
       expertise="Notre équipe propose des interventions discrètes pour les maisons et appartements de Châlons : pics inox esthétiques, filets invisibles, répulsifs adaptés. Protégez votre façade et la santé de votre famille avec des méthodes éprouvées."
       method="Diagnostic de votre habitation pour évaluer les dégâts et les zones à risque. Installation de systèmes anti-pigeons sur façade, balcons et toiture. Remise en propreté des surfaces souillées. Garantie de résultat."
-      cta="Préservez votre façade à Châlons-en-Champagne. Contactez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit."
+      cta="Préservez votre façade à Châlons-en-Champagne. Contactez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit."
     />
   </>
 );

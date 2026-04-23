@@ -24,7 +24,7 @@ const EliminationPigeonsLangres = () => (
       intro="À Langres, les pigeons colonisent les greniers, gouttières et toitures des habitations. Leurs déjections détériorent les matériaux et propagent des parasites dangereux pour votre santé. G&F Nuisibles offre aux particuliers une protection complète de leur domicile."
       expertise="Spécialistes de l'éloignement des pigeons chez les particuliers, nous sécurisons votre toiture et vos combles avec des techniques non-létales. Filets, pics et répulsifs préservent l'intégrité de votre maison et la santé de votre famille."
       method="Inspection complète de votre toiture et des accès utilisés par les volatiles. Obturation des entrées, pose de dispositifs anti-perchage, décontamination des zones touchées. Suivi post-intervention pour garantir votre tranquillité."
-      cta="Libérez votre toit à Langres. Contactez G&F Nuisibles au 07.88.17.45.86 pour une intervention rapide chez vous."
+      cta="Libérez votre toit à Langres. Contactez G&F Nuisibles au 07.65.25.67.92 pour une intervention rapide chez vous."
     />
   </>
 );

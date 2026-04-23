@@ -24,7 +24,7 @@ const EliminationPigeonsFroncles = () => (
       intro="À Froncles, les pigeons envahissent les espaces extérieurs des particuliers : jardin, terrasse, dépendances. Leurs déjections abîment le mobilier, les plantations et les revêtements. G&F Nuisibles vous propose des solutions concrètes pour un habitat sain."
       expertise="Solutions personnalisées pour les maisons individuelles : répulsifs pour terrasses et jardins, filets de protection pour les zones couvertes, pics discrets sur les murs et appuis. Préservez votre cadre de vie familial."
       method="Diagnostic de votre propriété pour identifier les zones fréquentées par les pigeons. Mise en place de protections adaptées à votre jardin et votre maison. Nettoyage des surfaces souillées. Conseils de prévention pour un résultat pérenne."
-      cta="Retrouvez un jardin propre à Froncles. Appelez G&F Nuisibles au 07.88.17.45.86 pour un diagnostic offert."
+      cta="Retrouvez un jardin propre à Froncles. Appelez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic offert."
     />
   </>
 );

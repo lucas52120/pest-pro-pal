@@ -24,7 +24,7 @@ const EliminationPigeonsNogent = () => (
       intro="À Nogent, les pigeons perturbent la vie quotidienne des particuliers en envahissant jardins, terrasses et balcons. Leurs fientes souillent le mobilier extérieur et présentent un risque sanitaire. G&F Nuisibles vous aide à retrouver un espace de vie propre et serein."
       expertise="Nous concevons des solutions sur mesure pour les maisons individuelles et appartements : répulsifs adaptés aux terrasses, filets pour balcons, pics discrets sur les appuis de fenêtres. Votre confort en extérieur est notre priorité."
       method="Évaluation des zones fréquentées par les pigeons autour de votre habitation. Mise en place de protections ciblées sur terrasse, jardin et façade. Nettoyage des surfaces contaminées par les fientes. Conseils pour prévenir le retour des volatiles."
-      cta="Profitez de votre jardin à Nogent sans nuisances. Appelez G&F Nuisibles au 07.88.17.45.86 pour un diagnostic offert."
+      cta="Profitez de votre jardin à Nogent sans nuisances. Appelez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic offert."
     />
   </>
 );

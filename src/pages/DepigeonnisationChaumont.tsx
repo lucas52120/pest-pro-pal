@@ -30,7 +30,7 @@ const DepigeonnisationChaumont = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -79,7 +79,7 @@ const DepigeonnisationChaumont = () => {
         intro="À Chaumont, les pigeons colonisent toitures, balcons et façades, provoquant salissures et dégradations. G&F Nuisibles met en place des solutions anti-pigeons professionnelles : filets, pics, fil tendu et systèmes de dissuasion adaptés à chaque configuration."
         expertise="Notre expertise en Haute-Marne nous permet d'intervenir sur tous types de bâtiments à Chaumont : immeubles, commerces, monuments et habitations. Nous privilégions les méthodes non-létales et durables."
         method="Analyse du site et identification des zones de perchage et nidification. Pose de dispositifs anti-pigeons adaptés (pics, filets, fil tendu). Décontamination des surfaces souillées par les fientes. Garantie d'efficacité."
-        cta="Pigeons à Chaumont ? Contactez G&F Nuisibles au 07.88.17.45.86 pour une dépigeonnisation professionnelle garantie."
+        cta="Pigeons à Chaumont ? Contactez G&F Nuisibles au 07.65.25.67.92 pour une dépigeonnisation professionnelle garantie."
         faqItems={FAQ_ITEMS}
       />
     </>

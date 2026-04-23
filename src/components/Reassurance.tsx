@@ -32,7 +32,7 @@ const Reassurance = () => {
             { icon: MapPin, label: "Secteur", text: "Chaumont, Saint-Dizier, Langres et environs (52)" },
             { icon: CheckCircle, label: "Garantie", text: "Résultat garanti, véhicules discrets" },
             { icon: ShieldCheck, label: "Certification", text: "Agréé Certibiocide — Produits professionnels homologués" },
-            { icon: Phone, label: "Contact", text: "07.88.17.45.86" },
+            { icon: Phone, label: "Contact", text: "07.65.25.67.92" },
           ].map((item) => (
             <div
               key={item.label}

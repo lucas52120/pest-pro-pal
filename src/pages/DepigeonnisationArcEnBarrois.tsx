@@ -30,7 +30,7 @@ const DepigeonnisationArcEnBarrois = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -79,7 +79,7 @@ const DepigeonnisationArcEnBarrois = () => {
         intro="À Arc-en-Barrois, les pigeons colonisent toitures, corniches et façades des bâtiments, causant dégradations et problèmes sanitaires. G&F Nuisibles, expert en dépigeonnisation en Haute-Marne, installe des dispositifs professionnels pour protéger durablement vos locaux."
         expertise="Nous intervenons sur tous types de bâtiments à Arc-en-Barrois : maisons, commerces, bâtiments agricoles et collectivités. Nos méthodes non-létales (filets, pics, fil tendu) respectent la réglementation et garantissent une protection pérenne."
         method="Analyse du site à Arc-en-Barrois pour identifier les zones de perchage et nidification. Installation de dispositifs anti-pigeons sur mesure. Décontamination des surfaces souillées par les fientes. Suivi et garantie d'efficacité."
-        cta="Pigeons à Arc-en-Barrois ? Contactez G&F Nuisibles au 07.88.17.45.86 pour un diagnostic gratuit et une dépigeonnisation professionnelle."
+        cta="Pigeons à Arc-en-Barrois ? Contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic gratuit et une dépigeonnisation professionnelle."
         faqItems={FAQ_ITEMS}
       />
     </>

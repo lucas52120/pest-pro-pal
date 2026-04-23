@@ -30,7 +30,7 @@ const GuepesFrelonsBourbonne = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -87,7 +87,7 @@ const GuepesFrelonsBourbonne = () => {
         intro="Les guêpes et frelons s'installent fréquemment dans les habitations et jardins de Bourbonne-les-Bains. Leur présence constitue un risque majeur, surtout pour les personnes allergiques. Faites appel à G&F Nuisibles pour une destruction rapide et sécurisée."
         expertise="Nos techniciens qualifiés interviennent à Bourbonne-les-Bains et dans toute la Haute-Marne pour la destruction de nids de guêpes, frelons européens et frelons asiatiques. Intervention sécurisée, rapide et garantie."
         method="Repérage et évaluation du nid, sécurisation du périmètre, traitement par insecticide professionnel et retrait du nid. Intervention possible en hauteur et dans les zones difficiles d'accès."
-        cta="Nid de guêpes ou frelons à Bourbonne-les-Bains ? Appelez G&F Nuisibles au 07.88.17.45.86 pour une intervention d'urgence."
+        cta="Nid de guêpes ou frelons à Bourbonne-les-Bains ? Appelez G&F Nuisibles au 07.65.25.67.92 pour une intervention d'urgence."
         faqItems={FAQ_ITEMS}
       />
     </>

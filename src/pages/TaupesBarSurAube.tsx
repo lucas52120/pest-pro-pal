@@ -25,7 +25,7 @@ const TaupesBarSurAube = () => {
         intro="À Bar-sur-Aube, les taupes sont un fléau pour les jardins, terrains de sport et espaces paysagers. Leurs galeries fragilisent le sol et multiplient les taupinières disgracieuses. G&F Nuisibles agit vite et proprement."
         expertise="Notre expertise de terrain en Aube (10) nous permet de localiser rapidement les galeries actives. Nous privilégions le piégeage mécanique, une méthode écologique et sans danger pour les autres espèces."
         method="Cartographie des galeries et identification des passages principaux. Pose stratégique de pièges mécaniques certifiés. Visites de contrôle régulières jusqu'à élimination complète."
-        cta="Libérez votre terrain des taupes à Bar-sur-Aube. Contactez le 07.88.17.45.86 pour un piégeage professionnel garanti."
+        cta="Libérez votre terrain des taupes à Bar-sur-Aube. Contactez le 07.65.25.67.92 pour un piégeage professionnel garanti."
       />
     </>
   );

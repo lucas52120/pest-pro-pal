@@ -24,7 +24,7 @@ const EliminationPigeonsArcEnBarrois = () => (
       intro="À Arc-en-Barrois, les pigeons investissent toitures, balcons et greniers des habitations, laissant fientes et parasites. G&F Nuisibles intervient chez les particuliers pour installer des protections discrètes et efficaces qui vous rendront votre tranquillité."
       expertise="Nous équipons votre maison à Arc-en-Barrois de dispositifs anti-pigeons adaptés : filets sur les ouvertures, pics sur les corniches, répulsifs discrets. Des solutions non-létales pour protéger votre habitat et la santé de votre famille."
       method="Visite à domicile à Arc-en-Barrois pour analyser les zones de nidification et de perchage. Pose de protections personnalisées sur toiture, balcons et façades. Nettoyage et désinfection des surfaces souillées. Suivi pour garantir un résultat durable."
-      cta="Retrouvez votre tranquillité à Arc-en-Barrois. Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit à domicile."
+      cta="Retrouvez votre tranquillité à Arc-en-Barrois. Appelez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit à domicile."
     />
   </>
 );

@@ -24,7 +24,7 @@ const EliminationPigeonsVitryLeFrancois = () => (
       intro="À Vitry-le-François, les pigeons envahissent les jardins et terrasses des particuliers, rendant les espaces extérieurs impraticables. Leurs fientes souillent le mobilier, les dalles et les plantations. G&F Nuisibles vous aide à reconquérir votre extérieur."
       expertise="Nous proposons des solutions sur mesure pour les habitations de la Marne : répulsifs pour terrasses et jardins, filets pour balcons et pergolas, pics pour appuis de fenêtres. Chaque dispositif est choisi pour s'intégrer discrètement à votre habitat."
       method="Analyse des zones de passage et de perchage autour de votre propriété. Installation de protections ciblées. Nettoyage et assainissement des surfaces touchées par les déjections. Conseils pour prévenir tout retour."
-      cta="Profitez de votre terrasse à Vitry-le-François. Appelez G&F Nuisibles au 07.88.17.45.86 pour un diagnostic offert."
+      cta="Profitez de votre terrasse à Vitry-le-François. Appelez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic offert."
     />
   </>
 );

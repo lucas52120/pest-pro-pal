@@ -30,7 +30,7 @@ const jsonLd = {
       "@id": "https://pest-pro-pal.lovable.app/#organization",
       "name": "G&F Nuisibles",
       "url": "https://pest-pro-pal.lovable.app",
-      "telephone": "07 88 17 45 86",
+      "telephone": "07 65 25 67 92",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -79,7 +79,7 @@ const DeratisationFroncles = () => {
         intro="À Froncles, les infestations de rongeurs touchent aussi bien les particuliers que les professionnels. Nos techniciens certifiés interviennent pour éliminer rats et souris avec des méthodes éprouvées et respectueuses de l'environnement."
         expertise="Nous intervenons chez les particuliers, entreprises et collectivités de Froncles et ses environs. Notre expertise couvre toutes les espèces de rongeurs présentes en Haute-Marne, avec des protocoles conformes aux normes sanitaires."
         method="Diagnostic complet des lieux, identification des points d'entrée et du niveau d'infestation. Mise en place de dispositifs professionnels : appâts sécurisés, pièges, obturation des accès. Suivi et contrôle post-intervention garantis."
-        cta="Protégez votre habitat à Froncles. Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit et une intervention rapide."
+        cta="Protégez votre habitat à Froncles. Appelez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit et une intervention rapide."
         faqItems={FAQ_ITEMS}
       />
     </>

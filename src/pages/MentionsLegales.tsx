@@ -31,7 +31,7 @@ const MentionsLegales = () => {
           <div>
             <h2 className="font-heading text-2xl font-bold text-primary">Contact</h2>
             <p className="text-muted-foreground">
-              Téléphone : <a href="tel:0788174586" className="text-accent hover:underline">07.88.17.45.86</a><br />
+              Téléphone : <a href="tel:0765256792" className="text-accent hover:underline">07.65.25.67.92</a><br />
               Email : <a href="mailto:contact@gf-nuisibles.fr" className="text-accent hover:underline">contact@gf-nuisibles.fr</a>
             </p>
           </div>

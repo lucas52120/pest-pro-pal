@@ -95,8 +95,8 @@ const Contact = () => {
               </p>
               <p className="mt-4 max-w-md leading-relaxed text-muted-foreground">
                 En cas d'urgence absolue, n'attendez pas et appelez-nous directement au{" "}
-                <a href="tel:0788174586" className="font-bold text-accent hover:underline">
-                  07.88.17.45.86
+                <a href="tel:0765256792" className="font-bold text-accent hover:underline">
+                  07.65.25.67.92
                 </a>.
               </p>
             </motion.div>
@@ -213,7 +213,7 @@ const Contact = () => {
                   <Phone className="h-5 w-5 text-accent" />
                   <div>
                     <p className="font-heading font-semibold text-primary">Téléphone</p>
-                    <a href="tel:0788174586" className="text-muted-foreground hover:text-accent">07.88.17.45.86</a>
+                    <a href="tel:0765256792" className="text-muted-foreground hover:text-accent">07.65.25.67.92</a>
                   </div>
                 </li>
                 <li className="flex items-center gap-3">
@@ -239,7 +239,7 @@ const Contact = () => {
                 Nous intervenons 7j/7, y compris le week-end pour les situations urgentes.
               </p>
               <a
-                href="tel:0788174586"
+                href="tel:0765256792"
                 className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 font-heading font-bold text-accent-foreground transition-colors hover:bg-orange-hover"
               >
                 <Phone className="h-4 w-4" />

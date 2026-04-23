@@ -25,7 +25,7 @@ const DepigeonnisationChateauvillain = () => {
         intro="À Châteauvillain, les pigeons causent des dégradations importantes sur les bâtiments et posent des risques sanitaires. G&F Nuisibles vous propose des solutions de dépigeonnisation durables et respectueuses pour protéger vos structures."
         expertise="Nous intervenons à Châteauvillain et dans toute la Haute-Marne pour la dépigeonnisation de bâtiments résidentiels, commerciaux et publics. Solutions durables adaptées à chaque configuration architecturale."
         method="Audit du site et évaluation de la population de pigeons. Installation de dispositifs anti-pigeons : pics, filets, fils tendus, répulsifs. Nettoyage et désinfection des zones souillées. Suivi de l'efficacité."
-        cta="Problème de pigeons à Châteauvillain ? Appelez G&F Nuisibles au 07.88.17.45.86 pour une solution durable."
+        cta="Problème de pigeons à Châteauvillain ? Appelez G&F Nuisibles au 07.65.25.67.92 pour une solution durable."
       />
     </>
   );

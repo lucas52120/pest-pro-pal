@@ -30,7 +30,7 @@ const DeratisationLangres = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -87,7 +87,7 @@ const DeratisationLangres = () => {
       intro="À Langres, les rongeurs trouvent refuge dans les bâtiments anciens et les caves voûtées de la vieille ville. Rats et souris rongent câbles électriques, isolants et denrées alimentaires, créant des risques d'incendie et de contamination. G&F Nuisibles vous débarrasse définitivement de ces nuisibles."
       expertise="Notre équipe connaît parfaitement les spécificités du bâti langrois. Nous employons des solutions certifiées : appâts sécurisés de dernière génération, pièges professionnels et obstruction des accès. Chaque intervention est adaptée à la configuration de votre habitation ou local."
       method="Inspection minutieuse pour cartographier l'infestation. Traitement ciblé avec des produits homologués et sans danger pour votre entourage. Visite de contrôle incluse pour garantir l'éradication complète et prévenir toute réapparition."
-      cta="Stop aux rats à Langres ! Appelez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit et sans engagement. Expertise certifiée."
+      cta="Stop aux rats à Langres ! Appelez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit et sans engagement. Expertise certifiée."
       faqItems={FAQ_ITEMS}
     />
     </>

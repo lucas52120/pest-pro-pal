@@ -24,7 +24,7 @@ const TaupesSemoutiersMontsaon = () => (
       intro="Les jardins et terrains de Semoutiers-Montsaon, en milieu rural, sont particulièrement exposés aux taupes. G&F Nuisibles, basé directement sur la commune, intervient avec des techniques de piégeage mécanique traditionnelles, 100 % écologiques et reconnues pour leur efficacité."
       expertise="Nos taupiers professionnels traitent jardins de particuliers, espaces communaux et terrains agricoles à Semoutiers-Montsaon. Aucun produit chimique : uniquement des pièges mécaniques positionnés avec précision dans les galeries actives pour un taux de capture optimal."
       method="Sondage du terrain à Semoutiers-Montsaon pour repérer les galeries principales. Pose stratégique de pièges mécaniques professionnels. Contrôle régulier des dispositifs et ajustement si nécessaire. Conseils de prévention pour protéger vos espaces verts durablement."
-      cta="Taupes à Semoutiers-Montsaon ? Appelez G&F Nuisibles au 07.88.17.45.86 pour un piégeage professionnel, écologique et garanti."
+      cta="Taupes à Semoutiers-Montsaon ? Appelez G&F Nuisibles au 07.65.25.67.92 pour un piégeage professionnel, écologique et garanti."
     />
   </>
 );

@@ -30,7 +30,7 @@ const DeratisationJoinville = () => {
         "@type": "LocalBusiness",
         "@id": "https://pest-pro-pal.lovable.app/#organization",
         "name": "G&F Nuisibles",
-        "telephone": "07.88.17.45.86",
+        "telephone": "07.65.25.67.92",
         "priceRange": "$$",
         "image": "https://pest-pro-pal.lovable.app/og-image.png",
         "address": {
@@ -87,7 +87,7 @@ const DeratisationJoinville = () => {
         intro="À Joinville, la proximité de la Marne et des zones boisées favorise la présence de rongeurs dans les habitations et les commerces. Rats et souris s'introduisent par les moindres fissures et se reproduisent à grande vitesse. G&F Nuisibles stoppe l'infestation avant qu'elle ne devienne incontrôlable."
         expertise="Avec une connaissance approfondie du terrain haut-marnais, nos techniciens adaptent chaque intervention aux particularités de votre bâtiment. Nous privilégions des méthodes respectueuses de l'environnement tout en garantissant une éradication totale des nuisibles."
         method="Visite technique pour localiser nids et chemins de passage. Installation de pièges et stations sécurisées dans les zones stratégiques. Fermeture des accès identifiés et remise d'un compte-rendu détaillé avec préconisations de prévention."
-        cta="Rongeurs à Joinville ? Réagissez vite ! Contactez G&F Nuisibles au 07.88.17.45.86 — devis sans engagement et intervention sous 24h."
+        cta="Rongeurs à Joinville ? Réagissez vite ! Contactez G&F Nuisibles au 07.65.25.67.92 — devis sans engagement et intervention sous 24h."
         faqItems={FAQ_ITEMS}
       />
     </>

@@ -24,7 +24,7 @@ const EliminationPigeonsVittel = () => (
       intro="À Vittel, les pigeons dégradent les façades et toitures des maisons avec leurs fientes corrosives. Les particuliers constatent des salissures sur leurs volets, balcons et terrasses. G&F Nuisibles apporte une solution professionnelle pour protéger votre habitation."
       expertise="Spécialistes de l'éloignement des pigeons chez les particuliers dans les Vosges, nous installons des pics inox discrets, des répulsifs efficaces et des filets de protection. Chaque dispositif est adapté à votre maison pour un résultat esthétique et durable."
       method="Diagnostic complet de votre habitation pour repérer les zones de perchage. Pose de protections anti-pigeons sur façade, balcons et toiture. Nettoyage des surfaces dégradées par les fientes. Garantie d'efficacité pour votre tranquillité familiale."
-      cta="Préservez votre maison à Vittel. Contactez G&F Nuisibles au 07.88.17.45.86 pour un devis gratuit."
+      cta="Préservez votre maison à Vittel. Contactez G&F Nuisibles au 07.65.25.67.92 pour un devis gratuit."
     />
   </>
 );
