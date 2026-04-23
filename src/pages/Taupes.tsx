@@ -3,11 +3,50 @@ import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImage from "@/assets/service-taupes.jpg";
 
+const TITLE = "Taupier Haute-Marne 52 | Expert Anti-Taupes | GF Nuisibles";
+const DESCRIPTION = "Votre pelouse est envahie par les taupes ? Piégeage mécanique traditionnel sans produits chimiques pour jardins et espaces verts. Devis gratuit 7j/7";
+const URL = "https://www.gf-nuisibles.fr/taupes";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.gf-nuisibles.fr/#organization",
+      "url": "https://www.gf-nuisibles.fr",
+      "name": "G&F Nuisibles",
+      "telephone": "07.65.25.67.92",
+      "priceRange": "$$",
+      "image": "https://www.gf-nuisibles.fr/og-image.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "27 rue principale",
+        "addressLocality": "Montsaon",
+        "postalCode": "52000",
+        "addressRegion": "Haute-Marne",
+        "addressCountry": "FR"
+      }
+    },
+    {
+      "@type": "Service",
+      "url": URL,
+      "name": TITLE,
+      "description": DESCRIPTION,
+      "provider": { "@id": "https://www.gf-nuisibles.fr/#organization" },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Haute-Marne (52)" }
+      ]
+    }
+  ]
+};
+
 const Taupes = () => (
   <>
     <Helmet>
-      <title>Taupier Haute-Marne 52 | Expert Anti-Taupes | GF Nuisibles</title>
-      <meta name="description" content="Votre pelouse est envahie par les taupes ? Piégeage mécanique traditionnel sans produits chimiques pour jardins et espaces verts. Devis gratuit 7j/7" />
+      <title>{TITLE}</title>
+      <meta name="description" content={DESCRIPTION} />
+      <link rel="canonical" href={URL} />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <ServicePageLayout
     icon={<Target className="h-8 w-8" />}
