@@ -3,11 +3,55 @@ import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImage from "@/assets/service-esod.jpg";
 
+const TITLE = "Régulation des espèces ESOD Haute-Marne 52 | GF Nuisibles";
+const DESCRIPTION = "Dégâts de fouine, loir ou ragondin ? GF Nuisibles régule les ESOD en Haute-Marne. Pros & particuliers, diagnostic et devis GRATUIT 7j/7. Appelez-nous !";
+const URL = "https://www.gf-nuisibles.fr/regulation-esod";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.gf-nuisibles.fr/#organization",
+      "url": "https://www.gf-nuisibles.fr",
+      "name": "G&F Nuisibles",
+      "telephone": "07.65.25.67.92",
+      "priceRange": "$$",
+      "image": "https://www.gf-nuisibles.fr/og-image.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "27 rue principale",
+        "addressLocality": "Montsaon",
+        "postalCode": "52000",
+        "addressRegion": "Haute-Marne",
+        "addressCountry": "FR"
+      }
+    },
+    {
+      "@type": "Service",
+      "url": URL,
+      "name": TITLE,
+      "description": DESCRIPTION,
+      "provider": { "@id": "https://www.gf-nuisibles.fr/#organization" },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Haute-Marne (52)" },
+        { "@type": "AdministrativeArea", "name": "Vosges (88)" },
+        { "@type": "AdministrativeArea", "name": "Meuse (55)" },
+        { "@type": "AdministrativeArea", "name": "Côte-d'Or (21)" },
+        { "@type": "AdministrativeArea", "name": "Marne (51)" },
+        { "@type": "AdministrativeArea", "name": "Aube (10)" }
+      ]
+    }
+  ]
+};
+
 const Esod = () => (
   <>
     <Helmet>
-      <title>Régulation des espèces ESOD Haute-Marne 52 | GF Nuisibles</title>
-      <meta name="description" content="Dégâts de fouine, loir ou ragondin ? GF Nuisibles régule les ESOD en Haute-Marne. Pros & particuliers, diagnostic et devis GRATUIT 7j/7. Appelez-nous !" />
+      <title>{TITLE}</title>
+      <meta name="description" content={DESCRIPTION} />
+      <link rel="canonical" href={URL} />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <ServicePageLayout
     icon={<ShieldAlert className="h-8 w-8" />}
