@@ -8,6 +8,43 @@ import { toast } from "sonner";
 
 const FORMSPARK_URL = "https://submit-form.com/cbVnrVxCc";
 
+const SITE_URL = "https://www.gf-nuisibles.fr";
+const PHONE_DISPLAY = "07.65.25.67.92";
+const PHONE_TEL = "0765256792";
+const EMAIL = "contact@gf-nuisibles.fr";
+
+const contactJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "url": `${SITE_URL}/contact`,
+  "name": "Contact GF Nuisibles | Devis ou Renseignement Gratuit",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/#organization`,
+    "name": "G&F Nuisibles",
+    "url": SITE_URL,
+    "telephone": PHONE_DISPLAY,
+    "email": EMAIL,
+    "image": `${SITE_URL}/og-image.png`,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "27 rue principale",
+      "addressLocality": "Montsaon",
+      "postalCode": "52000",
+      "addressRegion": "Haute-Marne",
+      "addressCountry": "FR",
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": PHONE_DISPLAY,
+      "email": EMAIL,
+      "contactType": "customer service",
+      "areaServed": "FR",
+      "availableLanguage": ["French"],
+    },
+  },
+};
+
 const Contact = () => {
   const [sending, setSending] = useState(false);
   const [submitted, setSubmitted] = useState(false);
