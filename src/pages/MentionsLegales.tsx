@@ -40,9 +40,9 @@ const MentionsLegales = () => {
             <h2 className="font-heading text-2xl font-bold text-primary">Hébergement</h2>
             <p className="text-muted-foreground">
               Le site est hébergé par :<br />
-              <em>[Nom de l'hébergeur à compléter]</em><br />
-              <em>[Adresse de l'hébergeur]</em><br />
-              <em>[Téléphone de l'hébergeur]</em>
+              <strong>Netlify, Inc.</strong><br />
+              44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA<br />
+              Téléphone : <a href="tel:+14156911573" className="text-accent hover:underline">+1 415-691-1573</a>
             </p>
           </div>
 
