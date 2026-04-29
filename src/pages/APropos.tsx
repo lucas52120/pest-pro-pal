@@ -11,21 +11,21 @@ const APropos = () => {
     "@graph": [
       {
         "@type": "AboutPage",
-        "@id": "https://www.gf-nuisibles.fr/a-propos#aboutpage",
-        url: "https://www.gf-nuisibles.fr/a-propos",
+        "@id": "https://gf-nuisibles.fr/a-propos#aboutpage",
+        url: "https://gf-nuisibles.fr/a-propos",
         name: "À Propos de GF Nuisibles | Expert Local contre les nuisibles",
         description:
           "Découvrez GF nuisible votre expert local de gestion des nuisibles en Haute-Marne et communes limitrophes pour les professionnels ou particuliers",
-        isPartOf: { "@id": "https://www.gf-nuisibles.fr/#organization" },
-        about: { "@id": "https://www.gf-nuisibles.fr/#organization" },
+        isPartOf: { "@id": "https://gf-nuisibles.fr/#organization" },
+        about: { "@id": "https://gf-nuisibles.fr/#organization" },
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://www.gf-nuisibles.fr/#organization",
-        url: "https://www.gf-nuisibles.fr",
+        "@id": "https://gf-nuisibles.fr/#organization",
+        url: "https://gf-nuisibles.fr",
         name: "G&F Nuisibles",
         telephone: "07.65.25.67.92",
-        image: "https://www.gf-nuisibles.fr/og-image.png",
+        image: "https://gf-nuisibles.fr/og-image.png",
         priceRange: "$$",
         description:
           "Découvrez G&F nuisibles votre expert local de gestion des nuisibles en Haute-Marne et communes limitrophes pour les professionnels ou particuliers",
@@ -49,7 +49,7 @@ const APropos = () => {
           name="description"
           content="Découvrez GF nuisible votre expert local de gestion des nuisibles en Haute-Marne et communes limitrophes pour les professionnels ou particuliers"
         />
-        <link rel="canonical" href="https://www.gf-nuisibles.fr/a-propos" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/a-propos" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <Navbar />

@@ -5,19 +5,19 @@ import heroImage from "@/assets/service-deratisation.jpg";
 
 const TITLE = "Dératisation | Particuliers & Professionnels | GF Nuisibles";
 const DESCRIPTION = "Invasion de rongeurs ? GF Nuisibles intervient 7j/7 en Haute-Marne, Marne, Meuse, Vosges, Côte-d'Or, Aube. Pros ou particuliers. Diagnostic & devis GRATUIT !";
-const URL = "https://www.gf-nuisibles.fr/deratisation";
+const URL = "https://gf-nuisibles.fr/deratisation";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://www.gf-nuisibles.fr/#organization",
-      "url": "https://www.gf-nuisibles.fr",
+      "@id": "https://gf-nuisibles.fr/#organization",
+      "url": "https://gf-nuisibles.fr",
       "name": "G&F Nuisibles",
       "telephone": "07.65.25.67.92",
       "priceRange": "$$",
-      "image": "https://www.gf-nuisibles.fr/og-image.png",
+      "image": "https://gf-nuisibles.fr/og-image.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "27 rue principale",
@@ -32,7 +32,7 @@ const jsonLd = {
       "url": URL,
       "name": TITLE,
       "description": DESCRIPTION,
-      "provider": { "@id": "https://www.gf-nuisibles.fr/#organization" },
+      "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
       "areaServed": [
         { "@type": "AdministrativeArea", "name": "Haute-Marne (52)" },
         { "@type": "AdministrativeArea", "name": "Vosges (88)" },

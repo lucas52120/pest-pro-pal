@@ -8,7 +8,7 @@ import { toast } from "sonner";
 
 const FORMSPARK_URL = "https://submit-form.com/cbVnrVxCc";
 
-const SITE_URL = "https://www.gf-nuisibles.fr";
+const SITE_URL = "https://gf-nuisibles.fr";
 const PHONE_DISPLAY = "07.65.25.67.92";
 const PHONE_TEL = "0765256792";
 const EMAIL = "contact@gf-nuisibles.fr";
@@ -94,7 +94,7 @@ const Contact = () => {
       <Helmet>
         <title>Contact GF Nuisibles | Devis ou Renseignement Gratuit</title>
         <meta name="description" content="Besoin d'un renseignement ? Contactez GF Nuisibles en Haute-Marne et communes limitrophes. Diagnostic et devis gratuit 7j/7. Intervention rapide !" />
-        <link rel="canonical" href="https://www.gf-nuisibles.fr/contact" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/contact" />
         <script type="application/ld+json">{JSON.stringify(contactJsonLd)}</script>
       </Helmet>
       <Navbar />

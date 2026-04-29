@@ -32,12 +32,12 @@ const GuepesFrelonsFroncles = () => {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://www.gf-nuisibles.fr/#organization",
-        "url": "https://www.gf-nuisibles.fr",
+        "@id": "https://gf-nuisibles.fr/#organization",
+        "url": "https://gf-nuisibles.fr",
         name: "G&F Nuisibles",
         telephone: "07.65.25.67.92",
         priceRange: "$$",
-        image: "https://www.gf-nuisibles.fr/og-image.png",
+        image: "https://gf-nuisibles.fr/og-image.png",
         address: {
           "@type": "PostalAddress",
           streetAddress: "27 rue principale",
@@ -49,11 +49,11 @@ const GuepesFrelonsFroncles = () => {
       },
       {
         "@type": "Service",
-        "url": "https://www.gf-nuisibles.fr/guepes-frelons-froncles",
+        "url": "https://gf-nuisibles.fr/guepes-frelons-froncles",
         name: TITLE,
         description: DESCRIPTION,
         provider: {
-          "@id": "https://www.gf-nuisibles.fr/#organization",
+          "@id": "https://gf-nuisibles.fr/#organization",
         },
         areaServed: {
           "@type": "City",
@@ -79,7 +79,7 @@ const GuepesFrelonsFroncles = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://www.gf-nuisibles.fr/guepes-frelons-froncles" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/guepes-frelons-froncles" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage

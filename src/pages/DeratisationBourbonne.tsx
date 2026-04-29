@@ -28,11 +28,11 @@ const DeratisationBourbonne = () => {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://www.gf-nuisibles.fr/#organization",
+        "@id": "https://gf-nuisibles.fr/#organization",
         "name": "G&F Nuisibles",
         "telephone": "07.65.25.67.92",
         "priceRange": "$$",
-        "image": "https://www.gf-nuisibles.fr/og-image.png",
+        "image": "https://gf-nuisibles.fr/og-image.png",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "27 rue principale",
@@ -45,10 +45,10 @@ const DeratisationBourbonne = () => {
       {
         "@type": "Service",
         "name": TITLE,
-        "url": "https://www.gf-nuisibles.fr/deratisation-bourbonne-les-bains",
+        "url": "https://gf-nuisibles.fr/deratisation-bourbonne-les-bains",
         "description": DESCRIPTION,
         "provider": {
-          "@id": "https://www.gf-nuisibles.fr/#organization"
+          "@id": "https://gf-nuisibles.fr/#organization"
         },
         "areaServed": {
           "@type": "City",
@@ -74,7 +74,7 @@ const DeratisationBourbonne = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://www.gf-nuisibles.fr/deratisation-bourbonne-les-bains" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/deratisation-bourbonne-les-bains" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage

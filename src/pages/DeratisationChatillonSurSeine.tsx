@@ -28,11 +28,11 @@ const DeratisationChatillonSurSeine = () => {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://www.gf-nuisibles.fr/#organization",
+        "@id": "https://gf-nuisibles.fr/#organization",
         "name": "G&F Nuisibles",
         "telephone": "07.65.25.67.92",
         "priceRange": "$$",
-        "image": "https://www.gf-nuisibles.fr/og-image.png",
+        "image": "https://gf-nuisibles.fr/og-image.png",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "27 rue principale",
@@ -45,9 +45,9 @@ const DeratisationChatillonSurSeine = () => {
       {
         "@type": "Service",
         "name": TITLE,
-        "url": "https://www.gf-nuisibles.fr/deratisation-chatillon-sur-seine",
+        "url": "https://gf-nuisibles.fr/deratisation-chatillon-sur-seine",
         "description": DESCRIPTION,
-        "provider": { "@id": "https://www.gf-nuisibles.fr/#organization" },
+        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
         "areaServed": { "@type": "City", "name": "Châtillon-sur-Seine" }
       },
       {
@@ -66,7 +66,7 @@ const DeratisationChatillonSurSeine = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://www.gf-nuisibles.fr/deratisation-chatillon-sur-seine" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/deratisation-chatillon-sur-seine" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
