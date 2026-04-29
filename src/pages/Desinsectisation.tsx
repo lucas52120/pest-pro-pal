@@ -5,19 +5,19 @@ import heroImage from "@/assets/service-desinsectisation.jpg";
 
 const TITLE = "Expert Désinsectisation Haute-Marne et Meuse | GF Nuisibles";
 const DESCRIPTION = "Invasion d'insectes ? GF Nuisibles élimine cafards, blattes, punaises de lit et fourmis en Haute-Marne et Meuse. Diagnostic & devis gratuit 7j/7.";
-const URL = "https://www.gf-nuisibles.fr/desinsectisation";
+const URL = "https://gf-nuisibles.fr/desinsectisation";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://www.gf-nuisibles.fr/#organization",
-      "url": "https://www.gf-nuisibles.fr",
+      "@id": "https://gf-nuisibles.fr/#organization",
+      "url": "https://gf-nuisibles.fr",
       "name": "G&F Nuisibles",
       "telephone": "07.65.25.67.92",
       "priceRange": "$$",
-      "image": "https://www.gf-nuisibles.fr/og-image.png",
+      "image": "https://gf-nuisibles.fr/og-image.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "27 rue principale",
@@ -32,7 +32,7 @@ const jsonLd = {
       "url": URL,
       "name": TITLE,
       "description": DESCRIPTION,
-      "provider": { "@id": "https://www.gf-nuisibles.fr/#organization" },
+      "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
       "areaServed": [
         { "@type": "AdministrativeArea", "name": "Haute-Marne (52)" },
         { "@type": "AdministrativeArea", "name": "Vosges (88)" },

@@ -27,9 +27,9 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://www.gf-nuisibles.fr/#organization",
+      "@id": "https://gf-nuisibles.fr/#organization",
       "name": "G&F Nuisibles",
-      "url": "https://www.gf-nuisibles.fr",
+      "url": "https://gf-nuisibles.fr",
       "telephone": "07 65 25 67 92",
       "priceRange": "$$",
       "address": {
@@ -39,14 +39,14 @@ const jsonLd = {
         "postalCode": "52000",
         "addressCountry": "FR"
       },
-      "image": "https://www.gf-nuisibles.fr/og-image.png"
+      "image": "https://gf-nuisibles.fr/og-image.png"
     },
     {
       "@type": "Service",
       "name": TITLE,
-        "url": "https://www.gf-nuisibles.fr/deratisation-froncles",
+        "url": "https://gf-nuisibles.fr/deratisation-froncles",
       "description": DESCRIPTION,
-      "provider": { "@id": "https://www.gf-nuisibles.fr/#organization" },
+      "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
       "areaServed": { "@type": "City", "name": "Froncles" }
     },
     {
@@ -66,7 +66,7 @@ const DeratisationFroncles = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://www.gf-nuisibles.fr/deratisation-froncles" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/deratisation-froncles" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage

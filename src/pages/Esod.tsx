@@ -5,19 +5,19 @@ import heroImage from "@/assets/service-esod.jpg";
 
 const TITLE = "Régulation des espèces ESOD Haute-Marne 52 | GF Nuisibles";
 const DESCRIPTION = "Dégâts de fouine, loir ou ragondin ? GF Nuisibles régule les ESOD en Haute-Marne. Pros & particuliers, diagnostic et devis GRATUIT 7j/7. Appelez-nous !";
-const URL = "https://www.gf-nuisibles.fr/regulation-esod";
+const URL = "https://gf-nuisibles.fr/regulation-esod";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://www.gf-nuisibles.fr/#organization",
-      "url": "https://www.gf-nuisibles.fr",
+      "@id": "https://gf-nuisibles.fr/#organization",
+      "url": "https://gf-nuisibles.fr",
       "name": "G&F Nuisibles",
       "telephone": "07.65.25.67.92",
       "priceRange": "$$",
-      "image": "https://www.gf-nuisibles.fr/og-image.png",
+      "image": "https://gf-nuisibles.fr/og-image.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "27 rue principale",
@@ -32,7 +32,7 @@ const jsonLd = {
       "url": URL,
       "name": TITLE,
       "description": DESCRIPTION,
-      "provider": { "@id": "https://www.gf-nuisibles.fr/#organization" },
+      "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
       "areaServed": [
         { "@type": "AdministrativeArea", "name": "Haute-Marne (52)" },
         { "@type": "AdministrativeArea", "name": "Vosges (88)" },

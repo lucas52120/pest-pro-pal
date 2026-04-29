@@ -38,10 +38,10 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://www.gf-nuisibles.fr/#organization",
-      "url": "https://www.gf-nuisibles.fr",
+      "@id": "https://gf-nuisibles.fr/#organization",
+      "url": "https://gf-nuisibles.fr",
       name: "G&F Nuisibles",
-      image: "https://www.gf-nuisibles.fr/og-image.png",
+      image: "https://gf-nuisibles.fr/og-image.png",
       telephone: "+33765256792",
       address: {
         "@type": "PostalAddress",
@@ -58,9 +58,9 @@ const jsonLd = {
     },
     {
       "@type": "Service",
-      url: "https://www.gf-nuisibles.fr/guepes-frelons",
+      url: "https://gf-nuisibles.fr/guepes-frelons",
       name: "Destruction de nids de guêpes et frelons en Haute-Marne",
-      provider: { "@id": "https://www.gf-nuisibles.fr/#organization" },
+      provider: { "@id": "https://gf-nuisibles.fr/#organization" },
       areaServed: {
         "@type": "AdministrativeArea",
         name: "Haute-Marne (52)",
@@ -103,7 +103,7 @@ const GuepesFrelons = () => {
           name="description"
           content="Votre expert en destruction de nid de guêpes & frelons en Haute-Marne 52. Diagnostic GRATUIT, intervention rapide et efficace 7j/7 appelez-nous !"
         />
-        <link rel="canonical" href="https://www.gf-nuisibles.fr/guepes-frelons" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/guepes-frelons" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <ServicePageLayout

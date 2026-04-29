@@ -222,7 +222,7 @@ const PlanduSite = () => {
           name="description"
           content="Plan du site G&F Nuisibles : retrouvez toutes les pages, services et zones d'intervention en Haute-Marne et alentours."
         />
-        <link rel="canonical" href="https://www.gf-nuisibles.fr/plan-du-site" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/plan-du-site" />
       </Helmet>
 
       <Navbar />
