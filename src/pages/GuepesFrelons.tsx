@@ -52,6 +52,27 @@ const CITY_LINKS = [
   { label: "Semoutiers-Montsaon", to: "/guepes-frelons-semoutiers-montsaon" },
 ];
 
+const REVIEWS = [
+  {
+    author: "Marc D.",
+    city: "Chaumont",
+    rating: 5,
+    text: "Intervention en 2h pour un nid de frelons asiatiques sur ma cheminée. Très professionnel, équipement impressionnant, prix annoncé respecté. Je recommande sans hésiter.",
+  },
+  {
+    author: "Sophie L.",
+    city: "Langres",
+    rating: 5,
+    text: "Nid de guêpes énorme sous notre toiture. G&F Nuisibles est venu un dimanche après-midi en urgence. Travail propre, garantie respectée. Merci !",
+  },
+  {
+    author: "Jean-Pierre M.",
+    city: "Saint-Dizier",
+    rating: 5,
+    text: "Très bon contact téléphonique, diagnostic clair, devis transparent. Le nid de frelons européens dans le grenier a été détruit en 30 minutes. Parfait.",
+  },
+];
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -132,6 +153,13 @@ const jsonLd = {
         },
       })),
     },
+    ...REVIEWS.map((r) => ({
+      "@type": "Review",
+      itemReviewed: { "@id": "https://gf-nuisibles.fr/#organization" },
+      author: { "@type": "Person", name: r.author },
+      reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
+      reviewBody: r.text,
+    })),
   ],
 };
 
@@ -366,6 +394,174 @@ const GuepesFrelons = () => {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
+
+            {/* Bloc Tarifs */}
+            <section className="mt-12 rounded-xl border border-slate-100 bg-white p-8 shadow-sm">
+              <h2 className="mb-4 font-heading text-2xl font-bold text-primary md:text-3xl">
+                Tarifs destruction de nids de guêpes & frelons en Haute-Marne
+              </h2>
+              <p className="mb-5 text-muted-foreground leading-relaxed">
+                Chez G&F Nuisibles, nous appliquons une grille tarifaire <strong>claire et transparente</strong>, sans frais cachés. Le déplacement est inclus dans toute la Haute-Marne (52) et le paiement s'effectue après intervention.
+              </p>
+              <ul className="mb-5 space-y-3">
+                <li className="flex items-baseline justify-between gap-4 border-b border-slate-100 pb-3">
+                  <span className="text-foreground"><strong>Nid accessible</strong> (au sol, &lt; 3 m de hauteur)</span>
+                  <span className="font-heading font-bold text-accent whitespace-nowrap">dès 85 €</span>
+                </li>
+                <li className="flex items-baseline justify-between gap-4 border-b border-slate-100 pb-3">
+                  <span className="text-foreground"><strong>Nid en hauteur</strong> (toiture, cheminée, perche télescopique)</span>
+                  <span className="font-heading font-bold text-accent whitespace-nowrap">120 – 150 €</span>
+                </li>
+                <li className="flex items-baseline justify-between gap-4 border-b border-slate-100 pb-3">
+                  <span className="text-foreground"><strong>Nid de frelons asiatiques</strong> (intervention sécurisée renforcée)</span>
+                  <span className="font-heading font-bold text-accent whitespace-nowrap">150 – 180 €</span>
+                </li>
+                <li className="flex items-baseline justify-between gap-4">
+                  <span className="text-foreground"><strong>Diagnostic & devis</strong></span>
+                  <span className="font-heading font-bold text-accent whitespace-nowrap">GRATUIT</span>
+                </li>
+              </ul>
+              <p className="text-sm text-muted-foreground italic">
+                Intervention 7j/7 — supplément modéré possible le dimanche et jours fériés. Devis personnalisé immédiat par téléphone au <a href="tel:0765256792" className="text-accent font-semibold hover:underline">07.65.25.67.92</a>.
+              </p>
+            </section>
+
+            {/* Bloc Calendrier saisonnier */}
+            <section className="mt-12">
+              <h2 className="mb-4 font-heading text-2xl font-bold text-primary md:text-3xl">
+                Quand intervenir ? Le calendrier des nuisances en Haute-Marne
+              </h2>
+              <p className="mb-5 text-muted-foreground leading-relaxed">
+                Le cycle de vie des guêpes et frelons suit les saisons. Connaître ces périodes permet d'anticiper et de réduire considérablement le coût et le risque d'une intervention.
+              </p>
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="rounded-xl border-l-4 border-accent bg-slate-50 p-5">
+                  <h3 className="mb-2 font-heading font-bold text-primary">Mars – Avril : émergence</h3>
+                  <p className="text-sm text-muted-foreground">Les reines fondatrices sortent d'hibernation. C'est le moment idéal pour le piégeage sélectif du frelon asiatique avant qu'il ne construise sa colonie.</p>
+                </div>
+                <div className="rounded-xl border-l-4 border-accent bg-slate-50 p-5">
+                  <h3 className="mb-2 font-heading font-bold text-primary">Mai – Juin : nids primaires</h3>
+                  <p className="text-sm text-muted-foreground">Les nids ont la taille d'une orange. Destruction rapide, peu coûteuse et risque minimal. La meilleure période pour agir préventivement.</p>
+                </div>
+                <div className="rounded-xl border-l-4 border-accent bg-slate-50 p-5">
+                  <h3 className="mb-2 font-heading font-bold text-primary">Juillet – Août : pic d'activité</h3>
+                  <p className="text-sm text-muted-foreground">Les colonies atteignent leur taille maximale, les nids deviennent très volumineux. Danger maximal pour les habitants et les animaux domestiques.</p>
+                </div>
+                <div className="rounded-xl border-l-4 border-accent bg-slate-50 p-5">
+                  <h3 className="mb-2 font-heading font-bold text-primary">Septembre – Octobre : agressivité</h3>
+                  <p className="text-sm text-muted-foreground">Les frelons asiatiques deviennent extrêmement agressifs (défense des futures reines). C'est la période où nous recevons le plus d'appels en urgence en Haute-Marne.</p>
+                </div>
+                <div className="rounded-xl border-l-4 border-accent bg-slate-50 p-5 md:col-span-2">
+                  <h3 className="mb-2 font-heading font-bold text-primary">Novembre – Février : nids vides</h3>
+                  <p className="text-sm text-muted-foreground">Les colonies meurent avec le froid mais les nids restent visibles. Il est recommandé de les faire retirer pour éviter toute confusion l'année suivante et empêcher la réinstallation au même endroit.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Bloc Pourquoi un professionnel */}
+            <section className="mt-12 rounded-xl bg-primary p-8 text-primary-foreground">
+              <h2 className="mb-4 font-heading text-2xl font-bold md:text-3xl">
+                Pourquoi faire appel à un professionnel certifié ?
+              </h2>
+              <p className="mb-5 leading-relaxed text-primary-foreground/85">
+                Détruire soi-même un nid de guêpes ou de frelons est une <strong>très mauvaise idée</strong>. Les bombes insecticides grand public sont inefficaces sur les colonies adultes et déclenchent des attaques massives. Voici pourquoi le recours à G&F Nuisibles est indispensable :
+              </p>
+              <ul className="space-y-3 text-primary-foreground/90">
+                <li>✓ <strong>Équipement professionnel</strong> : combinaison renforcée certifiée, perche télescopique jusqu'à 8 mètres, biocides homologués <strong>Certibiocide</strong> non disponibles dans le commerce.</li>
+                <li>✓ <strong>Assurance Responsabilité Civile Professionnelle</strong> couvrant tout dégât éventuel sur votre toiture ou bâtiment.</li>
+                <li>✓ <strong>Garantie de résultat</strong> : nous intervenons gratuitement à nouveau si le nid se réactive dans les 15 jours.</li>
+                <li>✓ <strong>Sécurité absolue</strong> pour vous, vos enfants, vos animaux et vos voisins pendant et après l'intervention.</li>
+                <li>✓ <strong>Élimination complète</strong> de la colonie (œufs, larves, reines) — pas seulement les insectes visibles.</li>
+              </ul>
+            </section>
+
+            {/* Bloc Zone d'intervention */}
+            <section className="mt-12">
+              <h2 className="mb-4 font-heading text-2xl font-bold text-primary md:text-3xl">
+                Notre zone d'intervention en Haute-Marne (52)
+              </h2>
+              <p className="mb-4 leading-relaxed text-muted-foreground">
+                Basés à Montsaon, nous intervenons <strong>en moins de 24 heures</strong> (et en quelques heures en cas d'urgence) sur l'ensemble du département de la Haute-Marne. Notre rayon d'action couvre notamment :
+              </p>
+              <p className="leading-relaxed text-muted-foreground">
+                <strong>Chaumont</strong> et son agglomération (Chamarandes-Choignes, Brottes, Semoutiers-Montsaon), <strong>Langres</strong> et le pays de Langres (Chalindrey, Saints-Geosmes, Rolampont), <strong>Saint-Dizier</strong> et le nord du département (Wassy, Joinville, Montier-en-Der), <strong>Bar-sur-Aube</strong>, <strong>Bourbonne-les-Bains</strong>, <strong>Bologne</strong>, <strong>Froncles</strong>, <strong>Nogent</strong>, <strong>Arc-en-Barrois</strong>, <strong>Châteauvillain</strong>, ainsi que toutes les communes rurales de la Haute-Marne. Nous nous déplaçons aussi ponctuellement en Côte-d'Or limitrophe (Châtillon-sur-Seine, Beaune) et dans l'Aube (Bar-sur-Aube).
+              </p>
+            </section>
+
+            {/* Bloc Avis clients */}
+            <section className="mt-12">
+              <h2 className="mb-4 font-heading text-2xl font-bold text-primary md:text-3xl">
+                Avis de nos clients en Haute-Marne
+              </h2>
+              <div className="grid gap-5 md:grid-cols-3">
+                {REVIEWS.map((r) => (
+                  <article key={r.author} className="rounded-xl border border-slate-100 bg-slate-50 p-5">
+                    <div className="mb-2 text-accent" aria-label={`${r.rating} étoiles sur 5`}>
+                      {"★".repeat(r.rating)}
+                    </div>
+                    <p className="mb-3 text-sm italic text-muted-foreground">« {r.text} »</p>
+                    <p className="text-sm font-semibold text-primary">{r.author} — {r.city}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            {/* FAQ étendue */}
+            <section className="mt-12 rounded-xl border border-slate-100 bg-slate-50 p-8">
+              <h2 className="mb-6 font-heading text-2xl font-bold text-primary md:text-3xl">
+                Questions fréquentes complémentaires
+              </h2>
+              <Accordion type="single" collapsible className="w-full space-y-2">
+                <AccordionItem value="ext1" className="border-b border-slate-200">
+                  <AccordionTrigger className="text-left font-semibold text-primary hover:no-underline">
+                    Qui paie la destruction d'un nid de guêpes : locataire ou propriétaire ?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed">
+                    En location, la <strong>destruction d'un nid de guêpes ou frelons relève généralement du propriétaire</strong>, car il s'agit d'un problème lié au bâti (toiture, façade, combles). Le décret n°87-712 distingue toutefois l'entretien courant (locataire) des gros travaux (propriétaire). En cas de doute, contactez votre assurance habitation — certains contrats couvrent l'intervention.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="ext2" className="border-b border-slate-200">
+                  <AccordionTrigger className="text-left font-semibold text-primary hover:no-underline">
+                    Combien de temps dure une intervention de destruction de nid ?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed">
+                    Une intervention standard dure entre <strong>20 et 45 minutes</strong>, diagnostic compris. Pour un nid de frelons asiatiques en hauteur ou particulièrement volumineux, comptez jusqu'à 1h. L'efficacité du produit professionnel utilisé est quasi immédiate, et la colonie est totalement neutralisée sous 24 à 48 heures.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="ext3" className="border-b border-slate-200">
+                  <AccordionTrigger className="text-left font-semibold text-primary hover:no-underline">
+                    Que faire en cas de piqûre de frelon asiatique ?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed">
+                    Éloignez-vous immédiatement de la zone (au moins 50 mètres). Désinfectez la piqûre, appliquez du froid pour limiter le gonflement. <strong>Appelez le 15 (SAMU) en cas de piqûres multiples, de piqûre au visage/cou, ou de symptômes allergiques</strong> (gonflement étendu, difficulté à respirer, malaise). Une seule piqûre peut suffire à déclencher un choc anaphylactique chez un sujet allergique.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="ext4">
+                  <AccordionTrigger className="text-left font-semibold text-primary hover:no-underline">
+                    Les pompiers détruisent-ils encore les nids de guêpes en Haute-Marne ?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed">
+                    Depuis plusieurs années, le <strong>SDIS 52 n'intervient plus pour la destruction de nids de guêpes ou frelons</strong>, sauf en cas de danger immédiat avéré (établissement scolaire, voie publique, personne piquée en détresse). Pour tout nid à domicile, vous devez faire appel à une société spécialisée comme G&F Nuisibles.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </section>
+
+            {/* Bloc Réglementation */}
+            <section className="mt-12 rounded-xl border border-accent/30 bg-accent/5 p-8">
+              <h2 className="mb-4 font-heading text-2xl font-bold text-primary md:text-3xl">
+                Réglementation : le frelon asiatique, espèce classée
+              </h2>
+              <p className="mb-3 leading-relaxed text-muted-foreground">
+                Le <strong>frelon asiatique (Vespa velutina)</strong> est officiellement classé <strong>« danger sanitaire de 2ᵉ catégorie »</strong> par arrêté ministériel du 26 décembre 2012, et inscrit sur la liste des espèces exotiques envahissantes préoccupantes pour l'Union européenne (règlement UE 1143/2014).
+              </p>
+              <p className="mb-3 leading-relaxed text-muted-foreground">
+                En Haute-Marne, tout nid identifié doit être <strong>signalé à votre mairie ou à la FREDON Grand Est</strong> (Fédération régionale de défense contre les organismes nuisibles). Certaines communes du 52 (renseignez-vous auprès de votre mairie) participent financièrement à la destruction des nids de frelons asiatiques.
+              </p>
+              <p className="leading-relaxed text-muted-foreground">
+                G&F Nuisibles est <strong>certifié Certibiocide</strong> et utilise exclusivement des produits homologués pour la destruction des hyménoptères, conformément à la réglementation française en vigueur.
+              </p>
+            </section>
 
             {/* Maillage interne — Pages villes */}
             <nav aria-label="Interventions par ville" className="mt-12 rounded-xl border border-slate-100 bg-slate-50 p-8">
