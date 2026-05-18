@@ -31,6 +31,7 @@ interface CityServicePageProps {
   serviceCallTitle: string;
   serviceCallSubtitle: string;
   faqItems?: FaqItem[];
+  relatedLinks?: { label: string; to: string }[];
 }
 
 const CityServicePage = ({
@@ -47,6 +48,7 @@ const CityServicePage = ({
   serviceCallTitle,
   serviceCallSubtitle,
   faqItems,
+  relatedLinks,
 }: CityServicePageProps) => {
 
   return (
@@ -159,6 +161,33 @@ const CityServicePage = ({
             >
               <p className="text-lg font-semibold text-primary">{cta}</p>
             </motion.div>
+
+            {relatedLinks && relatedLinks.length > 0 && (
+              <motion.nav
+                aria-label="Pages liées"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="rounded-xl border border-slate-100 bg-white p-6"
+              >
+                <h3 className="mb-3 font-heading text-lg font-bold text-primary">
+                  À voir aussi
+                </h3>
+                <ul className="flex flex-wrap gap-2">
+                  {relatedLinks.map((link) => (
+                    <li key={link.to}>
+                      <Link
+                        to={link.to}
+                        className="inline-block rounded-full border border-primary/20 px-3 py-1 text-sm text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </motion.nav>
+            )}
           </div>
 
           {/* Sidebar */}
@@ -182,11 +211,11 @@ const CityServicePage = ({
                 <span>Lun–Ven : 8h–19h | Urgence week-end</span>
               </div>
               <a
-                href="tel:0765256792"
+                href="tel:0788174586"
                 className="mb-3 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 font-heading font-bold text-accent-foreground transition-colors hover:bg-orange-hover"
               >
                 <Phone className="h-4 w-4" />
-                07.65.25.67.92
+                07.88.17.45.86
               </a>
               <Link
                 to="/contact"
