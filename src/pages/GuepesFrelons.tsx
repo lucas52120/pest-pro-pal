@@ -1,6 +1,7 @@
 import { Zap, Plus, Minus } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { useRef, useCallback } from "react";
+import { Link } from "react-router-dom";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import {
   Accordion,
@@ -21,16 +22,34 @@ const FAQ_ITEMS = [
   },
   {
     question: "Caractéristiques physiques : comment reconnaître l'insecte qui vous envahit ?",
-    answer: ``,
+    answer: `La Guêpe (Vespula) : petite et élancée (10-19 mm), jaune vif et noir profond sans poils apparents, "taille de guêpe" caractéristique.\n\nLe Frelon Européen (Vespa crabro) : le géant (25-35 mm), teintes rousses sur le thorax et les pattes, abdomen très jaune rayé de noir, bourdonnement grave en vol.\n\nLe Frelon Asiatique (Vespa velutina) : silhouette sombre et plus petite (20-30 mm), thorax noir mat, face orangée, pattes aux extrémités jaune vif. Concernant les nids : guêpes dans le sol, fissures de murs ou sous tuiles (papier gris) ; frelon européen dans les cavités (arbres creux, greniers, cheminées) ; frelon asiatique en hauteur dans la cime des arbres, sphère pouvant atteindre 1 mètre.`,
   },
   {
     question: "Comment déceler la présence d'un nid chez vous ?",
-    answer: ``,
+    answer: `Plusieurs signes doivent vous alerter : un va-et-vient incessant d'insectes au même endroit (sous une tuile, dans une fissure de mur, dans un coffre de volet roulant) indique une activité de colonie ; un grattage ou bourdonnement sourd derrière un plafond ou une cloison placo signale souvent la construction d'un nid. Les lieux fréquents de nidification sont les greniers, hangars, remises, abris, la cime des arbres, les creux d'arbres, les rebords, avant-toits, linteaux, fissures et amas de matériaux (bûches, souches, branchages). Si vous remarquez un nid à Chaumont, Langres, Saint-Dizier ou ailleurs en Haute-Marne (52), contactez G&F Nuisibles immédiatement au 07.65.25.67.92 pour un diagnostic gratuit.`,
   },
   {
     question: "Comportement et Agressivité",
-    answer: ``,
+    answer: `La Guêpe : opportuniste et curieuse, elle s'invite à vos tables et devient agressive si on tente de la chasser brusquement. Le Frelon Européen : plutôt pacifique et discret, il ne pique que pour défendre son nid ou s'il est manipulé, et reste actif la nuit attiré par les lumières. Le Frelon Asiatique : très territorial, il déclenche des attaques collectives dès qu'on s'approche à moins de 5 mètres de son nid. Dangers pour l'Homme : choc anaphylactique en cas d'allergie, piqûre plus profonde injectant plus de venin pouvant traverser les vêtements légers, attaques multiples du frelon asiatique = danger vital immédiat. Pour les abeilles, le frelon asiatique est un prédateur redoutable menaçant gravement la biodiversité et la production de miel locale en Haute-Marne.`,
   },
+];
+
+const CITY_LINKS = [
+  { label: "Chaumont", to: "/guepes-frelons-chaumont" },
+  { label: "Langres", to: "/guepes-frelons-langres" },
+  { label: "Saint-Dizier", to: "/guepes-frelons-saint-dizier" },
+  { label: "Joinville", to: "/guepes-frelons-joinville" },
+  { label: "Bar-sur-Aube", to: "/guepes-frelons-bar-sur-aube" },
+  { label: "Bourbonne-les-Bains", to: "/guepes-frelons-bourbonne" },
+  { label: "Wassy", to: "/guepes-frelons-wassy" },
+  { label: "Bologne", to: "/guepes-frelons-bologne" },
+  { label: "Froncles", to: "/guepes-frelons-froncles" },
+  { label: "Nogent", to: "/guepes-frelons-nogent" },
+  { label: "Chalindrey", to: "/guepes-frelons-chalindrey" },
+  { label: "Arc-en-Barrois", to: "/guepes-frelons-arc-en-barrois" },
+  { label: "Châteauvillain", to: "/guepes-frelons-chateauvillain" },
+  { label: "Montier-en-Der", to: "/guepes-frelons-montier-en-der" },
+  { label: "Semoutiers-Montsaon", to: "/guepes-frelons-semoutiers-montsaon" },
 ];
 
 const jsonLd = {
@@ -50,6 +69,25 @@ const jsonLd = {
         postalCode: "52000",
         addressCountry: "FR",
       },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 48.0856,
+        longitude: 5.1858,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          opens: "00:00",
+          closes: "23:59",
+        },
+      ],
+      sameAs: ["https://www.facebook.com/profile.php?id=61566255861001"],
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "27",
+      },
       priceRange: "$$",
       areaServed: {
         "@type": "AdministrativeArea",
@@ -67,6 +105,21 @@ const jsonLd = {
       },
       description:
         "Expert en destruction de nid de guêpes & frelons en Haute-Marne 52. Diagnostic GRATUIT, intervention rapide et efficace 7j/7.",
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "EUR",
+        lowPrice: "85",
+        highPrice: "180",
+        availability: "https://schema.org/InStock",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Accueil", item: "https://gf-nuisibles.fr/" },
+        { "@type": "ListItem", position: 2, name: "Nos services", item: "https://gf-nuisibles.fr/#services" },
+        { "@type": "ListItem", position: 3, name: "Guêpes & Frelons", item: "https://gf-nuisibles.fr/guepes-frelons" },
+      ],
     },
     {
       "@type": "FAQPage",
@@ -108,7 +161,7 @@ const GuepesFrelons = () => {
       </Helmet>
       <ServicePageLayout
         icon={<Zap className="h-8 w-8" />}
-        title="Guêpes & Frelons"
+        title="Destruction de nids de guêpes et frelons en Haute-Marne (52)"
         subtitle="Destruction de nids de guêpes et frelons en toute sécurité en Haute-Marne."
         heroImage={heroImage}
         sidebarImage={heroImage}
@@ -313,6 +366,28 @@ const GuepesFrelons = () => {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
+
+            {/* Maillage interne — Pages villes */}
+            <nav aria-label="Interventions par ville" className="mt-12 rounded-xl border border-slate-100 bg-slate-50 p-8">
+              <h2 className="mb-4 font-heading text-2xl font-bold text-primary">
+                Destruction de nids de guêpes & frelons par ville
+              </h2>
+              <p className="mb-5 text-muted-foreground">
+                G&F Nuisibles intervient dans toute la Haute-Marne. Découvrez nos pages dédiées :
+              </p>
+              <ul className="flex flex-wrap gap-2">
+                {CITY_LINKS.map((link) => (
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      className="inline-block rounded-full border border-primary/20 bg-white px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                    >
+                      Guêpes & Frelons {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
         </section>
       </ServicePageLayout>
