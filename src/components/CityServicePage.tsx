@@ -17,6 +17,17 @@ export interface FaqItem {
   answer: string;
 }
 
+export interface ExtraSection {
+  title: string;
+  content: ReactNode;
+}
+
+export interface LocalImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 interface CityServicePageProps {
   city: string;
   department: string;
@@ -32,6 +43,8 @@ interface CityServicePageProps {
   serviceCallSubtitle: string;
   faqItems?: FaqItem[];
   relatedLinks?: { label: string; to: string }[];
+  extraSections?: ExtraSection[];
+  localImage?: LocalImage;
 }
 
 const CityServicePage = ({
@@ -49,6 +62,8 @@ const CityServicePage = ({
   serviceCallSubtitle,
   faqItems,
   relatedLinks,
+  extraSections,
+  localImage,
 }: CityServicePageProps) => {
 
   return (
@@ -123,6 +138,45 @@ const CityServicePage = ({
                   {block.label}
                 </h3>
                 <p className="leading-relaxed text-muted-foreground">{block.content}</p>
+              </motion.div>
+            ))}
+
+            {localImage && (
+              <motion.figure
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="overflow-hidden rounded-xl border border-slate-100 shadow-sm"
+              >
+                <img
+                  src={localImage.src}
+                  alt={localImage.alt}
+                  loading="lazy"
+                  className="w-full object-cover max-h-[520px]"
+                />
+                {localImage.caption && (
+                  <figcaption className="bg-slate-50 px-4 py-3 text-sm italic text-muted-foreground">
+                    {localImage.caption}
+                  </figcaption>
+                )}
+              </motion.figure>
+            )}
+
+            {extraSections?.map((section, i) => (
+              <motion.div
+                key={section.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <h2 className="mb-3 font-heading text-2xl font-bold text-primary">
+                  {section.title}
+                </h2>
+                <div className="space-y-3 leading-relaxed text-muted-foreground">
+                  {section.content}
+                </div>
               </motion.div>
             ))}
 
