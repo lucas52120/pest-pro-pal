@@ -265,11 +265,11 @@ const CityServicePage = ({
                 <span>Lun–Ven : 8h–19h | Urgence week-end</span>
               </div>
               <a
-                href="tel:0788174586"
+                href="tel:0765256792"
                 className="mb-3 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 font-heading font-bold text-accent-foreground transition-colors hover:bg-orange-hover"
               >
                 <Phone className="h-4 w-4" />
-                07.88.17.45.86
+                07.65.25.67.92
               </a>
               <Link
                 to="/contact"
