@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { Phone, Clock, MapPin } from "lucide-react";
+import { Phone, Clock, MapPin, Star, CheckCircle2, Euro, Building2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Reassurance from "@/components/Reassurance";
 import Footer from "@/components/Footer";
@@ -28,6 +28,24 @@ export interface LocalImage {
   caption?: string;
 }
 
+export interface CityReview {
+  author: string;
+  neighborhood?: string;
+  rating: number;
+  text: string;
+}
+
+export interface PricingItem {
+  label: string;
+  price: string;
+  description?: string;
+}
+
+export interface NearbyCity {
+  label: string;
+  to: string;
+}
+
 interface CityServicePageProps {
   city: string;
   department: string;
@@ -45,6 +63,16 @@ interface CityServicePageProps {
   relatedLinks?: { label: string; to: string }[];
   extraSections?: ExtraSection[];
   localImage?: LocalImage;
+  /** Quartiers couverts dans la ville (contenu unique = pas de duplicate content) */
+  neighborhoods?: { title?: string; intro?: string; items: string[] };
+  /** Contexte local : monuments, géographie, économie */
+  localContext?: { title?: string; content: ReactNode };
+  /** Tarifs transparents */
+  pricing?: { title?: string; intro?: string; items: PricingItem[] };
+  /** Avis clients locaux */
+  reviews?: { title?: string; items: CityReview[] };
+  /** Villes proches pour maillage interne */
+  nearbyCities?: { title?: string; items: NearbyCity[] };
 }
 
 const CityServicePage = ({
@@ -64,6 +92,11 @@ const CityServicePage = ({
   relatedLinks,
   extraSections,
   localImage,
+  neighborhoods,
+  localContext,
+  pricing,
+  reviews,
+  nearbyCities,
 }: CityServicePageProps) => {
 
   return (
@@ -179,6 +212,136 @@ const CityServicePage = ({
                 </div>
               </motion.div>
             ))}
+
+            {localContext && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="mb-3 font-heading text-2xl font-bold text-primary">
+                  {localContext.title ?? `Spécificités de ${city}`}
+                </h2>
+                <div className="space-y-3 leading-relaxed text-muted-foreground">
+                  {localContext.content}
+                </div>
+              </motion.div>
+            )}
+
+            {neighborhoods && neighborhoods.items.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="mb-3 font-heading text-2xl font-bold text-primary">
+                  {neighborhoods.title ?? `Quartiers d'intervention à ${city}`}
+                </h2>
+                {neighborhoods.intro && (
+                  <p className="mb-4 leading-relaxed text-muted-foreground">{neighborhoods.intro}</p>
+                )}
+                <ul className="grid gap-2 sm:grid-cols-2">
+                  {neighborhoods.items.map((n) => (
+                    <li key={n} className="flex items-start gap-2 text-muted-foreground">
+                      <Building2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
+                      <span>{n}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+
+            {pricing && pricing.items.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="rounded-xl border border-slate-100 bg-white p-6 shadow-sm"
+              >
+                <h2 className="mb-3 font-heading text-2xl font-bold text-primary">
+                  {pricing.title ?? `Tarifs à ${city}`}
+                </h2>
+                {pricing.intro && (
+                  <p className="mb-4 leading-relaxed text-muted-foreground">{pricing.intro}</p>
+                )}
+                <ul className="space-y-3">
+                  {pricing.items.map((p) => (
+                    <li key={p.label} className="flex items-start gap-3 border-b border-slate-100 pb-3 last:border-0">
+                      <Euro className="mt-1 h-5 w-5 flex-shrink-0 text-accent" />
+                      <div className="flex-1">
+                        <div className="flex flex-wrap items-baseline justify-between gap-2">
+                          <span className="font-semibold text-primary">{p.label}</span>
+                          <span className="font-heading font-bold text-accent">{p.price}</span>
+                        </div>
+                        {p.description && (
+                          <p className="mt-1 text-sm text-muted-foreground">{p.description}</p>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+
+            {reviews && reviews.items.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="mb-4 font-heading text-2xl font-bold text-primary">
+                  {reviews.title ?? `Avis clients à ${city}`}
+                </h2>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {reviews.items.map((r, idx) => (
+                    <article key={idx} className="rounded-xl border border-slate-100 bg-white p-4 shadow-sm">
+                      <div className="mb-2 flex items-center gap-1 text-accent" aria-label={`${r.rating} sur 5`}>
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <Star key={i} className={`h-4 w-4 ${i < r.rating ? "fill-current" : "opacity-30"}`} />
+                        ))}
+                      </div>
+                      <p className="mb-3 text-sm leading-relaxed text-muted-foreground">« {r.text} »</p>
+                      <p className="text-sm font-semibold text-primary">
+                        {r.author}
+                        {r.neighborhood && <span className="font-normal text-muted-foreground"> — {r.neighborhood}</span>}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+
+            {nearbyCities && nearbyCities.items.length > 0 && (
+              <motion.nav
+                aria-label="Villes proches"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="rounded-xl border border-slate-100 bg-slate-50 p-6"
+              >
+                <h2 className="mb-3 font-heading text-xl font-bold text-primary">
+                  {nearbyCities.title ?? `Nous intervenons aussi près de ${city}`}
+                </h2>
+                <ul className="flex flex-wrap gap-2">
+                  {nearbyCities.items.map((c) => (
+                    <li key={c.to}>
+                      <Link
+                        to={c.to}
+                        className="inline-flex items-center gap-1 rounded-full border border-primary/20 bg-white px-3 py-1.5 text-sm text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                      >
+                        <CheckCircle2 className="h-3.5 w-3.5" />
+                        {c.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </motion.nav>
+            )}
 
             {faqItems && faqItems.length > 0 && (
               <motion.div
