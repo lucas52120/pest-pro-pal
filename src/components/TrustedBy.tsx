@@ -1,14 +1,25 @@
+import veolia from "@/assets/logos/veolia.svg";
+import sncf from "@/assets/logos/sncf.svg";
+import ghm from "@/assets/logos/ghm.png";
+import vinci from "@/assets/logos/vinci.svg";
+import transalliance from "@/assets/logos/transalliance.svg";
+import villeChaumont from "@/assets/logos/ville-chaumont.svg";
+import ophSaintDizier from "@/assets/logos/oph-saint-dizier.png";
+import villeSaintDizier from "@/assets/logos/ville-saint-dizier.svg";
+import agglo from "@/assets/logos/agglo.svg";
+import lisi from "@/assets/logos/lisi.svg";
+
 const logos = [
-  "Veolia",
-  "SNCF",
-  "GHM",
-  "Vinci",
-  "Transalliance",
-  "Vingeanne",
-  "Ville de Chaumont",
-  "OPH Saint-Dizier",
-  "Chaumont Habitat",
-  "Ville de Saint-Dizier",
+  { name: "Veolia", src: veolia },
+  { name: "SNCF", src: sncf },
+  { name: "GHM", src: ghm },
+  { name: "Vinci", src: vinci },
+  { name: "Transalliance", src: transalliance },
+  { name: "Ville de Chaumont", src: villeChaumont },
+  { name: "OPH Saint-Dizier", src: ophSaintDizier },
+  { name: "Ville de Saint-Dizier", src: villeSaintDizier },
+  { name: "Agglomération", src: agglo },
+  { name: "LISI", src: lisi },
 ];
 
 const TrustedBy = () => {
@@ -32,13 +43,18 @@ const TrustedBy = () => {
             "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
         }}
       >
-        <div className="flex w-max animate-marquee gap-12 md:gap-20 group-hover:[animation-play-state:paused]">
-          {loop.map((name, i) => (
+        <div className="flex w-max animate-marquee items-center gap-12 md:gap-20 group-hover:[animation-play-state:paused]">
+          {loop.map((logo, i) => (
             <div
-              key={`${name}-${i}`}
-              className="flex h-16 w-32 shrink-0 items-center justify-center rounded-md border border-border bg-card px-4 text-center font-heading text-sm font-semibold text-primary opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 md:h-20 md:w-40 md:text-base"
+              key={`${logo.name}-${i}`}
+              className="flex h-16 w-32 shrink-0 items-center justify-center px-2 md:h-20 md:w-40"
             >
-              {name}
+              <img
+                src={logo.src}
+                alt={logo.name}
+                loading="lazy"
+                className="max-h-full max-w-full object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+              />
             </div>
           ))}
         </div>
