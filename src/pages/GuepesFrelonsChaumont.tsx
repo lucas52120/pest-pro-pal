@@ -67,7 +67,7 @@ const GuepesFrelonsChaumont = () => {
         "@id": "https://gf-nuisibles.fr/#organization",
         "url": "https://gf-nuisibles.fr",
         "name": "G&F Nuisibles",
-        "telephone": "+33788174586",
+        "telephone": "+33765256792",
         "priceRange": "$$",
         "image": "https://gf-nuisibles.fr/og-image.png",
         "address": {
@@ -181,7 +181,7 @@ const GuepesFrelonsChaumont = () => {
         intro="À Chaumont (52000), les guêpes et frelons s'installent sous les toitures, dans les combles ou les jardins des quartiers Cavalier, La Vendue, Le Val Barizien ou Foch. Leurs piqûres représentent un danger réel, surtout pour les personnes allergiques. G&F Nuisibles détruit les nids de guêpes et frelons à Chaumont en toute sécurité avec un équipement professionnel adapté."
         expertise="Nos techniciens certifiés interviennent à Chaumont et dans les communes proches — Chamarandes-Choignes, Brottes, Bologne, Froncles, Nogent — pour la destruction de nids de guêpes, frelons européens et frelons asiatiques en Haute-Marne (52). Chaque intervention est sécurisée et garantie."
         method="Localisation précise du nid et évaluation des risques. Traitement par injection d'insecticide professionnel ou retrait mécanique. Vérification de l'élimination complète de la colonie. Conseils de prévention."
-        cta="Nid de guêpes à Chaumont ? Appelez G&F Nuisibles au 07.88.17.45.86 pour une intervention rapide et sécurisée 7j/7."
+        cta="Nid de guêpes à Chaumont ? Appelez G&F Nuisibles au 07.65.25.67.92 pour une intervention rapide et sécurisée 7j/7."
         faqItems={FAQ_ITEMS}
         localImage={{
           src: nidChaumontImg,
@@ -228,7 +228,7 @@ const GuepesFrelonsChaumont = () => {
                   <li>Intervention week-end ou urgence soir : <strong>+ 20 à 30 €</strong></li>
                 </ul>
                 <p>
-                  Devis gratuit par téléphone au <strong>07.88.17.45.86</strong>, paiement
+                  Devis gratuit par téléphone au <strong>07.65.25.67.92</strong>, paiement
                   après intervention, facture remise systématiquement.
                 </p>
               </>
