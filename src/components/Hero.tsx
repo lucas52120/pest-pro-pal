@@ -54,7 +54,7 @@ const Hero = () => {
           href="https://www.facebook.com/gfnuisibles"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-full bg-[#1877F2] p-2.5 text-white transition-transform hover:scale-110"
+          className="inline-flex items-center justify-center rounded-full bg-accent px-3 py-2 text-accent-foreground transition-all hover:bg-orange-hover hover:scale-110"
           aria-label="Facebook G&F Nuisibles"
         >
           <svg
