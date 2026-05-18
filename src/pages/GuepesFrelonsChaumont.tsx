@@ -123,6 +123,16 @@ const GuepesFrelonsChaumont = () => {
         method="Localisation précise du nid et évaluation des risques. Traitement par injection d'insecticide professionnel ou retrait mécanique. Vérification de l'élimination complète de la colonie. Conseils de prévention."
         cta="Nid de guêpes à Chaumont ? Appelez G&F Nuisibles au 07.88.17.45.86 pour une intervention rapide et sécurisée 7j/7."
         faqItems={FAQ_ITEMS}
+        relatedLinks={[
+          { label: "Guêpes & Frelons Bologne", to: "/guepes-frelons-bologne" },
+          { label: "Guêpes & Frelons Froncles", to: "/guepes-frelons-froncles" },
+          { label: "Guêpes & Frelons Nogent", to: "/guepes-frelons-nogent" },
+          { label: "Guêpes & Frelons Chaumont (Semoutiers-Montsaon)", to: "/guepes-frelons-semoutiers-montsaon" },
+          { label: "Dératisation à Chaumont", to: "/deratisation-chaumont" },
+          { label: "Désinsectisation à Chaumont", to: "/desinsectisation-chaumont" },
+          { label: "Dépigeonnisation à Chaumont", to: "/depigeonnisation-chaumont" },
+          { label: "Taupes à Chaumont", to: "/taupes-chaumont" },
+        ]}
       />
     </>
   );
