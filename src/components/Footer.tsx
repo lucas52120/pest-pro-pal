@@ -301,6 +301,17 @@ const Footer = () => {
                 <Clock className="h-4 w-4 text-accent" />
                 Lun–Ven : 8h–19h | Urgence week-end
               </li>
+              <li className="flex items-center gap-2 pt-2">
+                <FacebookIcon className="h-4 w-4 text-accent" />
+                <a
+                  href="https://www.facebook.com/gfnuisibles"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors"
+                >
+                  Suivez-nous
+                </a>
+              </li>
             </ul>
           </div>
         </div>
