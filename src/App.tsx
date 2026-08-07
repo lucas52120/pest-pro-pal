@@ -370,7 +370,7 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
 
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </TooltipProvider>
   </QueryClientProvider>
 );
