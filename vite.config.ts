@@ -122,42 +122,6 @@ function syncSocialTags(html: string): string {
   return html;
 }
 
-/** Keeps the first <title> and the first of each meta/link and removes later duplicates. */
-function syncSocialTags(html: string): string {
-  const esc = (s: string) =>
-    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-  const decode = (s: string) =>
-    s.replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
-
-  const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/)?.[1];
-  const description = html.match(/<meta[^>]*name="description"[^>]*content="([^"]*)"/)?.[1];
-  const canonical = html.match(/<meta[^>]*name="description"/) // keep regex order stable
-    ? html.match(/<link[^>]*rel="canonical"[^>]*href="([^"]*)"/)?.[1]
-    : undefined;
-
-  const set = (attr: "property" | "name", key: string, value?: string) => {
-    if (!value) return;
-    const re = new RegExp(`(<meta[^>]*${attr}="${key}"[^>]*content=")[^"]*(")`);
-    if (re.test(html)) {
-      html = html.replace(re, `$1${esc(decode(value))}$2`);
-    }
-    // Multiline template tags (content on its own line)
-    const reMultiline = new RegExp(
-      `(<meta\\s*\\n?\\s*${attr}="${key}"\\s*\\n?\\s*content=")[^"]*(")`,
-      "m",
-    );
-    html = html.replace(reMultiline, `$1${esc(decode(value))}$2`);
-  };
-
-  set("property", "og:title", title);
-  set("name", "twitter:title", title);
-  set("property", "og:description", description);
-  set("name", "twitter:description", description);
-  set("property", "og:url", canonical);
-
-  return html;
-}
-
 function dedupeHead(html: string): string {
   const headMatch = html.match(/<head>([\s\S]*?)<\/head>/);
   if (!headMatch) return html;
