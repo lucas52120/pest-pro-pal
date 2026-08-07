@@ -1,4 +1,4 @@
-import { defineConfig, Plugin, build as viteBuild } from "vite";
+import { defineConfig, Plugin, PluginOption, build as viteBuild } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import fs from "fs";
@@ -103,6 +103,27 @@ function prerenderSsgPlugin(): Plugin {
 
 /** Keeps the first <title> and the first of each meta/link and removes later duplicates. */
 function syncSocialTags(html: string): string {
+  const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/)?.[1];
+  const description = html.match(/<meta[^>]*name="description"[^>]*content="([^"]*)"/)?.[1];
+  const canonical = html.match(/<link[^>]*rel="canonical"[^>]*href="([^"]*)"/)?.[1];
+
+  const set = (attr: "property" | "name", key: string, value?: string) => {
+    if (!value) return;
+    const re = new RegExp(`(<meta\\s+${attr}="${key}"\\s+content=")[^"]*(")`);
+    html = html.replace(re, `$1${value}$2`);
+  };
+
+  set("property", "og:title", title);
+  set("name", "twitter:title", title);
+  set("property", "og:description", description);
+  set("name", "twitter:description", description);
+  set("property", "og:url", canonical);
+
+  return html;
+}
+
+/** Keeps the first <title> and the first of each meta/link and removes later duplicates. */
+function syncSocialTags(html: string): string {
   const esc = (s: string) =>
     s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   const decode = (s: string) =>
@@ -160,10 +181,10 @@ function dedupeHead(html: string): string {
 
 // https://vitejs.dev/config/
 export default defineConfig(async ({ mode }) => {
-  const plugins: Plugin[] = [react()];
+  const plugins: PluginOption[] = [react()];
   if (mode === "development") {
     const { componentTagger } = await import("lovable-tagger");
-    plugins.push(componentTagger() as Plugin);
+    plugins.push(componentTagger() as PluginOption);
   }
   plugins.push(prerenderSsgPlugin());
 
