@@ -178,12 +178,18 @@ import EliminationPigeonsNancy from "./pages/EliminationPigeonsNancy.tsx";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+interface AppProps {
+  /** Router component — BrowserRouter in the browser, StaticRouter during prerender. */
+  Router?: React.ComponentType<any>;
+  routerProps?: Record<string, unknown>;
+}
+
+const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <Router {...routerProps}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/guepes-frelons" element={<GuepesFrelons />} />
