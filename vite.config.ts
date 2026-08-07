@@ -85,6 +85,9 @@ function prerenderSsgPlugin(): Plugin {
         // Drop the static fallback head tags that Helmet already replaced.
         html = dedupeHead(html);
 
+        // Align the social tags with this page's real title/description/URL.
+        html = syncSocialTags(html);
+
         const outDir =
           route === "/" ? distDir : path.join(distDir, ...route.split("/").filter(Boolean));
         fs.mkdirSync(outDir, { recursive: true });
