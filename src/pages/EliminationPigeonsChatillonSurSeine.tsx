@@ -29,7 +29,7 @@ const EliminationPigeonsChatillonSurSeine = () => {
       },
       {
         "@type": "Service",
-        "url": "https://gf-nuisibles.fr/services/elimination-pigeons/chatillon-sur-seine",
+        "url": "https://gf-nuisibles.fr/elimination-pigeons-chatillon-sur-seine",
         "name": TITLE,
         "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -43,7 +43,7 @@ const EliminationPigeonsChatillonSurSeine = () => {
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://gf-nuisibles.fr/services/elimination-pigeons/chatillon-sur-seine" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/elimination-pigeons-chatillon-sur-seine" />
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage

@@ -29,7 +29,7 @@ const EliminationPigeonsVitryLeFrancois = () => {
       },
       {
         "@type": "Service",
-        "url": "https://gf-nuisibles.fr/services/elimination-pigeons/vitry-le-francois",
+        "url": "https://gf-nuisibles.fr/elimination-pigeons-vitry-le-francois",
         "name": TITLE,
         "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -43,7 +43,7 @@ const EliminationPigeonsVitryLeFrancois = () => {
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://gf-nuisibles.fr/services/elimination-pigeons/vitry-le-francois" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/elimination-pigeons-vitry-le-francois" />
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage

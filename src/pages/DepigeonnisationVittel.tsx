@@ -45,7 +45,7 @@ const DepigeonnisationVittel = () => {
       },
       {
         "@type": "Service",
-        "url": "https://gf-nuisibles.fr/services/depigeonnisation/vittel",
+        "url": "https://gf-nuisibles.fr/depigeonnisation-vittel",
         "name": TITLE,
         "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -67,7 +67,7 @@ const DepigeonnisationVittel = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://gf-nuisibles.fr/services/depigeonnisation/vittel" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/depigeonnisation-vittel" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage

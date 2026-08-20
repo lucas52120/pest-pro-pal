@@ -45,7 +45,7 @@ const DepigeonnisationChalonsEnChampagne = () => {
       },
       {
         "@type": "Service",
-        "url": "https://gf-nuisibles.fr/services/depigeonnisation/chalons-en-champagne",
+        "url": "https://gf-nuisibles.fr/depigeonnisation-chalons-en-champagne",
         "name": TITLE,
         "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -67,7 +67,7 @@ const DepigeonnisationChalonsEnChampagne = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://gf-nuisibles.fr/services/depigeonnisation/chalons-en-champagne" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/depigeonnisation-chalons-en-champagne" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage

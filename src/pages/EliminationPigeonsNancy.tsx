@@ -29,7 +29,7 @@ const EliminationPigeonsNancy = () => {
       },
       {
         "@type": "Service",
-        "url": "https://gf-nuisibles.fr/services/elimination-pigeons/nancy",
+        "url": "https://gf-nuisibles.fr/elimination-pigeons-nancy",
         "name": TITLE,
         "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -43,7 +43,7 @@ const EliminationPigeonsNancy = () => {
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://gf-nuisibles.fr/services/elimination-pigeons/nancy" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/elimination-pigeons-nancy" />
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage
