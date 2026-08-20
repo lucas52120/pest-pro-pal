@@ -29,7 +29,7 @@ const DepigeonnisationVitryLeFrancois = () => {
       },
       {
         "@type": "Service",
-        "url": "https://gf-nuisibles.fr/services/depigeonnisation/vitry-le-francois",
+        "url": "https://gf-nuisibles.fr/depigeonnisation-vitry-le-francois",
         "name": TITLE,
         "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -43,7 +43,7 @@ const DepigeonnisationVitryLeFrancois = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://gf-nuisibles.fr/services/depigeonnisation/vitry-le-francois" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/depigeonnisation-vitry-le-francois" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage

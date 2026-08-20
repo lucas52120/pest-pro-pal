@@ -1,10 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 const MentionsLegales = () => {
   return (
     <>
+      <SEO
+        title="Mentions légales | G&F Nuisibles"
+        description="Mentions légales de G&F Nuisibles, entreprise de lutte antinuisibles en Haute-Marne (52) : éditeur, hébergement et informations légales."
+        path="/mentions-legales"
+      />
       <Navbar />
       <section className="bg-primary pb-16 pt-32">
         <div className="container-narrow px-4">

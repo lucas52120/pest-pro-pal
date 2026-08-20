@@ -45,7 +45,7 @@ const DepigeonnisationSemoutiersMontsaon = () => {
       },
       {
         "@type": "Service",
-        "url": "https://gf-nuisibles.fr/services/depigeonnisation/semoutiers-montsaon",
+        "url": "https://gf-nuisibles.fr/depigeonnisation-semoutiers-montsaon",
         "name": TITLE,
         "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -67,7 +67,7 @@ const DepigeonnisationSemoutiersMontsaon = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://gf-nuisibles.fr/services/depigeonnisation/semoutiers-montsaon" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/depigeonnisation-semoutiers-montsaon" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage

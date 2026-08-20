@@ -29,7 +29,7 @@ const EliminationPigeonsChalindrey = () => {
       },
       {
         "@type": "Service",
-        "url": "https://gf-nuisibles.fr/services/elimination-pigeons/chalindrey",
+        "url": "https://gf-nuisibles.fr/elimination-pigeons-chalindrey",
         "name": TITLE,
         "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -43,7 +43,7 @@ const EliminationPigeonsChalindrey = () => {
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://gf-nuisibles.fr/services/elimination-pigeons/chalindrey" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/elimination-pigeons-chalindrey" />
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage

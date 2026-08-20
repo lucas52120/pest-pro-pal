@@ -29,7 +29,7 @@ const EliminationPigeonsArcEnBarrois = () => {
       },
       {
         "@type": "Service",
-        "url": "https://gf-nuisibles.fr/services/elimination-pigeons/arc-en-barrois",
+        "url": "https://gf-nuisibles.fr/elimination-pigeons-arc-en-barrois",
         "name": TITLE,
         "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -43,7 +43,7 @@ const EliminationPigeonsArcEnBarrois = () => {
     <Helmet>
       <title>{TITLE}</title>
       <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://gf-nuisibles.fr/services/elimination-pigeons/arc-en-barrois" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/elimination-pigeons-arc-en-barrois" />
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage

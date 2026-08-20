@@ -35,7 +35,8 @@ function prerenderSsgPlugin(): Plugin {
       const routes = Array.from(sitemap.matchAll(/<loc>([^<]+)<\/loc>/g))
         .map((m) => {
           try {
-            return new URL(m[1]).pathname;
+            const p = new URL(m[1]).pathname;
+            return p !== "/" ? p.replace(/\/+$/, "") : p;
           } catch {
             return null;
           }
@@ -69,14 +70,17 @@ function prerenderSsgPlugin(): Plugin {
 
       // 3. Render each route to static HTML.
       let count = 0;
+      let failed: string[] = [];
       for (const route of routes) {
-        let rendered: { html: string; head: string };
+        let rendered: { html: string; head: string; ok?: boolean };
         try {
           rendered = render(route);
         } catch (err) {
           console.warn(`⚠️  SSG: failed to render ${route}:`, err);
+          failed.push(route);
           continue;
         }
+        if (rendered.ok === false) failed.push(route);
 
         let html = template
           .replace("<!--ssr-head-->", rendered.head)
@@ -88,15 +92,27 @@ function prerenderSsgPlugin(): Plugin {
         // Align the social tags with this page's real title/description/URL.
         html = syncSocialTags(html);
 
-        const outDir =
-          route === "/" ? distDir : path.join(distDir, ...route.split("/").filter(Boolean));
-        fs.mkdirSync(outDir, { recursive: true });
-        fs.writeFileSync(path.join(outDir, "index.html"), html);
+        if (route === "/") {
+          fs.writeFileSync(path.join(distDir, "index.html"), html);
+        } else {
+          const segments = route.split("/").filter(Boolean);
+          // a) /foo.html  → served by Netlify at /foo with no redirect
+          const flatPath = path.join(distDir, ...segments) + ".html";
+          fs.mkdirSync(path.dirname(flatPath), { recursive: true });
+          fs.writeFileSync(flatPath, html);
+          // b) /foo/index.html → covers direct hits on /foo/
+          const dirPath = path.join(distDir, ...segments);
+          fs.mkdirSync(dirPath, { recursive: true });
+          fs.writeFileSync(path.join(dirPath, "index.html"), html);
+        }
         count++;
       }
 
       fs.rmSync(ssrOutDir, { recursive: true, force: true });
       console.log(`✅ SSG: prerendered ${count}/${routes.length} static HTML pages`);
+      if (failed.length) {
+        console.warn(`⚠️  SSG: ${failed.length} route(s) rendered without server HTML: ${failed.join(", ")}`);
+      }
     },
   };
 }

@@ -45,7 +45,7 @@ const DepigeonnisationBarSurAube = () => {
       },
       {
         "@type": "Service",
-        "url": "https://gf-nuisibles.fr/services/depigeonnisation/bar-sur-aube",
+        "url": "https://gf-nuisibles.fr/depigeonnisation-bar-sur-aube",
         "name": TITLE,
         "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -67,7 +67,7 @@ const DepigeonnisationBarSurAube = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://gf-nuisibles.fr/services/depigeonnisation/bar-sur-aube" />
+        <link rel="canonical" href="https://gf-nuisibles.fr/depigeonnisation-bar-sur-aube" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
