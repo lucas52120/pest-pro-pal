@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import FloatingCallButton from "@/components/FloatingCallButton";
 import Index from "./pages/Index.tsx";
 import GuepesFrelons from "./pages/GuepesFrelons.tsx";
 import Desinsectisation from "./pages/Desinsectisation.tsx";
@@ -370,6 +371,7 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
 
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FloatingCallButton />
       </Router>
     </TooltipProvider>
   </QueryClientProvider>
