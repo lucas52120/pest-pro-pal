@@ -17,6 +17,7 @@ import MentionsLegales from "./pages/MentionsLegales.tsx";
 import APropos from "./pages/APropos.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import PlanduSite from "./pages/PlanduSite.tsx";
+import ZoneIntervention from "./pages/ZoneIntervention.tsx";
 import DeratisationChaumont from "./pages/DeratisationChaumont.tsx";
 import GuepesFrelonsChaumont from "./pages/GuepesFrelonsChaumont.tsx";
 import DesinsectisationChaumont from "./pages/DesinsectisationChaumont.tsx";
@@ -234,6 +235,7 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/a-propos" element={<APropos />} />
           <Route path="/plan-du-site" element={<PlanduSite />} />
+          <Route path="/zone-intervention" element={<ZoneIntervention />} />
 
           {/* Wassy — tous les services */}
           <Route path="/deratisation-wassy" element={<DeratisationWassy />} />
