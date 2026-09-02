@@ -186,6 +186,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://gf-nuisibles.fr/zone-intervention</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://gf-nuisibles.fr/deratisation-wassy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
