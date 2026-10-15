@@ -37,28 +37,16 @@ const FAQ_ITEMS: FaqItem[] = [
 
 const REVIEWS: CityReview[] = [
   {
-    author: "Sophie M.",
-    neighborhood: "Quartier Cavalier",
+    author: "H D N",
+    neighborhood: "Secteur Chaumont — avis Google",
     rating: 5,
-    text: "Invasion de souris dans la cuisine après les premiers froids. Intervention le lendemain, boîtiers discrets posés, plus rien en 10 jours. Très professionnel et rassurant.",
+    text: "Excellent professionnel",
   },
   {
-    author: "Restaurant Le Grand Cerf",
-    neighborhood: "Centre-ville Chaumont",
+    author: "Laurent Rigny",
+    neighborhood: "Condes (Chaumont) — avis Google",
     rating: 5,
-    text: "Contrat HACCP annuel impeccable. Rapports détaillés, passages réguliers, zéro problème depuis 2 ans. Indispensable pour notre activité.",
-  },
-  {
-    author: "Jean-Marc D.",
-    neighborhood: "Brottes",
-    rating: 5,
-    text: "Rats dans le grenier de ma maison ancienne. Diagnostic précis, points d'entrée rebouchés, suivi à 15 jours. Prix annoncé respecté, très satisfait.",
-  },
-  {
-    author: "Entreprise PME",
-    neighborhood: "ZI La Vendue",
-    rating: 5,
-    text: "Audit complet de nos entrepôts, mise en place de stations d'appâtage normées et plan de prévention. Conforme à nos exigences qualité.",
+    text: "Dératisation sur la commune de Condes. Société dynamique et efficace je recommande 👍👍",
   },
 ];
 
@@ -98,7 +86,6 @@ const RELATED = [
 ];
 
 const DeratisationChaumont = () => {
-  const ratingValue = (REVIEWS.reduce((s, r) => s + r.rating, 0) / REVIEWS.length).toFixed(1);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -123,8 +110,7 @@ const DeratisationChaumont = () => {
           { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
           { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "09:00", "closes": "18:00" }
         ],
-        "sameAs": ["https://www.facebook.com/people/GF-Nuisibles/61557891234567/"],
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": ratingValue, "reviewCount": REVIEWS.length.toString() }
+        "sameAs": ["https://www.facebook.com/people/GF-Nuisibles/61557891234567/"]
       },
       {
         "@type": "Service",
@@ -156,14 +142,7 @@ const DeratisationChaumont = () => {
           "name": item.question,
           "acceptedAnswer": { "@type": "Answer", "text": item.answer }
         }))
-      },
-      ...REVIEWS.map((r) => ({
-        "@type": "Review",
-        "itemReviewed": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "author": { "@type": "Person", "name": r.author },
-        "reviewRating": { "@type": "Rating", "ratingValue": r.rating, "bestRating": 5 },
-        "reviewBody": r.text
-      }))
+      }
     ]
   };
 

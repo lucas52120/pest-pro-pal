@@ -45,16 +45,22 @@ const FAQ_ITEMS: FaqItem[] = [
 
 const REVIEWS = [
   {
-    author: "Sophie M.",
-    location: "Chaumont — quartier Cavalier",
+    author: "Ema Hanuszek",
+    location: "Chaumont",
     rating: 5,
-    text: "Nid de frelons asiatiques sous l'avancée du toit, intervention le jour même. Travail propre, sécurisé, et tarif annoncé respecté. Je recommande à 100 % à Chaumont.",
+    text: "Très satisfaite de la prestation de ce professionnel. Il a traité un nid de frelon sous ma table de jardin à Chaumont de manière très sécurisée. Devis clair et respecté. C'est un excellent désinsectiseur local. Un grand merci pour votre réactivité !",
   },
   {
-    author: "Julien R.",
-    location: "Brottes (Chaumont)",
+    author: "Sebastien Babinski",
+    location: "Chaumont",
     rating: 5,
-    text: "Très gros nid de guêpes dans la grange. G&F Nuisibles est passé en moins de 24h, équipement pro, plus aucune guêpe le lendemain. Parfait.",
+    text: "Contact agréable. Intervention rapide et efficace sur un nid de guêpes. Je recommande ce professionnel.",
+  },
+  {
+    author: "Valerie Moock",
+    location: "Brethenay (Chaumont)",
+    rating: 5,
+    text: "Intervention très rapide et efficace sur un nid de guêpes sur Brethenay. Contact super et agréable. Je recommande ce professionnel.",
   },
 ];
 
@@ -100,24 +106,7 @@ const GuepesFrelonsChaumont = () => {
         ],
         "sameAs": [
           "https://www.facebook.com/profile.php?id=61560163661274"
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": REVIEWS.length.toString(),
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "review": REVIEWS.map((r) => ({
-          "@type": "Review",
-          "author": { "@type": "Person", "name": r.author },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": r.rating.toString(),
-            "bestRating": "5"
-          },
-          "reviewBody": r.text
-        }))
+        ]
       },
       {
         "@type": "Service",
@@ -268,7 +257,7 @@ const GuepesFrelonsChaumont = () => {
             ),
           },
           {
-            title: "Avis clients à Chaumont",
+            title: "Avis Google de nos clients à Chaumont",
             content: (
               <div className="space-y-4">
                 {REVIEWS.map((r) => (
