@@ -122,7 +122,7 @@ const GoogleReviews = () => {
               onClick={() => embla?.scrollPrev()}
               disabled={!canPrev}
               aria-label="Avis précédent"
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-5 h-11 w-11 rounded-full bg-card border shadow-md flex items-center justify-center text-primary transition-opacity hover:bg-accent hover:text-accent-foreground disabled:opacity-0 disabled:pointer-events-none"
+              className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 h-11 w-11 rounded-full bg-card border shadow-md items-center justify-center text-primary transition-opacity hover:bg-accent hover:text-accent-foreground disabled:opacity-0 disabled:pointer-events-none"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
@@ -131,7 +131,7 @@ const GoogleReviews = () => {
               onClick={() => embla?.scrollNext()}
               disabled={!canNext}
               aria-label="Avis suivant"
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-5 h-11 w-11 rounded-full bg-card border shadow-md flex items-center justify-center text-primary transition-opacity hover:bg-accent hover:text-accent-foreground disabled:opacity-0 disabled:pointer-events-none"
+              className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 h-11 w-11 rounded-full bg-card border shadow-md items-center justify-center text-primary transition-opacity hover:bg-accent hover:text-accent-foreground disabled:opacity-0 disabled:pointer-events-none"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
