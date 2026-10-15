@@ -31,13 +31,12 @@ const DELAIS = [
   { zone: "Chaumont et 20 km alentour", delai: "Sous 2 h en urgence, sinon le jour même" },
   { zone: "Haute-Marne (52)", delai: "Sous 24 h, souvent le jour même" },
   { zone: "Aube, Marne, Côte-d'Or, Vosges", delai: "Sous 24 à 48 h" },
-  { zone: "Meurthe-et-Moselle (54)", delai: "Sur rendez-vous, sous 48 à 72 h" },
 ];
 
 const FAQ = [
   {
     q: "Intervenez-vous en dehors de la Haute-Marne ?",
-    a: "Oui. Au-delà du département 52, nous intervenons dans l'Aube, la Marne, la Côte-d'Or, les Vosges et la Meurthe-et-Moselle, jusqu'à environ 150 km de Chaumont. Les déplacements sont annoncés à l'avance dans le devis, sans surprise.",
+    a: "Oui. Au-delà du département 52, nous intervenons dans l'Aube, la Marne, la Côte-d'Or et les Vosges, jusqu'à environ 150 km de Chaumont. Les déplacements sont annoncés à l'avance dans le devis, sans surprise.",
   },
   {
     q: "Le déplacement est-il facturé en plus ?",
