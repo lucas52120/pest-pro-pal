@@ -14,7 +14,24 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      google_reviews_cache: {
+        Row: {
+          data: Json
+          fetched_at: string
+          id: string
+        }
+        Insert: {
+          data: Json
+          fetched_at?: string
+          id: string
+        }
+        Update: {
+          data?: Json
+          fetched_at?: string
+          id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
