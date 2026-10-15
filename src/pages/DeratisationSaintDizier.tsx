@@ -67,7 +67,7 @@ const NEARBY: NearbyCity[] = [
 
 const RELATED = [
   { label: "Désinsectisation à Saint-Dizier", to: "/desinsectisation-saint-dizier" },
-  { label: "Élimination pigeons à Saint-Dizier", to: "/elimination-pigeons-saint-dizier" },
+  { label: "Dépigeonnisation à Saint-Dizier", to: "/depigeonnisation-saint-dizier" },
   { label: "Guêpes & frelons à Saint-Dizier", to: "/guepes-frelons-saint-dizier" },
   { label: "Toutes nos prestations dératisation", to: "/deratisation" },
 ];

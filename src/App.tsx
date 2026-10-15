@@ -9,7 +9,6 @@ import GuepesFrelons from "./pages/GuepesFrelons.tsx";
 import Desinsectisation from "./pages/Desinsectisation.tsx";
 import Taupes from "./pages/Taupes.tsx";
 import Depigeonnisation from "./pages/Depigeonnage.tsx";
-import EliminationPigeons from "./pages/EliminationPigeons.tsx";
 import Deratisation from "./pages/Deratisation.tsx";
 import Esod from "./pages/Esod.tsx";
 import Contact from "./pages/Contact.tsx";
@@ -99,7 +98,6 @@ import GuepesFrelonsArcEnBarrois from "./pages/GuepesFrelonsArcEnBarrois.tsx";
 import DesinsectisationArcEnBarrois from "./pages/DesinsectisationArcEnBarrois.tsx";
 import DepigeonnisationArcEnBarrois from "./pages/DepigeonnisationArcEnBarrois.tsx";
 import TaupesArcEnBarrois from "./pages/TaupesArcEnBarrois.tsx";
-import EliminationPigeonsArcEnBarrois from "./pages/EliminationPigeonsArcEnBarrois.tsx";
 
 // Semoutiers-Montsaon
 import DeratisationSemoutiersMontsaon from "./pages/DeratisationSemoutiersMontsaon.tsx";
@@ -107,7 +105,6 @@ import GuepesFrelonsSemoutiersMontsaon from "./pages/GuepesFrelonsSemoutiersMont
 import DesinsectisationSemoutiersMontsaon from "./pages/DesinsectisationSemoutiersMontsaon.tsx";
 import DepigeonnisationSemoutiersMontsaon from "./pages/DepigeonnisationSemoutiersMontsaon.tsx";
 import TaupesSemoutiersMontsaon from "./pages/TaupesSemoutiersMontsaon.tsx";
-import EliminationPigeonsSemoutiersMontsaon from "./pages/EliminationPigeonsSemoutiersMontsaon.tsx";
 
 // Troyes (Aube 10) — Dératisation + Dépigeonnisation uniquement
 import DeratisationTroyes from "./pages/DeratisationTroyes.tsx";
@@ -155,28 +152,6 @@ import DeratisationNancy from "./pages/DeratisationNancy.tsx";
 import DepigeonnisationNancy from "./pages/DepigeonnisationNancy.tsx";
 
 // Élimination Pigeons — Pages villes (particuliers)
-import EliminationPigeonsChaumont from "./pages/EliminationPigeonsChaumont.tsx";
-import EliminationPigeonsLangres from "./pages/EliminationPigeonsLangres.tsx";
-import EliminationPigeonsNogent from "./pages/EliminationPigeonsNogent.tsx";
-import EliminationPigeonsJoinville from "./pages/EliminationPigeonsJoinville.tsx";
-import EliminationPigeonsSaintDizier from "./pages/EliminationPigeonsSaintDizier.tsx";
-import EliminationPigeonsWassy from "./pages/EliminationPigeonsWassy.tsx";
-import EliminationPigeonsBourbonne from "./pages/EliminationPigeonsBourbonne.tsx";
-import EliminationPigeonsBologne from "./pages/EliminationPigeonsBologne.tsx";
-import EliminationPigeonsMontierEnDer from "./pages/EliminationPigeonsMontierEnDer.tsx";
-import EliminationPigeonsChalindrey from "./pages/EliminationPigeonsChalindrey.tsx";
-import EliminationPigeonsFroncles from "./pages/EliminationPigeonsFroncles.tsx";
-import EliminationPigeonsChateauvillain from "./pages/EliminationPigeonsChateauvillain.tsx";
-import EliminationPigeonsBarSurAube from "./pages/EliminationPigeonsBarSurAube.tsx";
-import EliminationPigeonsTroyes from "./pages/EliminationPigeonsTroyes.tsx";
-import EliminationPigeonsVitryLeFrancois from "./pages/EliminationPigeonsVitryLeFrancois.tsx";
-import EliminationPigeonsChalonsEnChampagne from "./pages/EliminationPigeonsChalonsEnChampagne.tsx";
-import EliminationPigeonsDijon from "./pages/EliminationPigeonsDijon.tsx";
-import EliminationPigeonsBeaune from "./pages/EliminationPigeonsBeaune.tsx";
-import EliminationPigeonsChatillonSurSeine from "./pages/EliminationPigeonsChatillonSurSeine.tsx";
-import EliminationPigeonsVittel from "./pages/EliminationPigeonsVittel.tsx";
-import EliminationPigeonsNeufchateau from "./pages/EliminationPigeonsNeufchateau.tsx";
-import EliminationPigeonsNancy from "./pages/EliminationPigeonsNancy.tsx";
 
 const queryClient = new QueryClient();
 
@@ -198,7 +173,6 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
           <Route path="/desinsectisation" element={<Desinsectisation />} />
           <Route path="/taupes" element={<Taupes />} />
           <Route path="/depigeonnage" element={<Depigeonnisation />} />
-          <Route path="/elimination-pigeons" element={<EliminationPigeons />} />
           <Route path="/deratisation" element={<Deratisation />} />
           {/* Chaumont — tous les services */}
           <Route path="/deratisation-chaumont" element={<DeratisationChaumont />} />
@@ -292,7 +266,6 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
           <Route path="/desinsectisation-arc-en-barrois" element={<DesinsectisationArcEnBarrois />} />
           <Route path="/depigeonnisation-arc-en-barrois" element={<DepigeonnisationArcEnBarrois />} />
           <Route path="/taupes-arc-en-barrois" element={<TaupesArcEnBarrois />} />
-          <Route path="/elimination-pigeons-arc-en-barrois" element={<EliminationPigeonsArcEnBarrois />} />
 
           {/* Semoutiers-Montsaon — tous les services */}
           <Route path="/deratisation-semoutiers-montsaon" element={<DeratisationSemoutiersMontsaon />} />
@@ -300,7 +273,6 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
           <Route path="/desinsectisation-semoutiers-montsaon" element={<DesinsectisationSemoutiersMontsaon />} />
           <Route path="/depigeonnisation-semoutiers-montsaon" element={<DepigeonnisationSemoutiersMontsaon />} />
           <Route path="/taupes-semoutiers-montsaon" element={<TaupesSemoutiersMontsaon />} />
-          <Route path="/elimination-pigeons-semoutiers-montsaon" element={<EliminationPigeonsSemoutiersMontsaon />} />
 
           {/* Troyes — Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-troyes" element={<DeratisationTroyes />} />
@@ -348,28 +320,6 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
           <Route path="/depigeonnisation-nancy" element={<DepigeonnisationNancy />} />
 
           {/* Élimination Pigeons — Pages villes (particuliers) */}
-          <Route path="/elimination-pigeons-chaumont" element={<EliminationPigeonsChaumont />} />
-          <Route path="/elimination-pigeons-langres" element={<EliminationPigeonsLangres />} />
-          <Route path="/elimination-pigeons-nogent" element={<EliminationPigeonsNogent />} />
-          <Route path="/elimination-pigeons-joinville" element={<EliminationPigeonsJoinville />} />
-          <Route path="/elimination-pigeons-saint-dizier" element={<EliminationPigeonsSaintDizier />} />
-          <Route path="/elimination-pigeons-wassy" element={<EliminationPigeonsWassy />} />
-          <Route path="/elimination-pigeons-bourbonne-les-bains" element={<EliminationPigeonsBourbonne />} />
-          <Route path="/elimination-pigeons-bologne" element={<EliminationPigeonsBologne />} />
-          <Route path="/elimination-pigeons-montier-en-der" element={<EliminationPigeonsMontierEnDer />} />
-          <Route path="/elimination-pigeons-chalindrey" element={<EliminationPigeonsChalindrey />} />
-          <Route path="/elimination-pigeons-froncles" element={<EliminationPigeonsFroncles />} />
-          <Route path="/elimination-pigeons-chateauvillain" element={<EliminationPigeonsChateauvillain />} />
-          <Route path="/elimination-pigeons-bar-sur-aube" element={<EliminationPigeonsBarSurAube />} />
-          <Route path="/elimination-pigeons-troyes" element={<EliminationPigeonsTroyes />} />
-          <Route path="/elimination-pigeons-vitry-le-francois" element={<EliminationPigeonsVitryLeFrancois />} />
-          <Route path="/elimination-pigeons-chalons-en-champagne" element={<EliminationPigeonsChalonsEnChampagne />} />
-          <Route path="/elimination-pigeons-dijon" element={<EliminationPigeonsDijon />} />
-          <Route path="/elimination-pigeons-beaune" element={<EliminationPigeonsBeaune />} />
-          <Route path="/elimination-pigeons-chatillon-sur-seine" element={<EliminationPigeonsChatillonSurSeine />} />
-          <Route path="/elimination-pigeons-vittel" element={<EliminationPigeonsVittel />} />
-          <Route path="/elimination-pigeons-neufchateau" element={<EliminationPigeonsNeufchateau />} />
-          <Route path="/elimination-pigeons-nancy" element={<EliminationPigeonsNancy />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
