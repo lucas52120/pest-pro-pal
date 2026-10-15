@@ -1,6 +1,8 @@
 # Legacy nested service URLs -> flat city URLs (301, keeps link equity)
 /services/depigeonnisation/:city    /depigeonnisation-:city      301!
-/services/elimination-pigeons/:city /elimination-pigeons-:city    301!
+/elimination-pigeons /depigeonnisation 301!
+/elimination-pigeons-:city /depigeonnisation-:city 301!
+/services/elimination-pigeons/:city /depigeonnisation-:city 301!
 /services/*                         /                             301!
 
 # SPA fallback. Prerendered static HTML files are served first by Netlify,
