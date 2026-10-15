@@ -35,32 +35,6 @@ const FAQ_ITEMS: FaqItem[] = [
   },
 ];
 
-const REVIEWS: CityReview[] = [
-  {
-    author: "Karine L.",
-    neighborhood: "Vert-Bois",
-    rating: 5,
-    text: "Souris dans la cuisine et la buanderie. Intervention sous 24h, boîtiers sécurisés, plus rien après 10 jours. Très pro et rassurant.",
-  },
-  {
-    author: "Brasserie du Centre",
-    neighborhood: "Centre-ville Saint-Dizier",
-    rating: 5,
-    text: "Contrat HACCP impeccable depuis 18 mois. Passages réguliers, rapports clairs, conformes aux contrôles DDPP. Recommandé.",
-  },
-  {
-    author: "Patrick D.",
-    neighborhood: "Clos Mortier",
-    rating: 5,
-    text: "Rats dans la cave après les inondations de la Marne. Diagnostic précis, points d'entrée rebouchés, suivi à 15 jours. Tarif respecté.",
-  },
-  {
-    author: "PME industrielle",
-    neighborhood: "ZI du Petit Pré",
-    rating: 5,
-    text: "Audit complet des entrepôts et mise en place de stations d'appâtage normées. Plan de prévention conforme à nos exigences qualité.",
-  },
-];
 
 const PRICING: PricingItem[] = [
   { label: "Diagnostic + traitement souris (1 zone)", price: "dès 90€", description: "Appartement ou pavillon, garantie 30 jours" },
@@ -99,7 +73,6 @@ const RELATED = [
 ];
 
 const DeratisationSaintDizier = () => {
-  const ratingValue = (REVIEWS.reduce((s, r) => s + r.rating, 0) / REVIEWS.length).toFixed(1);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -124,8 +97,7 @@ const DeratisationSaintDizier = () => {
           { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
           { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "09:00", "closes": "18:00" }
         ],
-        "sameAs": ["https://www.facebook.com/people/GF-Nuisibles/61557891234567/"],
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": ratingValue, "reviewCount": REVIEWS.length.toString() }
+        "sameAs": ["https://www.facebook.com/people/GF-Nuisibles/61557891234567/"]
       },
       {
         "@type": "Service",
@@ -157,14 +129,7 @@ const DeratisationSaintDizier = () => {
           "name": item.question,
           "acceptedAnswer": { "@type": "Answer", "text": item.answer }
         }))
-      },
-      ...REVIEWS.map((r) => ({
-        "@type": "Review",
-        "itemReviewed": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "author": { "@type": "Person", "name": r.author },
-        "reviewRating": { "@type": "Rating", "ratingValue": r.rating, "bestRating": 5 },
-        "reviewBody": r.text
-      }))
+      }
     ]
   };
 
@@ -208,10 +173,6 @@ const DeratisationSaintDizier = () => {
           title: "Tarifs dératisation à Saint-Dizier",
           intro: "Tarifs transparents — devis gratuit sur place, sans engagement.",
           items: PRICING
-        }}
-        reviews={{
-          title: "Ils nous ont fait confiance à Saint-Dizier",
-          items: REVIEWS
         }}
         nearbyCities={{
           title: "Dératisation dans les villes proches",
