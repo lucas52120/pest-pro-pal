@@ -1,25 +1,20 @@
 import { Rat } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 
-const TITLE = "Dératisation à Troyes dans l'Aube 10 | G&F Nuisibles";
-const DESCRIPTION = "Rats ou souris à Troyes ? G&F Nuisibles, dératiseur certifié dans l'Aube 10, élimine tous les rongeurs. Devis gratuit, intervention 7j/7.";
+const TITLE = "Dératisation à Troyes (10000) : rats et souris | G&F Nuisibles";
+const DESCRIPTION = "Rats ou souris à Troyes (10000) ? G&F Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits.";
+const URL = "https://gf-nuisibles.fr/deratisation-troyes";
 
 const FAQ_ITEMS: FaqItem[] = [
-  {
-    question: "Combien coûte la protection d'une copropriété contre les rats à Troyes ?",
-    answer: "Pour les syndics et copropriétés à Troyes, le devis est établi en fonction du nombre de parties communes, de colonnes sèches et de locaux poubelles à traiter. Nous offrons des solutions groupées très avantageuses pour les immeubles de l'Aube, garantissant une tranquillité durable à tous les résidents.",
-  },
-  {
-    question: "Est-ce que les ultrasons sont efficaces pour protéger un grand entrepôt ?",
-    answer: "Dans de grands volumes de stockage, les ultrasons sont inefficaces car les ondes sont bloquées par les palettes et les rayonnages. Pour obtenir un résultat professionnel dans votre dépôt, seule une stratégie de lutte intégrée (chimique et mécanique) permet de stopper réellement les dégâts sur vos marchandises.",
-  },
-  {
-    question: "Comment boucher les points d'entrée dans une structure industrielle ?",
-    answer: "Nous procédons au colmatage des passages techniques avec des matériaux résistants comme la maille d'inox ou des mortiers hydrofuges. L'étanchéité de votre bâtiment est la première ligne de défense pour empêcher toute nouvelle intrusion de rongeurs par les bas de portes ou les gaines de câblage.",
-  },
+  { question: "Dératisez-vous les maisons à pans de bois du centre de Troyes ?", answer: "Oui, les particuliers et les professionnels du centre ancien de Troyes peuvent demander un diagnostic. Précisez l'adresse, les pièces concernées et les accès aux caves ou dépendances pour préparer la visite, y compris dans les ruelles à colombages du quartier Saint-Jean ou de la rue Champeaux." },
+  { question: "La proximité de la Seine explique-t-elle une infestation ?", answer: "Non. La Seine, qui traverse Troyes, est un repère géographique et non un diagnostic. Les traces, les points d'entrée et l'examen du bâtiment permettent de distinguer les espèces et les causes possibles, qu'un bien soit proche du cours d'eau ou non." },
+  { question: "Intervenez-vous dans un commerce du centre-ville ou une copropriété ?", answer: "Oui, décrivez l'activité, les surfaces de stockage et les contraintes d'horaires. Dans le « bouchon de champagne », le tracé historique du centre-ville, les bâtiments mitoyens imposent souvent une inspection coordonnée avec les copropriétaires ou les commerces voisins." },
+  { question: "Comment protéger mes animaux pendant la dératisation ?", answer: "Signalez-les avant la prestation. Le choix des dispositifs, leur emplacement et les consignes tiennent compte des occupants. Les appâts restent à risque et ne doivent jamais être déplacés ou laissés accessibles." },
+  { question: "Quel est le prix d'une dératisation à Troyes ?", answer: "Le prix dépend du bâtiment, des zones concernées et du suivi nécessaire. Un diagnostic et un devis gratuits permettent de préciser les prestations et les passages retenus avant votre accord." },
 ];
 
 const DeratisationTroyes = () => {
@@ -27,45 +22,22 @@ const DeratisationTroyes = () => {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
-        "@id": "https://gf-nuisibles.fr/#organization",
-        "name": "G&F Nuisibles",
-        "telephone": "07.65.25.67.92",
-        "priceRange": "$$",
-        "image": "https://gf-nuisibles.fr/og-image.png",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "27 rue principale",
-          "addressLocality": "Montsaon",
-          "postalCode": "52000",
-          "addressRegion": "Haute-Marne",
-          "addressCountry": "FR"
-        }
+        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
+        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
+        "sameAs": ["https://www.facebook.com/gfnuisibles"],
+        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
       },
       {
-        "@type": "Service",
-        "name": TITLE,
-        "url": "https://gf-nuisibles.fr/deratisation-troyes",
-        "description": DESCRIPTION,
-        "provider": {
-          "@id": "https://gf-nuisibles.fr/#organization"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Troyes"
-        }
+        "@type": "Service", "url": URL, "name": "Dératisation à Troyes (10000) : rats et souris", "description": DESCRIPTION,
+        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
+        "areaServed": { "@type": "City", "name": "Troyes", "containedInPlace": { "@type": "AdministrativeArea", "name": "Aube" }, "address": { "@type": "PostalAddress", "postalCode": "10000", "addressRegion": "Aube", "addressCountry": "FR" } }
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": FAQ_ITEMS.map((item) => ({
-          "@type": "Question",
-          "name": item.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": item.answer
-          }
-        }))
-      }
+      { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Dératisation", "item": "https://gf-nuisibles.fr/deratisation" },
+        { "@type": "ListItem", "position": 3, "name": "Troyes", "item": URL }
+      ] },
+      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
     ]
   };
 
@@ -74,23 +46,59 @@ const DeratisationTroyes = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://gf-nuisibles.fr/deratisation-troyes" />
+        <link rel="canonical" href={URL} />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={URL} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={TITLE} />
+        <meta name="twitter:description" content={DESCRIPTION} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
         city="Troyes"
         department="Aube (10)"
-        serviceTitle={TITLE}
+        serviceTitle={"Dératisation à Troyes (10000) : rats et souris"}
         icon={<Rat className="h-8 w-8" />}
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
-        serviceCallTitle="RATS OU SOURIS À TROYES ?"
-        serviceCallSubtitle="G&F NUISIBLES : VOTRE EXPERT EN DÉRATISATION CERTIFIÉ !"
-        intro="Troyes et ses environs sont régulièrement touchés par des infestations de rongeurs. Rats bruns, souris ou mulots colonisent caves, greniers et locaux professionnels. G&F Nuisibles intervient rapidement pour une dératisation efficace et durable."
-        expertise="Nos techniciens certifiés maîtrisent toutes les espèces de rongeurs présentes en Aube (10). Nous intervenons chez les particuliers, entreprises, restaurants et collectivités avec des protocoles conformes aux normes sanitaires."
-        method="Inspection complète pour identifier les points d'entrée et le niveau d'infestation. Mise en place de postes d'appâtage sécurisés, pièges mécaniques et obturation des accès. Suivi de contrôle inclus."
-        cta="Protégez votre habitat à Troyes. Contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic gratuit et une intervention rapide."
+        serviceCallTitle={"RATS OU SOURIS DANS VOTRE BÂTIMENT À TROYES ?"}
+        serviceCallSubtitle="G&F NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
+        intro={"Un bruit dans une cloison, des emballages rongés dans une réserve ou des déjections dans une cave méritent une inspection avant de poser des appâts au hasard. G&F Nuisibles propose la dératisation à Troyes (10000), préfecture de l'Aube, pour les particuliers et les professionnels. Le diagnostic recherche les rats ou les souris, leurs circulations et les ressources qui permettent leur installation. Une maison à pans de bois du centre historique, un commerce proche de la cathédrale et un pavillon de périphérie ne présentent pas les mêmes accès : le protocole doit répondre au bâtiment réellement observé."}
+        expertise={"Les souris peuvent circuler dans des espaces étroits entre les pièces, alors que des rats peuvent exploiter un accès au sol, un regard ou une berge proche de la Seine ou de ses canaux. Ces pistes ne remplacent pas l'identification sur place. Nous examinons les indices, les passages techniques, les stocks et les habitudes de rangement. Signalez les animaux domestiques, les enfants et les zones alimentaires pour organiser les précautions. Un poste sécurisé limite l'accès aux appâts mais ne rend pas un produit sans danger ; les consignes restent indispensables."}
+        method={"L'inspection commence par les zones où vous avez relevé des traces, puis recherche les points d'entrée et les ressources alimentaires. Selon les observations, des pièges ou des dispositifs d'appâtage professionnels sont proposés, avec un emplacement adapté. Le devis précise les passages et les prestations retenues. Le contrôle des consommations ou des captures permet d'ajuster le suivi. Les conseils d'obturation, de stockage et de gestion des déchets complètent le traitement : retirer des rongeurs sans corriger un accès peut laisser la place à une nouvelle intrusion."}
+        localContext={{ title: "Centre historique, Seine et canaux à Troyes", content: <>
+            <p>{"Le centre historique de Troyes, dont le tracé évoque un « bouchon de champagne », regroupe des maisons à pans de bois autour de la cathédrale Saint-Pierre-et-Saint-Paul, de la basilique Saint-Urbain et des ruelles du quartier Saint-Jean. Précisez si votre demande concerne un logement, un commerce ou une dépendance dans ce bâti ancien et mitoyen, où une inspection coordonnée avec les voisins ou la copropriété peut être utile."}</p>
+            <p>{"Troyes est traversée par la Seine et plusieurs bras et canaux qui irriguent la ville. Pour un bien proche de ces berges ou d'un quai, le diagnostic porte sur vos accès, les canalisations et les indices dans le bâtiment : la proximité de l'eau ne prouve pas une infestation. Indiquez les regards accessibles et les dépendances où les observations se répètent."}</p>
+            <p>{"Dans les faubourgs et les zones commerciales en périphérie, les ateliers, garages et réserves doivent être décrits lors de la demande. Le stockage de denrées ou d'aliments pour animaux appelle une vérification des accès, sans présumer d'un problème chez un établissement cité."}</p>
+            <p>Les noms ci-dessus situent votre demande ; aucun monument n'est présenté comme infesté ou client. Retrouvez ces repères sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.tourisme-troyes.com/" target="_blank" rel="noopener noreferrer">site de l'office de tourisme de Troyes</a> et dans la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://fr.wikipedia.org/wiki/Troyes" target="_blank" rel="noopener noreferrer">présentation de Troyes</a>.</p>
+        </> }}
+        neighborhoods={{ title: "Secteurs et repères à Troyes (10000)", intro: "Troyes est la préfecture de l'Aube. Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre historique et quartier Saint-Jean", "Abords de la cathédrale Saint-Pierre-et-Saint-Paul", "Secteur de la rue Champeaux", "Quartier de la basilique Saint-Urbain", "Abords de la Seine et des canaux", "Zones commerciales de périphérie"] }}
+        extraSections={[
+          { title: "Rats ou souris : les informations utiles avant la visite", content: <>
+            <p>{"Notez les pièces concernées, les moments où les bruits sont entendus et la date des premières traces. Des photos d'emballages endommagés ou des passages suspects peuvent aider à préparer le diagnostic. Ne manipulez pas les déjections à mains nues et évitez le balayage à sec qui remet des poussières en suspension."}</p>
+            <p>{"Ne déplacez pas les appâts existants sans en signaler l'emplacement. Mentionnez les produits déjà utilisés, les captures éventuelles et les travaux récents. Une absence de bruit pendant une nuit ne suffit pas à conclure que les rongeurs ont disparu."}</p>
+          </> },
+          { title: "Prévention dans une maison ancienne ou un commerce à Troyes", content: <>
+            <p>{"Conservez les denrées et les aliments pour animaux dans des contenants fermés. Retirez les déchets alimentaires et limitez les encombrements qui masquent les déplacements le long des murs. Dans le bâti ancien du centre, les caves voûtées, les raccords de canalisations et les passages de câbles sont à examiner avec le diagnostic."}</p>
+            <p>{"Pour un commerce, précisez les contraintes de nettoyage, les zones de stockage et les heures d'activité. Si plusieurs locaux communiquent, une action isolée peut ne pas suffire. Le devis indique le périmètre retenu et le suivi, sans déduire un prix ou un nombre de passages du seul quartier."}</p>
+          </> },
+          { title: "Votre service à Troyes et dans le secteur", content: <>
+            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service dératisation</Link> pour les méthodes et les prestations. Pour votre adresse à Troyes, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-bar-sur-aube">Dératisation à Bar-sur-Aube</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chatillon-sur-seine">Dératisation à Châtillon-sur-Seine</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chaumont">Dératisation à Chaumont</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
+          </> },
+        ]}
+        nearbyCities={{ title: "Nos pages locales autour de Troyes", items: [
+          { label: "Dératisation à Bar-sur-Aube", to: "/deratisation-bar-sur-aube" },
+          { label: "Dératisation à Châtillon-sur-Seine", to: "/deratisation-chatillon-sur-seine" },
+          { label: "Dératisation à Chaumont", to: "/deratisation-chaumont" },
+        ] }}
+        relatedLinks={[
+          { label: "Dépigeonnisation à Troyes", to: "/depigeonnisation-troyes" },
+        ]}
         faqItems={FAQ_ITEMS}
+        cta={"Dératisation à Troyes : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
       />
     </>
   );
