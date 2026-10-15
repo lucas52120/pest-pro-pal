@@ -12,6 +12,6 @@
 
 # Pages de services de Saint-Dizier
 
-- [ ] Enrichir les cinq services avec des repères locaux vérifiés et du contenu propre à chaque prestation, sans avis ni références inventés.
-- [ ] Ajouter les liens vers les services principaux et les communes voisines pertinentes, ainsi que les questions et les informations de référencement.
-- [ ] Vérifier les cinq pages, les questions, les liens et l’affichage sur ordinateur et téléphone.
+- [x] Enrichir les cinq services avec des repères locaux vérifiés et du contenu propre à chaque prestation, sans avis ni références inventés.
+- [x] Ajouter les liens vers les services principaux et les communes voisines pertinentes, ainsi que les questions et les informations de référencement.
+- [x] Vérifier les cinq pages, les questions, les liens et l’affichage sur ordinateur et téléphone.
