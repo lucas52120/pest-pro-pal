@@ -52,6 +52,7 @@ const GoogleReviews = () => {
 
   useEffect(() => {
     if (!embla) return;
+    embla.reInit();
     const onSelect = () => {
       setSelected(embla.selectedScrollSnap());
       setCanPrev(embla.canScrollPrev());
