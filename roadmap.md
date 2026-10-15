@@ -9,3 +9,9 @@
 - [x] Enrichir les cinq services avec des repères de Chaumont, des conseils propres à chaque prestation et des questions utiles.
 - [x] Relier chaque page au service principal et aux pages voisines pertinentes, sans inventer de références clients ni de conditions commerciales.
 - [x] Vérifier les cinq pages, leurs informations de référencement, leurs liens et leur affichage dans le navigateur.
+
+# Pages de services de Saint-Dizier
+
+- [ ] Enrichir les cinq services avec des repères locaux vérifiés et du contenu propre à chaque prestation, sans avis ni références inventés.
+- [ ] Ajouter les liens vers les services principaux et les communes voisines pertinentes, ainsi que les questions et les informations de référencement.
+- [ ] Vérifier les cinq pages, les questions, les liens et l’affichage sur ordinateur et téléphone.
