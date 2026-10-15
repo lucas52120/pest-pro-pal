@@ -130,8 +130,8 @@ const ZoneIntervention = () => {
             <p className="text-lg text-primary-foreground/85 max-w-3xl">
               Entreprise de lutte contre les nuisibles basée à Semoutiers-Montsaon (52), G&F Nuisibles
               intervient chaque jour à Chaumont, Langres, Saint-Dizier, Joinville et dans plus de
-              {" "}{CITIES.length} villes de Haute-Marne, d'Aube, de Marne, de Côte-d'Or, des Vosges et de
-              Meurthe-et-Moselle. Dératisation, guêpes et frelons, désinsectisation, taupes et
+              {" "}{CITIES.length} villes de Haute-Marne, d'Aube, de Marne, de Côte-d'Or et des Vosges.
+              Dératisation, guêpes et frelons, désinsectisation, taupes et
               dépigeonnisation, 7j/7, week-ends et jours fériés compris.
             </p>
             <a
