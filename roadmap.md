@@ -27,3 +27,9 @@
 - [x] Enrichir les cinq services avec des repères de Joinville vérifiés, des conseils spécifiques et des questions utiles.
 - [x] Ajouter les informations de référencement et les liens vers les services principaux, Wassy, Froncles et Saint-Dizier.
 - [x] Vérifier les cinq pages, les questions et la navigation sur ordinateur et téléphone.
+
+# Pages de services de Montier-en-Der
+
+- [x] Enrichir les cinq services avec des repères locaux vérifiés et des conseils propres à chaque prestation.
+- [x] Ajouter les questions, les informations de référencement et les liens vers les services principaux, Wassy, Saint-Dizier et Joinville.
+- [x] Vérifier les cinq pages, les questions, la navigation et l’affichage sur ordinateur et téléphone.
