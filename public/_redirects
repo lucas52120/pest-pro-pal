@@ -1,3 +1,9 @@
+/deratisation-chalons-en-champagne /deratisation 301
+/depigeonnisation-chalons-en-champagne /depigeonnisation 301
+/deratisation-beaune /deratisation 301
+/depigeonnisation-beaune /depigeonnisation 301
+/deratisation-nancy /deratisation 301
+/depigeonnisation-nancy /depigeonnisation 301
 # Legacy nested service URLs -> flat city URLs (301, keeps link equity)
 /services/depigeonnisation/:city    /depigeonnisation-:city      301!
 /elimination-pigeons /depigeonnisation 301!

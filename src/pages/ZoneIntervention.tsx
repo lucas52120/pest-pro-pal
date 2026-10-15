@@ -18,17 +18,12 @@ const SECTEURS = [
   {
     titre: "Aube (10) et Marne (51)",
     texte:
-      "Troyes, Bar-sur-Aube, Vitry-le-François et Châlons-en-Champagne font partie de notre zone étendue. Nous y assurons principalement la dératisation, la désinsectisation et les chantiers de dépigeonnisation pour les copropriétés, industries et collectivités.",
+      "Troyes, Bar-sur-Aube, et Vitry-le-François font partie de notre zone étendue. Nous y assurons principalement la dératisation, la désinsectisation et les chantiers de dépigeonnisation pour les copropriétés, industries et collectivités.",
   },
   {
     titre: "Côte-d'Or (21) et Vosges (88)",
     texte:
-      "Dijon, Beaune, Châtillon-sur-Seine, Vittel et Neufchâteau sont desservis pour les contrats professionnels et les interventions programmées : dératisation de sites industriels, protection anti-pigeons de bâtiments, plans de lutte HACCP.",
-  },
-  {
-    titre: "Meurthe-et-Moselle (54)",
-    texte:
-      "Nancy et son agglomération complètent notre zone d'intervention, essentiellement pour les prestations B2B : bailleurs sociaux, syndics, sites logistiques et établissements recevant du public.",
+      "Dijon, Châtillon-sur-Seine, Vittel et Neufchâteau sont desservis pour les contrats professionnels et les interventions programmées : dératisation de sites industriels, protection anti-pigeons de bâtiments, plans de lutte HACCP.",
   },
 ];
 
@@ -36,13 +31,12 @@ const DELAIS = [
   { zone: "Chaumont et 20 km alentour", delai: "Sous 2 h en urgence, sinon le jour même" },
   { zone: "Haute-Marne (52)", delai: "Sous 24 h, souvent le jour même" },
   { zone: "Aube, Marne, Côte-d'Or, Vosges", delai: "Sous 24 à 48 h" },
-  { zone: "Meurthe-et-Moselle (54)", delai: "Sur rendez-vous, sous 48 à 72 h" },
 ];
 
 const FAQ = [
   {
     q: "Intervenez-vous en dehors de la Haute-Marne ?",
-    a: "Oui. Au-delà du département 52, nous intervenons dans l'Aube, la Marne, la Côte-d'Or, les Vosges et la Meurthe-et-Moselle, jusqu'à environ 150 km de Chaumont. Les déplacements sont annoncés à l'avance dans le devis, sans surprise.",
+    a: "Oui. Au-delà du département 52, nous intervenons dans l'Aube, la Marne, la Côte-d'Or et les Vosges, jusqu'à environ 150 km de Chaumont. Les déplacements sont annoncés à l'avance dans le devis, sans surprise.",
   },
   {
     q: "Le déplacement est-il facturé en plus ?",
@@ -136,8 +130,8 @@ const ZoneIntervention = () => {
             <p className="text-lg text-primary-foreground/85 max-w-3xl">
               Entreprise de lutte contre les nuisibles basée à Semoutiers-Montsaon (52), G&F Nuisibles
               intervient chaque jour à Chaumont, Langres, Saint-Dizier, Joinville et dans plus de
-              {" "}{CITIES.length} villes de Haute-Marne, d'Aube, de Marne, de Côte-d'Or, des Vosges et de
-              Meurthe-et-Moselle. Dératisation, guêpes et frelons, désinsectisation, taupes et
+              {" "}{CITIES.length} villes de Haute-Marne, d'Aube, de Marne, de Côte-d'Or et des Vosges.
+              Dératisation, guêpes et frelons, désinsectisation, taupes et
               dépigeonnisation, 7j/7, week-ends et jours fériés compris.
             </p>
             <a

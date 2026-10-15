@@ -116,7 +116,7 @@ const APropos = () => {
             </p>
             <p className="leading-relaxed text-muted-foreground">
               Que vous soyez à <strong>Chaumont</strong>, <strong>Saint-Dizier</strong> ou <strong>Langres</strong>, ou
-              plus loin vers <strong>Dijon</strong>, <strong>Nancy</strong>, <strong>Vittel</strong> ou{" "}
+              plus loin vers <strong>Dijon</strong>, <strong>Vittel</strong> ou{" "}
               <strong>Bar-le-Duc</strong>, je me déplace rapidement chez les particuliers comme chez les professionnels
               (commerces, industries, collectivités).
             </p>

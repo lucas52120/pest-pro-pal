@@ -61,7 +61,7 @@ const NEARBY: NearbyCity[] = [
   { label: "Dératisation Joinville", to: "/deratisation-joinville" },
   { label: "Dératisation Montier-en-Der", to: "/deratisation-montier-en-der" },
   { label: "Dératisation Bar-sur-Aube", to: "/deratisation-bar-sur-aube" },
-  { label: "Dératisation Vitry-le-François", to: "/deratisation-chalons-en-champagne" },
+  { label: "Dératisation Vitry-le-François", to: "/deratisation-saint-dizier" },
   { label: "Dératisation Chaumont", to: "/deratisation-chaumont" },
 ];
 

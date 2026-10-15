@@ -172,13 +172,6 @@ const CITY_FOOTER: CityEntry[] = [
     ],
   },
   {
-    name: "Châlons-en-Champagne",
-    links: [
-      { label: "Dératisation", to: "/deratisation-chalons-en-champagne" },
-      { label: "Dépigeonnisation", to: "/depigeonnisation-chalons-en-champagne" },
-    ],
-  },
-  {
     name: "Vittel",
     links: [
       { label: "Dératisation", to: "/deratisation-vittel" },
@@ -202,24 +195,10 @@ const CITY_FOOTER: CityEntry[] = [
     ],
   },
   {
-    name: "Beaune",
-    links: [
-      { label: "Dératisation", to: "/deratisation-beaune" },
-      { label: "Dépigeonnisation", to: "/depigeonnisation-beaune" },
-    ],
-  },
-  {
     name: "Châtillon-sur-Seine",
     links: [
       { label: "Dératisation", to: "/deratisation-chatillon-sur-seine" },
       { label: "Dépigeonnisation", to: "/depigeonnisation-chatillon-sur-seine" },
-    ],
-  },
-  {
-    name: "Nancy",
-    links: [
-      { label: "Dératisation", to: "/deratisation-nancy" },
-      { label: "Dépigeonnisation", to: "/depigeonnisation-nancy" },
     ],
   },
 ];
