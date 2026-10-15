@@ -121,9 +121,6 @@ import TaupesBarSurAube from "./pages/TaupesBarSurAube.tsx";
 import DesinsectisationVitryLeFrancois from "./pages/DesinsectisationVitryLeFrancois.tsx";
 import DepigeonnisationVitryLeFrancois from "./pages/DepigeonnisationVitryLeFrancois.tsx";
 
-// Châlons-en-Champagne (Marne 51) — Dératisation + Dépigeonnisation uniquement
-import DeratisationChalonsEnChampagne from "./pages/DeratisationChalonsEnChampagne.tsx";
-import DepigeonnisationChalonsEnChampagne from "./pages/DepigeonnisationChalonsEnChampagne.tsx";
 
 // Vittel (Vosges 88) — Désinsectisation + Dératisation + Dépigeonnisation
 import DeratisationVittel from "./pages/DeratisationVittel.tsx";
@@ -139,17 +136,11 @@ import DepigeonnisationNeufchateau from "./pages/DepigeonnisationNeufchateau.tsx
 import DeratisationDijon from "./pages/DeratisationDijon.tsx";
 import DepigeonnisationDijon from "./pages/DepigeonnisationDijon.tsx";
 
-// Beaune (Côte-d'Or 21) — Dératisation + Dépigeonnisation uniquement
-import DeratisationBeaune from "./pages/DeratisationBeaune.tsx";
-import DepigeonnisationBeaune from "./pages/DepigeonnisationBeaune.tsx";
 
 // Châtillon-sur-Seine (Côte-d'Or 21) — Dératisation + Dépigeonnisation uniquement
 import DeratisationChatillonSurSeine from "./pages/DeratisationChatillonSurSeine.tsx";
 import DepigeonnisationChatillonSurSeine from "./pages/DepigeonnisationChatillonSurSeine.tsx";
 
-// Nancy (Meurthe-et-Moselle 54) — Dératisation + Dépigeonnisation uniquement
-import DeratisationNancy from "./pages/DeratisationNancy.tsx";
-import DepigeonnisationNancy from "./pages/DepigeonnisationNancy.tsx";
 
 // Élimination Pigeons — Pages villes (particuliers)
 
@@ -289,9 +280,6 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
           <Route path="/desinsectisation-vitry-le-francois" element={<DesinsectisationVitryLeFrancois />} />
           <Route path="/depigeonnisation-vitry-le-francois" element={<DepigeonnisationVitryLeFrancois />} />
 
-          {/* Châlons-en-Champagne — Dératisation + Dépigeonnisation */}
-          <Route path="/deratisation-chalons-en-champagne" element={<DeratisationChalonsEnChampagne />} />
-          <Route path="/depigeonnisation-chalons-en-champagne" element={<DepigeonnisationChalonsEnChampagne />} />
 
           {/* Vittel — Désinsectisation + Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-vittel" element={<DeratisationVittel />} />
@@ -307,17 +295,11 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
           <Route path="/deratisation-dijon" element={<DeratisationDijon />} />
           <Route path="/depigeonnisation-dijon" element={<DepigeonnisationDijon />} />
 
-          {/* Beaune — Dératisation + Dépigeonnisation */}
-          <Route path="/deratisation-beaune" element={<DeratisationBeaune />} />
-          <Route path="/depigeonnisation-beaune" element={<DepigeonnisationBeaune />} />
 
           {/* Châtillon-sur-Seine — Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-chatillon-sur-seine" element={<DeratisationChatillonSurSeine />} />
           <Route path="/depigeonnisation-chatillon-sur-seine" element={<DepigeonnisationChatillonSurSeine />} />
 
-          {/* Nancy — Dératisation + Dépigeonnisation */}
-          <Route path="/deratisation-nancy" element={<DeratisationNancy />} />
-          <Route path="/depigeonnisation-nancy" element={<DepigeonnisationNancy />} />
 
           {/* Élimination Pigeons — Pages villes (particuliers) */}
 
