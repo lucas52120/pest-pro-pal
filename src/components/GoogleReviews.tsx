@@ -91,7 +91,7 @@ const GoogleReviews = () => {
 
         {reviews.length > 0 && (
           <div className="relative mb-10">
-            <div className="overflow-hidden" ref={viewportRef}>
+            <div className="overflow-hidden touch-pan-y" ref={viewportRef}>
               <div className="flex gap-6">
                 {reviews.map((r) => (
                   <article
