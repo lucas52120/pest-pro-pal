@@ -18,6 +18,6 @@
 
 # Pages de services de Nogent
 
-- [ ] Enrichir les cinq services avec des repères locaux vérifiés et des conseils propres à chaque prestation, sans références inventées.
-- [ ] Ajouter les questions, les informations de référencement et les liens vers les services principaux et les villes voisines.
-- [ ] Vérifier les cinq pages, leurs liens et les questions sur ordinateur et téléphone.
+- [x] Enrichir les cinq services avec des repères locaux vérifiés et des conseils propres à chaque prestation, sans références inventées.
+- [x] Ajouter les questions, les informations de référencement et les liens vers les services principaux et les villes voisines.
+- [x] Vérifier les cinq pages, leurs liens et les questions sur ordinateur et téléphone.
