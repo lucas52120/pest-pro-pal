@@ -21,3 +21,9 @@
 - [x] Enrichir les cinq services avec des repères locaux vérifiés et des conseils propres à chaque prestation, sans références inventées.
 - [x] Ajouter les questions, les informations de référencement et les liens vers les services principaux et les villes voisines.
 - [x] Vérifier les cinq pages, leurs liens et les questions sur ordinateur et téléphone.
+
+# Pages de services de Joinville
+
+- [x] Enrichir les cinq services avec des repères de Joinville vérifiés, des conseils spécifiques et des questions utiles.
+- [x] Ajouter les informations de référencement et les liens vers les services principaux, Wassy, Froncles et Saint-Dizier.
+- [x] Vérifier les cinq pages, les questions et la navigation sur ordinateur et téléphone.
