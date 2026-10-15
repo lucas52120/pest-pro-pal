@@ -26,11 +26,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://gf-nuisibles.fr/deratisation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -391,11 +386,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-arc-en-barrois</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://gf-nuisibles.fr/deratisation-semoutiers-montsaon</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -417,11 +407,6 @@
   </url>
   <url>
     <loc>https://gf-nuisibles.fr/taupes-semoutiers-montsaon</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-semoutiers-montsaon</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -547,116 +532,6 @@
   </url>
   <url>
     <loc>https://gf-nuisibles.fr/depigeonnisation-nancy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-chaumont</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-langres</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-nogent</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-joinville</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-saint-dizier</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-wassy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-bourbonne-les-bains</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-bologne</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-montier-en-der</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-chalindrey</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-froncles</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-chateauvillain</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-bar-sur-aube</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-troyes</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-vitry-le-francois</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-chalons-en-champagne</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-dijon</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-beaune</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-chatillon-sur-seine</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-vittel</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-neufchateau</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/elimination-pigeons-nancy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
