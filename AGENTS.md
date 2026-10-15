@@ -1,0 +1,1 @@
+- Google reviews are fetched by the `google-reviews` edge function and cached in `google_reviews_cache` (service role only); why: keeps Google quota low and page fast.

@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import TrustedBy from "@/components/TrustedBy";
 import Reassurance from "@/components/Reassurance";
+import GoogleReviews from "@/components/GoogleReviews";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -43,6 +44,7 @@ const Index = () => {
       <Hero />
       <Services />
       <TrustedBy />
+      <GoogleReviews />
       <Reassurance />
       <Footer />
     </>
