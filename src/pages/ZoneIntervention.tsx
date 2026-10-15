@@ -18,17 +18,12 @@ const SECTEURS = [
   {
     titre: "Aube (10) et Marne (51)",
     texte:
-      "Troyes, Bar-sur-Aube, Vitry-le-François et Châlons-en-Champagne font partie de notre zone étendue. Nous y assurons principalement la dératisation, la désinsectisation et les chantiers de dépigeonnisation pour les copropriétés, industries et collectivités.",
+      "Troyes, Bar-sur-Aube, et Vitry-le-François font partie de notre zone étendue. Nous y assurons principalement la dératisation, la désinsectisation et les chantiers de dépigeonnisation pour les copropriétés, industries et collectivités.",
   },
   {
     titre: "Côte-d'Or (21) et Vosges (88)",
     texte:
-      "Dijon, Beaune, Châtillon-sur-Seine, Vittel et Neufchâteau sont desservis pour les contrats professionnels et les interventions programmées : dératisation de sites industriels, protection anti-pigeons de bâtiments, plans de lutte HACCP.",
-  },
-  {
-    titre: "Meurthe-et-Moselle (54)",
-    texte:
-      "Nancy et son agglomération complètent notre zone d'intervention, essentiellement pour les prestations B2B : bailleurs sociaux, syndics, sites logistiques et établissements recevant du public.",
+      "Dijon, Châtillon-sur-Seine, Vittel et Neufchâteau sont desservis pour les contrats professionnels et les interventions programmées : dératisation de sites industriels, protection anti-pigeons de bâtiments, plans de lutte HACCP.",
   },
 ];
 
