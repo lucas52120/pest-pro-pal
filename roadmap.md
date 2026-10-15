@@ -33,3 +33,7 @@
 - [x] Enrichir les cinq services avec des repères locaux vérifiés et des conseils propres à chaque prestation.
 - [x] Ajouter les questions, les informations de référencement et les liens vers les services principaux, Wassy, Saint-Dizier et Joinville.
 - [x] Vérifier les cinq pages, les questions, la navigation et l’affichage sur ordinateur et téléphone.
+# Pages de services des autres villes
+
+- [ ] Enrichir Arc-en-Barrois, Bar-sur-Aube, Bologne, Bourbonne, Chalindrey, Châteauvillain, Châtillon-sur-Seine, Dijon, Froncles, Neufchâteau, Semoutiers-Montsaon, Troyes, Vitry-le-François, Vittel, Wassy.
+- [ ] Vérifier les pages, liens et affichage.

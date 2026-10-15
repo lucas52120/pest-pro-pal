@@ -1,25 +1,20 @@
 import { Zap } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Destruction de nids de Guêpes & Frelons à Chalindrey";
-const DESCRIPTION = "Destruction nid de frelons à Chalindrey (52). G&F Nuisibles intervient en urgence. Sécurité garantie, devis gratuit.";
+const TITLE = "Nid de guêpes et frelons à Chalindrey (52600) | G&F Nuisibles";
+const DESCRIPTION = "Nid de guêpes ou de frelons à Chalindrey (52600) ? G&F Nuisibles évalue l'accès et propose une intervention adaptée. Diagnostic et devis gratuits.";
+const URL = "https://gf-nuisibles.fr/guepes-frelons-chalindrey";
 
 const FAQ_ITEMS: FaqItem[] = [
-  {
-    question: "Combien coûte une intervention pour nids de frelons à Chalindrey ?",
-    answer: "À Chalindrey, nous intervenons à partir de 110 € pour les frelons et 85 € pour les guêpes. Le montant varie selon la hauteur du nid. Transparence totale : nous confirmons le prix ferme avec vous avant de déployer notre matériel.",
-  },
-  {
-    question: "Pourquoi les nids de guêpes sont-ils plus fréquents sous les tuiles ?",
-    answer: "La chaleur accumulée sous le toit de votre maison à Chalindrey favorise le développement des larves. C'est un endroit protégé des intempéries. Nos techniciens utilisent des cannes d'injection pour traiter ces nids sans avoir à soulever toutes vos tuiles.",
-  },
-  {
-    question: "Proposez-vous des forfaits pour les mairies ou entreprises de Chalindrey ?",
-    answer: "Oui, GF Nuisibles collabore avec les professionnels et les collectivités de Haute-Marne. Nous proposons des contrats d'entretien ou des tarifs dégressifs en cas de nids multiples sur un même site ou une même commune.",
-  },
+  { question: "Intervenez-vous sur les nids à Chalindrey (52600) ?", answer: "Oui, précisez l'adresse, le support, la hauteur approximative et les accès. Le créneau et les moyens nécessaires sont confirmés selon la situation." },
+  { question: "Un nid dans un trou au sol peut-il être dangereux ?", answer: "Oui, un nid actif peut être dérangé par la tonte ou le passage. Éloignez les personnes et les animaux et ne versez aucun produit dans l'entrée. L'identification se fait sans manipuler le nid." },
+  { question: "Faut-il boucher l'entrée sous une tuile ?", answer: "Non. Obstruer un accès actif peut déplacer les sorties, notamment vers l'intérieur. Gardez vos distances et attendez l'évaluation du professionnel." },
+  { question: "Retirez-vous toujours le nid après le traitement ?", answer: "Le retrait dépend du support et de l'accessibilité. Il n'est pas systématique ni nécessairement immédiat. Les prestations retenues et les consignes sont précisées avant l'intervention." },
+  { question: "Quel est le prix pour un nid de frelons à Chalindrey ?", answer: "Le prix dépend de l'identification, de la hauteur, de l'accès et des moyens nécessaires. Le diagnostic et le devis gratuits permettent de confirmer la prestation avant votre accord." },
 ];
 
 const GuepesFrelonsChalindrey = () => {
@@ -27,46 +22,22 @@ const GuepesFrelonsChalindrey = () => {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
-        "@id": "https://gf-nuisibles.fr/#organization",
-        "url": "https://gf-nuisibles.fr",
-        "name": "G&F Nuisibles",
-        "telephone": "07.65.25.67.92",
-        "priceRange": "$$",
-        "image": "https://gf-nuisibles.fr/og-image.png",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "27 rue principale",
-          "addressLocality": "Montsaon",
-          "postalCode": "52000",
-          "addressRegion": "Haute-Marne",
-          "addressCountry": "FR"
-        }
+        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
+        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
+        "sameAs": ["https://www.facebook.com/gfnuisibles"],
+        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
       },
       {
-        "@type": "Service",
-        "url": "https://gf-nuisibles.fr/guepes-frelons-chalindrey",
-        "name": TITLE,
-        "description": DESCRIPTION,
-        "provider": {
-          "@id": "https://gf-nuisibles.fr/#organization"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Chalindrey"
-        }
+        "@type": "Service", "url": URL, "name": "Nid de guêpes et frelons à Chalindrey (52600)", "description": DESCRIPTION,
+        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
+        "areaServed": { "@type": "City", "name": "Chalindrey", "containedInPlace": { "@type": "AdministrativeArea", "name": "la Communauté de communes des Savoir-Faire" }, "address": { "@type": "PostalAddress", "postalCode": "52600", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": FAQ_ITEMS.map((item) => ({
-          "@type": "Question",
-          "name": item.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": item.answer
-          }
-        }))
-      }
+      { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Guêpes et frelons", "item": "https://gf-nuisibles.fr/guepes-frelons" },
+        { "@type": "ListItem", "position": 3, "name": "Chalindrey", "item": URL }
+      ] },
+      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
     ]
   };
 
@@ -75,23 +46,61 @@ const GuepesFrelonsChalindrey = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href="https://gf-nuisibles.fr/guepes-frelons-chalindrey" />
+        <link rel="canonical" href={URL} />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={URL} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={TITLE} />
+        <meta name="twitter:description" content={DESCRIPTION} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
         city="Chalindrey"
         department="Haute-Marne (52)"
-        serviceTitle={TITLE}
+        serviceTitle={"Nid de guêpes et frelons à Chalindrey (52600)"}
         icon={<Zap className="h-8 w-8" />}
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
-        serviceCallTitle="NID DE GUÊPES OU FRELONS À CHALINDREY ?"
-        serviceCallSubtitle="G&F NUISIBLES INTERVIENT EN URGENCE POUR VOTRE SÉCURITÉ !"
-        intro="Les guêpes et frelons s'installent fréquemment dans les habitations et jardins de Chalindrey. Leur présence constitue un risque majeur, surtout pour les personnes allergiques. Faites appel à G&F Nuisibles pour une destruction rapide et sécurisée."
-        expertise="Nos techniciens qualifiés interviennent à Chalindrey et dans toute la Haute-Marne pour la destruction de nids de guêpes, frelons européens et frelons asiatiques. Intervention sécurisée, rapide et garantie."
-        method="Repérage et évaluation du nid, sécurisation du périmètre, traitement par insecticide professionnel et retrait du nid. Intervention possible en hauteur et dans les zones difficiles d'accès."
-        cta="Nid de guêpes ou frelons à Chalindrey ? Appelez G&F Nuisibles au 07.65.25.67.92 pour une intervention d'urgence."
+        serviceCallTitle={"UN NID DE GUÊPES OU DE FRELONS À CHALINDREY ?"}
+        serviceCallSubtitle="G&F NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
+        intro={"Un va-et-vient d'insectes sous une tuile, dans une haie ou près d'un trou au sol peut signaler un nid, même lorsque celui-ci est invisible. G&F Nuisibles intervient pour les nids de guêpes et de frelons à Chalindrey (52600), au sein de la Communauté de communes des Savoir-Faire. La demande commence par l'identification et l'évaluation de l'accès : hauteur, support, proximité des occupants et activité observée. Ne vous approchez pas pour obtenir une photo et ne tentez pas de décrocher le nid vous-même."}
+        expertise={"Les guêpes, les frelons européens et les frelons asiatiques nécessitent une identification adaptée aux indices disponibles. Les abeilles ne sont pas à traiter comme un nid de guêpes : un essaim peut relever d'un apiculteur. Le diagnostic prend en compte les accès au bâtiment, le passage des personnes et les animaux. Un nid dans un volume fermé ne se traite pas comme un nid visible dans un arbre. Les possibilités techniques sont confirmées selon la configuration et non à partir du seul nom de la commune."}
+        method={"À partir de votre description, nous préparons l'évaluation du nid et des moyens d'accès. Le périmètre à éviter et les précautions sont définis avant le traitement professionnel. La neutralisation et le retrait éventuel dépendent du support et de l'accessibilité ; le retrait immédiat n'est pas systématique. Les consignes après intervention précisent les comportements à respecter et les observations à signaler. Le devis tient compte de l'espèce identifiée, de la hauteur, de l'accès et de la méthode retenue."}
+        localContext={{ title: "Quartier de la gare, rotonde SNCF et centre-ville", content: <>
+            <p>{"Chalindrey est un nœud ferroviaire connu pour la gare de Culmont-Chalindrey et son important dépôt. Pour une adresse proche de la gare, des voies ou de la rotonde SNCF, précisez s'il s'agit d'un logement, d'un local professionnel ou d'une dépendance : ces secteurs mêlent souvent habitations, entrepôts et bâtiments techniques aux accès variés."}</p>
+            <p>{"Autour de la mairie, rue de Langres, et dans le centre-bourg, les maisons mitoyennes et les cours intérieures justifient de décrire les accès aux caves, aux greniers et aux espaces partagés avec un voisin."}</p>
+            <p>{"Le bourg s'étend sur le plateau de Langres, dans un environnement plutôt rural autour du noyau urbain lié au rail. Un terrain en lisière du bâti ou proche d'une dépendance agricole peut nécessiter une inspection élargie, sans présumer d'un problème pour l'ensemble du secteur."}</p>
+            <p>Les noms ci-dessus situent votre demande ; aucun lieu n'est présenté comme infesté ou client. Retrouvez ces repères sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://ville-chalindrey.fr/" target="_blank" rel="noopener noreferrer">notice de la mairie de Chalindrey</a> et sur la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://fr.wikipedia.org/wiki/Chalindrey" target="_blank" rel="noopener noreferrer">page Wikipédia de Chalindrey</a>.</p>
+        </> }}
+        neighborhoods={{ title: "Secteurs et repères à Chalindrey (52600)", intro: "Chalindrey fait partie de la Communauté de communes des Savoir-Faire. Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre-bourg et mairie", "Quartier de la gare de Culmont-Chalindrey", "Secteur de la rotonde SNCF", "Abords de l'avenue Gambetta", "Écarts et hameaux proches du plateau de Langres"] }}
+        extraSections={[
+          { title: "Les précautions avant la venue du professionnel", content: <>
+            <p>{"Ne bouchez pas un trou d'entrée dans une façade ou un toit : les insectes peuvent chercher une autre sortie. Ne versez ni eau, ni carburant, ni produit ménager dans un nid au sol. N'utilisez pas une échelle pour vous rapprocher d'un nid actif et ne le brûlez jamais."}</p>
+            <p>{"Suspendez la tonte ou la taille près de l'activité observée. Gardez les enfants et les animaux à distance. Une photo prise sans s'approcher, une estimation de la hauteur et une description des accès suffisent pour préparer le premier échange."}</p>
+          </> },
+          { title: "Nid inaccessible, devis et suites de l'intervention à Chalindrey", content: <>
+            <p>{"Pour une toiture, un arbre ou un volume fermé, précisez la hauteur approximative et les obstacles. Le professionnel confirme les moyens nécessaires et la faisabilité. Un devis ne peut pas être déduit d'un tarif unique pour tous les nids ; la configuration et les prestations retenues comptent."}</p>
+            <p>{"Après le traitement, respectez les consignes et signalez une activité persistante au même point. Ne manipulez pas un nid traité sans accord. En cas de piqûres multiples, de difficulté à respirer ou de gonflement du visage ou de la gorge, appelez immédiatement le 15 ou le 112 : la destruction du nid ne remplace pas une prise en charge médicale."}</p>
+          </> },
+          { title: "Votre service à Chalindrey et dans le secteur", content: <>
+            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service guêpes et frelons en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Chalindrey, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-chateauvillain">Guêpes et frelons à Châteauvillain</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-bourbonne-les-bains">Guêpes et frelons à Bourbonne-les-Bains</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
+          </> },
+        ]}
+        nearbyCities={{ title: "Nos pages locales autour de Chalindrey", items: [
+          { label: "Guêpes et frelons à Châteauvillain", to: "/guepes-frelons-chateauvillain" },
+          { label: "Guêpes et frelons à Bourbonne-les-Bains", to: "/guepes-frelons-bourbonne-les-bains" },
+        ] }}
+        relatedLinks={[
+          { label: "Dératisation à Chalindrey", to: "/deratisation-chalindrey" },
+          { label: "Désinsectisation à Chalindrey", to: "/desinsectisation-chalindrey" },
+          { label: "Dépigeonnisation à Chalindrey", to: "/depigeonnisation-chalindrey" },
+          { label: "Taupier à Chalindrey", to: "/taupes-chalindrey" },
+        ]}
         faqItems={FAQ_ITEMS}
+        cta={"Guêpes et frelons à Chalindrey : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
       />
     </>
   );
