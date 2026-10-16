@@ -48,7 +48,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav — centered */}
-        <div className="hidden flex-1 items-center justify-center gap-6 lg:flex">
+        <div className="hidden flex-1 items-center justify-center gap-6 xl:flex">
           {navItems.map((item) => (
             <Link
               key={item.path}
@@ -76,7 +76,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-primary-foreground lg:hidden"
+          className="text-primary-foreground xl:hidden"
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -84,7 +84,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="border-t border-primary-foreground/10 bg-primary lg:hidden">
+        <div className="border-t border-primary-foreground/10 bg-primary xl:hidden">
           <div className="flex flex-col gap-1 px-4 py-4">
             {navItems.map((item) => (
               <Link
