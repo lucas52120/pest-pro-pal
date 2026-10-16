@@ -37,3 +37,8 @@
 
 - [x] Enrichir Arc-en-Barrois, Bar-sur-Aube, Bologne, Bourbonne, Chalindrey, Châteauvillain, Châtillon-sur-Seine, Dijon, Froncles, Neufchâteau, Semoutiers-Montsaon, Troyes, Vitry-le-François, Vittel, Wassy.
 - [x] Vérifier les pages, liens et affichage.
+
+# Page Cafards & Blattes
+
+- [x] Ajouter le lien « Cafards & Blattes » au menu, au bas de page et au menu téléphone.
+- [x] Vérifier que le menu tienne sans débordement de 1024 à 1440 px et que le lien ouvre la page.
