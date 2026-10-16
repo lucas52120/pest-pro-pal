@@ -41,4 +41,4 @@
 # Page Cafards & Blattes
 
 - [x] Ajouter le lien « Cafards & Blattes » au menu, au bas de page et au menu téléphone.
-- [x] Vérifier que le menu tinte sans débordement de 1024 à 1440 px et que le lien ouvre la page.
+- [x] Vérifier que le menu tienne sans débordement de 1024 à 1440 px et que le lien ouvre la page.
