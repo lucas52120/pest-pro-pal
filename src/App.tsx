@@ -8,6 +8,7 @@ import Index from "./pages/Index.tsx";
 import GuepesFrelons from "./pages/GuepesFrelons.tsx";
 import Desinsectisation from "./pages/Desinsectisation.tsx";
 import Taupes from "./pages/Taupes.tsx";
+import CafardsBlattes from "./pages/CafardsBlattes.tsx";
 import Depigeonnisation from "./pages/Depigeonnage.tsx";
 import Deratisation from "./pages/Deratisation.tsx";
 import Esod from "./pages/Esod.tsx";
@@ -163,6 +164,7 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
           <Route path="/guepes-frelons" element={<GuepesFrelons />} />
           <Route path="/desinsectisation" element={<Desinsectisation />} />
           <Route path="/taupes" element={<Taupes />} />
+          <Route path="/cafards-blattes" element={<CafardsBlattes />} />
           <Route path="/depigeonnage" element={<Depigeonnisation />} />
           <Route path="/deratisation" element={<Deratisation />} />
           {/* Chaumont — tous les services */}
