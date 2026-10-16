@@ -7,6 +7,7 @@ const navItems = [
   { label: "Accueil", path: "/" },
   { label: "Guêpes & Frelons", path: "/guepes-frelons" },
   { label: "Désinsectisation", path: "/desinsectisation" },
+  { label: "Cafards & Blattes", path: "/cafards-blattes" },
   { label: "Taupes", path: "/taupes" },
   { label: "Dépigeonnage", path: "/depigeonnage" },
   { label: "Dératisation", path: "/deratisation" },
