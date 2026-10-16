@@ -9,6 +9,7 @@ export const CITIES: CityEntry[] = [
     { label: "Désinsectisation", to: "/desinsectisation-chaumont" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-chaumont" },
     { label: "Taupes", to: "/taupes-chaumont" },
+    { label: "Cafards & Blattes", to: "/cafards-blattes-chaumont" },
   ]},
   { name: "Langres", links: [
     { label: "Dératisation", to: "/deratisation-langres" },
@@ -16,6 +17,7 @@ export const CITIES: CityEntry[] = [
     { label: "Désinsectisation", to: "/desinsectisation-langres" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-langres" },
     { label: "Taupes", to: "/taupes-langres" },
+    { label: "Cafards & Blattes", to: "/cafards-blattes-langres" },
   ]},
   { name: "Nogent", links: [
     { label: "Dératisation", to: "/deratisation-nogent" },
@@ -23,6 +25,7 @@ export const CITIES: CityEntry[] = [
     { label: "Désinsectisation", to: "/desinsectisation-nogent" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-nogent" },
     { label: "Taupes", to: "/taupes-nogent" },
+    { label: "Cafards & Blattes", to: "/cafards-blattes-nogent" },
   ]},
   { name: "Saint-Dizier", links: [
     { label: "Dératisation", to: "/deratisation-saint-dizier" },
@@ -30,6 +33,7 @@ export const CITIES: CityEntry[] = [
     { label: "Désinsectisation", to: "/desinsectisation-saint-dizier" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-saint-dizier" },
     { label: "Taupes", to: "/taupes-saint-dizier" },
+    { label: "Cafards & Blattes", to: "/cafards-blattes-saint-dizier" },
   ]},
   { name: "Joinville", links: [
     { label: "Dératisation", to: "/deratisation-joinville" },
@@ -37,6 +41,7 @@ export const CITIES: CityEntry[] = [
     { label: "Désinsectisation", to: "/desinsectisation-joinville" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-joinville" },
     { label: "Taupes", to: "/taupes-joinville" },
+    { label: "Cafards & Blattes", to: "/cafards-blattes-joinville" },
   ]},
   { name: "Wassy", links: [
     { label: "Dératisation", to: "/deratisation-wassy" },
@@ -51,6 +56,7 @@ export const CITIES: CityEntry[] = [
     { label: "Désinsectisation", to: "/desinsectisation-bourbonne-les-bains" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-bourbonne-les-bains" },
     { label: "Taupes", to: "/taupes-bourbonne-les-bains" },
+    { label: "Cafards & Blattes", to: "/cafards-blattes-bourbonne-les-bains" },
   ]},
   { name: "Bologne", links: [
     { label: "Dératisation", to: "/deratisation-bologne" },
@@ -111,6 +117,7 @@ export const CITIES: CityEntry[] = [
     { label: "Désinsectisation", to: "/desinsectisation-bar-sur-aube" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-bar-sur-aube" },
     { label: "Taupes", to: "/taupes-bar-sur-aube" },
+    { label: "Cafards & Blattes", to: "/cafards-blattes-bar-sur-aube" },
   ]},
   { name: "Vitry-le-François", links: [
     { label: "Désinsectisation", to: "/desinsectisation-vitry-le-francois" },
