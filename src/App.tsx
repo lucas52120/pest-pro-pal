@@ -9,6 +9,13 @@ import GuepesFrelons from "./pages/GuepesFrelons.tsx";
 import Desinsectisation from "./pages/Desinsectisation.tsx";
 import Taupes from "./pages/Taupes.tsx";
 import CafardsBlattes from "./pages/CafardsBlattes.tsx";
+import CafardsBlattesChaumont from "./pages/CafardsBlattesChaumont.tsx";
+import CafardsBlattesSaintDizier from "./pages/CafardsBlattesSaintDizier.tsx";
+import CafardsBlattesLangres from "./pages/CafardsBlattesLangres.tsx";
+import CafardsBlattesJoinville from "./pages/CafardsBlattesJoinville.tsx";
+import CafardsBlattesNogent from "./pages/CafardsBlattesNogent.tsx";
+import CafardsBlattesBourbonneLesBains from "./pages/CafardsBlattesBourbonneLesBains.tsx";
+import CafardsBlattesBarSurAube from "./pages/CafardsBlattesBarSurAube.tsx";
 import Depigeonnisation from "./pages/Depigeonnage.tsx";
 import Deratisation from "./pages/Deratisation.tsx";
 import Esod from "./pages/Esod.tsx";
@@ -165,6 +172,13 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
           <Route path="/desinsectisation" element={<Desinsectisation />} />
           <Route path="/taupes" element={<Taupes />} />
           <Route path="/cafards-blattes" element={<CafardsBlattes />} />
+          <Route path="/cafards-blattes-chaumont" element={<CafardsBlattesChaumont />} />
+          <Route path="/cafards-blattes-saint-dizier" element={<CafardsBlattesSaintDizier />} />
+          <Route path="/cafards-blattes-langres" element={<CafardsBlattesLangres />} />
+          <Route path="/cafards-blattes-joinville" element={<CafardsBlattesJoinville />} />
+          <Route path="/cafards-blattes-nogent" element={<CafardsBlattesNogent />} />
+          <Route path="/cafards-blattes-bourbonne-les-bains" element={<CafardsBlattesBourbonneLesBains />} />
+          <Route path="/cafards-blattes-bar-sur-aube" element={<CafardsBlattesBarSurAube />} />
           <Route path="/depigeonnage" element={<Depigeonnisation />} />
           <Route path="/deratisation" element={<Deratisation />} />
           {/* Chaumont — tous les services */}
