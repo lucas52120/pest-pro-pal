@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Désinsectisation à Saint-Dizier (52100) | G&F Nuisibles";
+const TITLE = "Désinsectisation Saint-Dizier 52 - Intervention 24h";
 const DESCRIPTION = "Cafards, punaises de lit ou puces à Saint-Dizier (52100) ? G&F Nuisibles propose un traitement adapté après identification. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/desinsectisation-saint-dizier";
 

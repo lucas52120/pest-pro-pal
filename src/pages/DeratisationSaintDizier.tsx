@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 
-const TITLE = "Dératisation à Saint-Dizier (52100) | G&F Nuisibles";
+const TITLE = "Dératisation Saint-Dizier 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Saint-Dizier (52100) ? G&F Nuisibles adapte le traitement aux logements et locaux professionnels. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/deratisation-saint-dizier";
 
