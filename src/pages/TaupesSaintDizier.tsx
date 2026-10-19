@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
 
-const TITLE = "Taupier à Saint-Dizier (52100) | G&F Nuisibles";
+const TITLE = "Taupier Saint-Dizier 52 - Piégeage Taupes, Devis Gratuit";
 const DESCRIPTION = "Taupinières sur votre pelouse à Saint-Dizier (52100) ? G&F Nuisibles repère les galeries actives et propose un piégeage mécanique. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/taupes-saint-dizier";
 
