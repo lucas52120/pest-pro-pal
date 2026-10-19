@@ -80,7 +80,7 @@ const Hero = () => {
 
           <p className="mb-8 max-w-lg text-lg text-primary-foreground/80">
             Intervention rapide et discrète pour particuliers et professionnels.
-            Dératisation, désinsectisation, guêpes, taupes et dépigeonnage.
+            Dératisation, guêpes et frelons, cafards et blattes, taupes et dépigeonnage.
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row">

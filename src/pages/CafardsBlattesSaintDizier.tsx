@@ -72,21 +72,17 @@ const CafardsBlattesSaintDizier = () => (
 <p>{"Ensuite, réduisez ce qui attire les blattes : fuites d'eau réparées, miettes et graisses nettoyées, poubelles fermées, cartons de livraison sortis rapidement, joints et passages de tuyaux colmatés. Ces gestes accompagnent le traitement mais ne remplacent pas un diagnostic lorsque les insectes sont déjà installés."}</p>
 </> },
         { title: "Votre service cafards et blattes à Saint-Dizier et alentour", content: <>
-<p>Pour découvrir l'ensemble de nos méthodes, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes">{"service cafards et blattes en Haute-Marne"}</Link> et notre page <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/desinsectisation-saint-dizier">{"Désinsectisation à Saint-Dizier"}</Link>. Pour un rendez-vous, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
-<p>Nous intervenons aussi dans les villes voisines : <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-joinville">{"Cafards et blattes à Joinville"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-chaumont">{"Cafards et blattes à Chaumont"}</Link>, ainsi que <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/desinsectisation-wassy">{"Désinsectisation à Wassy"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/desinsectisation-joinville">{"Désinsectisation à Joinville"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/desinsectisation-montier-en-der">{"Désinsectisation à Montier-en-Der"}</Link>. Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour les autres communes desservies.</p>
+<p>Pour découvrir l'ensemble de nos méthodes, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes">{"service cafards et blattes en Haute-Marne"}</Link>. Pour un rendez-vous, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Nous intervenons aussi dans les villes voisines : <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-joinville">{"Cafards et blattes à Joinville"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-chaumont">{"Cafards et blattes à Chaumont"}</Link>. Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour les autres communes desservies.</p>
 </> },
       ]}
       nearbyCities={{ title: "Près de Saint-Dizier : nos pages locales", items: [
 { label: "Cafards et blattes à Joinville", to: "/cafards-blattes-joinville" },
 { label: "Cafards et blattes à Chaumont", to: "/cafards-blattes-chaumont" },
-{ label: "Désinsectisation à Wassy", to: "/desinsectisation-wassy" },
-{ label: "Désinsectisation à Joinville", to: "/desinsectisation-joinville" },
-{ label: "Désinsectisation à Montier-en-Der", to: "/desinsectisation-montier-en-der" },
 ] }}
       faqItems={FAQ_ITEMS}
       relatedLinks={[
         { label: "Cafards & Blattes (52)", to: "/cafards-blattes" },
-        { label: "Désinsectisation à Saint-Dizier", to: "/desinsectisation-saint-dizier" },
         { label: "Dératisation à Saint-Dizier", to: "/deratisation-saint-dizier" },
         { label: "Zone d'intervention", to: "/zone-intervention" },
       ]}

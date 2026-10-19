@@ -96,7 +96,6 @@ const TaupesMontierEnDer = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Montier-en-Der", to: "/deratisation-montier-en-der" },
-          { label: "Désinsectisation à Montier-en-Der", to: "/desinsectisation-montier-en-der" },
           { label: "Guêpes et frelons à Montier-en-Der", to: "/guepes-frelons-montier-en-der" },
           { label: "Dépigeonnisation à Montier-en-Der", to: "/depigeonnisation-montier-en-der" },
         ]}

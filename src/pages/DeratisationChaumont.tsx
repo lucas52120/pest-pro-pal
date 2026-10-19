@@ -51,7 +51,6 @@ const NEARBY: NearbyCity[] = [
 const RELATED = [
   { label: "Guêpes & frelons à Chaumont", to: "/guepes-frelons-chaumont" },
   { label: "Dépigeonnisation à Chaumont", to: "/depigeonnisation-chaumont" },
-  { label: "Désinsectisation à Chaumont", to: "/desinsectisation-chaumont" },
   { label: "Toutes nos prestations dératisation", to: "/deratisation" },
 ];
 

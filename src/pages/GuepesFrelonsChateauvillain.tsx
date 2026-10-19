@@ -95,7 +95,6 @@ const GuepesFrelonsChateauvillain = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Châteauvillain", to: "/deratisation-chateauvillain" },
-          { label: "Désinsectisation à Châteauvillain", to: "/desinsectisation-chateauvillain" },
           { label: "Dépigeonnisation à Châteauvillain", to: "/depigeonnisation-chateauvillain" },
           { label: "Taupier à Châteauvillain", to: "/taupes-chateauvillain" },
         ]}

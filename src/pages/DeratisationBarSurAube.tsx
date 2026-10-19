@@ -95,7 +95,6 @@ const DeratisationBarSurAube = () => {
           { label: "Dératisation à Chaumont", to: "/deratisation-chaumont" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Bar-sur-Aube", to: "/desinsectisation-bar-sur-aube" },
           { label: "Guêpes et frelons à Bar-sur-Aube", to: "/guepes-frelons-bar-sur-aube" },
           { label: "Dépigeonnisation à Bar-sur-Aube", to: "/depigeonnisation-bar-sur-aube" },
           { label: "Taupier à Bar-sur-Aube", to: "/taupes-bar-sur-aube" },

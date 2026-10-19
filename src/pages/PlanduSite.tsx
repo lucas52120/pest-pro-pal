@@ -15,7 +15,6 @@ const MAIN_PAGES: CityLink[] = [
 const GLOBAL_SERVICES: CityLink[] = [
   { label: "Dératisation", to: "/deratisation" },
   { label: "Guêpes & Frelons", to: "/guepes-frelons" },
-  { label: "Désinsectisation", to: "/desinsectisation" },
   { label: "Dépigeonnage (B2B)", to: "/depigeonnage" },
   { label: "Taupes", to: "/taupes" },
   { label: "Régulation ESOD", to: "/regulation-esod" },

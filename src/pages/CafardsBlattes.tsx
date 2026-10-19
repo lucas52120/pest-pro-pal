@@ -95,8 +95,7 @@ const jsonLd = {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Désinsectisation", "item": "https://gf-nuisibles.fr/desinsectisation" },
-        { "@type": "ListItem", "position": 3, "name": "Cafards et blattes", "item": URL },
+        { "@type": "ListItem", "position": 2, "name": "Cafards et blattes", "item": URL },
       ],
     },
     {
@@ -111,18 +110,13 @@ const jsonLd = {
 };
 
 const cityLinks = [
-  { label: "Désinsectisation Chaumont", to: "/desinsectisation-chaumont" },
-  { label: "Désinsectisation Langres", to: "/desinsectisation-langres" },
-  { label: "Désinsectisation Saint-Dizier", to: "/desinsectisation-saint-dizier" },
-  { label: "Désinsectisation Nogent", to: "/desinsectisation-nogent" },
-  { label: "Désinsectisation Joinville", to: "/desinsectisation-joinville" },
-  { label: "Désinsectisation Wassy", to: "/desinsectisation-wassy" },
-  { label: "Désinsectisation Bourbonne-les-Bains", to: "/desinsectisation-bourbonne-les-bains" },
-  { label: "Désinsectisation Bologne", to: "/desinsectisation-bologne" },
-  { label: "Désinsectisation Froncles", to: "/desinsectisation-froncles" },
-  { label: "Désinsectisation Chalindrey", to: "/desinsectisation-chalindrey" },
-  { label: "Désinsectisation Châteauvillain", to: "/desinsectisation-chateauvillain" },
-  { label: "Désinsectisation Montier-en-Der", to: "/desinsectisation-montier-en-der" },
+  { label: "Cafards & Blattes Chaumont", to: "/cafards-blattes-chaumont" },
+  { label: "Cafards & Blattes Langres", to: "/cafards-blattes-langres" },
+  { label: "Cafards & Blattes Saint-Dizier", to: "/cafards-blattes-saint-dizier" },
+  { label: "Cafards & Blattes Nogent", to: "/cafards-blattes-nogent" },
+  { label: "Cafards & Blattes Joinville", to: "/cafards-blattes-joinville" },
+  { label: "Cafards & Blattes Bourbonne-les-Bains", to: "/cafards-blattes-bourbonne-les-bains" },
+  { label: "Cafards & Blattes Bar-sur-Aube", to: "/cafards-blattes-bar-sur-aube" },
 ];
 
 const H2 = ({ children }: { children: React.ReactNode }) => (
@@ -357,9 +351,7 @@ const CafardsBlattes = () => (
           <div>
             <H2>Autres nuisibles traités</H2>
             <p>
-              Les cafards ne sont qu'une partie de notre activité. Découvrez aussi notre service global de{" "}
-              <Link to="/desinsectisation" className="font-semibold text-accent hover:underline">désinsectisation</Link>{" "}
-              (punaises de lit, fourmis, puces), la{" "}
+              Les cafards ne sont qu'une partie de notre activité. Découvrez aussi la{" "}
               <Link to="/deratisation" className="font-semibold text-accent hover:underline">dératisation</Link> contre rats et
               souris, la destruction de{" "}
               <Link to="/guepes-frelons" className="font-semibold text-accent hover:underline">nids de guêpes et frelons</Link>,

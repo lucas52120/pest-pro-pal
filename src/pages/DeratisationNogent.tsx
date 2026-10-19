@@ -95,7 +95,6 @@ const DeratisationNogent = () => {
           { label: "Dératisation à Chalindrey", to: "/deratisation-chalindrey" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Nogent", to: "/desinsectisation-nogent" },
           { label: "Guêpes et frelons à Nogent", to: "/guepes-frelons-nogent" },
           { label: "Dépigeonnisation à Nogent", to: "/depigeonnisation-nogent" },
           { label: "Taupier à Nogent", to: "/taupes-nogent" },

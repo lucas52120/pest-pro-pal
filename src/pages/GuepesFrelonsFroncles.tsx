@@ -96,7 +96,6 @@ const GuepesFrelonsFroncles = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Froncles", to: "/deratisation-froncles" },
-          { label: "Désinsectisation à Froncles", to: "/desinsectisation-froncles" },
           { label: "Dépigeonnisation à Froncles", to: "/depigeonnisation-froncles" },
           { label: "Taupier à Froncles", to: "/taupes-froncles" },
         ]}

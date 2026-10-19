@@ -18,7 +18,7 @@ const SECTEURS = [
   {
     titre: "Aube (10) et Marne (51)",
     texte:
-      "Troyes, Bar-sur-Aube, et Vitry-le-François font partie de notre zone étendue. Nous y assurons principalement la dératisation, la désinsectisation et les chantiers de dépigeonnisation pour les copropriétés, industries et collectivités.",
+      "Troyes, Bar-sur-Aube, et Vitry-le-François font partie de notre zone étendue. Nous y assurons principalement la dératisation et les chantiers de dépigeonnisation pour les copropriétés, industries et collectivités.",
   },
   {
     titre: "Côte-d'Or (21) et Vosges (88)",
@@ -131,7 +131,7 @@ const ZoneIntervention = () => {
               Entreprise de lutte contre les nuisibles basée à Semoutiers-Montsaon (52), G&F Nuisibles
               intervient chaque jour à Chaumont, Langres, Saint-Dizier, Joinville et dans plus de
               {" "}{CITIES.length} villes de Haute-Marne, d'Aube, de Marne, de Côte-d'Or et des Vosges.
-              Dératisation, guêpes et frelons, désinsectisation, taupes et
+              Dératisation, guêpes et frelons, cafards et blattes, taupes et
               dépigeonnisation, 7j/7, week-ends et jours fériés compris.
             </p>
             <a

@@ -95,7 +95,6 @@ const DeratisationNeufchateau = () => {
           { label: "Dératisation à Bologne", to: "/deratisation-bologne" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Neufchâteau", to: "/desinsectisation-neufchateau" },
           { label: "Dépigeonnisation à Neufchâteau", to: "/depigeonnisation-neufchateau" },
         ]}
         faqItems={FAQ_ITEMS}

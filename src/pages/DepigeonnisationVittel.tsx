@@ -95,7 +95,6 @@ const DepigeonnisationVittel = () => {
           { label: "Dépigeonnisation à Chaumont", to: "/depigeonnisation-chaumont" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Vittel", to: "/desinsectisation-vittel" },
           { label: "Dératisation à Vittel", to: "/deratisation-vittel" },
         ]}
         faqItems={FAQ_ITEMS}

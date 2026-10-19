@@ -96,7 +96,6 @@ const TaupesArcEnBarrois = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Arc-en-Barrois", to: "/deratisation-arc-en-barrois" },
-          { label: "Désinsectisation à Arc-en-Barrois", to: "/desinsectisation-arc-en-barrois" },
           { label: "Guêpes et frelons à Arc-en-Barrois", to: "/guepes-frelons-arc-en-barrois" },
           { label: "Dépigeonnisation à Arc-en-Barrois", to: "/depigeonnisation-arc-en-barrois" },
         ]}

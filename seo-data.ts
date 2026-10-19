@@ -88,55 +88,6 @@ export const serviceDefinitionsData: ServiceDefinitionData[] = [
     },
   },
 
-  /* ═══ DÉSINSECTISATION ═══ */
-  {
-    slug: "desinsectisation",
-    title: "Désinsectisation",
-    getContent: (city: string, department: string, variation = 0) => {
-      const v = variation % 4;
-      const dp = deptSeoPrep(department);
-
-      const metaDescriptions = [
-        `Traitement punaises de lit et blattes à ${city} ${dp}. G&F Nuisibles : intervention rapide 7j/7, devis gratuit, expertise certifiée.`,
-        `Invasion d'insectes à ${city} ? G&F Nuisibles, votre expert en désinsectisation ${dp}. Diagnostic gratuit, discrétion totale, solutions durables.`,
-        `Extermination d'insectes rampants à ${city} ${dp}. Contactez G&F Nuisibles pour une intervention rapide. Expertise certifiée, devis sans engagement.`,
-        `Traitement professionnel punaises de lit et cafards à ${city} ${dp}. G&F Nuisibles intervient sous 24h. Devis gratuit, discrétion assurée.`,
-      ];
-
-      const intros = [
-        `Une infestation d'insectes à ${city} exige une réponse rapide et professionnelle. G&F Nuisibles, expert en désinsectisation en ${department}, élimine cafards, punaises de lit, blattes et autres parasites. Ces envahisseurs se reproduisent à grande vitesse et constituent un risque sanitaire majeur pour votre foyer ou vos locaux à ${city}. Notre diagnostic précis permet un traitement ciblé et efficace.`,
-        `La présence d'insectes indésirables dans votre logement ou commerce à ${city} compromet votre hygiène et votre tranquillité. G&F Nuisibles en ${department} met en œuvre des solutions d'éradication professionnelles contre les cafards, blattes, punaises de lit et autres parasites. Nos techniciens certifiés assurent une suppression complète et durable à ${city}.`,
-        `G&F Nuisibles à ${city} vous protège contre les invasions d'insectes nuisibles en ${department}. Que vous soyez confronté à des cafards, des punaises de lit ou des blattes, nos traitements professionnels garantissent une élimination définitive. Notre expertise terrain à ${city} nous permet d'identifier rapidement le type d'infestation et d'appliquer le protocole le plus adapté.`,
-        `À ${city}, en ${department}, les infestations d'insectes peuvent survenir à tout moment de l'année. G&F Nuisibles vous apporte une assistance technique spécialisée pour neutraliser cafards, punaises de lit, blattes et autres nuisibles. Notre approche combine diagnostic approfondi et traitements professionnels homologués pour une élimination totale à ${city}.`,
-      ];
-
-      const expertises = [
-        `À ${city} en ${department}, nos techniciens certifiés utilisent des traitements adaptés à chaque type d'insecte. Nos solutions sont efficaces, durables et respectueuses de votre santé. Nous intervenons chez les particuliers comme chez les professionnels (hôtels, restaurants, collectivités). G&F Nuisibles garantit une discrétion totale lors de ses interventions à ${city}.`,
-        `G&F Nuisibles déploie à ${city} des protocoles de désinsectisation conformes aux normes Certibiocide. En ${department}, nos techniciens maîtrisent les techniques de gel, pulvérisation et nébulisation pour une éradication complète. Chaque traitement est adapté à l'espèce identifiée et à l'environnement traité : habitation, restaurant, hôtel ou collectivité.`,
-        `Notre expertise en ${department} nous permet d'intervenir à ${city} sur tous types d'infestations. Nous utilisons des biocides professionnels de dernière génération, sans danger pour les occupants et les animaux domestiques. G&F Nuisibles assure un suivi rigoureux après chaque opération pour garantir l'absence de récidive.`,
-        `Les techniciens G&F Nuisibles à ${city} sont formés aux dernières méthodes d'élimination des insectes nuisibles. En ${department}, nous adaptons chaque traitement à la configuration des lieux et au degré d'infestation. Notre approche respecte les normes sanitaires les plus strictes tout en assurant une suppression définitive des parasites.`,
-      ];
-
-      const methods = [
-        `Inspection approfondie de vos locaux à ${city} pour identifier l'espèce et les zones infestées. Application de traitements ciblés (gel, pulvérisation, nébulisation) avec un suivi post-traitement assuré pour garantir l'élimination complète. Nous vous accompagnons avec des conseils de prévention adaptés en ${department}.`,
-        `Notre protocole à ${city} démarre par un diagnostic complet de l'infestation. Nous appliquons ensuite un traitement professionnel adapté : gel appât pour les cafards, traitement thermique ou chimique pour les punaises de lit. Un contrôle de vérification est programmé pour valider la suppression totale en ${department}.`,
-        `Le passage de nos techniciens à ${city} comprend : identification précise des espèces présentes, cartographie des foyers d'infestation, application de biocides professionnels ciblés, puis suivi à 15 et 30 jours. Cette méthode garantit un taux de réussite optimal en ${department}.`,
-        `À ${city}, G&F Nuisibles procède en trois phases : diagnostic terrain, traitement professionnel multi-technique et suivi de contrôle. Nos interventions en ${department} s'accompagnent systématiquement de recommandations personnalisées pour prévenir toute réinfestation future.`,
-      ];
-
-      return {
-        metaDescription: metaDescriptions[v],
-        seoTitle: `Désinsectisation à ${city} ${dp} | G&F Nuisibles`,
-        serviceCallTitle: `VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION D'INSECTES NUISIBLES ?`,
-        serviceCallSubtitle: `CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉSINSECTISATION DU CÔTÉ DE ${city.toUpperCase()} !`,
-        intro: intros[v],
-        expertise: expertises[v],
-        method: methods[v],
-        cta: `Appelez G&F Nuisibles au 07.65.25.67.92 pour un traitement professionnel à ${city} en ${department}. Discrétion totale, véhicules non logotés sur demande.`,
-      };
-    },
-  },
-
   /* ═══ DÉRATISATION ═══ */
   {
     slug: "deratisation",
@@ -334,7 +285,7 @@ export const serviceDefinitionsData: ServiceDefinitionData[] = [
   },
 ];
 
-export const ALL_SERVICES = ["guepes-frelons", "desinsectisation", "deratisation", "depigeonnisation", "elimination-pigeons", "taupes"];
+export const ALL_SERVICES = ["guepes-frelons", "deratisation", "depigeonnisation", "elimination-pigeons", "taupes"];
 
 export interface CityData {
   name: string;
@@ -363,12 +314,12 @@ export const cities: CityData[] = [
   { name: "Semoutiers-Montsaon", slug: "semoutiers-montsaon", department: "Haute-Marne (52)", services: ALL_SERVICES, variation: 2 },
 
   // Marne (51)
-  { name: "Vitry-le-François", slug: "vitry-le-francois", department: "Marne (51)", services: ["depigeonnisation", "desinsectisation", "elimination-pigeons"], variation: 2 },
+  { name: "Vitry-le-François", slug: "vitry-le-francois", department: "Marne (51)", services: ["depigeonnisation", "elimination-pigeons"], variation: 2 },
   { name: "Châlons-en-Champagne", slug: "chalons-en-champagne", department: "Marne (51)", services: ["depigeonnisation", "elimination-pigeons", "deratisation"], variation: 3 },
 
   // Vosges (88)
-  { name: "Vittel", slug: "vittel", department: "Vosges (88)", services: ["depigeonnisation", "desinsectisation", "elimination-pigeons", "deratisation"], variation: 0 },
-  { name: "Neufchâteau", slug: "neufchateau", department: "Vosges (88)", services: ["depigeonnisation", "desinsectisation", "elimination-pigeons", "deratisation"], variation: 1 },
+  { name: "Vittel", slug: "vittel", department: "Vosges (88)", services: ["depigeonnisation", "elimination-pigeons", "deratisation"], variation: 0 },
+  { name: "Neufchâteau", slug: "neufchateau", department: "Vosges (88)", services: ["depigeonnisation", "elimination-pigeons", "deratisation"], variation: 1 },
 
   // Aube (10)
   { name: "Troyes", slug: "troyes", department: "Aube (10)", services: ["depigeonnisation", "elimination-pigeons", "deratisation"], variation: 2 },

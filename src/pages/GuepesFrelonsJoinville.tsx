@@ -96,7 +96,6 @@ const GuepesFrelonsJoinville = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Joinville", to: "/deratisation-joinville" },
-          { label: "Désinsectisation à Joinville", to: "/desinsectisation-joinville" },
           { label: "Dépigeonnisation à Joinville", to: "/depigeonnisation-joinville" },
           { label: "Taupier à Joinville", to: "/taupes-joinville" },
         ]}

@@ -72,21 +72,18 @@ const CafardsBlattesLangres = () => (
 <p>{"Ensuite, réduisez ce qui attire les blattes : fuites d'eau réparées, miettes et graisses nettoyées, poubelles fermées, cartons de livraison sortis rapidement, joints et passages de tuyaux colmatés. Ces gestes accompagnent le traitement mais ne remplacent pas un diagnostic lorsque les insectes sont déjà installés."}</p>
 </> },
         { title: "Votre service cafards et blattes à Langres et alentour", content: <>
-<p>Pour découvrir l'ensemble de nos méthodes, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes">{"service cafards et blattes en Haute-Marne"}</Link> et notre page <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/desinsectisation-langres">{"Désinsectisation à Langres"}</Link>. Pour un rendez-vous, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
-<p>Nous intervenons aussi dans les villes voisines : <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-nogent">{"Cafards et blattes à Nogent"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-chaumont">{"Cafards et blattes à Chaumont"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-bourbonne-les-bains">{"Cafards et blattes à Bourbonne-les-Bains"}</Link>, ainsi que <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/desinsectisation-nogent">{"Désinsectisation à Nogent"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/desinsectisation-chalindrey">{"Désinsectisation à Chalindrey"}</Link>. Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour les autres communes desservies.</p>
+<p>Pour découvrir l'ensemble de nos méthodes, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes">{"service cafards et blattes en Haute-Marne"}</Link>. Pour un rendez-vous, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Nous intervenons aussi dans les villes voisines : <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-nogent">{"Cafards et blattes à Nogent"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-chaumont">{"Cafards et blattes à Chaumont"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-bourbonne-les-bains">{"Cafards et blattes à Bourbonne-les-Bains"}</Link>. Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour les autres communes desservies.</p>
 </> },
       ]}
       nearbyCities={{ title: "Près de Langres : nos pages locales", items: [
 { label: "Cafards et blattes à Nogent", to: "/cafards-blattes-nogent" },
 { label: "Cafards et blattes à Chaumont", to: "/cafards-blattes-chaumont" },
 { label: "Cafards et blattes à Bourbonne-les-Bains", to: "/cafards-blattes-bourbonne-les-bains" },
-{ label: "Désinsectisation à Nogent", to: "/desinsectisation-nogent" },
-{ label: "Désinsectisation à Chalindrey", to: "/desinsectisation-chalindrey" },
 ] }}
       faqItems={FAQ_ITEMS}
       relatedLinks={[
         { label: "Cafards & Blattes (52)", to: "/cafards-blattes" },
-        { label: "Désinsectisation à Langres", to: "/desinsectisation-langres" },
         { label: "Dératisation à Langres", to: "/deratisation-langres" },
         { label: "Zone d'intervention", to: "/zone-intervention" },
       ]}

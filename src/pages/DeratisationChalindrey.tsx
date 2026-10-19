@@ -94,7 +94,6 @@ const DeratisationChalindrey = () => {
           { label: "Dératisation à Bourbonne-les-Bains", to: "/deratisation-bourbonne-les-bains" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Chalindrey", to: "/desinsectisation-chalindrey" },
           { label: "Guêpes et frelons à Chalindrey", to: "/guepes-frelons-chalindrey" },
           { label: "Dépigeonnisation à Chalindrey", to: "/depigeonnisation-chalindrey" },
           { label: "Taupier à Chalindrey", to: "/taupes-chalindrey" },

@@ -95,7 +95,6 @@ const DepigeonnisationVitryLeFrancois = () => {
           { label: "Dépigeonnisation à Montier-en-Der", to: "/depigeonnisation-montier-en-der" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Vitry-le-François", to: "/desinsectisation-vitry-le-francois" },
         ]}
         faqItems={FAQ_ITEMS}
         cta={"Dépigeonnisation à Vitry-le-François : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
