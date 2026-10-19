@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem, CityReview, NearbyCity } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 
-const TITLE = "Dératisation à Chaumont (52000) : rats et souris | G&F Nuisibles";
+const TITLE = "Dératisation Chaumont 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Chaumont (52000) ? G&F Nuisibles recherche les accès et adapte le traitement aux logements et commerces. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/deratisation-chaumont";
 

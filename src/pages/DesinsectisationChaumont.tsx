@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Désinsectisation à Chaumont (52000) | G&F Nuisibles";
+const TITLE = "Désinsectisation Chaumont 52 - Intervention 24h";
 const DESCRIPTION = "Cafards, punaises de lit ou puces à Chaumont (52000) ? G&F Nuisibles adapte le traitement à votre logement ou commerce. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/desinsectisation-chaumont";
 
