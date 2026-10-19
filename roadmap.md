@@ -1,4 +1,8 @@
 # Pages de services de Langres
+## Suppression Désinsectisation
+- [ ] Retirer le service, ses pages et ses liens ; conserver Cafards & Blattes et rediriger les anciennes adresses.
+- [ ] Vérifier les menus, les liens et le plan du site après suppression.
+
 
 - [x] Enrichir Désinsectisation, Guêpes & Frelons, Dépigeonnisation et Taupes avec du contenu local propre à chaque service.
 - [x] Ajouter les liens vers le service principal, Nogent et Chalindrey et vérifier les informations de référencement.
