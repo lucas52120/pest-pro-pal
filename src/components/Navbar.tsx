@@ -1,22 +1,27 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo-gf-new.svg";
 
-const navItems = [
-  { label: "Accueil", path: "/" },
+const serviceItems = [
+  { label: "Dératisation", path: "/deratisation" },
   { label: "Guêpes & Frelons", path: "/guepes-frelons" },
-  { label: "Désinsectisation", path: "/desinsectisation" },
   { label: "Cafards & Blattes", path: "/cafards-blattes" },
   { label: "Taupes", path: "/taupes" },
   { label: "Dépigeonnage", path: "/depigeonnage" },
-  { label: "Dératisation", path: "/deratisation" },
+];
+
+const navItems = [
+  { label: "Accueil", path: "/" },
+  { label: "Désinsectisation", path: "/desinsectisation" },
   { label: "À propos", path: "/a-propos" },
   { label: "Contact", path: "/contact" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
@@ -28,8 +33,13 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false);
+    setServicesOpen(false);
+    setMobileServicesOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname]);
+
+  const servicePaths = serviceItems.map((s) => s.path);
+  const isServiceActive = servicePaths.includes(location.pathname);
 
   return (
     <nav
@@ -49,19 +59,73 @@ const Navbar = () => {
 
         {/* Desktop nav — centered */}
         <div className="hidden flex-1 items-center justify-center gap-6 xl:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`font-heading text-[1.1rem] font-medium transition-colors hover:text-accent ${
-                location.pathname === item.path
-                  ? "text-accent"
-                  : "text-primary-foreground/80"
+          <Link
+            to="/"
+            className={`font-heading text-[1.1rem] font-medium transition-colors hover:text-accent ${
+              location.pathname === "/" ? "text-accent" : "text-primary-foreground/80"
+            }`}
+          >
+            Accueil
+          </Link>
+
+          {/* Services dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              onClick={() => setServicesOpen(!servicesOpen)}
+              aria-expanded={servicesOpen}
+              aria-haspopup="true"
+              className={`flex items-center gap-1 font-heading text-[1.1rem] font-medium transition-colors hover:text-accent ${
+                isServiceActive || servicesOpen ? "text-accent" : "text-primary-foreground/80"
               }`}
             >
-              {item.label}
-            </Link>
-          ))}
+              Nos services
+              <ChevronDown
+                className={`h-4 w-4 transition-transform duration-200 ${
+                  servicesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {servicesOpen && (
+              <div className="absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-2">
+                <div className="overflow-hidden rounded-lg border border-primary-foreground/10 bg-primary shadow-xl">
+                  {serviceItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className={`block px-5 py-3 font-heading text-sm font-medium transition-colors hover:bg-primary-foreground/10 hover:text-accent ${
+                        location.pathname === item.path
+                          ? "bg-primary-foreground/10 text-accent"
+                          : "text-primary-foreground/80"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {navItems
+            .filter((item) => item.path !== "/")
+            .map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`font-heading text-[1.1rem] font-medium transition-colors hover:text-accent ${
+                  location.pathname === item.path
+                    ? "text-accent"
+                    : "text-primary-foreground/80"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
         </div>
 
         {/* Phone CTA — flush right */}
@@ -76,6 +140,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
           className="text-primary-foreground xl:hidden"
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -86,19 +151,67 @@ const Navbar = () => {
       {isOpen && (
         <div className="border-t border-primary-foreground/10 bg-primary xl:hidden">
           <div className="flex flex-col gap-1 px-4 py-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`rounded-md px-3 py-2 font-heading text-sm font-medium transition-colors ${
-                  location.pathname === item.path
-                    ? "bg-accent text-accent-foreground"
-                    : "text-primary-foreground/80 hover:bg-primary-foreground/10"
+            <Link
+              to="/"
+              className={`rounded-md px-3 py-2 font-heading text-sm font-medium transition-colors ${
+                location.pathname === "/"
+                  ? "bg-accent text-accent-foreground"
+                  : "text-primary-foreground/80 hover:bg-primary-foreground/10"
+              }`}
+            >
+              Accueil
+            </Link>
+
+            {/* Mobile services group */}
+            <button
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              aria-expanded={mobileServicesOpen}
+              className={`flex items-center justify-between rounded-md px-3 py-2 font-heading text-sm font-medium transition-colors ${
+                isServiceActive
+                  ? "bg-accent text-accent-foreground"
+                  : "text-primary-foreground/80 hover:bg-primary-foreground/10"
+              }`}
+            >
+              Nos services
+              <ChevronDown
+                className={`h-4 w-4 transition-transform duration-200 ${
+                  mobileServicesOpen ? "rotate-180" : ""
                 }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+              />
+            </button>
+            {mobileServicesOpen && (
+              <div className="ml-4 flex flex-col gap-1 border-l border-primary-foreground/15 pl-3">
+                {serviceItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`rounded-md px-3 py-2 text-sm transition-colors ${
+                      location.pathname === item.path
+                        ? "bg-accent text-accent-foreground"
+                        : "text-primary-foreground/80 hover:bg-primary-foreground/10"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            {navItems
+              .filter((item) => item.path !== "/")
+              .map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`rounded-md px-3 py-2 font-heading text-sm font-medium transition-colors ${
+                    location.pathname === item.path
+                      ? "bg-accent text-accent-foreground"
+                      : "text-primary-foreground/80 hover:bg-primary-foreground/10"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
             <a
               href="tel:0765256792"
               className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-3 font-heading text-sm font-bold text-accent-foreground"
