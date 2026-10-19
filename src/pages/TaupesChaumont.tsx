@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
 
-const TITLE = "Taupier à Chaumont (52000) : lutte contre les taupes | G&F Nuisibles";
+const TITLE = "Taupier Chaumont 52 - Piégeage Taupes, Devis Gratuit";
 const DESCRIPTION = "Taupinières dans votre jardin à Chaumont (52000) ou Brottes ? G&F Nuisibles repère les galeries actives et propose un piégeage mécanique sur devis gratuit.";
 const URL = "https://gf-nuisibles.fr/taupes-chaumont";
 
