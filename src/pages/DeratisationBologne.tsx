@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 
-const TITLE = "Dératisation à Bologne (52310) : rats et souris | G&F Nuisibles";
+const TITLE = "Dératisation Bologne 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Bologne (52310) ? G&F Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/deratisation-bologne";
 

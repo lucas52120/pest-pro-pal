@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
-const TITLE = "Dépigeonnisation à Joinville (52300) : balcons et toitures | G&F Nuisibles";
+const TITLE = "Dépigeonnisation Joinville 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Joinville (52300) ? G&F Nuisibles étudie les supports et propose des protections adaptées. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-joinville";
 

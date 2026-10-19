@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Guêpes et frelons à Wassy (52130) : nid détecté | G&F Nuisibles";
+const TITLE = "Destruction nid Guêpes & Frelons Wassy 52 - Intervention 24h";
 const DESCRIPTION = "Nid de guêpes ou de frelons à Wassy (52130) ? G&F Nuisibles sécurise le site et retire le nid. Intervention selon disponibilité, devis gratuit.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-wassy";
 

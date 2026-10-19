@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 
-const TITLE = "Dératisation à Vittel (88800) : rats et souris | G&F Nuisibles";
+const TITLE = "Dératisation Vittel 88 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Vittel (88800) ? G&F Nuisibles recherche les accès, adapte le traitement et conseille la prévention dans la station thermale. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/deratisation-vittel";
 

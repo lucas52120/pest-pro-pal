@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 
-const TITLE = "Dératisation à Semoutiers-Montsaon (52000) : rats et souris | G&F Nuisibles";
+const TITLE = "Dératisation Semoutiers-Montsaon 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Semoutiers-Montsaon (52000) ? G&F Nuisibles, implanté sur la commune, recherche les accès et adapte le traitement. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/deratisation-semoutiers-montsaon";
 

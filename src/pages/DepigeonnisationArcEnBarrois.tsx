@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
-const TITLE = "Dépigeonnisation à Arc-en-Barrois (52210) : protection des bâtiments | G&F Nuisibles";
+const TITLE = "Dépigeonnisation Arc-en-Barrois 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons sur une toiture ou une corniche à Arc-en-Barrois (52210) ? G&F Nuisibles étudie les protections adaptées au bâtiment. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-arc-en-barrois";
 

@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
 
-const TITLE = "Taupier à Arc-en-Barrois (52210) : taupes et galeries actives | G&F Nuisibles";
+const TITLE = "Taupier Arc-en-Barrois 52 - Piégeage Taupes, Devis Gratuit";
 const DESCRIPTION = "Taupinières dans votre jardin à Arc-en-Barrois (52210) ? G&F Nuisibles repère les galeries actives et propose un piégeage adapté. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/taupes-arc-en-barrois";
 

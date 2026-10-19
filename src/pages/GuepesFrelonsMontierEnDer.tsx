@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Nid de guêpes et frelons à Montier-en-Der (52220) | G&F Nuisibles";
+const TITLE = "Destruction nid Guêpes & Frelons Montier-en-Der 52 - Intervention 24h";
 const DESCRIPTION = "Nid de guêpes ou de frelons à Montier-en-Der (52220) ? G&F Nuisibles évalue l’accès et propose une intervention adaptée. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-montier-en-der";
 

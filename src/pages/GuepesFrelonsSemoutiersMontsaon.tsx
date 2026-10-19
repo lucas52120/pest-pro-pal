@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Nid de guêpes ou de frelons à Semoutiers-Montsaon (52000) | G&F Nuisibles";
+const TITLE = "Destruction nid Guêpes & Frelons Semoutiers-Montsaon 52 - Intervention 24h";
 const DESCRIPTION = "Nid de guêpes ou de frelons à Semoutiers-Montsaon (52000) ? G&F Nuisibles, implanté sur la commune, localise et traite le nid en sécurité. Devis gratuit.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-semoutiers-montsaon";
 

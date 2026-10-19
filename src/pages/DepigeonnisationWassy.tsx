@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
-const TITLE = "Dépigeonnisation à Wassy (52130) : façades et toitures | G&F Nuisibles";
+const TITLE = "Dépigeonnisation Wassy 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons à Wassy (52130) ? G&F Nuisibles étudie vos façades et toitures et propose des solutions anti-pigeons non létales adaptées. Diagnostic et devis gratuits en Haute-Marne.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-wassy";
 

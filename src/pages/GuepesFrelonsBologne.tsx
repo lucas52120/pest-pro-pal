@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Nid de guêpes et frelons à Bologne (52310) | G&F Nuisibles";
+const TITLE = "Destruction nid Guêpes & Frelons Bologne 52 - Intervention 24h";
 const DESCRIPTION = "Nid de guêpes ou de frelons à Bologne (52310) ? G&F Nuisibles évalue l'accès et propose une intervention adaptée. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-bologne";
 

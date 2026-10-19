@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 
-const TITLE = "Dératisation à Langres (52200) : rats et souris | G&F Nuisibles";
+const TITLE = "Dératisation Langres 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Langres (52200) ? G&F Nuisibles intervient dans le centre historique, les quartiers et les environs. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/deratisation-langres";
 

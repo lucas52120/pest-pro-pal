@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Nid de guêpes et frelons à Nogent (52800) | G&F Nuisibles";
+const TITLE = "Destruction nid Guêpes & Frelons Nogent 52 - Intervention 24h";
 const DESCRIPTION = "Nid de guêpes ou de frelons à Nogent (52800) ? G&F Nuisibles évalue son accès et organise un traitement adapté. Appelez pour un diagnostic et un devis gratuits.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-nogent";
 

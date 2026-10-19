@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Désinsectisation à Wassy (52130) : cafards, punaises | G&F Nuisibles";
+const TITLE = "Désinsectisation Wassy 52 - Intervention 24h";
 const DESCRIPTION = "Cafards, punaises de lit ou fourmis à Wassy (52130) ? G&F Nuisibles identifie l'espèce et adapte le traitement. Diagnostic et devis gratuits en Haute-Marne.";
 const URL = "https://gf-nuisibles.fr/desinsectisation-wassy";
 

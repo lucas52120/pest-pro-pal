@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 
-const TITLE = "Dératisation à Nogent (52800) : rats et souris | G&F Nuisibles";
+const TITLE = "Dératisation Nogent 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Nogent (52800) ? G&F Nuisibles recherche les accès et propose une dératisation adaptée aux logements et locaux. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/deratisation-nogent";
 

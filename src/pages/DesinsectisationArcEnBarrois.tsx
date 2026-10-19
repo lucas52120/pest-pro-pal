@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Désinsectisation à Arc-en-Barrois (52210) : cafards et punaises | G&F Nuisibles";
+const TITLE = "Désinsectisation Arc-en-Barrois 52 - Intervention 24h";
 const DESCRIPTION = "Cafards, punaises de lit ou puces à Arc-en-Barrois (52210) ? G&F Nuisibles identifie les insectes et adapte le traitement. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/desinsectisation-arc-en-barrois";
 

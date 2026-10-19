@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Désinsectisation à Neufchâteau (88300) : cafards et punaises | G&F Nuisibles";
+const TITLE = "Désinsectisation Neufchâteau 88 - Intervention 24h";
 const DESCRIPTION = "Cafards, punaises de lit ou puces à Neufchâteau (88300) ? G&F Nuisibles identifie les insectes et adapte le traitement. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/desinsectisation-neufchateau";
 
