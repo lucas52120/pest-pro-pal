@@ -50,5 +50,5 @@
 
 # Titres des autres villes
 
-- [ ] Appliquer les six formats validés à toutes les autres pages locales avec le bon département, sans changer les descriptions ni les textes.
-- [ ] Vérifier les titres et les informations de partage des pages locales dans le navigateur.
+- [x] Appliquer les six formats validés aux 84 autres pages locales avec le bon département, sans changer les descriptions ni les textes.
+- [x] Vérifier les 84 titres et les informations de partage propres aux pages dans le navigateur, ainsi que les descriptions et adresses canoniques conservées.
