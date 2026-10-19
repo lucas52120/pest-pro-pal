@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
-const TITLE = "Dépigeonnisation à Chaumont (52000) | G&F Nuisibles";
+const TITLE = "Dépigeonnisation Chaumont 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons sur un balcon, une toiture ou un entrepôt à Chaumont (52000) ? G&F Nuisibles propose des protections adaptées et un devis après diagnostic gratuit.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-chaumont";
 
