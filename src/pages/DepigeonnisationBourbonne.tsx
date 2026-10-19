@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
-const TITLE = "Dépigeonnisation à Bourbonne-les-Bains (52400) : protection des bâtiments | G&F Nuisibles";
+const TITLE = "Dépigeonnisation Bourbonne-les-Bains 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Bourbonne-les-Bains (52400) ? G&F Nuisibles étudie les protections adaptées au bâtiment. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-bourbonne-les-bains";
 

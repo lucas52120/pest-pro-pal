@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
-const TITLE = "Dépigeonnisation à Semoutiers-Montsaon (52000) : façades et granges | G&F Nuisibles";
+const TITLE = "Dépigeonnisation Semoutiers-Montsaon 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons à Semoutiers-Montsaon (52000) ? G&F Nuisibles, implanté sur la commune, propose des solutions anti-pigeons non létales. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-semoutiers-montsaon";
 

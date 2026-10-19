@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 
-const TITLE = "Dératisation à Montier-en-Der (52220) : rats et souris | G&F Nuisibles";
+const TITLE = "Dératisation Montier-en-Der 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Montier-en-Der (52220) ? G&F Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/deratisation-montier-en-der";
 

@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Désinsectisation à Vittel (88800) : cafards, punaises | G&F Nuisibles";
+const TITLE = "Désinsectisation Vittel 88 - Intervention 24h";
 const DESCRIPTION = "Cafards, punaises de lit ou fourmis à Vittel (88800) ? G&F Nuisibles identifie l'espèce et adapte le traitement dans la station thermale. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/desinsectisation-vittel";
 

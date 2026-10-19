@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Désinsectisation à Semoutiers-Montsaon (52000) : cafards, punaises | G&F Nuisibles";
+const TITLE = "Désinsectisation Semoutiers-Montsaon 52 - Intervention 24h";
 const DESCRIPTION = "Cafards, punaises de lit ou autres insectes à Semoutiers-Montsaon (52000) ? G&F Nuisibles, implanté sur la commune, adapte le traitement à chaque espèce. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/desinsectisation-semoutiers-montsaon";
 

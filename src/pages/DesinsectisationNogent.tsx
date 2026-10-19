@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Désinsectisation à Nogent (52800) : cafards et punaises | G&F Nuisibles";
+const TITLE = "Désinsectisation Nogent 52 - Intervention 24h";
 const DESCRIPTION = "Cafards, punaises de lit ou puces à Nogent (52800) ? G&F Nuisibles identifie les insectes et adapte le traitement à votre logement. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/desinsectisation-nogent";
 

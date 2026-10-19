@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
-const TITLE = "Dépigeonnisation à Nogent (52800) : protéger les bâtiments | G&F Nuisibles";
+const TITLE = "Dépigeonnisation Nogent 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Nogent (52800) ? G&F Nuisibles étudie les accès et propose des protections anti-pigeons. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-nogent";
 

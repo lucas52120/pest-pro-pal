@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Désinsectisation à Bar-sur-Aube (10200) : cafards et punaises | G&F Nuisibles";
+const TITLE = "Désinsectisation Bar-sur-Aube 10 - Intervention 24h";
 const DESCRIPTION = "Cafards, punaises de lit ou puces à Bar-sur-Aube (10200) ? G&F Nuisibles identifie les insectes et adapte le traitement. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/desinsectisation-bar-sur-aube";
 

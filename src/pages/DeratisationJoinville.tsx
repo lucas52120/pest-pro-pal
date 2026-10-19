@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 
-const TITLE = "Dératisation à Joinville (52300) : rats et souris | G&F Nuisibles";
+const TITLE = "Dératisation Joinville 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Joinville (52300) ? G&F Nuisibles recherche les accès et adapte la dératisation aux logements et commerces. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/deratisation-joinville";
 

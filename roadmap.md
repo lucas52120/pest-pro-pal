@@ -47,3 +47,8 @@
 
 - [x] Créer les pages Chaumont, Saint-Dizier, Langres, Joinville, Nogent, Bourbonne-les-Bains et Bar-sur-Aube.
 - [x] Ajouter au plan du site et vérifier dans le navigateur.
+
+# Titres des autres villes
+
+- [x] Appliquer les six formats validés aux 84 autres pages locales avec le bon département, sans changer les descriptions ni les textes.
+- [x] Vérifier les 84 titres et les informations de partage propres aux pages dans le navigateur, ainsi que les descriptions et adresses canoniques conservées.

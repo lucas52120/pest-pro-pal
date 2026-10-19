@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Désinsectisation à Langres (52200) | G&F Nuisibles";
+const TITLE = "Désinsectisation Langres 52 - Intervention 24h";
 const DESCRIPTION = "Cafards, punaises de lit ou puces à Langres (52200) ? G&F Nuisibles propose un diagnostic et un devis gratuits pour un traitement adapté à votre logement.";
 const URL = "https://gf-nuisibles.fr/desinsectisation-langres";
 

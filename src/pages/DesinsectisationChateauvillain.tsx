@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Désinsectisation à Châteauvillain (52120) : cafards et punaises | G&F Nuisibles";
+const TITLE = "Désinsectisation Châteauvillain 52 - Intervention 24h";
 const DESCRIPTION = "Cafards, punaises de lit ou puces à Châteauvillain (52120) ? G&F Nuisibles identifie les insectes et adapte le traitement. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/desinsectisation-chateauvillain";
 

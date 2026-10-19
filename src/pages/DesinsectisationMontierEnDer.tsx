@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Désinsectisation à Montier-en-Der (52220) : cafards et punaises | G&F Nuisibles";
+const TITLE = "Désinsectisation Montier-en-Der 52 - Intervention 24h";
 const DESCRIPTION = "Cafards, punaises de lit ou puces à Montier-en-Der (52220) ? G&F Nuisibles identifie les insectes et adapte le traitement. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/desinsectisation-montier-en-der";
 

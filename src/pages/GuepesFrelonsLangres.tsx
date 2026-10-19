@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Nids de guêpes et frelons à Langres (52200) | G&F Nuisibles";
+const TITLE = "Destruction nid Guêpes & Frelons Langres 52 - Intervention 24h";
 const DESCRIPTION = "Nid de guêpes ou de frelons à Langres (52200) ? G&F Nuisibles évalue les accès et propose un traitement adapté. Diagnostic et devis gratuits en Haute-Marne.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-langres";
 

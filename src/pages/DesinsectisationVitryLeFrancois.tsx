@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Désinsectisation à Vitry-le-François (51300) : cafards, punaises | G&F Nuisibles";
+const TITLE = "Désinsectisation Vitry-le-François 51 - Intervention 24h";
 const DESCRIPTION = "Cafards, punaises de lit ou fourmis à Vitry-le-François (51300) ? G&F Nuisibles identifie l'espèce et adapte le traitement. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/desinsectisation-vitry-le-francois";
 

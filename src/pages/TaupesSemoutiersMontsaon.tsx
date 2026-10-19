@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
 
-const TITLE = "Taupier à Semoutiers-Montsaon (52000) : piégeage de taupes | G&F Nuisibles";
+const TITLE = "Taupier Semoutiers-Montsaon 52 - Piégeage Taupes, Devis Gratuit";
 const DESCRIPTION = "Taupinières dans votre jardin ou votre terrain à Semoutiers-Montsaon (52000) ? G&F Nuisibles, implanté sur la commune, pratique le piégeage mécanique. Devis gratuit.";
 const URL = "https://gf-nuisibles.fr/taupes-semoutiers-montsaon";
 

@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Nid de guêpes et frelons à Joinville (52300) | G&F Nuisibles";
+const TITLE = "Destruction nid Guêpes & Frelons Joinville 52 - Intervention 24h";
 const DESCRIPTION = "Nid de guêpes ou de frelons à Joinville (52300) ? G&F Nuisibles évalue son emplacement et les accès pour un traitement adapté. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-joinville";
 

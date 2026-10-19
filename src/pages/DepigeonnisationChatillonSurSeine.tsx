@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
-const TITLE = "Dépigeonnisation à Châtillon-sur-Seine (21400) : protection des bâtiments | G&F Nuisibles";
+const TITLE = "Dépigeonnisation Châtillon-sur-Seine 21 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Châtillon-sur-Seine (21400) ? G&F Nuisibles étudie les protections adaptées au bâtiment. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-chatillon-sur-seine";
 

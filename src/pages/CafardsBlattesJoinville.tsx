@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 
-const TITLE = "Cafards et Blattes à Joinville (52300) | G&F Nuisibles";
+const TITLE = "Traitement Cafards & Blattes Joinville 52 - Devis gratuit";
 const DESCRIPTION = "Cafards ou blattes à Joinville (52300) ? G&F Nuisibles traite logements, commerces et restaurants : diagnostic et devis gratuits, intervention discrète. 07.65.25.67.92";
 const URL = "https://gf-nuisibles.fr/cafards-blattes-joinville";
 

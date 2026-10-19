@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 
-const TITLE = "Dératisation à Wassy (52130) : rats et souris | G&F Nuisibles";
+const TITLE = "Dératisation Wassy 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Wassy (52130) ? G&F Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits en Haute-Marne.";
 const URL = "https://gf-nuisibles.fr/deratisation-wassy";
 

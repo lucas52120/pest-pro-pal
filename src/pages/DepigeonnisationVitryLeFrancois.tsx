@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 
-const TITLE = "Dépigeonnisation à Vitry-le-François (51300) : façades et toitures | G&F Nuisibles";
+const TITLE = "Dépigeonnisation Vitry-le-François 51 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons à Vitry-le-François (51300) ? G&F Nuisibles étudie vos façades, balcons et toitures et propose des solutions anti-pigeons non létales. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-vitry-le-francois";
 

@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
 
-const TITLE = "Taupier à Langres (52200) : piégeage des taupes | G&F Nuisibles";
+const TITLE = "Taupier Langres 52 - Piégeage Taupes, Devis Gratuit";
 const DESCRIPTION = "Taupinières dans votre jardin à Langres (52200) ? G&F Nuisibles propose un piégeage mécanique adapté au terrain, sans produit chimique. Devis gratuit.";
 const URL = "https://gf-nuisibles.fr/taupes-langres";
 

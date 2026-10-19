@@ -5,7 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 
-const TITLE = "Nid de guêpes et frelons à Arc-en-Barrois (52210) | G&F Nuisibles";
+const TITLE = "Destruction nid Guêpes & Frelons Arc-en-Barrois 52 - Intervention 24h";
 const DESCRIPTION = "Nid de guêpes ou de frelons à Arc-en-Barrois (52210) ? G&F Nuisibles évalue l'accès et propose une intervention adaptée. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-arc-en-barrois";
 
