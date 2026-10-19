@@ -96,7 +96,6 @@ const GuepesFrelonsSemoutiersMontsaon = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Semoutiers-Montsaon", to: "/deratisation-semoutiers-montsaon" },
-          { label: "Désinsectisation à Semoutiers-Montsaon", to: "/desinsectisation-semoutiers-montsaon" },
           { label: "Dépigeonnisation à Semoutiers-Montsaon", to: "/depigeonnisation-semoutiers-montsaon" },
           { label: "Taupier à Semoutiers-Montsaon", to: "/taupes-semoutiers-montsaon" },
         ]}

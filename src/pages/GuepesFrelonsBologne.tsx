@@ -95,7 +95,6 @@ const GuepesFrelonsBologne = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Bologne", to: "/deratisation-bologne" },
-          { label: "Désinsectisation à Bologne", to: "/desinsectisation-bologne" },
           { label: "Dépigeonnisation à Bologne", to: "/depigeonnisation-bologne" },
           { label: "Taupier à Bologne", to: "/taupes-bologne" },
         ]}

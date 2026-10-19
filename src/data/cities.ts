@@ -6,7 +6,6 @@ export const CITIES: CityEntry[] = [
   { name: "Chaumont", links: [
     { label: "Dératisation", to: "/deratisation-chaumont" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-chaumont" },
-    { label: "Désinsectisation", to: "/desinsectisation-chaumont" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-chaumont" },
     { label: "Taupes", to: "/taupes-chaumont" },
     { label: "Cafards & Blattes", to: "/cafards-blattes-chaumont" },
@@ -14,7 +13,6 @@ export const CITIES: CityEntry[] = [
   { name: "Langres", links: [
     { label: "Dératisation", to: "/deratisation-langres" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-langres" },
-    { label: "Désinsectisation", to: "/desinsectisation-langres" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-langres" },
     { label: "Taupes", to: "/taupes-langres" },
     { label: "Cafards & Blattes", to: "/cafards-blattes-langres" },
@@ -22,7 +20,6 @@ export const CITIES: CityEntry[] = [
   { name: "Nogent", links: [
     { label: "Dératisation", to: "/deratisation-nogent" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-nogent" },
-    { label: "Désinsectisation", to: "/desinsectisation-nogent" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-nogent" },
     { label: "Taupes", to: "/taupes-nogent" },
     { label: "Cafards & Blattes", to: "/cafards-blattes-nogent" },
@@ -30,7 +27,6 @@ export const CITIES: CityEntry[] = [
   { name: "Saint-Dizier", links: [
     { label: "Dératisation", to: "/deratisation-saint-dizier" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-saint-dizier" },
-    { label: "Désinsectisation", to: "/desinsectisation-saint-dizier" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-saint-dizier" },
     { label: "Taupes", to: "/taupes-saint-dizier" },
     { label: "Cafards & Blattes", to: "/cafards-blattes-saint-dizier" },
@@ -38,7 +34,6 @@ export const CITIES: CityEntry[] = [
   { name: "Joinville", links: [
     { label: "Dératisation", to: "/deratisation-joinville" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-joinville" },
-    { label: "Désinsectisation", to: "/desinsectisation-joinville" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-joinville" },
     { label: "Taupes", to: "/taupes-joinville" },
     { label: "Cafards & Blattes", to: "/cafards-blattes-joinville" },
@@ -46,14 +41,12 @@ export const CITIES: CityEntry[] = [
   { name: "Wassy", links: [
     { label: "Dératisation", to: "/deratisation-wassy" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-wassy" },
-    { label: "Désinsectisation", to: "/desinsectisation-wassy" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-wassy" },
     { label: "Taupes", to: "/taupes-wassy" },
   ]},
   { name: "Bourbonne-les-Bains", links: [
     { label: "Dératisation", to: "/deratisation-bourbonne-les-bains" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-bourbonne-les-bains" },
-    { label: "Désinsectisation", to: "/desinsectisation-bourbonne-les-bains" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-bourbonne-les-bains" },
     { label: "Taupes", to: "/taupes-bourbonne-les-bains" },
     { label: "Cafards & Blattes", to: "/cafards-blattes-bourbonne-les-bains" },
@@ -61,49 +54,42 @@ export const CITIES: CityEntry[] = [
   { name: "Bologne", links: [
     { label: "Dératisation", to: "/deratisation-bologne" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-bologne" },
-    { label: "Désinsectisation", to: "/desinsectisation-bologne" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-bologne" },
     { label: "Taupes", to: "/taupes-bologne" },
   ]},
   { name: "Montier-en-Der", links: [
     { label: "Dératisation", to: "/deratisation-montier-en-der" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-montier-en-der" },
-    { label: "Désinsectisation", to: "/desinsectisation-montier-en-der" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-montier-en-der" },
     { label: "Taupes", to: "/taupes-montier-en-der" },
   ]},
   { name: "Chalindrey", links: [
     { label: "Dératisation", to: "/deratisation-chalindrey" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-chalindrey" },
-    { label: "Désinsectisation", to: "/desinsectisation-chalindrey" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-chalindrey" },
     { label: "Taupes", to: "/taupes-chalindrey" },
   ]},
   { name: "Froncles", links: [
     { label: "Dératisation", to: "/deratisation-froncles" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-froncles" },
-    { label: "Désinsectisation", to: "/desinsectisation-froncles" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-froncles" },
     { label: "Taupes", to: "/taupes-froncles" },
   ]},
   { name: "Châteauvillain", links: [
     { label: "Dératisation", to: "/deratisation-chateauvillain" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-chateauvillain" },
-    { label: "Désinsectisation", to: "/desinsectisation-chateauvillain" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-chateauvillain" },
     { label: "Taupes", to: "/taupes-chateauvillain" },
   ]},
   { name: "Arc-en-Barrois", links: [
     { label: "Dératisation", to: "/deratisation-arc-en-barrois" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-arc-en-barrois" },
-    { label: "Désinsectisation", to: "/desinsectisation-arc-en-barrois" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-arc-en-barrois" },
     { label: "Taupes", to: "/taupes-arc-en-barrois" },
   ]},
   { name: "Semoutiers-Montsaon", links: [
     { label: "Dératisation", to: "/deratisation-semoutiers-montsaon" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-semoutiers-montsaon" },
-    { label: "Désinsectisation", to: "/desinsectisation-semoutiers-montsaon" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-semoutiers-montsaon" },
     { label: "Taupes", to: "/taupes-semoutiers-montsaon" },
   ]},
@@ -114,23 +100,19 @@ export const CITIES: CityEntry[] = [
   { name: "Bar-sur-Aube", links: [
     { label: "Dératisation", to: "/deratisation-bar-sur-aube" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-bar-sur-aube" },
-    { label: "Désinsectisation", to: "/desinsectisation-bar-sur-aube" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-bar-sur-aube" },
     { label: "Taupes", to: "/taupes-bar-sur-aube" },
     { label: "Cafards & Blattes", to: "/cafards-blattes-bar-sur-aube" },
   ]},
   { name: "Vitry-le-François", links: [
-    { label: "Désinsectisation", to: "/desinsectisation-vitry-le-francois" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-vitry-le-francois" },
   ]},
   { name: "Vittel", links: [
     { label: "Dératisation", to: "/deratisation-vittel" },
-    { label: "Désinsectisation", to: "/desinsectisation-vittel" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-vittel" },
   ]},
   { name: "Neufchâteau", links: [
     { label: "Dératisation", to: "/deratisation-neufchateau" },
-    { label: "Désinsectisation", to: "/desinsectisation-neufchateau" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-neufchateau" },
   ]},
   { name: "Dijon", links: [

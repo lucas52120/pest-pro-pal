@@ -13,7 +13,6 @@ const serviceItems = [
 
 const navItems = [
   { label: "Accueil", path: "/" },
-  { label: "Désinsectisation", path: "/desinsectisation" },
   { label: "À propos", path: "/a-propos" },
   { label: "Contact", path: "/contact" },
 ];

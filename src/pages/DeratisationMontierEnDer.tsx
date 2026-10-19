@@ -95,7 +95,6 @@ const DeratisationMontierEnDer = () => {
           { label: "Dératisation à Joinville", to: "/deratisation-joinville" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Montier-en-Der", to: "/desinsectisation-montier-en-der" },
           { label: "Guêpes et frelons à Montier-en-Der", to: "/guepes-frelons-montier-en-der" },
           { label: "Dépigeonnisation à Montier-en-Der", to: "/depigeonnisation-montier-en-der" },
           { label: "Taupier à Montier-en-Der", to: "/taupes-montier-en-der" },

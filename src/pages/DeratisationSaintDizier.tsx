@@ -95,7 +95,6 @@ const DeratisationSaintDizier = () => {
           { label: "Dératisation à Montier-en-Der", to: "/deratisation-montier-en-der" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Saint-Dizier", to: "/desinsectisation-saint-dizier" },
           { label: "Guêpes et frelons à Saint-Dizier", to: "/guepes-frelons-saint-dizier" },
           { label: "Dépigeonnisation à Saint-Dizier", to: "/depigeonnisation-saint-dizier" },
           { label: "Taupier à Saint-Dizier", to: "/taupes-saint-dizier" },

@@ -96,7 +96,6 @@ const GuepesFrelonsSaintDizier = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Saint-Dizier", to: "/deratisation-saint-dizier" },
-          { label: "Désinsectisation à Saint-Dizier", to: "/desinsectisation-saint-dizier" },
           { label: "Dépigeonnisation à Saint-Dizier", to: "/depigeonnisation-saint-dizier" },
           { label: "Taupier à Saint-Dizier", to: "/taupes-saint-dizier" },
         ]}

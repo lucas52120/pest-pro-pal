@@ -257,7 +257,7 @@ const GuepesFrelonsChaumont = () => {
             title: "Préparer votre demande sans approcher le nid",
             content: <>
               <p>Depuis un endroit sûr, notez si les insectes entrent dans un volet, sous une tuile ou dans un arbre. Décrivez la hauteur approximative, l’accès depuis la rue ou le jardin et la proximité d’une porte, d’une terrasse ou d’un passage. Une photo prise à distance peut aider ; il n’est pas nécessaire de monter sur une échelle ni de dégager la toiture pour la réaliser.</p>
-              <p>N’obstruez pas l’entrée d’un nid dans un mur et ne tentez pas de le brûler, de le noyer ou de le décrocher. Éloignez enfants et animaux, évitez les vibrations à proximité et demandez conseil avant de manœuvrer un volet occupé. En cas de réaction allergique ou de difficulté à respirer après une piqûre, appelez le 15 ou le 112 : une entreprise de désinsectisation ne remplace pas les secours médicaux.</p>
+              <p>N’obstruez pas l’entrée d’un nid dans un mur et ne tentez pas de le brûler, de le noyer ou de le décrocher. Éloignez enfants et animaux, évitez les vibrations à proximité et demandez conseil avant de manœuvrer un volet occupé. En cas de réaction allergique ou de difficulté à respirer après une piqûre, appelez le 15 ou le 112 : une entreprise de lutte contre les nuisibles ne remplace pas les secours médicaux.</p>
             </>
           },
           {
@@ -306,7 +306,6 @@ const GuepesFrelonsChaumont = () => {
           { label: "Guêpes & Frelons Nogent", to: "/guepes-frelons-nogent" },
           { label: "Guêpes & Frelons à Semoutiers-Montsaon", to: "/guepes-frelons-semoutiers-montsaon" },
           { label: "Dératisation à Chaumont", to: "/deratisation-chaumont" },
-          { label: "Désinsectisation à Chaumont", to: "/desinsectisation-chaumont" },
           { label: "Dépigeonnisation à Chaumont", to: "/depigeonnisation-chaumont" },
           { label: "Taupes à Chaumont", to: "/taupes-chaumont" },
         ]}

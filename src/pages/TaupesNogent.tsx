@@ -96,7 +96,6 @@ const TaupesNogent = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Nogent", to: "/deratisation-nogent" },
-          { label: "Désinsectisation à Nogent", to: "/desinsectisation-nogent" },
           { label: "Guêpes et frelons à Nogent", to: "/guepes-frelons-nogent" },
           { label: "Dépigeonnisation à Nogent", to: "/depigeonnisation-nogent" },
         ]}

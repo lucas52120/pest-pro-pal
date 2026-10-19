@@ -95,7 +95,6 @@ const DeratisationSemoutiersMontsaon = () => {
           { label: "Dératisation à Châteauvillain", to: "/deratisation-chateauvillain" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Semoutiers-Montsaon", to: "/desinsectisation-semoutiers-montsaon" },
           { label: "Guêpes et frelons à Semoutiers-Montsaon", to: "/guepes-frelons-semoutiers-montsaon" },
           { label: "Dépigeonnisation à Semoutiers-Montsaon", to: "/depigeonnisation-semoutiers-montsaon" },
           { label: "Taupier à Semoutiers-Montsaon", to: "/taupes-semoutiers-montsaon" },

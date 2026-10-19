@@ -96,7 +96,6 @@ const TaupesBarSurAube = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Bar-sur-Aube", to: "/deratisation-bar-sur-aube" },
-          { label: "Désinsectisation à Bar-sur-Aube", to: "/desinsectisation-bar-sur-aube" },
           { label: "Guêpes et frelons à Bar-sur-Aube", to: "/guepes-frelons-bar-sur-aube" },
           { label: "Dépigeonnisation à Bar-sur-Aube", to: "/depigeonnisation-bar-sur-aube" },
         ]}

@@ -95,7 +95,6 @@ const DepigeonnisationBourbonne = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Bourbonne-les-Bains", to: "/deratisation-bourbonne-les-bains" },
-          { label: "Désinsectisation à Bourbonne-les-Bains", to: "/desinsectisation-bourbonne-les-bains" },
           { label: "Guêpes et frelons à Bourbonne-les-Bains", to: "/guepes-frelons-bourbonne-les-bains" },
           { label: "Taupier à Bourbonne-les-Bains", to: "/taupes-bourbonne-les-bains" },
         ]}

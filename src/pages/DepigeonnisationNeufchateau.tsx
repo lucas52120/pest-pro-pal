@@ -96,7 +96,6 @@ const DepigeonnisationNeufchateau = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Neufchâteau", to: "/deratisation-neufchateau" },
-          { label: "Désinsectisation à Neufchâteau", to: "/desinsectisation-neufchateau" },
         ]}
         faqItems={FAQ_ITEMS}
         cta={"Dépigeonnisation à Neufchâteau : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}

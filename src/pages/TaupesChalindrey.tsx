@@ -95,7 +95,6 @@ const TaupesChalindrey = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Chalindrey", to: "/deratisation-chalindrey" },
-          { label: "Désinsectisation à Chalindrey", to: "/desinsectisation-chalindrey" },
           { label: "Guêpes et frelons à Chalindrey", to: "/guepes-frelons-chalindrey" },
           { label: "Dépigeonnisation à Chalindrey", to: "/depigeonnisation-chalindrey" },
         ]}

@@ -95,7 +95,6 @@ const DeratisationJoinville = () => {
           { label: "Dératisation à Saint-Dizier", to: "/deratisation-saint-dizier" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Joinville", to: "/desinsectisation-joinville" },
           { label: "Guêpes et frelons à Joinville", to: "/guepes-frelons-joinville" },
           { label: "Dépigeonnisation à Joinville", to: "/depigeonnisation-joinville" },
           { label: "Taupier à Joinville", to: "/taupes-joinville" },

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import serviceGuepes from "@/assets/service-guepes.jpg";
-import serviceDesinsectisation from "@/assets/service-desinsectisation.jpg";
+import serviceCafardsBlattes from "@/assets/service-desinsectisation.jpg";
 import serviceTaupes from "@/assets/service-taupes.jpg";
 import serviceDepigeonnage from "@/assets/service-depigeonnage.jpg";
 import serviceDeratisation from "@/assets/service-deratisation.jpg";
@@ -16,10 +16,10 @@ const services = [
     path: "/guepes-frelons",
   },
   {
-    image: serviceDesinsectisation,
-    title: "Désinsectisation",
-    description: "Élimination de cafards, punaises de lit et blattes. Traitement professionnel garanti.",
-    path: "/desinsectisation",
+    image: serviceCafardsBlattes,
+    title: "Cafards & Blattes",
+    description: "Traitement professionnel ciblé contre les cafards et les blattes, pour particuliers et professionnels.",
+    path: "/cafards-blattes",
   },
   {
     image: serviceTaupes,

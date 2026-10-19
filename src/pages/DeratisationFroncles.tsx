@@ -95,7 +95,6 @@ const DeratisationFroncles = () => {
           { label: "Dératisation à Joinville", to: "/deratisation-joinville" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Froncles", to: "/desinsectisation-froncles" },
           { label: "Guêpes et frelons à Froncles", to: "/guepes-frelons-froncles" },
           { label: "Dépigeonnisation à Froncles", to: "/depigeonnisation-froncles" },
           { label: "Taupier à Froncles", to: "/taupes-froncles" },

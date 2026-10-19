@@ -95,7 +95,6 @@ const DepigeonnisationWassy = () => {
           { label: "Dépigeonnisation à Montier-en-Der", to: "/depigeonnisation-montier-en-der" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Wassy", to: "/desinsectisation-wassy" },
           { label: "Dératisation à Wassy", to: "/deratisation-wassy" },
         ]}
         faqItems={FAQ_ITEMS}

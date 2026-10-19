@@ -95,7 +95,6 @@ const TaupesWassy = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Wassy", to: "/deratisation-wassy" },
-          { label: "Désinsectisation à Wassy", to: "/desinsectisation-wassy" },
           { label: "Guêpes et frelons à Wassy", to: "/guepes-frelons-wassy" },
           { label: "Dépigeonnisation à Wassy", to: "/depigeonnisation-wassy" },
         ]}

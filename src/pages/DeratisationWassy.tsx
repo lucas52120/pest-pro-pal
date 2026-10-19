@@ -95,7 +95,6 @@ const DeratisationWassy = () => {
           { label: "Dératisation à Montier-en-Der", to: "/deratisation-montier-en-der" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Wassy", to: "/desinsectisation-wassy" },
           { label: "Guêpes et frelons à Wassy", to: "/guepes-frelons-wassy" },
           { label: "Dépigeonnisation à Wassy", to: "/depigeonnisation-wassy" },
           { label: "Taupier à Wassy", to: "/taupes-wassy" },

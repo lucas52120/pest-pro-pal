@@ -94,7 +94,6 @@ const DeratisationBourbonne = () => {
           { label: "Dératisation à Châteauvillain", to: "/deratisation-chateauvillain" },
         ] }}
         relatedLinks={[
-          { label: "Désinsectisation à Bourbonne-les-Bains", to: "/desinsectisation-bourbonne-les-bains" },
           { label: "Guêpes et frelons à Bourbonne-les-Bains", to: "/guepes-frelons-bourbonne-les-bains" },
           { label: "Dépigeonnisation à Bourbonne-les-Bains", to: "/depigeonnisation-bourbonne-les-bains" },
           { label: "Taupier à Bourbonne-les-Bains", to: "/taupes-bourbonne-les-bains" },

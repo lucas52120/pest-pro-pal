@@ -26,16 +26,16 @@ const Index = () => {
       addressCountry: "FR",
     },
     description:
-      "Expert local en Haute-Marne pour la désinsectisation, dératisation et dépigeonnage. Intervention rapide 7j/7.",
+      "Expert local en Haute-Marne pour le traitement des cafards et blattes, la dératisation et dépigeonnage. Intervention rapide 7j/7.",
   };
 
   return (
     <>
       <Helmet>
-        <title>GF Nuisibles : Désinsectisation, Dératisation & Dépigeonnage</title>
+        <title>G&F Nuisibles : Dératisation, Cafards & Blattes, Dépigeonnage</title>
         <meta
           name="description"
-          content="Votre expert local en Haute-Marne et communes limitrophes. Désinsectisation (guêpes & frelons), dératisation et dépigeonnage. Service rapide 7j/7 et devis gratuit !"
+          content="Votre expert local en Haute-Marne et communes limitrophes. Cafards et blattes, guêpes et frelons, dératisation et dépigeonnage. Service rapide 7j/7 et devis gratuit !"
         />
         <link rel="canonical" href="https://gf-nuisibles.fr/" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>

@@ -96,7 +96,6 @@ const DepigeonnisationJoinville = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Joinville", to: "/deratisation-joinville" },
-          { label: "Désinsectisation à Joinville", to: "/desinsectisation-joinville" },
           { label: "Guêpes et frelons à Joinville", to: "/guepes-frelons-joinville" },
           { label: "Taupier à Joinville", to: "/taupes-joinville" },
         ]}
