@@ -19,18 +19,19 @@
 /desinsectisation-neufchateau /cafards-blattes 301!
 /services/desinsectisation/:city /desinsectisation-:city 301!
 /deratisation-chalons-en-champagne /deratisation 301
-/depigeonnisation-chalons-en-champagne /depigeonnisation 301
+/depigeonnisation-chalons-en-champagne /depigeonnage 301
 /deratisation-beaune /deratisation 301
-/depigeonnisation-beaune /depigeonnisation 301
+/depigeonnisation-beaune /depigeonnage 301
 /deratisation-nancy /deratisation 301
-/depigeonnisation-nancy /depigeonnisation 301
+/depigeonnisation-nancy /depigeonnage 301
 # Legacy nested service URLs -> flat city URLs (301, keeps link equity)
 /services/depigeonnisation/:city    /depigeonnisation-:city      301!
-/elimination-pigeons /depigeonnisation 301!
+/elimination-pigeons /depigeonnage 301!
 /elimination-pigeons-:city /depigeonnisation-:city 301!
 /services/elimination-pigeons/:city /depigeonnisation-:city 301!
 /services/*                         /                             301!
 
 # SPA fallback. Prerendered static HTML files are served first by Netlify,
 # this rule only applies to paths with no matching file.
+/depigeonnisation /depigeonnage 301!
 /*    /index.html   200
