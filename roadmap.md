@@ -59,4 +59,4 @@
 
 # Correction des adresses du service pigeons
 
-- [ ] Corriger uniquement les cibles du hub, ajouter la redirection de sécurité et vérifier recherche, tests et navigation sans changement visuel.
+- [x] Corriger uniquement les cibles du hub, ajouter la redirection de sécurité et vérifier recherche, tests et navigation sans changement visuel.
