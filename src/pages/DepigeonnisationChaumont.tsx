@@ -37,7 +37,7 @@ const DepigeonnisationChaumont = () => {
       },
       { "@type": "BreadcrumbList", "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Dépigeonnisation", "item": "https://gf-nuisibles.fr/depigeonnisation" },
+        { "@type": "ListItem", "position": 2, "name": "Dépigeonnisation", "item": "https://gf-nuisibles.fr/depigeonnage" },
         { "@type": "ListItem", "position": 3, "name": "Chaumont", "item": URL }
       ] },
       { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
@@ -87,7 +87,7 @@ const DepigeonnisationChaumont = () => {
 <p>{"Transmettez des photos prises depuis un endroit sûr, le nombre de balcons ou d’ouvertures et les contraintes d’accès. En copropriété, vérifiez avec le syndic les accords nécessaires pour les parties communes. Le prix dépend des dimensions, de la hauteur, des moyens d’accès et du système retenu ; il est établi après diagnostic."}</p>
           </> },
           { title: "Votre demande à Chaumont et les communes voisines", content: <>
-<p>Découvrez les méthodes de notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation">service dépigeonnisation en Haute-Marne</Link>. Pour votre adresse à Chaumont, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Découvrez les méthodes de notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnage">service dépigeonnisation en Haute-Marne</Link>. Pour votre adresse à Chaumont, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
 <p>Vous résidez plus au nord ou au sud de Chaumont ? Consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-bologne">Dépigeonnisation à Bologne</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-nogent">Dépigeonnisation à Nogent</Link>. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link>.</p>
           </> },
         ]}

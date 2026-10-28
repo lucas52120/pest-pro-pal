@@ -19,7 +19,7 @@ describe("retired Désinsectisation service", () => {
     const app = readFileSync("src/App.tsx", "utf8");
     const active = Array.from(app.matchAll(/<Route\s+path="([^"]+)"/g), (match) => match[1]);
     const hosting = readFileSync("public/_redirects", "utf8");
-    expect(Object.keys(retiredServiceRedirects)).toHaveLength(19);
+    expect(Object.keys(retiredServiceRedirects)).toHaveLength(20);
     for (const [from, to] of Object.entries(retiredServiceRedirects)) {
       expect(active).toContain(to);
       expect(active).not.toContain(from);

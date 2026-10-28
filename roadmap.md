@@ -56,3 +56,7 @@
 
 - [x] Appliquer les six formats validés aux 84 autres pages locales avec le bon département, sans changer les descriptions ni les textes.
 - [x] Vérifier les 84 titres et les informations de partage propres aux pages dans le navigateur, ainsi que les descriptions et adresses canoniques conservées.
+
+# Correction des adresses du service pigeons
+
+- [ ] Corriger uniquement les cibles du hub, ajouter la redirection de sécurité et vérifier recherche, tests et navigation sans changement visuel.
