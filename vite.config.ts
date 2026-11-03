@@ -108,6 +108,19 @@ function prerenderSsgPlugin(): Plugin {
         count++;
       }
 
+      // 4. Real 404 page (served with HTTP 404 by Netlify, not in the sitemap).
+      try {
+        const nf = render("/__404__");
+        let html404 = template
+          .replace("<!--ssr-head-->", nf.head)
+          .replace('<div id="root"></div>', `<div id="root">${nf.html}</div>`);
+        html404 = dedupeHead(html404);
+        fs.writeFileSync(path.join(distDir, "404.html"), html404);
+        console.log("✅ SSG: wrote dist/404.html");
+      } catch (err) {
+        console.warn("⚠️  SSG: failed to write 404.html:", err);
+      }
+
       fs.rmSync(ssrOutDir, { recursive: true, force: true });
       console.log(`✅ SSG: prerendered ${count}/${routes.length} static HTML pages`);
       if (failed.length) {
