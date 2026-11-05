@@ -52,27 +52,6 @@ const CITY_LINKS = [
   { label: "Semoutiers-Montsaon", to: "/guepes-frelons-semoutiers-montsaon" },
 ];
 
-const REVIEWS = [
-  {
-    author: "Marc D.",
-    city: "Chaumont",
-    rating: 5,
-    text: "Intervention en 2h pour un nid de frelons asiatiques sur ma cheminée. Très professionnel, équipement impressionnant, prix annoncé respecté. Je recommande sans hésiter.",
-  },
-  {
-    author: "Sophie L.",
-    city: "Langres",
-    rating: 5,
-    text: "Nid de guêpes énorme sous notre toiture. G&F Nuisibles est venu un dimanche après-midi en urgence. Travail propre, garantie respectée. Merci !",
-  },
-  {
-    author: "Jean-Pierre M.",
-    city: "Saint-Dizier",
-    rating: 5,
-    text: "Très bon contact téléphonique, diagnostic clair, devis transparent. Le nid de frelons européens dans le grenier a été détruit en 30 minutes. Parfait.",
-  },
-];
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -104,11 +83,6 @@ const jsonLd = {
         },
       ],
       sameAs: ["https://www.facebook.com/profile.php?id=61566255861001"],
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "27",
-      },
       priceRange: "$$",
       areaServed: {
         "@type": "AdministrativeArea",
@@ -153,13 +127,6 @@ const jsonLd = {
         },
       })),
     },
-    ...REVIEWS.map((r) => ({
-      "@type": "Review",
-      itemReviewed: { "@id": "https://gf-nuisibles.fr/#organization" },
-      author: { "@type": "Person", name: r.author },
-      reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
-      reviewBody: r.text,
-    })),
   ],
 };
 
@@ -486,24 +453,6 @@ const GuepesFrelons = () => {
               <p className="leading-relaxed text-muted-foreground">
                 <strong>Chaumont</strong> et son agglomération (Chamarandes-Choignes, Brottes, Semoutiers-Montsaon), <strong>Langres</strong> et le pays de Langres (Chalindrey, Saints-Geosmes, Rolampont), <strong>Saint-Dizier</strong> et le nord du département (Wassy, Joinville, Montier-en-Der), <strong>Bar-sur-Aube</strong>, <strong>Bourbonne-les-Bains</strong>, <strong>Bologne</strong>, <strong>Froncles</strong>, <strong>Nogent</strong>, <strong>Arc-en-Barrois</strong>, <strong>Châteauvillain</strong>, ainsi que toutes les communes rurales de la Haute-Marne. Nous nous déplaçons aussi ponctuellement en Côte-d'Or limitrophe (Châtillon-sur-Seine, Beaune) et dans l'Aube (Bar-sur-Aube).
               </p>
-            </section>
-
-            {/* Bloc Avis clients */}
-            <section className="mt-12">
-              <h2 className="mb-4 font-heading text-2xl font-bold text-primary md:text-3xl">
-                Avis de nos clients en Haute-Marne
-              </h2>
-              <div className="grid gap-5 md:grid-cols-3">
-                {REVIEWS.map((r) => (
-                  <article key={r.author} className="rounded-xl border border-slate-100 bg-slate-50 p-5">
-                    <div className="mb-2 text-accent" aria-label={`${r.rating} étoiles sur 5`}>
-                      {"★".repeat(r.rating)}
-                    </div>
-                    <p className="mb-3 text-sm italic text-muted-foreground">« {r.text} »</p>
-                    <p className="text-sm font-semibold text-primary">{r.author} — {r.city}</p>
-                  </article>
-                ))}
-              </div>
             </section>
 
             {/* FAQ étendue */}

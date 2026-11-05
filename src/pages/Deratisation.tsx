@@ -67,27 +67,6 @@ const CITY_LINKS = [
   { label: "Semoutiers-Montsaon", to: "/deratisation-semoutiers-montsaon" },
 ];
 
-const REVIEWS = [
-  {
-    author: "Catherine R.",
-    city: "Chaumont",
-    rating: 5,
-    text: "Infestation de souris dans la cuisine, intervention sous 24h. Postes d'appâtage discrets et sécurisés (j'ai un chat), 3 passages et plus rien. Très pro.",
-  },
-  {
-    author: "Pascal V.",
-    city: "Saint-Dizier",
-    rating: 5,
-    text: "Rats dans le garage et la cave, dégâts importants sur l'isolant. G&F Nuisibles a identifié les points d'entrée, traité et conseillé sur l'étanchéité. Problème réglé.",
-  },
-  {
-    author: "Restaurant Le Comptoir",
-    city: "Langres",
-    rating: 5,
-    text: "Contrat annuel HACCP. Passages réguliers, rapports clairs, traçabilité parfaite pour nos audits. Équipe sérieuse et discrète, jamais devant les clients.",
-  },
-];
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -119,11 +98,6 @@ const jsonLd = {
         },
       ],
       sameAs: ["https://www.facebook.com/profile.php?id=61566255861001"],
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "27",
-      },
       priceRange: "$$",
       areaServed: { "@type": "AdministrativeArea", name: "Haute-Marne (52)" },
     },
@@ -165,13 +139,6 @@ const jsonLd = {
         acceptedAnswer: { "@type": "Answer", text: item.answer },
       })),
     },
-    ...REVIEWS.map((r) => ({
-      "@type": "Review",
-      itemReviewed: { "@id": "https://gf-nuisibles.fr/#organization" },
-      author: { "@type": "Person", name: r.author },
-      reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
-      reviewBody: r.text,
-    })),
   ],
 };
 
@@ -372,24 +339,6 @@ const Deratisation = () => {
               <p>
                 Pour les établissements alimentaires, la lutte contre les nuisibles est <strong>obligatoire</strong> (Règlement CE 852/2004 et Paquet Hygiène). L'absence de plan de lutte est sanctionnée lors des contrôles DDPP.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Avis */}
-        <section className="section-padding pb-0">
-          <div className="container-narrow">
-            <h2 className="mb-6 font-heading text-3xl font-extrabold text-primary md:text-4xl">
-              Avis clients en Haute-Marne
-            </h2>
-            <div className="grid gap-6 md:grid-cols-3">
-              {REVIEWS.map((r) => (
-                <div key={r.author} className="rounded-xl border border-slate-100 bg-white p-6 shadow-sm">
-                  <div className="mb-2 text-accent">{"★".repeat(r.rating)}</div>
-                  <p className="mb-3 italic text-muted-foreground">« {r.text} »</p>
-                  <p className="font-heading text-sm font-bold text-primary">{r.author} — {r.city}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
