@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Destruction nid Guêpes & Frelons Wassy 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Wassy (52130) ? G&F Nuisibles sécurise le site et retire le nid. Intervention selon disponibilité, devis gratuit.";
+const DESCRIPTION = "Nid de guêpes ou de frelons à Wassy (52130) ? GF Nuisibles sécurise le site et retire le nid. Intervention selon disponibilité, devis gratuit.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-wassy";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -21,12 +22,7 @@ const GuepesFrelonsWassy = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
-        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Guêpes et frelons à Wassy (52130) : nid détecté", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -64,8 +60,8 @@ const GuepesFrelonsWassy = () => {
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
         serviceCallTitle={"NID DE GUÊPES OU DE FRELONS À WASSY ?"}
-        serviceCallSubtitle="G&F NUISIBLES — INTERVENTION SÉCURISÉE SUR SITE"
-        intro={"Un nid sous une toiture, dans une haie ou une dépendance à Wassy demande une intervention prudente, surtout s'il s'agit de frelons. G&F Nuisibles intervient à Wassy (52130) et dans le secteur pour localiser, sécuriser et retirer les nids de guêpes et de frelons, chez les particuliers comme chez les professionnels. L'espèce, l'emplacement et l'accessibilité du site déterminent le matériel et les précautions nécessaires."}
+        serviceCallSubtitle="GF NUISIBLES — INTERVENTION SÉCURISÉE SUR SITE"
+        intro={"Un nid sous une toiture, dans une haie ou une dépendance à Wassy demande une intervention prudente, surtout s'il s'agit de frelons. GF Nuisibles intervient à Wassy (52130) et dans le secteur pour localiser, sécuriser et retirer les nids de guêpes et de frelons, chez les particuliers comme chez les professionnels. L'espèce, l'emplacement et l'accessibilité du site déterminent le matériel et les précautions nécessaires."}
         expertise={"Guêpes communes, frelons européens et frelons asiatiques ne se comportent pas de la même façon et ne construisent pas leurs nids aux mêmes endroits. Un nid de frelon asiatique, souvent volumineux et situé en hauteur dans un arbre, ne se traite pas comme un nid de guêpes logé dans un muret ou une cavité murale. L'identification de l'espèce avant intervention conditionne la méthode et la sécurité du technicien comme des occupants."}
         method={"Le repérage précis du nid et de son accès est la première étape, suivi d'une évaluation des risques pour les personnes et les animaux à proximité. Le traitement est réalisé avec un équipement de protection adapté, en tenant compte de la hauteur et de l'environnement. Le nid est retiré lorsque les conditions le permettent, et des conseils sont donnés pour limiter un retour d'insectes au même endroit."}
         localContext={{ title: "Centre historique de Wassy et secteurs boisés à proximité", content: <>
@@ -84,7 +80,7 @@ const GuepesFrelonsWassy = () => {
             <p>{"Le bouchage des petites cavités accessibles, lorsque celles-ci sont vides, peut limiter les installations futures, sans garantir une absence totale de nouveaux nids dans le secteur."}</p>
           </> },
           { title: "Votre service à Wassy et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service guêpes et frelons en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Wassy, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un devis gratuit</Link> ou appelez le 07.65.25.67.92.</p>
+            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service guêpes et frelons en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Wassy, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un devis gratuit</Link> ou appelez le 07 65 25 67 92.</p>
             <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-saint-dizier">Guêpes et frelons à Saint-Dizier</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-joinville">Guêpes et frelons à Joinville</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-montier-en-der">Guêpes et frelons à Montier-en-Der</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande.</p>
           </> },
         ]}
@@ -99,7 +95,7 @@ const GuepesFrelonsWassy = () => {
           { label: "Taupier à Wassy", to: "/taupes-wassy" },
         ]}
         faqItems={FAQ_ITEMS}
-        cta={"Nid de guêpes ou de frelons à Wassy : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Le matériel et les précautions sont adaptés à l'espèce et à l'emplacement du nid."}
+        cta={"Nid de guêpes ou de frelons à Wassy : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le matériel et les précautions sont adaptés à l'espèce et à l'emplacement du nid."}
       />
     </>
   );

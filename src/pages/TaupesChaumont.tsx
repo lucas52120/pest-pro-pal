@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Taupier Chaumont 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Chaumont (52000) ou Brottes ? G&F Nuisibles repère les galeries actives et propose un piégeage mécanique sur devis gratuit.";
+const DESCRIPTION = "Taupinières dans votre jardin à Chaumont (52000) ou Brottes ? GF Nuisibles repère les galeries actives et propose un piégeage mécanique sur devis gratuit.";
 const URL = "https://gf-nuisibles.fr/taupes-chaumont";
 
 const FAQ_ITEMS: FaqItem[] = [
   { question: "Une dizaine de taupinières signifie-t-elle dix taupes ?", answer: "Non. Une seule taupe peut produire plusieurs monticules en utilisant son réseau de galeries. Le repérage des passages actifs est plus utile que le simple comptage des taupinières pour préparer le piégeage." },
-  { question: "Intervenez-vous dans les jardins de Brottes et du Cavalier ?", answer: "Oui, G&F Nuisibles dessert ces secteurs de Chaumont ainsi que les autres quartiers. Précisez l’adresse du terrain, sa surface approximative et les conditions d’accès pour préparer la visite depuis Montsaon." },
+  { question: "Intervenez-vous dans les jardins de Brottes et du Cavalier ?", answer: "Oui, GF Nuisibles dessert ces secteurs de Chaumont ainsi que les autres quartiers. Précisez l’adresse du terrain, sa surface approximative et les conditions d’accès pour préparer la visite depuis Montsaon." },
   { question: "Le piégeage des taupes utilise-t-il des produits chimiques ?", answer: "La méthode proposée repose sur des pièges mécaniques, sans produit chimique. Cela ne dispense pas de précautions : ne manipulez pas les dispositifs et tenez les enfants et animaux éloignés des zones signalées." },
   { question: "Faut-il aplatir les taupinières avant votre venue ?", answer: "Évitez de remanier tout le terrain avant le diagnostic. Les déblais frais et les traces de circulation aident à repérer l’activité. Demandez les consignes adaptées au jardin lors de la prise de contact." },
   { question: "Pouvez-vous garantir qu’aucune taupe ne reviendra ?", answer: "Non, une parcelle ouverte peut être recolonisée depuis les environs. Le devis précise le périmètre de l’intervention et le suivi prévu ; une protection définitive de tout le jardin ne doit pas être promise." },
@@ -21,15 +22,7 @@ const TaupesChaumont = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://gf-nuisibles.fr/#organization",
-        "url": "https://gf-nuisibles.fr",
-        "name": "G&F Nuisibles",
-        "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Taupier à Chaumont (52000) : taupes dans les jardins et pelouses", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -68,7 +61,7 @@ const TaupesChaumont = () => {
         metaDescription={DESCRIPTION}
         serviceCallTitle={"TAUPINIÈRES DANS VOTRE JARDIN À CHAUMONT ?"}
         serviceCallSubtitle={"REPÉRER LES GALERIES ACTIVES AVANT DE PIÉGER"}
-        intro={"Des monticules de terre réapparaissent sur votre pelouse à Chaumont ou Brottes ? G&F Nuisibles propose un service de taupier à Chaumont (52000), en Haute-Marne, fondé sur le repérage des galeries et le piégeage mécanique. Le nombre de taupinières ne correspond pas au nombre de taupes : un même animal peut circuler dans un réseau étendu. Avant de choisir une action, il faut distinguer une galerie active d’une ancienne trace et vérifier l’animal concerné."}
+        intro={"Des monticules de terre réapparaissent sur votre pelouse à Chaumont ou Brottes ? GF Nuisibles propose un service de taupier à Chaumont (52000), en Haute-Marne, fondé sur le repérage des galeries et le piégeage mécanique. Le nombre de taupinières ne correspond pas au nombre de taupes : un même animal peut circuler dans un réseau étendu. Avant de choisir une action, il faut distinguer une galerie active d’une ancienne trace et vérifier l’animal concerné."}
         expertise={"Basée à Montsaon, l’entreprise dessert les jardins de particuliers et les terrains professionnels du secteur chaumontais. Le repérage tient compte de la surface, des zones récemment remuées et des usages du terrain. Le piégeage mécanique ne nécessite pas de produit chimique, mais les pièges restent des dispositifs à ne pas manipuler. Les enfants et les animaux doivent être tenus à l’écart des zones indiquées."}
         method={"L’examen du terrain recherche les galeries fréquentées et les points adaptés à la pose. Les pièges mécaniques sont installés dans le réseau identifié, puis contrôlés selon le protocole convenu. Les conditions d’accès au jardin et le suivi sont définis dans le devis. Nous expliquons les précautions et les signes à surveiller après le passage : le terrain reste ouvert à une éventuelle recolonisation."}
         localContext={{ title: "Des jardins de Brottes aux parcelles des quartiers chaumontais", content: <>
@@ -87,7 +80,7 @@ const TaupesChaumont = () => {
 <p>{"Le coût dépend de la surface, de la dispersion des galeries, de l’accès et des contrôles nécessaires. Le diagnostic et le devis sont gratuits. Demandez comment se déroule le suivi et quelles zones ne pas toucher pendant l’intervention. Aucune méthode ne peut garantir qu’une taupe ne reviendra jamais depuis un terrain voisin."}</p>
           </> },
           { title: "Votre demande à Chaumont et les communes voisines", content: <>
-<p>Découvrez les méthodes de notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes">service taupier en Haute-Marne</Link>. Pour votre adresse à Chaumont, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Découvrez les méthodes de notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes">service taupier en Haute-Marne</Link>. Pour votre adresse à Chaumont, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
 <p>Vous résidez plus au nord ou au sud de Chaumont ? Consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-bologne">Taupier à Bologne</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-nogent">Taupier à Nogent</Link>. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link>.</p>
           </> },
         ]}
@@ -98,7 +91,7 @@ const TaupesChaumont = () => {
           { label: "Taupier à Semoutiers-Montsaon", to: "/taupes-semoutiers-montsaon" },
         ] }}
         faqItems={FAQ_ITEMS}
-        cta={"Taupier à Chaumont : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits adaptés à votre situation."}
+        cta={"Taupier à Chaumont : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits adaptés à votre situation."}
       />
     </>
   );

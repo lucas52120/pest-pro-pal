@@ -46,10 +46,10 @@ const PlanduSite = () => {
   return (
     <>
       <Helmet>
-        <title>Plan du site | G&F Nuisibles</title>
+        <title>Plan du site | GF Nuisibles</title>
         <meta
           name="description"
-          content="Plan du site G&F Nuisibles : retrouvez toutes les pages, services et zones d'intervention en Haute-Marne et alentours."
+          content="Plan du site GF Nuisibles : retrouvez toutes les pages, services et zones d'intervention en Haute-Marne et alentours."
         />
         <link rel="canonical" href="https://gf-nuisibles.fr/plan-du-site" />
       </Helmet>
@@ -63,7 +63,7 @@ const PlanduSite = () => {
               Plan du site
             </h1>
             <p className="text-muted-foreground">
-              Retrouvez l'ensemble des pages et services proposés par G&F Nuisibles.
+              Retrouvez l'ensemble des pages et services proposés par GF Nuisibles.
             </p>
           </header>
 

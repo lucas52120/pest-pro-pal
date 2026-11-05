@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Shield, Users, MapPin, Clock, Award } from "lucide-react";
 import vanImage from "@/assets/van-gf.png";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const APropos = () => {
   const jsonLd = {
@@ -19,25 +20,7 @@ const APropos = () => {
         isPartOf: { "@id": "https://gf-nuisibles.fr/#organization" },
         about: { "@id": "https://gf-nuisibles.fr/#organization" },
       },
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://gf-nuisibles.fr/#organization",
-        url: "https://gf-nuisibles.fr",
-        name: "G&F Nuisibles",
-        telephone: "07.65.25.67.92",
-        image: "https://gf-nuisibles.fr/og-image.png",
-        priceRange: "$$",
-        description:
-          "Découvrez G&F nuisibles votre expert local de gestion des nuisibles en Haute-Marne et communes limitrophes pour les professionnels ou particuliers",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "27 rue principale",
-          addressLocality: "Montsaon",
-          postalCode: "52000",
-          addressRegion: "Haute-Marne",
-          addressCountry: "FR",
-        },
-      },
+      LOCAL_BUSINESS,
     ],
   };
 
@@ -57,7 +40,7 @@ const APropos = () => {
         <div className="container-narrow px-4">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 className="mb-4 font-heading text-4xl font-extrabold text-primary-foreground md:text-5xl">
-              À propos de G&F Nuisibles
+              À propos de GF Nuisibles
             </h1>
             <p className="max-w-xl text-lg text-primary-foreground/70">
               Votre expert en lutte contre les nuisibles en Haute-Marne (52)
@@ -75,9 +58,9 @@ const APropos = () => {
             transition={{ duration: 0.5 }}
             className="space-y-6"
           >
-            <h2 className="font-heading text-2xl font-bold text-primary">Qui se cache derrière G&F Nuisibles ?</h2>
+            <h2 className="font-heading text-2xl font-bold text-primary">Qui se cache derrière GF Nuisibles ?</h2>
             <p className="leading-relaxed text-muted-foreground">
-              L'aventure de <strong>G&F Nuisibles</strong> a commencé il y a plusieurs années avec une idée simple :
+              L'aventure de <strong>GF Nuisibles</strong> a commencé il y a plusieurs années avec une idée simple :
               mettre une longue expérience du terrain au service des habitants de notre région. Basé à{" "}
               <strong>Montsaon (52)</strong>, je ne suis pas une franchise nationale anonyme, mais un artisan local qui
               a fait de la lutte contre les nuisibles son métier et sa passion.
@@ -131,7 +114,7 @@ const APropos = () => {
           >
             <img
               src={vanImage}
-              alt="Véhicule d'intervention G&F Nuisibles"
+              alt="Véhicule d'intervention GF Nuisibles"
               className="w-full rounded-xl shadow-lg object-cover"
               loading="lazy"
             />
@@ -147,7 +130,7 @@ const APropos = () => {
             viewport={{ once: true }}
             className="mb-10 text-center font-heading text-3xl font-bold text-primary"
           >
-            Pourquoi choisir G&F Nuisibles ?
+            Pourquoi choisir GF Nuisibles ?
           </motion.h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -159,7 +142,7 @@ const APropos = () => {
               {
                 icon: <Clock className="h-8 w-8" />,
                 title: "Réactivité immédiate",
-                desc: "Intervention rapide du lundi au vendredi et en urgence le week-end. Votre sécurité n'attend pas.",
+                desc: "Intervention rapide 7j/7, de 7h à 23h, week-ends compris. Votre sécurité n'attend pas.",
               },
               {
                 icon: <Shield className="h-8 w-8" />,
@@ -205,14 +188,14 @@ const APropos = () => {
             <h2 className="mb-4 font-heading text-3xl font-bold text-primary">Nos services en Haute-Marne</h2>
             <p className="mx-auto mb-8 max-w-2xl text-muted-foreground">
               Que vous soyez confronté à une invasion de rats à Chaumont, un nid de frelons à Langres ou des pigeons à
-              Saint-Dizier, G&F Nuisibles dispose de l'expertise et des équipements adaptés pour résoudre votre problème
+              Saint-Dizier, GF Nuisibles dispose de l'expertise et des équipements adaptés pour résoudre votre problème
               durablement.
             </p>
             <a
               href="tel:0765256792"
               className="inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-4 font-heading font-bold text-accent-foreground transition-colors hover:bg-orange-hover"
             >
-              Appelez-nous : 07.65.25.67.92
+              Appelez-nous : 07 65 25 67 92
             </a>
           </motion.div>
         </div>

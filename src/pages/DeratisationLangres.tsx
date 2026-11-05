@@ -4,15 +4,16 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Dératisation Langres 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Langres (52200) ? G&F Nuisibles intervient dans le centre historique, les quartiers et les environs. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Rats ou souris à Langres (52200) ? GF Nuisibles intervient dans le centre historique, les quartiers et les environs. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/deratisation-langres";
 
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Combien coûte un dératiseur professionnel à Langres ?",
-    answer: "Le prix dépend de la surface à inspecter, de l'espèce identifiée, des accès, de l'étendue de l'infestation et du suivi nécessaire. Une cave du centre historique et un local de stockage ne demandent pas forcément le même dispositif. G&F Nuisibles propose un diagnostic et un devis gratuits : le traitement et ses conditions sont précisés avant votre accord.",
+    answer: "Le prix dépend de la surface à inspecter, de l'espèce identifiée, des accès, de l'étendue de l'infestation et du suivi nécessaire. Une cave du centre historique et un local de stockage ne demandent pas forcément le même dispositif. GF Nuisibles propose un diagnostic et un devis gratuits : le traitement et ses conditions sont précisés avant votre accord.",
   },
   {
     question: "Comment savoir si j'ai des rats ou des souris chez moi ?",
@@ -20,7 +21,7 @@ const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: "Intervenez-vous dans le centre historique et les quartiers de Langres ?",
-    answer: "Oui, G&F Nuisibles dessert Langres, notamment le centre historique, la Citadelle, Saint-Gilles, les Franchises et les Fourches. Précisez votre adresse, le type de bâtiment et les possibilités d'accès lors de votre demande. L'entreprise est basée à Montsaon, en Haute-Marne, et ne dispose pas d'une agence à Langres.",
+    answer: "Oui, GF Nuisibles dessert Langres, notamment le centre historique, la Citadelle, Saint-Gilles, les Franchises et les Fourches. Précisez votre adresse, le type de bâtiment et les possibilités d'accès lors de votre demande. L'entreprise est basée à Montsaon, en Haute-Marne, et ne dispose pas d'une agence à Langres.",
   },
   {
     question: "Comment préparer une intervention contre les rats ou les souris ?",
@@ -32,7 +33,7 @@ const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: "Intervenez-vous aussi à Nogent et à Chalindrey ?",
-    answer: "Oui, G&F Nuisibles propose également la dératisation à Nogent et à Chalindrey. Les pages dédiées à ces communes sont accessibles depuis cette page. Pour organiser le déplacement, communiquez votre adresse et décrivez les signes observés.",
+    answer: "Oui, GF Nuisibles propose également la dératisation à Nogent et à Chalindrey. Les pages dédiées à ces communes sont accessibles depuis cette page. Pour organiser le déplacement, communiquez votre adresse et décrivez les signes observés.",
   },
 ];
 
@@ -40,23 +41,7 @@ const DeratisationLangres = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://gf-nuisibles.fr/#organization",
-        "url": "https://gf-nuisibles.fr",
-        "name": "G&F Nuisibles",
-        "telephone": "07.65.25.67.92",
-        "priceRange": "$$",
-        "image": "https://gf-nuisibles.fr/og-image.png",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "27 rue principale",
-          "addressLocality": "Montsaon",
-          "postalCode": "52000",
-          "addressRegion": "Haute-Marne",
-          "addressCountry": "FR"
-        }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service",
         "name": TITLE,
@@ -109,16 +94,16 @@ const DeratisationLangres = () => {
       heroImage={heroImage}
       metaDescription={DESCRIPTION}
       serviceCallTitle="DES RONGEURS ONT ÉLU DOMICILE À LANGRES ?"
-      serviceCallSubtitle="G&F NUISIBLES, EXPERT EN DÉRATISATION, INTERVIENT RAPIDEMENT !"
-      intro="Des bruits dans les combles, des déjections dans une cave ou des denrées rongées dans votre commerce à Langres ? G&F Nuisibles intervient contre les rats et les souris dans les logements et les locaux professionnels de Langres (52200), en Haute-Marne. Le diagnostic recherche les zones de passage, les sources de nourriture et les points d'entrée afin de proposer un traitement adapté, plutôt que de poser des pièges au hasard."
-      expertise="Basée à Montsaon, G&F Nuisibles est une entreprise locale qui dessert le Pays de Langres. L'intervention tient compte de la configuration réelle de vos pièces, des espaces communs et de vos contraintes d'activité. Pièges mécaniques, postes sécurisés et recommandations de fermeture des accès sont choisis selon les observations. La présence d'enfants ou d'animaux doit être signalée : aucun traitement ne dispense du respect des consignes de sécurité."
+      serviceCallSubtitle="GF NUISIBLES, EXPERT EN DÉRATISATION, INTERVIENT RAPIDEMENT !"
+      intro="Des bruits dans les combles, des déjections dans une cave ou des denrées rongées dans votre commerce à Langres ? GF Nuisibles intervient contre les rats et les souris dans les logements et les locaux professionnels de Langres (52200), en Haute-Marne. Le diagnostic recherche les zones de passage, les sources de nourriture et les points d'entrée afin de proposer un traitement adapté, plutôt que de poser des pièges au hasard."
+      expertise="Basée à Montsaon, GF Nuisibles est une entreprise locale qui dessert le Pays de Langres. L'intervention tient compte de la configuration réelle de vos pièces, des espaces communs et de vos contraintes d'activité. Pièges mécaniques, postes sécurisés et recommandations de fermeture des accès sont choisis selon les observations. La présence d'enfants ou d'animaux doit être signalée : aucun traitement ne dispense du respect des consignes de sécurité."
       method="L'inspection commence par les traces et les accès possibles : dessous de portes, traversées de canalisations, caves, réserves et combles accessibles. Après identification du problème, le devis précise le dispositif proposé et les modalités de suivi. Le contrôle de l'activité permet d'ajuster le traitement. La prévention complète cette démarche : protéger les denrées, limiter les refuges et corriger les accès pour réduire le risque de retour."
       localContext={{
         title: "Centre historique de Langres : une inspection adaptée au bâti",
         content: (
           <>
             <p>
-              La place Diderot, la cathédrale Saint-Mammès et les remparts sont des repères du centre historique de Langres. Pour un logement ou un commerce situé dans ce secteur, l'inspection porte sur votre bâtiment : cave, arrière-boutique, gaines techniques, passages entre pièces et accès depuis l'extérieur. Ces monuments servent à situer la zone desservie ; leur mention ne signifie pas qu'ils sont infestés ou qu'ils sont clients de G&F Nuisibles.
+              La place Diderot, la cathédrale Saint-Mammès et les remparts sont des repères du centre historique de Langres. Pour un logement ou un commerce situé dans ce secteur, l'inspection porte sur votre bâtiment : cave, arrière-boutique, gaines techniques, passages entre pièces et accès depuis l'extérieur. Ces monuments servent à situer la zone desservie ; leur mention ne signifie pas qu'ils sont infestés ou qu'ils sont clients de GF Nuisibles.
             </p>
             <p>
               Dans un immeuble, un problème observé dans un appartement peut nécessiter de vérifier les parties communes avec le propriétaire ou le syndic. Une fermeture d'accès doit être adaptée au support : on évite les travaux improvisés sur les maçonneries et on définit les corrections après inspection. En présence d'un bâtiment protégé, toute modification doit respecter les règles applicables au lieu.
@@ -161,7 +146,7 @@ const DeratisationLangres = () => {
           content: (
             <>
               <p>Le diagnostic et le devis sont gratuits. Le coût du traitement dépend de la surface, des accès, de l'espèce, des dispositifs nécessaires et du nombre de contrôles prévus. Il n'y a pas de prix unique applicable à toutes les habitations de Langres : décrivez le problème pour obtenir une proposition correspondant à votre situation.</p>
-              <p>Pour en savoir plus sur les méthodes et les prestations de G&F Nuisibles, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service de dératisation pour particuliers et professionnels</Link>. Pour demander votre diagnostic à Langres, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">contactez G&F Nuisibles</Link> ou appelez le 07.65.25.67.92.</p>
+              <p>Pour en savoir plus sur les méthodes et les prestations de GF Nuisibles, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service de dératisation pour particuliers et professionnels</Link>. Pour demander votre diagnostic à Langres, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">contactez GF Nuisibles</Link> ou appelez le 07 65 25 67 92.</p>
             </>
           ),
         },
@@ -179,7 +164,7 @@ const DeratisationLangres = () => {
           { label: "Dératisation à Chalindrey", to: "/deratisation-chalindrey" },
         ],
       }}
-      cta="Rats ou souris à Langres ? Appelez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits, adaptés à votre logement ou à votre activité."
+      cta="Rats ou souris à Langres ? Appelez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits, adaptés à votre logement ou à votre activité."
       faqItems={FAQ_ITEMS}
     />
     </>

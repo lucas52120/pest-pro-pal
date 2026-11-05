@@ -133,7 +133,7 @@ const Navbar = () => {
           className="hidden flex-shrink-0 items-center gap-2 rounded-lg bg-accent px-5 py-2.5 font-heading text-base font-bold text-accent-foreground transition-colors hover:bg-orange-hover md:flex"
         >
           <Phone className="h-5 w-5" />
-          07.65.25.67.92
+          07 65 25 67 92
         </a>
 
         {/* Mobile toggle */}
@@ -216,7 +216,7 @@ const Navbar = () => {
               className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-3 font-heading text-sm font-bold text-accent-foreground"
             >
               <Phone className="h-4 w-4" />
-              07.65.25.67.92
+              07 65 25 67 92
             </a>
           </div>
         </div>

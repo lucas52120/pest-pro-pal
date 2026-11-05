@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Destruction nid Guêpes & Frelons Saint-Dizier 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou frelons à Saint-Dizier (52100) ? G&F Nuisibles étudie l’accès et les précautions nécessaires. Devis gratuit au 07.65.25.67.92.";
+const DESCRIPTION = "Nid de guêpes ou frelons à Saint-Dizier (52100) ? GF Nuisibles étudie l’accès et les précautions nécessaires. Devis gratuit au 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-saint-dizier";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -21,12 +22,7 @@ const GuepesFrelonsSaintDizier = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
-        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Destruction de nids de guêpes et frelons à Saint-Dizier (52100)", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -64,8 +60,8 @@ const GuepesFrelonsSaintDizier = () => {
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
         serviceCallTitle={"NID DE GUÊPES OU FRELONS À SAINT-DIZIER ?"}
-        serviceCallSubtitle="G&F NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un va-et-vient d’insectes dans un volet, sous une toiture ou près d’un abri de jardin à Saint-Dizier ? G&F Nuisibles prend en charge les demandes de destruction de nids de guêpes et de frelons à Saint-Dizier (52100). L’espèce, l’emplacement et l’accès sont évalués avant l’intervention. Un nid dans une cavité de façade ne se traite pas comme un nid apparent dans un arbre ; n’obstruez pas l’entrée avant d’avoir demandé conseil."}
+        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
+        intro={"Un va-et-vient d’insectes dans un volet, sous une toiture ou près d’un abri de jardin à Saint-Dizier ? GF Nuisibles prend en charge les demandes de destruction de nids de guêpes et de frelons à Saint-Dizier (52100). L’espèce, l’emplacement et l’accès sont évalués avant l’intervention. Un nid dans une cavité de façade ne se traite pas comme un nid apparent dans un arbre ; n’obstruez pas l’entrée avant d’avoir demandé conseil."}
         expertise={"Basée à Montsaon, l’entreprise dessert la cité bragarde pour les particuliers et les professionnels. La préparation tient compte des passages, des personnes allergiques, des enfants et des animaux. L’équipement et le procédé sont adaptés au nid observé. Les protections et les conditions de suivi sont expliquées avant le passage ; le retrait physique d’un nid n’est pas automatiquement possible ni nécessaire dans toutes les configurations."}
         method={"Nous identifions les indices de l’espèce et examinons la hauteur, les accès et les risques d’exposition. Le périmètre est organisé avant le traitement professionnel. Les consignes après passage précisent la zone à éviter et les signes éventuels à signaler. Le devis annonce les prestations retenues, les contraintes de matériel et les conditions de suivi sans promettre un résultat immédiat quelle que soit la situation."}
         localContext={{ title: "Du centre de Saint-Dizier aux jardins de Marnaval", content: <>
@@ -85,7 +81,7 @@ const GuepesFrelonsSaintDizier = () => {
 <p>{"En cas de difficulté à respirer ou de réaction allergique après une piqûre, appelez le 15 ou le 112 : la destruction du nid ne remplace pas les secours médicaux. Le tarif de l’intervention dépend de la hauteur, de l’accès et du matériel ; le devis gratuit et le créneau sont confirmés pour votre situation."}</p>
           </> },
           { title: "Votre service à Saint-Dizier et dans le nord de la Haute-Marne", content: <>
-<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service guêpes et frelons en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Saint-Dizier, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service guêpes et frelons en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Saint-Dizier, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
 <p>Vous êtes dans une autre commune du secteur ? Retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-wassy">Guêpes et frelons à Wassy</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-joinville">Guêpes et frelons à Joinville</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-montier-en-der">Guêpes et frelons à Montier-en-Der</Link>. Consultez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link>.</p>
           </> },
         ]}
@@ -100,7 +96,7 @@ const GuepesFrelonsSaintDizier = () => {
           { label: "Taupier à Saint-Dizier", to: "/taupes-saint-dizier" },
         ]}
         faqItems={FAQ_ITEMS}
-        cta={"Guêpes et frelons à Saint-Dizier : appelez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
+        cta={"Guêpes et frelons à Saint-Dizier : appelez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
       />
     </>
   );

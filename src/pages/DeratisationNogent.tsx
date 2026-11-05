@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Dératisation Nogent 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Nogent (52800) ? G&F Nuisibles recherche les accès et propose une dératisation adaptée aux logements et locaux. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Rats ou souris à Nogent (52800) ? GF Nuisibles recherche les accès et propose une dératisation adaptée aux logements et locaux. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/deratisation-nogent";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -21,12 +22,7 @@ const DeratisationNogent = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
-        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Dératisation à Nogent (52800) : rats et souris", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -64,8 +60,8 @@ const DeratisationNogent = () => {
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
         serviceCallTitle={"RATS OU SOURIS DANS VOTRE BÂTIMENT À NOGENT ?"}
-        serviceCallSubtitle="G&F NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Des crottes dans une réserve, des emballages rongés ou des bruits derrière une cloison à Nogent ? Ces observations justifient une recherche de rongeurs, sans permettre à elles seules de mesurer leur nombre. G&F Nuisibles propose une dératisation à Nogent (52800), en Haute-Marne, pour les particuliers et les professionnels. Indiquez si votre adresse se trouve à Nogent-le-Haut ou à Nogent-le-Bas et décrivez les pièces concernées : une cave, une cuisine et un atelier ne présentent pas les mêmes accès."}
+        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
+        intro={"Des crottes dans une réserve, des emballages rongés ou des bruits derrière une cloison à Nogent ? Ces observations justifient une recherche de rongeurs, sans permettre à elles seules de mesurer leur nombre. GF Nuisibles propose une dératisation à Nogent (52800), en Haute-Marne, pour les particuliers et les professionnels. Indiquez si votre adresse se trouve à Nogent-le-Haut ou à Nogent-le-Bas et décrivez les pièces concernées : une cave, une cuisine et un atelier ne présentent pas les mêmes accès."}
         expertise={"Le diagnostic distingue les indices de rats et de souris, recherche les voies de passage et tient compte de l’usage du bâtiment. Dans un logement, signalez les enfants et les animaux ; dans un local professionnel, précisez les denrées, les stocks et les horaires d’activité. Les dispositifs mécaniques ou les postes sécurisés sont choisis selon la situation. Aucun produit n’est présenté comme sans risque : les consignes de protection accompagnent la prestation."}
         method={"L’inspection porte sur les ouvertures en pied de façade, les passages de canalisations, les dépendances et les sources de nourriture. Le devis précise les zones retenues, les dispositifs et le suivi proposé. La dératisation associe le traitement de l’activité observée et des recommandations sur les accès : rangement, protection des denrées, gestion des déchets et réparations à prévoir. Un colmatage doit être réfléchi selon les circulations repérées, et non réalisé au hasard."}
         localContext={{ title: "Rongeurs : prendre en compte le relief et les bâtiments de Nogent", content: <>
@@ -85,7 +81,7 @@ const DeratisationNogent = () => {
 <p>{"Pour un commerce ou un atelier, indiquez les contraintes de circulation, de stockage et de protection des produits. Demandez ce qui est compris dans le suivi, les contrôles et les recommandations de fermeture des accès. Aucun prix ni nombre de passages ne peut être déduit du seul nom du quartier."}</p>
           </> },
           { title: "Votre service à Nogent et dans les villes du secteur", content: <>
-<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service dératisation en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Nogent, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service dératisation en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Nogent, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
 <p>Pour une adresse dans une autre commune, consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-langres">Dératisation à Langres</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chaumont">Dératisation à Chaumont</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chalindrey">Dératisation à Chalindrey</Link>. Elles présentent les prestations dans ces villes, distinctes de Nogent. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour situer votre demande.</p>
           </> },
         ]}
@@ -100,7 +96,7 @@ const DeratisationNogent = () => {
           { label: "Taupier à Nogent", to: "/taupes-nogent" },
         ]}
         faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Nogent : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
+        cta={"Dératisation à Nogent : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
       />
     </>
   );

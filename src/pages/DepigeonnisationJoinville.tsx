@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Dépigeonnisation Joinville 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Joinville (52300) ? G&F Nuisibles étudie les supports et propose des protections adaptées. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Joinville (52300) ? GF Nuisibles étudie les supports et propose des protections adaptées. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-joinville";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -21,12 +22,7 @@ const DepigeonnisationJoinville = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
-        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Dépigeonnisation à Joinville (52300) : balcons et toitures", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -64,8 +60,8 @@ const DepigeonnisationJoinville = () => {
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
         serviceCallTitle={"DES PIGEONS SUR VOTRE BÂTIMENT À JOINVILLE ?"}
-        serviceCallSubtitle="G&F NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un balcon utilisé comme abri, des fientes sur un rebord ou des oiseaux entrant sous une toiture à Joinville demandent une étude des accès. G&F Nuisibles propose une dépigeonnisation à Joinville (52300) pour protéger les logements et les locaux professionnels. L’objectif est de limiter l’accès aux zones utilisées par les pigeons avec une solution adaptée au support. La pose d’un dispositif doit tenir compte des oiseaux présents, de l’entretien et de l’usage du bâtiment."}
+        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
+        intro={"Un balcon utilisé comme abri, des fientes sur un rebord ou des oiseaux entrant sous une toiture à Joinville demandent une étude des accès. GF Nuisibles propose une dépigeonnisation à Joinville (52300) pour protéger les logements et les locaux professionnels. L’objectif est de limiter l’accès aux zones utilisées par les pigeons avec une solution adaptée au support. La pose d’un dispositif doit tenir compte des oiseaux présents, de l’entretien et de l’usage du bâtiment."}
         expertise={"Filets, picots et fils tendus répondent à des besoins distincts. Un filet protège un volume, tandis qu’un système de limitation du perchage peut convenir à certains rebords. Le choix dépend des points de fixation, de la largeur du support et des accès voisins. Les méthodes non létales doivent être mises en place sans emprisonner les oiseaux. Sur une façade en copropriété ou soumise à des contraintes patrimoniales, les autorisations nécessaires sont vérifiées avant d’engager les travaux."}
         method={"Le diagnostic repère les zones de perchage, les ouvertures et la présence éventuelle de nids. Le devis indique les protections proposées, les moyens d’accès et les éventuelles opérations de nettoyage. La pose recherche une fermeture cohérente des passages retenus, sans laisser d’oiseau enfermé. Les contrôles des fixations et l’entretien sont expliqués : une protection abîmée ou déplacée peut laisser un nouvel accès, même après une installation initialement adaptée."}
         localContext={{ title: "Façades de Joinville : intégrer les contraintes patrimoniales", content: <>
@@ -85,7 +81,7 @@ const DepigeonnisationJoinville = () => {
 <p>{"Pour le devis, transmettez des photos prises depuis un endroit sûr et les dimensions approximatives des supports. Demandez les opérations incluses, les modalités de contrôle et l’entretien des fixations. Aucune garantie d’absence définitive de pigeons ne remplace une description claire du périmètre protégé."}</p>
           </> },
           { title: "Votre service à Joinville et dans les villes du secteur", content: <>
-<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnage">service dépigeonnisation en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Joinville, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnage">service dépigeonnisation en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Joinville, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
 <p>Pour une adresse dans une autre commune, consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-wassy">Dépigeonnisation à Wassy</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-froncles">Dépigeonnisation à Froncles</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-saint-dizier">Dépigeonnisation à Saint-Dizier</Link>. Elles présentent les prestations dans ces villes, distinctes de Joinville. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour situer votre demande.</p>
           </> },
         ]}
@@ -100,7 +96,7 @@ const DepigeonnisationJoinville = () => {
           { label: "Taupier à Joinville", to: "/taupes-joinville" },
         ]}
         faqItems={FAQ_ITEMS}
-        cta={"Dépigeonnisation à Joinville : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
+        cta={"Dépigeonnisation à Joinville : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
       />
     </>
   );

@@ -28,11 +28,11 @@ const Reassurance = () => {
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5"
         >
           {[
-            { icon: Clock, label: "Horaires", text: "Lun–Ven : 8h–19h | Urgence & astreinte week-end" },
+            { icon: Clock, label: "Horaires", text: "7j/7, de 7h à 23h, week-ends compris" },
             { icon: MapPin, label: "Secteur", text: "Chaumont, Saint-Dizier, Langres et environs (52)" },
             { icon: CheckCircle, label: "Suivi", text: "Suivi jusqu'à résolution, selon devis, véhicules discrets" },
             { icon: ShieldCheck, label: "Certification", text: "Titulaire du Certibiocide — Produits professionnels homologués" },
-            { icon: Phone, label: "Contact", text: "07.65.25.67.92" },
+            { icon: Phone, label: "Contact", text: "07 65 25 67 92" },
           ].map((item) => (
             <div
               key={item.label}

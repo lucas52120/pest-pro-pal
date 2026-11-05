@@ -24,8 +24,8 @@ const NotFound = () => {
   return (
     <>
       <Helmet>
-        <title>Page introuvable | G&F Nuisibles</title>
-        <meta name="description" content="Cette page n'existe pas ou a été déplacée. Retrouvez les services de G&F Nuisibles en Haute-Marne." />
+        <title>Page introuvable | GF Nuisibles</title>
+        <meta name="description" content="Cette page n'existe pas ou a été déplacée. Retrouvez les services de GF Nuisibles en Haute-Marne." />
         <meta name="robots" content="noindex" />
       </Helmet>
       <Navbar />
@@ -43,7 +43,7 @@ const NotFound = () => {
             className="mb-10 inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 font-heading font-bold text-accent-foreground transition-opacity hover:opacity-90"
           >
             <Phone className="h-5 w-5" />
-            Appeler le 07.65.25.67.92
+            Appeler le 07 65 25 67 92
           </a>
           <nav aria-label="Nos services" className="mx-auto mb-8 grid max-w-2xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((service) => (

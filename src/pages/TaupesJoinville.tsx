@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Taupier Joinville 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Joinville (52300) ? G&F Nuisibles recherche les galeries actives et propose un piégeage mécanique. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Taupinières dans votre jardin à Joinville (52300) ? GF Nuisibles recherche les galeries actives et propose un piégeage mécanique. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/taupes-joinville";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -21,12 +22,7 @@ const TaupesJoinville = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
-        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Taupier à Joinville (52300) : piégeage des taupes", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -64,13 +60,13 @@ const TaupesJoinville = () => {
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
         serviceCallTitle={"DES TAUPINIÈRES SUR VOTRE PELOUSE À JOINVILLE ?"}
-        serviceCallSubtitle="G&F NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"De nouveaux monticules de terre apparaissent dans votre jardin à Joinville ? G&F Nuisibles propose un service de taupier à Joinville (52300), en Haute-Marne, fondé sur le repérage des galeries actives. Avant de poser des pièges, il faut distinguer les traces récentes des anciennes et vérifier qu’elles correspondent à des taupes. Le nombre de taupinières ne permet pas de compter les animaux : un même individu peut déplacer de la terre à plusieurs endroits de son réseau."}
+        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
+        intro={"De nouveaux monticules de terre apparaissent dans votre jardin à Joinville ? GF Nuisibles propose un service de taupier à Joinville (52300), en Haute-Marne, fondé sur le repérage des galeries actives. Avant de poser des pièges, il faut distinguer les traces récentes des anciennes et vérifier qu’elles correspondent à des taupes. Le nombre de taupinières ne permet pas de compter les animaux : un même individu peut déplacer de la terre à plusieurs endroits de son réseau."}
         expertise={"La taupe se nourrit principalement d’invertébrés du sol. Des racines consommées ou une plante abîmée ne suffisent donc pas à l’identifier comme responsable. Le diagnostic porte sur les indices visibles, la disposition des galeries et l’usage du terrain. La méthode proposée utilise des pièges mécaniques sans traitement chimique du sol. Leur installation doit rester protégée ; les enfants, les animaux et les usagers du jardin doivent respecter les consignes autour des dispositifs."}
         method={"Le repérage recherche les portions du réseau utilisées et évalue le périmètre de travail. Le devis décrit la pose et le suivi retenus selon l’activité observée et l’accès au terrain. Les pièges sont placés dans les galeries adaptées puis contrôlés selon l’organisation convenue. La remise à niveau de la pelouse se prévoit après le suivi. Un terrain ouvert peut être recolonisé : le piégeage ne doit pas être présenté comme une exclusion définitive de nouvelles taupes."}
         localContext={{ title: "Vallée de la Marne et jardins de Joinville : examiner le sol réel", content: <>
 <p>{"Joinville s’inscrit dans la vallée de la Marne, avec une vieille ville et une colline portant le site de l’ancien château. Pour votre jardin, indiquez la pente, les zones récemment travaillées et l’accès aux parcelles. La géographie locale ne permet pas de prévoir l’activité souterraine sur un terrain particulier."}</p>
-<p>{"Le quai des Peceaux et le secteur du château du Grand Jardin permettent de situer une demande dans Joinville. Les jardins du monument ne sont pas présentés comme infestés ni comme des interventions de G&F Nuisibles. Le diagnostic concerne uniquement les traces observées sur votre propriété."}</p>
+<p>{"Le quai des Peceaux et le secteur du château du Grand Jardin permettent de situer une demande dans Joinville. Les jardins du monument ne sont pas présentés comme infestés ni comme des interventions de GF Nuisibles. Le diagnostic concerne uniquement les traces observées sur votre propriété."}</p>
 <p>{"Dans un jardin attenant à une maison comme sur un espace extérieur professionnel, précisez les passages fréquentés, les jeux d’enfants et les animaux présents. Signalez les réseaux enterrés connus et les zones dont l’accès est limité. Ces informations servent à organiser le repérage et à protéger les dispositifs."}</p>
 <p>Pour retrouver ces repères, consultez la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.bienvenue-hautemarne.fr/villes-cites-caractere/joinville/" target="_blank" rel="noopener noreferrer">présentation de Joinville par Haute-Marne Attractivité</a> et le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://tourisme-joinville.com/" target="_blank" rel="noopener noreferrer">site de l’office de tourisme de Joinville</a>.</p>
         </> }}
@@ -85,7 +81,7 @@ const TaupesJoinville = () => {
 <p>{"Après le suivi, la terre des monticules peut être répartie pour remettre la pelouse à niveau selon son état. Si de nouvelles taupinières apparaissent ultérieurement, une nouvelle observation permet de distinguer activité persistante et recolonisation. Demandez les conditions d’un éventuel suivi supplémentaire plutôt qu’une promesse de résultat permanent."}</p>
           </> },
           { title: "Votre service à Joinville et dans les villes du secteur", content: <>
-<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes">service taupier en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Joinville, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes">service taupier en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Joinville, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
 <p>Pour une adresse dans une autre commune, consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-wassy">Taupier à Wassy</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-froncles">Taupier à Froncles</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-saint-dizier">Taupier à Saint-Dizier</Link>. Elles présentent les prestations dans ces villes, distinctes de Joinville. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour situer votre demande.</p>
           </> },
         ]}
@@ -100,7 +96,7 @@ const TaupesJoinville = () => {
           { label: "Dépigeonnisation à Joinville", to: "/depigeonnisation-joinville" },
         ]}
         faqItems={FAQ_ITEMS}
-        cta={"Taupier à Joinville : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
+        cta={"Taupier à Joinville : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
       />
     </>
   );

@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Taupier Langres 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Langres (52200) ? G&F Nuisibles propose un piégeage mécanique adapté au terrain, sans produit chimique. Devis gratuit.";
+const DESCRIPTION = "Taupinières dans votre jardin à Langres (52200) ? GF Nuisibles propose un piégeage mécanique adapté au terrain, sans produit chimique. Devis gratuit.";
 const URL = "https://gf-nuisibles.fr/taupes-langres";
 
 const FAQ_ITEMS: FaqItem[] = [
-  { question: "Le piégeage des taupes utilise-t-il du poison ?", answer: "G&F Nuisibles propose un piégeage mécanique sans produit chimique. Les pièges exigent toutefois des précautions et ne doivent pas être manipulés. Les enfants et les animaux doivent être tenus à l'écart de la zone traitée." },
+  { question: "Le piégeage des taupes utilise-t-il du poison ?", answer: "GF Nuisibles propose un piégeage mécanique sans produit chimique. Les pièges exigent toutefois des précautions et ne doivent pas être manipulés. Les enfants et les animaux doivent être tenus à l'écart de la zone traitée." },
   { question: "Le nombre de taupinières indique-t-il le nombre de taupes ?", answer: "Non. Une taupe peut produire plusieurs monticules et toutes les galeries ne sont pas nécessairement utilisées au moment de la visite. Le repérage de l'activité aide à positionner les dispositifs." },
   { question: "Intervenez-vous dans les jardins de Saint-Gilles et des Franchises ?", answer: "Oui, ces secteurs de Langres sont desservis, comme les Fourches, la Citadelle et les autres secteurs de la commune. Précisez l'adresse et les accès au terrain. L'entreprise est basée à Montsaon." },
   { question: "Combien de temps faut-il pour traiter un jardin à Langres ?", answer: "La durée et le nombre de contrôles dépendent de l'activité et de la configuration du terrain. Les modalités sont précisées dans le devis ; il n'est pas possible de garantir à distance un délai identique pour chaque jardin." },
@@ -21,23 +22,7 @@ const TaupesLangres = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://gf-nuisibles.fr/#organization",
-        "url": "https://gf-nuisibles.fr",
-        "name": "G&F Nuisibles",
-        "telephone": "07.65.25.67.92",
-        "priceRange": "$$",
-        "image": "https://gf-nuisibles.fr/og-image.png",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "27 rue principale",
-          "addressLocality": "Montsaon",
-          "postalCode": "52000",
-          "addressRegion": "Haute-Marne",
-          "addressCountry": "FR"
-        }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service",
         "url": URL,
@@ -72,9 +57,9 @@ const TaupesLangres = () => {
       heroImage={heroImage}
       metaDescription={DESCRIPTION}
       serviceCallTitle="TAUPES DANS VOTRE JARDIN À LANGRES ?"
-      serviceCallSubtitle="G&F NUISIBLES, TAUPIER PROFESSIONNEL EN HAUTE-MARNE !"
-      intro={"Des taupinières apparaissent sur votre pelouse ou dans votre jardin à Langres ? G&F Nuisibles propose un service de taupier à Langres (52200), en Haute-Marne. L'inspection recherche les galeries utilisées et délimite la zone à traiter avant de poser des pièges mécaniques. Le nombre de monticules ne suffit pas à déterminer le nombre de taupes ni à choisir l'emplacement des pièges."}
-      expertise={"Depuis Montsaon, G&F Nuisibles dessert les jardins et espaces verts du Pays de Langres. Le piégeage mécanique ne nécessite pas de produit chimique. Cela ne supprime pas les précautions : la zone des pièges doit rester inaccessible aux enfants et aux animaux. Le dispositif est choisi selon le terrain et son usage, sans promesse de protection permanente contre toute nouvelle arrivée."}
+      serviceCallSubtitle="GF NUISIBLES, TAUPIER PROFESSIONNEL EN HAUTE-MARNE !"
+      intro={"Des taupinières apparaissent sur votre pelouse ou dans votre jardin à Langres ? GF Nuisibles propose un service de taupier à Langres (52200), en Haute-Marne. L'inspection recherche les galeries utilisées et délimite la zone à traiter avant de poser des pièges mécaniques. Le nombre de monticules ne suffit pas à déterminer le nombre de taupes ni à choisir l'emplacement des pièges."}
+      expertise={"Depuis Montsaon, GF Nuisibles dessert les jardins et espaces verts du Pays de Langres. Le piégeage mécanique ne nécessite pas de produit chimique. Cela ne supprime pas les précautions : la zone des pièges doit rester inaccessible aux enfants et aux animaux. Le dispositif est choisi selon le terrain et son usage, sans promesse de protection permanente contre toute nouvelle arrivée."}
       method={"Le repérage des galeries précède la pose des pièges dans les passages retenus. Le suivi permet de contrôler les dispositifs et d'ajuster leur emplacement selon l'activité constatée. Les modalités de passage et de retrait sont définies pour votre terrain. N'ouvrez pas les galeries et ne manipulez pas les pièges pendant la période de traitement."}
       localContext={{ title: "Jardins de Langres : partir du terrain, pas du seul nombre de taupinières", content: <>
 <p>{"À Saint-Gilles, aux Franchises ou aux Fourches, indiquez si les monticules concernent une pelouse, un potager ou une bordure. Dans le secteur de la Citadelle comme près du centre historique, précisez les accès au jardin et la présence d'espaces partagés. Ces secteurs sont des repères de desserte, et non une affirmation que tous leurs jardins sont concernés."}</p>
@@ -95,7 +80,7 @@ const TaupesLangres = () => {
 <p>{"Après le retrait des dispositifs, surveillez les signes d'activité nouvelle. Un jardin reste un milieu ouvert : aucune méthode ne garantit qu'une taupe ne pourra jamais revenir. Si de nouveaux monticules apparaissent, notez leur emplacement pour demander une réévaluation, plutôt que de manipuler un ancien piège."}</p>
 </> },
         { title: "Votre service à Langres et dans les communes voisines", content: <>
-<p>Pour découvrir les méthodes et les prestations, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes">{"service de taupier en Haute-Marne"}</Link>. Pour un rendez-vous à Langres, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Pour découvrir les méthodes et les prestations, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes">{"service de taupier en Haute-Marne"}</Link>. Pour un rendez-vous à Langres, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
 <p>Vous êtes dans une commune voisine ? Retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-nogent">{"Taupier à Nogent"}</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-chalindrey">{"Taupier à Chalindrey"}</Link>, ou consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour les autres secteurs desservis.</p>
 </> },
       ]}
@@ -104,7 +89,7 @@ const TaupesLangres = () => {
 { label: "Taupier à Chalindrey", to: "/taupes-chalindrey" },
 ] }}
       faqItems={FAQ_ITEMS}
-      cta={"Taupier à Langres : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits adaptés à votre situation."}
+      cta={"Taupier à Langres : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits adaptés à votre situation."}
     />
   </>
   );

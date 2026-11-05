@@ -5,11 +5,12 @@ import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const FORMSPARK_URL = "https://submit-form.com/cbVnrVxCc";
 
 const SITE_URL = "https://gf-nuisibles.fr";
-const PHONE_DISPLAY = "07.65.25.67.92";
+const PHONE_DISPLAY = "07 65 25 67 92";
 const PHONE_TEL = "0765256792";
 const EMAIL = "contact@gf-nuisibles.fr";
 
@@ -18,31 +19,7 @@ const contactJsonLd = {
   "@type": "ContactPage",
   "url": `${SITE_URL}/contact`,
   "name": "Contact GF Nuisibles | Devis ou Renseignement Gratuit",
-  "mainEntity": {
-    "@type": "LocalBusiness",
-    "@id": `${SITE_URL}/#organization`,
-    "name": "G&F Nuisibles",
-    "url": SITE_URL,
-    "telephone": PHONE_DISPLAY,
-    "email": EMAIL,
-    "image": `${SITE_URL}/og-image.png`,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "27 rue principale",
-      "addressLocality": "Montsaon",
-      "postalCode": "52000",
-      "addressRegion": "Haute-Marne",
-      "addressCountry": "FR",
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": PHONE_DISPLAY,
-      "email": EMAIL,
-      "contactType": "customer service",
-      "areaServed": "FR",
-      "availableLanguage": ["French"],
-    },
-  },
+  "mainEntity": LOCAL_BUSINESS,
 };
 
 const Contact = () => {
@@ -135,7 +112,7 @@ const Contact = () => {
               <p className="mt-4 max-w-md leading-relaxed text-muted-foreground">
                 En cas d'urgence absolue, n'attendez pas et appelez-nous directement au{" "}
                 <a href="tel:0765256792" className="font-bold text-accent hover:underline">
-                  07.65.25.67.92
+                  07 65 25 67 92
                 </a>.
               </p>
             </motion.div>
@@ -257,7 +234,7 @@ const Contact = () => {
                   <Phone className="h-5 w-5 text-accent" />
                   <div>
                     <p className="font-heading font-semibold text-primary">Téléphone</p>
-                    <a href="tel:0765256792" className="text-muted-foreground hover:text-accent">07.65.25.67.92</a>
+                    <a href="tel:0765256792" className="text-muted-foreground hover:text-accent">07 65 25 67 92</a>
                   </div>
                 </li>
                 <li className="flex items-center gap-3">
@@ -280,7 +257,7 @@ const Contact = () => {
             <div className="rounded-xl bg-primary p-6">
               <h3 className="mb-2 font-heading text-xl font-bold text-accent">Urgence ?</h3>
               <p className="mb-4 text-primary-foreground/70">
-                Nous intervenons 7j/7, y compris le week-end pour les situations urgentes.
+                Nous intervenons 7j/7, de 7h à 23h, week-ends compris.
               </p>
               <a
                 href="tel:0765256792"

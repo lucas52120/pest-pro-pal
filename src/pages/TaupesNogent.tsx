@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Taupier Nogent 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Nogent (52800) ? G&F Nuisibles repère les galeries actives et propose un piégeage mécanique adapté. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Taupinières dans votre jardin à Nogent (52800) ? GF Nuisibles repère les galeries actives et propose un piégeage mécanique adapté. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/taupes-nogent";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -21,12 +22,7 @@ const TaupesNogent = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
-        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Taupier à Nogent (52800) : piégeage des taupes", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -64,8 +60,8 @@ const TaupesNogent = () => {
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
         serviceCallTitle={"DES TAUPINIÈRES DANS VOTRE JARDIN À NOGENT ?"}
-        serviceCallSubtitle="G&F NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Des monticules de terre apparaissent sur votre pelouse à Nogent (52800) ? Avant de prévoir un piégeage, il faut vérifier l’activité des galeries et distinguer les taupes d’autres animaux fouisseurs. G&F Nuisibles propose un service de taupier pour les jardins et terrains de Nogent, à Nogent-le-Haut comme à Nogent-le-Bas. La méthode repose sur le repérage du réseau actif, pas sur le nombre de taupinières visibles à un instant donné."}
+        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
+        intro={"Des monticules de terre apparaissent sur votre pelouse à Nogent (52800) ? Avant de prévoir un piégeage, il faut vérifier l’activité des galeries et distinguer les taupes d’autres animaux fouisseurs. GF Nuisibles propose un service de taupier pour les jardins et terrains de Nogent, à Nogent-le-Haut comme à Nogent-le-Bas. La méthode repose sur le repérage du réseau actif, pas sur le nombre de taupinières visibles à un instant donné."}
         expertise={"Une taupe se nourrit principalement d’invertébrés présents dans le sol : une plante abîmée ne suffit donc pas à l’identifier comme responsable. Le diagnostic tient compte des traces, de l’état de la pelouse et des zones récemment remuées. Les pièges mécaniques sont installés dans les galeries identifiées, sans traitement chimique du terrain. Leur emplacement doit être protégé et les consignes respectées, notamment en présence d’enfants ou d’animaux."}
         method={"Le repérage recherche les galeries utilisées et distingue les anciennes taupinières des signes récents. Le devis précise le périmètre de travail et le suivi retenu. Les pièges sont posés aux endroits adaptés, puis contrôlés selon l’organisation convenue. La remise en état de la pelouse est envisagée après l’évaluation de l’activité. Une capture ne garantit pas qu’aucun nouvel animal n’entrera ultérieurement sur un terrain ouvert."}
         localContext={{ title: "Jardins du plateau et de la vallée : observer votre terrain à Nogent", content: <>
@@ -85,7 +81,7 @@ const TaupesNogent = () => {
 <p>{"Après le suivi, la terre des monticules peut servir à remettre la pelouse à niveau selon son état. Une nouvelle taupinière plus tard demande une nouvelle observation plutôt qu’une promesse d’exclusion définitive. Les conditions d’un éventuel suivi supplémentaire doivent être explicitées avant la prestation."}</p>
           </> },
           { title: "Votre service à Nogent et dans les villes du secteur", content: <>
-<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes">service taupier en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Nogent, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes">service taupier en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Nogent, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
 <p>Pour une adresse dans une autre commune, consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-langres">Taupier à Langres</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-chaumont">Taupier à Chaumont</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-chalindrey">Taupier à Chalindrey</Link>. Elles présentent les prestations dans ces villes, distinctes de Nogent. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour situer votre demande.</p>
           </> },
         ]}
@@ -100,7 +96,7 @@ const TaupesNogent = () => {
           { label: "Dépigeonnisation à Nogent", to: "/depigeonnisation-nogent" },
         ]}
         faqItems={FAQ_ITEMS}
-        cta={"Taupier à Nogent : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
+        cta={"Taupier à Nogent : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
       />
     </>
   );

@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Dépigeonnisation Nogent 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Nogent (52800) ? G&F Nuisibles étudie les accès et propose des protections anti-pigeons. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Nogent (52800) ? GF Nuisibles étudie les accès et propose des protections anti-pigeons. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-nogent";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -21,12 +22,7 @@ const DepigeonnisationNogent = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
-        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Dépigeonnisation à Nogent (52800) : protéger les bâtiments", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -64,8 +60,8 @@ const DepigeonnisationNogent = () => {
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
         serviceCallTitle={"PIGEONS SUR VOTRE BALCON OU VOTRE TOITURE À NOGENT ?"}
-        serviceCallSubtitle="G&F NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Des pigeons se posent régulièrement sur un rebord, un balcon ou sous une avancée de toiture à Nogent ? La dépigeonnisation consiste à protéger les zones utilisées par les oiseaux, plutôt qu’à installer le même dispositif sur toute la façade. G&F Nuisibles étudie les bâtiments de Nogent (52800), à Nogent-le-Haut et à Nogent-le-Bas, pour proposer une protection adaptée aux logements, commerces et locaux professionnels."}
+        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
+        intro={"Des pigeons se posent régulièrement sur un rebord, un balcon ou sous une avancée de toiture à Nogent ? La dépigeonnisation consiste à protéger les zones utilisées par les oiseaux, plutôt qu’à installer le même dispositif sur toute la façade. GF Nuisibles étudie les bâtiments de Nogent (52800), à Nogent-le-Haut et à Nogent-le-Bas, pour proposer une protection adaptée aux logements, commerces et locaux professionnels."}
         expertise={"L’observation distingue le simple perchage, l’accès à un abri et la présence éventuelle de nids. Filets, picots ou fils tendus répondent à des configurations différentes. Le choix tient compte de la largeur du support, des fixations possibles, de l’entretien et de l’usage du balcon ou de la toiture. Les solutions non létales doivent être posées sans emprisonner les oiseaux ; les autorisations et les contraintes du bâtiment sont vérifiées avant les travaux."}
         method={"Le diagnostic repère les zones occupées, les points d’entrée et les possibilités de travail en hauteur. Le devis décrit la protection retenue et les éventuelles opérations de nettoyage. La pose doit traiter le passage effectivement utilisé et éviter les ouvertures résiduelles. Si des nids ou des oiseaux sont présents, la conduite à tenir est évaluée avant toute fermeture. Les contrôles et l’entretien des dispositifs sont expliqués pour conserver une protection fonctionnelle."}
         localContext={{ title: "Protéger les façades et les accès de Nogent sans généraliser", content: <>
@@ -85,7 +81,7 @@ const DepigeonnisationNogent = () => {
 <p>{"Pour le devis, fournissez des photos prises depuis un endroit sûr, les dimensions approximatives et les accès disponibles. Signalez la présence de nids avant la pose. Demandez quelles opérations sont incluses, comment contrôler les fixations et quand organiser l’entretien ; aucune garantie générale ne remplace ces conditions précises."}</p>
           </> },
           { title: "Votre service à Nogent et dans les villes du secteur", content: <>
-<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnage">service dépigeonnisation en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Nogent, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnage">service dépigeonnisation en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Nogent, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
 <p>Pour une adresse dans une autre commune, consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-langres">Dépigeonnisation à Langres</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-chaumont">Dépigeonnisation à Chaumont</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-chalindrey">Dépigeonnisation à Chalindrey</Link>. Elles présentent les prestations dans ces villes, distinctes de Nogent. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour situer votre demande.</p>
           </> },
         ]}
@@ -100,7 +96,7 @@ const DepigeonnisationNogent = () => {
           { label: "Taupier à Nogent", to: "/taupes-nogent" },
         ]}
         faqItems={FAQ_ITEMS}
-        cta={"Dépigeonnisation à Nogent : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
+        cta={"Dépigeonnisation à Nogent : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
       />
     </>
   );

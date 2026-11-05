@@ -7,8 +7,8 @@ const MentionsLegales = () => {
   return (
     <>
       <SEO
-        title="Mentions légales | G&F Nuisibles"
-        description="Mentions légales de G&F Nuisibles, entreprise de lutte antinuisibles en Haute-Marne (52) : éditeur, hébergement et informations légales."
+        title="Mentions légales | GF Nuisibles"
+        description="Mentions légales de GF Nuisibles, entreprise de lutte antinuisibles en Haute-Marne (52) : éditeur, hébergement et informations légales."
         path="/mentions-legales"
       />
       <Navbar />
@@ -27,9 +27,9 @@ const MentionsLegales = () => {
           <div>
             <h2 className="font-heading text-2xl font-bold text-primary">Éditeur du site</h2>
             <p className="text-muted-foreground">
-              <strong>G&F Nuisibles</strong> — Micro-entreprise<br />
+              <strong>GF Nuisibles</strong> — Micro-entreprise<br />
               SIRET : 91180982000010<br />
-              Siège social : 27 rue principale, 52000 Montsaon<br />
+              Siège social : 27 rue Principale, 52000 Semoutiers-Montsaon<br />
               Directeur de la publication : <strong>Graja Lucas</strong>
             </p>
           </div>
@@ -37,7 +37,7 @@ const MentionsLegales = () => {
           <div>
             <h2 className="font-heading text-2xl font-bold text-primary">Contact</h2>
             <p className="text-muted-foreground">
-              Téléphone : <a href="tel:0765256792" className="text-accent hover:underline">07.65.25.67.92</a><br />
+              Téléphone : <a href="tel:0765256792" className="text-accent hover:underline">07 65 25 67 92</a><br />
               Email : <a href="mailto:contact@gf-nuisibles.fr" className="text-accent hover:underline">contact@gf-nuisibles.fr</a>
             </p>
           </div>
@@ -55,7 +55,7 @@ const MentionsLegales = () => {
           <div>
             <h2 className="font-heading text-2xl font-bold text-primary">Propriété intellectuelle</h2>
             <p className="text-muted-foreground">
-              L'ensemble des contenus présents sur le site gf-nuisibles.fr (textes, images, logos, graphismes, icônes, vidéos, sons, etc.) est la propriété exclusive de G&F Nuisibles ou de ses partenaires. Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sauf autorisation écrite préalable de G&F Nuisibles.
+              L'ensemble des contenus présents sur le site gf-nuisibles.fr (textes, images, logos, graphismes, icônes, vidéos, sons, etc.) est la propriété exclusive de GF Nuisibles ou de ses partenaires. Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sauf autorisation écrite préalable de GF Nuisibles.
             </p>
           </div>
 

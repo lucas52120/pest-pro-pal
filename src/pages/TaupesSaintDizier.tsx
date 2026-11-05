@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Taupier Saint-Dizier 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières sur votre pelouse à Saint-Dizier (52100) ? G&F Nuisibles repère les galeries actives et propose un piégeage mécanique. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Taupinières sur votre pelouse à Saint-Dizier (52100) ? GF Nuisibles repère les galeries actives et propose un piégeage mécanique. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/taupes-saint-dizier";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -21,12 +22,7 @@ const TaupesSaintDizier = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
-        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Taupier à Saint-Dizier (52100) : jardins et pelouses", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -64,8 +60,8 @@ const TaupesSaintDizier = () => {
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
         serviceCallTitle={"TAUPINIÈRES DANS VOTRE JARDIN À SAINT-DIZIER ?"}
-        serviceCallSubtitle="G&F NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"De nouveaux monticules de terre apparaissent sur votre pelouse à Saint-Dizier ? G&F Nuisibles propose un service de taupier à Saint-Dizier (52100), basé sur le repérage des galeries actives et le piégeage mécanique. Le nombre de tas de terre ne correspond pas au nombre d’animaux : une taupe peut utiliser plusieurs passages. L’examen du terrain permet de distinguer les traces anciennes d’une activité récente avant de poser des dispositifs."}
+        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
+        intro={"De nouveaux monticules de terre apparaissent sur votre pelouse à Saint-Dizier ? GF Nuisibles propose un service de taupier à Saint-Dizier (52100), basé sur le repérage des galeries actives et le piégeage mécanique. Le nombre de tas de terre ne correspond pas au nombre d’animaux : une taupe peut utiliser plusieurs passages. L’examen du terrain permet de distinguer les traces anciennes d’une activité récente avant de poser des dispositifs."}
         expertise={"Depuis Montsaon, nous desservons les jardins privés et les terrains professionnels du secteur bragard. L’accès, la surface et les usages de la parcelle sont pris en compte. Les pièges mécaniques ne nécessitent pas de produit chimique, mais doivent rester hors de manipulation : les enfants et les animaux sont tenus à l’écart des zones indiquées. La méthode et le suivi sont définis pour le terrain, pas d’après son quartier seul."}
         method={"Le repérage recherche les galeries fréquentées et les points adaptés à la pose. Le devis précise le périmètre et les contrôles nécessaires. Les dispositifs sont installés dans le réseau identifié et suivis selon le protocole convenu. Les consignes indiquent les zones à ne pas remanier pendant le passage et les indices à surveiller ensuite ; une parcelle ouverte peut être recolonisée depuis un terrain voisin."}
         localContext={{ title: "Jardins de Gigny, de La Noue et de Marnaval : examiner la parcelle", content: <>
@@ -85,7 +81,7 @@ const TaupesSaintDizier = () => {
 <p>{"Le prix dépend de la surface, de la dispersion des passages et du suivi. Le diagnostic et le devis sont gratuits ; demandez quels contrôles sont inclus et quelles traces observer après l’intervention. Une absence définitive de taupes ne peut pas être promise sur un jardin ouvert aux parcelles voisines."}</p>
           </> },
           { title: "Votre service à Saint-Dizier et dans le nord de la Haute-Marne", content: <>
-<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes">service taupier en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Saint-Dizier, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes">service taupier en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Saint-Dizier, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
 <p>Vous êtes dans une autre commune du secteur ? Retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-wassy">Taupier à Wassy</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-joinville">Taupier à Joinville</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-montier-en-der">Taupier à Montier-en-Der</Link>. Consultez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link>.</p>
           </> },
         ]}
@@ -100,7 +96,7 @@ const TaupesSaintDizier = () => {
           { label: "Dépigeonnisation à Saint-Dizier", to: "/depigeonnisation-saint-dizier" },
         ]}
         faqItems={FAQ_ITEMS}
-        cta={"Taupier à Saint-Dizier : appelez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
+        cta={"Taupier à Saint-Dizier : appelez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
       />
     </>
   );

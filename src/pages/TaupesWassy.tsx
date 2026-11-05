@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Taupier Wassy 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Wassy (52130) ? G&F Nuisibles pose des pièges professionnels dans les galeries actives. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Taupinières dans votre jardin à Wassy (52130) ? GF Nuisibles pose des pièges professionnels dans les galeries actives. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/taupes-wassy";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -21,12 +22,7 @@ const TaupesWassy = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
-        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Taupes à Wassy (52130) : piégeage de jardin", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -64,8 +60,8 @@ const TaupesWassy = () => {
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
         serviceCallTitle={"TAUPINIÈRES DANS VOTRE JARDIN À WASSY ?"}
-        serviceCallSubtitle="G&F NUISIBLES — PIÉGEAGE PROFESSIONNEL CIBLÉ"
-        intro={"Des monticules de terre qui réapparaissent sur une pelouse, dans un potager ou en bordure d'un champ à Wassy signalent une activité souterraine qu'il faut localiser avant d'intervenir. G&F Nuisibles propose le piégeage de taupes à Wassy (52130) pour les particuliers, les exploitants agricoles et les gestionnaires d'espaces verts. Le repérage des galeries actives permet de cibler les pièges plutôt que de traiter la surface au hasard."}
+        serviceCallSubtitle="GF NUISIBLES — PIÉGEAGE PROFESSIONNEL CIBLÉ"
+        intro={"Des monticules de terre qui réapparaissent sur une pelouse, dans un potager ou en bordure d'un champ à Wassy signalent une activité souterraine qu'il faut localiser avant d'intervenir. GF Nuisibles propose le piégeage de taupes à Wassy (52130) pour les particuliers, les exploitants agricoles et les gestionnaires d'espaces verts. Le repérage des galeries actives permet de cibler les pièges plutôt que de traiter la surface au hasard."}
         expertise={"La taupe creuse un réseau de galeries pour chasser les vers de terre et les larves dont elle se nourrit ; les monticules visibles ne représentent qu'une partie de ce réseau souterrain. Distinguer une galerie principale, régulièrement empruntée, d'une galerie secondaire abandonnée conditionne l'efficacité du piégeage. Cette distinction s'appuie sur l'observation du terrain, pas sur une règle générale applicable à tous les jardins."}
         method={"Le repérage commence par l'examen des monticules et de leur disposition pour identifier les galeries principales. Des pièges professionnels y sont installés, puis contrôlés pour vérifier les captures et ajuster leur emplacement si nécessaire. Des conseils sont donnés pour limiter une réinstallation, notamment sur l'entretien du terrain et la gestion des accès depuis les parcelles voisines."}
         localContext={{ title: "Jardins, terrains agricoles et abords de la Blaise à Wassy", content: <>
@@ -84,7 +80,7 @@ const TaupesWassy = () => {
             <p>{"Pour un terrain agricole ou un grand jardin, un suivi régulier permet de repérer rapidement une nouvelle activité et d'intervenir avant une prolifération des galeries."}</p>
           </> },
           { title: "Votre service à Wassy et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes">service taupier en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Wassy, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un devis gratuit</Link> ou appelez le 07.65.25.67.92.</p>
+            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes">service taupier en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Wassy, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un devis gratuit</Link> ou appelez le 07 65 25 67 92.</p>
             <p>Pour un terrain dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-saint-dizier">Taupier à Saint-Dizier</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-joinville">Taupier à Joinville</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/taupes-montier-en-der">Taupier à Montier-en-Der</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande.</p>
           </> },
         ]}
@@ -99,7 +95,7 @@ const TaupesWassy = () => {
           { label: "Dépigeonnisation à Wassy", to: "/depigeonnisation-wassy" },
         ]}
         faqItems={FAQ_ITEMS}
-        cta={"Taupes à Wassy : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Le nombre de pièges et le suivi sont adaptés à la surface et aux galeries observées."}
+        cta={"Taupes à Wassy : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le nombre de pièges et le suivi sont adaptés à la surface et aux galeries observées."}
       />
     </>
   );

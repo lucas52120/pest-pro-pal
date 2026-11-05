@@ -9,10 +9,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import heroImage from "@/assets/service-desinsectisation.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
-const TITLE = "Traitement Cafards et Blattes Haute-Marne (52) | G&F Nuisibles";
+const TITLE = "Traitement Cafards et Blattes Haute-Marne (52) | GF Nuisibles";
 const DESCRIPTION =
-  "Cafards ou blattes chez vous ou dans vos locaux ? G&F Nuisibles traite blattes germaniques et orientales en Haute-Marne : Chaumont, Langres, Saint-Dizier. Devis gratuit.";
+  "Cafards ou blattes chez vous ou dans vos locaux ? GF Nuisibles traite blattes germaniques et orientales en Haute-Marne : Chaumont, Langres, Saint-Dizier. Devis gratuit.";
 const URL = "https://gf-nuisibles.fr/cafards-blattes";
 
 const faqItems = [
@@ -56,23 +57,7 @@ const faqItems = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://gf-nuisibles.fr/#organization",
-      "url": "https://gf-nuisibles.fr",
-      "name": "G&F Nuisibles",
-      "telephone": "07.65.25.67.92",
-      "priceRange": "$$",
-      "image": "https://gf-nuisibles.fr/og-image.png",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "27 rue principale",
-        "addressLocality": "Montsaon",
-        "postalCode": "52000",
-        "addressRegion": "Haute-Marne",
-        "addressCountry": "FR",
-      },
-    },
+    LOCAL_BUSINESS,
     {
       "@type": "Service",
       "url": URL,
@@ -145,9 +130,9 @@ const CafardsBlattes = () => (
       heroImage={heroImage}
       sidebarImage={heroImage}
       serviceCallTitle="VOTRE LOGEMENT, VOTRE CUISINE OU VOTRE COMMERCE EST ENVAHI PAR DES CAFARDS ?"
-      serviceCallSubtitle="CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DU TRAITEMENT DES BLATTES EN HAUTE-MARNE !"
+      serviceCallSubtitle="CONTACTEZ GF NUISIBLES, VOTRE PROFESSIONNEL DU TRAITEMENT DES BLATTES EN HAUTE-MARNE !"
       problem="Des cafards apparaissent la nuit dans votre cuisine, votre salle de bain ou votre cave ? Les blattes se cachent dans les fissures, derrière l'électroménager et dans les gaines techniques. Elles se reproduisent vite, transportent des bactéries et peuvent contaminer les aliments : une intervention rapide limite l'infestation."
-      expertise="G&F Nuisibles, entreprise basée à Montsaon près de Chaumont, identifie l'espèce de blatte présente (germanique, orientale ou rayée) et choisit le traitement adapté à vos locaux. Nous intervenons chez les particuliers comme chez les professionnels de toute la Haute-Marne."
+      expertise="GF Nuisibles, entreprise basée à Montsaon près de Chaumont, identifie l'espèce de blatte présente (germanique, orientale ou rayée) et choisit le traitement adapté à vos locaux. Nous intervenons chez les particuliers comme chez les professionnels de toute la Haute-Marne."
       method="Diagnostic des zones de refuge, application ciblée de gel appâtant et, si nécessaire, pulvérisation ou nébulisation, puis passage de contrôle pour traiter les nouvelles éclosions. Conseils de prévention remis à chaque intervention."
       engagement="Devis gratuit, discrétion totale (véhicule non logoté sur demande), précautions expliquées avant chaque traitement et suivi jusqu'à la fin de l'infestation."
     >
@@ -326,7 +311,7 @@ const CafardsBlattes = () => (
           <div>
             <H2>Zone d'intervention en Haute-Marne</H2>
             <p className="mb-3">
-              Basée à Montsaon, à quelques minutes de Chaumont, G&F Nuisibles intervient dans toute la Haute-Marne : Chaumont,
+              Basée à Montsaon, à quelques minutes de Chaumont, GF Nuisibles intervient dans toute la Haute-Marne : Chaumont,
               Langres, Saint-Dizier, Nogent, Joinville, Wassy, Bourbonne-les-Bains, Bologne, Froncles, Chalindrey, Châteauvillain,
               Arc-en-Barrois, Montier-en-Der, Semoutiers-Montsaon, mais aussi Eurville-Bienville, Chevillon, Andelot-Blancheville,
               Saint-Blin, Prauthoy, Val-de-Meuse, Longeau-Percey et Is-en-Bassigny. Nous couvrons également les communes
@@ -377,8 +362,8 @@ const CafardsBlattes = () => (
 
           <div className="rounded-xl bg-secondary p-6">
             <p className="text-lg font-semibold text-primary">
-              Des cafards chez vous ou dans votre établissement en Haute-Marne ? Appelez G&F Nuisibles au{" "}
-              <a href="tel:0765256792" className="text-accent hover:underline">07.65.25.67.92</a> ou demandez votre{" "}
+              Des cafards chez vous ou dans votre établissement en Haute-Marne ? Appelez GF Nuisibles au{" "}
+              <a href="tel:0765256792" className="text-accent hover:underline">07 65 25 67 92</a> ou demandez votre{" "}
               <Link to="/contact" className="text-accent hover:underline">devis gratuit</Link>.
             </p>
           </div>

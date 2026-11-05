@@ -5,9 +5,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { CITIES } from "@/data/cities";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const SITE_URL = "https://gf-nuisibles.fr";
-const PHONE = "07.65.25.67.92";
+const PHONE = "07 65 25 67 92";
 
 const SECTEURS = [
   {
@@ -62,21 +63,12 @@ const ZoneIntervention = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      LOCAL_BUSINESS,
       {
-        "@type": "PestControlService",
-        name: "G&F Nuisibles",
+        "@type": "Service",
+        name: "Gestion des nuisibles en Haute-Marne et départements limitrophes",
         url: `${SITE_URL}/zone-intervention`,
-        telephone: "+33765256792",
-        image: `${SITE_URL}/og-image.png`,
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Semoutiers-Montsaon",
-          postalCode: "52000",
-          addressRegion: "Haute-Marne",
-          addressCountry: "FR",
-        },
-        geo: { "@type": "GeoCoordinates", latitude: 48.0725, longitude: 5.1069 },
-        openingHours: "Mo-Su 07:00-21:00",
+        provider: { "@id": LOCAL_BUSINESS["@id"] },
         areaServed: CITIES.map((c) => ({ "@type": "City", name: c.name })),
       },
       {
@@ -106,7 +98,7 @@ const ZoneIntervention = () => {
     <>
       <SEO
         title="Zone d'intervention | Dératisation & nuisibles en Haute-Marne (52)"
-        description="G&F Nuisibles intervient à Chaumont, Langres, Saint-Dizier, Joinville et dans toute la Haute-Marne, l'Aube, la Marne, la Côte-d'Or et les Vosges. Urgence 7j/7."
+        description="GF Nuisibles intervient à Chaumont, Langres, Saint-Dizier, Joinville et dans toute la Haute-Marne, l'Aube, la Marne, la Côte-d'Or et les Vosges. Urgence 7j/7."
         path="/zone-intervention"
       />
       <Helmet>
@@ -128,7 +120,7 @@ const ZoneIntervention = () => {
               Zone d'intervention : Haute-Marne et départements limitrophes
             </h1>
             <p className="text-lg text-primary-foreground/85 max-w-3xl">
-              Entreprise de lutte contre les nuisibles basée à Semoutiers-Montsaon (52), G&F Nuisibles
+              Entreprise de lutte contre les nuisibles basée à Semoutiers-Montsaon (52), GF Nuisibles
               intervient chaque jour à Chaumont, Langres, Saint-Dizier, Joinville et dans plus de
               {" "}{CITIES.length} villes de Haute-Marne, d'Aube, de Marne, de Côte-d'Or et des Vosges.
               Dératisation, guêpes et frelons, cafards et blattes, taupes et

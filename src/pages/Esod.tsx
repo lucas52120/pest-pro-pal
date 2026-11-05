@@ -2,6 +2,7 @@ import { ShieldAlert } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImage from "@/assets/service-esod.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Régulation des espèces ESOD Haute-Marne 52 | GF Nuisibles";
 const DESCRIPTION = "Dégâts de fouine, loir ou ragondin ? GF Nuisibles régule les ESOD en Haute-Marne. Pros & particuliers, diagnostic et devis GRATUIT 7j/7. Appelez-nous !";
@@ -10,23 +11,7 @@ const URL = "https://gf-nuisibles.fr/regulation-esod";
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://gf-nuisibles.fr/#organization",
-      "url": "https://gf-nuisibles.fr",
-      "name": "G&F Nuisibles",
-      "telephone": "07.65.25.67.92",
-      "priceRange": "$$",
-      "image": "https://gf-nuisibles.fr/og-image.png",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "27 rue principale",
-        "addressLocality": "Montsaon",
-        "postalCode": "52000",
-        "addressRegion": "Haute-Marne",
-        "addressCountry": "FR"
-      }
-    },
+    LOCAL_BUSINESS,
     {
       "@type": "Service",
       "url": URL,

@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Dératisation Saint-Dizier 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Saint-Dizier (52100) ? G&F Nuisibles adapte le traitement aux logements et locaux professionnels. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Rats ou souris à Saint-Dizier (52100) ? GF Nuisibles adapte le traitement aux logements et locaux professionnels. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/deratisation-saint-dizier";
 
 const FAQ_ITEMS: FaqItem[] = [
-  { question: "Intervenez-vous au Vert-Bois et à Marnaval ?", answer: "Oui, G&F Nuisibles dessert ces secteurs de Saint-Dizier ainsi que La Noue, Gigny et le centre-ville. Indiquez l’adresse, les zones touchées et les accès ; le créneau est confirmé lors de votre demande depuis notre base à Montsaon." },
+  { question: "Intervenez-vous au Vert-Bois et à Marnaval ?", answer: "Oui, GF Nuisibles dessert ces secteurs de Saint-Dizier ainsi que La Noue, Gigny et le centre-ville. Indiquez l’adresse, les zones touchées et les accès ; le créneau est confirmé lors de votre demande depuis notre base à Montsaon." },
   { question: "La proximité de la Marne suffit-elle à expliquer la présence de rats ?", answer: "Non. Les abords d’un cours d’eau font partie de l’environnement, mais la présence de rongeurs doit être constatée par des indices. Le diagnostic recherche les accès, les refuges et les ressources propres à votre bâtiment." },
   { question: "Que faire si plusieurs appartements sont concernés ?", answer: "Informez le bailleur ou le syndic pour organiser l’accès aux espaces communs. Une inspection coordonnée peut être nécessaire pour comprendre les passages entre logements, caves et locaux techniques." },
   { question: "Les postes d’appâtage suppriment-ils tous les risques ?", answer: "Non. Les postes sécurisés contribuent à limiter l’accès aux appâts, mais les consignes restent indispensables. Ne les ouvrez pas ou ne les déplacez pas ; signalez enfants et animaux avant le passage." },
@@ -21,12 +22,7 @@ const DeratisationSaintDizier = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
-        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Dératisation à Saint-Dizier (52100) : rats et souris", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -64,8 +60,8 @@ const DeratisationSaintDizier = () => {
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
         serviceCallTitle={"RATS OU SOURIS À SAINT-DIZIER ?"}
-        serviceCallSubtitle="G&F NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Une réserve alimentaire avec des emballages grignotés, des déjections dans un garage à Marnaval ou des bruits dans un appartement du Vert-Bois ? G&F Nuisibles propose une dératisation à Saint-Dizier (52100), dans le nord de la Haute-Marne. Les traces, les accès et les usages des pièces sont examinés avant de choisir une méthode. Rats et souris ne fréquentent pas toujours les mêmes passages ; il ne suffit pas de poser un appât là où un animal a été aperçu."}
+        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
+        intro={"Une réserve alimentaire avec des emballages grignotés, des déjections dans un garage à Marnaval ou des bruits dans un appartement du Vert-Bois ? GF Nuisibles propose une dératisation à Saint-Dizier (52100), dans le nord de la Haute-Marne. Les traces, les accès et les usages des pièces sont examinés avant de choisir une méthode. Rats et souris ne fréquentent pas toujours les mêmes passages ; il ne suffit pas de poser un appât là où un animal a été aperçu."}
         expertise={"L’entreprise est basée à Montsaon et dessert Saint-Dizier, sans agence locale revendiquée. Le diagnostic distingue les logements individuels, les espaces communs et les locaux professionnels. Dans une activité alimentaire, les conditions de stockage et les besoins de surveillance associés à la démarche HACCP sont pris en compte. Les enfants, les animaux et les denrées doivent être signalés pour organiser des dispositifs et des précautions adaptés."}
         method={"L’inspection recherche l’espèce probable, les voies de circulation et les sources de nourriture ou d’abri. Le devis précise le périmètre, les dispositifs proposés et le suivi nécessaire. Des pièges mécaniques et, si la situation le justifie, des appâts professionnels en postes sécurisés peuvent être retenus. Les points d’entrée à corriger sont expliqués ; les travaux et passages inclus sont détaillés plutôt que supposés compris."}
         localContext={{ title: "Centre bragard, Marnaval et Marne : examiner les accès réels", content: <>
@@ -85,7 +81,7 @@ const DeratisationSaintDizier = () => {
 <p>{"Dans un commerce, un atelier ou une réserve, précisez les contraintes de livraison, de nettoyage et d’accès. Le suivi dépend du risque observé et de l’usage des lieux. Le devis gratuit explique les passages, les mesures préventives et les éventuels travaux ; aucun délai d’élimination ni tarif universel n’est annoncé sans diagnostic."}</p>
           </> },
           { title: "Votre service à Saint-Dizier et dans le nord de la Haute-Marne", content: <>
-<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service dératisation en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Saint-Dizier, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service dératisation en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Saint-Dizier, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
 <p>Vous êtes dans une autre commune du secteur ? Retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-wassy">Dératisation à Wassy</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-joinville">Dératisation à Joinville</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-montier-en-der">Dératisation à Montier-en-Der</Link>. Consultez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link>.</p>
           </> },
         ]}
@@ -100,7 +96,7 @@ const DeratisationSaintDizier = () => {
           { label: "Taupier à Saint-Dizier", to: "/taupes-saint-dizier" },
         ]}
         faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Saint-Dizier : appelez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
+        cta={"Dératisation à Saint-Dizier : appelez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
       />
     </>
   );

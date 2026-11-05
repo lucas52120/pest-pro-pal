@@ -10,8 +10,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import heroImage from "@/assets/service-deratisation.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
-const TITLE = "Dératisation Haute-Marne (52) | Rats & Souris | G&F Nuisibles";
+const TITLE = "Dératisation Haute-Marne (52) | Rats & Souris | GF Nuisibles";
 const DESCRIPTION =
   "Dératisation en Haute-Marne (52) : élimination rats & souris pour particuliers et professionnels. Diagnostic GRATUIT, intervention 7j/7. Devis immédiat.";
 const URL = "https://gf-nuisibles.fr/deratisation";
@@ -20,7 +21,7 @@ const FAQ_ITEMS = [
   {
     question: "Quels sont les signes d'une infestation de rats ou de souris ?",
     answer:
-      "Bruits de grattage la nuit dans les cloisons, plafonds ou faux plafonds ; crottes noires en forme de grain de riz (souris) ou plus grosses (rats) le long des murs ; traces de grignotage sur câbles électriques, emballages alimentaires, plinthes ou isolants ; odeur d'urine forte et persistante ; traces de pas ou de queue dans la poussière. À la moindre alerte, contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic gratuit à Chaumont, Langres, Saint-Dizier ou partout en Haute-Marne (52).",
+      "Bruits de grattage la nuit dans les cloisons, plafonds ou faux plafonds ; crottes noires en forme de grain de riz (souris) ou plus grosses (rats) le long des murs ; traces de grignotage sur câbles électriques, emballages alimentaires, plinthes ou isolants ; odeur d'urine forte et persistante ; traces de pas ou de queue dans la poussière. À la moindre alerte, contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic gratuit à Chaumont, Langres, Saint-Dizier ou partout en Haute-Marne (52).",
   },
   {
     question: "Quels sont les risques sanitaires liés aux rongeurs ?",
@@ -30,7 +31,7 @@ const FAQ_ITEMS = [
   {
     question: "Combien coûte une dératisation en Haute-Marne ?",
     answer:
-      "Tarifs G&F Nuisibles : Diagnostic & devis 100% GRATUIT. Particulier — dératisation appartement / maison dès 90€. Intervention complète maison avec garantie : 150€ à 250€ selon surface et niveau d'infestation. Professionnels (restaurants, agroalimentaire, collectivités) : contrat annuel HACCP sur devis. Toutes nos interventions incluent rapport, traçabilité produits, plan de prévention et passage de contrôle.",
+      "Tarifs GF Nuisibles : Diagnostic & devis 100% GRATUIT. Particulier — dératisation appartement / maison dès 90€. Intervention complète maison avec garantie : 150€ à 250€ selon surface et niveau d'infestation. Professionnels (restaurants, agroalimentaire, collectivités) : contrat annuel HACCP sur devis. Toutes nos interventions incluent rapport, traçabilité produits, plan de prévention et passage de contrôle.",
   },
   {
     question: "Combien de temps dure une intervention de dératisation ?",
@@ -45,7 +46,7 @@ const FAQ_ITEMS = [
   {
     question: "Intervenez-vous le week-end et en urgence ?",
     answer:
-      "Oui. G&F Nuisibles intervient 7j/7 sur toute la Haute-Marne (52) et les départements limitrophes (Vosges 88, Meuse 55, Côte-d'Or 21, Marne 51, Aube 10). Urgences week-end disponibles. Délai d'intervention : 24 à 48h en moyenne, plus rapide en cas d'urgence sanitaire ou pour les professionnels sous contrat.",
+      "Oui. GF Nuisibles intervient 7j/7 sur toute la Haute-Marne (52) et les départements limitrophes (Vosges 88, Meuse 55, Côte-d'Or 21, Marne 51, Aube 10). Urgences week-end disponibles. Délai d'intervention : 24 à 48h en moyenne, plus rapide en cas d'urgence sanitaire ou pour les professionnels sous contrat.",
   },
 ];
 
@@ -70,37 +71,7 @@ const CITY_LINKS = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://gf-nuisibles.fr/#organization",
-      url: "https://gf-nuisibles.fr",
-      name: "G&F Nuisibles",
-      image: "https://gf-nuisibles.fr/og-image.png",
-      telephone: "+33765256792",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "27 rue principale",
-        addressLocality: "Montsaon",
-        postalCode: "52000",
-        addressCountry: "FR",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 48.0856,
-        longitude: 5.1858,
-      },
-      openingHoursSpecification: [
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          opens: "00:00",
-          closes: "23:59",
-        },
-      ],
-      sameAs: ["https://www.facebook.com/profile.php?id=61566255861001"],
-      priceRange: "$$",
-      areaServed: { "@type": "AdministrativeArea", name: "Haute-Marne (52)" },
-    },
+    LOCAL_BUSINESS,
     {
       "@type": "Service",
       url: URL,
@@ -168,9 +139,9 @@ const Deratisation = () => {
         heroImage={heroImage}
         sidebarImage={heroImage}
         serviceCallTitle="VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION DE RATS OU DE RONGEURS ?"
-        serviceCallSubtitle="CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉRATISATION !"
+        serviceCallSubtitle="CONTACTEZ GF NUISIBLES, VOTRE PROFESSIONNEL DE LA DÉRATISATION !"
         problem="Des bruits dans les cloisons ? Des traces de grignotage sur les câbles ou les emballages ? La présence de rongeurs est un risque sanitaire majeur (leptospirose, salmonellose, hantavirus) et peut causer des dégâts matériels considérables, dont des incendies par câbles rongés."
-        expertise="G&F Nuisibles intervient rapidement pour éliminer rats et souris de votre habitation ou de vos locaux professionnels en Haute-Marne (52). Nos techniciens sont certifiés Certibiocide. Méthodes sécurisées pour les foyers avec enfants et animaux domestiques."
+        expertise="GF Nuisibles intervient rapidement pour éliminer rats et souris de votre habitation ou de vos locaux professionnels en Haute-Marne (52). Nos techniciens sont certifiés Certibiocide. Méthodes sécurisées pour les foyers avec enfants et animaux domestiques."
         method="Diagnostic complet pour identifier les points d'entrée et les zones de passage. Pose de dispositifs sécurisés (postes d'appâtage inviolables, pièges mécaniques). Rebouchage des accès, conseils de prévention, contrôle final et passage de suivi."
         engagement="Discrétion assurée, véhicules non logotés sur demande. Garantie de résultat avec suivi post-intervention. Contrats d'entretien HACCP disponibles pour restaurants, agroalimentaire et collectivités."
       >
@@ -181,7 +152,7 @@ const Deratisation = () => {
               Tarifs dératisation Haute-Marne — Devis gratuit
             </h2>
             <p className="mb-6 leading-relaxed text-muted-foreground">
-              Chez G&F Nuisibles, la transparence est une priorité. Voici nos tarifs indicatifs pour la dératisation en Haute-Marne et départements limitrophes :
+              Chez GF Nuisibles, la transparence est une priorité. Voici nos tarifs indicatifs pour la dératisation en Haute-Marne et départements limitrophes :
             </p>
             <ul className="mb-6 space-y-3 leading-relaxed text-muted-foreground">
               <li>🔍 <strong>Diagnostic & devis :</strong> 100% GRATUIT — sans engagement.</li>
@@ -192,7 +163,7 @@ const Deratisation = () => {
             </ul>
             <p className="leading-relaxed text-muted-foreground">
               Chaque intervention inclut le rapport, la traçabilité des produits Certibiocide et un plan de prévention personnalisé. Appelez-nous au{" "}
-              <a href="tel:0765256792" className="font-bold text-primary underline">07.65.25.67.92</a> pour votre devis.
+              <a href="tel:0765256792" className="font-bold text-primary underline">07 65 25 67 92</a> pour votre devis.
             </p>
           </div>
         </section>
@@ -308,7 +279,7 @@ const Deratisation = () => {
               Dératisation professionnelle : HACCP, agroalimentaire, collectivités
             </h2>
             <p className="mb-6 leading-relaxed text-muted-foreground">
-              G&F Nuisibles accompagne les professionnels de Haute-Marne avec des prestations conformes aux normes <strong>HACCP</strong> et <strong>ISO 22000</strong>. Nous travaillons avec :
+              GF Nuisibles accompagne les professionnels de Haute-Marne avec des prestations conformes aux normes <strong>HACCP</strong> et <strong>ISO 22000</strong>. Nous travaillons avec :
             </p>
             <ul className="mb-6 space-y-2 leading-relaxed text-muted-foreground">
               <li>🍽️ <strong>Restaurants, brasseries, hôtels</strong> — contrats annuels avec passages réguliers, plans d'implantation, traçabilité produits, rapports d'intervention pour vos audits.</li>
@@ -334,7 +305,7 @@ const Deratisation = () => {
                 L'usage de produits rodenticides est strictement encadré par la <strong>réglementation européenne biocide (BPR n°528/2012)</strong> et l'<strong>arrêté du 9 octobre 2013</strong>. Seuls les professionnels titulaires du certificat <strong>Certibiocide</strong> (catégorie TP14 — rodenticides) sont habilités à acheter et appliquer ces produits.
               </p>
               <p>
-                G&F Nuisibles est <strong>certifié Certibiocide</strong>, assuré en responsabilité civile professionnelle et applique l'ensemble des règles relatives à la lutte intégrée contre les nuisibles (IPM — Integrated Pest Management) : diagnostic, action mécanique privilégiée, produit en dernier recours, dosage minimal efficace, traçabilité complète.
+                GF Nuisibles est <strong>certifié Certibiocide</strong>, assuré en responsabilité civile professionnelle et applique l'ensemble des règles relatives à la lutte intégrée contre les nuisibles (IPM — Integrated Pest Management) : diagnostic, action mécanique privilégiée, produit en dernier recours, dosage minimal efficace, traçabilité complète.
               </p>
               <p>
                 Pour les établissements alimentaires, la lutte contre les nuisibles est <strong>obligatoire</strong> (Règlement CE 852/2004 et Paquet Hygiène). L'absence de plan de lutte est sanctionnée lors des contrôles DDPP.
@@ -379,7 +350,7 @@ const Deratisation = () => {
               Dératisation par ville en Haute-Marne
             </h2>
             <p className="mb-6 leading-relaxed text-muted-foreground">
-              G&F Nuisibles intervient pour la dératisation dans toute la Haute-Marne (52) et les départements limitrophes. Cliquez sur votre ville pour découvrir notre service local :
+              GF Nuisibles intervient pour la dératisation dans toute la Haute-Marne (52) et les départements limitrophes. Cliquez sur votre ville pour découvrir notre service local :
             </p>
             <ul className="flex flex-wrap gap-2">
               {CITY_LINKS.map((link) => (

@@ -126,7 +126,7 @@ const CityServicePage = ({
               {serviceTitle}
             </h1>
             <p className="max-w-xl text-lg text-primary-foreground/70">
-              G&F Nuisibles — Votre expert à {city}, {department}.
+              GF Nuisibles — Votre expert à {city}, {department}.
             </p>
           </motion.div>
         </div>
@@ -157,7 +157,7 @@ const CityServicePage = ({
           <div className="lg:col-span-2 space-y-10">
             {[
               { label: serviceTitle, content: intro },
-              { label: "L'expertise G&F Nuisibles", content: expertise },
+              { label: "L'expertise GF Nuisibles", content: expertise },
               { label: "Notre méthode d'intervention", content: method },
             ].map((block, i) => (
               <motion.div
@@ -425,14 +425,14 @@ const CityServicePage = ({
               </div>
               <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 text-accent" />
-                <span>Lun–Ven : 8h–19h | Urgence week-end</span>
+                <span>7j/7, de 7h à 23h, week-ends compris</span>
               </div>
               <a
                 href="tel:0765256792"
                 className="mb-3 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 font-heading font-bold text-accent-foreground transition-colors hover:bg-orange-hover"
               >
                 <Phone className="h-4 w-4" />
-                07.65.25.67.92
+                07 65 25 67 92
               </a>
               <Link
                 to="/contact"

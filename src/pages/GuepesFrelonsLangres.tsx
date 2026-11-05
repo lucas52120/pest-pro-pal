@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Destruction nid Guêpes & Frelons Langres 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Langres (52200) ? G&F Nuisibles évalue les accès et propose un traitement adapté. Diagnostic et devis gratuits en Haute-Marne.";
+const DESCRIPTION = "Nid de guêpes ou de frelons à Langres (52200) ? GF Nuisibles évalue les accès et propose un traitement adapté. Diagnostic et devis gratuits en Haute-Marne.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-langres";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -21,23 +22,7 @@ const GuepesFrelonsLangres = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://gf-nuisibles.fr/#organization",
-        "url": "https://gf-nuisibles.fr",
-        "name": "G&F Nuisibles",
-        "telephone": "07.65.25.67.92",
-        "priceRange": "$$",
-        "image": "https://gf-nuisibles.fr/og-image.png",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "27 rue principale",
-          "addressLocality": "Montsaon",
-          "postalCode": "52000",
-          "addressRegion": "Haute-Marne",
-          "addressCountry": "FR"
-        }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service",
         "url": URL,
@@ -88,9 +73,9 @@ const GuepesFrelonsLangres = () => {
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
         serviceCallTitle="NID DE GUÊPES OU FRELONS À LANGRES ?"
-        serviceCallSubtitle="G&F NUISIBLES INTERVIENT EN URGENCE POUR VOTRE SÉCURITÉ !"
-        intro={"Un va-et-vient de guêpes sous une toiture ou des frelons autour d'un arbre à Langres ? G&F Nuisibles intervient pour la destruction de nids de guêpes, de frelons européens et de frelons asiatiques à Langres (52200). La localisation du nid, son accès et l'activité observée guident l'évaluation. N'approchez pas pour confirmer l'espèce : décrivez ce que vous voyez depuis un endroit protégé."}
-        expertise={"Depuis Montsaon, G&F Nuisibles dessert les particuliers et professionnels du Pays de Langres. Un nid dans un coffre de volet, sous des tuiles ou dans un arbre ne présente pas les mêmes contraintes. L'évaluation permet de choisir le matériel et les précautions adaptés, sans promettre à distance un délai ou un accès possible dans toutes les configurations."}
+        serviceCallSubtitle="GF NUISIBLES INTERVIENT EN URGENCE POUR VOTRE SÉCURITÉ !"
+        intro={"Un va-et-vient de guêpes sous une toiture ou des frelons autour d'un arbre à Langres ? GF Nuisibles intervient pour la destruction de nids de guêpes, de frelons européens et de frelons asiatiques à Langres (52200). La localisation du nid, son accès et l'activité observée guident l'évaluation. N'approchez pas pour confirmer l'espèce : décrivez ce que vous voyez depuis un endroit protégé."}
+        expertise={"Depuis Montsaon, GF Nuisibles dessert les particuliers et professionnels du Pays de Langres. Un nid dans un coffre de volet, sous des tuiles ou dans un arbre ne présente pas les mêmes contraintes. L'évaluation permet de choisir le matériel et les précautions adaptés, sans promettre à distance un délai ou un accès possible dans toutes les configurations."}
         method={"Avant le traitement, le nid ou son point d'entrée est repéré et le périmètre à protéger est défini. L'intervention est adaptée à l'espèce et à l'emplacement. Le retrait physique du nid dépend de son accessibilité et de la situation : il ne doit pas être tenté par l'occupant. Les consignes après traitement sont expliquées pour éviter une remise en contact prématurée avec la zone."}
         localContext={{ title: "Toitures du centre ancien et jardins de Langres : des accès à préciser", content: <>
 <p>{"Dans le centre historique, autour de la place Diderot ou de la cathédrale Saint-Mammès, indiquez si l'activité se situe côté rue, dans une cour ou sous une toiture. Le passage par le logement, la présence de voisins et les accès disponibles influencent l'organisation. La mention de ces monuments sert uniquement de repère géographique ; elle ne signifie pas que nous y avons traité des nids."}</p>
@@ -107,7 +92,7 @@ const GuepesFrelonsLangres = () => {
 <p>{"Pour préparer votre appel, donnez votre adresse à Langres, l'emplacement estimé, les voies d'accès et les contraintes de voisinage. Signalez également un précédent traitement. Après le passage, respectez les consignes sur les déplacements près du nid et sur toute manipulation : une activité résiduelle doit être signalée, pas traitée soi-même."}</p>
 </> },
         { title: "Votre service à Langres et dans les communes voisines", content: <>
-<p>Pour découvrir les méthodes et les prestations, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">{"service de guêpes et frelons en Haute-Marne"}</Link>. Pour un rendez-vous à Langres, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Pour découvrir les méthodes et les prestations, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">{"service de guêpes et frelons en Haute-Marne"}</Link>. Pour un rendez-vous à Langres, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
 <p>Vous êtes dans une commune voisine ? Retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-nogent">{"Guêpes et frelons à Nogent"}</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-chalindrey">{"Guêpes et frelons à Chalindrey"}</Link>, ou consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour les autres secteurs desservis.</p>
 </> },
       ]}
@@ -116,7 +101,7 @@ const GuepesFrelonsLangres = () => {
 { label: "Guêpes et frelons à Chalindrey", to: "/guepes-frelons-chalindrey" },
 ] }}
       faqItems={FAQ_ITEMS}
-      cta={"Guêpes et frelons à Langres : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits adaptés à votre situation."}
+      cta={"Guêpes et frelons à Langres : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits adaptés à votre situation."}
       />
     </>
   );

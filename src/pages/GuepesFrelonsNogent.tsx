@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Destruction nid Guêpes & Frelons Nogent 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Nogent (52800) ? G&F Nuisibles évalue son accès et organise un traitement adapté. Appelez pour un diagnostic et un devis gratuits.";
+const DESCRIPTION = "Nid de guêpes ou de frelons à Nogent (52800) ? GF Nuisibles évalue son accès et organise un traitement adapté. Appelez pour un diagnostic et un devis gratuits.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-nogent";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -21,12 +22,7 @@ const GuepesFrelonsNogent = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
-        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Nid de guêpes et frelons à Nogent (52800)", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -64,8 +60,8 @@ const GuepesFrelonsNogent = () => {
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
         serviceCallTitle={"UN NID DE GUÊPES OU DE FRELONS À NOGENT ?"}
-        serviceCallSubtitle="G&F NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Des allées et venues sous les tuiles, dans un coffre de volet ou vers un arbre de votre jardin à Nogent peuvent révéler un nid. Ne cherchez pas à ouvrir le refuge pour vérifier. G&F Nuisibles intervient pour les nids de guêpes, de frelons européens et de frelons asiatiques à Nogent (52800), en Haute-Marne. La demande commence par la localisation, la hauteur estimée et les possibilités d’accès, sans vous exposer pour obtenir une photo."}
+        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
+        intro={"Des allées et venues sous les tuiles, dans un coffre de volet ou vers un arbre de votre jardin à Nogent peuvent révéler un nid. Ne cherchez pas à ouvrir le refuge pour vérifier. GF Nuisibles intervient pour les nids de guêpes, de frelons européens et de frelons asiatiques à Nogent (52800), en Haute-Marne. La demande commence par la localisation, la hauteur estimée et les possibilités d’accès, sans vous exposer pour obtenir une photo."}
         expertise={"L’identification de l’insecte et la configuration du nid orientent la prestation. Une activité autour des fleurs ne signifie pas nécessairement qu’un nid se trouve à proximité. Une colonie d’abeilles ne doit pas être confondue avec des guêpes ou des frelons : selon la situation, un apiculteur peut être l’interlocuteur adapté. Les consignes de distance et de protection sont données avant l’intervention ; aucune manipulation domestique du nid n’est recommandée."}
         method={"L’évaluation porte sur le refuge, l’accès en hauteur, les passages fréquentés et les espaces attenants. Le périmètre de travail est organisé avant le traitement adapté à l’espèce. Un nid accessible et un nid caché dans une toiture ne demandent pas les mêmes moyens. Le devis précise les opérations prévues ; le retrait physique n’est pas systématique lorsque le nid est inaccessible. Les consignes après traitement et les conditions éventuelles de suivi sont expliquées."}
         localContext={{ title: "Toitures, dépendances et jardins à Nogent : situer le nid", content: <>
@@ -85,7 +81,7 @@ const GuepesFrelonsNogent = () => {
 <p>{"Le coût dépend des moyens d’accès, de l’emplacement et des opérations retenues. Le créneau et les prestations sont confirmés après échange. Demandez les consignes après traitement et ce qui est prévu si une activité persiste : aucun délai ni prix universel ne correspond à tous les nids."}</p>
           </> },
           { title: "Votre service à Nogent et dans les villes du secteur", content: <>
-<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service guêpes et frelons en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Nogent, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service guêpes et frelons en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Nogent, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
 <p>Pour une adresse dans une autre commune, consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-langres">Guêpes et frelons à Langres</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-chaumont">Guêpes et frelons à Chaumont</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-chalindrey">Guêpes et frelons à Chalindrey</Link>. Elles présentent les prestations dans ces villes, distinctes de Nogent. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour situer votre demande.</p>
           </> },
         ]}
@@ -100,7 +96,7 @@ const GuepesFrelonsNogent = () => {
           { label: "Taupier à Nogent", to: "/taupes-nogent" },
         ]}
         faqItems={FAQ_ITEMS}
-        cta={"Guêpes et frelons à Nogent : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
+        cta={"Guêpes et frelons à Nogent : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
       />
     </>
   );

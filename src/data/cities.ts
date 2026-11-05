@@ -1,7 +1,7 @@
 export type CityLink = { label: string; to: string };
 export type CityEntry = { name: string; links: CityLink[] };
 
-/** Villes couvertes par G&F Nuisibles et pages services associees. */
+/** Villes couvertes par GF Nuisibles et pages services associees. */
 export const CITIES: CityEntry[] = [
   { name: "Chaumont", links: [
     { label: "Dératisation", to: "/deratisation-chaumont" },

@@ -2,6 +2,7 @@ import { Target } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import heroImage from "@/assets/service-taupes.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Taupier Haute-Marne 52 | Expert Anti-Taupes | GF Nuisibles";
 const DESCRIPTION = "Votre pelouse est envahie par les taupes ? Piégeage mécanique traditionnel sans produits chimiques pour jardins et espaces verts. Devis gratuit 7j/7";
@@ -10,23 +11,7 @@ const URL = "https://gf-nuisibles.fr/taupes";
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://gf-nuisibles.fr/#organization",
-      "url": "https://gf-nuisibles.fr",
-      "name": "G&F Nuisibles",
-      "telephone": "07.65.25.67.92",
-      "priceRange": "$$",
-      "image": "https://gf-nuisibles.fr/og-image.png",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "27 rue principale",
-        "addressLocality": "Montsaon",
-        "postalCode": "52000",
-        "addressRegion": "Haute-Marne",
-        "addressCountry": "FR"
-      }
-    },
+    LOCAL_BUSINESS,
     {
       "@type": "Service",
       "url": URL,
@@ -55,7 +40,7 @@ const Taupes = () => (
     heroImage={heroImage}
     sidebarImage={heroImage}
     serviceCallTitle="VOTRE JARDIN OU ESPACE VERT SUBIT UNE INVASION DE TAUPES ?"
-    serviceCallSubtitle="CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DU PIÉGEAGE DE TAUPES !"
+    serviceCallSubtitle="CONTACTEZ GF NUISIBLES, VOTRE PROFESSIONNEL DU PIÉGEAGE DE TAUPES !"
     problem="Des monticules de terre apparaissent sur votre pelouse ou dans votre jardin ? Les taupes peuvent rapidement dégrader vos espaces verts et compromettre la stabilité de vos terrains."
     expertise="GF Nuisibles emploie la méthode traditionnelle de piégeage, la plus efficace et la plus respectueuse de l'environnement. Notre expertise terrain nous permet d'identifier les galeries actives."
     method="Repérage des galeries principales, pose de pièges mécaniques professionnels, suivi régulier et retrait des dispositifs. Aucun produit chimique utilisé."

@@ -46,7 +46,7 @@ const Hero = () => {
         <div className="inline-flex items-center gap-2 rounded-full bg-accent/20 px-4 py-2 text-accent">
           <Shield className="h-4 w-4" />
           <span className="font-heading text-sm font-semibold">
-            Intervention 7j/7 — Urgence week-end
+            Intervention 7j/7, de 7h à 23h
           </span>
         </div>
 
@@ -55,7 +55,7 @@ const Hero = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center rounded-full border border-accent/60 p-2 text-accent transition-all hover:border-accent hover:bg-accent/10"
-          aria-label="Facebook G&F Nuisibles"
+          aria-label="Facebook GF Nuisibles"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ const Hero = () => {
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-4 font-heading text-lg font-bold text-accent-foreground shadow-lg transition-all hover:bg-orange-hover hover:shadow-xl">
               
               <Phone className="h-5 w-5" />
-              Appeler le 07.65.25.67.92
+              Appeler le 07 65 25 67 92
             </a>
             <a
               href="/contact"

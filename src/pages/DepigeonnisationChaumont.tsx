@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Dépigeonnisation Chaumont 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons sur un balcon, une toiture ou un entrepôt à Chaumont (52000) ? G&F Nuisibles propose des protections adaptées et un devis après diagnostic gratuit.";
+const DESCRIPTION = "Pigeons sur un balcon, une toiture ou un entrepôt à Chaumont (52000) ? GF Nuisibles propose des protections adaptées et un devis après diagnostic gratuit.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-chaumont";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -21,15 +22,7 @@ const DepigeonnisationChaumont = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://gf-nuisibles.fr/#organization",
-        "url": "https://gf-nuisibles.fr",
-        "name": "G&F Nuisibles",
-        "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Dépigeonnisation à Chaumont (52000) : protéger balcons et toitures", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -68,7 +61,7 @@ const DepigeonnisationChaumont = () => {
         metaDescription={DESCRIPTION}
         serviceCallTitle={"PIGEONS SUR VOTRE BÂTIMENT À CHAUMONT ?"}
         serviceCallSubtitle={"DES PROTECTIONS ADAPTÉES AUX ZONES DE PERCHAGE"}
-        intro={"Des fientes sur un balcon, des pigeons sous une avancée de toit ou des accès répétés à un hangar ? G&F Nuisibles propose une dépigeonnisation à Chaumont (52000) pour limiter l’accès des oiseaux aux zones sensibles. Le choix entre filets, picots et fils tendus dépend de la surface, du support et de l’usage du bâtiment. L’objectif est de protéger les lieux sans simplement déplacer le problème vers un autre rebord du même immeuble."}
+        intro={"Des fientes sur un balcon, des pigeons sous une avancée de toit ou des accès répétés à un hangar ? GF Nuisibles propose une dépigeonnisation à Chaumont (52000) pour limiter l’accès des oiseaux aux zones sensibles. Le choix entre filets, picots et fils tendus dépend de la surface, du support et de l’usage du bâtiment. L’objectif est de protéger les lieux sans simplement déplacer le problème vers un autre rebord du même immeuble."}
         expertise={"Depuis Montsaon, nous desservons les habitations, copropriétés et locaux professionnels de Chaumont. Le diagnostic examine les zones de perchage, les accès aux volumes abrités et les possibilités d’entretien. Les solutions physiques non létales sont choisies selon la configuration. En présence de nids, d’œufs ou d’oisillons, l’espèce et les obligations applicables doivent être vérifiées avant toute fermeture d’accès."}
         method={"La visite permet de repérer les points d’entrée, mesurer les surfaces et évaluer les conditions de travail en hauteur. Le devis détaille le dispositif, les fixations et les éventuelles opérations de nettoyage. La pose vise une protection cohérente des accès identifiés, puis un contrôle vérifie les points de passage. L’entretien et les limites du dispositif sont expliqués pour conserver son efficacité."}
         localContext={{ title: "Façades du centre et bâtiments d’activité : des contraintes différentes", content: <>
@@ -87,7 +80,7 @@ const DepigeonnisationChaumont = () => {
 <p>{"Transmettez des photos prises depuis un endroit sûr, le nombre de balcons ou d’ouvertures et les contraintes d’accès. En copropriété, vérifiez avec le syndic les accords nécessaires pour les parties communes. Le prix dépend des dimensions, de la hauteur, des moyens d’accès et du système retenu ; il est établi après diagnostic."}</p>
           </> },
           { title: "Votre demande à Chaumont et les communes voisines", content: <>
-<p>Découvrez les méthodes de notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnage">service dépigeonnisation en Haute-Marne</Link>. Pour votre adresse à Chaumont, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+<p>Découvrez les méthodes de notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnage">service dépigeonnisation en Haute-Marne</Link>. Pour votre adresse à Chaumont, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
 <p>Vous résidez plus au nord ou au sud de Chaumont ? Consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-bologne">Dépigeonnisation à Bologne</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-nogent">Dépigeonnisation à Nogent</Link>. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link>.</p>
           </> },
         ]}
@@ -98,7 +91,7 @@ const DepigeonnisationChaumont = () => {
           { label: "Dépigeonnisation à Semoutiers-Montsaon", to: "/depigeonnisation-semoutiers-montsaon" },
         ] }}
         faqItems={FAQ_ITEMS}
-        cta={"Dépigeonnisation à Chaumont : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits adaptés à votre situation."}
+        cta={"Dépigeonnisation à Chaumont : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits adaptés à votre situation."}
       />
     </>
   );

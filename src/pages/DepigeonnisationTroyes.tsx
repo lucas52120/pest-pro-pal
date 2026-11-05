@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Dépigeonnisation Troyes 10 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons à Troyes (10000) ? G&F Nuisibles étudie vos façades et toitures et propose des solutions anti-pigeons non létales adaptées. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Pigeons à Troyes (10000) ? GF Nuisibles étudie vos façades et toitures et propose des solutions anti-pigeons non létales adaptées. Diagnostic et devis gratuits.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-troyes";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -21,12 +22,7 @@ const DepigeonnisationTroyes = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "LocalBusiness", "@id": "https://gf-nuisibles.fr/#organization",
-        "name": "G&F Nuisibles", "url": "https://gf-nuisibles.fr", "telephone": "+33765256792",
-        "sameAs": ["https://www.facebook.com/gfnuisibles"],
-        "address": { "@type": "PostalAddress", "streetAddress": "27 rue principale", "addressLocality": "Montsaon", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" }
-      },
+      LOCAL_BUSINESS,
       {
         "@type": "Service", "url": URL, "name": "Dépigeonnisation à Troyes (10000) : façades et toitures", "description": DESCRIPTION,
         "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -64,8 +60,8 @@ const DepigeonnisationTroyes = () => {
         heroImage={heroImage}
         metaDescription={DESCRIPTION}
         serviceCallTitle={"PIGEONS SUR VOTRE FAÇADE OU VOTRE TOITURE À TROYES ?"}
-        serviceCallSubtitle="G&F NUISIBLES — UNE SOLUTION ADAPTÉE À VOTRE BÂTIMENT"
-        intro={"Des fientes qui s'accumulent sur un balcon, des nids sous une corniche ou des pigeons installés sur une toiture-terrasse méritent une inspection avant de choisir un dispositif. G&F Nuisibles propose la dépigeonnisation à Troyes (10000), préfecture de l'Aube, pour les particuliers, les copropriétés et les professionnels. Le diagnostic identifie les points de perchage, de nidification et les accès utilisés par les pigeons, qu'il s'agisse d'une maison à pans de bois du centre ancien, d'un immeuble du centre-ville ou d'un local d'activité en périphérie."}
+        serviceCallSubtitle="GF NUISIBLES — UNE SOLUTION ADAPTÉE À VOTRE BÂTIMENT"
+        intro={"Des fientes qui s'accumulent sur un balcon, des nids sous une corniche ou des pigeons installés sur une toiture-terrasse méritent une inspection avant de choisir un dispositif. GF Nuisibles propose la dépigeonnisation à Troyes (10000), préfecture de l'Aube, pour les particuliers, les copropriétés et les professionnels. Le diagnostic identifie les points de perchage, de nidification et les accès utilisés par les pigeons, qu'il s'agisse d'une maison à pans de bois du centre ancien, d'un immeuble du centre-ville ou d'un local d'activité en périphérie."}
         expertise={"Les pigeons recherchent des surfaces planes abritées pour se percher et des recoins calmes pour nicher : corniches, rebords de fenêtres, charpentes ouvertes ou locaux techniques en toiture. Ces indices ne remplacent pas l'observation sur place. Nous examinons la façade, les matériaux et les contraintes patrimoniales avant de proposer pics, filets ou fil tendu. Dans le centre historique, la pose respecte l'aspect des colombages et des menuiseries d'origine. Aucune méthode létale n'est utilisée : seules des solutions mécaniques et non létales sont proposées."}
         method={"L'inspection commence par un repérage des zones de perchage, de nidification et des traces de fientes sur la façade et en toiture. Selon la configuration, un dispositif adapté est proposé : pics discrets sur les corniches, filets sur les grandes ouvertures ou fil tendu sur les rebords étroits. Le devis précise la surface traitée et les prestations retenues, y compris le nettoyage préalable des zones souillées si nécessaire. Un contrôle après la pose permet de vérifier l'efficacité du dispositif face aux tentatives de retour des oiseaux."}
         localContext={{ title: "Façades patrimoniales et quartiers de Troyes", content: <>
@@ -85,7 +81,7 @@ const DepigeonnisationTroyes = () => {
             <p>{"Pour une copropriété, précisez les parties communes concernées et les décisions déjà votées en assemblée générale. Le devis indique le périmètre retenu et le dispositif choisi, sans déduire un prix ou un délai du seul quartier."}</p>
           </> },
           { title: "Votre service à Troyes et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnage">service dépigeonnisation</Link> pour les méthodes et les dispositifs. Pour votre adresse à Troyes, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07.65.25.67.92.</p>
+            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnage">service dépigeonnisation</Link> pour les méthodes et les dispositifs. Pour votre adresse à Troyes, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
             <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-bar-sur-aube">Dépigeonnisation à Bar-sur-Aube</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-chatillon-sur-seine">Dépigeonnisation à Châtillon-sur-Seine</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-chaumont">Dépigeonnisation à Chaumont</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
           </> },
         ]}
@@ -98,7 +94,7 @@ const DepigeonnisationTroyes = () => {
           { label: "Dératisation à Troyes", to: "/deratisation-troyes" },
         ]}
         faqItems={FAQ_ITEMS}
-        cta={"Dépigeonnisation à Troyes : contactez G&F Nuisibles au 07.65.25.67.92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
+        cta={"Dépigeonnisation à Troyes : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
       />
     </>
   );

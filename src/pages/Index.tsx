@@ -6,33 +6,15 @@ import TrustedBy from "@/components/TrustedBy";
 import Reassurance from "@/components/Reassurance";
 import GoogleReviews from "@/components/GoogleReviews";
 import Footer from "@/components/Footer";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const Index = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://gf-nuisibles.fr/#organization",
-    name: "G&F Nuisibles",
-    url: "https://gf-nuisibles.fr",
-    telephone: "07 65 25 67 92",
-    priceRange: "$$",
-    image: "https://gf-nuisibles.fr/og-image.png",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "27 rue principale",
-      addressLocality: "Montsaon",
-      postalCode: "52000",
-      addressRegion: "Haute-Marne",
-      addressCountry: "FR",
-    },
-    description:
-      "Expert local en Haute-Marne pour le traitement des cafards et blattes, la dératisation et dépigeonnage. Intervention rapide 7j/7.",
-  };
+  const jsonLd = { "@context": "https://schema.org", ...LOCAL_BUSINESS };
 
   return (
     <>
       <Helmet>
-        <title>G&F Nuisibles : Dératisation, Cafards & Blattes, Dépigeonnage</title>
+        <title>GF Nuisibles : Dératisation, Cafards & Blattes, Dépigeonnage</title>
         <meta
           name="description"
           content="Votre expert local en Haute-Marne et communes limitrophes. Cafards et blattes, guêpes et frelons, dératisation et dépigeonnage. Service rapide 7j/7 et devis gratuit !"

@@ -51,7 +51,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/60">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-accent" />
-                <a href="tel:0765256792" className="hover:text-accent">07.65.25.67.92</a>
+                <a href="tel:0765256792" className="hover:text-accent">07 65 25 67 92</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-accent" />
@@ -63,7 +63,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-accent" />
-                Lun–Ven : 8h–19h | Urgence week-end
+                7j/7, de 7h à 23h, week-ends compris
               </li>
             </ul>
           </div>

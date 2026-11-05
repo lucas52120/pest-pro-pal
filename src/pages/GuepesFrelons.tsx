@@ -14,6 +14,7 @@ import comparatifFrelons from "@/assets/comparatif-frelons.png";
 import guepeVol from "@/assets/guepe-vol.jpg";
 import nidGuepes from "@/assets/nid-guepes.jpg";
 import nidFrelonAsiatique from "@/assets/nid-frelon-asiatique.jpg";
+import { LOCAL_BUSINESS } from "@/data/business";
 
 const FAQ_ITEMS = [
   {
@@ -26,7 +27,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Comment déceler la présence d'un nid chez vous ?",
-    answer: `Plusieurs signes doivent vous alerter : un va-et-vient incessant d'insectes au même endroit (sous une tuile, dans une fissure de mur, dans un coffre de volet roulant) indique une activité de colonie ; un grattage ou bourdonnement sourd derrière un plafond ou une cloison placo signale souvent la construction d'un nid. Les lieux fréquents de nidification sont les greniers, hangars, remises, abris, la cime des arbres, les creux d'arbres, les rebords, avant-toits, linteaux, fissures et amas de matériaux (bûches, souches, branchages). Si vous remarquez un nid à Chaumont, Langres, Saint-Dizier ou ailleurs en Haute-Marne (52), contactez G&F Nuisibles immédiatement au 07.65.25.67.92 pour un diagnostic gratuit.`,
+    answer: `Plusieurs signes doivent vous alerter : un va-et-vient incessant d'insectes au même endroit (sous une tuile, dans une fissure de mur, dans un coffre de volet roulant) indique une activité de colonie ; un grattage ou bourdonnement sourd derrière un plafond ou une cloison placo signale souvent la construction d'un nid. Les lieux fréquents de nidification sont les greniers, hangars, remises, abris, la cime des arbres, les creux d'arbres, les rebords, avant-toits, linteaux, fissures et amas de matériaux (bûches, souches, branchages). Si vous remarquez un nid à Chaumont, Langres, Saint-Dizier ou ailleurs en Haute-Marne (52), contactez GF Nuisibles immédiatement au 07 65 25 67 92 pour un diagnostic gratuit.`,
   },
   {
     question: "Comportement et Agressivité",
@@ -55,40 +56,7 @@ const CITY_LINKS = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://gf-nuisibles.fr/#organization",
-      "url": "https://gf-nuisibles.fr",
-      name: "G&F Nuisibles",
-      image: "https://gf-nuisibles.fr/og-image.png",
-      telephone: "+33765256792",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "27 rue principale",
-        addressLocality: "Montsaon",
-        postalCode: "52000",
-        addressCountry: "FR",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 48.0856,
-        longitude: 5.1858,
-      },
-      openingHoursSpecification: [
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          opens: "00:00",
-          closes: "23:59",
-        },
-      ],
-      sameAs: ["https://www.facebook.com/profile.php?id=61566255861001"],
-      priceRange: "$$",
-      areaServed: {
-        "@type": "AdministrativeArea",
-        name: "Haute-Marne (52)",
-      },
-    },
+    LOCAL_BUSINESS,
     {
       "@type": "Service",
       url: "https://gf-nuisibles.fr/guepes-frelons",
@@ -161,7 +129,7 @@ const GuepesFrelons = () => {
         heroImage={heroImage}
         sidebarImage={heroImage}
         serviceCallTitle="VOTRE LOGEMENT OU LOCAL PROFESSIONNEL SUBIT UNE INVASION DE GUÊPES OU DE FRELONS ?"
-        serviceCallSubtitle="CONTACTEZ G&F NUISIBLES, VOTRE PROFESSIONNEL DE LA DESTRUCTION DE NIDS DE GUÊPES ET FRELONS !"
+        serviceCallSubtitle="CONTACTEZ GF NUISIBLES, VOTRE PROFESSIONNEL DE LA DESTRUCTION DE NIDS DE GUÊPES ET FRELONS !"
         problem="Un nid de guêpes ou de frelons près de votre habitation représente un danger réel. Les piqûres peuvent provoquer des réactions allergiques graves, voire un choc anaphylactique. Ne prenez aucun risque et faites appel à un professionnel."
         expertise="GF Nuisibles intervient rapidement pour la destruction de nids de guêpes, frelons européens et frelons asiatiques. Nos techniciens sont équipés pour intervenir en hauteur et dans les zones difficiles d'accès (toitures, cheminées, arbres)."
         method="Après un diagnostic précis de la situation, nous procédons à la neutralisation du nid avec des produits professionnels homologués. L'intervention est rapide et sécurisée pour vous et votre entourage."
@@ -202,7 +170,7 @@ const GuepesFrelons = () => {
                   </p>
                   <img
                     src={comparatifFrelons}
-                    alt="Comparatif frelon européen et asiatique - Expertise G&F Nuisibles Haute-Marne"
+                    alt="Comparatif frelon européen et asiatique - Expertise GF Nuisibles Haute-Marne"
                     className="w-full rounded-xl"
                     loading="lazy"
                     width={1200}
@@ -368,7 +336,7 @@ const GuepesFrelons = () => {
                 Tarifs destruction de nids de guêpes & frelons en Haute-Marne
               </h2>
               <p className="mb-5 text-muted-foreground leading-relaxed">
-                Chez G&F Nuisibles, nous appliquons une grille tarifaire <strong>claire et transparente</strong>, sans frais cachés. Le déplacement est inclus dans toute la Haute-Marne (52) et le paiement s'effectue après intervention.
+                Chez GF Nuisibles, nous appliquons une grille tarifaire <strong>claire et transparente</strong>, sans frais cachés. Le déplacement est inclus dans toute la Haute-Marne (52) et le paiement s'effectue après intervention.
               </p>
               <ul className="mb-5 space-y-3">
                 <li className="flex items-baseline justify-between gap-4 border-b border-slate-100 pb-3">
@@ -389,7 +357,7 @@ const GuepesFrelons = () => {
                 </li>
               </ul>
               <p className="text-sm text-muted-foreground italic">
-                Intervention 7j/7 — supplément modéré possible le dimanche et jours fériés. Devis personnalisé immédiat par téléphone au <a href="tel:0765256792" className="text-accent font-semibold hover:underline">07.65.25.67.92</a>.
+                Intervention 7j/7 — supplément modéré possible le dimanche et jours fériés. Devis personnalisé immédiat par téléphone au <a href="tel:0765256792" className="text-accent font-semibold hover:underline">07 65 25 67 92</a>.
               </p>
             </section>
 
@@ -431,7 +399,7 @@ const GuepesFrelons = () => {
                 Pourquoi faire appel à un professionnel certifié ?
               </h2>
               <p className="mb-5 leading-relaxed text-primary-foreground/85">
-                Détruire soi-même un nid de guêpes ou de frelons est une <strong>très mauvaise idée</strong>. Les bombes insecticides grand public sont inefficaces sur les colonies adultes et déclenchent des attaques massives. Voici pourquoi le recours à G&F Nuisibles est indispensable :
+                Détruire soi-même un nid de guêpes ou de frelons est une <strong>très mauvaise idée</strong>. Les bombes insecticides grand public sont inefficaces sur les colonies adultes et déclenchent des attaques massives. Voici pourquoi le recours à GF Nuisibles est indispensable :
               </p>
               <ul className="space-y-3 text-primary-foreground/90">
                 <li>✓ <strong>Équipement professionnel</strong> : combinaison renforcée certifiée, perche télescopique jusqu'à 8 mètres, biocides homologués <strong>Certibiocide</strong> non disponibles dans le commerce.</li>
@@ -490,7 +458,7 @@ const GuepesFrelons = () => {
                     Les pompiers détruisent-ils encore les nids de guêpes en Haute-Marne ?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground leading-relaxed">
-                    Depuis plusieurs années, le <strong>SDIS 52 n'intervient plus pour la destruction de nids de guêpes ou frelons</strong>, sauf en cas de danger immédiat avéré (établissement scolaire, voie publique, personne piquée en détresse). Pour tout nid à domicile, vous devez faire appel à une société spécialisée comme G&F Nuisibles.
+                    Depuis plusieurs années, le <strong>SDIS 52 n'intervient plus pour la destruction de nids de guêpes ou frelons</strong>, sauf en cas de danger immédiat avéré (établissement scolaire, voie publique, personne piquée en détresse). Pour tout nid à domicile, vous devez faire appel à une société spécialisée comme GF Nuisibles.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -508,7 +476,7 @@ const GuepesFrelons = () => {
                 En Haute-Marne, tout nid identifié doit être <strong>signalé à votre mairie ou à la FREDON Grand Est</strong> (Fédération régionale de défense contre les organismes nuisibles). Certaines communes du 52 (renseignez-vous auprès de votre mairie) participent financièrement à la destruction des nids de frelons asiatiques.
               </p>
               <p className="leading-relaxed text-muted-foreground">
-                G&F Nuisibles est <strong>certifié Certibiocide</strong> et utilise exclusivement des produits homologués pour la destruction des hyménoptères, conformément à la réglementation française en vigueur.
+                GF Nuisibles est <strong>certifié Certibiocide</strong> et utilise exclusivement des produits homologués pour la destruction des hyménoptères, conformément à la réglementation française en vigueur.
               </p>
             </section>
 
@@ -518,7 +486,7 @@ const GuepesFrelons = () => {
                 Destruction de nids de guêpes & frelons par ville
               </h2>
               <p className="mb-5 text-muted-foreground">
-                G&F Nuisibles intervient dans toute la Haute-Marne. Découvrez nos pages dédiées :
+                GF Nuisibles intervient dans toute la Haute-Marne. Découvrez nos pages dédiées :
               </p>
               <ul className="flex flex-wrap gap-2">
                 {CITY_LINKS.map((link) => (
