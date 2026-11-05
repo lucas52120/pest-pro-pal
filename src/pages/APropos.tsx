@@ -92,7 +92,7 @@ const APropos = () => {
             </p>
             <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
               <li>
-                <strong>Agréé Certibiocide</strong> : Pour l'utilisation responsable et sécurisée des traitements
+                <strong>Titulaire du Certibiocide</strong> : Pour l'utilisation responsable et sécurisée des traitements
                 professionnels.
               </li>
               <li>
@@ -163,7 +163,7 @@ const APropos = () => {
               },
               {
                 icon: <Shield className="h-8 w-8" />,
-                title: "Agréé Certibiocide",
+                title: "Titulaire du Certibiocide",
                 desc: "Nos techniciens sont certifiés et utilisent uniquement des produits professionnels homologués par le ministère. Piégeur agréé et Fauconnier de métier.",
               },
               {

@@ -31,7 +31,7 @@
 /services/elimination-pigeons/:city /depigeonnisation-:city 301!
 /services/*                         /                             301!
 
-# SPA fallback. Prerendered static HTML files are served first by Netlify,
-# this rule only applies to paths with no matching file.
+# Prerendered static HTML files are served first by Netlify,
+# the last rule only applies to paths with no matching file.
 /depigeonnisation /depigeonnage 301!
-/*    /index.html   200
+/*    /404.html   404

@@ -55,7 +55,7 @@ const CITY_LINKS = [
   { label: "Saint-Dizier", to: "/deratisation-saint-dizier" },
   { label: "Joinville", to: "/deratisation-joinville" },
   { label: "Bar-sur-Aube", to: "/deratisation-bar-sur-aube" },
-  { label: "Bourbonne-les-Bains", to: "/deratisation-bourbonne" },
+  { label: "Bourbonne-les-Bains", to: "/deratisation-bourbonne-les-bains" },
   { label: "Wassy", to: "/deratisation-wassy" },
   { label: "Bologne", to: "/deratisation-bologne" },
   { label: "Froncles", to: "/deratisation-froncles" },

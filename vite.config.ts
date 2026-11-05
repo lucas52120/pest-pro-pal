@@ -108,6 +108,19 @@ function prerenderSsgPlugin(): Plugin {
         count++;
       }
 
+      // 4. Static 404 page, served for unknown URLs by public/_redirects.
+      const notFound = render("/404");
+      fs.writeFileSync(
+        path.join(distDir, "404.html"),
+        syncSocialTags(
+          dedupeHead(
+            template
+              .replace("<!--ssr-head-->", notFound.head)
+              .replace('<div id="root"></div>', `<div id="root">${notFound.html}</div>`),
+          ),
+        ),
+      );
+
       fs.rmSync(ssrOutDir, { recursive: true, force: true });
       console.log(`✅ SSG: prerendered ${count}/${routes.length} static HTML pages`);
       if (failed.length) {

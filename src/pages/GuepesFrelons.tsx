@@ -40,7 +40,7 @@ const CITY_LINKS = [
   { label: "Saint-Dizier", to: "/guepes-frelons-saint-dizier" },
   { label: "Joinville", to: "/guepes-frelons-joinville" },
   { label: "Bar-sur-Aube", to: "/guepes-frelons-bar-sur-aube" },
-  { label: "Bourbonne-les-Bains", to: "/guepes-frelons-bourbonne" },
+  { label: "Bourbonne-les-Bains", to: "/guepes-frelons-bourbonne-les-bains" },
   { label: "Wassy", to: "/guepes-frelons-wassy" },
   { label: "Bologne", to: "/guepes-frelons-bologne" },
   { label: "Froncles", to: "/guepes-frelons-froncles" },
