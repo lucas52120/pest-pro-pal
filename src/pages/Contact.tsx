@@ -1,5 +1,6 @@
 import { useState, FormEvent } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -13,6 +14,7 @@ const SITE_URL = "https://gf-nuisibles.fr";
 const PHONE_DISPLAY = "07 65 25 67 92";
 const PHONE_TEL = "0765256792";
 const EMAIL = "contact@gf-nuisibles.fr";
+const CONSENT_TEXT = "J'accepte que GF Nuisibles utilise les informations saisies pour traiter ma demande de devis ou de renseignement et me recontacter.";
 
 const contactJsonLd = {
   "@context": "https://schema.org",
@@ -44,6 +46,7 @@ const Contact = () => {
       phone: formData.get("phone"),
       nuisible: formData.get("nuisible"),
       message: formData.get("message"),
+      consentement: `${CONSENT_TEXT} (${new Date().toISOString()})`,
       _email: {
         subject: `Demande de contact - ${formData.get("nuisible") || "Non précisé"}`,
       },
@@ -204,7 +207,7 @@ const Contact = () => {
                   required
                 />
                 <label htmlFor="consent" className="text-sm text-muted-foreground">
-                  En soumettant ce formulaire, je consens au traitement des informations saisies afin de m'envoyer un mail et une newsletter commerciale. *
+                  {CONSENT_TEXT} *
                 </label>
               </div>
 
@@ -216,6 +219,13 @@ const Contact = () => {
                 <Send className="h-4 w-4" />
                 {sending ? "Envoi en cours..." : "Envoyer la demande"}
               </button>
+
+              <p className="text-xs leading-relaxed text-muted-foreground">
+                Les informations recueillies sont traitées par GF Nuisibles uniquement pour répondre à votre demande. Elles sont transmises au service d'envoi de formulaires Formspark et conservées 3 ans après notre dernier échange. Vous pouvez y accéder, les rectifier ou les faire supprimer en écrivant à contact@gf-nuisibles.fr. En savoir plus :{" "}
+                <Link to="/mentions-legales#donnees-personnelles" className="underline hover:text-accent">
+                  Données personnelles
+                </Link>
+              </p>
             </motion.form>
           )}
 

@@ -1,9 +1,18 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import SEO from "@/components/SEO";
 
 const MentionsLegales = () => {
+  const { hash } = useLocation();
+
+  // React Router does not scroll to a #section on in-app navigation.
+  useEffect(() => {
+    if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
+  }, [hash]);
+
   return (
     <>
       <SEO
@@ -59,20 +68,38 @@ const MentionsLegales = () => {
             </p>
           </div>
 
-          <div>
-            <h2 className="font-heading text-2xl font-bold text-primary">Protection des données personnelles (RGPD)</h2>
+          <div id="donnees-personnelles" className="scroll-mt-28">
+            <h2 className="font-heading text-2xl font-bold text-primary">Données personnelles</h2>
             <p className="text-muted-foreground">
-              Les données personnelles collectées via le formulaire de contact sont traitées uniquement dans le cadre de la gestion de votre demande d'intervention ou de devis. Elles ne sont ni cédées, ni vendues à des tiers.
+              <strong>Responsable du traitement :</strong> GF Nuisibles, Lucas Graja, 27 rue Principale, 52000 Semoutiers-Montsaon, <a href="mailto:contact@gf-nuisibles.fr" className="text-accent hover:underline">contact@gf-nuisibles.fr</a>.
             </p>
             <p className="text-muted-foreground">
-              Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données personnelles. Pour exercer ces droits, vous pouvez nous contacter à l'adresse suivante : <a href="mailto:contact@gf-nuisibles.fr" className="text-accent hover:underline">contact@gf-nuisibles.fr</a>.
+              <strong>Données collectées :</strong> nom, téléphone, e-mail (facultatif), type de nuisible et message saisis dans le formulaire de contact.
+            </p>
+            <p className="text-muted-foreground">
+              <strong>Finalité :</strong> répondre aux demandes de devis et de renseignement, et assurer le suivi de la relation client.
+            </p>
+            <p className="text-muted-foreground">
+              <strong>Base légale :</strong> le consentement de la personne et les mesures précontractuelles prises à sa demande (article 6.1.a et 6.1.b du RGPD).
+            </p>
+            <p className="text-muted-foreground">
+              <strong>Destinataires :</strong> GF Nuisibles uniquement. Les données transitent par Formspark (service d'envoi de formulaires) et le site est hébergé par Netlify ; ces prestataires peuvent traiter des données hors de l'Union européenne, dans le cadre des garanties prévues par le RGPD. Les données ne sont ni vendues ni cédées.
+            </p>
+            <p className="text-muted-foreground">
+              <strong>Durée de conservation :</strong> 3 ans à compter du dernier contact, sauf obligation légale de conservation plus longue (par exemple les factures).
+            </p>
+            <p className="text-muted-foreground">
+              <strong>Droits :</strong> accès, rectification, effacement, limitation, opposition, portabilité et retrait du consentement à tout moment, par e-mail à <a href="mailto:contact@gf-nuisibles.fr" className="text-accent hover:underline">contact@gf-nuisibles.fr</a>. Réponse sous un mois.
+            </p>
+            <p className="text-muted-foreground">
+              <strong>Réclamation :</strong> possibilité de saisir la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">www.cnil.fr</a>).
             </p>
           </div>
 
           <div>
             <h2 className="font-heading text-2xl font-bold text-primary">Cookies</h2>
             <p className="text-muted-foreground">
-              Le site gf-nuisibles.fr peut utiliser des cookies à des fins de mesure d'audience et de statistiques. Vous pouvez paramétrer votre navigateur pour refuser les cookies. Le refus d'installation de cookies n'affecte pas la navigation sur le site.
+              Le site gf-nuisibles.fr n'utilise pas de cookies publicitaires ni de mesure d'audience. Seuls des éléments techniques nécessaires au bon fonctionnement du site peuvent être déposés ; ils ne nécessitent pas de consentement. Si un outil de mesure d'audience était ajouté, cette page serait mise à jour et votre accord serait demandé si nécessaire.
             </p>
           </div>
         </div>
