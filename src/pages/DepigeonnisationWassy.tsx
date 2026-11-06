@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dépigeonnisation Wassy 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons à Wassy (52130) ? GF Nuisibles étudie vos façades et toitures et propose des solutions anti-pigeons non létales adaptées. Diagnostic et devis gratuits en Haute-Marne.";
@@ -53,6 +54,7 @@ const DepigeonnisationWassy = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Wassy"
         department="Haute-Marne (52)"
         serviceTitle={"Dépigeonnisation à Wassy (52130) : façades et toitures"}

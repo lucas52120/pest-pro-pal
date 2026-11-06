@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Taupier Chaumont 52 - Piégeage Taupes, Devis Gratuit";
 const DESCRIPTION = "Taupinières dans votre jardin à Chaumont (52000) ou Brottes ? GF Nuisibles repère les galeries actives et propose un piégeage mécanique sur devis gratuit.";
@@ -53,6 +54,7 @@ const TaupesChaumont = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Chaumont"
         department="Haute-Marne (52)"
         serviceTitle={"Taupier à Chaumont (52000) : taupes dans les jardins et pelouses"}

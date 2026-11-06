@@ -23,6 +23,18 @@ describe("internal links", () => {
     }
     expect(broken).toEqual([]);
   });
+
+  it("build the breadcrumb trails from routes that exist", () => {
+    const known = new Set(routes);
+    const broken: string[] = [];
+    for (const file of sourceFiles) {
+      const source = readFileSync(file, "utf8");
+      for (const [, path] of source.matchAll(/"?item"?:\s*"https:\/\/gf-nuisibles\.fr(\/[^"#]*)/g)) {
+        if (!known.has(path)) broken.push(`${file}: ${path}`);
+      }
+    }
+    expect(broken).toEqual([]);
+  });
 });
 
 describe("404 handling", () => {

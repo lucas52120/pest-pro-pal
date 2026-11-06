@@ -59,7 +59,7 @@ const item = {
 
 const Services = () => {
   return (
-    <section className="section-padding bg-secondary">
+    <section id="services" className="section-padding scroll-mt-20 bg-secondary">
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

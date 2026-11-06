@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dépigeonnisation Troyes 10 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons à Troyes (10000) ? GF Nuisibles étudie vos façades et toitures et propose des solutions anti-pigeons non létales adaptées. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const DepigeonnisationTroyes = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Troyes"
         department="Aube (10)"
         serviceTitle={"Dépigeonnisation à Troyes (10000) : façades et toitures"}

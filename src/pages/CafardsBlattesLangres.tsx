@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Traitement Cafards & Blattes Langres 52 - Devis gratuit";
 const DESCRIPTION = "Cafards ou blattes à Langres (52200) ? GF Nuisibles traite logements, commerces et restaurants : diagnostic et devis gratuits, intervention discrète. 07 65 25 67 92";
@@ -36,6 +37,7 @@ const CafardsBlattesLangres = () => (
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage
+      breadcrumbs={breadcrumbsFrom(jsonLd)}
       city="Langres"
       department="Haute-Marne (52)"
       serviceTitle={"Cafards et blattes à Langres (52200) : traitement pour particuliers et professionnels"}

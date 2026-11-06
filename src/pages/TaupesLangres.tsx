@@ -50,6 +50,7 @@ const TaupesLangres = () => {
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage
+      breadcrumbs={[{ label: "Accueil", to: "/" }, { label: "Taupier", to: "/taupes" }, { label: "Langres", to: "/taupes-langres" }]}
       city="Langres"
       department="Haute-Marne (52)"
       serviceTitle={"Taupier à Langres (52200) : piégeage des taupes dans vos jardins"}

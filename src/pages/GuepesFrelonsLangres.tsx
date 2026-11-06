@@ -66,6 +66,7 @@ const GuepesFrelonsLangres = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={[{ label: "Accueil", to: "/" }, { label: "Guêpes et frelons", to: "/guepes-frelons" }, { label: "Langres", to: "/guepes-frelons-langres" }]}
         city="Langres"
         department="Haute-Marne (52)"
         serviceTitle={"Destruction de nids de guêpes et frelons à Langres (52200)"}

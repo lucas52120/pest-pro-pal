@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Taupier Montier-en-Der 52 - Piégeage Taupes, Devis Gratuit";
 const DESCRIPTION = "Taupinières dans votre jardin à Montier-en-Der (52220) ? GF Nuisibles repère les galeries actives et propose un piégeage adapté. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const TaupesMontierEnDer = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Montier-en-Der"
         department="Haute-Marne (52)"
         serviceTitle={"Taupier à Montier-en-Der (52220) : taupes et galeries actives"}

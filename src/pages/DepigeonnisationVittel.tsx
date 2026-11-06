@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dépigeonnisation Vittel 88 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons à Vittel (88800) ? GF Nuisibles étudie vos façades, balcons et toitures dans la station thermale et propose des solutions non létales. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const DepigeonnisationVittel = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Vittel"
         department="Vosges (88)"
         serviceTitle={"Dépigeonnisation à Vittel (88800) : façades et toitures"}

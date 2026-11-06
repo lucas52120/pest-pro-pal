@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dératisation Bar-sur-Aube 10 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Bar-sur-Aube (10200) ? GF Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const DeratisationBarSurAube = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Bar-sur-Aube"
         department="Aube (10)"
         serviceTitle={"Dératisation à Bar-sur-Aube (10200) : rats et souris"}

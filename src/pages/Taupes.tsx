@@ -1,8 +1,16 @@
 import { Target } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import LinksSection from "@/components/LinksSection";
 import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { CITIES } from "@/data/cities";
+
+const CITY_LINKS = CITIES.flatMap((city) =>
+  city.links
+    .filter((link) => link.label === "Taupes")
+    .map((link) => ({ label: `Taupier à ${city.name}`, to: link.to })),
+);
 
 const TITLE = "Taupier Haute-Marne 52 | Expert Anti-Taupes | GF Nuisibles";
 const DESCRIPTION = "Votre pelouse est envahie par les taupes ? Piégeage mécanique traditionnel sans produits chimiques pour jardins et espaces verts. Devis gratuit 7j/7";
@@ -34,6 +42,7 @@ const Taupes = () => (
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <ServicePageLayout
+    breadcrumbs={[{ label: "Accueil", to: "/" }, { label: "Nos services", to: "/#services" }, { label: "Taupes", to: "/taupes" }]}
     icon={<Target className="h-8 w-8" />}
     title="Taupes"
     subtitle="Piégeage traditionnel et expertise terrain pour vos espaces verts."
@@ -45,7 +54,13 @@ const Taupes = () => (
     expertise="GF Nuisibles emploie la méthode traditionnelle de piégeage, la plus efficace et la plus respectueuse de l'environnement. Notre expertise terrain nous permet d'identifier les galeries actives."
     method="Repérage des galeries principales, pose de pièges mécaniques professionnels, suivi régulier et retrait des dispositifs. Aucun produit chimique utilisé."
     engagement="Intervention sur devis, suivi personnalisé. Nous intervenons sur l'ensemble de la Haute-Marne pour les particuliers et les professionnels."
-    />
+    >
+      <LinksSection
+        title="Taupier par ville"
+        intro="GF Nuisibles intervient comme taupier en Haute-Marne (52) et à proximité. Cliquez sur votre ville pour découvrir notre service local :"
+        links={CITY_LINKS}
+      />
+    </ServicePageLayout>
   </>
 );
 

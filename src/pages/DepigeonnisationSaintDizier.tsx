@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dépigeonnisation Saint-Dizier 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons sur un balcon, une toiture ou un atelier à Saint-Dizier (52100) ? GF Nuisibles étudie les protections adaptées. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const DepigeonnisationSaintDizier = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Saint-Dizier"
         department="Haute-Marne (52)"
         serviceTitle={"Dépigeonnisation à Saint-Dizier (52100) : balcons et bâtiments"}

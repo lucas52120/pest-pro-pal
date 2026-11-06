@@ -5,6 +5,7 @@ import { Phone, Clock, MapPin, Star, CheckCircle2, Euro, Building2 } from "lucid
 import Navbar from "@/components/Navbar";
 import Reassurance from "@/components/Reassurance";
 import Footer from "@/components/Footer";
+import Breadcrumbs, { Crumb } from "@/components/Breadcrumbs";
 import {
   Accordion,
   AccordionContent,
@@ -47,6 +48,7 @@ export interface NearbyCity {
 }
 
 interface CityServicePageProps {
+  breadcrumbs: Crumb[];
   city: string;
   department: string;
   serviceTitle: string;
@@ -76,6 +78,7 @@ interface CityServicePageProps {
 }
 
 const CityServicePage = ({
+  breadcrumbs,
   city,
   department,
   serviceTitle,
@@ -114,6 +117,7 @@ const CityServicePage = ({
           </>
         )}
         <div className="container-narrow relative z-10 px-4">
+          <Breadcrumbs items={breadcrumbs} />
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

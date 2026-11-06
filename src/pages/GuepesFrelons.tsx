@@ -15,6 +15,7 @@ import guepeVol from "@/assets/guepe-vol.jpg";
 import nidGuepes from "@/assets/nid-guepes.jpg";
 import nidFrelonAsiatique from "@/assets/nid-frelon-asiatique.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const FAQ_ITEMS = [
   {
@@ -123,6 +124,7 @@ const GuepesFrelons = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <ServicePageLayout
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         icon={<Zap className="h-8 w-8" />}
         title="Destruction de nids de guêpes et frelons en Haute-Marne (52)"
         subtitle="Destruction de nids de guêpes et frelons en toute sécurité en Haute-Marne."

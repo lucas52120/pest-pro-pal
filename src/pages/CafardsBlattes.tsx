@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Traitement Cafards et Blattes Haute-Marne (52) | GF Nuisibles";
 const DESCRIPTION =
@@ -124,6 +125,7 @@ const CafardsBlattes = () => (
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <ServicePageLayout
+      breadcrumbs={breadcrumbsFrom(jsonLd)}
       icon={<Bug className="h-8 w-8" />}
       title="Cafards et blattes"
       subtitle="Traitement anti-cafards pour particuliers et professionnels en Haute-Marne (52)."

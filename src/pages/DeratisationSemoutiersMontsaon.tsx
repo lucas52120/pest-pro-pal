@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dératisation Semoutiers-Montsaon 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Semoutiers-Montsaon (52000) ? GF Nuisibles, implanté sur la commune, recherche les accès et adapte le traitement. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const DeratisationSemoutiersMontsaon = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Semoutiers-Montsaon"
         department="Haute-Marne (52)"
         serviceTitle={"Dératisation à Semoutiers-Montsaon (52000) : rats et souris"}

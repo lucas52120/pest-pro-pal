@@ -49,6 +49,7 @@ const DepigeonnisationLangres = () => {
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage
+      breadcrumbs={[{ label: "Accueil", to: "/" }, { label: "Dépigeonnisation", to: "/depigeonnage" }, { label: "Langres", to: "/depigeonnisation-langres" }]}
       city="Langres"
       department="Haute-Marne (52)"
       serviceTitle={"Dépigeonnisation à Langres (52200) : protection anti-pigeons"}

@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Taupier Nogent 52 - Piégeage Taupes, Devis Gratuit";
 const DESCRIPTION = "Taupinières dans votre jardin à Nogent (52800) ? GF Nuisibles repère les galeries actives et propose un piégeage mécanique adapté. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const TaupesNogent = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Nogent"
         department="Haute-Marne (52)"
         serviceTitle={"Taupier à Nogent (52800) : piégeage des taupes"}

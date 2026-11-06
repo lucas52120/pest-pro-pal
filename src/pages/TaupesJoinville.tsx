@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Taupier Joinville 52 - Piégeage Taupes, Devis Gratuit";
 const DESCRIPTION = "Taupinières dans votre jardin à Joinville (52300) ? GF Nuisibles recherche les galeries actives et propose un piégeage mécanique. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const TaupesJoinville = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Joinville"
         department="Haute-Marne (52)"
         serviceTitle={"Taupier à Joinville (52300) : piégeage des taupes"}

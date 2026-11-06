@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Taupier Semoutiers-Montsaon 52 - Piégeage Taupes, Devis Gratuit";
 const DESCRIPTION = "Taupinières dans votre jardin ou votre terrain à Semoutiers-Montsaon (52000) ? GF Nuisibles, implanté sur la commune, pratique le piégeage mécanique. Devis gratuit.";
@@ -53,6 +54,7 @@ const TaupesSemoutiersMontsaon = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Semoutiers-Montsaon"
         department="Haute-Marne (52)"
         serviceTitle={"Taupier à Semoutiers-Montsaon (52000) : piégeage de taupes"}

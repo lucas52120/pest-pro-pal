@@ -87,6 +87,7 @@ const DeratisationLangres = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+      breadcrumbs={[{ label: "Accueil", to: "/" }, { label: "Dératisation", to: "/deratisation" }, { label: "Langres", to: "/deratisation-langres" }]}
       city="Langres"
       department="Haute-Marne (52)"
       serviceTitle="Dératisation à Langres (52200) : rats et souris"

@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Destruction nid Guêpes & Frelons Wassy 52 - Intervention 24h";
 const DESCRIPTION = "Nid de guêpes ou de frelons à Wassy (52130) ? GF Nuisibles sécurise le site et retire le nid. Intervention selon disponibilité, devis gratuit.";
@@ -53,6 +54,7 @@ const GuepesFrelonsWassy = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Wassy"
         department="Haute-Marne (52)"
         serviceTitle={"Guêpes et frelons à Wassy (52130) : nid détecté"}

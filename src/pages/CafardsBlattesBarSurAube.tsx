@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-desinsectisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Traitement Cafards & Blattes Bar-sur-Aube 10 - Devis gratuit";
 const DESCRIPTION = "Cafards ou blattes à Bar-sur-Aube (10200) ? GF Nuisibles traite logements, commerces et restaurants : diagnostic et devis gratuits, intervention discrète. 07 65 25 67 92";
@@ -36,6 +37,7 @@ const CafardsBlattesBarSurAube = () => (
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <CityServicePage
+      breadcrumbs={breadcrumbsFrom(jsonLd)}
       city="Bar-sur-Aube"
       department="Aube (10)"
       serviceTitle={"Cafards et blattes à Bar-sur-Aube (10200) : traitement pour particuliers et professionnels"}

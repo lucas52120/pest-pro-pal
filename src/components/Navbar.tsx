@@ -89,25 +89,24 @@ const Navbar = () => {
               />
             </button>
 
-            {servicesOpen && (
-              <div className="absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-2">
-                <div className="overflow-hidden rounded-lg border border-primary-foreground/10 bg-primary shadow-xl">
-                  {serviceItems.map((item) => (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      className={`block px-5 py-3 font-heading text-sm font-medium transition-colors hover:bg-primary-foreground/10 hover:text-accent ${
-                        location.pathname === item.path
-                          ? "bg-primary-foreground/10 text-accent"
-                          : "text-primary-foreground/80"
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
+            {/* Always in the HTML so crawlers read these links; hidden with CSS when closed. */}
+            <div className={`absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-2 ${servicesOpen ? "" : "hidden"}`}>
+              <div className="overflow-hidden rounded-lg border border-primary-foreground/10 bg-primary shadow-xl">
+                {serviceItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`block px-5 py-3 font-heading text-sm font-medium transition-colors hover:bg-primary-foreground/10 hover:text-accent ${
+                      location.pathname === item.path
+                        ? "bg-primary-foreground/10 text-accent"
+                        : "text-primary-foreground/80"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
               </div>
-            )}
+            </div>
           </div>
 
           {navItems

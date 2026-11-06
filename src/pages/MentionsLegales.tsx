@@ -1,17 +1,11 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import SEO from "@/components/SEO";
+import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
 
 const MentionsLegales = () => {
-  const { hash } = useLocation();
-
-  // React Router does not scroll to a #section on in-app navigation.
-  useEffect(() => {
-    if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
-  }, [hash]);
+  useScrollToHash();
 
   return (
     <>

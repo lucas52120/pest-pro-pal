@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dératisation Haute-Marne (52) | Rats & Souris | GF Nuisibles";
 const DESCRIPTION =
@@ -133,6 +134,7 @@ const Deratisation = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <ServicePageLayout
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         icon={<Rat className="h-8 w-8" />}
         title="Dératisation en Haute-Marne (52) : élimination rats & souris"
         subtitle="Experts en dératisation pour particuliers et professionnels — diagnostic gratuit, intervention 7j/7."

@@ -5,8 +5,10 @@ import { Phone, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Reassurance from "@/components/Reassurance";
 import Footer from "@/components/Footer";
+import Breadcrumbs, { Crumb } from "@/components/Breadcrumbs";
 
 interface ServicePageLayoutProps {
+  breadcrumbs: Crumb[];
   title: string;
   subtitle: string;
   problem: string;
@@ -22,6 +24,7 @@ interface ServicePageLayoutProps {
 }
 
 const ServicePageLayout = ({
+  breadcrumbs,
   title,
   subtitle,
   problem,
@@ -50,6 +53,7 @@ const ServicePageLayout = ({
           </>
         )}
         <div className="container-narrow relative z-10 px-4">
+          <Breadcrumbs items={breadcrumbs} />
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

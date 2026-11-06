@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dépigeonnisation Châteauvillain 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Châteauvillain (52120) ? GF Nuisibles étudie les protections adaptées au bâtiment. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const DepigeonnisationChateauvillain = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Châteauvillain"
         department="Haute-Marne (52)"
         serviceTitle={"Dépigeonnisation à Châteauvillain (52120) : protection des bâtiments"}

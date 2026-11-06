@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dépigeonnisation Bar-sur-Aube 10 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Bar-sur-Aube (10200) ? GF Nuisibles étudie les protections adaptées au bâtiment. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const DepigeonnisationBarSurAube = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Bar-sur-Aube"
         department="Aube (10)"
         serviceTitle={"Dépigeonnisation à Bar-sur-Aube (10200) : protection des bâtiments"}

@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dépigeonnisation Neufchâteau 88 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Neufchâteau (88300) ? GF Nuisibles étudie les protections adaptées au bâtiment. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const DepigeonnisationNeufchateau = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Neufchâteau"
         department="Vosges (88)"
         serviceTitle={"Dépigeonnisation à Neufchâteau (88300) : protection des bâtiments"}

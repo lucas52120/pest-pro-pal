@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dératisation Châteauvillain 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Châteauvillain (52120) ? GF Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const DeratisationChateauvillain = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Châteauvillain"
         department="Haute-Marne (52)"
         serviceTitle={"Dératisation à Châteauvillain (52120) : rats et souris"}

@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dératisation Vittel 88 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Rats ou souris à Vittel (88800) ? GF Nuisibles recherche les accès, adapte le traitement et conseille la prévention dans la station thermale. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const DeratisationVittel = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Vittel"
         department="Vosges (88)"
         serviceTitle={"Dératisation à Vittel (88800) : rats et souris"}

@@ -1,8 +1,16 @@
 import { Bird } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import ServicePageLayout from "@/components/ServicePageLayout";
+import LinksSection from "@/components/LinksSection";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { CITIES } from "@/data/cities";
+
+const CITY_LINKS = CITIES.flatMap((city) =>
+  city.links
+    .filter((link) => link.label === "Dépigeonnisation")
+    .map((link) => ({ label: `Dépigeonnage à ${city.name}`, to: link.to })),
+);
 
 const TITLE = "Solution de dépigeonnage | Votre expert GF Nuisibles";
 const DESCRIPTION = "Dégâts de pigeons ? GF Nuisibles contrôle leur présence : Haute-Marne, Marne, Meuse, Vosges, Côte-d'Or, Aube. Pros/Partics. Diagnostic & Devis GRATUIT 7j/7";
@@ -39,6 +47,7 @@ const Depigeonnisation = () => (
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
     <ServicePageLayout
+    breadcrumbs={[{ label: "Accueil", to: "/" }, { label: "Nos services", to: "/#services" }, { label: "Dépigeonnage", to: "/depigeonnage" }]}
     icon={<Bird className="h-8 w-8" />}
     title="Dépigeonnage"
     subtitle="Protection durable de vos bâtiments contre les pigeons et volatiles."
@@ -50,7 +59,13 @@ const Depigeonnisation = () => (
     expertise="GF Nuisibles utilise différentes méthodes sans blesser ni tuer les volatiles : installation de filets, de picots, de systèmes de répulsion laser, efficaces et discrets. Ainsi, les volatiles ne vont plus se poser ou se nicher sur vos bâtiments. Préservez l'hygiène de vos locaux et évitez les dégradations liées aux déjections et maladies."
     method="Audit complet du site, identification des zones de nidification, installation de dispositifs anti-pigeons adaptés (pics inox, filets, fil électrique, systèmes laser), nettoyage et désinfection des zones souillées."
     engagement="Solutions pérennes avec garantie. Intervention discrète pour les bâtiments publics et les copropriétés. Devis gratuit sur site."
-    />
+    >
+      <LinksSection
+        title="Dépigeonnage par ville"
+        intro="GF Nuisibles intervient pour le dépigeonnage en Haute-Marne (52) et dans les départements limitrophes. Cliquez sur votre ville pour découvrir notre service local :"
+        links={CITY_LINKS}
+      />
+    </ServicePageLayout>
   </>
 );
 

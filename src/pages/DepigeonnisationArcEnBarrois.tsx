@@ -5,6 +5,7 @@ import CityServicePage from "@/components/CityServicePage";
 import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dépigeonnisation Arc-en-Barrois 52 - Intervention 24h, Devis Gratuit";
 const DESCRIPTION = "Pigeons sur une toiture ou une corniche à Arc-en-Barrois (52210) ? GF Nuisibles étudie les protections adaptées au bâtiment. Diagnostic et devis gratuits.";
@@ -53,6 +54,7 @@ const DepigeonnisationArcEnBarrois = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <CityServicePage
+        breadcrumbs={breadcrumbsFrom(jsonLd)}
         city="Arc-en-Barrois"
         department="Haute-Marne (52)"
         serviceTitle={"Dépigeonnisation à Arc-en-Barrois (52210) : protection des bâtiments"}
