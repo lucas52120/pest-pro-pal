@@ -1,7 +1,10 @@
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
+import { trackPhoneClicks } from "./lib/googleAds";
 import "./index.css";
+
+trackPhoneClicks();
 
 const container = document.getElementById("root")!;
 

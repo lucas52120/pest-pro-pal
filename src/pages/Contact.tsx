@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { trackFormConversion } from "@/lib/googleAds";
 
 const FORMSPARK_URL = "https://submit-form.com/cbVnrVxCc";
 
@@ -61,6 +62,7 @@ const Contact = () => {
 
       if (!response.ok) throw new Error("Erreur lors de l'envoi");
 
+      trackFormConversion();
       setSubmitted(true);
     } catch {
       toast.error("Une erreur est survenue. Veuillez réessayer ou nous appeler directement.");
