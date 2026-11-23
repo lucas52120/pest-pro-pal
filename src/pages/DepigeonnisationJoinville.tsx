@@ -8,7 +8,7 @@ import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dépigeonnisation Joinville 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Joinville (52300) ? GF Nuisibles étudie les supports et propose des protections adaptées. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Marre de nettoyer les fientes de pigeons à Joinville ? On protège balcons et toitures, sans leur faire de mal. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-joinville";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -84,12 +84,11 @@ const DepigeonnisationJoinville = () => {
           </> },
           { title: "Votre service à Joinville et dans les villes du secteur", content: <>
 <p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnage">service dépigeonnisation en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Joinville, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-<p>Pour une adresse dans une autre commune, consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-wassy">Dépigeonnisation à Wassy</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-froncles">Dépigeonnisation à Froncles</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-saint-dizier">Dépigeonnisation à Saint-Dizier</Link>. Elles présentent les prestations dans ces villes, distinctes de Joinville. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour situer votre demande.</p>
+<p>Pour une adresse dans une autre commune, consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-wassy">Dépigeonnisation à Wassy</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-saint-dizier">Dépigeonnisation à Saint-Dizier</Link>. Elles présentent les prestations dans ces villes, distinctes de Joinville. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour situer votre demande.</p>
           </> },
         ]}
         nearbyCities={{ title: "Nos pages locales autour de Joinville", items: [
           { label: "Dépigeonnisation à Wassy", to: "/depigeonnisation-wassy" },
-          { label: "Dépigeonnisation à Froncles", to: "/depigeonnisation-froncles" },
           { label: "Dépigeonnisation à Saint-Dizier", to: "/depigeonnisation-saint-dizier" },
         ] }}
         relatedLinks={[

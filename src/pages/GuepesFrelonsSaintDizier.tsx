@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-guepes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Destruction nid Guêpes & Frelons Saint-Dizier 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou frelons à Saint-Dizier (52100) ? GF Nuisibles étudie l’accès et les précautions nécessaires. Devis gratuit au 07 65 25 67 92.";
+const TITLE = "Destruction nid de guêpes et frelons à Saint-Dizier (52)";
+const DESCRIPTION = "Des guêpes ou des frelons gâchent vos repas dehors à Saint-Dizier ? On s'en occupe 7j/7, à partir de 80 €. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-saint-dizier";
 
 const FAQ_ITEMS: FaqItem[] = [

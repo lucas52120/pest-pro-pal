@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-guepes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Destruction nid Guêpes & Frelons Nogent 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Nogent (52800) ? GF Nuisibles évalue son accès et organise un traitement adapté. Appelez pour un diagnostic et un devis gratuits.";
+const TITLE = "Destruction nid de guêpes et frelons à Nogent (52)";
+const DESCRIPTION = "Des guêpes sous les tuiles ou dans un volet à Nogent ? On s'en charge, frelons compris. À partir de 80 €, devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-nogent";
 
 const FAQ_ITEMS: FaqItem[] = [

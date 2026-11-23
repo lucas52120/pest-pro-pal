@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dépigeonnisation Châtillon-sur-Seine 21 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Châtillon-sur-Seine (21400) ? GF Nuisibles étudie les protections adaptées au bâtiment. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dépigeonnage à Châtillon-sur-Seine (21)";
+const DESCRIPTION = "Des pigeons sous votre toit à Châtillon-sur-Seine ? On protège le bâtiment, sans leur faire de mal. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-chatillon-sur-seine";
 
 const FAQ_ITEMS: FaqItem[] = [

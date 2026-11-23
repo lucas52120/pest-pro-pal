@@ -24,6 +24,11 @@
 /depigeonnisation-beaune /depigeonnage 301
 /deratisation-nancy /deratisation 301
 /depigeonnisation-nancy /depigeonnage 301
+/depigeonnisation-bologne /depigeonnage 301!
+/depigeonnisation-chateauvillain /depigeonnage 301!
+/depigeonnisation-froncles /depigeonnage 301!
+/depigeonnisation-arc-en-barrois /depigeonnage 301!
+/depigeonnisation-semoutiers-montsaon /depigeonnage 301!
 # Legacy nested service URLs -> flat city URLs (301, keeps link equity)
 /services/depigeonnisation/:city    /depigeonnisation-:city      301!
 /elimination-pigeons /depigeonnage 301!

@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-guepes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Destruction nid Guêpes & Frelons Bar-sur-Aube 10 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Bar-sur-Aube (10200) ? GF Nuisibles évalue l'accès et propose une intervention adaptée. Diagnostic et devis gratuits.";
+const TITLE = "Destruction nid de guêpes et frelons à Bar-sur-Aube (10)";
+const DESCRIPTION = "Un nid de guêpes ou de frelons à Bar-sur-Aube ? N'y touchez pas, appelez un pro : 7j/7 de 7h à 23h, devis gratuit au 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-bar-sur-aube";
 
 const FAQ_ITEMS: FaqItem[] = [

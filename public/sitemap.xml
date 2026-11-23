@@ -251,11 +251,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gf-nuisibles.fr/depigeonnisation-bologne</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://gf-nuisibles.fr/taupes-bologne</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -311,11 +306,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gf-nuisibles.fr/depigeonnisation-froncles</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://gf-nuisibles.fr/taupes-froncles</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -327,11 +317,6 @@
   </url>
   <url>
     <loc>https://gf-nuisibles.fr/guepes-frelons-chateauvillain</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/depigeonnisation-chateauvillain</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -351,11 +336,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gf-nuisibles.fr/depigeonnisation-arc-en-barrois</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://gf-nuisibles.fr/taupes-arc-en-barrois</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -367,11 +347,6 @@
   </url>
   <url>
     <loc>https://gf-nuisibles.fr/guepes-frelons-semoutiers-montsaon</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/depigeonnisation-semoutiers-montsaon</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

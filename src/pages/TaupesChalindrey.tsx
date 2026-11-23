@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Taupier Chalindrey 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Chalindrey (52600) ? GF Nuisibles repère les galeries actives et propose un piégeage adapté. Diagnostic et devis gratuits.";
+const TITLE = "Taupier à Chalindrey (52) : piégeage de taupes";
+const DESCRIPTION = "Taupinières à Chalindrey ? Ne perdez plus vos week-ends à les reboucher : un piégeur agréé s'en occupe. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/taupes-chalindrey";
 
 const FAQ_ITEMS: FaqItem[] = [

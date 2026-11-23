@@ -14,7 +14,7 @@ import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Traitement Cafards et Blattes Haute-Marne (52) | GF Nuisibles";
 const DESCRIPTION =
-  "Cafards ou blattes chez vous ou dans vos locaux ? GF Nuisibles traite blattes germaniques et orientales en Haute-Marne : Chaumont, Langres, Saint-Dizier. Devis gratuit.";
+  "Des cafards ou blattes chez vous ? N'attendez pas qu'ils se multiplient : intervention discrète en Haute-Marne, 7j/7. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/cafards-blattes";
 
 const faqItems = [

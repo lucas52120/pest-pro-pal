@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Taupier Chaumont 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Chaumont (52000) ou Brottes ? GF Nuisibles repère les galeries actives et propose un piégeage mécanique sur devis gratuit.";
+const TITLE = "Taupier à Chaumont (52) : piégeage de taupes | Devis gratuit";
+const DESCRIPTION = "Les taupes ruinent votre pelouse à Chaumont ou Brottes ? Un piégeur agréé s'en occupe, sans produit chimique. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/taupes-chaumont";
 
 const FAQ_ITEMS: FaqItem[] = [

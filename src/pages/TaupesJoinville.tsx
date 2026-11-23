@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Taupier Joinville 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Joinville (52300) ? GF Nuisibles recherche les galeries actives et propose un piégeage mécanique. Diagnostic et devis gratuits.";
+const TITLE = "Taupier à Joinville (52) : piégeage de taupes";
+const DESCRIPTION = "Des taupes dans votre jardin à Joinville ? Laissez faire un piégeur agréé : pièges mécaniques, aucun produit chimique. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/taupes-joinville";
 
 const FAQ_ITEMS: FaqItem[] = [

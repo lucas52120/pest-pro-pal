@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Taupier Arc-en-Barrois 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Arc-en-Barrois (52210) ? GF Nuisibles repère les galeries actives et propose un piégeage adapté. Diagnostic et devis gratuits.";
+const TITLE = "Taupier à Arc-en-Barrois (52) : piégeage de taupes";
+const DESCRIPTION = "Votre jardin d'Arc-en-Barrois est plein de taupinières ? Un taupier local s'en charge, sans produit chimique. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/taupes-arc-en-barrois";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -95,7 +95,7 @@ const TaupesArcEnBarrois = () => {
         relatedLinks={[
           { label: "Dératisation à Arc-en-Barrois", to: "/deratisation-arc-en-barrois" },
           { label: "Guêpes et frelons à Arc-en-Barrois", to: "/guepes-frelons-arc-en-barrois" },
-          { label: "Dépigeonnisation à Arc-en-Barrois", to: "/depigeonnisation-arc-en-barrois" },
+          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
         ]}
         faqItems={FAQ_ITEMS}
         cta={"Taupier à Arc-en-Barrois : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}

@@ -7,7 +7,7 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 
 const TITLE = "Dépigeonnisation Langres 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Langres (52200) ? GF Nuisibles étudie la pose de filets, pics ou fils tendus. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Des pigeons sur votre balcon ou votre toit à Langres ? Filets, pics, fils tendus : on protège votre bâtiment. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-langres";
 
 const FAQ_ITEMS: FaqItem[] = [

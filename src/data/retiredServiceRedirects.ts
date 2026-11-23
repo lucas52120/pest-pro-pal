@@ -1,6 +1,11 @@
 // Retired service URLs remain reachable without being included in the sitemap.
 export const retiredServiceRedirects: Record<string, string> = {
   "/depigeonnisation": "/depigeonnage",
+  "/depigeonnisation-bologne": "/depigeonnage",
+  "/depigeonnisation-chateauvillain": "/depigeonnage",
+  "/depigeonnisation-froncles": "/depigeonnage",
+  "/depigeonnisation-arc-en-barrois": "/depigeonnage",
+  "/depigeonnisation-semoutiers-montsaon": "/depigeonnage",
   "/desinsectisation": "/cafards-blattes",
   "/desinsectisation-chaumont": "/cafards-blattes-chaumont",
   "/desinsectisation-langres": "/cafards-blattes-langres",

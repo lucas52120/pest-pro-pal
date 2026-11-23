@@ -13,7 +13,7 @@ const CITY_LINKS = CITIES.flatMap((city) =>
 );
 
 const TITLE = "Taupier Haute-Marne 52 | Expert Anti-Taupes | GF Nuisibles";
-const DESCRIPTION = "Votre pelouse est envahie par les taupes ? Piégeage mécanique traditionnel sans produits chimiques pour jardins et espaces verts. Devis gratuit 7j/7";
+const DESCRIPTION = "Votre pelouse est pleine de taupinières ? Un piégeur agréé s'en occupe, sans produit chimique, en Haute-Marne. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/taupes";
 
 const jsonLd = {

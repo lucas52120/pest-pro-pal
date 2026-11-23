@@ -6,12 +6,12 @@ import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-guepes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 
-const TITLE = "Destruction nid Guêpes & Frelons Langres 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Langres (52200) ? GF Nuisibles évalue les accès et propose un traitement adapté. Diagnostic et devis gratuits en Haute-Marne.";
+const TITLE = "Destruction nid de guêpes et frelons à Langres (52)";
+const DESCRIPTION = "Guêpes ou frelons à Langres ? Ne risquez pas la piqûre, on détruit le nid pour vous, 7j/7. À partir de 80 €, devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-langres";
 
 const FAQ_ITEMS: FaqItem[] = [
-  { question: "Quel est le tarif pour un nid de guêpes ou de frelons à Langres ?", answer: "Les tarifs commencent à 85 € pour les guêpes et à 110 € pour les frelons. La hauteur, l'accès et les moyens nécessaires peuvent modifier le montant. Le devis gratuit précise le tarif applicable à votre situation avant l'intervention." },
+  { question: "Quel est le tarif pour un nid de guêpes ou de frelons à Langres ?", answer: "Les tarifs commencent à 80 € pour les guêpes et à 110 € pour les frelons. La hauteur, l'accès et les moyens nécessaires peuvent modifier le montant. Le devis gratuit précise le tarif applicable à votre situation avant l'intervention." },
   { question: "Faut-il retirer soi-même un nid situé dans un volet ?", answer: "Non. Ne démontez pas le coffre et ne bouchez pas l'entrée. Éloignez les occupants et décrivez les accès au professionnel. Le traitement et l'éventuel retrait dépendent de la configuration du volet et du nid." },
   { question: "Pouvez-vous intervenir dans les quartiers de Langres ?", answer: "Oui, le centre historique, la Citadelle, Saint-Gilles, les Franchises et les Fourches font partie des secteurs desservis. L'accès et les disponibilités sont à confirmer lors de l'appel. L'entreprise est basée à Montsaon, en Haute-Marne." },
   { question: "Retirez-vous toujours le nid après traitement ?", answer: "Le retrait dépend de l'accessibilité et de la situation. Certains nids sont dissimulés dans une paroi ou sous une toiture. Les modalités de traitement et de retrait éventuel sont expliquées pour votre cas ; ne démontez pas vous-même les matériaux pour accéder au nid." },
@@ -89,7 +89,7 @@ const GuepesFrelonsLangres = () => {
 <p>{"Des insectes en déplacement ne prouvent pas à eux seuls qu'un nid se trouve sur votre propriété. Un regroupement d'abeilles nécessite une identification différente : ne le faites pas traiter comme un nid de guêpes. En cas de difficulté respiratoire, de malaise ou de réaction grave après une piqûre, appelez le 15 ou le 112 ; le traitement d'un nid ne remplace pas les secours médicaux."}</p>
 </> },
         { title: "Prix et préparation d’une intervention à Langres", content: <>
-<p>{"Les tarifs affichés commencent à 85 € pour un nid de guêpes et à 110 € pour un nid de frelons. Le montant dépend notamment de la hauteur, de l'accès et des moyens nécessaires. Un devis gratuit permet de préciser le prix et le périmètre de la prestation avant votre accord."}</p>
+<p>{"Les tarifs affichés commencent à 80 € pour un nid de guêpes et à 110 € pour un nid de frelons. Le montant dépend notamment de la hauteur, de l'accès et des moyens nécessaires. Un devis gratuit permet de préciser le prix et le périmètre de la prestation avant votre accord."}</p>
 <p>{"Pour préparer votre appel, donnez votre adresse à Langres, l'emplacement estimé, les voies d'accès et les contraintes de voisinage. Signalez également un précédent traitement. Après le passage, respectez les consignes sur les déplacements près du nid et sur toute manipulation : une activité résiduelle doit être signalée, pas traitée soi-même."}</p>
 </> },
         { title: "Votre service à Langres et dans les communes voisines", content: <>

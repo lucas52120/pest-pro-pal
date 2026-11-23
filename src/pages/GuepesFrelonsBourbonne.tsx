@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-guepes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Destruction nid Guêpes & Frelons Bourbonne-les-Bains 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Bourbonne-les-Bains (52400) ? GF Nuisibles évalue l'accès et propose une intervention adaptée. Diagnostic et devis gratuits.";
+const TITLE = "Nid de guêpes et frelons à Bourbonne-les-Bains (52)";
+const DESCRIPTION = "Un nid de guêpes ou de frelons à Bourbonne-les-Bains ? On vient le détruire 7j/7, à partir de 80 €. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-bourbonne-les-bains";
 
 const FAQ_ITEMS: FaqItem[] = [

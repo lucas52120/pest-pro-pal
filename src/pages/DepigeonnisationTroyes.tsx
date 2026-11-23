@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dépigeonnisation Troyes 10 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons à Troyes (10000) ? GF Nuisibles étudie vos façades et toitures et propose des solutions anti-pigeons non létales adaptées. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dépigeonnage à Troyes (10) | Devis gratuit";
+const DESCRIPTION = "Pigeons sur vos façades ou toits-terrasses à Troyes ? Particuliers et pros, on protège le bâtiment sans les tuer. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-troyes";
 
 const FAQ_ITEMS: FaqItem[] = [

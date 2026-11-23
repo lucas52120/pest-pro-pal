@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dératisation Châteauvillain 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Châteauvillain (52120) ? GF Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dératisation à Châteauvillain (52)";
+const DESCRIPTION = "Rats ou souris à Châteauvillain (52120), dans une maison ancienne ou une dépendance ? Traitement adapté. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/deratisation-chateauvillain";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -93,7 +93,7 @@ const DeratisationChateauvillain = () => {
         ] }}
         relatedLinks={[
           { label: "Guêpes et frelons à Châteauvillain", to: "/guepes-frelons-chateauvillain" },
-          { label: "Dépigeonnisation à Châteauvillain", to: "/depigeonnisation-chateauvillain" },
+          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
           { label: "Taupier à Châteauvillain", to: "/taupes-chateauvillain" },
         ]}
         faqItems={FAQ_ITEMS}

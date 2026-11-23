@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dépigeonnisation Bourbonne-les-Bains 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Bourbonne-les-Bains (52400) ? GF Nuisibles étudie les protections adaptées au bâtiment. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dépigeonnage à Bourbonne-les-Bains (52)";
+const DESCRIPTION = "Pigeons et fientes à Bourbonne-les-Bains ? Gardez balcons et façades propres : filets et pics sur mesure. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-bourbonne-les-bains";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -84,12 +84,12 @@ const DepigeonnisationBourbonne = () => {
           </> },
           { title: "Votre service à Bourbonne-les-Bains et dans le secteur", content: <>
             <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnage">service dépigeonnisation en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Bourbonne-les-Bains, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-chalindrey">Dépigeonnisation à Chalindrey</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-chateauvillain">Dépigeonnisation à Châteauvillain</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
+            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-chalindrey">Dépigeonnisation à Chalindrey</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-langres">Dépigeonnisation à Langres</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
           </> },
         ]}
         nearbyCities={{ title: "Nos pages locales autour de Bourbonne-les-Bains", items: [
           { label: "Dépigeonnisation à Chalindrey", to: "/depigeonnisation-chalindrey" },
-          { label: "Dépigeonnisation à Châteauvillain", to: "/depigeonnisation-chateauvillain" },
+          { label: "Dépigeonnisation à Langres", to: "/depigeonnisation-langres" },
         ] }}
         relatedLinks={[
           { label: "Dératisation à Bourbonne-les-Bains", to: "/deratisation-bourbonne-les-bains" },

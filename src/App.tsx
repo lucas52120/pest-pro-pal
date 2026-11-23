@@ -62,7 +62,6 @@ import TaupesBourbonne from "./pages/TaupesBourbonne.tsx";
 // Bologne
 import DeratisationBologne from "./pages/DeratisationBologne.tsx";
 import GuepesFrelonsBologne from "./pages/GuepesFrelonsBologne.tsx";
-import DepigeonnisationBologne from "./pages/DepigeonnisationBologne.tsx";
 import TaupesBologne from "./pages/TaupesBologne.tsx";
 
 // Montier-en-Der
@@ -80,25 +79,21 @@ import TaupesChalindrey from "./pages/TaupesChalindrey.tsx";
 // Froncles
 import DeratisationFroncles from "./pages/DeratisationFroncles.tsx";
 import GuepesFrelonsFroncles from "./pages/GuepesFrelonsFroncles.tsx";
-import DepigeonnisationFroncles from "./pages/DepigeonnisationFroncles.tsx";
 import TaupesFroncles from "./pages/TaupesFroncles.tsx";
 
 // Châteauvillain
 import DeratisationChateauvillain from "./pages/DeratisationChateauvillain.tsx";
 import GuepesFrelonsChateauvillain from "./pages/GuepesFrelonsChateauvillain.tsx";
-import DepigeonnisationChateauvillain from "./pages/DepigeonnisationChateauvillain.tsx";
 import TaupesChateauvillain from "./pages/TaupesChateauvillain.tsx";
 
 // Arc-en-Barrois
 import DeratisationArcEnBarrois from "./pages/DeratisationArcEnBarrois.tsx";
 import GuepesFrelonsArcEnBarrois from "./pages/GuepesFrelonsArcEnBarrois.tsx";
-import DepigeonnisationArcEnBarrois from "./pages/DepigeonnisationArcEnBarrois.tsx";
 import TaupesArcEnBarrois from "./pages/TaupesArcEnBarrois.tsx";
 
 // Semoutiers-Montsaon
 import DeratisationSemoutiersMontsaon from "./pages/DeratisationSemoutiersMontsaon.tsx";
 import GuepesFrelonsSemoutiersMontsaon from "./pages/GuepesFrelonsSemoutiersMontsaon.tsx";
-import DepigeonnisationSemoutiersMontsaon from "./pages/DepigeonnisationSemoutiersMontsaon.tsx";
 import TaupesSemoutiersMontsaon from "./pages/TaupesSemoutiersMontsaon.tsx";
 
 // Troyes (Aube 10) — Dératisation + Dépigeonnisation uniquement
@@ -223,7 +218,6 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
           <Route path="/deratisation-bologne" element={<DeratisationBologne />} />
           <Route path="/guepes-frelons-bologne" element={<GuepesFrelonsBologne />} />
 
-          <Route path="/depigeonnisation-bologne" element={<DepigeonnisationBologne />} />
           <Route path="/taupes-bologne" element={<TaupesBologne />} />
 
           {/* Montier-en-Der — tous les services */}
@@ -244,28 +238,24 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
           <Route path="/deratisation-froncles" element={<DeratisationFroncles />} />
           <Route path="/guepes-frelons-froncles" element={<GuepesFrelonsFroncles />} />
 
-          <Route path="/depigeonnisation-froncles" element={<DepigeonnisationFroncles />} />
           <Route path="/taupes-froncles" element={<TaupesFroncles />} />
 
           {/* Châteauvillain — tous les services */}
           <Route path="/deratisation-chateauvillain" element={<DeratisationChateauvillain />} />
           <Route path="/guepes-frelons-chateauvillain" element={<GuepesFrelonsChateauvillain />} />
 
-          <Route path="/depigeonnisation-chateauvillain" element={<DepigeonnisationChateauvillain />} />
           <Route path="/taupes-chateauvillain" element={<TaupesChateauvillain />} />
 
           {/* Arc-en-Barrois — tous les services */}
           <Route path="/deratisation-arc-en-barrois" element={<DeratisationArcEnBarrois />} />
           <Route path="/guepes-frelons-arc-en-barrois" element={<GuepesFrelonsArcEnBarrois />} />
 
-          <Route path="/depigeonnisation-arc-en-barrois" element={<DepigeonnisationArcEnBarrois />} />
           <Route path="/taupes-arc-en-barrois" element={<TaupesArcEnBarrois />} />
 
           {/* Semoutiers-Montsaon — tous les services */}
           <Route path="/deratisation-semoutiers-montsaon" element={<DeratisationSemoutiersMontsaon />} />
           <Route path="/guepes-frelons-semoutiers-montsaon" element={<GuepesFrelonsSemoutiersMontsaon />} />
 
-          <Route path="/depigeonnisation-semoutiers-montsaon" element={<DepigeonnisationSemoutiersMontsaon />} />
           <Route path="/taupes-semoutiers-montsaon" element={<TaupesSemoutiersMontsaon />} />
 
           {/* Troyes — Dératisation + Dépigeonnisation */}

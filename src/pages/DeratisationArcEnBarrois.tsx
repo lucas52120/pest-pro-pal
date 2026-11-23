@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dératisation Arc-en-Barrois 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Arc-en-Barrois (52210) ? GF Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dératisation à Arc-en-Barrois (52)";
+const DESCRIPTION = "Rats ou souris à Arc-en-Barrois (52210) ? Particuliers, agriculteurs et professionnels : recherche des accès et traitement. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/deratisation-arc-en-barrois";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -94,7 +94,7 @@ const DeratisationArcEnBarrois = () => {
         ] }}
         relatedLinks={[
           { label: "Guêpes et frelons à Arc-en-Barrois", to: "/guepes-frelons-arc-en-barrois" },
-          { label: "Dépigeonnisation à Arc-en-Barrois", to: "/depigeonnisation-arc-en-barrois" },
+          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
           { label: "Taupier à Arc-en-Barrois", to: "/taupes-arc-en-barrois" },
         ]}
         faqItems={FAQ_ITEMS}

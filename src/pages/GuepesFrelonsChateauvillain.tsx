@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-guepes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Destruction nid Guêpes & Frelons Châteauvillain 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Châteauvillain (52120) ? GF Nuisibles évalue l'accès et propose une intervention adaptée. Diagnostic et devis gratuits.";
+const TITLE = "Destruction nid de guêpes et frelons à Châteauvillain (52)";
+const DESCRIPTION = "Un nid de guêpes ou de frelons à Châteauvillain ? Gardez vos distances, on s'en occupe ! À partir de 80 €, devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-chateauvillain";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -93,7 +93,7 @@ const GuepesFrelonsChateauvillain = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Châteauvillain", to: "/deratisation-chateauvillain" },
-          { label: "Dépigeonnisation à Châteauvillain", to: "/depigeonnisation-chateauvillain" },
+          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
           { label: "Taupier à Châteauvillain", to: "/taupes-chateauvillain" },
         ]}
         faqItems={FAQ_ITEMS}

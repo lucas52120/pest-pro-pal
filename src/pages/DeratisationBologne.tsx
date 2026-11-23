@@ -93,7 +93,7 @@ const DeratisationBologne = () => {
         ] }}
         relatedLinks={[
           { label: "Guêpes et frelons à Bologne", to: "/guepes-frelons-bologne" },
-          { label: "Dépigeonnisation à Bologne", to: "/depigeonnisation-bologne" },
+          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
           { label: "Taupier à Bologne", to: "/taupes-bologne" },
         ]}
         faqItems={FAQ_ITEMS}

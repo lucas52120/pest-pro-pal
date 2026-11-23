@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Taupier Saint-Dizier 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières sur votre pelouse à Saint-Dizier (52100) ? GF Nuisibles repère les galeries actives et propose un piégeage mécanique. Diagnostic et devis gratuits.";
+const TITLE = "Taupier à Saint-Dizier (52) : piégeage de taupes";
+const DESCRIPTION = "Encore des taupinières sur votre pelouse à Saint-Dizier ? Confiez-les à un piégeur agréé, sans produit chimique. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/taupes-saint-dizier";
 
 const FAQ_ITEMS: FaqItem[] = [

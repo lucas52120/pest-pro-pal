@@ -8,7 +8,7 @@ import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Dépigeonnisation Vittel 88 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons à Vittel (88800) ? GF Nuisibles étudie vos façades, balcons et toitures dans la station thermale et propose des solutions non létales. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Des pigeons sur vos balcons ou toitures à Vittel ? Un fauconnier de métier protège votre bâtiment, sans les tuer. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-vittel";
 
 const FAQ_ITEMS: FaqItem[] = [

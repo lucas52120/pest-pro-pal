@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-guepes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Destruction nid Guêpes & Frelons Arc-en-Barrois 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Arc-en-Barrois (52210) ? GF Nuisibles évalue l'accès et propose une intervention adaptée. Diagnostic et devis gratuits.";
+const TITLE = "Destruction nid de guêpes et frelons à Arc-en-Barrois (52)";
+const DESCRIPTION = "Guêpes ou frelons à Arc-en-Barrois ? Ne montez pas sur l'échelle, appelez un pro : à partir de 80 €, devis gratuit, 7j/7 au 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-arc-en-barrois";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -94,7 +94,7 @@ const GuepesFrelonsArcEnBarrois = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Arc-en-Barrois", to: "/deratisation-arc-en-barrois" },
-          { label: "Dépigeonnisation à Arc-en-Barrois", to: "/depigeonnisation-arc-en-barrois" },
+          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
           { label: "Taupier à Arc-en-Barrois", to: "/taupes-arc-en-barrois" },
         ]}
         faqItems={FAQ_ITEMS}

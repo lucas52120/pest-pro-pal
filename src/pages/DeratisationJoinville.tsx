@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dératisation Joinville 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Joinville (52300) ? GF Nuisibles recherche les accès et adapte la dératisation aux logements et commerces. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dératisation à Joinville (52) | Devis gratuit";
+const DESCRIPTION = "Rats ou souris à Joinville (52300), dans une cave, une réserve ou sous un plancher ? Traitement adapté et conseils. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/deratisation-joinville";
 
 const FAQ_ITEMS: FaqItem[] = [

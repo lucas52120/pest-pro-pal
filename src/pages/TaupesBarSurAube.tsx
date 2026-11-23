@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Taupier Bar-sur-Aube 10 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Bar-sur-Aube (10200) ? GF Nuisibles repère les galeries actives et propose un piégeage adapté. Diagnostic et devis gratuits.";
+const TITLE = "Taupier à Bar-sur-Aube (10) : piégeage de taupes";
+const DESCRIPTION = "Vous avez des taupes dans le jardin à Bar-sur-Aube ? Un piégeur agréé se déplace, sans produit chimique. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/taupes-bar-sur-aube";
 
 const FAQ_ITEMS: FaqItem[] = [

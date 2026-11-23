@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dératisation Chaumont 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Chaumont (52000) ? GF Nuisibles recherche les accès et adapte le traitement aux logements et commerces. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dératisation à Chaumont (52) | Devis gratuit";
+const DESCRIPTION = "Rats ou souris à Chaumont (52000) ? Entreprise locale pour logements et commerces : recherche des accès, traitement adapté. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/deratisation-chaumont";
 
 const FAQ_ITEMS: FaqItem[] = [

@@ -8,7 +8,7 @@ import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
 const TITLE = "Taupier Froncles 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Froncles (52320) ? GF Nuisibles repère les galeries actives et propose un piégeage adapté. Diagnostic et devis gratuits.";
+const DESCRIPTION = "Des taupes à Froncles, Buxières ou Provenchères ? Un piégeur agréé s'occupe de votre terrain, sans produit chimique. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/taupes-froncles";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -95,7 +95,7 @@ const TaupesFroncles = () => {
         relatedLinks={[
           { label: "Dératisation à Froncles", to: "/deratisation-froncles" },
           { label: "Guêpes et frelons à Froncles", to: "/guepes-frelons-froncles" },
-          { label: "Dépigeonnisation à Froncles", to: "/depigeonnisation-froncles" },
+          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
         ]}
         faqItems={FAQ_ITEMS}
         cta={"Taupier à Froncles : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}

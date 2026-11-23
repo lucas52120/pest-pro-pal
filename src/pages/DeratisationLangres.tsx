@@ -6,8 +6,8 @@ import type { FaqItem } from "@/components/CityServicePage";
 import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 
-const TITLE = "Dératisation Langres 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Langres (52200) ? GF Nuisibles intervient dans le centre historique, les quartiers et les environs. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dératisation à Langres (52) | Devis gratuit";
+const DESCRIPTION = "Rats ou souris à Langres (52200), dans les combles, la cave ou votre commerce ? Recherche des accès et traitement adapté. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/deratisation-langres";
 
 const FAQ_ITEMS: FaqItem[] = [

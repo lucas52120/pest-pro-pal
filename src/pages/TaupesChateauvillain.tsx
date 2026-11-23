@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Taupier Châteauvillain 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Châteauvillain (52120) ? GF Nuisibles repère les galeries actives et propose un piégeage adapté. Diagnostic et devis gratuits.";
+const TITLE = "Taupier à Châteauvillain (52) : piégeage de taupes";
+const DESCRIPTION = "Des taupes sous votre pelouse à Châteauvillain ? On repère les galeries et on pose les pièges, sans produit chimique. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/taupes-chateauvillain";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -94,7 +94,7 @@ const TaupesChateauvillain = () => {
         relatedLinks={[
           { label: "Dératisation à Châteauvillain", to: "/deratisation-chateauvillain" },
           { label: "Guêpes et frelons à Châteauvillain", to: "/guepes-frelons-chateauvillain" },
-          { label: "Dépigeonnisation à Châteauvillain", to: "/depigeonnisation-chateauvillain" },
+          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
         ]}
         faqItems={FAQ_ITEMS}
         cta={"Taupier à Châteauvillain : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}

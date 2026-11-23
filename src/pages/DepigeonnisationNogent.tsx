@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dépigeonnisation Nogent 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Nogent (52800) ? GF Nuisibles étudie les accès et propose des protections anti-pigeons. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dépigeonnage à Nogent (52) | Devis gratuit";
+const DESCRIPTION = "Pigeons sur vos rebords et balcons à Nogent ? Un fauconnier de métier vous trouve la bonne protection. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-nogent";
 
 const FAQ_ITEMS: FaqItem[] = [

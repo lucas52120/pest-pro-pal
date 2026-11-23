@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dépigeonnisation Montier-en-Der 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Montier-en-Der (52220) ? GF Nuisibles étudie les protections adaptées au bâtiment. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dépigeonnage à Montier-en-Der (52)";
+const DESCRIPTION = "Balcon ou toiture envahis par les pigeons à Montier-en-Der ? On les tient à distance, sans les tuer. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-montier-en-der";
 
 const FAQ_ITEMS: FaqItem[] = [

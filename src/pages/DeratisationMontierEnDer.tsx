@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dératisation Montier-en-Der 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Montier-en-Der (52220) ? GF Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dératisation à Montier-en-Der (52)";
+const DESCRIPTION = "Rats ou souris à Montier-en-Der (52220) ? GF Nuisibles recherche les passages, traite et vous conseille, 7j/7. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/deratisation-montier-en-der";
 
 const FAQ_ITEMS: FaqItem[] = [

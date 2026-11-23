@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-guepes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Destruction nid Guêpes & Frelons Bologne 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Bologne (52310) ? GF Nuisibles évalue l'accès et propose une intervention adaptée. Diagnostic et devis gratuits.";
+const TITLE = "Destruction nid de guêpes et frelons à Bologne (52)";
+const DESCRIPTION = "Un nid de guêpes ou de frelons à Bologne ? On s'en débarrasse pour vous, 7j/7. À partir de 80 €, devis gratuit. Appelez le 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-bologne";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -93,7 +93,7 @@ const GuepesFrelonsBologne = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Bologne", to: "/deratisation-bologne" },
-          { label: "Dépigeonnisation à Bologne", to: "/depigeonnisation-bologne" },
+          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
           { label: "Taupier à Bologne", to: "/taupes-bologne" },
         ]}
         faqItems={FAQ_ITEMS}

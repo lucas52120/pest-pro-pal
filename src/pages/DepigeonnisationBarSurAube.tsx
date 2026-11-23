@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dépigeonnisation Bar-sur-Aube 10 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Bar-sur-Aube (10200) ? GF Nuisibles étudie les protections adaptées au bâtiment. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dépigeonnage à Bar-sur-Aube (10)";
+const DESCRIPTION = "Les pigeons ont pris vos balcons ou votre toit à Bar-sur-Aube ? Filets et pics, sans leur faire de mal. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-bar-sur-aube";
 
 const FAQ_ITEMS: FaqItem[] = [

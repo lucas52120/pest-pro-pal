@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dépigeonnisation Chaumont 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons sur un balcon, une toiture ou un entrepôt à Chaumont (52000) ? GF Nuisibles propose des protections adaptées et un devis après diagnostic gratuit.";
+const TITLE = "Entreprise de dépigeonnage à Chaumont (52) | Devis gratuit";
+const DESCRIPTION = "Pigeons et fientes sur votre balcon ou votre toit à Chaumont ? Un fauconnier de métier s'en occupe, sans les tuer. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-chaumont";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -83,14 +83,12 @@ const DepigeonnisationChaumont = () => {
           </> },
           { title: "Votre demande à Chaumont et les communes voisines", content: <>
 <p>Découvrez les méthodes de notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnage">service dépigeonnisation en Haute-Marne</Link>. Pour votre adresse à Chaumont, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-<p>Vous résidez plus au nord ou au sud de Chaumont ? Consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-bologne">Dépigeonnisation à Bologne</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-nogent">Dépigeonnisation à Nogent</Link>. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link>.</p>
+<p>Vous résidez plus au nord ou au sud de Chaumont ? Consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-joinville">Dépigeonnisation à Joinville</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/depigeonnisation-nogent">Dépigeonnisation à Nogent</Link>. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link>.</p>
           </> },
         ]}
         nearbyCities={{ title: "Nos pages locales près de Chaumont", items: [
-          { label: "Dépigeonnisation à Bologne", to: "/depigeonnisation-bologne" },
+          { label: "Dépigeonnisation à Joinville", to: "/depigeonnisation-joinville" },
           { label: "Dépigeonnisation à Nogent", to: "/depigeonnisation-nogent" },
-          { label: "Dépigeonnisation à Châteauvillain", to: "/depigeonnisation-chateauvillain" },
-          { label: "Dépigeonnisation à Semoutiers-Montsaon", to: "/depigeonnisation-semoutiers-montsaon" },
         ] }}
         faqItems={FAQ_ITEMS}
         cta={"Dépigeonnisation à Chaumont : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits adaptés à votre situation."}

@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-guepes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Destruction nid Guêpes & Frelons Chalindrey 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Chalindrey (52600) ? GF Nuisibles évalue l'accès et propose une intervention adaptée. Diagnostic et devis gratuits.";
+const TITLE = "Destruction nid de guêpes et frelons à Chalindrey (52)";
+const DESCRIPTION = "Guêpes ou frelons à Chalindrey ? Un appel, un prix clair avant d'intervenir : à partir de 80 €, devis gratuit, 7j/7. Appelez le 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-chalindrey";
 
 const FAQ_ITEMS: FaqItem[] = [

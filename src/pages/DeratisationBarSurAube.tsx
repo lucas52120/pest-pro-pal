@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dératisation Bar-sur-Aube 10 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Bar-sur-Aube (10200) ? GF Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dératisation à Bar-sur-Aube (10)";
+const DESCRIPTION = "Rats ou souris à Bar-sur-Aube (10200), dans une cave ou une réserve ? GF Nuisibles recherche les accès et traite. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/deratisation-bar-sur-aube";
 
 const FAQ_ITEMS: FaqItem[] = [

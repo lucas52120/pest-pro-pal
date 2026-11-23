@@ -13,9 +13,9 @@ import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dératisation Haute-Marne (52) | Rats & Souris | GF Nuisibles";
+const TITLE = "Entreprise de dératisation Haute-Marne (52) | GF Nuisibles";
 const DESCRIPTION =
-  "Dératisation en Haute-Marne (52) : élimination rats & souris pour particuliers et professionnels. Diagnostic GRATUIT, intervention 7j/7. Devis immédiat.";
+  "Rats ou souris en Haute-Marne (52) ? Entreprise locale pour particuliers et professionnels, joignable 7j/7 de 7h à 23h. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/deratisation";
 
 const FAQ_ITEMS = [

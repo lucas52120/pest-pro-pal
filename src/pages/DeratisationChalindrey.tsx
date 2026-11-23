@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dératisation Chalindrey 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Chalindrey (52600) ? GF Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dératisation à Chalindrey (52) | Devis gratuit";
+const DESCRIPTION = "Rats ou souris à Chalindrey (52600), au bourg, près de la gare ou dans les hameaux ? Traitement adapté et conseils. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/deratisation-chalindrey";
 
 const FAQ_ITEMS: FaqItem[] = [

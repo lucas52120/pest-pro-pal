@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dépigeonnisation Dijon 21 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons sur un balcon ou une toiture à Dijon (21000) ? GF Nuisibles étudie les protections adaptées au bâtiment. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dépigeonnage à Dijon (21) | Devis gratuit";
+const DESCRIPTION = "Pigeons sur votre balcon ou votre immeuble à Dijon ? Filets et pics posés par un fauconnier de métier. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-dijon";
 
 const FAQ_ITEMS: FaqItem[] = [

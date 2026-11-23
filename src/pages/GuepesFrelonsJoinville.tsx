@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-guepes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Destruction nid Guêpes & Frelons Joinville 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Joinville (52300) ? GF Nuisibles évalue son emplacement et les accès pour un traitement adapté. Diagnostic et devis gratuits.";
+const TITLE = "Destruction nid de guêpes et frelons à Joinville (52)";
+const DESCRIPTION = "Un nid de guêpes ou de frelons à Joinville ? Laissez faire un pro équipé, 7j/7 : à partir de 80 €, devis gratuit. Appelez le 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-joinville";
 
 const FAQ_ITEMS: FaqItem[] = [

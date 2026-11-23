@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Taupier Nogent 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Nogent (52800) ? GF Nuisibles repère les galeries actives et propose un piégeage mécanique adapté. Diagnostic et devis gratuits.";
+const TITLE = "Taupier à Nogent (52) : piégeage de taupes | Devis gratuit";
+const DESCRIPTION = "Chaque matin, de nouvelles taupinières à Nogent ? Un taupier s'en occupe, sans produit chimique, 7j/7. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/taupes-nogent";
 
 const FAQ_ITEMS: FaqItem[] = [

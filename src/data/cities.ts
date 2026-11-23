@@ -54,7 +54,6 @@ export const CITIES: CityEntry[] = [
   { name: "Bologne", links: [
     { label: "Dératisation", to: "/deratisation-bologne" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-bologne" },
-    { label: "Dépigeonnisation", to: "/depigeonnisation-bologne" },
     { label: "Taupes", to: "/taupes-bologne" },
   ]},
   { name: "Montier-en-Der", links: [
@@ -72,25 +71,21 @@ export const CITIES: CityEntry[] = [
   { name: "Froncles", links: [
     { label: "Dératisation", to: "/deratisation-froncles" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-froncles" },
-    { label: "Dépigeonnisation", to: "/depigeonnisation-froncles" },
     { label: "Taupes", to: "/taupes-froncles" },
   ]},
   { name: "Châteauvillain", links: [
     { label: "Dératisation", to: "/deratisation-chateauvillain" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-chateauvillain" },
-    { label: "Dépigeonnisation", to: "/depigeonnisation-chateauvillain" },
     { label: "Taupes", to: "/taupes-chateauvillain" },
   ]},
   { name: "Arc-en-Barrois", links: [
     { label: "Dératisation", to: "/deratisation-arc-en-barrois" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-arc-en-barrois" },
-    { label: "Dépigeonnisation", to: "/depigeonnisation-arc-en-barrois" },
     { label: "Taupes", to: "/taupes-arc-en-barrois" },
   ]},
   { name: "Semoutiers-Montsaon", links: [
     { label: "Dératisation", to: "/deratisation-semoutiers-montsaon" },
     { label: "Guêpes & Frelons", to: "/guepes-frelons-semoutiers-montsaon" },
-    { label: "Dépigeonnisation", to: "/depigeonnisation-semoutiers-montsaon" },
     { label: "Taupes", to: "/taupes-semoutiers-montsaon" },
   ]},
   { name: "Troyes", links: [

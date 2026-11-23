@@ -12,8 +12,8 @@ const CITY_LINKS = CITIES.flatMap((city) =>
     .map((link) => ({ label: `Dépigeonnage à ${city.name}`, to: link.to })),
 );
 
-const TITLE = "Solution de dépigeonnage | Votre expert GF Nuisibles";
-const DESCRIPTION = "Dégâts de pigeons ? GF Nuisibles contrôle leur présence : Haute-Marne, Marne, Meuse, Vosges, Côte-d'Or, Aube. Pros/Partics. Diagnostic & Devis GRATUIT 7j/7";
+const TITLE = "Dépigeonnage Haute-Marne (52) : anti-pigeons | GF Nuisibles";
+const DESCRIPTION = "Marre des fientes de pigeons ? Filets, pics, répulsion : des solutions sans les tuer, par un fauconnier de métier. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnage";
 
 const jsonLd = {

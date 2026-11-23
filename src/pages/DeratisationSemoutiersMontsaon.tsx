@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dératisation Semoutiers-Montsaon 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Semoutiers-Montsaon (52000) ? GF Nuisibles, implanté sur la commune, recherche les accès et adapte le traitement. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dératisation à Semoutiers-Montsaon (52)";
+const DESCRIPTION = "Rats ou souris à Semoutiers-Montsaon (52000) ? GF Nuisibles est installé sur la commune : maisons, granges et dépendances. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/deratisation-semoutiers-montsaon";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -94,7 +94,7 @@ const DeratisationSemoutiersMontsaon = () => {
         ] }}
         relatedLinks={[
           { label: "Guêpes et frelons à Semoutiers-Montsaon", to: "/guepes-frelons-semoutiers-montsaon" },
-          { label: "Dépigeonnisation à Semoutiers-Montsaon", to: "/depigeonnisation-semoutiers-montsaon" },
+          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
           { label: "Taupier à Semoutiers-Montsaon", to: "/taupes-semoutiers-montsaon" },
         ]}
         faqItems={FAQ_ITEMS}

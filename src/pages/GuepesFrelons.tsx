@@ -72,8 +72,7 @@ const jsonLd = {
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "EUR",
-        lowPrice: "85",
-        highPrice: "180",
+        lowPrice: "80",
         availability: "https://schema.org/InStock",
       },
     },
@@ -115,10 +114,10 @@ const GuepesFrelons = () => {
   return (
     <>
       <Helmet>
-        <title>Destruction Guêpes & Frelons Haute-Marne 52 | GF Nuisibles</title>
+        <title>Nid de guêpes ou frelons Haute-Marne (52) | GF Nuisibles</title>
         <meta
           name="description"
-          content="Votre expert en destruction de nid de guêpes & frelons en Haute-Marne 52. Diagnostic GRATUIT, intervention rapide et efficace 7j/7 appelez-nous !"
+          content="Un nid de guêpes ou de frelons chez vous en Haute-Marne ? N'y touchez pas, on s'en occupe 7j/7. À partir de 80 €, devis gratuit : 07 65 25 67 92."
         />
         <link rel="canonical" href="https://gf-nuisibles.fr/guepes-frelons" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
@@ -343,7 +342,7 @@ const GuepesFrelons = () => {
               <ul className="mb-5 space-y-3">
                 <li className="flex items-baseline justify-between gap-4 border-b border-slate-100 pb-3">
                   <span className="text-foreground"><strong>Nid accessible</strong> (au sol, &lt; 3 m de hauteur)</span>
-                  <span className="font-heading font-bold text-accent whitespace-nowrap">dès 85 €</span>
+                  <span className="font-heading font-bold text-accent whitespace-nowrap">dès 80 €</span>
                 </li>
                 <li className="flex items-baseline justify-between gap-4 border-b border-slate-100 pb-3">
                   <span className="text-foreground"><strong>Nid en hauteur</strong> (toiture, cheminée, perche télescopique)</span>
@@ -351,7 +350,7 @@ const GuepesFrelons = () => {
                 </li>
                 <li className="flex items-baseline justify-between gap-4 border-b border-slate-100 pb-3">
                   <span className="text-foreground"><strong>Nid de frelons asiatiques</strong> (intervention sécurisée renforcée)</span>
-                  <span className="font-heading font-bold text-accent whitespace-nowrap">150 – 180 €</span>
+                  <span className="font-heading font-bold text-accent whitespace-nowrap">à partir de 110 €</span>
                 </li>
                 <li className="flex items-baseline justify-between gap-4">
                   <span className="text-foreground"><strong>Diagnostic & devis</strong></span>

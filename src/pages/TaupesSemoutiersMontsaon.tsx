@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Taupier Semoutiers-Montsaon 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin ou votre terrain à Semoutiers-Montsaon (52000) ? GF Nuisibles, implanté sur la commune, pratique le piégeage mécanique. Devis gratuit.";
+const TITLE = "Taupier à Semoutiers-Montsaon (52) : piégeage de taupes";
+const DESCRIPTION = "Des taupes à Semoutiers-Montsaon ? Votre taupier est sur place : piégeur agréé, sans produit chimique. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/taupes-semoutiers-montsaon";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -95,7 +95,7 @@ const TaupesSemoutiersMontsaon = () => {
         relatedLinks={[
           { label: "Dératisation à Semoutiers-Montsaon", to: "/deratisation-semoutiers-montsaon" },
           { label: "Guêpes et frelons à Semoutiers-Montsaon", to: "/guepes-frelons-semoutiers-montsaon" },
-          { label: "Dépigeonnisation à Semoutiers-Montsaon", to: "/depigeonnisation-semoutiers-montsaon" },
+          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
         ]}
         faqItems={FAQ_ITEMS}
         cta={"Taupes à Semoutiers-Montsaon : contactez GF Nuisibles au 07 65 25 67 92 pour un piégeage mécanique écologique et un devis gratuit."}

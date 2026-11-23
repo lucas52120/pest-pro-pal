@@ -16,7 +16,7 @@ const APropos = () => {
         url: "https://gf-nuisibles.fr/a-propos",
         name: "À Propos de GF Nuisibles | Expert Local contre les nuisibles",
         description:
-          "Découvrez GF nuisible votre expert local de gestion des nuisibles en Haute-Marne et communes limitrophes pour les professionnels ou particuliers",
+          "Découvrez GF Nuisibles, votre expert local de gestion des nuisibles en Haute-Marne et communes limitrophes pour les professionnels ou particuliers",
         isPartOf: { "@id": "https://gf-nuisibles.fr/#organization" },
         about: { "@id": "https://gf-nuisibles.fr/#organization" },
       },
@@ -30,7 +30,7 @@ const APropos = () => {
         <title>À Propos de GF Nuisibles | Expert Local contre les nuisibles</title>
         <meta
           name="description"
-          content="Découvrez GF nuisible votre expert local de gestion des nuisibles en Haute-Marne et communes limitrophes pour les professionnels ou particuliers"
+          content="Découvrez GF Nuisibles, votre expert local de gestion des nuisibles en Haute-Marne et communes limitrophes pour les professionnels ou particuliers"
         />
         <link rel="canonical" href="https://gf-nuisibles.fr/a-propos" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>

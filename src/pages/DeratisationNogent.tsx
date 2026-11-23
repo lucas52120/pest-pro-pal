@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dératisation Nogent 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Nogent (52800) ? GF Nuisibles recherche les accès et propose une dératisation adaptée aux logements et locaux. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dératisation à Nogent (52) | Devis gratuit";
+const DESCRIPTION = "Rats ou souris à Nogent (52800), Nogent-le-Haut ou Nogent-le-Bas ? Particuliers et professionnels : traitement adapté. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/deratisation-nogent";
 
 const FAQ_ITEMS: FaqItem[] = [

@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-guepes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Destruction nid Guêpes & Frelons Wassy 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Wassy (52130) ? GF Nuisibles sécurise le site et retire le nid. Intervention selon disponibilité, devis gratuit.";
+const TITLE = "Destruction nid de guêpes et frelons à Wassy (52)";
+const DESCRIPTION = "Guêpes ou frelons à Wassy ? Ne laissez pas le nid grossir : destruction à partir de 80 €, devis gratuit, 7j/7. Appelez le 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-wassy";
 
 const FAQ_ITEMS: FaqItem[] = [

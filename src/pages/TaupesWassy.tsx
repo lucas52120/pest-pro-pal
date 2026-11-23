@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Taupier Wassy 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Wassy (52130) ? GF Nuisibles pose des pièges professionnels dans les galeries actives. Diagnostic et devis gratuits.";
+const TITLE = "Taupier à Wassy (52) : piégeage de taupes | Devis gratuit";
+const DESCRIPTION = "Pelouse, potager ou champ abîmé par les taupes à Wassy ? Un piégeur agréé s'en occupe, sans produit chimique. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/taupes-wassy";
 
 const FAQ_ITEMS: FaqItem[] = [

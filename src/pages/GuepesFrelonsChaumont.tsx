@@ -8,15 +8,15 @@ import nidChaumontImg from "@/assets/nid-frelons-chaumont.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Destruction nid Guêpes & Frelons Chaumont 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou frelons à Chaumont (52) ? GF Nuisibles intervient en urgence 7j/7 en Haute-Marne. Destruction sécurisée dès 85 €, devis gratuit.";
+const TITLE = "Destruction nid de guêpes et frelons à Chaumont (52)";
+const DESCRIPTION = "Un nid de guêpes ou de frelons à Chaumont ? N'y touchez pas, on s'en occupe 7j/7 ! À partir de 80 €, devis gratuit. Appelez le 07 65 25 67 92.";
 
 const URL = "https://gf-nuisibles.fr/guepes-frelons-chaumont";
 
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Quel est le prix pour détruire un nid de frelons à Chaumont ?",
-    answer: "Nos tarifs pour une destruction de nid à Chaumont débutent à partir de 85 €. Le prix dépend de la hauteur et de l'accessibilité du nid. Nous validons toujours un prix ferme avec vous avant l'intervention : aucune mauvaise surprise sur la facture finale.",
+    answer: "Nos tarifs à Chaumont débutent à 80 € pour un nid de guêpes et à 110 € pour un nid de frelons. Le prix dépend de la hauteur et de l'accessibilité du nid. Nous validons toujours un prix ferme avec vous avant l'intervention : aucune mauvaise surprise sur la facture finale.",
   },
   {
     question: "Est-il dangereux de détruire le nid soi-même ?",
@@ -89,8 +89,7 @@ const GuepesFrelonsChaumont = () => {
         "offers": {
           "@type": "AggregateOffer",
           "priceCurrency": "EUR",
-          "lowPrice": "85",
-          "highPrice": "180",
+          "lowPrice": "80",
           "offerCount": "4"
         }
       },
@@ -185,9 +184,9 @@ const GuepesFrelonsChaumont = () => {
                   sans frais cachés. Voici les fourchettes pratiquées à Chaumont&nbsp;:
                 </p>
                 <ul className="ml-5 list-disc space-y-1">
-                  <li>Nid de guêpes accessible (volet, sol, &lt; 3 m) : <strong>à partir de 85 €</strong></li>
+                  <li>Nid de guêpes accessible (volet, sol, &lt; 3 m) : <strong>à partir de 80 €</strong></li>
                   <li>Nid de frelons européens (toiture, combles) : <strong>110 € à 150 €</strong></li>
-                  <li>Nid de frelons asiatiques en hauteur (perche télescopique) : <strong>130 € à 180 €</strong></li>
+                  <li>Nid de frelons asiatiques en hauteur (perche télescopique) : <strong>à partir de 110 €</strong></li>
                   <li>Intervention week-end ou urgence soir : <strong>+ 20 à 30 €</strong></li>
                 </ul>
                 <p>

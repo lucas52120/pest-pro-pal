@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dépigeonnisation Wassy 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons à Wassy (52130) ? GF Nuisibles étudie vos façades et toitures et propose des solutions anti-pigeons non létales adaptées. Diagnostic et devis gratuits en Haute-Marne.";
+const TITLE = "Entreprise de dépigeonnage à Wassy (52) | Devis gratuit";
+const DESCRIPTION = "Des pigeons dans votre charpente ou sous votre corniche à Wassy ? On leur bloque l'accès, sans les tuer. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-wassy";
 
 const FAQ_ITEMS: FaqItem[] = [

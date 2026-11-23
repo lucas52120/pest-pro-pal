@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dératisation Saint-Dizier 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Saint-Dizier (52100) ? GF Nuisibles adapte le traitement aux logements et locaux professionnels. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dératisation à Saint-Dizier (52)";
+const DESCRIPTION = "Rats ou souris à Saint-Dizier (52100), au Vert-Bois, à La Noue ou Marnaval ? Traitement adapté à votre logement ou local. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/deratisation-saint-dizier";
 
 const FAQ_ITEMS: FaqItem[] = [

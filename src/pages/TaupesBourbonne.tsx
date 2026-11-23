@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-taupes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Taupier Bourbonne-les-Bains 52 - Piégeage Taupes, Devis Gratuit";
-const DESCRIPTION = "Taupinières dans votre jardin à Bourbonne-les-Bains (52400) ? GF Nuisibles repère les galeries actives et propose un piégeage adapté. Diagnostic et devis gratuits.";
+const TITLE = "Taupier à Bourbonne-les-Bains (52) : piégeage de taupes";
+const DESCRIPTION = "Les taupes ont pris votre jardin à Bourbonne-les-Bains ? Un piégeur agréé s'en occupe, sans produit chimique. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/taupes-bourbonne-les-bains";
 
 const FAQ_ITEMS: FaqItem[] = [

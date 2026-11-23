@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-guepes.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Destruction nid Guêpes & Frelons Semoutiers-Montsaon 52 - Intervention 24h";
-const DESCRIPTION = "Nid de guêpes ou de frelons à Semoutiers-Montsaon (52000) ? GF Nuisibles, implanté sur la commune, localise et traite le nid en sécurité. Devis gratuit.";
+const TITLE = "Nid de guêpes et frelons à Semoutiers-Montsaon (52)";
+const DESCRIPTION = "Guêpes ou frelons à Semoutiers-Montsaon ? Votre voisin s'en occupe : on est sur place, 7j/7, à partir de 80 €. Appelez le 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/guepes-frelons-semoutiers-montsaon";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -94,7 +94,7 @@ const GuepesFrelonsSemoutiersMontsaon = () => {
         ] }}
         relatedLinks={[
           { label: "Dératisation à Semoutiers-Montsaon", to: "/deratisation-semoutiers-montsaon" },
-          { label: "Dépigeonnisation à Semoutiers-Montsaon", to: "/depigeonnisation-semoutiers-montsaon" },
+          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
           { label: "Taupier à Semoutiers-Montsaon", to: "/taupes-semoutiers-montsaon" },
         ]}
         faqItems={FAQ_ITEMS}

@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dépigeonnisation Saint-Dizier 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Pigeons sur un balcon, une toiture ou un atelier à Saint-Dizier (52100) ? GF Nuisibles étudie les protections adaptées. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dépigeonnage à Saint-Dizier (52)";
+const DESCRIPTION = "Les pigeons salissent vos fenêtres et vos toits à Saint-Dizier ? On protège votre bâtiment, sans leur faire de mal. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-saint-dizier";
 
 const FAQ_ITEMS: FaqItem[] = [

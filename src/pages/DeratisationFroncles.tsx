@@ -7,8 +7,8 @@ import heroImage from "@/assets/service-deratisation.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dératisation Froncles 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Froncles (52320) ? GF Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits.";
+const TITLE = "Entreprise de dératisation à Froncles (52) | Devis gratuit";
+const DESCRIPTION = "Rats ou souris à Froncles (52320), Buxières ou Provenchères-sur-Marne ? Recherche des accès et traitement adapté. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/deratisation-froncles";
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -94,7 +94,7 @@ const DeratisationFroncles = () => {
         ] }}
         relatedLinks={[
           { label: "Guêpes et frelons à Froncles", to: "/guepes-frelons-froncles" },
-          { label: "Dépigeonnisation à Froncles", to: "/depigeonnisation-froncles" },
+          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
           { label: "Taupier à Froncles", to: "/taupes-froncles" },
         ]}
         faqItems={FAQ_ITEMS}
