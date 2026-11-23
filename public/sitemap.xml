@@ -21,6 +21,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://gf-nuisibles.fr/punaises-de-lit</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://gf-nuisibles.fr/cafards-blattes-chaumont</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

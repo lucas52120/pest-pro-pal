@@ -7,6 +7,7 @@ const serviceItems = [
   { label: "Dératisation", path: "/deratisation" },
   { label: "Guêpes & Frelons", path: "/guepes-frelons" },
   { label: "Cafards & Blattes", path: "/cafards-blattes" },
+  { label: "Punaises de lit", path: "/punaises-de-lit" },
   { label: "Taupes", path: "/taupes" },
   { label: "Dépigeonnage", path: "/depigeonnage" },
 ];

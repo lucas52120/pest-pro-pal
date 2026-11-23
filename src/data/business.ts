@@ -17,7 +17,7 @@ export const LOCAL_BUSINESS = {
   image: `${SITE_URL}/og-image.png`,
   priceRange: "€€",
   description:
-    "Expert local en Haute-Marne pour le traitement des cafards et blattes, la dératisation et le dépigeonnage. Intervention rapide 7j/7.",
+    "Expert local en Haute-Marne pour le traitement des cafards, des blattes et des punaises de lit, la dératisation et le dépigeonnage. Intervention rapide 7j/7.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "27 rue Principale",

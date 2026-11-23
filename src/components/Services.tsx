@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Bug } from "lucide-react";
 
 import serviceGuepes from "@/assets/service-guepes.jpg";
 import serviceCafardsBlattes from "@/assets/service-desinsectisation.jpg";
@@ -20,6 +21,13 @@ const services = [
     title: "Cafards & Blattes",
     description: "Traitement professionnel ciblé contre les cafards et les blattes, pour particuliers et professionnels.",
     path: "/cafards-blattes",
+  },
+  {
+    // No photo yet: the card falls back to the icon below.
+    image: null,
+    title: "Punaises de lit",
+    description: "Inspection sur place, traitement en plusieurs passages et vérification, pour particuliers et professionnels.",
+    path: "/punaises-de-lit",
   },
   {
     image: serviceTaupes,
@@ -72,7 +80,7 @@ const Services = () => {
             Nos Services
           </h2>
           <p className="mx-auto max-w-xl text-muted-foreground">
-            Des solutions professionnelles adaptées à chaque situation. Diagnostic gratuit et intervention rapide.
+            Des solutions professionnelles adaptées à chaque situation. Devis clair et intervention rapide.
           </p>
         </motion.div>
 
@@ -90,13 +98,24 @@ const Services = () => {
                 className="group flex h-full flex-col overflow-hidden rounded-xl bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  {service.image ? (
+                    <>
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    </>
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-primary">
+                      <Bug
+                        className="h-20 w-20 text-accent transition-transform duration-500 group-hover:scale-110"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  )}
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="mb-2 font-heading text-lg font-bold text-primary">

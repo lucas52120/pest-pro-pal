@@ -9,6 +9,7 @@ import Index from "./pages/Index.tsx";
 import GuepesFrelons from "./pages/GuepesFrelons.tsx";
 import Taupes from "./pages/Taupes.tsx";
 import CafardsBlattes from "./pages/CafardsBlattes.tsx";
+import PunaisesDeLit from "./pages/PunaisesDeLit.tsx";
 import CafardsBlattesChaumont from "./pages/CafardsBlattesChaumont.tsx";
 import CafardsBlattesSaintDizier from "./pages/CafardsBlattesSaintDizier.tsx";
 import CafardsBlattesLangres from "./pages/CafardsBlattesLangres.tsx";
@@ -157,6 +158,7 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
 
           <Route path="/taupes" element={<Taupes />} />
           <Route path="/cafards-blattes" element={<CafardsBlattes />} />
+          <Route path="/punaises-de-lit" element={<PunaisesDeLit />} />
           <Route path="/cafards-blattes-chaumont" element={<CafardsBlattesChaumont />} />
           <Route path="/cafards-blattes-saint-dizier" element={<CafardsBlattesSaintDizier />} />
           <Route path="/cafards-blattes-langres" element={<CafardsBlattesLangres />} />
