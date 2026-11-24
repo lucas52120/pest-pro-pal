@@ -12,8 +12,9 @@ export const LOCAL_BUSINESS = {
   name: "GF Nuisibles",
   alternateName: "G&F Nuisibles",
   url: SITE_URL,
-  telephone: "07 65 25 67 92",
+  telephone: "+33 7 65 25 67 92",
   email: "contact@gf-nuisibles.fr",
+  logo: `${SITE_URL}/apple-touch-icon.png`,
   image: `${SITE_URL}/og-image.png`,
   priceRange: "€€",
   description:
@@ -39,7 +40,10 @@ export const LOCAL_BUSINESS = {
       closes: "23:00",
     },
   ],
-  areaServed: { "@type": "AdministrativeArea", name: "Haute-Marne (52)" },
+  areaServed: ["Haute-Marne (52)", "Vosges (88)", "Meuse (55)", "Côte-d'Or (21)", "Marne (51)", "Aube (10)"].map((name) => ({
+    "@type": "AdministrativeArea",
+    name,
+  })),
   hasMap: GOOGLE_MAPS_URL,
   sameAs: [FACEBOOK_URL, GOOGLE_MAPS_URL],
 };

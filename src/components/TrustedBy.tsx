@@ -59,6 +59,9 @@ const TrustedBy = () => {
           ))}
         </div>
       </div>
+      <p className="container-narrow mt-8 px-4 text-center text-muted-foreground">
+        Et aussi la commune de Leffonds, Square Habitat et des particuliers à Chaumont et dans les environs.
+      </p>
     </section>
   );
 };

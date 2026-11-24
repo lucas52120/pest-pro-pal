@@ -1,4 +1,5 @@
 import { createClient } from "npm:@supabase/supabase-js@2.95.0";
+import { cleanComment } from "../_shared/reviews.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -12,9 +13,6 @@ const CACHE_ID = "gf-nuisibles";
 const CACHE_HOURS = 3;
 
 const STARS: Record<string, number> = { ONE: 1, TWO: 2, THREE: 3, FOUR: 4, FIVE: 5 };
-
-const cleanComment = (c?: string) =>
-  (c ?? "").split(/\n*\(Translated by Google\)/)[0].replace(/^\(Original\)\s*/, "").trim();
 
 async function fetchFromGoogle() {
   const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");

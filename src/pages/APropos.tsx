@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet-async";
@@ -80,12 +81,13 @@ const APropos = () => {
               </li>
               <li>
                 <strong>Piégeur agréé</strong> : Détenteur de l'agrément de piégeur et du certificat de capacité, je
-                maîtrise les méthodes de capture traditionnelles et réglementées.
+                maîtrise les méthodes de capture traditionnelles et réglementées, utiles pour le{" "}
+                <Link to="/taupes" className="font-semibold text-primary underline underline-offset-4 hover:text-accent">piégeage des taupes</Link>.
               </li>
               <li>
                 <strong>Fauconnier de métier</strong> : Cette spécialité me permet d'avoir une vision unique sur le
-                comportement des volatiles et des prédateurs, offrant des solutions alternatives et expertes pour le
-                dépigeonnage.
+                comportement des volatiles et des prédateurs, offrant des solutions alternatives et expertes pour le{" "}
+                <Link to="/depigeonnage" className="font-semibold text-primary underline underline-offset-4 hover:text-accent">dépigeonnage en Haute-Marne</Link>.
               </li>
             </ul>
 
@@ -102,6 +104,21 @@ const APropos = () => {
               plus loin vers <strong>Dijon</strong>, <strong>Vittel</strong> ou{" "}
               <strong>Bar-le-Duc</strong>, je me déplace rapidement chez les particuliers comme chez les professionnels
               (commerces, industries, collectivités).
+            </p>
+            <p className="leading-relaxed text-muted-foreground">
+              J'interviens notamment comme{" "}
+              <Link to="/deratisation" className="font-semibold text-primary underline underline-offset-4 hover:text-accent">
+                dératiseur en Haute-Marne
+              </Link>
+              , contre les rats et les souris, pour le{" "}
+              <Link to="/cafards-blattes" className="font-semibold text-primary underline underline-offset-4 hover:text-accent">
+                traitement des cafards et blattes
+              </Link>
+              , ainsi que pour la{" "}
+              <Link to="/guepes-frelons" className="font-semibold text-primary underline underline-offset-4 hover:text-accent">
+                destruction de nids de guêpes et de frelons
+              </Link>
+              .
             </p>
           </motion.div>
 

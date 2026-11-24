@@ -41,7 +41,9 @@ const FAQ = [
   },
   {
     q: "Le déplacement est-il facturé en plus ?",
-    a: "Dans un rayon de 20 km autour de Chaumont, le déplacement est inclus dans le tarif d'intervention. Au-delà, une participation kilométrique peut s'ajouter : elle est toujours annoncée avant l'intervention, dans le devis gratuit.",
+    a: "Cela dépend de votre commune et de l'intervention. Appelez le " +
+      PHONE +
+      " : le prix vous est annoncé avant, sans surprise.",
   },
   {
     q: "Quel est le délai d'intervention en urgence ?",
@@ -97,7 +99,7 @@ const ZoneIntervention = () => {
   return (
     <>
       <SEO
-        title="Zone d'intervention | Dératisation & nuisibles en Haute-Marne (52)"
+        title="Zone d'intervention : Haute-Marne et alentours | GF Nuisibles"
         description="GF Nuisibles intervient à Chaumont, Langres, Saint-Dizier, Joinville et dans toute la Haute-Marne, l'Aube, la Marne, la Côte-d'Or et les Vosges. Urgence 7j/7."
         path="/zone-intervention"
       />
@@ -122,9 +124,12 @@ const ZoneIntervention = () => {
             <p className="text-lg text-primary-foreground/85 max-w-3xl">
               Entreprise de lutte contre les nuisibles basée à Semoutiers-Montsaon (52), GF Nuisibles
               intervient chaque jour à Chaumont, Langres, Saint-Dizier, Joinville et dans plus de
-              {" "}{CITIES.length} villes de Haute-Marne, d'Aube, de Marne, de Côte-d'Or et des Vosges.
-              Dératisation, guêpes et frelons, cafards et blattes, taupes et
-              dépigeonnisation, 7j/7, week-ends et jours fériés compris.
+              {" "}{CITIES.length} villes de Haute-Marne, d'Aube, de Marne, de Côte-d'Or et des Vosges.{" "}
+              <Link to="/deratisation" className="underline underline-offset-4 hover:text-accent">Dératisation en Haute-Marne</Link>,{" "}
+              <Link to="/guepes-frelons" className="underline underline-offset-4 hover:text-accent">guêpes et frelons</Link>,{" "}
+              <Link to="/cafards-blattes" className="underline underline-offset-4 hover:text-accent">cafards et blattes</Link>,{" "}
+              <Link to="/taupes" className="underline underline-offset-4 hover:text-accent">taupes</Link> et{" "}
+              <Link to="/depigeonnage" className="underline underline-offset-4 hover:text-accent">dépigeonnage</Link>, 7j/7, week-ends et jours fériés compris.
             </p>
             <a
               href="tel:0765256792"

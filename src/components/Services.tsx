@@ -1,137 +1,53 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Bug } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Season, seasonContent } from "@/data/seasons";
 
-import serviceGuepes from "@/assets/service-guepes.jpg";
-import serviceCafardsBlattes from "@/assets/service-desinsectisation.jpg";
-import serviceTaupes from "@/assets/service-taupes.jpg";
-import serviceDepigeonnage from "@/assets/service-depigeonnage.jpg";
-import serviceDeratisation from "@/assets/service-deratisation.jpg";
-import serviceEsod from "@/assets/service-esod.jpg";
+/** Service cards, the ones in season first. */
+const Services = ({ season }: { season: Season }) => {
+  const { services, current } = seasonContent(season);
 
-const services = [
-  {
-    image: serviceGuepes,
-    title: "Guêpes & Frelons",
-    description: "Destruction de nids en toute sécurité, intervention rapide et sécurisée en hauteur.",
-    path: "/guepes-frelons",
-  },
-  {
-    image: serviceCafardsBlattes,
-    title: "Cafards & Blattes",
-    description: "Traitement professionnel ciblé contre les cafards et les blattes, pour particuliers et professionnels.",
-    path: "/cafards-blattes",
-  },
-  {
-    // No photo yet: the card falls back to the icon below.
-    image: null,
-    title: "Punaises de lit",
-    description: "Inspection sur place, traitement en plusieurs passages et vérification, pour particuliers et professionnels.",
-    path: "/punaises-de-lit",
-  },
-  {
-    image: serviceTaupes,
-    title: "Taupes",
-    description: "Piégeage traditionnel et expertise terrain pour protéger vos espaces verts.",
-    path: "/taupes",
-  },
-  {
-    image: serviceDepigeonnage,
-    title: "Dépigeonnage",
-    description: "Protection durable des bâtiments contre les nuisances liées aux pigeons.",
-    path: "/depigeonnage",
-  },
-  {
-    image: serviceDeratisation,
-    title: "Dératisation",
-    description: "Opérations rapides et efficaces pour éliminer rats, souris et rongeurs.",
-    path: "/deratisation",
-  },
-  {
-    image: serviceEsod,
-    title: "Régulation ESOD",
-    description: "Gestion et régulation des animaux classés ESOD : ragondins, renards, corneilles et autres.",
-    path: "/regulation-esod",
-  },
-];
-
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-const Services = () => {
   return (
     <section id="services" className="section-padding scroll-mt-20 bg-secondary">
       <div className="container-narrow">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12 text-center"
-        >
-          <h2 className="mb-4 font-heading text-3xl font-bold text-primary md:text-4xl">
-            Nos Services
-          </h2>
-          <p className="mx-auto max-w-xl text-muted-foreground">
-            Des solutions professionnelles adaptées à chaque situation. Devis clair et intervention rapide.
-          </p>
-        </motion.div>
-
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {services.map((service) => (
-            <motion.div key={service.title} variants={item}>
+        <h2 className="font-heading text-3xl font-extrabold text-primary md:text-4xl">Quel est votre problème ?</h2>
+        <span className="mb-6 mt-4 block h-1 w-14 rounded-full bg-accent" aria-hidden="true" />
+        <p className="mb-10 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+          Dératisation, désinsectisation, dépigeonnage ou piégeage : choisissez, et voyez tout de suite comment ça se passe.
+        </p>
+        <ul className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+          {services.map((service, i) => (
+            <li key={service.path}>
               <Link
                 to={service.path}
-                className="group flex h-full flex-col overflow-hidden rounded-xl bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group flex h-full overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-lg sm:flex-col"
               >
-                <div className="relative h-48 overflow-hidden">
-                  {service.image ? (
-                    <>
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    </>
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center bg-primary">
-                      <Bug
-                        className="h-20 w-20 text-accent transition-transform duration-500 group-hover:scale-110"
-                        aria-hidden="true"
-                      />
-                    </div>
+                <div className="relative w-28 shrink-0 sm:h-48 sm:w-full">
+                  <img
+                    src={service.image}
+                    alt={service.alt}
+                    width={640}
+                    height={420}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  {i < current && (
+                    <span className="absolute left-2 top-2 rounded-full bg-accent px-2 py-1 font-heading text-[0.6875rem] font-bold text-accent-foreground sm:left-3 sm:top-3 sm:px-3 sm:text-xs">
+                      En ce moment
+                    </span>
                   )}
                 </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="mb-2 font-heading text-lg font-bold text-primary">
-                    {service.title}
-                  </h3>
-                  <p className="flex-1 text-sm text-muted-foreground">
-                    {service.description}
-                  </p>
-                  <span className="mt-4 font-heading text-sm font-semibold text-accent">
-                    En savoir plus →
+                <div className="flex flex-1 flex-col p-4 sm:p-6">
+                  <h3 className="mb-1 font-heading text-lg font-bold text-primary sm:mb-2 sm:text-xl">{service.title}</h3>
+                  <p className="flex-1 text-sm leading-relaxed text-muted-foreground sm:text-base">{service.text}</p>
+                  <span className="mt-3 inline-flex items-center gap-1 font-heading text-sm font-semibold text-primary group-hover:text-accent">
+                    {service.link}
+                    <ArrowRight className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
                   </span>
                 </div>
               </Link>
-            </motion.div>
+            </li>
           ))}
-        </motion.div>
+        </ul>
       </div>
     </section>
   );

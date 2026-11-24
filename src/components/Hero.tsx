@@ -1,107 +1,63 @@
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Shield } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
-import heroPigeons from "@/assets/hero-pigeons.jpg";
+import { Link } from "react-router-dom";
+import { ArrowRight, CheckCircle2, Clock, MapPin } from "lucide-react";
+import GoogleRating from "@/components/GoogleRating";
+import { ContactButtons } from "@/components/ServiceBlocks";
+import { Season, seasonContent } from "@/data/seasons";
 
-const images = [heroBg, heroPigeons];
-
-const Hero = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, [nextSlide]);
+const Hero = ({ season }: { season: Season }) => {
+  const { hero } = seasonContent(season);
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      {/* Background carousel */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${images[currentIndex]})` }} />
-        
-      </AnimatePresence>
-
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/75 to-primary/50" />
-
-      <div className="container-narrow relative z-10 px-4 py-32">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-2xl">
-          
-      <div className="mb-6 flex items-center gap-3">
-        <div className="inline-flex items-center gap-2 rounded-full bg-accent/20 px-4 py-2 text-accent">
-          <Shield className="h-4 w-4" />
-          <span className="font-heading text-sm font-semibold">
-            Intervention 7j/7, de 7h à 23h
-          </span>
+    <section className="relative overflow-hidden bg-primary px-4 pb-16 pt-32 md:px-8 md:pb-24 md:pt-40 lg:px-16">
+      <div className="absolute inset-0 lg:left-1/4">
+        <img src={hero.image} alt={hero.alt} className="h-full w-full object-cover opacity-60 lg:opacity-90" />
+        <div className="absolute inset-y-0 -left-1 right-0 bg-gradient-to-t from-primary via-primary/75 to-primary/50 lg:bg-gradient-to-r lg:from-primary lg:from-10% lg:via-primary/50 lg:to-transparent" />
+      </div>
+      <div className="container-narrow relative z-10">
+        <p className="mb-3 font-heading text-xl font-bold text-accent md:text-2xl">Un nuisible chez vous ?</p>
+        <h1 className="mb-4 max-w-3xl font-heading text-4xl font-extrabold leading-tight text-primary-foreground md:text-5xl lg:text-6xl">
+          Votre entreprise <span className="whitespace-nowrap">anti-nuisibles</span> partout en{" "}
+          <span className="whitespace-nowrap">Haute-Marne</span>
+        </h1>
+        <p className="mb-6 flex max-w-2xl items-start gap-2 font-heading text-lg font-semibold text-primary-foreground md:text-xl">
+          <MapPin className="mt-0.5 h-6 w-6 shrink-0 text-accent" aria-hidden="true" />
+          Chaumont, Langres, Saint-Dizier, Joinville et tous les villages
+        </p>
+        <GoogleRating className="mb-6" />
+        <p className="mb-8 max-w-xl text-lg leading-relaxed text-primary-foreground/85">
+          Rats, guêpes, cafards, punaises de lit, taupes ou pigeons : un artisan local vient chez vous, trouve le problème et vous dit le prix avant d'intervenir.
+        </p>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <ContactButtons callLabel="Appeler le 07 65 25 67 92" contactLabel="Devis gratuit" />
         </div>
-
-        <a
-          href="https://www.facebook.com/gfnuisibles"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-full border border-accent/60 p-2 text-accent transition-all hover:border-accent hover:bg-accent/10"
-          aria-label="Facebook GF Nuisibles"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-5 w-5"
-            aria-hidden="true"
-          >
-            <path d="M18 2h-3a4 4 0 00-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 011-1h3z" />
-          </svg>
-        </a>
+        <ul className="mt-8 grid gap-3 text-sm text-primary-foreground/90 sm:grid-cols-2 lg:max-w-2xl">
+          <li className="flex items-center gap-2">
+            <Clock className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
+            Joignable 7j/7, de 7h à 23h
+          </li>
+          <li className="flex items-center gap-2">
+            <CheckCircle2 className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
+            Artisan local, basé en Haute-Marne
+          </li>
+          <li className="flex items-center gap-2">
+            <CheckCircle2 className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
+            Titulaire du Certibiocide
+          </li>
+          <li className="flex items-center gap-2">
+            <CheckCircle2 className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
+            Particuliers et professionnels
+          </li>
+        </ul>
+        <p className="mt-8 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground">
+          {hero.text}
+          <Link to={hero.path} className="inline-flex items-center gap-1 font-semibold underline underline-offset-4 hover:text-accent">
+            {hero.link}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        </p>
       </div>
-
-          <h1 className="mb-6 font-heading text-4xl font-extrabold leading-tight text-primary-foreground md:text-5xl lg:text-6xl">
-            Votre expert en gestion des nuisibles en{" "}
-            <span className="text-accent text-4xl md:text-5xl lg:text-6xl">Haute-Marne et départements limitrophes</span>
-          </h1>
-
-          <p className="mb-8 max-w-lg text-lg text-primary-foreground/80">
-            Intervention rapide et discrète pour particuliers et professionnels.
-            Dératisation, guêpes et frelons, cafards et blattes, taupes et dépigeonnage.
-          </p>
-
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <a
-              href="tel:0765256792"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-4 font-heading text-lg font-bold text-accent-foreground shadow-lg transition-all hover:bg-orange-hover hover:shadow-xl">
-              
-              <Phone className="h-5 w-5" />
-              Appeler le 07 65 25 67 92
-            </a>
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-lg border-2 border-primary-foreground/30 px-8 py-4 font-heading text-lg font-semibold text-primary-foreground transition-all hover:border-primary-foreground/60 hover:bg-primary-foreground/10">
-              
-              Devis gratuit
-            </a>
-          </div>
-        </motion.div>
-      </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default Hero;

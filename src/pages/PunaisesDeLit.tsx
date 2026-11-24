@@ -1,18 +1,14 @@
-import { Fragment, ReactNode } from "react";
+import { Fragment } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import {
   ArrowDown,
-  ArrowRight,
   Armchair,
   BedDouble,
   Bug,
   Building2,
   CalendarClock,
-  CheckCircle2,
-  ChevronDown,
   ClipboardCheck,
-  Clock,
   Droplets,
   Egg,
   FileText,
@@ -26,7 +22,6 @@ import {
   Layers,
   Lightbulb,
   Luggage,
-  LucideIcon,
   MapPin,
   Moon,
   PackageOpen,
@@ -52,8 +47,22 @@ import Navbar from "@/components/Navbar";
 import Reassurance from "@/components/Reassurance";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import GoogleRating from "@/components/GoogleRating";
-import Breadcrumbs, { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import {
+  CallBand,
+  Callout,
+  CardGrid,
+  CheckList,
+  GuideBlock,
+  IconBadge,
+  InfoCard,
+  Section,
+  ServiceHero,
+  Sources,
+  TimelineArrow,
+  callButton,
+  outlineButton,
+} from "@/components/ServiceBlocks";
+import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { LOCAL_BUSINESS } from "@/data/business";
 
@@ -286,54 +295,6 @@ const jsonLd = {
   ],
 };
 
-const callButton =
-  "inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-4 font-heading font-bold text-accent-foreground transition-colors hover:bg-orange-hover";
-const inspectionButton =
-  "inline-flex items-center justify-center rounded-lg border-2 border-primary-foreground/40 px-6 py-4 font-heading font-bold text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-primary";
-
-const Section = ({ title, intro, muted, children }: { title: string; intro?: string; muted?: boolean; children: ReactNode }) => (
-  <section className={`section-padding ${muted ? "bg-secondary" : "bg-background"}`}>
-    <div className="container-narrow">
-      <h2 className="font-heading text-3xl font-extrabold text-primary md:text-4xl">{title}</h2>
-      <span className="mb-6 mt-4 block h-1 w-14 rounded-full bg-accent" aria-hidden="true" />
-      {intro && <p className="mb-10 max-w-3xl text-lg leading-relaxed text-muted-foreground">{intro}</p>}
-      {children}
-    </div>
-  </section>
-);
-
-const IconBadge = ({ icon: Icon }: { icon: LucideIcon }) => (
-  <span className="mb-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
-    <Icon className="h-6 w-6" aria-hidden="true" />
-  </span>
-);
-
-const InfoCard = ({ icon, title, text }: { icon: LucideIcon; title: string; text: string }) => (
-  <article className="h-full rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
-    <IconBadge icon={icon} />
-    <h3 className="mb-2 font-heading text-lg font-bold text-primary">{title}</h3>
-    <p className="leading-relaxed text-muted-foreground first-letter:uppercase">{text}</p>
-  </article>
-);
-
-const CardGrid = ({ items, columns = "lg:grid-cols-4" }: { items: { icon: LucideIcon; title: string; text: string }[]; columns?: string }) => (
-  <div className={`grid gap-6 sm:grid-cols-2 ${columns}`}>
-    {items.map((item) => (
-      <InfoCard key={item.title} {...item} />
-    ))}
-  </div>
-);
-
-const Callout = ({ icon: Icon, title, children }: { icon: LucideIcon; title?: string; children: ReactNode }) => (
-  <aside className="flex h-full gap-4 rounded-2xl border-l-4 border-accent bg-accent/5 p-6">
-    <Icon className="mt-1 h-6 w-6 shrink-0 text-accent" aria-hidden="true" />
-    <div>
-      {title && <h3 className="mb-2 font-heading text-lg font-bold text-primary">{title}</h3>}
-      <p className="leading-relaxed text-foreground/80">{children}</p>
-    </div>
-  </aside>
-);
-
 const externalLink = "underline underline-offset-2 hover:text-accent";
 
 const Photo = ({ photo }: { photo: (typeof PHOTOS)[keyof typeof PHOTOS] }) => (
@@ -360,73 +321,6 @@ const Photo = ({ photo }: { photo: (typeof PHOTOS)[keyof typeof PHOTOS] }) => (
   </figure>
 );
 
-const CheckList = ({ items }: { items: { title?: string; text: string }[] }) => (
-  <ul className="space-y-4">
-    {items.map((item) => (
-      <li key={item.text} className="flex gap-3">
-        <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
-        <span className="leading-relaxed text-muted-foreground">
-          {item.title && <strong className="text-primary">{item.title} : </strong>}
-          {item.text}
-        </span>
-      </li>
-    ))}
-  </ul>
-);
-
-const Sources = ({ children }: { children: ReactNode }) => (
-  <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{children}</p>
-);
-
-/** Arrow between two steps of a timeline: downwards when stacked, sideways from lg up. */
-const TimelineArrow = () => (
-  <>
-    <ArrowDown className="h-6 w-6 text-accent lg:hidden" aria-hidden="true" />
-    <ArrowRight className="hidden h-6 w-6 text-accent lg:block" aria-hidden="true" />
-  </>
-);
-
-/** Background information kept in the HTML but folded, so the page stays short to scan. */
-const GuideBlock = ({ id, title, intro, summary, open, children }: { id?: string; title: string; intro?: string; summary: string; open?: boolean; children: ReactNode }) => (
-  <article id={id} className="scroll-mt-28 rounded-2xl border border-border bg-card p-6 shadow-sm md:p-8">
-    <h2 className="font-heading text-2xl font-extrabold text-primary">{title}</h2>
-    {intro && <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">{intro}</p>}
-    <details open={open} className="group mt-4">
-      <summary className="flex cursor-pointer list-none items-center gap-2 py-2 font-heading font-semibold text-primary hover:text-accent [&::-webkit-details-marker]:hidden">
-        <ChevronDown className="h-5 w-5 shrink-0 text-accent transition-transform group-open:rotate-180" aria-hidden="true" />
-        {summary}
-      </summary>
-      <div className="mt-6">{children}</div>
-    </details>
-  </article>
-);
-
-const ContactButtons = ({ callLabel }: { callLabel: string }) => (
-  <>
-    <a href="tel:0765256792" className={callButton}>
-      <Phone className="h-5 w-5" aria-hidden="true" />
-      {callLabel}
-    </a>
-    <Link to="/contact" className={inspectionButton}>
-      Demander une inspection
-    </Link>
-  </>
-);
-
-const CallBand = ({ title, text }: { title: string; text: string }) => (
-  <section className="bg-background px-4 pb-16 md:px-8 lg:px-16 lg:pb-24">
-    <div className="container-narrow flex flex-col gap-6 rounded-3xl bg-primary p-8 md:p-10 lg:flex-row lg:items-center lg:justify-between">
-      <div>
-        <p className="font-heading text-xl font-extrabold text-primary-foreground md:text-2xl">{title}</p>
-        <p className="mt-2 max-w-xl leading-relaxed text-primary-foreground/80">{text}</p>
-      </div>
-      <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col">
-        <ContactButtons callLabel="Appeler le 07 65 25 67 92" />
-      </div>
-    </div>
-  </section>
-);
-
 const PunaisesDeLit = () => (
   <>
     <SEO title={TITLE} description={DESCRIPTION} path="/punaises-de-lit" />
@@ -435,43 +329,19 @@ const PunaisesDeLit = () => (
     </Helmet>
     <Navbar />
 
-    <section className="relative overflow-hidden bg-primary px-4 pb-16 pt-32 md:px-8 md:pb-24 md:pt-36 lg:px-16">
-      <Bug
-        className="pointer-events-none absolute -right-16 top-24 h-72 w-72 text-primary-foreground/5 md:right-8 md:h-[26rem] md:w-[26rem]"
-        aria-hidden="true"
-      />
-      <div className="container-narrow relative z-10">
-        <Breadcrumbs items={breadcrumbsFrom(jsonLd)} />
-        <p className="mb-3 font-heading font-semibold text-accent">Sans jugement et en toute discrétion</p>
-        <h1 className="mb-5 max-w-3xl font-heading text-4xl font-extrabold text-primary-foreground md:text-5xl">
-          Traitement des punaises de lit en Haute-Marne (52)
-        </h1>
-        <GoogleRating className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground underline-offset-4 hover:underline" />
-        <p className="mb-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80">
-          Piqûres au réveil, petites taches noires sur le matelas ? GF Nuisibles inspecte votre logement, identifie l'ampleur de l'infestation et met en place un traitement en plusieurs passages, pour les particuliers comme pour les professionnels.
-        </p>
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <ContactButtons callLabel="Appeler le 07 65 25 67 92" />
-        </div>
-        <ul className="mt-8 grid gap-3 text-sm text-primary-foreground/90 sm:grid-cols-2 lg:max-w-3xl">
-          <li className="flex items-center gap-2">
-            <MapPin className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
-            Entreprise locale, près de Chaumont, intervention dans toute la Haute-Marne
-          </li>
-          <li className="flex items-center gap-2">
-            <Clock className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
-            Joignable 7j/7, de 7h à 23h
-          </li>
-          <li className="flex items-center gap-2 sm:col-span-2">
-            <CheckCircle2 className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
-            Inspection déduite du traitement si vous acceptez le devis
-          </li>
-        </ul>
-        <a href="#reconnaitre" className="mt-6 inline-block text-sm font-semibold text-primary-foreground underline underline-offset-4 hover:text-accent">
-          Pas sûr que ce soit des punaises ? Voir les signes à repérer
-        </a>
-      </div>
-    </section>
+    <ServiceHero
+      breadcrumbs={breadcrumbsFrom(jsonLd)}
+      eyebrow="Sans jugement et en toute discrétion"
+      title="Traitement des punaises de lit en Haute-Marne (52)"
+      text="Piqûres au réveil, petites taches noires sur le matelas ? GF Nuisibles inspecte votre logement, identifie l'ampleur de l'infestation et met en place un traitement en plusieurs passages, pour les particuliers comme pour les professionnels."
+      highlight="Inspection déduite du traitement si vous acceptez le devis"
+      signsLabel="Pas sûr que ce soit des punaises ? Voir les signes à repérer"
+      image={photoAdulte}
+      imageAlt={PHOTOS.adulte.alt}
+      imageClassName="object-[92%_50%]"
+      icon={Bug}
+      contactLabel="Demander une inspection"
+    />
 
     <main>
       <Section title="Vous n'y êtes pour rien">
@@ -561,6 +431,7 @@ const PunaisesDeLit = () => (
       </Section>
 
       <CallBand
+        contactLabel="Demander une inspection"
         title="Vous hésitez encore ?"
         text="Appelez et décrivez ce que vous avez remarqué : nous voyons ensemble s'il faut organiser une inspection."
       />
@@ -588,6 +459,17 @@ const PunaisesDeLit = () => (
           <MapPin className="h-5 w-5 text-accent" aria-hidden="true" />
           Voir notre zone d'intervention
         </Link>
+        <p className="mt-4 leading-relaxed text-muted-foreground">
+          Des souris ou des rats dans le logement ? Voyez aussi notre{" "}
+          <Link to="/deratisation" className="font-semibold text-primary underline underline-offset-4 hover:text-accent">
+            service de dératisation en Haute-Marne
+          </Link>
+          . Des insectes bruns dans la cuisine ? Ce sont peut-être des{" "}
+          <Link to="/cafards-blattes" className="font-semibold text-primary underline underline-offset-4 hover:text-accent">
+            cafards ou des blattes
+          </Link>
+          .
+        </p>
       </Section>
 
       <Section
@@ -817,7 +699,7 @@ const PunaisesDeLit = () => (
               <Phone className="h-5 w-5" aria-hidden="true" />
               Appeler
             </a>
-            <Link to="/contact" className={inspectionButton}>
+            <Link to="/contact" className={outlineButton}>
               Demander une inspection
             </Link>
           </div>

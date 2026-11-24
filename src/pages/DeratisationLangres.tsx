@@ -147,7 +147,7 @@ const DeratisationLangres = () => {
           content: (
             <>
               <p>Le diagnostic et le devis sont gratuits. Le coût du traitement dépend de la surface, des accès, de l'espèce, des dispositifs nécessaires et du nombre de contrôles prévus. Il n'y a pas de prix unique applicable à toutes les habitations de Langres : décrivez le problème pour obtenir une proposition correspondant à votre situation.</p>
-              <p>Pour en savoir plus sur les méthodes et les prestations de GF Nuisibles, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service de dératisation pour particuliers et professionnels</Link>. Pour demander votre diagnostic à Langres, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">contactez GF Nuisibles</Link> ou appelez le 07 65 25 67 92.</p>
+              <p>Pour en savoir plus sur les méthodes et les prestations de GF Nuisibles, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service de dératisation en Haute-Marne</Link>. Pour demander votre diagnostic à Langres, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">contactez GF Nuisibles</Link> ou appelez le 07 65 25 67 92.</p>
             </>
           ),
         },

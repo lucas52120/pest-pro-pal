@@ -16,7 +16,7 @@ const Reassurance = () => {
             Besoin d'une intervention rapide ?
           </h2>
           <p className="mb-10 text-lg text-primary-foreground/70">
-            GF Nuisibles à votre service — Discrétion et efficacité garanties.
+            GF Nuisibles à votre service, en toute discrétion.
           </p>
         </motion.div>
 
@@ -30,7 +30,7 @@ const Reassurance = () => {
           {[
             { icon: Clock, label: "Horaires", text: "7j/7, de 7h à 23h, week-ends compris" },
             { icon: MapPin, label: "Secteur", text: "Chaumont, Saint-Dizier, Langres et environs (52)" },
-            { icon: CheckCircle, label: "Suivi", text: "Suivi jusqu'à résolution, selon devis, véhicules discrets" },
+            { icon: CheckCircle, label: "Suivi", text: "Passage de contrôle selon devis, véhicule non logoté sur demande" },
             { icon: ShieldCheck, label: "Certification", text: "Titulaire du Certibiocide — Produits professionnels homologués" },
             { icon: Phone, label: "Contact", text: "07 65 25 67 92" },
           ].map((item) => (
