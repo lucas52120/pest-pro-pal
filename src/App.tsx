@@ -109,24 +109,9 @@ import TaupesBarSurAube from "./pages/TaupesBarSurAube.tsx";
 // Vitry-le-François (Marne 51) — Dépigeonnisation uniquement
 import DepigeonnisationVitryLeFrancois from "./pages/DepigeonnisationVitryLeFrancois.tsx";
 
-
-// Vittel (Vosges 88) — Dératisation + Dépigeonnisation
-import DeratisationVittel from "./pages/DeratisationVittel.tsx";
-import DepigeonnisationVittel from "./pages/DepigeonnisationVittel.tsx";
-
 // Neufchâteau (Vosges 88) — Dératisation + Dépigeonnisation
 import DeratisationNeufchateau from "./pages/DeratisationNeufchateau.tsx";
 import DepigeonnisationNeufchateau from "./pages/DepigeonnisationNeufchateau.tsx";
-
-// Dijon (Côte-d'Or 21) — Dératisation + Dépigeonnisation uniquement
-import DeratisationDijon from "./pages/DeratisationDijon.tsx";
-import DepigeonnisationDijon from "./pages/DepigeonnisationDijon.tsx";
-
-
-// Châtillon-sur-Seine (Côte-d'Or 21) — Dératisation + Dépigeonnisation uniquement
-import DeratisationChatillonSurSeine from "./pages/DeratisationChatillonSurSeine.tsx";
-import DepigeonnisationChatillonSurSeine from "./pages/DepigeonnisationChatillonSurSeine.tsx";
-
 
 // Élimination Pigeons — Pages villes (particuliers)
 
@@ -273,26 +258,10 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
 
           <Route path="/depigeonnisation-vitry-le-francois" element={<DepigeonnisationVitryLeFrancois />} />
 
-
-          {/* Vittel — Dératisation + Dépigeonnisation */}
-          <Route path="/deratisation-vittel" element={<DeratisationVittel />} />
-
-          <Route path="/depigeonnisation-vittel" element={<DepigeonnisationVittel />} />
-
           {/* Neufchâteau — Dératisation + Dépigeonnisation */}
           <Route path="/deratisation-neufchateau" element={<DeratisationNeufchateau />} />
 
           <Route path="/depigeonnisation-neufchateau" element={<DepigeonnisationNeufchateau />} />
-
-          {/* Dijon — Dératisation + Dépigeonnisation */}
-          <Route path="/deratisation-dijon" element={<DeratisationDijon />} />
-          <Route path="/depigeonnisation-dijon" element={<DepigeonnisationDijon />} />
-
-
-          {/* Châtillon-sur-Seine — Dératisation + Dépigeonnisation */}
-          <Route path="/deratisation-chatillon-sur-seine" element={<DeratisationChatillonSurSeine />} />
-          <Route path="/depigeonnisation-chatillon-sur-seine" element={<DepigeonnisationChatillonSurSeine />} />
-
 
           {/* Élimination Pigeons — Pages villes (particuliers) */}
 

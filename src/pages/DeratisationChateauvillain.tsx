@@ -1,106 +1,123 @@
-import { Rat } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-deratisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Apple, BrickWall, Castle, DoorOpen, Droplets, Euro, Fence, HandHeart, Hourglass, House, Moon, TowerControl, Trees, Wine } from "lucide-react";
+import heroImage from "@/assets/mur-pierre-joints.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Entreprise de dératisation à Châteauvillain (52)";
-const DESCRIPTION = "Rats ou souris à Châteauvillain (52120), dans une maison ancienne ou une dépendance ? Traitement adapté. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/deratisation-chateauvillain";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Dératisez-vous les maisons du centre de Châteauvillain ?", answer: "Oui, les particuliers et les professionnels de Châteauvillain peuvent demander un diagnostic. Précisez l'adresse, les pièces touchées et les accès aux caves ou dépendances pour préparer la visite." },
-  { question: "La présence de l'eau à proximité signifie-t-elle que ce sont des rats ?", answer: "Non. Les cours d'eau du secteur sont des repères géographiques, pas un diagnostic. Les traces, les points d'entrée et l'examen du bâtiment permettent de distinguer les espèces et les causes possibles." },
-  { question: "Pouvez-vous inspecter une dépendance ou une réserve ?", answer: "Oui, décrivez les surfaces, les stocks et les observations. Le stockage de nourriture, les accès au sol et les espaces attenants sont examinés selon la configuration des lieux." },
-  { question: "Comment protéger mes animaux pendant la dératisation ?", answer: "Signalez-les avant la prestation. Le choix des dispositifs, leur emplacement et les consignes tiennent compte des occupants. Les appâts restent à risque et ne doivent jamais être déplacés ou laissés accessibles." },
-  { question: "Quel est le prix d'une dératisation à Châteauvillain ?", answer: "Le prix dépend du bâtiment, des zones concernées et du suivi nécessaire. Un diagnostic et un devis gratuits permettent de préciser les prestations et les passages retenus avant votre accord." },
-];
-
-const DeratisationChateauvillain = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Dératisation à Châteauvillain (52120) : rats et souris", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Châteauvillain", "containedInPlace": { "@type": "AdministrativeArea", "name": "la Communauté de communes des Trois Forêts" }, "address": { "@type": "PostalAddress", "postalCode": "52120", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
+const town: RodentTown = {
+  city: "Châteauvillain",
+  postalCode: "52120",
+  region: "Haute-Marne",
+  slug: "/deratisation-chateauvillain",
+  title: "Entreprise de dératisation à Châteauvillain (52)",
+  description:
+    "Rats ou souris à Châteauvillain (52120), dans une maison ancienne ou une dépendance ? Traitement adapté. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Caves voûtées et maisons de caractère",
+    text: "Cave voûtée ou vieux murs : je cherche chaque passage et je pose sans laisser de marque.",
+    highlight: "Aucun perçage dans la pierre sans votre accord",
+    signsLabel: "Votre cave sert de réserve ? À lire",
+    image: heroImage,
+    imageAlt: "Mur de pierre ancien avec un poste d'appâtage posé à sa base",
+    imageClassName: "object-bottom",
+  },
+  reviews: ["yerli", "hanuszek", "genest"],
+  why: {
+    title: "Pourquoi les rats et les souris s'installent-ils chez vous ?",
+    intro: "Une cave ancienne reste fraîche l'été et douce le reste de l'année : ils s'y plaisent en toute saison.",
+    items: [
+      { icon: Apple, title: "Des réserves à la cave", text: "pommes, pommes de terre, noix et cartons de bouteilles." },
+      { icon: Hourglass, title: "Des pièces peu visitées", text: "quand on descend deux fois par an, ils ont le temps de s'installer." },
+      { icon: BrickWall, title: "Des pierres disjointes", text: "un vide entre deux blocs, et ils circulent dans l'épaisseur du mur." },
+      { icon: DoorOpen, title: "Une vieille descente de cave", text: "la porte du haut ne joint plus et le caniveau reste ouvert." },
+    ],
+  },
+  where: {
+    intro: "Derrière les remparts comme à la lisière de la forêt, je vérifie ces endroits l'un après l'autre.",
+    items: [
+      { icon: Castle, title: "Les remparts", text: "maisons adossées à la muraille, passages étroits, pierres creuses." },
+      { icon: TowerControl, title: "La tour Saint-Marc et l'Auditoire", text: "cœur ancien aux toits emboîtés : les greniers se rejoignent." },
+      { icon: Trees, title: "La Porte Madame et le Parc aux Daims", text: "jardins en lisière, cabanons et clôtures en bois." },
+      { icon: Droplets, title: "La boucle de l'Aujon", text: "lavoirs, berges et murs de jardin, où je cherche les terriers." },
+      { icon: House, title: "Les pavillons à l'entrée du bourg", text: "garage, combles perdus et terrasse sur plots." },
+      { icon: Moon, title: "La forêt d'Arc-Châteauvillain", text: "maisons isolées, où le mulot vient aussi souvent que la souris." },
+    ],
+  },
+  how: {
+    title: "Comment éliminer les rats et les souris efficacement ?",
+    intro: "J'avance à la lampe, pierre par pierre, pour trouver leur passage. Puis je pose sans percer, et je reviens contrôler avant de parler de rebouchage.",
+    photo: "mur",
+    steps: [
+      { title: "Posé, jamais scellé", text: "Le boîtier s'appuie contre la pierre, sans trou ni fixation dans votre mur." },
+      { title: "Un appât enfermé", text: "Vos réserves restent propres : rien ne sort du poste." },
+      { title: "Un contrôle à la lampe", text: "J'ouvre chaque boîtier et je regarde si les traces au sol sont fraîches." },
+    ],
+    after: "Une chauve-souris dans la cave ? Elle est protégée : on la laisse en paix et j'adapte la pose.",
+  },
+  price: {
+    paragraphs: [
+      <>Vous partez de <strong className="whitespace-nowrap text-primary">100 €</strong>. Une cave seule, une maison complète ou deux caves voisines : le devis, offert, distingue chaque partie pour que vous sachiez ce que vous payez.</>,
+    ],
+    aside: { icon: Euro, title: "À 20 minutes de Chaumont environ", text: "Le déplacement reste raisonnable et je vous le chiffre dès l'appel." },
+  },
+  local: [
+    {
+      kind: "cards",
+      target: true,
+      columns: "lg:grid-cols-3",
+      title: "Pommes, vin, bois : comment protéger ce qui dort à la cave ?",
+      intro: "Ils ne viennent pas pour le vin. Mais ils abîment tout ce qui l'entoure.",
+      items: [
+        { icon: Apple, title: "Fruits et pommes de terre", text: "en clayettes surélevées, recouvertes d'un grillage à mailles de 6 mm au plus. Jamais en tas au sol." },
+        { icon: Wine, title: "Bouteilles et cartons", text: "les étiquettes et la colle se mangent. Sortez les bouteilles des cartons et rangez-les sur un casier ajouré." },
+        { icon: Fence, title: "Bois et vieux meubles", text: "laissez un vide derrière la pile : il permet de voir et de poser un piège." },
+      ],
+    },
+    {
+      kind: "text",
+      title: "Murs mitoyens : comment en parler à votre voisin ?",
+      paragraphs: [
+        "Personne n'aime apprendre qu'il a des rats. Évitez les reproches : dites simplement ce que vous avez entendu, montrez une photo et proposez de regarder ensemble.",
+        "Quand les deux caves sont ouvertes le même jour, je vois d'où viennent les traces et où elles vont. Chacun reçoit son devis, chacun garde sa décision.",
+      ],
+      aside: {
+        icon: HandHeart,
+        title: "Si le dialogue est difficile",
+        text: "Gardez des preuves datées et écrivez un courrier courtois. La mairie peut aussi servir d'intermédiaire.",
       },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Dératisation", "item": "https://gf-nuisibles.fr/deratisation" },
-        { "@type": "ListItem", "position": 3, "name": "Châteauvillain", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Châteauvillain"
-        department="Haute-Marne (52)"
-        serviceTitle={"Dératisation à Châteauvillain (52120) : rats et souris"}
-        icon={<Rat className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"RATS OU SOURIS DANS VOTRE BÂTIMENT À CHÂTEAUVILLAIN ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un bruit dans une cloison, des emballages rongés dans une réserve ou des déjections dans une dépendance méritent une inspection avant de poser des appâts au hasard. GF Nuisibles propose la dératisation à Châteauvillain (52120), au sein de la Communauté de communes des Trois Forêts, pour les particuliers et les professionnels. Le diagnostic recherche les rats ou les souris, leurs circulations et les ressources qui permettent leur installation. Une maison du centre, un commerce et une dépendance ne présentent pas les mêmes accès : le protocole doit répondre au bâtiment réellement observé."}
-        expertise={"Les souris peuvent circuler dans des espaces étroits entre les pièces, alors que des rats peuvent exploiter un accès au sol, un regard ou une dépendance. Ces pistes ne remplacent pas l'identification sur place. Nous examinons les indices, les passages techniques, les stocks et les habitudes de rangement. Signalez les animaux domestiques, les enfants et les zones alimentaires pour organiser les précautions. Un poste sécurisé limite l'accès aux appâts mais ne rend pas un produit sans danger ; les consignes restent indispensables."}
-        method={"L'inspection commence par les zones où vous avez relevé des traces, puis recherche les points d'entrée et les ressources alimentaires. Selon les observations, des pièges ou des dispositifs d'appâtage professionnels sont proposés, avec un emplacement adapté. Le devis précise les passages et les prestations retenues. Le contrôle des consommations ou des captures permet d'ajuster le suivi. Les conseils d'obturation, de stockage et de gestion des déchets complètent le traitement : retirer des rongeurs sans corriger un accès peut laisser la place à une nouvelle intrusion."}
-        localContext={{ title: "Remparts, Porte Madame et boucle de l'Aujon", content: <>
-            <p>{"Châteauvillain est une Petite Cité de Caractère lovée dans une boucle de l'Aujon. Pour un bien situé près de la rivière, le diagnostic porte sur vos accès et les indices observés dans le bâtiment : la proximité de l'eau ne permet pas à elle seule de conclure à une infestation."}</p>
-            <p>{"Dans le centre historique, autour des remparts, de la tour Saint-Marc et de la tour de l'Auditoire, les maisons anciennes aux caves voûtées et aux dépendances mitoyennes demandent de préciser les accès et les éventuels passages communs avec un voisin."}</p>
-            <p>{"Le secteur de la Porte Madame ouvre sur le Parc aux Daims, en lisière de la forêt d'Arc-Châteauvillain. Pour une propriété proche de ces espaces boisés, décrivez le jardin, les dépendances et les abords du bâtiment plutôt que de présumer une origine liée à la forêt."}</p>
-            <p>Les noms ci-dessus situent votre demande ; aucun lieu n'est présenté comme infesté ou client. Retrouvez ces repères sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.bienvenue-hautemarne.fr/villes-cites-caractere/petites-cites-de-caractere/chateauvillain/" target="_blank" rel="noopener noreferrer">page de l'office de tourisme Haute-Marne Attractivité sur Châteauvillain</a> et sur la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://fr.wikipedia.org/wiki/Ch%C3%A2teauvillain" target="_blank" rel="noopener noreferrer">page Wikipédia de Châteauvillain</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Châteauvillain (52120)", intro: "Châteauvillain fait partie de la Communauté de communes des Trois Forêts. Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre historique et remparts", "Secteur de la tour Saint-Marc", "Abords de la Porte Madame et du Parc aux Daims", "Abords de l'Aujon", "Lisière de la forêt d'Arc-Châteauvillain"] }}
-        extraSections={[
-          { title: "Rats ou souris : les informations utiles avant la visite", content: <>
-            <p>{"Notez les pièces concernées, les moments où les bruits sont entendus et la date des premières traces. Des photos d'emballages endommagés ou des passages suspects peuvent aider à préparer le diagnostic. Ne manipulez pas les déjections à mains nues et évitez le balayage à sec qui remet des poussières en suspension."}</p>
-            <p>{"Ne déplacez pas les appâts existants sans en signaler l'emplacement. Mentionnez les produits déjà utilisés, les captures éventuelles et les travaux récents. Une absence de bruit pendant une nuit ne suffit pas à conclure que les rongeurs ont disparu."}</p>
-          </> },
-          { title: "Prévention dans une maison, un commerce ou une dépendance à Châteauvillain", content: <>
-            <p>{"Conservez les denrées et les aliments pour animaux dans des contenants fermés. Retirez les déchets alimentaires et limitez les encombrements qui masquent les déplacements le long des murs. Les portes de dépendances, les raccords de canalisations et les passages de câbles sont à examiner avec le diagnostic."}</p>
-            <p>{"Pour un commerce, précisez les contraintes de nettoyage, les zones de stockage et les heures d'activité. Si plusieurs locaux communiquent, une action isolée peut ne pas suffire. Le devis indique le périmètre retenu et le suivi, sans déduire un prix ou un nombre de passages du seul quartier."}</p>
-          </> },
-          { title: "Votre service à Châteauvillain et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service dératisation en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Châteauvillain, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-bourbonne-les-bains">Dératisation à Bourbonne-les-Bains</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chalindrey">Dératisation à Chalindrey</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Châteauvillain", items: [
-          { label: "Dératisation à Bourbonne-les-Bains", to: "/deratisation-bourbonne-les-bains" },
-          { label: "Dératisation à Chalindrey", to: "/deratisation-chalindrey" },
-        ] }}
-        relatedLinks={[
-          { label: "Guêpes et frelons à Châteauvillain", to: "/guepes-frelons-chateauvillain" },
-          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
-          { label: "Taupier à Châteauvillain", to: "/taupes-chateauvillain" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Châteauvillain : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+    },
+  ],
+  call: {
+    title: "Vous n'osez plus descendre à la cave ?",
+    text: "J'y vais pour vous. Dites-moi seulement par où l'on entre et ce qui y est rangé.",
+    contactLabel: "Demande de devis",
+  },
+  faq: [
+    { question: "Quel est le prix pour traiter une cave à Châteauvillain ?", answer: "Le premier niveau de prix est de 100 €. Selon l'étendue et le nombre de contrôles, le devis gratuit peut être différent : vous l'avez en main avant toute pose." },
+    { question: "Comment savoir si un trou dans ma cave est utilisé ?", answer: "Glissez-y une boule de papier journal sans forcer. Si elle est ressortie ou déplacée le lendemain, quelqu'un passe par là. Ne mettez pas la main dans le trou." },
+    { question: "Les bouteilles souillées sont-elles à jeter ?", answer: "Non. Lavez-les à l'eau chaude savonneuse avec des gants, en insistant sur le goulot, avant de les ouvrir." },
+    { question: "Je trouve des noix vides partout : souris ou autre chose ?", answer: "Un trou rond et net dans la coquille fait penser à un mulot. Une noix ouverte en deux est plutôt l'œuvre d'un écureuil. Gardez-en une pour me la montrer." },
+    { question: "Pouvez-vous intervenir dans une maison louée pour les vacances ?", answer: "Oui, avec votre accord écrit si vous n'êtes pas sur place, et une personne pour ouvrir. Je choisis des emplacements invisibles pour vos hôtes." },
+    { question: "Jusqu'où allez-vous autour de Châteauvillain ?", answer: "Orges, Pont-la-Ville, Cour-l'Évêque, Coupray, Latrecey-Ormoy-sur-Aube, Bricon, Blessonville, Braux-le-Châtel, Dinteville, Cirfontaines-en-Azois, et plus largement tout l'ouest du département. Joignez-moi au 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "De Châteauvillain à la forêt, je me rends dans chaque village.",
+    links: [
+      { label: "Dératisation Arc-en-Barrois", to: "/deratisation-arc-en-barrois" },
+      { label: "Dératisation Semoutiers-Montsaon", to: "/deratisation-semoutiers-montsaon" },
+      { label: "Dératisation Chaumont", to: "/deratisation-chaumont" },
+      { label: "Dératisation Bar-sur-Aube", to: "/deratisation-bar-sur-aube" },
+    ],
+    also: "Châteauvillain, c'est aussi :",
+    note: (
+      <>
+        Pour aller plus loin sur les espèces et les produits, lisez la page{" "}
+        <Link to="/deratisation" className={textLink}>dératisation : tout comprendre</Link>.
+      </>
+    ),
+  },
 };
+
+const DeratisationChateauvillain = () => <RodentTownPage town={town} />;
 
 export default DeratisationChateauvillain;

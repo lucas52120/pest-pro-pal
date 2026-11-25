@@ -19,7 +19,8 @@ describe("retired Désinsectisation service", () => {
     const app = readFileSync("src/App.tsx", "utf8");
     const active = Array.from(app.matchAll(/<Route\s+path="([^"]+)"/g), (match) => match[1]);
     const hosting = readFileSync("public/_redirects", "utf8");
-    expect(Object.keys(retiredServiceRedirects)).toHaveLength(25);
+    expect(Object.keys(retiredServiceRedirects)).toHaveLength(31);
+    expect(hosting).not.toMatch(/^\/[^\s]*[^/\s]:/m); // Netlify ignores placeholders inside a segment
     for (const [from, to] of Object.entries(retiredServiceRedirects)) {
       expect(active).toContain(to);
       expect(active).not.toContain(from);

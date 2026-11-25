@@ -35,6 +35,7 @@ import beamImage from "@/assets/accueil-rat.jpg";
 import Navbar from "@/components/Navbar";
 import Reassurance from "@/components/Reassurance";
 import Footer from "@/components/Footer";
+import ClientReviews from "@/components/ClientReviews";
 import SEO from "@/components/SEO";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 import {
@@ -54,6 +55,7 @@ import {
   textLink,
 } from "@/components/ServiceBlocks";
 import { LOCAL_BUSINESS } from "@/data/business";
+import { CALL_DELAY, RODENT_PRICE } from "@/data/rodentOffer";
 
 const TITLE = "Entreprise de dératisation Haute-Marne (52) | GF Nuisibles";
 const DESCRIPTION =
@@ -64,7 +66,7 @@ const FIRST_STEP: ServiceStep = {
   step: 1,
   icon: Phone,
   title: "Prise de contact",
-  text: "Vous appelez et vous racontez ce que vous avez vu ou entendu. On fixe une date.",
+  text: "Vous me dites ce que vous avez vu ou entendu, et je vous donne ma première date disponible.",
 };
 
 const VISIT_STEPS: ServiceStep[] = [
@@ -127,10 +129,10 @@ const ATTIC = [
 ];
 
 const WHY_HERE = [
-  { icon: Snowflake, title: "Le froid", text: "dès l'automne, ils quittent champs, haies et jardins pour un endroit chaud." },
-  { icon: Utensils, title: "La nourriture", text: "poubelles, graines, compost, poulailler, croquettes laissées dehors." },
-  { icon: DoorOpen, title: "Les ouvertures", text: "une souris passe dans un trou de 6 mm : bas de porte, aération, passage de tuyau." },
-  { icon: Droplets, title: "Les canalisations", text: "un regard cassé ou un tuyau mal raccordé suffit à un rat pour entrer." },
+  { icon: Utensils, title: "Ils ont trouvé à manger", text: "poubelles, graines, compost, poulailler ou croquettes laissées dehors la nuit." },
+  { icon: House, title: "Ils ont trouvé où se cacher", text: "combles, cloison, cave, abri de jardin, tas de bois : un endroit calme et sec leur suffit." },
+  { icon: DoorOpen, title: "Ils ont trouvé une entrée", text: "bas de porte, aération, passage de tuyau : une souris passe dans un trou de 6 mm." },
+  { icon: Droplets, title: "Ils sont venus par les canalisations", text: "un regard cassé ou un tuyau mal raccordé ouvre la porte à un rat." },
 ];
 
 const PREVENTION = [
@@ -190,7 +192,7 @@ const FAQ_ITEMS = [
   {
     question: "Combien coûte une dératisation en Haute-Marne ?",
     answer:
-      "Le prix dépend surtout de l'importance de l'infestation et de la surface à traiter. Pour un appartement ou une maison, la dératisation débute à 90 €. Le devis est gratuit et sans engagement : il fixe le prix exact avant l'intervention. Chaque intervention comprend le rapport, la traçabilité des produits, un plan de prévention et un passage de contrôle.",
+      "Le prix dépend surtout de l'importance de l'infestation et de la surface à traiter. Pour un appartement ou une maison, la dératisation débute à 100 €. Le devis est gratuit et sans engagement : il fixe le prix exact avant l'intervention. Chaque intervention comprend le rapport, la traçabilité des produits, un plan de prévention et un passage de contrôle.",
   },
   {
     question: "Combien de temps dure une intervention de dératisation ?",
@@ -256,7 +258,7 @@ const jsonLd = {
       areaServed: LOCAL_BUSINESS.areaServed,
       offers: {
         "@type": "Offer",
-        priceSpecification: { "@type": "PriceSpecification", minPrice: 90, priceCurrency: "EUR" },
+        priceSpecification: { "@type": "PriceSpecification", minPrice: 100, priceCurrency: "EUR" },
       },
     },
     {
@@ -290,8 +292,10 @@ const Deratisation = () => (
       breadcrumbs={breadcrumbsFrom(jsonLd)}
       eyebrow="Votre dératiseur en Haute-Marne"
       title={"Dératisation en Haute-Marne (52)\u00a0: élimination rats & souris"}
-      text="Des bruits dans les cloisons, des crottes, des emballages grignotés ? J'interviens chez vous contre les rats, les souris et les mulots, avec des méthodes sécurisées pour les foyers avec enfants et animaux."
+      text="Du bruit dans les murs, des crottes ? Je traite rats, souris et mulots, enfants et animaux pris en compte."
       highlight="Diagnostic, devis et intervention souvent le même jour"
+      price={RODENT_PRICE}
+      delay={CALL_DELAY}
       signsLabel="Pas sûr que ce soit des rongeurs ? Voir les signes à repérer"
       image={heroImage}
       imageAlt="Souris vue de face sur une planche en bois, la nuit"
@@ -333,10 +337,22 @@ const Deratisation = () => (
         </div>
       </Section>
 
+      <Section title="Pourquoi les rats et les souris rentrent-ils chez vous ?" intro="Même une maison bien tenue peut en avoir, été comme hiver. S'ils sont là, c'est presque toujours pour l'une de ces raisons.">
+        <CardGrid items={WHY_HERE} />
+      </Section>
+
+      <Section muted title="Comment se débarrasser des rats et des souris ?" intro="Pièges seuls ou appâts seuls suffisent rarement. Ce qui marche, c'est d'agir dans le bon ordre.">
+        <CheckList items={GET_RID} />
+        <p className="mt-6 max-w-3xl leading-relaxed text-muted-foreground">
+          Une seule souris, repérée tôt, se piège parfois soi-même. Pour des rats, un nid ou des traces dans plusieurs pièces, l'aide d'un dératiseur évite de perdre du temps.
+        </p>
+        <ClientReviews keys={["yerli", "jc", "genest"]} />
+      </Section>
+
       <Section title="Quel est le prix d'une dératisation ?">
         <p className="mb-10 max-w-3xl text-lg leading-relaxed text-foreground/80">
           <strong className="text-primary">Il n'y a pas de tarif unique : tout dépend de l'infestation et de la surface.</strong> Une dératisation débute à{" "}
-          <strong className="whitespace-nowrap text-primary">90 €</strong>, et le devis vous donne le prix exact pour votre logement.
+          <strong className="whitespace-nowrap text-primary">100 €</strong>, et le devis vous donne le prix exact pour votre logement.
         </p>
         <div className="grid items-start gap-8 lg:grid-cols-2">
           <CheckList items={PRICE_FACTORS} />
@@ -354,7 +370,7 @@ const Deratisation = () => (
 
       <Section
         muted
-        title="Chez vous, de la cave aux combles"
+        title="Où se cachent les rats et les souris dans une maison ?"
         intro="J'interviens en toute discrétion dans les maisons et les appartements de Haute-Marne et des départements limitrophes, avec un véhicule non logoté sur demande."
       >
         <PlaceGrid items={PLACES} />
@@ -408,7 +424,7 @@ const Deratisation = () => (
         <div className="container-narrow space-y-6">
           <GuideBlock
             id="reconnaitre"
-            title="Reconnaître une infestation de rats ou de souris"
+            title="Comment savoir si vous avez des rats ou des souris ?"
             intro="On voit rarement les rongeurs eux-mêmes : ce sont surtout leurs traces qui alertent."
             summary="Voir les signes à repérer"
             open
@@ -430,16 +446,6 @@ const Deratisation = () => (
             </p>
           </GuideBlock>
           <GuideBlock
-            title="Comment se débarrasser des rats et des souris ?"
-            intro="Pièges seuls ou appâts seuls suffisent rarement. Ce qui marche, c'est d'agir dans le bon ordre."
-            summary="Voir les étapes"
-          >
-            <CheckList items={GET_RID} />
-            <p className="mt-6 leading-relaxed text-muted-foreground">
-              Une seule souris, repérée tôt, se piège parfois soi-même. Pour des rats, un nid ou des traces dans plusieurs pièces, l'aide d'un dératiseur évite de perdre du temps.
-            </p>
-          </GuideBlock>
-          <GuideBlock
             title="Rats dans les combles : que faire ?"
             intro="Des bruits au-dessus du plafond la nuit ? Ne montez pas sans protection et ne mettez pas de poison au hasard."
             summary="Voir quoi faire"
@@ -450,26 +456,24 @@ const Deratisation = () => (
             </div>
           </GuideBlock>
           <GuideBlock
-            title="Pourquoi viennent-ils et comment éviter leur retour ?"
-            intro="Un abri, de quoi manger et une ouverture : il ne leur en faut pas plus."
-            summary="Voir les causes et les conseils"
+            title="Comment empêcher les rats et les souris de revenir ?"
+            intro="Une fois le traitement terminé, quelques gestes simples les gardent dehors."
+            summary="Voir les conseils"
           >
-            <CardGrid items={WHY_HERE} />
-            <h3 className="mb-4 mt-8 font-heading text-xl font-bold text-primary">Nos conseils pour les garder dehors</h3>
             <CheckList items={PREVENTION} />
           </GuideBlock>
-          <GuideBlock title="Les erreurs à éviter" intro="Elles partent d'une bonne intention, mais compliquent souvent la suite." summary="Voir les erreurs les plus courantes">
+          <GuideBlock title="Rats et souris : les erreurs à ne pas faire" intro="Elles partent d'une bonne intention, mais compliquent souvent la suite." summary="Voir les erreurs les plus courantes">
             <CardGrid items={MISTAKES} />
           </GuideBlock>
           <GuideBlock
-            title="Les risques pour la santé et le bâtiment"
+            title="Les rats et les souris sont-ils dangereux ?"
             intro="La présence de rongeurs est un risque sanitaire et peut causer des dégâts importants."
             summary="Voir les risques"
           >
             <CardGrid items={RISKS} />
           </GuideBlock>
           <GuideBlock
-            title="Les rongeurs présents en Haute-Marne"
+            title="Quels rats et souris trouve-t-on en Haute-Marne ?"
             intro="Rat brun, rat noir, souris, mulot : chacun a ses habitudes, et le traitement s'y adapte."
             summary="Voir les espèces"
           >
@@ -479,21 +483,21 @@ const Deratisation = () => (
             </div>
           </GuideBlock>
           <GuideBlock
-            title="Notre méthode de dératisation en détail"
+            title="Comment je traite les rats et les souris chez vous"
             intro="Des pièges mécaniques quand c'est possible, produits en dernier recours, toujours dans des postes sécurisés."
             summary="Voir le détail de la méthode"
           >
             <CheckList items={METHOD} />
           </GuideBlock>
           <GuideBlock
-            title="Quand intervenir ? Calendrier d'activité des rongeurs"
+            title="Quand y a-t-il le plus de rats et de souris ?"
             intro="Contrairement aux idées reçues, les rats et souris sont actifs toute l'année, avec des pics selon les saisons."
             summary="Voir le calendrier"
           >
             <CardGrid items={SEASONS} columns="" />
           </GuideBlock>
           <GuideBlock
-            title="Dératisation professionnelle : HACCP, agroalimentaire, collectivités"
+            title="Restaurant, commerce, collectivité : la dératisation pour les professionnels"
             intro="Un suivi adapté aux professionnels de Haute-Marne, dans le cadre de leur démarche HACCP."
             summary="Voir les prestations pour les professionnels"
           >

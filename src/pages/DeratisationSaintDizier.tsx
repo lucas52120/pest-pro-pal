@@ -1,107 +1,139 @@
-import { Rat } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-deratisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Building2, Car, DoorOpen, Droplets, Factory, House, MessageSquare, ShoppingBasket } from "lucide-react";
+import heroImage from "@/assets/poste-appat-gravier.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Entreprise de dératisation à Saint-Dizier (52)";
-const DESCRIPTION = "Rats ou souris à Saint-Dizier (52100), au Vert-Bois, à La Noue ou Marnaval ? Traitement adapté à votre logement ou local. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/deratisation-saint-dizier";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Intervenez-vous au Vert-Bois et à Marnaval ?", answer: "Oui, GF Nuisibles dessert ces secteurs de Saint-Dizier ainsi que La Noue, Gigny et le centre-ville. Indiquez l’adresse, les zones touchées et les accès ; le créneau est confirmé lors de votre demande depuis notre base à Montsaon." },
-  { question: "La proximité de la Marne suffit-elle à expliquer la présence de rats ?", answer: "Non. Les abords d’un cours d’eau font partie de l’environnement, mais la présence de rongeurs doit être constatée par des indices. Le diagnostic recherche les accès, les refuges et les ressources propres à votre bâtiment." },
-  { question: "Que faire si plusieurs appartements sont concernés ?", answer: "Informez le bailleur ou le syndic pour organiser l’accès aux espaces communs. Une inspection coordonnée peut être nécessaire pour comprendre les passages entre logements, caves et locaux techniques." },
-  { question: "Les postes d’appâtage suppriment-ils tous les risques ?", answer: "Non. Les postes sécurisés contribuent à limiter l’accès aux appâts, mais les consignes restent indispensables. Ne les ouvrez pas ou ne les déplacez pas ; signalez enfants et animaux avant le passage." },
-  { question: "Combien coûte une dératisation à Saint-Dizier ?", answer: "Le prix dépend des zones à examiner, de l’espèce, de l’étendue du problème et du suivi. Le diagnostic et le devis sont gratuits. Demandez quelles visites et quelles actions de sécurisation sont incluses." },
-];
-
-const DeratisationSaintDizier = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Dératisation à Saint-Dizier (52100) : rats et souris", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Saint-Dizier", "address": { "@type": "PostalAddress", "postalCode": "52100", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
+const town: RodentTown = {
+  city: "Saint-Dizier",
+  postalCode: "52100",
+  region: "Haute-Marne",
+  slug: "/deratisation-saint-dizier",
+  title: "Entreprise de dératisation à Saint-Dizier (52)",
+  description:
+    "Rats ou souris à Saint-Dizier (52100), au Vert-Bois, à La Noue ou Marnaval ? Traitement adapté à votre logement ou local. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Maisons, appartements et commerces",
+    text: "Maison, appartement ou commerce : je trouve leur passage, je traite et je reviens à date fixée.",
+    highlight: "Une date de contrôle prévue dès le départ",
+    signsLabel: "Déjà un traitement en cours ? Voir ce qu'il faut faire ou éviter",
+    image: heroImage,
+    imageAlt: "Poste d'appâtage fermé posé sur du gravier, le long d'un mur",
+    imageClassName: "max-lg:brightness-50",
+  },
+  reviews: ["rigny", "duverne", "buke"],
+  why: {
+    title: "Pourquoi les rats et les souris s'installent-ils chez vous ?",
+    intro: "Un logement bien tenu peut en avoir : il suffit d'un repas, d'un coin calme et d'un chemin pour y venir.",
+    items: [
+      { icon: ShoppingBasket, title: "De quoi manger", text: "poubelles, croquettes, réserve d'un commerce ou restes au pied de l'immeuble." },
+      { icon: Building2, title: "Un autre logement", text: "gaines, caves et faux plafonds relient les appartements entre eux." },
+      { icon: Car, title: "Un garage ouvert", text: "une porte laissée levée, ou un joint usé en bas, et ils sont dedans." },
+      { icon: Droplets, title: "Une évacuation cassée", text: "un tuyau abandonné ou un regard fendu ouvre un chemin depuis le réseau." },
+    ],
+  },
+  where: {
+    intro: "Appartement, pavillon, atelier ou commerce : quatre situations, et des cachettes différentes.",
+    items: [
+      { icon: Building2, title: "Un appartement au Vert-Bois", text: "Les souris suivent les tuyaux de chauffage et d'eau d'un logement à l'autre. Je contrôle derrière les meubles de cuisine, la baignoire et les gaines, puis je vous dis s'il faut aussi traiter les voisins ou les caves." },
+      { icon: House, title: "Une maison à La Noue ou à Gigny", text: "Garage, buanderie et abri de jardin sont les premières portes d'entrée. Je vérifie les bas de porte, les aérations et les évacuations, et je place les dispositifs à l'extérieur quand c'est possible." },
+      { icon: Factory, title: "Un bien à Marnaval ou au Clos-Mortier", text: "Grands terrains, vieux bâtiments et stockage offrent de bons abris aux rats. Je fais le tour complet des abords pour repérer les terriers et les passages avant d'entrer dans les locaux." },
+      { icon: ShoppingBasket, title: "Un commerce du centre-ville", text: "Cartons, livraisons et poubelles du soir attirent les rongeurs jusque dans la réserve. Je passe quand vous êtes fermé si possible, et je vous indique où stocker et quoi surveiller." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser des rats et des souris ?",
+    intro: "On ne gagne rien à poser au hasard. Je cherche leur passage, j'installe ce qu'il faut et je reviens à la date fixée ensemble.",
+    photo: "facade",
+    steps: [
+      { title: "Un poste le long du mur", text: "Derrière un garage, près d'un local poubelles ou au pied d'un immeuble." },
+      { title: "Un appât verrouillé", text: "Dans une cour partagée, c'est essentiel : ni enfant ni chien ne peut l'attraper." },
+      { title: "Un contrôle daté", text: "Généralement 10 à 15 jours après la pose, je regarde ce qui a été mangé." },
+    ],
+    after: "Une gardienne ou un gardien d'immeuble peut me signaler un poste abîmé : un simple message suffit.",
+  },
+  price: {
+    paragraphs: [
+      <>La dératisation débute à <strong className="whitespace-nowrap text-primary">100 €</strong>. Je tiens compte du type de bien, de l'activité des rongeurs et des visites à prévoir. Vous recevez un montant clair, sans engagement, avant toute pose.</>,
+    ],
+    aside: { icon: Car, title: "Et le déplacement ?", text: "Il vous est annoncé au téléphone, avant que je prenne la route. Pas de surprise sur la facture." },
+  },
+  local: [
+    {
+      kind: "dos",
+      target: true,
+      title: "Que faire pendant une dératisation, et que faut-il éviter ?",
+      intro: "Un traitement se joue aussi entre mes visites. Ces quelques habitudes font gagner du temps.",
+      yes: [
+        { text: "Laisser les pièges et les boîtiers exactement où ils sont." },
+        { text: "Noter les jours où vous entendez encore du bruit." },
+        { text: "Fermer les poubelles et ramasser les croquettes le soir." },
+        { text: "M'appeler si un animal capturé doit être retiré." },
+      ],
+      no: [
+        { text: "Ajouter du poison du commerce à côté de mes dispositifs." },
+        { text: "Nettoyer au jet ou déplacer des meubles près des passages repérés." },
+        { text: "Boucher un trou sans me prévenir." },
+        { text: "Croire que c'est fini dès le premier soir calme." },
+      ],
+    },
+    {
+      kind: "cards",
+      columns: "lg:grid-cols-3",
+      title: "Des souris dans l'immeuble : comment s'organiser ?",
+      intro: "Bailleurs, syndics, gardiens : quand plusieurs logements sont touchés, la méthode compte autant que le produit.",
+      items: [
+        { icon: MessageSquare, title: "Faire remonter l'information", text: "un mot à chaque palier permet de savoir quels logements entendent ou voient quelque chose." },
+        { icon: DoorOpen, title: "Ouvrir les bons locaux", text: "caves, gaines, local poubelles et chaufferie doivent être accessibles le même jour." },
+        { icon: Building2, title: "Traiter ensemble", text: "un seul passage organisé vaut mieux que cinq interventions chacun de son côté." },
+      ],
+    },
+    {
+      kind: "text",
+      title: "Marne, canal et réseaux : surveiller l'eau",
+      paragraphs: [
+        "Saint-Dizier est traversée par la Marne et par le canal entre Champagne et Bourgogne. Habiter près de l'eau ne veut pas dire avoir des rats, mais le rat brun y trouve des berges pour creuser.",
+        "Chez vous, regardez surtout les regards cassés, les grilles descellées et les évacuations qui ne servent plus. Ce sont des défauts simples à corriger, et souvent la vraie cause du problème.",
+      ],
+      aside: {
+        icon: Droplets,
+        title: "Un rat dans les toilettes ?",
+        text: "C'est rare, mais possible : il remonte par la canalisation. Fermez l'abattant, posez un poids dessus, fermez la porte et appelez. Il faudra ensuite faire contrôler l'évacuation.",
       },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Dératisation", "item": "https://gf-nuisibles.fr/deratisation" },
-        { "@type": "ListItem", "position": 3, "name": "Saint-Dizier", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Saint-Dizier"
-        department="Haute-Marne (52)"
-        serviceTitle={"Dératisation à Saint-Dizier (52100) : rats et souris"}
-        icon={<Rat className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"RATS OU SOURIS À SAINT-DIZIER ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Une réserve alimentaire avec des emballages grignotés, des déjections dans un garage à Marnaval ou des bruits dans un appartement du Vert-Bois ? GF Nuisibles propose une dératisation à Saint-Dizier (52100), dans le nord de la Haute-Marne. Les traces, les accès et les usages des pièces sont examinés avant de choisir une méthode. Rats et souris ne fréquentent pas toujours les mêmes passages ; il ne suffit pas de poser un appât là où un animal a été aperçu."}
-        expertise={"L’entreprise est basée à Montsaon et dessert Saint-Dizier, sans agence locale revendiquée. Le diagnostic distingue les logements individuels, les espaces communs et les locaux professionnels. Dans une activité alimentaire, les conditions de stockage et les besoins de surveillance associés à la démarche HACCP sont pris en compte. Les enfants, les animaux et les denrées doivent être signalés pour organiser des dispositifs et des précautions adaptés."}
-        method={"L’inspection recherche l’espèce probable, les voies de circulation et les sources de nourriture ou d’abri. Le devis précise le périmètre, les dispositifs proposés et le suivi nécessaire. Des pièges mécaniques et, si la situation le justifie, des appâts professionnels en postes sécurisés peuvent être retenus. Les points d’entrée à corriger sont expliqués ; les travaux et passages inclus sont détaillés plutôt que supposés compris."}
-        localContext={{ title: "Centre bragard, Marnaval et Marne : examiner les accès réels", content: <>
-<p>{"Dans le centre de Saint-Dizier, l’église Notre-Dame et le château servent à situer votre adresse. Pour un logement proche de ces repères, l’examen peut concerner une cave, un local de déchets ou un passage de canalisations. Ces lieux patrimoniaux ne sont ni des références clients ni des sites présentés comme infestés."}</p>
-<p>{"À Marnaval, l’histoire industrielle de la ville ne permet pas de conclure qu’un atelier ou un entrepôt abrite des rats. À La Noue, à Gigny ou au Vert-Bois, le diagnostic repose également sur les indices propres au bâtiment. La Marne et le canal entre Champagne et Bourgogne sont des éléments du paysage local, pas une preuve de présence de rongeurs dans une maison proche des berges."}</p>
-<p>{"Pour une adresse près des Petites Halles ou de la Tour Miko, indiquez simplement la rue et l’usage du local. Le diagnostic recherche les accès de votre bien, sans associer ces lieux publics à une infestation."}</p>
-<p>Pour situer les repères patrimoniaux, consultez le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.lacduder.com/offres/au-fil-des-rues-de-saint-dizier-saint-dizier-fr-5122370/" target="_blank" rel="noopener noreferrer">parcours de Saint-Dizier présenté par l’office de tourisme du lac du Der</a> et les <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://reveler.saint-dizier.fr/les-lieux/" target="_blank" rel="noopener noreferrer">lieux présentés par la Ville de Saint-Dizier</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs desservis à Saint-Dizier (52100)", intro: "Indiquez votre rue, le type de bien et les accès. Bettancourt-la-Ferrée et Chancenay sont des communes voisines, distinctes de Saint-Dizier ; les quartiers cités ne sont pas présentés comme infestés.", items: ["Centre-ville, église Notre-Dame et château", "Vert-Bois", "La Noue", "Gigny", "Marnaval", "Secteur gare, Marne et canal"] }}
-        extraSections={[
-          { title: "Quels indices communiquer avant une dératisation ?", content: <>
-<p>{"Notez les pièces touchées, les horaires des bruits et l’emplacement des déjections ou des dégâts. Prenez des photos sans manipuler les traces. Une odeur ou un bruit seul ne permet pas d’identifier l’animal ; décrivez aussi les observations dans les dépendances et les pièces voisines."}</p>
-<p>{"Ne balayez pas à sec et n’aspirez pas des déjections de rongeurs : demandez les précautions adaptées au nettoyage. Protégez les aliments, fermez les déchets et signalez les produits déjà utilisés. Les appâts en vrac ou les pièges dispersés sans repérage peuvent exposer les personnes et gêner le diagnostic."}</p>
-          </> },
-          { title: "Copropriétés et activités professionnelles à Saint-Dizier", content: <>
-<p>{"Au Vert-Bois ou dans un immeuble du centre, l’accès aux caves et aux locaux techniques peut nécessiter un échange avec le bailleur ou le syndic. Si plusieurs logements sont concernés, une approche coordonnée évite de traiter une pièce sans examiner les passages partagés."}</p>
-<p>{"Dans un commerce, un atelier ou une réserve, précisez les contraintes de livraison, de nettoyage et d’accès. Le suivi dépend du risque observé et de l’usage des lieux. Le devis gratuit explique les passages, les mesures préventives et les éventuels travaux ; aucun délai d’élimination ni tarif universel n’est annoncé sans diagnostic."}</p>
-          </> },
-          { title: "Votre service à Saint-Dizier et dans le nord de la Haute-Marne", content: <>
-<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">page sur la dératisation en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Saint-Dizier, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-<p>Vous êtes dans une autre commune du secteur ? Retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-wassy">Dératisation à Wassy</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-joinville">Dératisation à Joinville</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-montier-en-der">Dératisation à Montier-en-Der</Link>. Consultez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link>.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Saint-Dizier", items: [
-          { label: "Dératisation à Wassy", to: "/deratisation-wassy" },
-          { label: "Dératisation à Joinville", to: "/deratisation-joinville" },
-          { label: "Dératisation à Montier-en-Der", to: "/deratisation-montier-en-der" },
-        ] }}
-        relatedLinks={[
-          { label: "Guêpes et frelons à Saint-Dizier", to: "/guepes-frelons-saint-dizier" },
-          { label: "Dépigeonnisation à Saint-Dizier", to: "/depigeonnisation-saint-dizier" },
-          { label: "Taupier à Saint-Dizier", to: "/taupes-saint-dizier" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Saint-Dizier : appelez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+    },
+  ],
+  call: {
+    title: "Un rat dehors, une souris dans la cuisine ?",
+    text: "Dites-moi ce que vous savez, même si ce n'est qu'un bruit. On fixe une date pour Saint-Dizier.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "À combien revient une dératisation à Saint-Dizier ?", answer: "Elle commence à 100 €. Pour un logement, c'est surtout l'étendue du problème qui fait varier le prix ; pour un local ou un immeuble, la surface et le nombre de dispositifs. Le coût du déplacement est dit dès le premier appel et le devis ne vous engage à rien." },
+    { question: "Vous venez de loin, pouvez-vous assurer le suivi ?", answer: "Oui. Je suis basé près de Chaumont et je travaille dans tout le département. La date du contrôle est fixée à l'avance, généralement 10 à 15 jours après la pose, pour que vous sachiez quand je reviens." },
+    { question: "Mon logement est géré par un bailleur : puis-je vous appeler directement ?", answer: "Vous pouvez m'appeler pour un conseil, mais prévenez d'abord votre bailleur : c'est lui qui donne accès aux parties communes et qui peut prendre l'intervention en charge selon la situation. Je peux ensuite lui adresser un devis." },
+    { question: "Il y a eu de fortes pluies et je vois des rats, est-ce lié ?", answer: "Cela arrive. Quand l'eau monte dans les réseaux ou sur les berges de la Marne, des rats peuvent chercher un endroit sec. Vérifiez vos regards, vos grilles et votre sous-sol, et surveillez si les traces continuent une fois l'eau redescendue." },
+    { question: "Comment savoir si c'est une souris ou un jeune rat ?", answer: "Le jeune rat a une grosse tête et de grands pieds par rapport à son corps, avec une queue épaisse. La souris adulte est fine, avec de grandes oreilles. Une photo, même floue, m'aide à vous répondre." },
+    { question: "Pouvez-vous intervenir dans un garage ou un box fermé ?", answer: "Oui, si vous pouvez m'ouvrir et dégager le bas des murs. Les box en rangée se touchent souvent : demandez à vos voisins s'ils ont, eux aussi, remarqué des traces." },
+    { question: "Quelles communes couvrez-vous autour de Saint-Dizier ?", answer: "Bettancourt-la-Ferrée, Chancenay, Villiers-en-Lieu, Valcourt, Moëslains, Humbécourt, Éclaron, Roches-sur-Marne, Eurville-Bienville, et les autres villages du nord de la Haute-Marne. Un doute ? Appelez le 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Basé aux portes de Chaumont, je me déplace jusqu'au Perthois et au pays du Der haut-marnais.",
+    links: [
+      { label: "Dératisation Wassy", to: "/deratisation-wassy" },
+      { label: "Dératisation Joinville", to: "/deratisation-joinville" },
+      { label: "Dératisation Montier-en-Der", to: "/deratisation-montier-en-der" },
+      { label: "Dératisation Chaumont", to: "/deratisation-chaumont" },
+    ],
+    also: "À Saint-Dizier, je m'occupe aussi d'autres nuisibles :",
+    note: (
+      <>
+        Pour tout savoir sur les rongeurs et les méthodes, consultez la page{" "}
+        <Link to="/deratisation" className={textLink}>dératiseur en Haute-Marne</Link>.
+      </>
+    ),
+  },
 };
+
+const DeratisationSaintDizier = () => <RodentTownPage town={town} />;
 
 export default DeratisationSaintDizier;

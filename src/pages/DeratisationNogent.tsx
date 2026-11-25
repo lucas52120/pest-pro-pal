@@ -1,107 +1,129 @@
-import { Rat } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-deratisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Church, DoorOpen, Factory, House, Landmark, Moon, Mountain, Receipt, Tractor, Truck, Utensils } from "lucide-react";
+import heroImage from "@/assets/poste-appat-facade.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Entreprise de dératisation à Nogent (52) | Devis gratuit";
-const DESCRIPTION = "Rats ou souris à Nogent (52800), Nogent-le-Haut ou Nogent-le-Bas ? Particuliers et professionnels : traitement adapté. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/deratisation-nogent";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Intervenez-vous à Nogent-le-Haut et à Nogent-le-Bas ?", answer: "Oui, ces deux secteurs de Nogent sont desservis. Précisez votre adresse, les pièces touchées et les accès à la cave ou aux dépendances pour préparer le diagnostic." },
-  { question: "Que vérifier dans un atelier de la zone industrielle de Nogent ?", answer: "Signalez les traces près des livraisons, les emballages endommagés et les passages de canalisations. Le diagnostic porte sur votre établissement et ses contraintes de stockage, sans présumer de la situation des bâtiments voisins." },
-  { question: "Comment distinguer rats et souris ?", answer: "La taille des déjections, les dégâts et les voies de passage donnent des indications, mais l’identification demande un examen. Une photo nette peut aider ; ne manipulez pas les traces sans précautions." },
-  { question: "Combien coûte une dératisation à Nogent ?", answer: "Le prix dépend des accès, des surfaces concernées, des dispositifs et du suivi. Un diagnostic et un devis gratuits permettent de préciser les prestations ; aucun forfait général ne décrit toutes les situations." },
-  { question: "Faut-il boucher les trous avant la visite ?", answer: "Repérez-les et prenez des photos, mais demandez conseil avant une fermeture définitive. Il faut comprendre les circulations et coordonner les réparations avec les mesures de traitement." },
-];
-
-const DeratisationNogent = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Dératisation à Nogent (52800) : rats et souris", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Nogent", "address": { "@type": "PostalAddress", "postalCode": "52800", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
-      },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Dératisation", "item": "https://gf-nuisibles.fr/deratisation" },
-        { "@type": "ListItem", "position": 3, "name": "Nogent", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Nogent"
-        department="Haute-Marne (52)"
-        serviceTitle={"Dératisation à Nogent (52800) : rats et souris"}
-        icon={<Rat className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"RATS OU SOURIS DANS VOTRE BÂTIMENT À NOGENT ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Des crottes dans une réserve, des emballages rongés ou des bruits derrière une cloison à Nogent ? Ces observations justifient une recherche de rongeurs, sans permettre à elles seules de mesurer leur nombre. GF Nuisibles propose une dératisation à Nogent (52800), en Haute-Marne, pour les particuliers et les professionnels. Indiquez si votre adresse se trouve à Nogent-le-Haut ou à Nogent-le-Bas et décrivez les pièces concernées : une cave, une cuisine et un atelier ne présentent pas les mêmes accès."}
-        expertise={"Le diagnostic distingue les indices de rats et de souris, recherche les voies de passage et tient compte de l’usage du bâtiment. Dans un logement, signalez les enfants et les animaux ; dans un local professionnel, précisez les denrées, les stocks et les horaires d’activité. Les dispositifs mécaniques ou les postes sécurisés sont choisis selon la situation. Aucun produit n’est présenté comme sans risque : les consignes de protection accompagnent la prestation."}
-        method={"L’inspection porte sur les ouvertures en pied de façade, les passages de canalisations, les dépendances et les sources de nourriture. Le devis précise les zones retenues, les dispositifs et le suivi proposé. La dératisation associe le traitement de l’activité observée et des recommandations sur les accès : rangement, protection des denrées, gestion des déchets et réparations à prévoir. Un colmatage doit être réfléchi selon les circulations repérées, et non réalisé au hasard."}
-        localContext={{ title: "Rongeurs : prendre en compte le relief et les bâtiments de Nogent", content: <>
-<p>{"Nogent-le-Haut occupe un plateau, tandis que Nogent-le-Bas se situe dans la vallée de la Traire. Pour une intervention, cette distinction sert à situer votre adresse et ses dépendances. La présence d’un cours d’eau ne suffit pas à établir une infestation : ce sont les traces dans votre bâtiment et les accès disponibles qui orientent le diagnostic."}</p>
-<p>{"Autour de la place Charles-de-Gaulle et du musée de la Coutellerie, précisez si la demande concerne un logement, une réserve de commerce ou un espace partagé. Près de l’église Saint-Germain, à Nogent-le-Bas, indiquez les caves et annexes accessibles. Ces monuments sont des repères géographiques, pas des références clients."}</p>
-<p>{"L’activité coutelière et industrielle de Nogent implique des locaux aux usages variés. Dans la zone industrielle, la recherche porte sur les portes de livraison, les zones de stockage et les passages techniques de votre établissement. Aucun atelier voisin n’est présumé infesté."}</p>
-<p>Pour retrouver ces repères, consultez la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://villedenogent52.fr/ma-ville/presentation-de-la-ville" target="_blank" rel="noopener noreferrer">présentation de Nogent par la mairie</a> et son <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://villedenogent52.fr/mes-activites/circuit-du-patrimoine" target="_blank" rel="noopener noreferrer">circuit du patrimoine</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs desservis à Nogent (52800)", intro: "Précisez votre rue, le type de bien et les accès. Ces secteurs situent les demandes et ne sont pas présentés comme infestés. Nogent désigne ici la commune de Haute-Marne, et non Nogent-sur-Marne ou Nogent-le-Rotrou.", items: ["Nogent-le-Haut", "Nogent-le-Bas et vallée de la Traire", "Centre, place Charles-de-Gaulle et musée de la Coutellerie", "Secteur de l’église Saint-Jean", "Secteur de l’église Saint-Germain", "Zone industrielle de Nogent"] }}
-        extraSections={[
-          { title: "Quels indices relever avant une dératisation ?", content: <>
-<p>{"Photographiez les traces sans manipuler les déjections à mains nues. Notez où elles apparaissent, les dégâts sur les emballages et les moments où vous entendez du bruit. Un animal aperçu dans le jardin ne prouve pas qu’il occupe la maison ; à l’inverse, des indices répétés dans un placard méritent une inspection ciblée."}</p>
-<p>{"Évitez de déposer des appâts en vrac ou de mélanger plusieurs produits. Gardez les aliments dans des contenants fermés et rendez les zones à examiner accessibles. Les gestes de nettoyage et les protections nécessaires sont précisés selon la nature des traces."}</p>
-          </> },
-          { title: "Maisons, commerces et ateliers : définir le périmètre du devis", content: <>
-<p>{"Un devis de dératisation à Nogent tient compte des volumes, des accès et de l’activité constatée. Une réserve attenante, un garage ou une cave peuvent devoir être examinés avec la pièce initialement signalée. Dans un immeuble, le bailleur ou le syndic peut faciliter l’accès aux parties communes."}</p>
-<p>{"Pour un commerce ou un atelier, indiquez les contraintes de circulation, de stockage et de protection des produits. Demandez ce qui est compris dans le suivi, les contrôles et les recommandations de fermeture des accès. Aucun prix ni nombre de passages ne peut être déduit du seul nom du quartier."}</p>
-          </> },
-          { title: "Votre service à Nogent et dans les villes du secteur", content: <>
-<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">page consacrée aux rats et souris en Haute-Marne</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Nogent, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-<p>Pour une adresse dans une autre commune, consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-langres">Dératisation à Langres</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chaumont">Dératisation à Chaumont</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chalindrey">Dératisation à Chalindrey</Link>. Elles présentent les prestations dans ces villes, distinctes de Nogent. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour situer votre demande.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Nogent", items: [
-          { label: "Dératisation à Langres", to: "/deratisation-langres" },
-          { label: "Dératisation à Chaumont", to: "/deratisation-chaumont" },
-          { label: "Dératisation à Chalindrey", to: "/deratisation-chalindrey" },
-        ] }}
-        relatedLinks={[
-          { label: "Guêpes et frelons à Nogent", to: "/guepes-frelons-nogent" },
-          { label: "Dépigeonnisation à Nogent", to: "/depigeonnisation-nogent" },
-          { label: "Taupier à Nogent", to: "/taupes-nogent" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Nogent : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+const town: RodentTown = {
+  city: "Nogent",
+  postalCode: "52800",
+  region: "Haute-Marne",
+  slug: "/deratisation-nogent",
+  title: "Entreprise de dératisation à Nogent (52) | Devis gratuit",
+  description:
+    "Rats ou souris à Nogent (52800), Nogent-le-Haut ou Nogent-le-Bas ? Particuliers et professionnels : traitement adapté. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Maisons, ateliers et commerces",
+    text: "À la maison ou à l'atelier, je cherche par où passent les rongeurs, je traite et je repasse.",
+    highlight: "Passage possible hors production pour les ateliers",
+    signsLabel: "Rat ou souris ? Comparer les traces",
+    image: heroImage,
+    imageAlt: "Boîtier d'appâtage noir placé au pied d'un mur clair",
+    imageClassName: "max-lg:brightness-75",
+  },
+  reviews: ["yerli", "jc", "genest"],
+  why: {
+    title: "Pourquoi les rats et les souris s'installent-ils chez vous ?",
+    intro: "Maison ou atelier, propre ou en désordre : un rongeur reste là où il a un repas, un abri et un passage.",
+    items: [
+      { icon: Utensils, title: "De quoi se nourrir", text: "croquettes, pommes stockées, mangeoire à oiseaux ou coin café de l'atelier." },
+      { icon: Moon, title: "Un endroit sans bruit", text: "une remise oubliée, un double plafond, l'arrière d'un vieux meuble." },
+      { icon: DoorOpen, title: "Une entrée mal fermée", text: "porte de garage, gaine mal rebouchée, grille de cave descellée." },
+      { icon: Mountain, title: "Un sous-sol ouvert d'un côté", text: "sur un terrain en pente, la façade basse leur donne un accès direct." },
+    ],
+  },
+  where: {
+    intro: "Entre le plateau et la vallée de la Traire, les bâtiments ne se ressemblent pas. Voici les endroits que j'inspecte d'abord.",
+    items: [
+      { icon: Landmark, title: "Nogent-le-Haut", text: "le centre autour de la place Charles-de-Gaulle : commerces, logements à l'étage, arrière-cours étroites." },
+      { icon: Church, title: "Nogent-le-Bas", text: "vers l'église Saint-Germain et la Traire : caves, murs de soutènement et petits jardins en pente." },
+      { icon: Factory, title: "La zone industrielle", text: "ateliers, dépôts et bureaux, avec de longues façades à contrôler une par une." },
+      { icon: House, title: "Les lotissements", text: "garages accolés, coffres de volets, abris de jardin et bacs à compost." },
+      { icon: Tractor, title: "Odival, Donnemarie, Essey-les-Eaux", text: "granges, anciennes étables et réserves de bois dans les villages rattachés à Nogent." },
+      { icon: Truck, title: "Les bords de route", text: "garages, entrepôts et points de vente où les livraisons se succèdent." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser des rats et des souris efficacement ?",
+    intro: "Je repère leur trajet, j'y place le bon dispositif, puis je reviens voir. Pour les rats, je me sers surtout de boîtiers fermés ; pour quelques souris, des pièges peuvent suffire.",
+    photo: "mur",
+    steps: [
+      { title: "Un boîtier contre le mur", text: "Les rats longent les parois. Je place donc le poste sur leur route, jamais au milieu d'une cour." },
+      { title: "Un appât qui reste dedans", text: "Les blocs sont fixés à l'intérieur : rien ne traîne dans l'atelier ni dans le jardin." },
+      { title: "Une visite de contrôle", text: "Je regarde ce qui a été mangé, poste par poste, et je change ce qui doit l'être." },
+    ],
+    after: "Ne déplacez pas un boîtier, même pour nettoyer : prévenez-moi, je viens le remettre au bon endroit.",
+  },
+  price: {
+    paragraphs: [
+      <>Le premier prix est de <strong className="whitespace-nowrap text-primary">100 €</strong>. Pour un pavillon, le nombre de pièces touchées fait surtout la différence. Pour un atelier, c'est la longueur des murs à protéger et le rythme des contrôles.</>,
+      "Je ne chiffre pas à l'aveugle : je viens voir, je vous explique, et vous décidez.",
+    ],
+    aside: { icon: Receipt, title: "Le déplacement", text: "Je vous en donne le montant au téléphone, dès que je connais votre adresse." },
+  },
+  local: [
+    {
+      kind: "compare",
+      target: true,
+      title: "Rat ou souris : comment faire la différence ?",
+      intro: "Pas besoin de voir l'animal. Ses traces suffisent le plus souvent.",
+      heads: ["Plutôt une souris", "Plutôt un rat"],
+      rows: [
+        { label: "Les crottes", left: "De la taille d'un grain de riz, éparpillées un peu partout.", right: "De 1 à 2 cm, plus épaisses, souvent regroupées." },
+        { label: "Le trou", left: "Aussi petit qu'un crayon. On passe dix fois devant sans le voir.", right: "Le diamètre d'une pièce de 2 € au moins, avec des bords gras ou usés." },
+        { label: "Le bruit", left: "Grattements fins dans une cloison ou sous l'évier.", right: "Pas plus lourds, chocs, rongement bien net." },
+        { label: "Les dégâts", left: "Paquets de pâtes, papier, isolant réduit en miettes.", right: "Bois, plastique, tuyaux, parfois gros trous dans la terre dehors." },
+      ],
+      after: "Un doute ? Envoyez une photo par SMS ou WhatsApp au 07 65 25 67 92, avec une pièce de monnaie à côté pour donner l'échelle.",
+    },
+    {
+      kind: "levels",
+      title: "Des rongeurs dans un atelier ou une usine : où regarder ?",
+      intro: "Nogent vit de la coutellerie et de la mécanique. Dans ces locaux, la nourriture est rare, mais les cachettes ne manquent pas.",
+      items: [
+        { title: "Les quais", text: "Portes levées toute la journée, brosses usées, palettes et cartons qui arrivent de l'extérieur." },
+        { title: "Le stock", text: "Les rayonnages du fond, là où les emballages dorment longtemps et où personne ne balaie." },
+        { title: "La salle de pause", text: "Miettes, distributeur, casiers et poubelle du soir : le vrai garde-manger du bâtiment." },
+        { title: "Les armoires électriques", text: "De la chaleur et des câbles à ronger : une panne peut commencer là." },
+      ],
+      after: (
+        <>
+          Pour un suivi régulier avec relevé des passages, voyez comment fonctionne la{" "}
+          <Link to="/deratisation" className={textLink}>dératisation des locaux professionnels</Link>.
+        </>
+      ),
+    },
+  ],
+  call: {
+    title: "Une crotte, un bruit, un carton percé ?",
+    text: "Un appel de cinq minutes permet déjà de savoir si cela presse ou non.",
+    contactLabel: "Demander un devis",
+  },
+  faq: [
+    { question: "Quel prix pour une dératisation à Nogent ?", answer: "À partir de 100 €. Le devis est gratuit et tient compte du bâtiment, du type de rongeur et du nombre de visites. Vous avez le montant avant que je pose le premier dispositif." },
+    { question: "Pouvez-vous venir pendant que l'atelier tourne ?", answer: "C'est possible pour l'inspection. Pour la pose, on choisit ensemble un moment calme : tôt le matin, en fin de journée ou pendant une coupure. Les dispositifs sont placés hors des zones de passage." },
+    { question: "Faut-il prévenir les salariés ?", answer: "Oui, simplement. Je vous indique où se trouvent les postes pour que personne ne les déplace ou ne les ouvre par curiosité." },
+    { question: "Les ultrasons marchent-ils contre les souris ?", answer: "Je n'y compte pas. Les rongeurs s'habituent vite à un bruit et il suffit d'un meuble pour l'arrêter. Mieux vaut trouver le passage et le fermer une fois le problème réglé." },
+    { question: "J'ai attrapé deux souris, est-ce terminé ?", answer: "Peut-être, mais pas sûr. Laissez les pièges une dizaine de jours et regardez si de nouvelles crottes apparaissent. Si oui, il en reste." },
+    { question: "Dans quels villages venez-vous autour de Nogent ?", answer: "Mandres-la-Côte, Lanques-sur-Rognon, Sarcey, Poinson-lès-Nogent, Is-en-Bassigny, Vitry-lès-Nogent, Ageville, Poulangy, Thivet, Biesles et les autres communes du secteur. Appelez le 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Nogent est entre Chaumont et Langres : c'est un secteur où je passe facilement.",
+    links: [
+      { label: "Dératisation Chaumont", to: "/deratisation-chaumont" },
+      { label: "Dératisation Langres", to: "/deratisation-langres" },
+      { label: "Dératisation Bourbonne-les-Bains", to: "/deratisation-bourbonne-les-bains" },
+    ],
+    also: "Un autre visiteur vous embête à Nogent ?",
+    note: (
+      <>
+        Envie d'en savoir plus sur leur mode de vie ? Tout est expliqué sur notre page{" "}
+        <Link to="/deratisation" className={textLink}>rats et souris en Haute-Marne</Link>.
+      </>
+    ),
+  },
 };
+
+const DeratisationNogent = () => <RodentTownPage town={town} />;
 
 export default DeratisationNogent;

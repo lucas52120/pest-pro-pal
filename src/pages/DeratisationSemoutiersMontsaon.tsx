@@ -1,107 +1,124 @@
-import { Rat } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-deratisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Beef, Cable, HandCoins, House, Milk, Route, School, Tractor, Warehouse, Wheat } from "lucide-react";
+import heroImage from "@/assets/poste-appat-gravier.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Entreprise de dératisation à Semoutiers-Montsaon (52)";
-const DESCRIPTION = "Rats ou souris à Semoutiers-Montsaon (52000) ? GF Nuisibles est installé sur la commune : maisons, granges et dépendances. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/deratisation-semoutiers-montsaon";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "GF Nuisibles est-il vraiment basé à Semoutiers-Montsaon ?", answer: "Oui, notre siège est situé à Montsaon, l’un des deux villages de la commune. Précisez l’adresse, les pièces touchées et les accès aux granges ou dépendances pour préparer la visite." },
-  { question: "Intervenez-vous aussi bien à Semoutiers qu’à Montsaon ?", answer: "Oui, la commune de Semoutiers-Montsaon résulte de la fusion de ces deux villages en 1972. Le diagnostic est organisé selon votre adresse précise, dans l’un ou l’autre village." },
-  { question: "Pouvez-vous inspecter une grange ou un bâtiment agricole ?", answer: "Oui, décrivez les surfaces, les stocks et les observations. Le stockage de nourriture, les accès au sol et les espaces attenants sont examinés selon la configuration des lieux, fréquente dans ce secteur rural." },
-  { question: "Comment protéger mes animaux pendant la dératisation ?", answer: "Signalez-les avant la prestation. Le choix des dispositifs, leur emplacement et les consignes tiennent compte des occupants. Les appâts restent à risque et ne doivent jamais être déplacés ou laissés accessibles." },
-  { question: "Quel est le prix d’une dératisation à Semoutiers-Montsaon ?", answer: "Le prix dépend du bâtiment, des zones concernées et du suivi nécessaire. Un diagnostic et un devis gratuits permettent de préciser les prestations et les passages retenus avant votre accord." },
-];
-
-const DeratisationSemoutiersMontsaon = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Dératisation à Semoutiers-Montsaon (52000) : rats et souris", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Semoutiers-Montsaon", "containedInPlace": { "@type": "AdministrativeArea", "name": "Haute-Marne" }, "address": { "@type": "PostalAddress", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
+const town: RodentTown = {
+  city: "Semoutiers-Montsaon",
+  postalCode: "52000",
+  region: "Haute-Marne",
+  slug: "/deratisation-semoutiers-montsaon",
+  title: "Entreprise de dératisation à Semoutiers-Montsaon (52)",
+  description:
+    "Rats ou souris à Semoutiers-Montsaon (52000) ? GF Nuisibles est installé sur la commune : maisons, granges et dépendances. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Votre dératiseur est installé sur la commune",
+    text: "Je suis installé à Montsaon : ferme, hangar ou maison, j'ai peu de route pour venir voir.",
+    highlight: "Le plus proche de ma base : passage facile à caler",
+    signsLabel: "Vous êtes agriculteur ? Voir les zones à contrôler",
+    image: heroImage,
+    imageAlt: "Poste d'appâtage fermé sur des graviers, devant un mur",
+    imageClassName: "max-lg:brightness-50",
+  },
+  reviews: ["yerli", "jc", "buke"],
+  why: {
+    title: "Pourquoi y a-t-il des rats ou des souris chez vous ?",
+    intro: "Près des champs et des fermes, la nourriture et les cachettes ne manquent pas. Une maison bien tenue peut en avoir aussi.",
+    items: [
+      { icon: Wheat, title: "Du grain au sol", text: "une poignée tombée chaque jour suffit à nourrir plusieurs rats." },
+      { icon: Milk, title: "L'aliment des animaux", text: "auges, sacs et silos : le repas est servi toute l'année." },
+      { icon: Warehouse, title: "Un hangar plein", text: "derrière le matériel, il y a cent cachettes où le chat ne va pas." },
+      { icon: Tractor, title: "Les grands travaux", text: "moisson, ensilage ou tas déplacé : ils changent d'adresse, parfois pour la vôtre." },
+    ],
+  },
+  where: {
+    intro: "Deux villages, des exploitations et des maisons rénovées : je connais ce type de bâtiments et j'y regarde ceci.",
+    items: [
+      { icon: House, title: "Montsaon", text: "mon point de départ. Maisons de pierre, granges et jardins le long de la rue Principale." },
+      { icon: School, title: "Semoutiers", text: "autour de la mairie : pavillons, anciennes fermes et dépendances transformées en logement." },
+      { icon: Beef, title: "Les exploitations", text: "bâtiments d'élevage, stockage et maisons d'habitation traités comme un seul ensemble." },
+      { icon: Route, title: "Vers Chaumont et Châteauvillain", text: "Villiers-le-Sec, Buxières-lès-Villiers, Blessonville, Bricon et Richebourg." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser des rats et des souris efficacement ?",
+    intro: "Je pars de ce qu'ils mangent pour remonter jusqu'à leur nid. Les postes se placent entre les deux, et je passe les relever.",
+    photo: "facade",
+    steps: [
+      { title: "Entre le nid et le repas", text: "Le boîtier se met sur le trajet, le long d'un mur ou d'une dalle." },
+      { title: "Hors de portée des bêtes", text: "Couvercle verrouillé et blocs fixés : ni museau, ni patte n'y accèdent." },
+      { title: "Le relevé", text: "Je note ce qui a été mangé dans chaque poste, et je déplace ceux qui ne servent pas." },
+    ],
+    after: "À la fin du traitement, les restes d'appât sont repris : n'en gardez pas dans un coin du hangar.",
+  },
+  price: {
+    paragraphs: [
+      <>À Semoutiers-Montsaon comme ailleurs, une dératisation débute à <strong className="whitespace-nowrap text-primary">100 €</strong>. La route est courte, ce qui compte sur le déplacement. Pour une exploitation, je propose un devis gratuit, bâtiment par bâtiment.</>,
+    ],
+    aside: { icon: HandCoins, title: "Suivi à l'année", text: <>Besoin de contrôles réguliers et d'un relevé écrit ? <Link to="/contact" className={textLink}>Parlons-en</Link>, on fixe le rythme ensemble.</> },
+  },
+  local: [
+    {
+      kind: "levels",
+      target: true,
+      title: "Ferme et hangar : les quatre zones à contrôler",
+      intro: "Je commence toujours par là où ils mangent, puis je cherche où ils dorment.",
+      items: [
+        { title: "Le stockage", text: "Cellules, big bags, paille : traces de passage dans la poussière, sacs percés par le bas." },
+        { title: "Les animaux", text: "Autour des auges, sous les caillebotis, derrière les abreuvoirs. Pas d'appât à portée d'un museau." },
+        { title: "L'atelier", text: "Caisses à outils, vieux pneus, moteurs remisés. Les souris y nichent plus que les rats." },
+        { title: "Le tour du bâtiment", text: "Talus, fumière, tas de pierres, dalle fissurée : la plupart des terriers sont dehors." },
+      ],
+    },
+    {
+      kind: "list",
+      title: "Comment protéger tracteurs et matériel ?",
+      intro: "Une gaine mordue sur une machine, et c'est une journée perdue au plus mauvais moment.",
+      items: [
+        { title: "Avant de remiser", text: "soufflez la machine, videz la trémie et nettoyez la cabine, siège compris." },
+        { title: "Pendant l'arrêt", text: "ouvrez les capots une fois par mois : la lumière et le dérangement les gênent." },
+        { title: "Autour", text: "laissez un sol nu sous la machine, sans paille ni bâche traînante." },
+        { title: "À la reprise", text: "regardez filtres et faisceaux avant de tourner la clé." },
+      ],
+      aside: {
+        icon: Cable,
+        title: "Le prix d'une nuit",
+        text: "Un faisceau électrique coûte bien plus qu'un suivi. Quelques postes placés avant l'arrêt du matériel valent mieux qu'un dépannage en pleine saison.",
       },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Dératisation", "item": "https://gf-nuisibles.fr/deratisation" },
-        { "@type": "ListItem", "position": 3, "name": "Semoutiers-Montsaon", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Semoutiers-Montsaon"
-        department="Haute-Marne (52)"
-        serviceTitle={"Dératisation à Semoutiers-Montsaon (52000) : rats et souris"}
-        icon={<Rat className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"RATS OU SOURIS DANS VOTRE BÂTIMENT À SEMOUTIERS-MONTSAON ?"}
-        serviceCallSubtitle="GF NUISIBLES — VOTRE VOISIN À MONTSAON"
-        intro={"Un bruit dans une cloison, des emballages rongés dans une grange ou des déjections dans une dépendance méritent une inspection avant de poser des appâts au hasard. GF Nuisibles, dont le siège est installé à Montsaon, propose la dératisation à Semoutiers-Montsaon (52000), commune rurale née en 1972 de la fusion des villages de Semoutiers et de Montsaon, à quelques kilomètres de Chaumont. Le diagnostic recherche les rats ou les souris, leurs circulations et les ressources qui permettent leur installation dans une maison, une ferme ou une dépendance."}
-        expertise={"Les souris peuvent circuler dans des espaces étroits entre les pièces, alors que des rats peuvent exploiter un accès au sol, un regard ou un bâtiment agricole attenant. Ces pistes ne remplacent pas l’identification sur place. Nous examinons les indices, les passages techniques, les stocks et les habitudes de rangement, fréquents dans les exploitations et les dépendances de ce secteur rural. Signalez les animaux domestiques, les enfants et les zones alimentaires pour organiser les précautions. Un poste sécurisé limite l’accès aux appâts mais ne rend pas un produit sans danger ; les consignes restent indispensables."}
-        method={"L’inspection commence par les zones où vous avez relevé des traces, puis recherche les points d’entrée et les ressources alimentaires. Selon les observations, des pièges ou des dispositifs d’appâtage professionnels sont proposés, avec un emplacement adapté. Le devis précise les passages et les prestations retenues. Le contrôle des consommations ou des captures permet d’ajuster le suivi. Les conseils d’obturation, de stockage et de gestion des déchets complètent le traitement : retirer des rongeurs sans corriger un accès peut laisser la place à une nouvelle intrusion."}
-        localContext={{ title: "Deux villages, Semoutiers et Montsaon, aux portes de Chaumont", content: <>
-            <p>{"Semoutiers-Montsaon est une commune rurale de l’agglomération de Chaumont, née de la fusion administrative de deux villages en 1972. Selon que votre adresse se trouve à Semoutiers ou à Montsaon, les accès au bâti, les granges et les cours peuvent varier : précisez votre village et votre rue lors de la demande."}</p>
-            <p>{"Montsaon, où se trouve notre siège rue Principale, et Semoutiers, où se situe la mairie historique rue de Neuilly, forment un territoire agricole où les granges, hangars et réserves de fourrage sont des zones d’inspection habituelles pour la dératisation."}</p>
-            <p>{"Chaumont, préfecture de la Haute-Marne, se trouve à quelques kilomètres. La proximité d’une exploitation agricole ou d’un corps de ferme ne signifie pas automatiquement une infestation : seuls les indices observés sur votre bâtiment permettent de confirmer la présence de rongeurs."}</p>
-            <p>Les repères ci-dessus situent votre demande ; aucun lieu n’est présenté comme infesté ou client. Retrouvez des informations sur la commune sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.semoutiers.fr/" target="_blank" rel="noopener noreferrer">site officiel de la mairie de Semoutiers-Montsaon</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Semoutiers-Montsaon (52000)", intro: "Semoutiers-Montsaon réunit les villages de Semoutiers et de Montsaon. Les repères suivants aident à situer votre adresse, sans constituer une liste de lieux infestés. Précisez votre village et votre rue lors de votre demande.", items: ["Village de Montsaon", "Village de Semoutiers", "Secteur de la rue Principale", "Abords de la mairie, rue de Neuilly", "Exploitations agricoles et dépendances", "Direction de Chaumont"] }}
-        extraSections={[
-          { title: "Rats ou souris : les informations utiles avant la visite", content: <>
-            <p>{"Notez les pièces concernées, les moments où les bruits sont entendus et la date des premières traces. Des photos d’emballages endommagés ou des passages suspects peuvent aider à préparer le diagnostic. Ne manipulez pas les déjections à mains nues et évitez le balayage à sec qui remet des poussières en suspension."}</p>
-            <p>{"Ne déplacez pas les appâts existants sans en signaler l’emplacement. Mentionnez les produits déjà utilisés, les captures éventuelles et les travaux récents. Une absence de bruit pendant une nuit ne suffit pas à conclure que les rongeurs ont disparu."}</p>
-          </> },
-          { title: "Prévention dans une maison, une grange ou un corps de ferme", content: <>
-            <p>{"Conservez les denrées, les grains et les aliments pour animaux dans des contenants fermés. Retirez les déchets alimentaires et limitez les encombrements qui masquent les déplacements le long des murs. Les portes de granges, les raccords de canalisations et les passages de câbles sont à examiner avec le diagnostic."}</p>
-            <p>{"Pour une exploitation agricole, précisez les bâtiments concernés, les stocks et l’organisation des accès. Si plusieurs bâtiments communiquent, une action isolée peut ne pas suffire. Le devis indique le périmètre retenu et le suivi, sans déduire un prix ou un nombre de passages du seul village."}</p>
-          </> },
-          { title: "Votre service à Semoutiers-Montsaon et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service de dératisation en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Semoutiers-Montsaon, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chaumont">Dératisation à Chaumont</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-bologne">Dératisation à Bologne</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chateauvillain">Dératisation à Châteauvillain</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Semoutiers-Montsaon", items: [
-          { label: "Dératisation à Chaumont", to: "/deratisation-chaumont" },
-          { label: "Dératisation à Bologne", to: "/deratisation-bologne" },
-          { label: "Dératisation à Châteauvillain", to: "/deratisation-chateauvillain" },
-        ] }}
-        relatedLinks={[
-          { label: "Guêpes et frelons à Semoutiers-Montsaon", to: "/guepes-frelons-semoutiers-montsaon" },
-          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
-          { label: "Taupier à Semoutiers-Montsaon", to: "/taupes-semoutiers-montsaon" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Semoutiers-Montsaon : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+    },
+  ],
+  call: {
+    title: "Vous êtes à côté, profitez-en",
+    text: "Un doute sur un trou ou une trace ? Je peux passer voir et vous dire ce qu'il en est.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Combien coûte une dératisation à Semoutiers-Montsaon ?", answer: "Le départ est à 100 €. Pour une ferme, le devis gratuit dépend du nombre de bâtiments et du suivi souhaité. Le déplacement, réduit par la proximité, vous est confirmé au téléphone." },
+    { question: "Puis-je vous rencontrer à Montsaon ?", answer: "Appelez d'abord le 07 65 25 67 92 : je suis le plus souvent sur la route. Il est plus simple que je vienne directement voir votre bâtiment." },
+    { question: "Les chats de ferme suffisent-ils ?", answer: "Ils limitent les souris et les jeunes rats. Face à des rats adultes installés dans un tas de paille, ils ne font pas le poids." },
+    { question: "Les appâts sont-ils sans risque pour mes vaches ou mes brebis ?", answer: "Un appât reste toxique. C'est pourquoi il est enfermé dans un poste, hors des couloirs et des aires paillées. Vous savez où est chaque poste, et les restes sont repris à la fin." },
+    { question: "Faut-il traiter avant ou après la moisson ?", answer: "Les deux moments comptent. Avant, on protège un stockage vide et propre. Après, on surveille ceux qui quittent les champs." },
+    { question: "Venez-vous dans les villages proches ?", answer: "Bien sûr : Blessonville, Villiers-le-Sec, Buxières-lès-Villiers, Richebourg, Bricon, Neuilly-sur-Suize, Euffigneix, Orges, Jonchery et Foulain sont sur ma route." },
+  ],
+  nearby: {
+    intro: "D'ici, je rayonne dans toute la Haute-Marne.",
+    links: [
+      { label: "Dératisation Chaumont", to: "/deratisation-chaumont" },
+      { label: "Dératisation Châteauvillain", to: "/deratisation-chateauvillain" },
+      { label: "Dératisation Arc-en-Barrois", to: "/deratisation-arc-en-barrois" },
+      { label: "Dératisation Bologne", to: "/deratisation-bologne" },
+    ],
+    also: "Mes autres services à deux pas de chez vous :",
+    note: (
+      <>
+        Découvrez aussi la présentation complète :{" "}
+        <Link to="/deratisation" className={textLink}>dératisation pour particuliers et professionnels</Link>.
+      </>
+    ),
+  },
 };
+
+const DeratisationSemoutiersMontsaon = () => <RodentTownPage town={town} />;
 
 export default DeratisationSemoutiersMontsaon;

@@ -1,107 +1,125 @@
-import { Rat } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-deratisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Church, Dog, DoorOpen, Droplets, Egg, Factory, Hammer, House, PawPrint, Tag, Trees, Wheat } from "lucide-react";
+import heroImage from "@/assets/rat-qui-mange.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Entreprise de dératisation à Wassy (52) | Devis gratuit";
-const DESCRIPTION = "Rats ou souris à Wassy (52130), dans la maison ou une dépendance ? GF Nuisibles recherche les accès et traite, 7j/7. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/deratisation-wassy";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Dératisez-vous les maisons du centre de Wassy ?", answer: "Oui, les particuliers et les professionnels de Wassy peuvent demander un diagnostic. Précisez l'adresse, les pièces touchées et les accès aux caves ou dépendances pour préparer la visite." },
-  { question: "La proximité de la Blaise signifie-t-elle que ce sont des rats ?", answer: "Non. La rivière est un repère géographique, pas un diagnostic. Les traces, les points d'entrée et l'examen du bâtiment permettent de distinguer les espèces et les causes possibles." },
-  { question: "Pouvez-vous inspecter un atelier ou un local artisanal ?", answer: "Oui, décrivez les surfaces, les stocks et les observations. Le stockage de matières premières, les accès au sol et les espaces attenants sont examinés selon la configuration des lieux." },
-  { question: "Comment protéger mes animaux pendant la dératisation ?", answer: "Signalez-les avant la prestation. Le choix des dispositifs, leur emplacement et les consignes tiennent compte des occupants. Les appâts restent à risque et ne doivent jamais être déplacés ou laissés accessibles." },
-  { question: "Quel est le prix d'une dératisation à Wassy ?", answer: "Le prix dépend du bâtiment, des zones concernées et du suivi nécessaire. Un diagnostic et un devis gratuits permettent de préciser les prestations et les passages retenus avant votre accord." },
-];
-
-const DeratisationWassy = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Dératisation à Wassy (52130) : rats et souris", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Wassy", "address": { "@type": "PostalAddress", "postalCode": "52130", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
+const town: RodentTown = {
+  city: "Wassy",
+  postalCode: "52130",
+  region: "Haute-Marne",
+  slug: "/deratisation-wassy",
+  title: "Entreprise de dératisation à Wassy (52) | Devis gratuit",
+  description:
+    "Rats ou souris à Wassy (52130), dans la maison ou une dépendance ? GF Nuisibles recherche les accès et traite, 7j/7. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Maison, poulailler, bûcher",
+    text: "Maison, remise ou poulailler : je trouve par où ils passent, je traite et je reviens vérifier.",
+    highlight: "Vos animaux pris en compte dès l'appel",
+    signsLabel: "Poules, chien, lapins ? Les bons réflexes",
+    image: heroImage,
+    imageAlt: "Rat brun en train de manger, tenu sur ses pattes arrière",
+  },
+  reviews: ["yerli", "jc", "duverne"],
+  why: {
+    title: "Pourquoi les rats et les souris rentrent-ils chez vous ?",
+    intro: "Le plus souvent, c'est un repas facile qui les attire. Le reste vient ensuite.",
+    items: [
+      { icon: Egg, title: "Le grain des poules", text: "ce qui tombe au sol et les œufs oubliés les nourrissent tous les soirs." },
+      { icon: Dog, title: "La gamelle dehors", text: "quelques croquettes sous l'auvent suffisent à les faire revenir." },
+      { icon: Hammer, title: "Un tas de bois", text: "collé à la maison, il sert de logement tout près du repas." },
+      { icon: DoorOpen, title: "Une porte qui ferme mal", text: "remise, cave ou garage : le jour sous la porte leur suffit pour passer." },
+    ],
+  },
+  where: {
+    intro: "Du centre aux bords de la Blaise, voici les coins où ils aiment se tenir, et où je regarde.",
+    items: [
+      { icon: Church, title: "Le centre, près de la collégiale Notre-Dame", text: "maisons anciennes collées les unes aux autres, greniers et petites cours." },
+      { icon: Droplets, title: "Le long de la Blaise", text: "jardins, berges et anciens ouvrages d'eau : je regarde les évacuations et les murs bas." },
+      { icon: Factory, title: "Les anciens ateliers", text: "grands volumes, sols percés, gaines abandonnées : ils demandent une visite complète." },
+      { icon: House, title: "Les quartiers pavillonnaires", text: "garage, vide sanitaire et terrasse en bois sur plots." },
+      { icon: Wheat, title: "Brousseval, Attancourt, Montreuil-sur-Blaise", text: "fermes et corps de bâtiments des villages les plus proches." },
+      { icon: Trees, title: "Vers Voillecomte et les bois", text: "maisons isolées, où mulots et rats profitent des dépendances." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser des rats et des souris ?",
+    intro: "Un bon traitement tient en trois temps : comprendre par où ils circulent, poser sans risque pour vos bêtes, puis revenir compter ce qui a été pris.",
+    photo: "gravier",
+    steps: [
+      { title: "Dehors, un poste fermé", text: "Il est lourd, verrouillé et calé contre un mur, loin de l'enclos des poules." },
+      { title: "Dedans, rien ne bouge", text: "La tige garde l'appât au fond du boîtier : ni le chien ni les enfants ne l'atteignent." },
+      { title: "Au contrôle, on compte", text: "Ce qui manque m'indique si les rats sont encore là et par où ils arrivent." },
+    ],
+    after: "Un rongeur mort dans le jardin ? Mettez des gants, emballez-le et gardez vos animaux à l'écart.",
+  },
+  price: {
+    paragraphs: [
+      <>Il faut partir de <strong className="whitespace-nowrap text-primary">100 €</strong>. Une souris dans une cuisine se règle plus simplement qu'une famille de rats entre le poulailler et la remise. Après ma visite, vous recevez un devis gratuit, et rien n'est posé sans votre accord.</>,
+    ],
+    aside: { icon: Tag, title: "Ce qui change le prix", text: "Le nombre de bâtiments, la quantité de nourriture qu'on ne peut pas retirer et le nombre de retours nécessaires." },
+  },
+  local: [
+    {
+      kind: "levels",
+      target: true,
+      columns: "lg:grid-cols-3",
+      title: "Comment nourrir vos animaux sans nourrir les rats ?",
+      intro: "Trois habitudes suffisent à changer les choses, même avant le premier traitement.",
+      items: [
+        { title: "Servir, puis rentrer", text: "Donnez la ration du jour, attendez qu'elle soit mangée, et rentrez ce qui reste avant la nuit." },
+        { title: "Stocker en dur", text: "Un bidon en métal avec couvercle vaut mieux qu'un sac en papier. Un rat perce le plastique fin en quelques minutes." },
+        { title: "Surélever", text: "Posez le poulailler et le clapier sur des pieds ou une dalle : on voit tout de suite si quelqu'un creuse dessous." },
+      ],
+      after: "Si un rat est déjà sous le poulailler, ne l'inondez pas : il ressortira plus loin. Laissez le trou comme il est, il me montrera le passage.",
+    },
+    {
+      kind: "list",
+      title: "Chien, chat, poules : est-ce dangereux pour eux ?",
+      intro: "Un appât reste un produit toxique, même dans un boîtier. Voici comment on limite le risque ensemble.",
+      items: [
+        { text: "Vous me dites quels animaux vivent chez vous, et lesquels viennent en visite." },
+        { text: "Je choisis des pièges plutôt que des appâts quand l'endroit s'y prête." },
+        { text: "Chaque boîtier ferme avec une clé et vous savez où il se trouve." },
+        { text: "Vous ramassez les rongeurs morts avec des gants, dans un sac fermé, sans les laisser au chat." },
+      ],
+      aside: {
+        icon: PawPrint,
+        title: "Un animal a mangé quelque chose de suspect ?",
+        text: "N'attendez pas les signes : appelez votre vétérinaire, et gardez l'emballage ou le nom du produit sous la main.",
       },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Dératisation", "item": "https://gf-nuisibles.fr/deratisation" },
-        { "@type": "ListItem", "position": 3, "name": "Wassy", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Wassy"
-        department="Haute-Marne (52)"
-        serviceTitle={"Dératisation à Wassy (52130) : rats et souris"}
-        icon={<Rat className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"RATS OU SOURIS DANS VOTRE BÂTIMENT À WASSY ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un bruit dans une cloison, des emballages rongés dans une réserve ou des déjections dans une dépendance méritent une inspection avant de poser des appâts au hasard. GF Nuisibles propose la dératisation à Wassy (52130), ancienne sous-préfecture de Haute-Marne, pour les particuliers et les professionnels. Le diagnostic recherche les rats ou les souris, leurs circulations et les ressources qui permettent leur installation. Une maison du centre, un commerce et un atelier artisanal ne présentent pas les mêmes accès : le protocole doit répondre au bâtiment réellement observé."}
-        expertise={"Les souris peuvent circuler dans des espaces étroits entre les pièces, alors que des rats peuvent exploiter un accès au sol, un regard ou une dépendance. Ces pistes ne remplacent pas l'identification sur place. Nous examinons les indices, les passages techniques, les stocks et les habitudes de rangement. Signalez les animaux domestiques, les enfants et les zones alimentaires pour organiser les précautions. Un poste sécurisé limite l'accès aux appâts mais ne rend pas un produit sans danger ; les consignes restent indispensables."}
-        method={"L'inspection commence par les zones où vous avez relevé des traces, puis recherche les points d'entrée et les ressources alimentaires. Selon les observations, des pièges ou des dispositifs d'appâtage professionnels sont proposés, avec un emplacement adapté. Le devis précise les passages et les prestations retenues. Le contrôle des consommations ou des captures permet d'ajuster le suivi. Les conseils d'obturation, de stockage et de gestion des déchets complètent le traitement : retirer des rongeurs sans corriger un accès peut laisser la place à une nouvelle intrusion."}
-        localContext={{ title: "Centre historique de Wassy et abords de la Blaise", content: <>
-            <p>{"Dans le centre, autour de la collégiale Notre-Dame et de la place où s'est tenu le marché depuis des siècles, précisez si la demande concerne une maison, un appartement ou un local commercial. Des espaces attenants ou des passages entre bâtiments anciens peuvent justifier une inspection coordonnée avec le propriétaire."}</p>
-            <p>{"La Blaise traverse Wassy, qui s'est développée le long de cette rivière dès l'implantation des comtes de Champagne. Pour un bien situé à proximité du cours d'eau, le diagnostic porte sur vos accès, les canalisations et les indices dans le bâtiment : la proximité de la rivière ne prouve pas une infestation."}</p>
-            <p>{"Dans le secteur des anciens ateliers métallurgiques qui ont marqué l'histoire industrielle de la ville, les locaux annexes et les stocks doivent être décrits lors de la demande, sans présumer d'un problème chez un établissement cité."}</p>
-            <p>Les noms ci-dessus situent votre demande ; aucun lieu n'est présenté comme infesté ou client. Retrouvez ces repères sur la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.saint-dizier.fr/ville-agglo/notre-histoire/l-histoire-de-wassy.html" target="_blank" rel="noopener noreferrer">page consacrée à l'histoire de Wassy</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Wassy (52130)", intro: "Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre-ville de Wassy", "Secteur de la collégiale Notre-Dame", "Abords de la Blaise", "Secteur des anciens ateliers métallurgiques", "Direction de Montier-en-Der", "Direction de Saint-Dizier"] }}
-        extraSections={[
-          { title: "Rats ou souris : les informations utiles avant la visite", content: <>
-            <p>{"Notez les pièces concernées, les moments où les bruits sont entendus et la date des premières traces. Des photos d'emballages endommagés ou des passages suspects peuvent aider à préparer le diagnostic. Ne manipulez pas les déjections à mains nues et évitez le balayage à sec qui remet des poussières en suspension."}</p>
-            <p>{"Ne déplacez pas les appâts existants sans en signaler l'emplacement. Mentionnez les produits déjà utilisés, les captures éventuelles et les travaux récents. Une absence de bruit pendant une nuit ne suffit pas à conclure que les rongeurs ont disparu."}</p>
-          </> },
-          { title: "Prévention dans une maison, un commerce ou un atelier à Wassy", content: <>
-            <p>{"Conservez les denrées et les matières premières dans des contenants fermés. Retirez les déchets alimentaires et limitez les encombrements qui masquent les déplacements le long des murs. Les portes de dépendances, les raccords de canalisations et les passages de câbles sont à examiner avec le diagnostic."}</p>
-            <p>{"Pour un commerce, précisez les contraintes de nettoyage, les zones de stockage et les heures d'activité. Si plusieurs locaux communiquent, une action isolée peut ne pas suffire. Le devis indique le périmètre retenu et le suivi, sans déduire un prix ou un nombre de passages du seul quartier."}</p>
-          </> },
-          { title: "Votre service à Wassy et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">page sur la dératisation en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Wassy, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-saint-dizier">Dératisation à Saint-Dizier</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-joinville">Dératisation à Joinville</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-montier-en-der">Dératisation à Montier-en-Der</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Wassy", items: [
-          { label: "Dératisation à Saint-Dizier", to: "/deratisation-saint-dizier" },
-          { label: "Dératisation à Joinville", to: "/deratisation-joinville" },
-          { label: "Dératisation à Montier-en-Der", to: "/deratisation-montier-en-der" },
-        ] }}
-        relatedLinks={[
-          { label: "Guêpes et frelons à Wassy", to: "/guepes-frelons-wassy" },
-          { label: "Dépigeonnisation à Wassy", to: "/depigeonnisation-wassy" },
-          { label: "Taupier à Wassy", to: "/taupes-wassy" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Wassy : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+    },
+  ],
+  call: {
+    title: "Des œufs qui disparaissent ? Un trou sous la remise ?",
+    text: "Appelez avant de boucher ou d'inonder : le trou me montre par où ils passent.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "À partir de quel prix intervenez-vous à Wassy ?", answer: "100 € est le point de départ. Je regarde la maison et les dépendances, puis je vous remets un devis gratuit. Les frais de route vous sont indiqués quand vous appelez." },
+    { question: "Les rats attaquent-ils les poules ?", answer: "Ils s'en prennent surtout au grain, aux œufs et parfois aux poussins. Une poule adulte tuée fait plutôt penser à une fouine ou à un renard : dites-le-moi, la réponse n'est pas la même." },
+    { question: "Dois-je enlever mes poules pendant le traitement ?", answer: "Non, dans la plupart des cas. Les postes sont mis à l'extérieur de l'enclos, là où elles ne peuvent ni gratter ni picorer." },
+    { question: "Combien de rats y a-t-il quand on en voit un ?", answer: "Impossible à dire d'avance. Un rat vu de jour, plusieurs soirs de suite, laisse penser qu'ils sont nombreux ou que la nourriture manque. Les traces au sol donnent une meilleure idée." },
+    { question: "Le compost est-il responsable ?", answer: "Seulement s'il contient du pain, de la viande, des restes cuits ou s'il n'est jamais remué. Un bac fermé, posé sur un grillage fin, pose rarement problème." },
+    { question: "Quelles communes autour de Wassy ?", answer: "Brousseval, Vaux-sur-Blaise, Montreuil-sur-Blaise, Attancourt, Louvemont, Voillecomte, Bailly-aux-Forges, Magneux, Valleret, Rachecourt-Suzémont et leurs voisines. Le plus simple : 07 65 25 67 92, 7j/7." },
+  ],
+  nearby: {
+    intro: "Je me déplace dans tout le nord du département, jusque dans les hameaux.",
+    links: [
+      { label: "Dératisation Saint-Dizier", to: "/deratisation-saint-dizier" },
+      { label: "Dératisation Montier-en-Der", to: "/deratisation-montier-en-der" },
+      { label: "Dératisation Joinville", to: "/deratisation-joinville" },
+    ],
+    also: "Autres services à Wassy :",
+    note: (
+      <>
+        Pour comprendre comment vivent ces animaux, parcourez notre guide de la{" "}
+        <Link to="/deratisation" className={textLink}>dératisation en Haute-Marne</Link>.
+      </>
+    ),
+  },
 };
+
+const DeratisationWassy = () => <RodentTownPage town={town} />;
 
 export default DeratisationWassy;

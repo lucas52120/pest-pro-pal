@@ -1,106 +1,123 @@
-import { Rat } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
+import { BedDouble, Briefcase, Castle, DoorOpen, Droplets, Hotel, House, Luggage, Trash2, Trees, Utensils, Waves } from "lucide-react";
 import heroImage from "@/assets/service-deratisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Entreprise de dératisation à Bourbonne-les-Bains (52)";
-const DESCRIPTION = "Rats ou souris à Bourbonne-les-Bains (52400), en maison, commerce ou près des Thermes ? Traitement adapté. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/deratisation-bourbonne-les-bains";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Dératisez-vous les maisons du centre de Bourbonne-les-Bains ?", answer: "Oui, les particuliers et les professionnels de Bourbonne-les-Bains peuvent demander un diagnostic. Précisez l'adresse, les pièces touchées et les accès aux caves ou dépendances pour préparer la visite." },
-  { question: "La présence de l'eau à proximité signifie-t-elle que ce sont des rats ?", answer: "Non. Les cours d'eau du secteur sont des repères géographiques, pas un diagnostic. Les traces, les points d'entrée et l'examen du bâtiment permettent de distinguer les espèces et les causes possibles." },
-  { question: "Pouvez-vous inspecter une dépendance ou une réserve ?", answer: "Oui, décrivez les surfaces, les stocks et les observations. Le stockage de nourriture, les accès au sol et les espaces attenants sont examinés selon la configuration des lieux." },
-  { question: "Comment protéger mes animaux pendant la dératisation ?", answer: "Signalez-les avant la prestation. Le choix des dispositifs, leur emplacement et les consignes tiennent compte des occupants. Les appâts restent à risque et ne doivent jamais être déplacés ou laissés accessibles." },
-  { question: "Quel est le prix d'une dératisation à Bourbonne-les-Bains ?", answer: "Le prix dépend du bâtiment, des zones concernées et du suivi nécessaire. Un diagnostic et un devis gratuits permettent de préciser les prestations et les passages retenus avant votre accord." },
-];
-
-const DeratisationBourbonne = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Dératisation à Bourbonne-les-Bains (52400) : rats et souris", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Bourbonne-les-Bains", "containedInPlace": { "@type": "AdministrativeArea", "name": "la Communauté de communes des Savoir-Faire" }, "address": { "@type": "PostalAddress", "postalCode": "52400", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
+const town: RodentTown = {
+  city: "Bourbonne-les-Bains",
+  postalCode: "52400",
+  region: "Haute-Marne",
+  slug: "/deratisation-bourbonne-les-bains",
+  title: "Entreprise de dératisation à Bourbonne-les-Bains (52)",
+  description:
+    "Rats ou souris à Bourbonne-les-Bains (52400), en maison, commerce ou près des Thermes ? Traitement adapté. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Logements, meublés et hébergements",
+    text: "Maison, meublé ou hôtel : j'interviens discrètement, dès les premières traces.",
+    highlight: "Intervention discrète, véhicule non logoté sur demande",
+    signsLabel: "Vous louez à des curistes ? Que faire entre deux séjours",
+    image: heroImage,
+    imageAlt: "Souris qui sort d'une ouverture ronde dans un mur",
+    imageClassName: "max-lg:object-[65%_50%]",
+  },
+  reviews: ["rigny", "babinski", "jc"],
+  why: {
+    title: "Pourquoi y a-t-il des rats ou des souris chez vous ?",
+    intro: "Même un logement impeccable peut en avoir, surtout quand il reste vide entre deux séjours.",
+    items: [
+      { icon: Utensils, title: "Des restes dans les placards", text: "un paquet de biscuits oublié par le dernier occupant dure plusieurs jours." },
+      { icon: Luggage, title: "Des semaines sans personne", text: "sans bruit ni lumière, une souris visite toutes les pièces." },
+      { icon: DoorOpen, title: "Une entrée souvent ouverte", text: "arrivées, départs et livraisons : la porte de l'immeuble reste rarement close." },
+      { icon: Trash2, title: "Un local poubelles plein", text: "en pleine saison, les sacs qui débordent font venir les rats." },
+    ],
+  },
+  where: {
+    intro: "Meublé, hôtel, maison de village : voilà par où je commence quand on m'appelle à Bourbonne.",
+    items: [
+      { icon: Waves, title: "Autour des Thermes", text: "meublés, pensions et petites copropriétés : gaines, caves et locaux communs en priorité." },
+      { icon: Castle, title: "La Porte-Galon et le vieux centre", text: "maisons mitoyennes, vieux murs et sous-sols partagés." },
+      { icon: Droplets, title: "L'Apance et le ruisseau de Borne", text: "je contrôle les grilles, les regards et les murs bas des jardins voisins de l'eau." },
+      { icon: BedDouble, title: "Les rues du casino et des hôtels", text: "cuisines, terrasses, quais de livraison et cours de service." },
+      { icon: House, title: "Villars-Saint-Marcellin et Genrupt", text: "maisons de village, granges et jardins des deux communes rattachées." },
+      { icon: Trees, title: "Vers Serqueux et les Coiffy", text: "fermes, vignes, chalets et résidences secondaires." },
+    ],
+  },
+  how: {
+    title: "Comment éliminer les rats et les souris efficacement ?",
+    intro: "Je cherche l'entrée, je pose à l'abri des regards et je repasse. Dans les pièces habitées, je choisis plutôt des pièges ; à l'extérieur, des postes fermés.",
+    photo: "facade",
+    steps: [
+      { title: "À l'extérieur, en retrait", text: "Le boîtier se fait oublier contre un mur de service, loin de l'entrée des clients." },
+      { title: "Un système fermé", text: "Il faut une clé pour l'ouvrir et l'appât est accroché : rien ne peut être ramassé." },
+      { title: "Un passage de contrôle", text: "Je vérifie les boîtiers et les pièges, entre deux locations si cela vous arrange." },
+    ],
+    after: "Prévenez la personne qui fait le ménage : un dispositif déplacé ne sert plus à rien.",
+  },
+  price: {
+    paragraphs: [
+      <>Le prix minimum est de <strong className="whitespace-nowrap text-primary">100 €</strong>. Pour plusieurs logements dans le même immeuble, on voit tout en une fois : c'est plus logique que de traiter porte par porte. Le devis est gratuit.</>,
+    ],
+    aside: { icon: Briefcase, title: "Et les frais de déplacement ?", text: "Bourbonne est à une bonne distance de Chaumont : ils sont annoncés clairement lors de votre appel, pas découverts ensuite." },
+  },
+  local: [
+    {
+      kind: "levels",
+      target: true,
+      title: "Une souris signalée entre deux locations : que faire ?",
+      intro: "Le prochain client arrive samedi ? Voici l'ordre que je conseille.",
+      items: [
+        { title: "Le jour même", text: "Demandez une photo et l'endroit précis au locataire. Remerciez-le : mieux vaut un message qu'un mauvais avis." },
+        { title: "Le lendemain", text: "Videz les placards, passez l'éponge humide, jetez tout ce qui est ouvert. N'achetez pas de poison en vrac." },
+        { title: "Avant le ménage", text: "Faites-moi venir avant le grand nettoyage : les traces disent par où elle est entrée." },
+        { title: "Après ma visite", text: "Les pièges restent dans des coins cachés, hors de vue et hors de portée du prochain occupant." },
+      ],
+    },
+    {
+      kind: "text",
+      title: "Hôtel, résidence, restaurant : la discrétion d'abord",
+      paragraphs: [
+        "Je passe quand vos clients sont aux soins ou sortis, et je peux venir avec un véhicule sans logo. Aucun dispositif n'est laissé dans un lieu de passage.",
+        "On commence par les cuisines, la lingerie, la chaufferie et les réserves, puis les gaines qui montent vers les chambres. Une seule chambre touchée cache souvent une cause commune à tout l'étage.",
+        <>Besoin d'un contrôle programmé toute l'année ? <Link to="/contact" className={textLink}>Demandez une proposition</Link>, elle tient compte de vos périodes d'ouverture.</>,
+      ],
+      aside: {
+        icon: Hotel,
+        title: "Un registre simple",
+        text: "Pour chaque passage, notez la date, les postes vérifiés et ce qui a été trouvé. C'est utile si l'on vous pose des questions.",
       },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Dératisation", "item": "https://gf-nuisibles.fr/deratisation" },
-        { "@type": "ListItem", "position": 3, "name": "Bourbonne-les-Bains", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Bourbonne-les-Bains"
-        department="Haute-Marne (52)"
-        serviceTitle={"Dératisation à Bourbonne-les-Bains (52400) : rats et souris"}
-        icon={<Rat className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"RATS OU SOURIS DANS VOTRE BÂTIMENT À BOURBONNE-LES-BAINS ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un bruit dans une cloison, des emballages rongés dans une réserve ou des déjections dans une dépendance méritent une inspection avant de poser des appâts au hasard. GF Nuisibles propose la dératisation à Bourbonne-les-Bains (52400), au sein de la Communauté de communes des Savoir-Faire, pour les particuliers et les professionnels. Le diagnostic recherche les rats ou les souris, leurs circulations et les ressources qui permettent leur installation. Une maison du centre, un commerce et une dépendance ne présentent pas les mêmes accès : le protocole doit répondre au bâtiment réellement observé."}
-        expertise={"Les souris peuvent circuler dans des espaces étroits entre les pièces, alors que des rats peuvent exploiter un accès au sol, un regard ou une dépendance. Ces pistes ne remplacent pas l'identification sur place. Nous examinons les indices, les passages techniques, les stocks et les habitudes de rangement. Signalez les animaux domestiques, les enfants et les zones alimentaires pour organiser les précautions. Un poste sécurisé limite l'accès aux appâts mais ne rend pas un produit sans danger ; les consignes restent indispensables."}
-        method={"L'inspection commence par les zones où vous avez relevé des traces, puis recherche les points d'entrée et les ressources alimentaires. Selon les observations, des pièges ou des dispositifs d'appâtage professionnels sont proposés, avec un emplacement adapté. Le devis précise les passages et les prestations retenues. Le contrôle des consommations ou des captures permet d'ajuster le suivi. Les conseils d'obturation, de stockage et de gestion des déchets complètent le traitement : retirer des rongeurs sans corriger un accès peut laisser la place à une nouvelle intrusion."}
-        localContext={{ title: "Centre thermal, Porte-Galon et abords de l'Apance", content: <>
-            <p>{"Autour des Thermes de Bourbonne-les-Bains et du centre-ville, précisez si la demande concerne un hôtel, une résidence de curistes, un commerce ou un logement. L'activité saisonnière liée au thermalisme implique souvent des locaux occupés de façon temporaire, ce qui doit être signalé pour organiser l'accès."}</p>
-            <p>{"La Porte-Galon, vestige des anciens remparts, et le secteur du casino situent le centre historique. Pour une adresse proche de ces repères, décrivez les caves, les dépendances et les éventuels passages communs avec un bâtiment voisin."}</p>
-            <p>{"L'Apance traverse la commune et le ruisseau de Borne arrose aussi le centre. Pour un bien situé près de ces cours d'eau, le diagnostic porte sur vos accès, vos canalisations et les indices observés dans le bâtiment : la présence de l'eau à proximité ne permet pas à elle seule de conclure à une infestation."}</p>
-            <p>Les noms ci-dessus situent votre demande ; aucun lieu n'est présenté comme infesté ou client. Retrouvez ces repères sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://bourbonne.com/geographie/" target="_blank" rel="noopener noreferrer">site officiel de la ville thermale de Bourbonne-les-Bains</a> et sur la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://bourbonne.com/les-thermes/" target="_blank" rel="noopener noreferrer">page dédiée aux thermes de Bourbonne-les-Bains</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Bourbonne-les-Bains (52400)", intro: "Bourbonne-les-Bains fait partie de la Communauté de communes des Savoir-Faire. Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre-ville et secteur des Thermes", "Abords de la Porte-Galon", "Secteur du casino et du pôle culturel", "Abords de l'Apance", "Abords du ruisseau de Borne", "Hameaux et écarts de la commune"] }}
-        extraSections={[
-          { title: "Rats ou souris : les informations utiles avant la visite", content: <>
-            <p>{"Notez les pièces concernées, les moments où les bruits sont entendus et la date des premières traces. Des photos d'emballages endommagés ou des passages suspects peuvent aider à préparer le diagnostic. Ne manipulez pas les déjections à mains nues et évitez le balayage à sec qui remet des poussières en suspension."}</p>
-            <p>{"Ne déplacez pas les appâts existants sans en signaler l'emplacement. Mentionnez les produits déjà utilisés, les captures éventuelles et les travaux récents. Une absence de bruit pendant une nuit ne suffit pas à conclure que les rongeurs ont disparu."}</p>
-          </> },
-          { title: "Prévention dans une maison, un commerce ou une dépendance à Bourbonne-les-Bains", content: <>
-            <p>{"Conservez les denrées et les aliments pour animaux dans des contenants fermés. Retirez les déchets alimentaires et limitez les encombrements qui masquent les déplacements le long des murs. Les portes de dépendances, les raccords de canalisations et les passages de câbles sont à examiner avec le diagnostic."}</p>
-            <p>{"Pour un commerce, précisez les contraintes de nettoyage, les zones de stockage et les heures d'activité. Si plusieurs locaux communiquent, une action isolée peut ne pas suffire. Le devis indique le périmètre retenu et le suivi, sans déduire un prix ou un nombre de passages du seul quartier."}</p>
-          </> },
-          { title: "Votre service à Bourbonne-les-Bains et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service dératisation en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Bourbonne-les-Bains, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chalindrey">Dératisation à Chalindrey</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chateauvillain">Dératisation à Châteauvillain</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Bourbonne-les-Bains", items: [
-          { label: "Dératisation à Chalindrey", to: "/deratisation-chalindrey" },
-          { label: "Dératisation à Châteauvillain", to: "/deratisation-chateauvillain" },
-        ] }}
-        relatedLinks={[
-          { label: "Guêpes et frelons à Bourbonne-les-Bains", to: "/guepes-frelons-bourbonne-les-bains" },
-          { label: "Dépigeonnisation à Bourbonne-les-Bains", to: "/depigeonnisation-bourbonne-les-bains" },
-          { label: "Taupier à Bourbonne-les-Bains", to: "/taupes-bourbonne-les-bains" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Bourbonne-les-Bains : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+    },
+  ],
+  call: {
+    title: "Un locataire vient de vous écrire ?",
+    text: "Transférez-moi sa photo par SMS ou WhatsApp : je vous dis ce que j'en pense avant l'arrivée suivante.",
+    contactLabel: "Prendre contact",
+  },
+  faq: [
+    { question: "Quel est le coût d'une dératisation à Bourbonne-les-Bains ?", answer: "Elle commence à 100 €, hors déplacement annoncé au téléphone. Le devis gratuit dépend du nombre de logements ou de pièces, du rongeur et des visites de contrôle." },
+    { question: "Peut-on louer le logement pendant le traitement ?", answer: "Cela dépend de ce que je trouve. Avec quelques pièges bien cachés, oui, le plus souvent. Si l'activité est forte, mieux vaut décaler une arrivée que de rembourser un séjour." },
+    { question: "Qui paie, le propriétaire ou le locataire ?", answer: "Pour un meublé de courte durée, c'est le loueur. Pour une location à l'année, cela dépend de l'origine du problème : échangez par écrit avec votre propriétaire ou votre agence." },
+    { question: "Une souris peut-elle monter au deuxième étage ?", answer: "Très facilement. Elle grimpe le long des tuyaux, des câbles et des murs rugueux. L'étage ne protège pas, seuls les passages fermés le font." },
+    { question: "Les draps et la vaisselle sont-ils perdus ?", answer: "Non. Lavez le linge à haute température quand c'est possible et la vaisselle à l'eau très chaude. Jetez en revanche tout aliment entamé." },
+    { question: "Venez-vous dans les villages voisins ?", answer: "Oui : Serqueux, Coiffy-le-Haut, Coiffy-le-Bas, Montcharvot, Laneuvelle, Fresnes-sur-Apance, Damrémont, Larivière-Arnoncourt, Melay, Voisey, Enfonvelle et Vicq, entre autres. Téléphone : 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Je couvre Bourbonne et tout le Bassigny, jusqu'à la limite des Vosges.",
+    links: [
+      { label: "Dératisation Langres", to: "/deratisation-langres" },
+      { label: "Dératisation Chalindrey", to: "/deratisation-chalindrey" },
+      { label: "Dératisation Nogent", to: "/deratisation-nogent" },
+    ],
+    also: "Également à Bourbonne-les-Bains :",
+    note: (
+      <>
+        Vous cherchez des explications plus générales ? Elles sont sur la page{" "}
+        <Link to="/deratisation" className={textLink}>se débarrasser des rats et des souris</Link>.
+      </>
+    ),
+  },
 };
+
+const DeratisationBourbonne = () => <RodentTownPage town={town} />;
 
 export default DeratisationBourbonne;

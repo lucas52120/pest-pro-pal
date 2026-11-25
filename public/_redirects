@@ -29,10 +29,46 @@
 /depigeonnisation-froncles /depigeonnage 301!
 /depigeonnisation-arc-en-barrois /depigeonnage 301!
 /depigeonnisation-semoutiers-montsaon /depigeonnage 301!
+/deratisation-dijon /deratisation 301!
+/depigeonnisation-dijon /depigeonnage 301!
+/deratisation-chatillon-sur-seine /deratisation 301!
+/depigeonnisation-chatillon-sur-seine /depigeonnage 301!
+/deratisation-vittel /deratisation 301!
+/depigeonnisation-vittel /depigeonnage 301!
+/services/depigeonnisation/dijon /depigeonnage 301!
+/services/depigeonnisation/chatillon-sur-seine /depigeonnage 301!
+/services/depigeonnisation/vittel /depigeonnage 301!
+/services/elimination-pigeons/dijon /depigeonnage 301!
+/services/elimination-pigeons/chatillon-sur-seine /depigeonnage 301!
+/services/elimination-pigeons/vittel /depigeonnage 301!
 # Legacy nested service URLs -> flat city URLs (301, keeps link equity)
 /services/depigeonnisation/:city    /depigeonnisation-:city      301!
 /elimination-pigeons /depigeonnage 301!
-/elimination-pigeons-:city /depigeonnisation-:city 301!
+# Netlify placeholders only match whole segments, so each city has its own line
+/elimination-pigeons-arc-en-barrois /depigeonnage 301!
+/elimination-pigeons-bar-sur-aube /depigeonnisation-bar-sur-aube 301!
+/elimination-pigeons-beaune /depigeonnage 301!
+/elimination-pigeons-bologne /depigeonnage 301!
+/elimination-pigeons-bourbonne-les-bains /depigeonnisation-bourbonne-les-bains 301!
+/elimination-pigeons-chalindrey /depigeonnisation-chalindrey 301!
+/elimination-pigeons-chalons-en-champagne /depigeonnage 301!
+/elimination-pigeons-chateauvillain /depigeonnage 301!
+/elimination-pigeons-chatillon-sur-seine /depigeonnage 301!
+/elimination-pigeons-chaumont /depigeonnisation-chaumont 301!
+/elimination-pigeons-dijon /depigeonnage 301!
+/elimination-pigeons-froncles /depigeonnage 301!
+/elimination-pigeons-joinville /depigeonnisation-joinville 301!
+/elimination-pigeons-langres /depigeonnisation-langres 301!
+/elimination-pigeons-montier-en-der /depigeonnisation-montier-en-der 301!
+/elimination-pigeons-nancy /depigeonnage 301!
+/elimination-pigeons-neufchateau /depigeonnisation-neufchateau 301!
+/elimination-pigeons-nogent /depigeonnisation-nogent 301!
+/elimination-pigeons-saint-dizier /depigeonnisation-saint-dizier 301!
+/elimination-pigeons-semoutiers-montsaon /depigeonnage 301!
+/elimination-pigeons-troyes /depigeonnisation-troyes 301!
+/elimination-pigeons-vitry-le-francois /depigeonnisation-vitry-le-francois 301!
+/elimination-pigeons-vittel /depigeonnage 301!
+/elimination-pigeons-wassy /depigeonnisation-wassy 301!
 /services/elimination-pigeons/:city /depigeonnisation-:city 301!
 /services/*                         /                             301!
 

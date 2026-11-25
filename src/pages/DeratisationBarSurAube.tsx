@@ -1,107 +1,121 @@
-import { Rat } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-deratisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Boxes, Church, DoorOpen, Droplets, Grape, Landmark, Mountain, Route, ShoppingBag, Utensils, Wine, Wrench } from "lucide-react";
+import heroImage from "@/assets/rat-gros-plan.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Entreprise de dératisation à Bar-sur-Aube (10)";
-const DESCRIPTION = "Rats ou souris à Bar-sur-Aube (10200), dans une cave ou une réserve ? GF Nuisibles recherche les accès et traite. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/deratisation-bar-sur-aube";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Dératisez-vous les maisons du centre de Bar-sur-Aube ?", answer: "Oui, les particuliers et les professionnels de Bar-sur-Aube peuvent demander un diagnostic. Précisez l'adresse, les pièces touchées et les accès aux caves ou dépendances pour préparer la visite." },
-  { question: "La proximité de l'Aube signifie-t-elle que ce sont des rats ?", answer: "Non. La rivière est un repère géographique, pas un diagnostic. Les traces, les points d'entrée et l'examen du bâtiment permettent de distinguer les espèces et les causes possibles." },
-  { question: "Pouvez-vous inspecter une cave voûtée ou un cellier ancien ?", answer: "Oui, décrivez les surfaces, les stocks et les observations. De nombreux bâtiments du centre historique disposent de caves anciennes ; les accès au sol et les espaces attenants sont examinés selon la configuration des lieux." },
-  { question: "Comment protéger mes animaux pendant la dératisation ?", answer: "Signalez-les avant la prestation. Le choix des dispositifs, leur emplacement et les consignes tiennent compte des occupants. Les appâts restent à risque et ne doivent jamais être déplacés ou laissés accessibles." },
-  { question: "Quel est le prix d'une dératisation à Bar-sur-Aube ?", answer: "Le prix dépend du bâtiment, des zones concernées et du suivi nécessaire. Un diagnostic et un devis gratuits permettent de préciser les prestations et les passages retenus avant votre accord." },
-];
-
-const DeratisationBarSurAube = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Dératisation à Bar-sur-Aube (10200) : rats et souris", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Bar-sur-Aube", "containedInPlace": { "@type": "AdministrativeArea", "name": "Aube" }, "address": { "@type": "PostalAddress", "postalCode": "10200", "addressRegion": "Aube", "addressCountry": "FR" } }
-      },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Dératisation", "item": "https://gf-nuisibles.fr/deratisation" },
-        { "@type": "ListItem", "position": 3, "name": "Bar-sur-Aube", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Bar-sur-Aube"
-        department="Aube (10)"
-        serviceTitle={"Dératisation à Bar-sur-Aube (10200) : rats et souris"}
-        icon={<Rat className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"RATS OU SOURIS DANS VOTRE BÂTIMENT À BAR-SUR-AUBE ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un bruit dans une cloison, des emballages rongés dans une réserve ou des déjections dans une cave méritent une inspection avant de poser des appâts au hasard. GF Nuisibles propose la dératisation à Bar-sur-Aube (10200), ancienne cité des foires de Champagne traversée par l'Aube, pour les particuliers et les professionnels. Le diagnostic recherche les rats ou les souris, leurs circulations et les ressources qui permettent leur installation. Une maison du centre historique, un commerce et un cellier voûté ne présentent pas les mêmes accès : le protocole doit répondre au bâtiment réellement observé."}
-        expertise={"Les souris peuvent circuler dans des espaces étroits entre les pièces, alors que des rats peuvent exploiter un accès au sol, un regard ou une cave communiquant avec un réseau de caves anciennes comme celles héritées de l'époque des foires de Champagne. Ces pistes ne remplacent pas l'identification sur place. Nous examinons les indices, les passages techniques, les stocks et les habitudes de rangement. Signalez les animaux domestiques, les enfants et les zones alimentaires pour organiser les précautions. Un poste sécurisé limite l'accès aux appâts mais ne rend pas un produit sans danger ; les consignes restent indispensables."}
-        method={"L'inspection commence par les zones où vous avez relevé des traces, puis recherche les points d'entrée et les ressources alimentaires. Selon les observations, des pièges ou des dispositifs d'appâtage professionnels sont proposés, avec un emplacement adapté. Le devis précise les passages et les prestations retenues. Le contrôle des consommations ou des captures permet d'ajuster le suivi. Les conseils d'obturation, de stockage et de gestion des déchets complètent le traitement : retirer des rongeurs sans corriger un accès peut laisser la place à une nouvelle intrusion."}
-        localContext={{ title: "Centre historique, caves anciennes et bords de l'Aube à Bar-sur-Aube", content: <>
-            <p>{"Dans le centre, autour de l'église Saint-Pierre et de son halloy de bois, ou près de l'église Saint-Maclou, précisez si la demande concerne une cave, une cuisine, un appartement ou une réserve commerciale. Le réseau de caves et de celliers hérités des foires de Champagne peut justifier une inspection coordonnée avec le propriétaire."}</p>
-            <p>{"L'Aube traverse la ville et borde les promenades de la Gravière, de Mathaux et des Chevillottes. Pour un bien situé à proximité, le diagnostic porte sur vos accès, les canalisations et les indices dans le bâtiment : la proximité de la rivière ne prouve pas une infestation. Indiquez notamment les regards accessibles et les dépendances où les observations se répètent."}</p>
-            <p>{"Dans le secteur de la colline Sainte-Germaine ou en direction des vignobles de la Côte des Bar, les locaux annexes, ateliers et stocks doivent être décrits lors de la demande. La présence éventuelle d'aliments ou de matériel viticole appelle une vérification du stockage, sans présumer d'un problème chez un établissement cité."}</p>
-            <p>Les noms ci-dessus situent votre demande ; aucun monument n'est présenté comme infesté ou client. Retrouvez ces repères sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://barsuraube.org/bouger-et-sortir-decouvrir-notre-territoire/notre-patrimoine-bati" target="_blank" rel="noopener noreferrer">site de la Communauté de communes de la région de Bar-sur-Aube</a> et dans la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.tourisme-cotedesbar.com/patrimoine/bar-sur-aube/" target="_blank" rel="noopener noreferrer">présentation de Bar-sur-Aube par l'office de tourisme Côte des Bar</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Bar-sur-Aube (10200)", intro: "Bar-sur-Aube est une ancienne cité des foires de Champagne, traversée par l'Aube. Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre historique de Bar-sur-Aube", "Secteur de l'église Saint-Pierre", "Secteur de l'église Saint-Maclou", "Colline Sainte-Germaine", "Promenade de la Gravière, bords de l'Aube", "Direction des vignobles de la Côte des Bar"] }}
-        extraSections={[
-          { title: "Rats ou souris : les informations utiles avant la visite", content: <>
-            <p>{"Notez les pièces concernées, les moments où les bruits sont entendus et la date des premières traces. Des photos d'emballages endommagés ou des passages suspects peuvent aider à préparer le diagnostic. Ne manipulez pas les déjections à mains nues et évitez le balayage à sec qui remet des poussières en suspension."}</p>
-            <p>{"Ne déplacez pas les appâts existants sans en signaler l'emplacement. Mentionnez les produits déjà utilisés, les captures éventuelles et les travaux récents, notamment si votre bien communique avec une cave ancienne. Une absence de bruit pendant une nuit ne suffit pas à conclure que les rongeurs ont disparu."}</p>
-          </> },
-          { title: "Prévention dans une maison, une cave ou un commerce à Bar-sur-Aube", content: <>
-            <p>{"Conservez les denrées et les aliments pour animaux dans des contenants fermés. Retirez les déchets alimentaires et limitez les encombrements qui masquent les déplacements le long des murs. Les portes de caves, les raccords de canalisations et les passages de câbles sont à examiner avec le diagnostic."}</p>
-            <p>{"Pour un commerce du centre-ville ou une exploitation viticole, précisez les contraintes de nettoyage, les zones de stockage et les heures d'activité. Si plusieurs locaux communiquent par d'anciennes caves, une action isolée peut ne pas suffire. Le devis indique le périmètre retenu et le suivi, sans déduire un prix ou un nombre de passages du seul quartier."}</p>
-          </> },
-          { title: "Votre service à Bar-sur-Aube et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service dératisation en Haute-Marne et dans l'Aube</Link> pour les méthodes et les prestations. Pour votre adresse à Bar-sur-Aube, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chatillon-sur-seine">Dératisation à Châtillon-sur-Seine</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-troyes">Dératisation à Troyes</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chaumont">Dératisation à Chaumont</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Bar-sur-Aube", items: [
-          { label: "Dératisation à Châtillon-sur-Seine", to: "/deratisation-chatillon-sur-seine" },
-          { label: "Dératisation à Troyes", to: "/deratisation-troyes" },
-          { label: "Dératisation à Chaumont", to: "/deratisation-chaumont" },
-        ] }}
-        relatedLinks={[
-          { label: "Guêpes et frelons à Bar-sur-Aube", to: "/guepes-frelons-bar-sur-aube" },
-          { label: "Dépigeonnisation à Bar-sur-Aube", to: "/depigeonnisation-bar-sur-aube" },
-          { label: "Taupier à Bar-sur-Aube", to: "/taupes-bar-sur-aube" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Bar-sur-Aube : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+const town: RodentTown = {
+  city: "Bar-sur-Aube",
+  postalCode: "10200",
+  region: "Aube",
+  slug: "/deratisation-bar-sur-aube",
+  title: "Entreprise de dératisation à Bar-sur-Aube (10)",
+  description:
+    "Rats ou souris à Bar-sur-Aube (10200), dans une cave ou une réserve ? GF Nuisibles recherche les accès et traite. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Maisons, celliers et caves de la Côte des Bar",
+    text: "Cellier, maison ou cave de vigneron : je viens de la Haute-Marne voisine pour traiter et contrôler.",
+    highlight: "Des dispositifs tenus à distance du vin et des emballages",
+    signsLabel: "Vigneron ou commerçant ? Ce qu'un rongeur abîme",
+    image: heroImage,
+    imageAlt: "Gros plan d'un rat brun à l'entrée d'une cachette en bois",
+    imageClassName: "object-left",
+    area: "Entreprise de la Haute-Marne voisine, à une quarantaine de kilomètres",
+  },
+  reviews: ["rigny", "genest", "babinski"],
+  why: {
+    title: "Pourquoi avez-vous des rats ou des souris chez vous ?",
+    intro: "Dans une rue ancienne, ils n'arrivent pas toujours de la rue. Souvent, ils viennent d'en dessous.",
+    items: [
+      { icon: Wine, title: "Un cellier relié aux autres", text: "voûtes qui communiquent, soupiraux et anciens puits forment un réseau." },
+      { icon: Utensils, title: "De la nourriture à l'étage", text: "cuisine, arrière-boutique ou coin dégustation : ils montent pour manger." },
+      { icon: DoorOpen, title: "Un trou autour d'un tuyau", text: "on change la conduite, et l'ancien passage reste ouvert à côté." },
+      { icon: Boxes, title: "Des cartons livrés", text: "palettes et emballages entrent chaque semaine, parfois avec un passager." },
+    ],
+  },
+  where: {
+    intro: "Des vieux celliers aux villages de vignes, voici comment je lis la ville.",
+    items: [
+      { icon: Church, title: "Saint-Pierre et son halloy", text: "maisons anciennes, celliers et commerces du vieux centre." },
+      { icon: Landmark, title: "Saint-Maclou", text: "immeubles étroits, cours et bâtiments longtemps inoccupés." },
+      { icon: Droplets, title: "La Gravière, Mathaux et les Chevillottes", text: "habitations proches de l'Aube : regards, grilles et murs de jardin." },
+      { icon: Mountain, title: "Vers la colline Sainte-Germaine", text: "maisons en hauteur, remises et terrains boisés." },
+      { icon: Wine, title: "Les villages de vignes", text: "Baroville, Urville, Colombé-le-Sec, Couvignon : caves, cuveries et stocks." },
+      { icon: Route, title: "Proverville, Fontaine, Ailleville", text: "pavillons et fermes aux portes de la ville." },
+    ],
+  },
+  how: {
+    title: "Comment éliminer les rats et les souris efficacement ?",
+    intro: "Dans un cellier, on ne pose pas n'importe quoi. Je cherche la jonction entre les caves, je place les pièges dedans, les postes dehors, et je contrôle.",
+    photo: "gravier",
+    steps: [
+      { title: "Un poste dans la cour", text: "Il coupe la route entre l'extérieur et le cellier." },
+      { title: "Loin de vos bouteilles", text: "L'appât est tenu dans le boîtier : rien ne touche le vin ni les emballages." },
+      { title: "Un contrôle à date fixe", text: "On convient du jour à l'avance, en dehors de vos périodes chargées." },
+    ],
+    after: "Gardez vos cartons neufs en hauteur le temps du traitement.",
+  },
+  price: {
+    paragraphs: [
+      <>Un logement se traite à partir de <strong className="whitespace-nowrap text-primary">100 €</strong>. Pour une exploitation ou un magasin, le nombre de locaux décide du prix. Je traverse la limite du département, donc le déplacement compte : il vous est donné par téléphone, et le devis est gratuit.</>,
+    ],
+    aside: { icon: Route, title: "Plusieurs demandes au même endroit ?", text: "Voisins, locataires, collègues : prévenez-moi, je peux vous voir dans la même journée si les horaires s'accordent." },
+  },
+  local: [
+    {
+      kind: "cards",
+      target: true,
+      title: "Vignerons, cavistes, épiciers : qu'est-ce qui attire les rongeurs ?",
+      intro: "Le liquide est à l'abri dans le verre. Le reste, beaucoup moins.",
+      items: [
+        { icon: Boxes, title: "Cartons et coiffes", text: "un carton plat est un nid prêt à l'emploi, et un lot souillé ne se vend plus." },
+        { icon: Wrench, title: "Câbles et automates", text: "pressoir, groupe de froid, chaîne d'habillage : une morsure arrête tout." },
+        { icon: Grape, title: "Marcs et bourbes", text: "pendant la vendange, l'odeur porte loin et les bacs restent ouverts." },
+        { icon: ShoppingBag, title: "Le coin dégustation", text: "gressins, fromage et biscuits font rester ceux qui ne faisaient que passer." },
+      ],
+    },
+    {
+      kind: "levels",
+      title: "Quand s'en occuper dans l'année viticole ?",
+      intro: "Les rongeurs ne prennent pas de vacances. Votre travail, lui, a des moments plus favorables.",
+      items: [
+        { title: "Avant vendange", text: "Contrôle du vendangeoir, des logements et des abords. Les bâtiments vides sont faciles à inspecter." },
+        { title: "Pendant", text: "On ne pose rien près de la récolte. Poubelles fermées, sols lavés chaque soir." },
+        { title: "Juste après", text: "Nettoyage des bacs et relevé des postes : c'est le moment où ils cherchent de nouvelles ressources." },
+        { title: "Le reste du temps", text: "Une visite programmée au stock et à l'habillage, au rythme que l'on décide ensemble." },
+      ],
+    },
+  ],
+  call: {
+    title: "Des cartons grignotés, des souris au cellier ?",
+    text: "Expliquez-moi l'usage du local : on n'intervient pas de la même façon dans une cave privée et dans un stock.",
+    contactLabel: "Demander un devis",
+  },
+  faq: [
+    { question: "Quel est le prix de base à Bar-sur-Aube ?", answer: "100 € pour une habitation, hors déplacement communiqué à l'appel. Le devis gratuit tient compte des caves, des étages et du nombre de contrôles." },
+    { question: "Vous êtes en Haute-Marne : venez-vous vraiment dans l'Aube ?", answer: "Oui, Bar-sur-Aube est à une quarantaine de kilomètres de ma base. Je fixe avec vous le jour de la pose et celui du contrôle." },
+    { question: "Peut-on utiliser des appâts dans une cave à vin ?", answer: "Je privilégie les pièges à l'intérieur et les postes fermés à l'extérieur. Rien n'est posé sur les bouteilles, les fûts ou les emballages." },
+    { question: "Mon cellier communique avec celui du voisin, comment faire ?", answer: "Repérez la jonction sans la déboucher. Si le voisin est d'accord, on traite de chaque côté puis on ferme, par exemple avec une grille fine qui laisse passer l'air." },
+    { question: "Les vendangeurs logés chez moi ont vu une souris, est-ce urgent ?", answer: "Appelez rapidement. En attendant, fermez la nourriture dans des boîtes, sortez les poubelles le soir et gardez les sacs de couchage en hauteur." },
+    { question: "Quelles communes autour de Bar-sur-Aube ?", answer: "Proverville, Fontaine, Ailleville, Voigny, Arrentières, Couvignon, Baroville, Bayel, Jaucourt, Arsonval, Colombé-le-Sec, Lignol-le-Château et Rouvres-les-Vignes. Le bon réflexe : 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Les deux départements se touchent : voici les pages les plus proches de chez vous.",
+    links: [
+      { label: "Dératisation Châteauvillain", to: "/deratisation-chateauvillain" },
+      { label: "Dératisation Chaumont", to: "/deratisation-chaumont" },
+      { label: "Dératisation Troyes", to: "/deratisation-troyes" },
+    ],
+    also: "À Bar-sur-Aube, on m'appelle également pour :",
+    note: (
+      <>
+        La page principale explique les espèces et la méthode :{" "}
+        <Link to="/deratisation" className={textLink}>notre service contre les rats et souris</Link>.
+      </>
+    ),
+  },
 };
+
+const DeratisationBarSurAube = () => <RodentTownPage town={town} />;
 
 export default DeratisationBarSurAube;

@@ -22,22 +22,22 @@ const SECTEURS = [
       "Troyes, Bar-sur-Aube, et Vitry-le-François font partie de notre zone étendue. Nous y assurons principalement la dératisation et les chantiers de dépigeonnisation pour les copropriétés, industries et collectivités.",
   },
   {
-    titre: "Côte-d'Or (21) et Vosges (88)",
+    titre: "Vosges (88) et autres départements voisins",
     texte:
-      "Dijon, Châtillon-sur-Seine, Vittel et Neufchâteau sont desservis pour les contrats professionnels et les interventions programmées : dératisation de sites industriels, protection anti-pigeons de bâtiments, plans de lutte HACCP.",
+      "Neufchâteau et les communes proches de la Haute-Marne sont desservies sur rendez-vous, pour la dératisation et la protection contre les pigeons. Pour un chantier professionnel plus éloigné, appelez le 07 65 25 67 92 : nous vous disons si nous pouvons intervenir.",
   },
 ];
 
 const DELAIS = [
   { zone: "Chaumont et 20 km alentour", delai: "Sous 2 h en urgence, sinon le jour même" },
   { zone: "Haute-Marne (52)", delai: "Sous 24 h, souvent le jour même" },
-  { zone: "Aube, Marne, Côte-d'Or, Vosges", delai: "Sous 24 à 48 h" },
+  { zone: "Communes des départements voisins", delai: "Sous 24 à 48 h" },
 ];
 
 const FAQ = [
   {
     q: "Intervenez-vous en dehors de la Haute-Marne ?",
-    a: "Oui. Au-delà du département 52, nous intervenons dans l'Aube, la Marne, la Côte-d'Or et les Vosges, jusqu'à environ 150 km de Chaumont. Les déplacements sont annoncés à l'avance dans le devis, sans surprise.",
+    a: "Oui, surtout dans les communes proches de la Haute-Marne, ainsi que vers Bar-sur-Aube, Troyes, Vitry-le-François et Neufchâteau. Pour un chantier professionnel plus éloigné, appelez-nous. Les déplacements sont annoncés à l'avance dans le devis, sans surprise.",
   },
   {
     q: "Le déplacement est-il facturé en plus ?",
@@ -100,7 +100,7 @@ const ZoneIntervention = () => {
     <>
       <SEO
         title="Zone d'intervention : Haute-Marne et alentours | GF Nuisibles"
-        description="GF Nuisibles intervient à Chaumont, Langres, Saint-Dizier, Joinville et dans toute la Haute-Marne, l'Aube, la Marne, la Côte-d'Or et les Vosges. Urgence 7j/7."
+        description="GF Nuisibles intervient à Chaumont, Langres, Saint-Dizier, Joinville et partout en Haute-Marne, ainsi que vers Bar-sur-Aube, Troyes et Neufchâteau. Urgence 7j/7."
         path="/zone-intervention"
       />
       <Helmet>
@@ -123,8 +123,8 @@ const ZoneIntervention = () => {
             </h1>
             <p className="text-lg text-primary-foreground/85 max-w-3xl">
               Entreprise de lutte contre les nuisibles basée à Semoutiers-Montsaon (52), GF Nuisibles
-              intervient chaque jour à Chaumont, Langres, Saint-Dizier, Joinville et dans plus de
-              {" "}{CITIES.length} villes de Haute-Marne, d'Aube, de Marne, de Côte-d'Or et des Vosges.{" "}
+              intervient à Chaumont, Langres, Saint-Dizier, Joinville et partout en Haute-Marne, ainsi que vers
+              Bar-sur-Aube, Troyes, Vitry-le-François et Neufchâteau.{" "}
               <Link to="/deratisation" className="underline underline-offset-4 hover:text-accent">Dératisation en Haute-Marne</Link>,{" "}
               <Link to="/guepes-frelons" className="underline underline-offset-4 hover:text-accent">guêpes et frelons</Link>,{" "}
               <Link to="/cafards-blattes" className="underline underline-offset-4 hover:text-accent">cafards et blattes</Link>,{" "}
@@ -144,7 +144,7 @@ const ZoneIntervention = () => {
         <section className="py-12">
           <div className="container-narrow px-4 grid gap-6 sm:grid-cols-3">
             {[
-              { icon: MapPin, t: "Rayon de 150 km", d: "Depuis Chaumont, sur 6 départements du Grand Est et de Bourgogne." },
+              { icon: MapPin, t: "Toute la Haute-Marne", d: "Et les communes proches, dans les départements voisins." },
               { icon: Clock, t: "Urgence sous 2 h", d: "Guêpes et frelons à Chaumont et dans un rayon de 20 km." },
               { icon: ShieldCheck, t: "Certibiocide", d: "Technicien certifié, produits homologués, intervention garantie." },
             ].map(({ icon: Icon, t, d }) => (

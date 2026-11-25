@@ -1,107 +1,126 @@
-import { Rat } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-deratisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Castle, Church, Droplets, Flower2, House, KeyRound, Landmark, Store, Trees, Wallet } from "lucide-react";
+import heroImage from "@/assets/rat-gros-plan.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Entreprise de dératisation à Joinville (52) | Devis gratuit";
-const DESCRIPTION = "Rats ou souris à Joinville (52300), dans une cave, une réserve ou sous un plancher ? Traitement adapté et conseils. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/deratisation-joinville";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Intervenez-vous dans le centre historique de Joinville ?", answer: "Oui, les logements et locaux professionnels de Joinville sont desservis. Précisez votre rue, l’accès aux caves et les éventuelles parties communes pour préparer le diagnostic." },
-  { question: "Habiter près du quai des Peceaux signifie-t-il avoir des rats ?", answer: "Non. La proximité de l’eau ne suffit pas à établir une infestation. Les traces dans votre bâtiment, les accès disponibles et l’identification orientent la recherche." },
-  { question: "Que faire si les traces concernent plusieurs appartements ?", answer: "Informez le bailleur ou le syndic et indiquez les espaces partagés concernés. L’accès aux caves et aux passages techniques peut aider à définir une action coordonnée." },
-  { question: "Quel prix pour une dératisation à Joinville ?", answer: "Le coût dépend du périmètre, des accès, des dispositifs et du suivi. Le diagnostic et le devis gratuits servent à préciser les prestations adaptées à votre situation." },
-  { question: "Les rongeurs peuvent-ils revenir après le traitement ?", answer: "Oui, de nouveaux accès ou des ressources alimentaires peuvent favoriser un retour. Le suivi et les recommandations de fermeture des passages réduisent ce risque, sans promettre une absence définitive." },
-];
-
-const DeratisationJoinville = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Dératisation à Joinville (52300) : rats et souris", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Joinville", "address": { "@type": "PostalAddress", "postalCode": "52300", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
+const town: RodentTown = {
+  city: "Joinville",
+  postalCode: "52300",
+  region: "Haute-Marne",
+  slug: "/deratisation-joinville",
+  title: "Entreprise de dératisation à Joinville (52) | Devis gratuit",
+  description:
+    "Rats ou souris à Joinville (52300), dans une cave, une réserve ou sous un plancher ? Traitement adapté et conseils. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Vieille ville, quais et villages",
+    text: "Cave, cour ou réserve : je trouve la cachette, je traite et je contrôle, sans abîmer votre maison.",
+    highlight: "Un prix annoncé avant toute pose",
+    signsLabel: "Vous venez d'acheter ? Ce qu'il faut vérifier",
+    image: heroImage,
+    imageAlt: "Rat brun sortant la tête sous une planche, entre des graines",
+  },
+  reviews: ["rigny", "duverne", "hanuszek"],
+  why: {
+    title: "Pourquoi y a-t-il des rats ou des souris chez vous ?",
+    intro: "Vous n'y êtes souvent pour rien. Dans une ville ancienne, ils trouvent facilement ce qu'ils cherchent.",
+    items: [
+      { icon: Store, title: "Un repas tout près", text: "réserve de commerce, poubelle de cour ou placard de cuisine mal fermé." },
+      { icon: KeyRound, title: "Une maison vide à côté", text: "ils s'y reproduisent au calme, puis passent chez vous pour manger." },
+      { icon: Droplets, title: "Un tuyau ou un trou", text: "ancienne évacuation, gouttière cassée, soupirail : 2 cm suffisent à un rat." },
+      { icon: Flower2, title: "Une cour encombrée", text: "pots, planches et vieux bois leur font un abri à deux pas de la porte." },
+    ],
+  },
+  where: {
+    intro: "Des quais à la vieille ville, chaque rue a ses cachettes. Je commence par celles-ci.",
+    items: [
+      { icon: Landmark, title: "La vieille ville", text: "autour de l'Auditoire et de l'église Notre-Dame : maisons serrées, cours intérieures, caves qui se touchent." },
+      { icon: Droplets, title: "Le quai des Peceaux et le quai des Mailles", text: "au bord de l'eau, je vérifie les soupiraux, les sorties d'eau et le pied des façades." },
+      { icon: Castle, title: "Vers le château du Grand Jardin", text: "maisons avec jardin, remises et murs de clôture où un terrier passe facilement inaperçu." },
+      { icon: Store, title: "Les rues commerçantes", text: "réserves, arrière-boutiques et logements au-dessus : je regarde l'immeuble en entier." },
+      { icon: Trees, title: "Au pied de la colline du château", text: "terrains en pente, caves creusées dans le talus, végétation contre les murs." },
+      { icon: Church, title: "Vecqueville, Thonnance, Suzannecourt", text: "pavillons, anciennes fermes et poulaillers des villages voisins." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser des rats efficacement ?",
+    intro: "D'abord trouver leur chemin, ensuite poser, enfin vérifier. Dans les cours et les caves, j'utilise des postes fermés à clé qui tiennent l'appât hors de portée.",
+    photo: "facade",
+    steps: [
+      { title: "Le poste, au bon endroit", text: "Il se pose à l'abri d'un mur ou d'une marche, là où les traces sont les plus nettes." },
+      { title: "Un appât bien tenu", text: "Les blocs sont enfilés sur une tige : le rat les grignote sur place, sans les emporter." },
+      { title: "Le retour sur place", text: "Un bloc rongé confirme le passage. S'il ne l'est pas, je cherche un meilleur emplacement." },
+    ],
+    after: "Si un voisin ou un locataire a touché à un poste, dites-le-moi simplement : il faut le vérifier.",
+  },
+  price: {
+    paragraphs: [
+      <>Les tarifs débutent à <strong className="whitespace-nowrap text-primary">100 €</strong>. Une cuisine visitée par deux souris et une maison avec cour, cave et grenier ne demandent pas le même travail. Le devis est gratuit : il précise ce que je pose, où, et quand je repasse.</>,
+    ],
+    aside: { icon: Wallet, title: "Vous êtes propriétaire bailleur ?", text: "Je peux établir le devis à votre nom et voir le logement avec votre locataire ou votre agence." },
+  },
+  local: [
+    {
+      kind: "list",
+      target: true,
+      title: "Vous venez d'acheter ou d'hériter d'une maison ?",
+      intro: "Avant d'apporter vos meubles, faites le tour avec une lampe. C'est le meilleur moment pour agir : tout est vide et accessible.",
+      items: [
+        { title: "Sous l'évier et derrière la cuisine", text: "cherchez des crottes, des traces grasses et le trou autour des tuyaux." },
+        { title: "Dans les cheminées condamnées", text: "un simple carton ne ferme rien. Il faut une plaque ou une grille fixée." },
+        { title: "Sous les marches", text: "dans un vieil escalier en bois, l'espace sous les marches sert souvent de nid." },
+        { title: "Dans les placards muraux", text: "regardez le fond : il donne parfois directement sur le mur en pierre." },
+        { title: "À la cave", text: "un sol en terre remué près d'un mur mérite qu'on s'y arrête." },
+      ],
+      aside: {
+        icon: House,
+        title: "Prévoyez la visite avant les travaux",
+        text: "Une fois les doublages posés, le passage est caché derrière la plaque de plâtre. Faites vérifier tant que les murs sont nus.",
       },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Dératisation", "item": "https://gf-nuisibles.fr/deratisation" },
-        { "@type": "ListItem", "position": 3, "name": "Joinville", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Joinville"
-        department="Haute-Marne (52)"
-        serviceTitle={"Dératisation à Joinville (52300) : rats et souris"}
-        icon={<Rat className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"DES TRACES DE RONGEURS CHEZ VOUS À JOINVILLE ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"À Joinville, une réserve avec des emballages rongés, une cave présentant des déjections ou des bruits répétés sous un plancher appellent une recherche de rongeurs. GF Nuisibles propose une dératisation à Joinville (52300), en Haute-Marne, pour les logements et les locaux professionnels. Le diagnostic part de vos observations : la présence de la Marne dans la commune ne permet pas de conclure qu’un bâtiment est infesté. Précisez les pièces concernées et les accès aux dépendances lors de votre demande."}
-        expertise={"Dans une maison de la vieille ville comme dans un commerce, le traitement dépend des voies de passage, des refuges et des ressources accessibles. L’identification des rats ou des souris guide le choix entre pièges mécaniques et autres dispositifs professionnels. Signalez les enfants, les animaux et les denrées à protéger. Les postes sécurisés et les consignes limitent l’exposition, mais aucun produit n’est présenté comme sans risque ni comme une solution automatique à toute présence de rongeurs."}
-        method={"L’inspection examine les seuils, les passages de canalisations, les espaces de stockage et les ouvertures vers les annexes. Le devis décrit le périmètre retenu, les dispositifs et le suivi proposé. La lutte contre les rats et les souris s’accompagne de recommandations sur la conservation des aliments, les déchets et les réparations des accès identifiés. Une fermeture doit être coordonnée avec le traitement après compréhension des circulations ; boucher tous les trous avant le diagnostic peut masquer des informations utiles."}
-        localContext={{ title: "Vieille ville et quais de Joinville : rechercher les accès réels", content: <>
-<p>{"Dans le centre historique, autour de l’Auditoire de Justice et de l’église Notre-Dame, précisez si le bien comporte une cave, une cour intérieure ou des locaux mitoyens. Ces éléments peuvent modifier le périmètre de recherche. La valeur patrimoniale ou l’âge d’un bâtiment ne prouvent pas la présence de rongeurs."}</p>
-<p>{"Du quai des Peceaux au quai des Mailles, la Marne et ses bras servent à situer votre adresse. Le diagnostic porte sur les traces observées chez vous, les accès en pied de façade et les éventuelles annexes. Aucun quai ni bâtiment voisin n’est désigné comme infesté."}</p>
-<p>{"Dans le secteur du pont du Poncelot ou du château du Grand Jardin, indiquez les possibilités de stationnement et d’accès à votre logement ou à votre commerce. Ces monuments sont des repères géographiques de Joinville, pas des clients ou des interventions revendiquées par GF Nuisibles."}</p>
-<p>Pour retrouver ces repères, consultez la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.bienvenue-hautemarne.fr/villes-cites-caractere/joinville/" target="_blank" rel="noopener noreferrer">présentation de Joinville par Haute-Marne Attractivité</a> et le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://tourisme-joinville.com/" target="_blank" rel="noopener noreferrer">site de l’office de tourisme de Joinville</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs desservis à Joinville (52300)", intro: "Précisez votre rue, le type de bien et les accès disponibles. Les noms ci-dessous sont des secteurs et des repères de Joinville en Haute-Marne, et non des lieux présumés infestés. Ils ne désignent pas Joinville-le-Pont.", items: ["Vieille ville et centre historique", "Secteur de l’église Notre-Dame et de l’Auditoire de Justice", "Quai des Peceaux", "Quai des Mailles et pont du Poncelot", "Secteur du château du Grand Jardin", "Abords de la colline de l’ancien château"] }}
-        extraSections={[
-          { title: "Cave, cuisine ou réserve : transmettre les bonnes observations", content: <>
-<p>{"Notez les endroits où les déjections réapparaissent, les dégâts sur les emballages et les bruits entendus. Une photo nette peut aider à préparer l’inspection ; ne manipulez pas les traces à mains nues. Des indices dans une cave ne signifient pas nécessairement que toutes les pièces du bâtiment sont occupées."}</p>
-<p>{"Fermez les contenants alimentaires et rendez les zones à examiner accessibles. Évitez de déposer des appâts en vrac ou de mélanger des produits. Pour le nettoyage des surfaces souillées, demandez les précautions adaptées plutôt que de balayer les traces à sec."}</p>
-          </> },
-          { title: "Organiser une dératisation dans un immeuble ou un commerce", content: <>
-<p>{"Lorsque des passages techniques relient plusieurs locaux, l’accès aux espaces partagés peut être utile au diagnostic. À Joinville, signalez au bailleur ou au syndic les observations dans les parties communes. Une action limitée à un seul placard ne permet pas toujours de comprendre l’ensemble des circulations."}</p>
-<p>{"Pour une réserve de commerce, précisez les horaires, les livraisons et les contraintes de protection des denrées. Le devis doit indiquer les zones concernées et les contrôles retenus. Aucun tarif ni nombre de passages ne peut être déduit de la seule localisation dans le centre ou près de la Marne."}</p>
-          </> },
-          { title: "Votre service à Joinville et dans les villes du secteur", content: <>
-<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">page Dératisation Haute-Marne (52)</Link> pour connaître les méthodes et les prestations. Pour votre adresse à Joinville, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-<p>Pour une adresse dans une autre commune, consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-wassy">Dératisation à Wassy</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-froncles">Dératisation à Froncles</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-saint-dizier">Dératisation à Saint-Dizier</Link>. Elles présentent les prestations dans ces villes, distinctes de Joinville. Retrouvez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour situer votre demande.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Joinville", items: [
-          { label: "Dératisation à Wassy", to: "/deratisation-wassy" },
-          { label: "Dératisation à Froncles", to: "/deratisation-froncles" },
-          { label: "Dératisation à Saint-Dizier", to: "/deratisation-saint-dizier" },
-        ] }}
-        relatedLinks={[
-          { label: "Guêpes et frelons à Joinville", to: "/guepes-frelons-joinville" },
-          { label: "Dépigeonnisation à Joinville", to: "/depigeonnisation-joinville" },
-          { label: "Taupier à Joinville", to: "/taupes-joinville" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Joinville : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+    },
+    {
+      kind: "levels",
+      title: "Pourquoi vos pièges n'attrapent-ils rien ?",
+      intro: "Beaucoup de gens m'appellent après avoir essayé seuls. Le piège n'est pas mauvais, il est presque toujours mal placé.",
+      items: [
+        { title: "Trop loin du mur", text: "Un rongeur longe les parois. Au milieu de la pièce, il fera le tour." },
+        { title: "Trop tôt relevé", text: "Un rat se méfie de tout objet nouveau. Il peut l'ignorer une semaine entière." },
+        { title: "Trop peu nombreux", text: "Un seul piège pour une cave, c'est compter sur la chance." },
+        { title: "Trop concurrencé", text: "Si un sac de graines est ouvert à côté, il n'a aucune raison d'y toucher." },
+      ],
+    },
+  ],
+  call: {
+    title: "Un doute dans votre maison de Joinville ?",
+    text: "Décrivez-moi le bâtiment et ce que vous avez remarqué. On voit ensemble si une visite s'impose.",
+    contactLabel: "Écrire un message",
+  },
+  faq: [
+    { question: "Combien faut-il prévoir pour une dératisation à Joinville ?", answer: "Comptez au minimum 100 €. Le montant dépend de la taille du bien, de l'ancienneté du problème et des visites nécessaires. Je vous donne le coût du déplacement par téléphone, avant de venir." },
+    { question: "La maison voisine est abandonnée, que puis-je faire ?", answer: "Signalez-la à la mairie, qui peut contacter le propriétaire. De mon côté, je peux traiter votre terrain et fermer la route entre les deux, mais je n'entre pas chez le voisin sans son accord." },
+    { question: "Mon piège à colle a pris une souris, que faire ?", answer: "Évitez ce type de piège : l'animal souffre longtemps et d'autres bêtes peuvent s'y prendre. Un piège mécanique bien placé est plus net." },
+    { question: "Travaillez-vous avec les agences immobilières ?", answer: "Oui, une agence peut me mandater pour un logement vide, en location ou en vente. Elle sait ce que j'ai vu et posé." },
+    { question: "Peut-on rester dans la maison pendant le traitement ?", answer: "Oui. Les postes sont fermés et placés à l'écart. Je vous montre chaque emplacement et vous laisse des consignes simples, surtout s'il y a des enfants ou des animaux." },
+    { question: "Jusqu'où vous déplacez-vous autour de Joinville ?", answer: "Vecqueville, Rupt, Nomécourt, Thonnance-lès-Joinville, Suzannecourt, Chatonrupt-Sommermont, Saint-Urbain-Maconcourt, Poissons, Fronville, Mussey-sur-Marne et plus loin si besoin. Je réponds au 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Depuis Chaumont, j'interviens dans toute la vallée de la Marne.",
+    links: [
+      { label: "Dératisation Saint-Dizier", to: "/deratisation-saint-dizier" },
+      { label: "Dératisation Wassy", to: "/deratisation-wassy" },
+      { label: "Dératisation Froncles", to: "/deratisation-froncles" },
+      { label: "Dératisation Chaumont", to: "/deratisation-chaumont" },
+    ],
+    also: "À Joinville, je m'occupe aussi d'autres nuisibles :",
+    note: (
+      <>
+        Les espèces, les risques et les méthodes sont détaillés sur la page{" "}
+        <Link to="/deratisation" className={textLink}>dératisation dans le 52</Link>.
+      </>
+    ),
+  },
 };
+
+const DeratisationJoinville = () => <RodentTownPage town={town} />;
 
 export default DeratisationJoinville;

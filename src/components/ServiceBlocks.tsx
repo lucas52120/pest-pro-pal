@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { ArrowDown, ArrowRight, CheckCircle2, ChevronDown, Clock, LucideIcon, MapPin, Phone } from "lucide-react";
+import { ArrowDown, ArrowRight, CheckCircle2, ChevronDown, Clock, LucideIcon, MapPin, Phone, Tag } from "lucide-react";
 import Breadcrumbs, { Crumb } from "@/components/Breadcrumbs";
 import GoogleRating from "@/components/GoogleRating";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -188,18 +188,24 @@ interface ServiceHeroProps {
   imageClassName?: string;
   icon: LucideIcon;
   contactLabel?: string;
+  area?: string;
+  /** With a delay, the photo also shows behind the text on phones. */
+  price?: string;
+  delay?: string;
 }
 
-export const ServiceHero = ({ breadcrumbs, eyebrow, title, text, highlight, signsLabel, image, imageAlt, imageClassName = "", icon: Icon, contactLabel = "Devis gratuit" }: ServiceHeroProps) => (
+export const ServiceHero = ({ breadcrumbs, eyebrow, title, text, highlight, signsLabel, image, imageAlt, imageClassName = "", icon: Icon, contactLabel = "Devis gratuit", area = "Entreprise locale, près de Chaumont, intervention dans toute la Haute-Marne", price, delay }: ServiceHeroProps) => (
   <section className="relative overflow-hidden bg-primary px-4 pb-16 pt-32 md:px-8 md:pb-24 md:pt-36 lg:px-16">
-    <div className="absolute inset-y-0 right-0 hidden w-1/2 lg:block">
-      <img src={image} alt={imageAlt} className={`h-full w-full object-cover opacity-80 ${imageClassName}`} />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/50 to-primary/10" />
+    <div className={`absolute right-0 top-0 lg:block lg:h-full lg:w-1/2 ${delay ? "h-[32rem] w-full" : "hidden"}`}>
+      <img src={image} alt={imageAlt} className={`h-full w-full object-cover ${delay ? "opacity-80" : "opacity-80"} ${imageClassName}`} />
+      <div className={`absolute inset-0 ${delay ? "bg-gradient-to-t from-primary via-primary/60 to-primary/40 lg:bg-gradient-to-r lg:from-primary lg:via-primary/50 lg:to-primary/10" : "bg-gradient-to-r from-primary via-primary/50 to-primary/10"}`} />
     </div>
-    <Icon
-      className="pointer-events-none absolute -right-16 top-24 h-72 w-72 text-primary-foreground/5 lg:hidden"
-      aria-hidden="true"
-    />
+    {!delay && (
+      <Icon
+        className="pointer-events-none absolute -right-16 top-24 h-72 w-72 text-primary-foreground/5 lg:hidden"
+        aria-hidden="true"
+      />
+    )}
     <div className="container-narrow relative z-10">
       <Breadcrumbs items={breadcrumbs} />
       <p className="mb-3 font-heading font-semibold text-accent">{eyebrow}</p>
@@ -207,20 +213,26 @@ export const ServiceHero = ({ breadcrumbs, eyebrow, title, text, highlight, sign
         {title}
       </h1>
       <GoogleRating className="mb-6" />
-      <p className="mb-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80">
+      <p className={`max-w-2xl text-lg leading-relaxed ${price ? "mb-4 text-primary-foreground/90" : "mb-8 text-primary-foreground/80"}`}>
         {text}
       </p>
+      {price && (
+        <p className="mb-6 flex items-center gap-2 font-heading text-lg font-bold text-primary-foreground">
+          <Tag className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
+          {price}
+        </p>
+      )}
       <div className="flex flex-col gap-3 sm:flex-row">
         <ContactButtons callLabel="Appeler le 07 65 25 67 92" contactLabel={contactLabel} />
       </div>
       <ul className="mt-8 grid gap-3 text-sm text-primary-foreground/90 sm:grid-cols-2 lg:max-w-3xl">
         <li className="flex items-center gap-2">
           <MapPin className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
-          Entreprise locale, près de Chaumont, intervention dans toute la Haute-Marne
+          {area}
         </li>
-        <li className="flex items-center gap-2">
+        <li className={`flex items-center gap-2 ${delay ? "order-first" : ""}`}>
           <Clock className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
-          Joignable 7j/7, de 7h à 23h
+          {delay ?? "Joignable 7j/7, de 7h à 23h"}
         </li>
         <li className="flex items-center gap-2 sm:col-span-2">
           <CheckCircle2 className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />

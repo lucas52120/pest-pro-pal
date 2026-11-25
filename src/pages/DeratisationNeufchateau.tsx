@@ -1,105 +1,123 @@
-import { Rat } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-deratisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Armchair, Building2, Church, DoorOpen, Droplets, FileSignature, Map, Route, School, Scissors, Users, Utensils } from "lucide-react";
+import heroImage from "@/assets/rat-qui-mange.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Dératisation Neufchâteau 88 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Neufchâteau (88300) ? GF Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits.";
-const URL = "https://gf-nuisibles.fr/deratisation-neufchateau";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Dératisez-vous les maisons du centre historique de Neufchâteau ?", answer: "Oui, les particuliers et les professionnels de Neufchâteau peuvent demander un diagnostic. Précisez l’adresse, les pièces concernées et les accès aux caves ou dépendances pour préparer la visite, y compris dans le centre ancien classé." },
-  { question: "La présence de la Meuse ou du Mouzon explique-t-elle une infestation ?", answer: "Non. Ces cours d’eau sont des repères géographiques, pas un diagnostic. Les traces, les points d’entrée et l’examen du bâtiment permettent de distinguer les espèces et les causes possibles." },
-  { question: "Intervenez-vous dans un commerce ou un local professionnel ?", answer: "Oui, décrivez l’activité, les surfaces de stockage et les contraintes d’horaires. Le protocole est adapté au secteur concerné, qu’il soit alimentaire ou non." },
-  { question: "Comment protéger mes animaux pendant la dératisation ?", answer: "Signalez-les avant la prestation. Le choix des dispositifs, leur emplacement et les consignes tiennent compte des occupants. Les appâts restent à risque et ne doivent jamais être déplacés ou laissés accessibles." },
-  { question: "Quel est le prix d’une dératisation à Neufchâteau ?", answer: "Le prix dépend du bâtiment, des zones concernées et du suivi nécessaire. Un diagnostic et un devis gratuits permettent de préciser les prestations et les passages retenus avant votre accord." },
-];
-
-const DeratisationNeufchateau = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Dératisation à Neufchâteau (88300) : rats et souris", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Neufchâteau", "containedInPlace": { "@type": "AdministrativeArea", "name": "Vosges" }, "address": { "@type": "PostalAddress", "postalCode": "88300", "addressRegion": "Vosges", "addressCountry": "FR" } }
+const town: RodentTown = {
+  city: "Neufchâteau",
+  postalCode: "88300",
+  region: "Vosges",
+  slug: "/deratisation-neufchateau",
+  title: "Entreprise de dératisation à Neufchâteau (88) | Devis gratuit",
+  description:
+    "Rats ou souris à Neufchâteau (88300), en maison, atelier, commerce ou collectivité ? Recherche des accès et traitement. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Ville haute, ville basse et ateliers",
+    text: "Maison, atelier ou école : j'inspecte, je traite et je vous montre quels accès fermer.",
+    highlight: "Des conseils clairs pour reboucher vous-même",
+    signsLabel: "Avec quoi boucher un trou ? Les matériaux qui tiennent",
+    image: heroImage,
+    imageAlt: "Rat brun vu de face, occupé à manger au sol",
+    area: "Entreprise de la Haute-Marne voisine, déplacement à Neufchâteau sur rendez-vous",
+  },
+  reviews: ["rigny", "jc", "moock"],
+  why: {
+    title: "Pourquoi y a-t-il des rats ou des souris chez vous ?",
+    intro: "Quand ils sont là, ou quand ils reviennent, c'est qu'une porte est restée ouverte et qu'un repas les attend.",
+    items: [
+      { icon: Utensils, title: "Un garde-manger intact", text: "croquettes, graines ou poubelles : tant qu'il en reste, d'autres viendront." },
+      { icon: DoorOpen, title: "Un trou oublié", text: "on bouche celui que l'on voit ; le deuxième est derrière le meuble." },
+      { icon: Scissors, title: "Un bouchon trop tendre", text: "papier, chiffon ou silicone : ils le rongent en peu de temps." },
+      { icon: Armchair, title: "Un meuble qui ne bouge pas", text: "mousse et tissu font un nid chaud, à la maison comme à l'atelier." },
+    ],
+  },
+  where: {
+    intro: "De la ville haute aux rives de la Meuse, j'ai ma liste d'endroits à vérifier.",
+    items: [
+      { icon: Church, title: "La ville haute", text: "Saint-Nicolas et la place Jeanne-d'Arc : parcelles étroites, caves superposées." },
+      { icon: Building2, title: "Le secteur Saint-Christophe", text: "immeubles anciens, escaliers communs et greniers partagés." },
+      { icon: Droplets, title: "Les Tanneries et le Mouzon", text: "murs au bord de l'eau, anciens conduits et sous-sols humides." },
+      { icon: Map, title: "Les rives de la Meuse", text: "jardins, garages et remises en terrain bas." },
+      { icon: Route, title: "Les faubourgs", text: "pavillons, dépôts et locaux artisanaux." },
+      { icon: Users, title: "Rollainville, Rebeuville, Frebécourt", text: "villages tout proches, maisons à cour et dépendances." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser des rats et des souris efficacement ?",
+    intro: "Traiter sans fermer, c'est recommencer l'an prochain. Je trouve leur passage, je traite, je contrôle, puis je vous montre quoi reboucher.",
+    photo: "gravier",
+    steps: [
+      { title: "Un poste à l'extérieur", text: "Placé près du trou repéré, il attire ceux qui entrent comme ceux qui sortent." },
+      { title: "Un appât qui ne sort pas", text: "Grâce à la tige, on sait exactement ce qui a été consommé." },
+      { title: "Le feu vert pour reboucher", text: "Quand les blocs restent intacts, on peut fermer le passage." },
+    ],
+    after: "Attendez toujours mon contrôle avant de fermer un trou, pour ne pas enfermer un animal.",
+  },
+  price: {
+    paragraphs: [
+      <>Chez un particulier, cela commence à <strong className="whitespace-nowrap text-primary">100 €</strong>, plus un déplacement depuis la région de Chaumont, précisé à l'appel. Un atelier ou une commune reçoit un devis gratuit, établi sur plan ou après visite.</>,
+    ],
+    aside: { icon: FileSignature, title: "Vous gardez la main", text: "Rien n'est commandé tant que vous n'avez pas répondu oui au devis." },
+  },
+  local: [
+    {
+      kind: "compare",
+      target: true,
+      title: "Boucher un trou de souris : quels matériaux tiennent ?",
+      intro: "Attendez la fin du traitement, puis choisissez ce qui résiste à leurs dents.",
+      heads: ["À utiliser", "À éviter"],
+      rows: [
+        { label: "Autour d'un tuyau", left: "Laine d'acier tassée, puis mortier ou mastic par-dessus.", right: "Mousse seule, ruban adhésif, papier." },
+        { label: "Sur une aération", left: "Grille métallique à mailles de 5 ou 6 mm.", right: "Moustiquaire en plastique, ou fermeture complète : l'air doit passer." },
+        { label: "Sous une porte", left: "Bas de porte avec brosse dense ou barre métallique.", right: "Boudin de tissu : il devient un nid." },
+        { label: "Dans un mur", left: "Pierre, brique ou mortier adapté au mur.", right: "Plâtre, polystyrène, bouchon de bois." },
+      ],
+    },
+    {
+      kind: "text",
+      title: "École, mairie, salle des fêtes : comment procéder ?",
+      paragraphs: [
+        "Dans un bâtiment public, on choisit un jour sans élèves ni visiteurs. Cuisine, réserve, chaufferie, vide sanitaire et placards à goûter sont vus en premier.",
+        "Chaque poste est numéroté et reporté sur un plan remis au responsable. Le personnel sait ainsi ce qu'il ne doit ni déplacer ni nettoyer.",
+      ],
+      aside: {
+        icon: School,
+        title: "Commune ou association ?",
+        text: <>Un mail avec la liste des bâtiments suffit pour préparer la visite : passez par la page <Link to="/contact" className={textLink}>contact</Link>.</>,
       },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Dératisation", "item": "https://gf-nuisibles.fr/deratisation" },
-        { "@type": "ListItem", "position": 3, "name": "Neufchâteau", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Neufchâteau"
-        department="Vosges (88)"
-        serviceTitle={"Dératisation à Neufchâteau (88300) : rats et souris"}
-        icon={<Rat className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"RATS OU SOURIS DANS VOTRE BÂTIMENT À NEUFCHÂTEAU ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un bruit dans une cloison, des emballages rongés dans une réserve ou des déjections dans une cave méritent une inspection avant de poser des appâts au hasard. GF Nuisibles propose la dératisation à Neufchâteau (88300), sous-préfecture des Vosges, pour les particuliers et les professionnels. Le diagnostic recherche les rats ou les souris, leurs circulations et les ressources qui permettent leur installation. Une maison du centre ancien, un commerce de la ville basse et un pavillon périphérique ne présentent pas les mêmes accès : le protocole doit répondre au bâtiment réellement observé."}
-        expertise={"Les souris peuvent circuler dans des espaces étroits entre les pièces, alors que des rats peuvent exploiter un accès au sol, un regard ou une dépendance proche d’un cours d’eau. Ces pistes ne remplacent pas l’identification sur place. Nous examinons les indices, les passages techniques, les stocks et les habitudes de rangement. Signalez les animaux domestiques, les enfants et les zones alimentaires pour organiser les précautions. Un poste sécurisé limite l’accès aux appâts mais ne rend pas un produit sans danger ; les consignes restent indispensables."}
-        method={"L’inspection commence par les zones où vous avez relevé des traces, puis recherche les points d’entrée et les ressources alimentaires. Selon les observations, des pièges ou des dispositifs d’appâtage professionnels sont proposés, avec un emplacement adapté. Le devis précise les passages et les prestations retenues. Le contrôle des consommations ou des captures permet d’ajuster le suivi. Les conseils d’obturation, de stockage et de gestion des déchets complètent le traitement : retirer des rongeurs sans corriger un accès peut laisser la place à une nouvelle intrusion."}
-        localContext={{ title: "Centre historique, Mouzon et Meuse à Neufchâteau", content: <>
-            <p>{"Dans le centre ancien, classé Site Patrimonial Remarquable autour des églises Saint-Christophe et Saint-Nicolas et de la place Jeanne-d’Arc, précisez si la demande concerne un logement, un commerce ou une dépendance. Le bâti continu et les parcelles étroites de la ville haute peuvent justifier une inspection coordonnée avec les voisins ou la copropriété."}</p>
-            <p>{"Neufchâteau est bâtie au confluent de la Meuse et du Mouzon. Pour un bien proche de l’un de ces cours d’eau ou de l’ancien quartier des Tanneries, le diagnostic porte sur vos accès, les canalisations et les indices dans le bâtiment : la proximité de l’eau ne prouve pas une infestation. Indiquez les regards accessibles et les dépendances où les observations se répètent."}</p>
-            <p>{"Dans la ville basse, en direction des faubourgs, les ateliers, garages et réserves doivent être décrits lors de la demande. Le stockage de denrées ou d’aliments pour animaux appelle une vérification des accès, sans présumer d’un problème chez un établissement cité."}</p>
-            <p>Les noms ci-dessus situent votre demande ; aucun monument n’est présenté comme infesté ou client. Retrouvez ces repères sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.tourisme.vosges.fr/decouvrir/sites-monuments/984001835-centre-historique-de-neufchateau-neufchateau" target="_blank" rel="noopener noreferrer">site de l’office de tourisme de l’Ouest des Vosges</a> et dans la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://fr.wikipedia.org/wiki/Neufch%C3%A2teau_(Vosges)" target="_blank" rel="noopener noreferrer">présentation de Neufchâteau</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Neufchâteau (88300)", intro: "Neufchâteau est la sous-préfecture de l’Ouest vosgien. Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre historique de Neufchâteau", "Secteur de la place Jeanne-d’Arc", "Abords de l’église Saint-Nicolas", "Ancien quartier des Tanneries", "Abords de la Meuse", "Abords du Mouzon"] }}
-        extraSections={[
-          { title: "Rats ou souris : les informations utiles avant la visite", content: <>
-            <p>{"Notez les pièces concernées, les moments où les bruits sont entendus et la date des premières traces. Des photos d’emballages endommagés ou des passages suspects peuvent aider à préparer le diagnostic. Ne manipulez pas les déjections à mains nues et évitez le balayage à sec qui remet des poussières en suspension."}</p>
-            <p>{"Ne déplacez pas les appâts existants sans en signaler l’emplacement. Mentionnez les produits déjà utilisés, les captures éventuelles et les travaux récents. Une absence de bruit pendant une nuit ne suffit pas à conclure que les rongeurs ont disparu."}</p>
-          </> },
-          { title: "Prévention dans une maison ancienne ou un commerce à Neufchâteau", content: <>
-            <p>{"Conservez les denrées et les aliments pour animaux dans des contenants fermés. Retirez les déchets alimentaires et limitez les encombrements qui masquent les déplacements le long des murs. Dans le bâti ancien du centre, les caves voûtées, les raccords de canalisations et les passages de câbles sont à examiner avec le diagnostic."}</p>
-            <p>{"Pour un commerce, précisez les contraintes de nettoyage, les zones de stockage et les heures d’activité. Si plusieurs locaux communiquent, une action isolée peut ne pas suffire. Le devis indique le périmètre retenu et le suivi, sans déduire un prix ou un nombre de passages du seul quartier."}</p>
-          </> },
-          { title: "Votre service à Neufchâteau et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service dératisation</Link> pour les méthodes et les prestations. Pour votre adresse à Neufchâteau, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-vittel">Dératisation à Vittel</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chaumont">Dératisation à Chaumont</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-bologne">Dératisation à Bologne</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Neufchâteau", items: [
-          { label: "Dératisation à Vittel", to: "/deratisation-vittel" },
-          { label: "Dératisation à Chaumont", to: "/deratisation-chaumont" },
-          { label: "Dératisation à Bologne", to: "/deratisation-bologne" },
-        ] }}
-        relatedLinks={[
-          { label: "Dépigeonnisation à Neufchâteau", to: "/depigeonnisation-neufchateau" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Neufchâteau : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+    },
+  ],
+  call: {
+    title: "Déjà traité, et les voilà de retour ?",
+    text: "Dites-moi ce qui a été posé et ce qui a été bouché : on repart de là, pas de zéro.",
+    contactLabel: "Expliquer mon cas",
+  },
+  faq: [
+    { question: "Combien coûte une dératisation à Neufchâteau ?", answer: "Le tarif de départ est de 100 € pour un logement. La distance depuis Chaumont est comptée à part et annoncée au téléphone, puis le devis gratuit donne le total." },
+    { question: "Intervenez-vous vraiment dans les Vosges ?", answer: "Oui, dans ce secteur de l'Ouest vosgien, sur rendez-vous. Plus loin, appelez : je vous dirai si c'est raisonnable pour vous." },
+    { question: "Peut-on reboucher pendant le traitement ?", answer: "Pas tout de suite. On attend que l'activité cesse, sinon l'animal reste enfermé et perce ailleurs. Je vous indique le bon moment lors du contrôle." },
+    { question: "La laine d'acier rouille-t-elle ?", answer: "Oui, à l'humidité. Dehors ou dans une cave, préférez une version inox ou une grille scellée." },
+    { question: "J'achète un meuble ancien, comment éviter un passager ?", answer: "Ouvrez chaque tiroir, regardez le dos et le dessous, secouez les coussins à l'extérieur. Une odeur d'urine marquée doit vous alerter." },
+    { question: "Où allez-vous près de Neufchâteau ?", answer: "Rebeuville, Frebécourt, Mont-lès-Neufchâteau, Certilleux, Circourt-sur-Mouzon, Coussey, Soulosse-sous-Saint-Élophe, Bazoilles-sur-Meuse, Tilleux et Barville. Voici mon numéro : 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Neufchâteau est à l'est de mon secteur habituel. Les pages ci-dessous couvrent le côté haut-marnais.",
+    links: [
+      { label: "Dératisation Chaumont", to: "/deratisation-chaumont" },
+      { label: "Dératisation Bologne", to: "/deratisation-bologne" },
+      { label: "Dératisation Nogent", to: "/deratisation-nogent" },
+    ],
+    also: "Je peux aussi venir à Neufchâteau pour :",
+    note: (
+      <>
+        Vous hésitez encore sur l'animal ? La page{" "}
+        <Link to="/deratisation" className={textLink}>reconnaître les rats et les souris</Link> vous aidera.
+      </>
+    ),
+  },
 };
+
+const DeratisationNeufchateau = () => <RodentTownPage town={town} />;
 
 export default DeratisationNeufchateau;

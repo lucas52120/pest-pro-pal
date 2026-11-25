@@ -358,13 +358,14 @@ const CityServicePage = ({
                 <h3 className="mb-6 font-heading text-2xl font-extrabold text-primary">
                   Questions fréquentes
                 </h3>
+                {/* forceMount keeps every answer in the prerendered HTML; closed ones are hidden with CSS. */}
                 <Accordion type="single" collapsible className="w-full">
                   {faqItems.map((faq, index) => (
-                    <AccordionItem key={index} value={`faq-${index}`}>
+                    <AccordionItem key={index} value={`faq-${index}`} className="[&>[role=region][data-state=closed]]:hidden">
                       <AccordionTrigger className="text-left font-semibold text-primary hover:underline [&>svg]:text-accent">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="pl-4 text-muted-foreground leading-relaxed">
+                      <AccordionContent forceMount className="pl-4 text-muted-foreground leading-relaxed">
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>

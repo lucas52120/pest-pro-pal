@@ -102,20 +102,8 @@ export const CITIES: CityEntry[] = [
   { name: "Vitry-le-François", links: [
     { label: "Dépigeonnisation", to: "/depigeonnisation-vitry-le-francois" },
   ]},
-  { name: "Vittel", links: [
-    { label: "Dératisation", to: "/deratisation-vittel" },
-    { label: "Dépigeonnisation", to: "/depigeonnisation-vittel" },
-  ]},
   { name: "Neufchâteau", links: [
     { label: "Dératisation", to: "/deratisation-neufchateau" },
     { label: "Dépigeonnisation", to: "/depigeonnisation-neufchateau" },
-  ]},
-  { name: "Dijon", links: [
-    { label: "Dératisation", to: "/deratisation-dijon" },
-    { label: "Dépigeonnisation", to: "/depigeonnisation-dijon" },
-  ]},
-  { name: "Châtillon-sur-Seine", links: [
-    { label: "Dératisation", to: "/deratisation-chatillon-sur-seine" },
-    { label: "Dépigeonnisation", to: "/depigeonnisation-chatillon-sur-seine" },
   ]},
 ];

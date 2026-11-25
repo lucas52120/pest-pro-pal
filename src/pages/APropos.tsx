@@ -92,18 +92,17 @@ const APropos = () => {
             </ul>
 
             <h3 className="font-heading text-xl font-semibold text-primary">
-              Une réactivité à toute épreuve sur 4 départements
+              Une réactivité à toute épreuve, partout en Haute-Marne
             </h3>
             <p className="leading-relaxed text-muted-foreground">
-              Parce qu'un problème de nuisibles n'attend pas, j'ai choisi de rayonner largement pour ne laisser personne
-              sans solution. Depuis mon siège de <strong>Montsaon</strong>, j'interviens dans un rayon de{" "}
-              <strong>150 km</strong>.
+              Parce qu'un problème de nuisibles n'attend pas, j'interviens dans toute la <strong>Haute-Marne</strong> depuis
+              mon siège de <strong>Montsaon</strong>, ainsi que dans les communes proches des départements voisins.
             </p>
             <p className="leading-relaxed text-muted-foreground">
               Que vous soyez à <strong>Chaumont</strong>, <strong>Saint-Dizier</strong> ou <strong>Langres</strong>, ou
-              plus loin vers <strong>Dijon</strong>, <strong>Vittel</strong> ou{" "}
+              plus loin vers <strong>Bar-sur-Aube</strong>, <strong>Neufchâteau</strong> ou{" "}
               <strong>Bar-le-Duc</strong>, je me déplace rapidement chez les particuliers comme chez les professionnels
-              (commerces, industries, collectivités).
+              (commerces, industries, collectivités). Pour un chantier professionnel plus éloigné, appelez-moi.
             </p>
             <p className="leading-relaxed text-muted-foreground">
               J'interviens notamment comme{" "}
@@ -154,7 +153,7 @@ const APropos = () => {
               {
                 icon: <MapPin className="h-8 w-8" />,
                 title: "Proximité locale",
-                desc: "Intervention dans un rayon de 150km (52, 21, 54, 88, 10).",
+                desc: "Partout en Haute-Marne et dans les communes proches des départements voisins.",
               },
               {
                 icon: <Clock className="h-8 w-8" />,

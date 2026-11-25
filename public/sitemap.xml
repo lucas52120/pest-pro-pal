@@ -391,42 +391,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gf-nuisibles.fr/deratisation-vittel</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/depigeonnisation-vittel</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://gf-nuisibles.fr/deratisation-neufchateau</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://gf-nuisibles.fr/depigeonnisation-neufchateau</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/deratisation-dijon</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/depigeonnisation-dijon</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/deratisation-chatillon-sur-seine</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gf-nuisibles.fr/depigeonnisation-chatillon-sur-seine</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

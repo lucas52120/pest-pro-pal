@@ -1,106 +1,121 @@
-import { Rat } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-deratisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { BrickWall, Building2, Cable, Car, Fence, House, Package, PiggyBank, TrainFront, Trees, Utensils, Warehouse } from "lucide-react";
+import heroImage from "@/assets/accueil-rat.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Entreprise de dératisation à Chalindrey (52) | Devis gratuit";
-const DESCRIPTION = "Rats ou souris à Chalindrey (52600), au bourg, près de la gare ou dans les hameaux ? Traitement adapté et conseils. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/deratisation-chalindrey";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Dératisez-vous les maisons du centre de Chalindrey ?", answer: "Oui, les particuliers et les professionnels de Chalindrey peuvent demander un diagnostic. Précisez l'adresse, les pièces touchées et les accès aux caves ou dépendances pour préparer la visite." },
-  { question: "La présence de l'eau à proximité signifie-t-elle que ce sont des rats ?", answer: "Non. Les cours d'eau du secteur sont des repères géographiques, pas un diagnostic. Les traces, les points d'entrée et l'examen du bâtiment permettent de distinguer les espèces et les causes possibles." },
-  { question: "Pouvez-vous inspecter une dépendance ou une réserve ?", answer: "Oui, décrivez les surfaces, les stocks et les observations. Le stockage de nourriture, les accès au sol et les espaces attenants sont examinés selon la configuration des lieux." },
-  { question: "Comment protéger mes animaux pendant la dératisation ?", answer: "Signalez-les avant la prestation. Le choix des dispositifs, leur emplacement et les consignes tiennent compte des occupants. Les appâts restent à risque et ne doivent jamais être déplacés ou laissés accessibles." },
-  { question: "Quel est le prix d'une dératisation à Chalindrey ?", answer: "Le prix dépend du bâtiment, des zones concernées et du suivi nécessaire. Un diagnostic et un devis gratuits permettent de préciser les prestations et les passages retenus avant votre accord." },
-];
-
-const DeratisationChalindrey = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Dératisation à Chalindrey (52600) : rats et souris", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Chalindrey", "containedInPlace": { "@type": "AdministrativeArea", "name": "la Communauté de communes des Savoir-Faire" }, "address": { "@type": "PostalAddress", "postalCode": "52600", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
-      },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Dératisation", "item": "https://gf-nuisibles.fr/deratisation" },
-        { "@type": "ListItem", "position": 3, "name": "Chalindrey", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Chalindrey"
-        department="Haute-Marne (52)"
-        serviceTitle={"Dératisation à Chalindrey (52600) : rats et souris"}
-        icon={<Rat className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"RATS OU SOURIS DANS VOTRE BÂTIMENT À CHALINDREY ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un bruit dans une cloison, des emballages rongés dans une réserve ou des déjections dans une dépendance méritent une inspection avant de poser des appâts au hasard. GF Nuisibles propose la dératisation à Chalindrey (52600), au sein de la Communauté de communes des Savoir-Faire, pour les particuliers et les professionnels. Le diagnostic recherche les rats ou les souris, leurs circulations et les ressources qui permettent leur installation. Une maison du centre, un commerce et une dépendance ne présentent pas les mêmes accès : le protocole doit répondre au bâtiment réellement observé."}
-        expertise={"Les souris peuvent circuler dans des espaces étroits entre les pièces, alors que des rats peuvent exploiter un accès au sol, un regard ou une dépendance. Ces pistes ne remplacent pas l'identification sur place. Nous examinons les indices, les passages techniques, les stocks et les habitudes de rangement. Signalez les animaux domestiques, les enfants et les zones alimentaires pour organiser les précautions. Un poste sécurisé limite l'accès aux appâts mais ne rend pas un produit sans danger ; les consignes restent indispensables."}
-        method={"L'inspection commence par les zones où vous avez relevé des traces, puis recherche les points d'entrée et les ressources alimentaires. Selon les observations, des pièges ou des dispositifs d'appâtage professionnels sont proposés, avec un emplacement adapté. Le devis précise les passages et les prestations retenues. Le contrôle des consommations ou des captures permet d'ajuster le suivi. Les conseils d'obturation, de stockage et de gestion des déchets complètent le traitement : retirer des rongeurs sans corriger un accès peut laisser la place à une nouvelle intrusion."}
-        localContext={{ title: "Quartier de la gare, rotonde SNCF et centre-ville", content: <>
-            <p>{"Chalindrey est un nœud ferroviaire connu pour la gare de Culmont-Chalindrey et son important dépôt. Pour une adresse proche de la gare, des voies ou de la rotonde SNCF, précisez s'il s'agit d'un logement, d'un local professionnel ou d'une dépendance : ces secteurs mêlent souvent habitations, entrepôts et bâtiments techniques aux accès variés."}</p>
-            <p>{"Autour de la mairie, rue de Langres, et dans le centre-bourg, les maisons mitoyennes et les cours intérieures justifient de décrire les accès aux caves, aux greniers et aux espaces partagés avec un voisin."}</p>
-            <p>{"Le bourg s'étend sur le plateau de Langres, dans un environnement plutôt rural autour du noyau urbain lié au rail. Un terrain en lisière du bâti ou proche d'une dépendance agricole peut nécessiter une inspection élargie, sans présumer d'un problème pour l'ensemble du secteur."}</p>
-            <p>Les noms ci-dessus situent votre demande ; aucun lieu n'est présenté comme infesté ou client. Retrouvez ces repères sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://ville-chalindrey.fr/" target="_blank" rel="noopener noreferrer">notice de la mairie de Chalindrey</a> et sur la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://fr.wikipedia.org/wiki/Chalindrey" target="_blank" rel="noopener noreferrer">page Wikipédia de Chalindrey</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Chalindrey (52600)", intro: "Chalindrey fait partie de la Communauté de communes des Savoir-Faire. Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre-bourg et mairie", "Quartier de la gare de Culmont-Chalindrey", "Secteur de la rotonde SNCF", "Abords de l'avenue Gambetta", "Écarts et hameaux proches du plateau de Langres"] }}
-        extraSections={[
-          { title: "Rats ou souris : les informations utiles avant la visite", content: <>
-            <p>{"Notez les pièces concernées, les moments où les bruits sont entendus et la date des premières traces. Des photos d'emballages endommagés ou des passages suspects peuvent aider à préparer le diagnostic. Ne manipulez pas les déjections à mains nues et évitez le balayage à sec qui remet des poussières en suspension."}</p>
-            <p>{"Ne déplacez pas les appâts existants sans en signaler l'emplacement. Mentionnez les produits déjà utilisés, les captures éventuelles et les travaux récents. Une absence de bruit pendant une nuit ne suffit pas à conclure que les rongeurs ont disparu."}</p>
-          </> },
-          { title: "Prévention dans une maison, un commerce ou une dépendance à Chalindrey", content: <>
-            <p>{"Conservez les denrées et les aliments pour animaux dans des contenants fermés. Retirez les déchets alimentaires et limitez les encombrements qui masquent les déplacements le long des murs. Les portes de dépendances, les raccords de canalisations et les passages de câbles sont à examiner avec le diagnostic."}</p>
-            <p>{"Pour un commerce, précisez les contraintes de nettoyage, les zones de stockage et les heures d'activité. Si plusieurs locaux communiquent, une action isolée peut ne pas suffire. Le devis indique le périmètre retenu et le suivi, sans déduire un prix ou un nombre de passages du seul quartier."}</p>
-          </> },
-          { title: "Votre service à Chalindrey et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">page Dératisation Haute-Marne (52)</Link> pour les méthodes et les prestations. Pour votre adresse à Chalindrey, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chateauvillain">Dératisation à Châteauvillain</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-bourbonne-les-bains">Dératisation à Bourbonne-les-Bains</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Chalindrey", items: [
-          { label: "Dératisation à Châteauvillain", to: "/deratisation-chateauvillain" },
-          { label: "Dératisation à Bourbonne-les-Bains", to: "/deratisation-bourbonne-les-bains" },
-        ] }}
-        relatedLinks={[
-          { label: "Guêpes et frelons à Chalindrey", to: "/guepes-frelons-chalindrey" },
-          { label: "Dépigeonnisation à Chalindrey", to: "/depigeonnisation-chalindrey" },
-          { label: "Taupier à Chalindrey", to: "/taupes-chalindrey" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Chalindrey : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+const town: RodentTown = {
+  city: "Chalindrey",
+  postalCode: "52600",
+  region: "Haute-Marne",
+  slug: "/deratisation-chalindrey",
+  title: "Entreprise de dératisation à Chalindrey (52) | Devis gratuit",
+  description:
+    "Rats ou souris à Chalindrey (52600), au bourg, près de la gare ou dans les hameaux ? Traitement adapté et conseils. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Maisons mitoyennes, garages et dépôts",
+    text: "Cloison, garage ou combles : je remonte la piste, je traite et je vérifie.",
+    highlight: "Garage, véhicule et maison vérifiés ensemble",
+    signsLabel: "Des fils rongés dans la voiture ? Lire mes conseils",
+    image: heroImage,
+    imageAlt: "Jeune rat gris sur une poutre en bois",
+  },
+  reviews: ["yerli", "babinski", "duverne"],
+  why: {
+    title: "Pourquoi avez-vous des rats ou des souris chez vous ?",
+    intro: "Dans une rangée de maisons, ils dorment souvent d'un côté et mangent de l'autre.",
+    items: [
+      { icon: Utensils, title: "À manger, d'un côté ou de l'autre", text: "croquettes du garage, graines, poubelle ou potager du voisin." },
+      { icon: Package, title: "Un garage bien rempli", text: "cartons et vieux meubles : il y fait sec et personne n'y touche." },
+      { icon: BrickWall, title: "Un mur commun percé", text: "les vieux murs mitoyens sont rarement fermés jusqu'en haut." },
+      { icon: House, title: "Des combles qui se suivent", text: "d'une maison à la suivante, il n'y a parfois qu'une planche." },
+    ],
+  },
+  where: {
+    intro: "Autour de la gare comme dans les écarts, je regarde toujours ces endroits avant les autres.",
+    items: [
+      { icon: TrainFront, title: "Le quartier de la gare", text: "habitations, entrepôts et bâtiments techniques proches de Culmont-Chalindrey." },
+      { icon: Warehouse, title: "Près de la rotonde", text: "grands locaux, ateliers et terrains où l'herbe cache les passages." },
+      { icon: Building2, title: "La mairie et la rue de Langres", text: "maisons accolées, commerces, caves et courettes." },
+      { icon: House, title: "L'avenue Gambetta", text: "pavillons, garages et jardins sur l'arrière." },
+      { icon: Fence, title: "Les écarts", text: "maisons seules avec remise, bois et quelques animaux." },
+      { icon: Trees, title: "Culmont, Torcenay, Le Pailly", text: "les villages qui touchent Chalindrey, avec leurs fermes et leurs vergers." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser des rats et des souris efficacement ?",
+    intro: "Suivre les traces, poser du bon côté du mur, revenir : c'est la méthode. Dans un garage, je mets surtout des pièges ; dehors, des postes fermés.",
+    photo: "gravier",
+    steps: [
+      { title: "Le poste extérieur", text: "Posé derrière la maison ou le garage, il arrête les rats avant la porte." },
+      { title: "L'appât, sous clé", text: "Il tient sur une tige de métal et le couvercle est verrouillé." },
+      { title: "La vérification", text: "Je compare avec ma première visite : moins d'activité, autre passage, ou plus rien." },
+    ],
+    after: "Je ne pose jamais d'appât dans une voiture ni dans un camping-car.",
+  },
+  price: {
+    paragraphs: [
+      <>Une intervention démarre à <strong className="whitespace-nowrap text-primary">100 €</strong>. Deux voisins qui font traiter leurs maisons le même jour reçoivent chacun un devis, mais le travail est plus cohérent, et souvent plus rapide.</>,
+    ],
+    aside: { icon: PiggyBank, title: "Pas de surprise", text: "Montant du déplacement au téléphone, devis gratuit après visite, accord avant la pose." },
+  },
+  local: [
+    {
+      kind: "levels",
+      target: true,
+      title: "Une souris dans la voiture : que faire ?",
+      intro: "Un moteur tiède, un filtre douillet, des gaines à ronger : c'est un abri de choix, surtout si le véhicule roule peu.",
+      items: [
+        { title: "Regarder", text: "Ouvrez le capot : crottes, brins d'herbe, coquilles ou mousse rongée sur le moteur ? Vérifiez aussi le filtre d'habitacle." },
+        { title: "Ne pas démarrer", text: "Si des fils sont à nu, montrez-les d'abord à un garagiste. Photographiez les dégâts pour votre assurance." },
+        { title: "Vider", text: "Retirez miettes, graines, sièges d'enfant souillés et plaids du coffre." },
+        { title: "Traiter le garage", text: "La voiture n'est que l'arrêt. Le nid est autour : c'est là que je pose les pièges." },
+      ],
+      after: "Camping-car, caravane, tondeuse autoportée : le raisonnement est le même. Je ne mets jamais d'appât dans un véhicule, un animal mort y serait introuvable.",
+    },
+    {
+      kind: "cards",
+      columns: "lg:grid-cols-3",
+      title: "Pourquoi rongent-ils les câbles électriques ?",
+      intro: "Leurs dents poussent toute leur vie, il leur faut les user. Un câble a juste la bonne dureté.",
+      items: [
+        { icon: Cable, title: "Dans les combles", text: "les fils courent à découvert sur l'isolant. Une gaine mordue peut faire disjoncter, ou chauffer." },
+        { icon: Car, title: "Sous le capot", text: "faisceaux, durites et capteurs : une petite bouchée, une grosse facture." },
+        { icon: Package, title: "Dans l'atelier", text: "rallonges, portail motorisé, congélateur du garage. Contrôlez les prises avant de rebrancher." },
+      ],
+      after: "Un disjoncteur qui saute sans raison depuis que vous entendez gratter ? Faites vérifier l'installation par un électricien, en plus de la dératisation.",
+    },
+  ],
+  call: {
+    title: "Des fils mordus, un bruit dans la cloison ?",
+    text: "Plus on le sait tôt, moins il y a de dégâts. Je décroche 7j/7, de 7h à 23h.",
+    contactLabel: "Laisser un message",
+  },
+  faq: [
+    { question: "Quel budget pour une dératisation à Chalindrey ?", answer: "À compter de 100 €. Le montant exact figure sur le devis gratuit : il varie selon les pièces, le garage, les combles et le nombre de retours." },
+    { question: "Mon assurance couvre-t-elle les câbles rongés ?", answer: "Cela dépend du contrat, pour la maison comme pour la voiture. Relisez la partie sur les dommages causés par les animaux, gardez des photos et demandez à votre assureur." },
+    { question: "La menthe ou les boules antimites font-elles fuir les souris ?", answer: "L'odeur les gêne un moment, puis elles s'y font ou contournent. Les boules antimites sont en plus irritantes à respirer. Ce n'est pas une solution." },
+    { question: "Mon voisin ne veut rien faire, est-ce peine perdue ?", answer: "Non. On peut protéger votre côté, fermer les passages une fois l'activité retombée et garder quelques pièges de veille. C'est simplement plus long." },
+    { question: "Faut-il couper le courant pendant votre visite ?", answer: "Non, sauf si des fils sont visiblement abîmés. Dans ce cas, coupez le circuit concerné et ne touchez à rien avant l'électricien." },
+    { question: "Passez-vous aussi dans les communes voisines ?", answer: "Oui, à Culmont, Torcenay, Le Pailly, Noidant-Chatenoy, Violot, Les Loges, Chaudenay, Saint-Vallier-sur-Marne, Heuilley-le-Grand, Champsevraine et dans tout le secteur. Mon numéro : 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Je circule sur tout le plateau, de Langres aux limites du département.",
+    links: [
+      { label: "Dératisation Langres", to: "/deratisation-langres" },
+      { label: "Dératisation Bourbonne-les-Bains", to: "/deratisation-bourbonne-les-bains" },
+      { label: "Dératisation Nogent", to: "/deratisation-nogent" },
+    ],
+    also: "Pour votre maison de Chalindrey, je propose aussi :",
+    note: (
+      <>
+        Maladies, dégâts, méthodes : l'essentiel se trouve sur la page{" "}
+        <Link to="/deratisation" className={textLink}>lutter contre les rongeurs</Link>.
+      </>
+    ),
+  },
 };
+
+const DeratisationChalindrey = () => <RodentTownPage town={town} />;
 
 export default DeratisationChalindrey;

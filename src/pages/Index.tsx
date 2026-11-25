@@ -72,7 +72,7 @@ const FAQ_ITEMS = [
   {
     question: "Combien coûte une intervention contre les nuisibles ?",
     answer:
-      "Cela dépend du nuisible, de l'infestation, de la surface et de l'accès. Par exemple, un nid de guêpes est traité à partir de 80 €, un nid de frelons asiatiques à partir de 110 €, et une dératisation débute à 90 €. Le devis est gratuit. Pour les punaises de lit, l'inspection est payante et déduite du traitement si vous acceptez le devis.",
+      "Cela dépend du nuisible, de l'infestation, de la surface et de l'accès. Par exemple, un nid de guêpes est traité à partir de 80 €, un nid de frelons asiatiques à partir de 110 €, et une dératisation débute à 100 €. Le devis est gratuit. Pour les punaises de lit, l'inspection est payante et déduite du traitement si vous acceptez le devis.",
   },
   {
     question: "Faites-vous la désinsectisation ?",

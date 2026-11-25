@@ -1,107 +1,129 @@
-import { Rat } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-deratisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { BrickWall, Calculator, Church, Droplets, Fence, Hammer, House, Layers, Tractor, Waves, Wheat } from "lucide-react";
+import heroImage from "@/assets/rat-planche.jpg";
+import ragondinImage from "@/assets/carte-ragondin.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Entreprise de dératisation à Montier-en-Der (52)";
-const DESCRIPTION = "Rats ou souris à Montier-en-Der (52220) ? GF Nuisibles recherche les passages, traite et vous conseille, 7j/7. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/deratisation-montier-en-der";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Dératisez-vous les maisons du centre de Montier-en-Der ?", answer: "Oui, les particuliers et les professionnels de Montier-en-Der peuvent demander un diagnostic. Précisez l’adresse, les pièces touchées et les accès aux caves ou dépendances pour préparer la visite." },
-  { question: "La proximité de la Voire signifie-t-elle que ce sont des rats ?", answer: "Non. La rivière est un repère géographique, pas un diagnostic. Les traces, les points d’entrée et l’examen du bâtiment permettent de distinguer les espèces et les causes possibles." },
-  { question: "Pouvez-vous inspecter une grange ou une réserve ?", answer: "Oui, décrivez les surfaces, les stocks et les observations. Le stockage de nourriture, les accès au sol et les espaces attenants sont examinés selon la configuration des lieux." },
-  { question: "Comment protéger mes animaux pendant la dératisation ?", answer: "Signalez-les avant la prestation. Le choix des dispositifs, leur emplacement et les consignes tiennent compte des occupants. Les appâts restent à risque et ne doivent jamais être déplacés ou laissés accessibles." },
-  { question: "Quel est le prix d’une dératisation à Montier-en-Der ?", answer: "Le prix dépend du bâtiment, des zones concernées et du suivi nécessaire. Un diagnostic et un devis gratuits permettent de préciser les prestations et les passages retenus avant votre accord." },
-];
-
-const DeratisationMontierEnDer = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Dératisation à Montier-en-Der (52220) : rats et souris", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Montier-en-Der", "containedInPlace": { "@type": "AdministrativeArea", "name": "La Porte du Der" }, "address": { "@type": "PostalAddress", "postalCode": "52220", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
-      },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Dératisation", "item": "https://gf-nuisibles.fr/deratisation" },
-        { "@type": "ListItem", "position": 3, "name": "Montier-en-Der", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Montier-en-Der"
-        department="Haute-Marne (52)"
-        serviceTitle={"Dératisation à Montier-en-Der (52220) : rats et souris"}
-        icon={<Rat className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"RATS OU SOURIS DANS VOTRE BÂTIMENT À MONTIER-EN-DER ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un bruit dans une cloison, des emballages rongés dans une réserve ou des déjections dans une dépendance méritent une inspection avant de poser des appâts au hasard. GF Nuisibles propose la dératisation à Montier-en-Der (52220), commune déléguée de La Porte du Der, pour les particuliers et les professionnels. Le diagnostic recherche les rats ou les souris, leurs circulations et les ressources qui permettent leur installation. Une maison du centre, un commerce et une grange ne présentent pas les mêmes accès : le protocole doit répondre au bâtiment réellement observé."}
-        expertise={"Les souris peuvent circuler dans des espaces étroits entre les pièces, alors que des rats peuvent exploiter un accès au sol, un regard ou une dépendance. Ces pistes ne remplacent pas l’identification sur place. Nous examinons les indices, les passages techniques, les stocks et les habitudes de rangement. Signalez les animaux domestiques, les enfants et les zones alimentaires pour organiser les précautions. Un poste sécurisé limite l’accès aux appâts mais ne rend pas un produit sans danger ; les consignes restent indispensables."}
-        method={"L’inspection commence par les zones où vous avez relevé des traces, puis recherche les points d’entrée et les ressources alimentaires. Selon les observations, des pièges ou des dispositifs d’appâtage professionnels sont proposés, avec un emplacement adapté. Le devis précise les passages et les prestations retenues. Le contrôle des consommations ou des captures permet d’ajuster le suivi. Les conseils d’obturation, de stockage et de gestion des déchets complètent le traitement : retirer des rongeurs sans corriger un accès peut laisser la place à une nouvelle intrusion."}
-        localContext={{ title: "Centre de Montier-en-Der, dépendances et abords de la Voire", content: <>
-            <p>{"Dans le centre, autour de l’abbatiale Saint-Pierre-et-Saint-Paul et de la halle au blé, précisez si la demande concerne une cave, une cuisine, un appartement ou une réserve commerciale. Des espaces attenants ou des passages entre bâtiments peuvent justifier une inspection coordonnée avec le propriétaire."}</p>
-            <p>{"La Voire traverse Montier-en-Der. Pour un bien situé à proximité, le diagnostic porte sur vos accès, les canalisations et les indices dans le bâtiment : la proximité de la rivière ne prouve pas une infestation. Indiquez notamment les regards accessibles et les dépendances où les observations se répètent."}</p>
-            <p>{"Dans le secteur du haras et en direction de l’hippodrome de la Crouée, les locaux annexes, ateliers et stocks doivent être décrits lors de la demande. La présence éventuelle d’aliments pour animaux appelle une vérification du stockage, sans présumer d’un problème chez un établissement cité."}</p>
-            <p>Les noms ci-dessus situent votre demande ; aucun monument n’est présenté comme infesté ou client. Retrouvez ces repères sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.laporteduder.fr/tourisme-decouverte-patrimoine/montier-en-der" target="_blank" rel="noopener noreferrer">site de la mairie de La Porte du Der</a> et dans la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.lacduder.com/decouvrir-explorer/nos-incontournables/montier-en-der/" target="_blank" rel="noopener noreferrer">présentation de Montier-en-Der par l’office de tourisme du lac du Der</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Montier-en-Der (52220)", intro: "Montier-en-Der est une commune déléguée de La Porte du Der. Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre de Montier-en-Der", "Secteur de l’abbatiale Saint-Pierre-et-Saint-Paul", "Secteur du haras", "Abords de la halle au blé", "Abords de la Voire", "Direction de l’hippodrome de la Crouée"] }}
-        extraSections={[
-          { title: "Rats ou souris : les informations utiles avant la visite", content: <>
-            <p>{"Notez les pièces concernées, les moments où les bruits sont entendus et la date des premières traces. Des photos d’emballages endommagés ou des passages suspects peuvent aider à préparer le diagnostic. Ne manipulez pas les déjections à mains nues et évitez le balayage à sec qui remet des poussières en suspension."}</p>
-            <p>{"Ne déplacez pas les appâts existants sans en signaler l’emplacement. Mentionnez les produits déjà utilisés, les captures éventuelles et les travaux récents. Une absence de bruit pendant une nuit ne suffit pas à conclure que les rongeurs ont disparu."}</p>
-          </> },
-          { title: "Prévention dans une maison, une réserve ou une grange à Montier-en-Der", content: <>
-            <p>{"Conservez les denrées et les aliments pour animaux dans des contenants fermés. Retirez les déchets alimentaires et limitez les encombrements qui masquent les déplacements le long des murs. Les portes de dépendances, les raccords de canalisations et les passages de câbles sont à examiner avec le diagnostic."}</p>
-            <p>{"Pour un commerce, précisez les contraintes de nettoyage, les zones de stockage et les heures d’activité. Si plusieurs locaux communiquent, une action isolée peut ne pas suffire. Le devis indique le périmètre retenu et le suivi, sans déduire un prix ou un nombre de passages du seul quartier."}</p>
-          </> },
-          { title: "Votre service à Montier-en-Der et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service dératisation en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Montier-en-Der, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-wassy">Dératisation à Wassy</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-saint-dizier">Dératisation à Saint-Dizier</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-joinville">Dératisation à Joinville</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Montier-en-Der", items: [
-          { label: "Dératisation à Wassy", to: "/deratisation-wassy" },
-          { label: "Dératisation à Saint-Dizier", to: "/deratisation-saint-dizier" },
-          { label: "Dératisation à Joinville", to: "/deratisation-joinville" },
-        ] }}
-        relatedLinks={[
-          { label: "Guêpes et frelons à Montier-en-Der", to: "/guepes-frelons-montier-en-der" },
-          { label: "Dépigeonnisation à Montier-en-Der", to: "/depigeonnisation-montier-en-der" },
-          { label: "Taupier à Montier-en-Der", to: "/taupes-montier-en-der" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Montier-en-Der : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+const town: RodentTown = {
+  city: "Montier-en-Der",
+  postalCode: "52220",
+  region: "Haute-Marne",
+  slug: "/deratisation-montier-en-der",
+  title: "Entreprise de dératisation à Montier-en-Der (52)",
+  description:
+    "Rats ou souris à Montier-en-Der (52220) ? GF Nuisibles recherche les passages, traite et vous conseille, 7j/7. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Pays du Der, maisons à pans de bois et granges",
+    text: "Pans de bois, torchis ou grange : je traite rats et souris en respectant votre bâtiment.",
+    highlight: "Un traitement qui n'abîme ni le bois ni le torchis",
+    signsLabel: "Gros animal près de l'eau ? Rat ou ragondin",
+    image: heroImage,
+    imageAlt: "Jeune rat sur une planche, près du lierre",
+    imageClassName: "max-lg:brightness-125",
+  },
+  reviews: ["rigny", "genest", "moock"],
+  why: {
+    title: "Pourquoi les rats et les souris rentrent-ils chez vous ?",
+    intro: "Bois, torchis, granges : les maisons du Der leur offrent beaucoup de vides, en toute saison.",
+    items: [
+      { icon: Wheat, title: "Du grain et du foin", text: "une grange, une écurie ou quelques sacs de graines les nourrissent longtemps." },
+      { icon: BrickWall, title: "Un mur en torchis", text: "de la terre et de la paille : une souris y creuse vite sa galerie." },
+      { icon: Hammer, title: "Une fente dans le bois", text: "en séchant, la poutre s'écarte du mur et laisse un passage tout du long." },
+      { icon: Layers, title: "Un bardage", text: "entre les planches et le mur, ils montent à l'abri jusqu'au toit." },
+    ],
+  },
+  where: {
+    intro: "De l'abbatiale à la Voire, voici les bâtiments du secteur et ce que j'y vérifie.",
+    items: [
+      { icon: Church, title: "Autour de l'abbatiale", text: "maisons de bourg, commerces et réserves, avec des cours qui se rejoignent." },
+      { icon: House, title: "La halle au blé et le centre", text: "logements à l'étage, greniers et passages entre bâtiments." },
+      { icon: Tractor, title: "Le secteur du haras", text: "paille, grain et sellerie : je contrôle d'abord les réserves." },
+      { icon: Droplets, title: "Les abords de la Voire", text: "jardins, fossés et remises proches de l'eau." },
+      { icon: Fence, title: "Robert-Magny", text: "maisons et fermes de l'autre village de la commune." },
+      { icon: Waves, title: "Vers le lac du Der", text: "gîtes, chalets et résidences de week-end souvent inoccupés." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser des rats et des souris ?",
+    intro: "Je traite sans percer les pans de bois : on observe, on pose, on contrôle, et on ne rebouche qu'à la fin, avec les bons matériaux.",
+    photo: "mur",
+    steps: [
+      { title: "Un poste simplement posé", text: "Calé contre le soubassement, il n'a besoin ni de vis ni de colle." },
+      { title: "Un appât bien accroché", text: "Il ne finit ni dans le foin, ni sous le plancher." },
+      { title: "Un contrôle avant de fermer", text: "Tant que les blocs sont rongés, on ne bouche rien." },
+    ],
+    after: "Des chevaux, un chien, un chat de grange ? Dites-le-moi avant, je choisis les emplacements en conséquence.",
+  },
+  price: {
+    paragraphs: [
+      <>À partir de <strong className="whitespace-nowrap text-primary">100 €</strong> pour un logement. Une ferme avec grange et écurie demande davantage de postes et de passages, donc un devis à part. Il est gratuit, et vous pouvez me demander de détailler chaque bâtiment.</>,
+    ],
+    aside: { icon: Calculator, title: "Le Der, c'est loin ?", text: "Un peu. C'est pour cela que je vous annonce le déplacement au téléphone, avant de prendre rendez-vous." },
+  },
+  local: [
+    {
+      kind: "compare",
+      target: true,
+      title: "Rat ou ragondin : comment les reconnaître ?",
+      intro: "Autour des étangs et de la Voire, on parle souvent d'un « énorme rat ». La taille donne presque toujours la réponse.",
+      heads: ["Le rat brun", "Le ragondin"],
+      rows: [
+        { label: "La taille", left: "Un corps de 20 à 27 cm environ, 500 g au plus.", right: "Un corps de 40 à 60 cm, plusieurs kilos : on ne peut pas s'y tromper." },
+        { label: "Les dents", left: "On ne les voit pas de loin.", right: "Deux grandes incisives orange, bien visibles." },
+        { label: "L'endroit", left: "Murs, remises, poulailler, égout.", right: "Berge, fossé, étang. Il n'entre pas dans votre cuisine." },
+        { label: "Les dégâts", left: "Aliments, câbles, isolants.", right: "Berges creusées, cultures et jeunes plants mangés." },
+      ],
+      photo: { src: ragondinImage, alt: "Ragondin sur une berge de galets, au bord de l'eau", caption: "Un ragondin au bord de l'eau : ce n'est pas un rat, et il ne se traite pas de la même façon." },
+      after: (
+        <>
+          Pour un ragondin, le cadre légal est particulier : rendez-vous sur la page{" "}
+          <Link to="/regulation-esod" className={textLink}>régulation des ESOD</Link>.
+        </>
+      ),
+    },
+    {
+      kind: "levels",
+      title: "Comment boucher un passage dans un mur en torchis ?",
+      intro: "Une fois les rongeurs partis, on ferme. Pas avant, et pas avec n'importe quoi.",
+      items: [
+        { title: "Mousse expansive : non", text: "Elle se ronge comme du pain et retient l'humidité contre le bois." },
+        { title: "Ciment : à éviter", text: "Trop dur pour du torchis, il finit par se décoller avec la terre autour." },
+        { title: "Laine d'acier : oui", text: "Coincée au fond du trou, comme une grille fine, elle arrête les dents." },
+        { title: "Terre ou chaux : oui", text: "Par-dessus, pour refaire la surface. Un artisan habitué au bâti du Der saura faire." },
+      ],
+    },
+  ],
+  call: {
+    title: "Ça gratte dans le torchis ?",
+    text: "Dites-moi si la maison touche une grange ou un étang : cela m'indique où chercher.",
+    contactLabel: "Obtenir un devis",
+  },
+  faq: [
+    { question: "Combien coûte l'intervention à Montier-en-Der ?", answer: "Au minimum 100 € pour une maison. Le devis gratuit précise le nombre de postes ou de pièges et les visites prévues ; le déplacement vous est annoncé quand vous appelez." },
+    { question: "Les rats peuvent-ils fragiliser une maison à pans de bois ?", answer: "Ils ne font pas tomber une charpente, mais ils vident le remplissage, percent les isolants et rongent les câbles. Sur un mur déjà abîmé, plus on attend, plus il y a à refaire." },
+    { question: "Je vois un gros rongeur dans mon fossé, qui appeler ?", answer: "Envoyez-moi une photo. Si c'est un rat, je m'en occupe. Si c'est un ragondin ou un rat musqué, je vous explique ce qu'il est possible de faire." },
+    { question: "Mes chevaux risquent-ils quelque chose ?", answer: "Les postes sont fermés et placés hors des boxes et des allées. Prévenez-moi de la présence de chevaux, de chiens ou de chats de grange avant ma venue." },
+    { question: "Mon gîte n'est occupé que le week-end : que prévoir ?", answer: "Ne laissez aucun aliment en semaine, même fermé dans un sachet. Je peux placer des pièges de surveillance et passer les relever à date convenue." },
+    { question: "Vous venez jusqu'où dans le Der ?", answer: "Planrupt, Frampas, Ceffonds, Thilleux, Sommevoire, Laneuville-à-Rémy, Rives Dervoises, Voillecomte, Éclaron-Braucourt-Sainte-Livière et les villages autour. Appelez-moi au 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Je viens depuis Chaumont dans tout le nord-ouest du département.",
+    links: [
+      { label: "Dératisation Wassy", to: "/deratisation-wassy" },
+      { label: "Dératisation Saint-Dizier", to: "/deratisation-saint-dizier" },
+      { label: "Dératisation Joinville", to: "/deratisation-joinville" },
+    ],
+    also: "D'autres soucis à Montier-en-Der ?",
+    note: (
+      <>
+        Les bases à connaître avant d'agir sont réunies dans notre dossier{" "}
+        <Link to="/deratisation" className={textLink}>dératiseur en Haute-Marne</Link>.
+      </>
+    ),
+  },
 };
+
+const DeratisationMontierEnDer = () => <RodentTownPage town={town} />;
 
 export default DeratisationMontierEnDer;

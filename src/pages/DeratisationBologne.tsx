@@ -1,106 +1,128 @@
-import { Rat } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-deratisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Anchor, Church, Coins, DoorOpen, Factory, House, Leaf, Mountain, Shovel, Sprout, TreeDeciduous, Waves } from "lucide-react";
+import heroImage from "@/assets/poste-appat-mur-pierre.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Dératisation Bologne 52 - Intervention 24h, Devis Gratuit";
-const DESCRIPTION = "Rats ou souris à Bologne (52310) ? GF Nuisibles recherche les accès, adapte le traitement et conseille la prévention. Diagnostic et devis gratuits.";
-const URL = "https://gf-nuisibles.fr/deratisation-bologne";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Dératisez-vous les maisons du centre-bourg de Bologne ?", answer: "Oui, les particuliers et les professionnels de Bologne peuvent demander un diagnostic. Précisez l'adresse, les pièces concernées et les accès aux caves ou dépendances pour préparer la visite." },
-  { question: "La proximité de la Marne signifie-t-elle que ce sont des rats ?", answer: "Non. Le méandre de la Marne et le canal sont des repères géographiques, pas un diagnostic. Les traces, les points d'entrée et l'examen du bâtiment permettent de distinguer les espèces et les causes possibles." },
-  { question: "Pouvez-vous inspecter un atelier ou une dépendance agricole ?", answer: "Oui, décrivez les surfaces, les stocks et les observations. Le stockage de grains ou d'aliments, les accès au sol et les locaux attenants sont examinés selon la configuration des lieux." },
-  { question: "Comment protéger mes animaux pendant la dératisation ?", answer: "Signalez-les avant la prestation. Le choix des dispositifs, leur emplacement et les consignes tiennent compte des occupants. Les appâts restent à risque et ne doivent jamais être déplacés ou laissés accessibles." },
-  { question: "Quel est le prix d'une dératisation à Bologne ?", answer: "Le prix dépend du bâtiment, des zones concernées et du suivi nécessaire. Un diagnostic et un devis gratuits permettent de préciser les prestations et les passages retenus avant votre accord." },
-];
-
-const DeratisationBologne = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Dératisation à Bologne (52310) : rats et souris", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Bologne", "containedInPlace": { "@type": "AdministrativeArea", "name": "Communauté d'agglomération de Chaumont" }, "address": { "@type": "PostalAddress", "postalCode": "52310", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
+const town: RodentTown = {
+  city: "Bologne",
+  postalCode: "52310",
+  region: "Haute-Marne",
+  slug: "/deratisation-bologne",
+  title: "Dératisation Bologne 52 - Intervention 24h, Devis Gratuit",
+  description:
+    "Rats ou souris à Bologne (52310), dans la maison, le jardin ou une dépendance ? Recherche des accès et traitement adapté. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "De la maison au fond du jardin",
+    text: "Du fond du jardin jusqu'à la cuisine, je remonte leur trajet, je traite et je reviens contrôler.",
+    highlight: "À une dizaine de kilomètres de Chaumont",
+    signsLabel: "Un trou dans la pelouse ? Voir qui l'a fait",
+    image: heroImage,
+    imageAlt: "Poste d'appâtage au pied d'un mur ancien, entouré d'herbes",
+    imageClassName: "max-lg:brightness-75",
+  },
+  reviews: ["yerli", "buke", "hanuszek"],
+  why: {
+    title: "Pourquoi les rats et les souris s'installent-ils chez vous ?",
+    intro: "Un jardin calme, de l'eau et quelques restes leur plaisent beaucoup. La maison vient ensuite.",
+    items: [
+      { icon: Sprout, title: "Le potager et le compost", text: "légumes tombés, épluchures et restes de cuisine leur servent de garde-manger." },
+      { icon: House, title: "Le dessous de l'abri", text: "un plancher posé à même la terre fait un toit parfait pour un terrier." },
+      { icon: DoorOpen, title: "Le garage entrouvert", text: "le soir, ils y entrent pour fouiller, puis trouvent le chemin de la cuisine." },
+      { icon: Leaf, title: "Les herbes hautes", text: "lierre et planches le long d'un mur leur permettent d'avancer sans être vus." },
+    ],
+  },
+  where: {
+    intro: "Entre le bourg, le canal et les deux villages rattachés, ils n'ont que l'embarras du choix. Je regarde ici en premier.",
+    items: [
+      { icon: Church, title: "Le bourg, près de l'église", text: "maisons anciennes, caves basses et passages entre jardins." },
+      { icon: Waves, title: "La boucle de la Marne", text: "terrains inondables, potagers et remises proches de l'eau." },
+      { icon: Anchor, title: "Le canal et son chemin de halage", text: "talus et murs de pierre où un terrier se voit peu." },
+      { icon: Factory, title: "Le secteur industriel", text: "ateliers et entrepôts : abords, bennes et portes de livraison." },
+      { icon: TreeDeciduous, title: "Marault", text: "fermes, vieux bâtiments et grands terrains à l'écart du bourg." },
+      { icon: House, title: "Roôcourt-la-Côte", text: "maisons de pierre, granges et vergers sur la hauteur." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser des rats efficacement ?",
+    intro: "On ne traite pas un jardin au hasard. Je suis les chemins dans l'herbe, je place les postes au bord, puis je regarde lesquels sont visités.",
+    photo: "gravier",
+    steps: [
+      { title: "Un poste sur leur chemin", text: "Au pied d'un mur ou de l'abri, il est à l'abri de la pluie et à l'écart des légumes." },
+      { title: "Un appât qui ne s'envole pas", text: "Il reste vissé dans le boîtier : aucun morceau dans le potager." },
+      { title: "Un contrôle boîtier par boîtier", text: "Les postes visités me montrent où se trouve le terrier encore occupé." },
+    ],
+    after: "Pendant le traitement, gardez les poubelles et le compost fermés, sinon ils mangeront ailleurs.",
+  },
+  price: {
+    paragraphs: [
+      <>Le tarif commence à <strong className="whitespace-nowrap text-primary">100 €</strong>. Je regarde la surface du terrain, le nombre de bâtiments et la distance entre eux. Un jardin de lotissement et une propriété à Marault, ce n'est pas la même tournée.</>,
+    ],
+    aside: { icon: Coins, title: "Devis gratuit, décision libre", text: "Vous lisez, vous posez vos questions, vous répondez quand vous voulez." },
+  },
+  local: [
+    {
+      kind: "cards",
+      target: true,
+      columns: "lg:grid-cols-3",
+      title: "Trou dans la pelouse : rat, campagnol ou taupe ?",
+      intro: "Avant de traiter, il faut savoir qui creuse. Regardez le trou et la terre autour.",
+      items: [
+        { icon: Shovel, title: "Un trou net, bien ouvert", text: "large comme un œuf ou une balle de tennis, avec un petit chemin tassé qui y mène : pensez au rat." },
+        { icon: Sprout, title: "Des plants qui s'effondrent", text: "racines mangées, petits trous ronds, terre en tas aplatis : c'est plutôt un campagnol." },
+        { icon: Mountain, title: "Des monticules sans entrée", text: "de la terre fine qui sort du sol, sans trou visible : la taupe, qui ne mange pas vos légumes." },
+      ],
+      after: (
+        <>
+          Pour une taupe, la méthode n'a rien à voir : c'est du piégeage, expliqué sur la page{" "}
+          <Link to="/taupes-bologne" className={textLink}>taupier à Bologne</Link>.
+        </>
+      ),
+    },
+    {
+      kind: "text",
+      title: "Près de l'eau : ce que les crues changent",
+      paragraphs: [
+        "Quand la Marne monte, les terriers se remplissent et les animaux cherchent le sec : un talus, une cave, une remise. On peut en voir plusieurs en quelques jours, puis plus rien.",
+        "Notez la date et l'endroit. S'ils sont encore là une semaine après la décrue, c'est qu'ils ont trouvé mieux chez vous : c'est le moment d'intervenir.",
+      ],
+      aside: {
+        icon: Waves,
+        title: "Après une inondation",
+        text: "Portez des gants et des bottes pour nettoyer : l'urine de rat peut transmettre la leptospirose par l'eau et les petites plaies.",
       },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Dératisation", "item": "https://gf-nuisibles.fr/deratisation" },
-        { "@type": "ListItem", "position": 3, "name": "Bologne", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Bologne"
-        department="Haute-Marne (52)"
-        serviceTitle={"Dératisation à Bologne (52310) : rats et souris"}
-        icon={<Rat className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"RATS OU SOURIS DANS VOTRE BÂTIMENT À BOLOGNE ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un bruit dans une cloison, des emballages rongés dans une réserve ou des déjections dans une dépendance méritent une inspection avant de poser des appâts au hasard. GF Nuisibles propose la dératisation à Bologne (52310), bourg-centre situé dans un méandre de la Marne, pour les particuliers et les professionnels. Le diagnostic recherche les rats ou les souris, leurs circulations et les ressources qui permettent leur installation. Une maison du centre-bourg, un commerce et une dépendance agricole ne présentent pas les mêmes accès : le protocole doit répondre au bâtiment réellement observé."}
-        expertise={"Les souris peuvent circuler dans des espaces étroits entre les pièces, alors que des rats peuvent exploiter un accès au sol, un regard ou une dépendance proche d'un cours d'eau. Ces pistes ne remplacent pas l'identification sur place. Nous examinons les indices, les passages techniques, les stocks et les habitudes de rangement. Signalez les animaux domestiques, les enfants et les zones alimentaires pour organiser les précautions. Un poste sécurisé limite l'accès aux appâts mais ne rend pas un produit sans danger ; les consignes restent indispensables."}
-        method={"L'inspection commence par les zones où vous avez relevé des traces, puis recherche les points d'entrée et les ressources alimentaires. Selon les observations, des pièges ou des dispositifs d'appâtage professionnels sont proposés, avec un emplacement adapté. Le devis précise les passages et les prestations retenues. Le contrôle des consommations ou des captures permet d'ajuster le suivi. Les conseils d'obturation, de stockage et de gestion des déchets complètent le traitement : retirer des rongeurs sans corriger un accès peut laisser la place à une nouvelle intrusion."}
-        localContext={{ title: "Centre-bourg de Bologne, méandre de la Marne et canal", content: <>
-            <p>{"Dans le centre, autour de l'église Sainte-Bologne, inscrite à l'inventaire des monuments historiques, précisez si la demande concerne une cave, une cuisine ou une réserve commerciale. Des espaces attenants ou des passages entre bâtiments peuvent justifier une inspection coordonnée avec le propriétaire."}</p>
-            <p>{"Bologne est installée dans un large méandre de la Marne, avec un canal entre Champagne et Bourgogne qui longe la commune. Pour un bien situé près du chemin de halage ou d'un bief, le diagnostic porte sur vos accès, les canalisations et les indices dans le bâtiment : la proximité de l'eau ne prouve pas une infestation."}</p>
-            <p>{"Dans les communes associées de Marault, avec son château dont la porterie et le donjon sont inscrits à l'inventaire, et de Roôcourt-la-Côte, les dépendances, granges et stocks doivent être décrits lors de la demande. La présence éventuelle d'aliments pour animaux appelle une vérification du stockage, sans présumer d'un problème chez un établissement cité."}</p>
-            <p>Les noms ci-dessus situent votre demande ; aucun monument n'est présenté comme infesté ou client. Retrouvez ces repères sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.mairie-bologne.fr/patrimoine/" target="_blank" rel="noopener noreferrer">site du patrimoine de la mairie de Bologne</a> et dans la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.agglo-chaumont.fr/mon-agglomeration/presentation/les-communes-adherentes/bologne/" target="_blank" rel="noopener noreferrer">présentation de Bologne par l'agglomération de Chaumont</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Bologne (52310)", intro: "Bologne est un bourg-centre de l'agglomération de Chaumont, avec les communes associées de Marault et de Roôcourt-la-Côte. Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre-bourg de Bologne", "Secteur de l'église Sainte-Bologne", "Abords de la Marne et du canal", "Chemin de halage", "Marault", "Roôcourt-la-Côte"] }}
-        extraSections={[
-          { title: "Rats ou souris : les informations utiles avant la visite", content: <>
-            <p>{"Notez les pièces concernées, les moments où les bruits sont entendus et la date des premières traces. Des photos d'emballages endommagés ou des passages suspects peuvent aider à préparer le diagnostic. Ne manipulez pas les déjections à mains nues et évitez le balayage à sec qui remet des poussières en suspension."}</p>
-            <p>{"Ne déplacez pas les appâts existants sans en signaler l'emplacement. Mentionnez les produits déjà utilisés, les captures éventuelles et les travaux récents. Une absence de bruit pendant une nuit ne suffit pas à conclure que les rongeurs ont disparu."}</p>
-          </> },
-          { title: "Prévention dans une maison, une grange ou un commerce à Bologne", content: <>
-            <p>{"Conservez les denrées et les aliments pour animaux dans des contenants fermés. Retirez les déchets alimentaires et limitez les encombrements qui masquent les déplacements le long des murs. Les portes de dépendances, les raccords de canalisations et les passages de câbles sont à examiner avec le diagnostic."}</p>
-            <p>{"Pour un commerce du centre-bourg, précisez les contraintes de nettoyage, les zones de stockage et les heures d'activité. Si plusieurs locaux communiquent, une action isolée peut ne pas suffire. Le devis indique le périmètre retenu et le suivi, sans déduire un prix ou un nombre de passages du seul quartier."}</p>
-          </> },
-          { title: "Votre service à Bologne et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation">service dératisation en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Bologne, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-chaumont">Dératisation à Chaumont</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/deratisation-froncles">Dératisation à Froncles</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Bologne", items: [
-          { label: "Dératisation à Chaumont", to: "/deratisation-chaumont" },
-          { label: "Dératisation à Froncles", to: "/deratisation-froncles" },
-        ] }}
-        relatedLinks={[
-          { label: "Guêpes et frelons à Bologne", to: "/guepes-frelons-bologne" },
-          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
-          { label: "Taupier à Bologne", to: "/taupes-bologne" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Dératisation à Bologne : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+    },
+  ],
+  call: {
+    title: "Un trou suspect au fond du jardin ?",
+    text: "Photographiez-le avec votre main à côté : je vous dis si c'est un rat ou autre chose.",
+    contactLabel: "Envoyer une demande",
+  },
+  faq: [
+    { question: "Quel est le tarif de départ à Bologne ?", answer: "100 €. Comme Bologne est proche de Chaumont, la route est courte, et son coût vous est donné au téléphone. Le devis écrit est gratuit." },
+    { question: "Puis-je enfumer ou inonder le terrier ?", answer: "Non. C'est dangereux pour vous, et un terrier a plusieurs sorties : les rats partent creuser ailleurs, parfois sous la terrasse." },
+    { question: "Mes légumes grignotés sont-ils encore bons ?", answer: "Jetez ceux qui sont entamés. Pour les autres, un lavage soigneux et une épluchure suffisent. Récoltez dès que c'est mûr, sans rien laisser au sol." },
+    { question: "Les postes craignent-ils la pluie ?", answer: "Non, ils sont prévus pour rester dehors. Je les place tout de même à l'abri, car un appât mouillé attire moins." },
+    { question: "Et si le rat vient du terrain d'à côté ?", answer: "C'est fréquent. Je traite votre côté et je vous conseille d'en parler au voisin : deux jardins contrôlés le même jour donnent un bien meilleur résultat qu'un seul." },
+    { question: "Dans quelles communes autour de Bologne ?", answer: "Lamancine, Vraincourt, Viéville, Annéville-la-Prairie, Riaucourt, Briaucourt, Oudincourt, Brethenay, Meures, Soncourt-sur-Marne et Vignory, sans oublier les autres. Un coup de fil au 07 65 25 67 92 suffit." },
+  ],
+  nearby: {
+    intro: "Bologne est à deux pas de ma base : j'y viens sans difficulté.",
+    links: [
+      { label: "Dératisation Chaumont", to: "/deratisation-chaumont" },
+      { label: "Dératisation Froncles", to: "/deratisation-froncles" },
+      { label: "Dératisation Joinville", to: "/deratisation-joinville" },
+    ],
+    also: "Je viens aussi à Bologne pour :",
+    note: (
+      <>
+        Vous voulez comparer pièges et appâts ? La page{" "}
+        <Link to="/deratisation" className={textLink}>traitement contre les rongeurs en Haute-Marne</Link> fait le point.
+      </>
+    ),
+  },
 };
+
+const DeratisationBologne = () => <RodentTownPage town={town} />;
 
 export default DeratisationBologne;
