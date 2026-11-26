@@ -1,97 +1,131 @@
-import { Bug } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-desinsectisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { CalendarDays, Castle, ChefHat, Droplets, FileText, Hotel, House, KeyRound, Luggage, Trees, Waves } from "lucide-react";
+import heroImage from "@/assets/blatte-cuisine.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Traitement cafards et blattes à Bourbonne-les-Bains (52)";
-const DESCRIPTION = "Cafards dans votre logement ou votre restaurant à Bourbonne-les-Bains ? Intervention discrète, 7j/7. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/cafards-blattes-bourbonne-les-bains";
+const town: RodentTown = {
+  kind: "cockroaches",
+  city: "Bourbonne-les-Bains",
+  postalCode: "52400",
+  region: "Haute-Marne",
+  slug: "/cafards-blattes-bourbonne-les-bains",
+  title: "Traitement cafards et blattes à Bourbonne-les-Bains (52)",
+  description:
+    "Cafards dans votre logement ou votre restaurant à Bourbonne-les-Bains ? Intervention discrète, 7j/7. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Meublés, hôtels et restaurants",
+    text: "Un locataire a vu un cafard dans la kitchenette ? Je trouve leurs cachettes et je traite, entre deux séjours si besoin.",
+    highlight: "Véhicule non logoté sur demande",
+    signsLabel: "Vous louez un meublé ? Que faire entre deux séjours",
+    image: heroImage,
+    imageAlt: "Cuisine avec évier et placards en bois",
+    imageClassName: "max-lg:brightness-50",
+  },
+  reviews: ["mathieu", "muller", "jc"],
+  why: {
+    title: "Pourquoi avez-vous des cafards dans votre logement ?",
+    intro: "Dans une ville thermale, les logements changent souvent d'occupants. Chaque arrivée peut amener une blatte, sans que personne ne soit en faute.",
+    items: [
+      { icon: Luggage, title: "Les valises et les sacs", text: "une blatte germanique se glisse facilement dans un bagage ou un sac de courses." },
+      { icon: ChefHat, title: "Les kitchenettes", text: "petits frigos, plaques et micro-ondes collés au mur : de la chaleur dans peu de place." },
+      { icon: Droplets, title: "Les salles d'eau", text: "joints de douche, siphons et ventilations restent humides toute l'année." },
+      { icon: KeyRound, title: "Les périodes fermées", text: "un logement vide et calme les laisse se multiplier sans être dérangées." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser des cafards efficacement ?",
+    intro: "Dans un meublé ou un hôtel, il faut traiter vite, bien, et sans que les clients le remarquent. Je choisis les méthodes en fonction des pièces et de vos dates.",
+    steps: [
+      { title: "Une visite pièce par pièce", text: "Kitchenette, salle d'eau, local de ménage, lingerie : je cherche les foyers, pas seulement les blattes visibles." },
+      { title: "Un traitement adapté", text: "Gel discret dans les pièces louées, pulvérisation ciblée dans les locaux techniques : on combine selon les besoins." },
+      { title: "Un contrôle calé sur vos réservations", text: "Le second passage est prévu à une date où le logement est libre, pour traiter les jeunes sortis des œufs." },
+    ],
+    after: (
+      <>
+        Je vous indique avant le traitement si un logement doit rester vide, et combien de temps. Pour les détails sur les espèces, voyez la page{" "}
+        <Link to="/cafards-blattes" className={textLink}>traitement anti-cafards</Link>.
+      </>
+    ),
+  },
+  where: {
+    intro: "Côté thermes ou côté campagne, ce ne sont pas les mêmes bâtiments ni les mêmes cachettes.",
+    items: [
+      { icon: Waves, title: "Autour des Thermes", text: "meublés et résidences de curistes : kitchenettes, salles d'eau, locaux communs." },
+      { icon: Hotel, title: "Hôtels et pensions", text: "cuisines, lingeries, chaufferies et vestiaires du personnel." },
+      { icon: ChefHat, title: "Restaurants du centre", text: "plonge, réserve, dessous des fourneaux et des vitrines." },
+      { icon: Castle, title: "Vers la Porte-Galon", text: "maisons anciennes avec caves humides, où vit la blatte orientale." },
+      { icon: House, title: "Villars-Saint-Marcellin et Genrupt", text: "maisons de village, buanderies et cuisines d'été." },
+      { icon: Trees, title: "Les villages alentour", text: "Serqueux, Coiffy-le-Haut, Fresnes-sur-Apance : maisons et résidences secondaires." },
+    ],
+  },
+  price: {
+    paragraphs: [
+      "Un studio, un immeuble de meublés ou un hôtel : le prix dépend du nombre de logements, de l'espèce et des passages.",
+      "Je vous donne le prix exact après la visite, avant tout traitement.",
+    ],
+    aside: { icon: FileText, title: "Plusieurs logements ?", text: "On les voit tous en une seule fois : c'est plus simple et plus efficace. Le déplacement est annoncé au téléphone." },
+  },
+  local: [
+    {
+      kind: "levels",
+      target: true,
+      title: "Un cafard signalé entre deux séjours : que faire ?",
+      intro: "Le prochain locataire arrive bientôt ? Voici l'ordre que je conseille.",
+      items: [
+        { title: "Tout de suite", text: "Demandez une photo et l'endroit exact. Remerciez votre client : mieux vaut un message qu'un mauvais avis." },
+        { title: "Le jour même", text: "Videz les placards, jetez ce qui est ouvert et rangez le reste dans des boîtes fermées." },
+        { title: "Avant le ménage", text: "Appelez-moi avant de tout désinfecter : les traces m'aident à trouver le foyer." },
+        { title: "Avant l'arrivée suivante", text: "Je traite, puis je vous dis quand le logement peut être reloué." },
+      ],
+    },
+    {
+      kind: "list",
+      title: "Hôtel ou restaurant : comment éviter que ça revienne ?",
+      intro: "En saison, les livraisons et les passages sont nombreux. Ces habitudes limitent les retours.",
+      items: [
+        { text: "Déballez les livraisons dehors ou dans un sas, jamais dans la réserve." },
+        { text: "Nettoyez sous les appareils de cuisson et les frigos chaque semaine." },
+        { text: "Fermez les poubelles et videz-les chaque soir." },
+        { text: "Signalez la moindre fuite aux services techniques." },
+      ],
+      aside: {
+        icon: CalendarDays,
+        title: "Un suivi pendant la saison",
+        text: <>Je peux passer à intervalles réguliers et laisser un compte rendu écrit à chaque visite. <Link to="/contact" className={textLink}>Demandez une proposition</Link>.</>,
+      },
+    },
+  ],
+  call: {
+    title: "Un cafard dans un de vos logements ?",
+    text: "Dites-moi la date de la prochaine arrivée : on s'organise pour traiter avant.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Quel est le prix d'un traitement anti-cafards à Bourbonne-les-Bains ?", answer: "Il dépend du nombre de logements, de l'espèce et des passages. Je vous remets un devis gratuit après ma visite. Le déplacement vous est annoncé au téléphone." },
+    { question: "Puis-je louer le logement juste après le traitement ?", answer: "Souvent oui avec un gel, après aération. Si une pulvérisation est nécessaire, je vous dis combien de temps attendre avant de relouer." },
+    { question: "Mon client a-t-il apporté les cafards ?", answer: "C'est possible, dans un bagage ou un sac. Mais ils ont pu arriver avec une livraison ou depuis un logement voisin. L'important est de traiter vite, pas de chercher un coupable." },
+    { question: "Faut-il prévenir les clients suivants ?", answer: "Si le traitement est terminé et le logement aéré, ce n'est pas obligatoire. Laissez simplement les endroits traités tels quels, sans les laver à grande eau." },
+    { question: "Les cafards résistent-ils aux produits ?", answer: "La blatte germanique peut résister à certains insecticides du commerce. C'est une raison de plus pour ne pas multiplier les bombes et pour combiner plusieurs méthodes professionnelles." },
+    { question: "Intervenez-vous autour de Bourbonne-les-Bains ?", answer: "Oui : Serqueux, Coiffy-le-Haut, Coiffy-le-Bas, Montcharvot, Laneuvelle, Fresnes-sur-Apance, Damrémont, Larivière-Arnoncourt, Melay, Voisey et les autres villages du secteur. Appelez le 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Je couvre Bourbonne et tout l'est de la Haute-Marne, jusqu'aux limites des Vosges.",
+    links: [
+      { label: "Cafards Langres", to: "/cafards-blattes-langres" },
+      { label: "Cafards Nogent", to: "/cafards-blattes-nogent" },
+      { label: "Cafards Chaumont", to: "/cafards-blattes-chaumont" },
+    ],
+    also: "Aussi à Bourbonne-les-Bains :",
+    note: (
+      <>
+        Des piqûres signalées par vos locataires ? Ce sont plutôt des{" "}
+        <Link to="/punaises-de-lit" className={textLink}>punaises de lit</Link> : l'inspection se fait à part.
+      </>
+    ),
+  },
+};
 
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Comment reconnaître une blatte germanique à Bourbonne-les-Bains ?", answer: "La blatte germanique mesure environ 1 à 1,5 cm, elle est brun clair avec deux bandes sombres sur le thorax. Elle vit surtout dans les cuisines et salles de bains, près de la chaleur et de l'eau. La blatte orientale, plus grande et presque noire, préfère les caves et sous-sols. Une photo nette aide à préparer le diagnostic." },
-  { question: "Pouvez-vous traiter un meublé de curiste entre deux locations ?", answer: "Oui. Les secteurs cités sur cette page font partie de la zone desservie, ainsi que les communes voisines comme Fresnes-sur-Apance, Serqueux, Montcharvot, Coiffy-le-Haut, Parnoy-en-Bassigny, Laferté-sur-Amance ou Val-de-Meuse. GF Nuisibles est basée à Montsaon et n'a pas d'agence à Bourbonne-les-Bains : précisez votre adresse et les accès lors de votre demande." },
-  { question: "Les produits du commerce suffisent-ils contre les cafards ?", answer: "Ils peuvent tuer quelques individus visibles mais atteignent rarement les refuges et les oothèques (capsules d'œufs). Des pulvérisations répétées peuvent aussi disperser les blattes et rendre les appâts moins attractifs. Indiquez les produits déjà utilisés pour que la stratégie en tienne compte." },
-  { question: "Combien de passages faut-il prévoir ?", answer: "Cela dépend de l'espèce, de l'étendue de l'infestation et du bâtiment. Le nombre de passages et le contrôle de suivi sont précisés dans le devis gratuit ; aucun chiffre unique ne convient à toutes les situations." },
-  { question: "Proposez-vous un suivi pour les professionnels de Bourbonne-les-Bains ?", answer: "Oui. Restaurants, commerces alimentaires, hébergements, bailleurs et entreprises peuvent mettre en place un contrat avec contrôles réguliers et compte rendu écrit, utile dans une démarche d'hygiène de type HACCP. La fréquence est définie selon l'activité et les locaux." },
-];
-
-const jsonLd = {"@context": "https://schema.org", "@graph": [LOCAL_BUSINESS, {"@type": "Service", "url": "https://gf-nuisibles.fr/cafards-blattes-bourbonne-les-bains", "name": "Cafards et Blattes à Bourbonne-les-Bains (52400) | GF Nuisibles", "description": "Cafards dans votre logement ou votre restaurant à Bourbonne-les-Bains ? Intervention discrète, 7j/7. Devis gratuit : 07 65 25 67 92.", "serviceType": "Traitement cafards et blattes", "provider": {"@id": "https://gf-nuisibles.fr/#organization"}, "areaServed": {"@type": "City", "name": "Bourbonne-les-Bains", "address": {"@type": "PostalAddress", "postalCode": "52400", "addressRegion": "Haute-Marne", "addressCountry": "FR"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/"}, {"@type": "ListItem", "position": 2, "name": "Cafards & Blattes", "item": "https://gf-nuisibles.fr/cafards-blattes"}, {"@type": "ListItem", "position": 3, "name": "Cafards et Blattes à Bourbonne-les-Bains", "item": "https://gf-nuisibles.fr/cafards-blattes-bourbonne-les-bains"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Comment reconnaître une blatte germanique à Bourbonne-les-Bains ?", "acceptedAnswer": {"@type": "Answer", "text": "La blatte germanique mesure environ 1 à 1,5 cm, elle est brun clair avec deux bandes sombres sur le thorax. Elle vit surtout dans les cuisines et salles de bains, près de la chaleur et de l'eau. La blatte orientale, plus grande et presque noire, préfère les caves et sous-sols. Une photo nette aide à préparer le diagnostic."}}, {"@type": "Question", "name": "Pouvez-vous traiter un meublé de curiste entre deux locations ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Les secteurs cités sur cette page font partie de la zone desservie, ainsi que les communes voisines comme Fresnes-sur-Apance, Serqueux, Montcharvot, Coiffy-le-Haut, Parnoy-en-Bassigny, Laferté-sur-Amance ou Val-de-Meuse. GF Nuisibles est basée à Montsaon et n'a pas d'agence à Bourbonne-les-Bains : précisez votre adresse et les accès lors de votre demande."}}, {"@type": "Question", "name": "Les produits du commerce suffisent-ils contre les cafards ?", "acceptedAnswer": {"@type": "Answer", "text": "Ils peuvent tuer quelques individus visibles mais atteignent rarement les refuges et les oothèques (capsules d'œufs). Des pulvérisations répétées peuvent aussi disperser les blattes et rendre les appâts moins attractifs. Indiquez les produits déjà utilisés pour que la stratégie en tienne compte."}}, {"@type": "Question", "name": "Combien de passages faut-il prévoir ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend de l'espèce, de l'étendue de l'infestation et du bâtiment. Le nombre de passages et le contrôle de suivi sont précisés dans le devis gratuit ; aucun chiffre unique ne convient à toutes les situations."}}, {"@type": "Question", "name": "Proposez-vous un suivi pour les professionnels de Bourbonne-les-Bains ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Restaurants, commerces alimentaires, hébergements, bailleurs et entreprises peuvent mettre en place un contrat avec contrôles réguliers et compte rendu écrit, utile dans une démarche d'hygiène de type HACCP. La fréquence est définie selon l'activité et les locaux."}}]}]};
-
-const CafardsBlattesBourbonneLesBains = () => (
-  <>
-    <Helmet>
-      <title>{TITLE}</title>
-      <meta name="description" content={DESCRIPTION} />
-      <link rel="canonical" href={URL} />
-      <meta property="og:title" content={TITLE} />
-      <meta property="og:description" content={DESCRIPTION} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={URL} />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={TITLE} />
-      <meta name="twitter:description" content={DESCRIPTION} />
-      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-    </Helmet>
-    <CityServicePage
-      breadcrumbs={breadcrumbsFrom(jsonLd)}
-      city="Bourbonne-les-Bains"
-      department="Haute-Marne (52)"
-      serviceTitle={"Cafards et blattes à Bourbonne-les-Bains (52400) : traitement pour particuliers et professionnels"}
-      icon={<Bug className="h-8 w-8" />}
-      heroImage={heroImage}
-      metaDescription={DESCRIPTION}
-      serviceCallTitle="DES CAFARDS À BOURBONNE-LES-BAINS ?"
-      serviceCallSubtitle="GF NUISIBLES TRAITE BLATTES ET CAFARDS EN LOGEMENT COMME EN COMMERCE !"
-      intro={"Des cafards dans la cuisine, des blattes qui sortent la nuit ou des traces noires dans les placards à Bourbonne-les-Bains (52400) ? GF Nuisibles traite les blattes germaniques, orientales et américaines chez les particuliers comme chez les professionnels de Bourbonne-les-Bains et des communes voisines. Plus l'intervention est rapide, plus elle est simple : ces insectes se reproduisent vite et se cachent dans des recoins inaccessibles. Le diagnostic et le devis sont gratuits."}
-      expertise={"Basée à Montsaon, en Haute-Marne, GF Nuisibles intervient à Bourbonne-les-Bains pour les maisons, appartements, locations, restaurants, commerces alimentaires, hébergements et entreprises. Le choix de la méthode dépend de l'espèce identifiée, des refuges trouvés et de l'usage des pièces. Signalez la présence d'enfants, d'animaux et les produits déjà utilisés : les consignes de protection et de réintégration sont adaptées au protocole retenu."}
-      method={"L'inspection localise les refuges : moteurs d'électroménager, dessous d'évier, plinthes, gaines et passages de canalisations. Le devis précise la stratégie, généralement des gels appâts posés en points ciblés, complétés si nécessaire par d'autres traitements professionnels, ainsi que le contrôle de suivi. Des conseils d'hygiène et de colmatage accompagnent le traitement pour limiter le retour des insectes."}
-      localContext={{ title: "Ville thermale : cafards et blattes dans les hébergements de Bourbonne-les-Bains", content: <>
-<p>{"Station thermale, Bourbonne-les-Bains compte beaucoup d'hébergements : hôtels, meublés de curistes, résidences et chambres d'hôtes autour du centre et du secteur des Thermes. Les rotations de locataires, bagages et cartons de livraison favorisent l'introduction de blattes germaniques, qui se cachent ensuite dans les cuisines équipées et kitchenettes. Ces repères situent le secteur desservi ; ils ne désignent aucun établissement client ni aucun lieu infesté."}</p>
-<p>{"Près de la Porte-Galon, du casino et des abords de l'Apance, les maisons anciennes avec caves humides sont plus propices à la blatte orientale. Pour un loueur de meublés, le traitement doit s'organiser entre deux séjours, avec des consignes de réintégration claires. Les restaurants et commerces alimentaires de la ville thermale peuvent prévoir un suivi régulier pendant la saison."}</p>
-</> }}
-      neighborhoods={{ title: "Quartiers et secteurs desservis à Bourbonne-les-Bains (52400)", intro: "Précisez votre adresse et les accès lors de votre demande. Ces repères aident à situer votre logement ou votre local ; ils ne signalent aucune infestation dans ces secteurs.", items: ["Centre-ville et secteur des Thermes", "Abords de la Porte-Galon", "Secteur du casino et du pôle culturel", "Abords de l'Apance", "Abords du ruisseau de Borne", "Hameaux et écarts de la commune"] }}
-      extraSections={[
-        { title: "Blatte germanique, orientale ou américaine : quelle espèce à Bourbonne-les-Bains ?", content: <>
-<p>{"À Bourbonne-les-Bains, la blatte germanique est l'espèce la plus fréquente dans les logements et cuisines professionnelles : petite, brun clair, elle se reproduit vite et se cache derrière le réfrigérateur, le four, le lave-vaisselle ou dans les charnières des placards. Une femelle transporte une oothèque contenant plusieurs dizaines d'œufs, ce qui explique qu'une petite présence devienne vite une infestation."}</p>
-<p>{"La blatte orientale, plus grande et sombre, vit plutôt dans les caves, vides sanitaires, regards et chaufferies ; elle remonte par les évacuations. La blatte américaine, rare en habitation, se rencontre parfois dans des locaux techniques chauffés. Identifier l'espèce oriente les zones d'inspection et le choix des produits : un gel appât en cuisine ne répond pas au même problème qu'une colonie installée dans un sous-sol."}</p>
-<p>{"Signes à surveiller : insectes qui fuient à l'allumage de la lumière, petites déjections noires semblables à du poivre moulu, capsules d'œufs vides, mues, ou odeur âcre persistante dans les placards. Ne videz pas les placards au hasard avant le diagnostic : notez simplement où vous avez vu les insectes."}</p>
-</> },
-        { title: "Particuliers à Bourbonne-les-Bains : maison, appartement ou location", content: <>
-<p>{"Pour un particulier, le diagnostic à domicile est gratuit. Il porte sur la cuisine, la salle de bains, les WC, les arrivées d'eau et les zones chaudes. En appartement, signalez si vos voisins observent aussi des blattes : un traitement isolé dans un immeuble peut être recontaminé par les gaines communes. Locataire, vous pouvez prévenir votre bailleur ; propriétaire en copropriété, le syndic peut être associé pour les parties communes."}</p>
-<p>{"Le traitement privilégie généralement des gels appâts posés en points ciblés, peu visibles et compatibles avec une occupation du logement, complétés si besoin par d'autres produits professionnels. Les consignes de protection des aliments, des enfants et des animaux, ainsi que le délai avant nettoyage des zones traitées, vous sont expliqués avant l'intervention."}</p>
-<p>{"Dans les communes autour de Bourbonne-les-Bains, comme Fresnes-sur-Apance, Serqueux, Montcharvot, Coiffy-le-Haut, Parnoy-en-Bassigny, Laferté-sur-Amance ou Val-de-Meuse, les conditions sont identiques : diagnostic, devis écrit, traitement et contrôle de suivi selon la situation."}</p>
-</> },
-        { title: "Professionnels à Bourbonne-les-Bains : restaurants, commerces, bailleurs et entreprises", content: <>
-<p>{"À Bourbonne-les-Bains, le thermalisme fait vivre hôtels, meublés de tourisme, résidences de curistes et restaurants. Pour ces locaux, la présence de blattes engage l'image de l'établissement et peut être relevée lors d'un contrôle sanitaire. GF Nuisibles intervient sur rendez-vous, si possible en dehors des heures d'ouverture, avec une discrétion adaptée (véhicule et tenue sans mise en avant du nuisible quand vous le demandez)."}</p>
-<p>{"Les professionnels peuvent souscrire un contrat de suivi : visites régulières, contrôle des points sensibles (réserves, plonge, chambres froides, vestiaires, locaux poubelles), traçabilité écrite des passages et des produits utilisés, utile dans un plan de maîtrise sanitaire de type HACCP. Bailleurs sociaux et syndics peuvent organiser des campagnes coordonnées par bâtiment."}</p>
-<p>{"Le devis tient compte des surfaces, du nombre de locaux, des contraintes d'accès et de la fréquence de suivi souhaitée. Il est gratuit et sans engagement."}</p>
-</> },
-        { title: "Préparer l'intervention et éviter le retour des cafards à Bourbonne-les-Bains", content: <>
-<p>{"Avant le passage : dégagez l'accès sous l'évier, derrière l'électroménager quand c'est possible, et rangez les denrées dans des boîtes fermées. Évitez les insecticides en bombe dans les jours précédents. Après le traitement : ne nettoyez pas les points de gel et respectez les consignes données."}</p>
-<p>{"Ensuite, réduisez ce qui attire les blattes : fuites d'eau réparées, miettes et graisses nettoyées, poubelles fermées, cartons de livraison sortis rapidement, joints et passages de tuyaux colmatés. Ces gestes accompagnent le traitement mais ne remplacent pas un diagnostic lorsque les insectes sont déjà installés."}</p>
-</> },
-        { title: "Votre service cafards et blattes à Bourbonne-les-Bains et alentour", content: <>
-<p>Pour découvrir l'ensemble de nos méthodes, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes">{"service cafards et blattes en Haute-Marne"}</Link>. Pour un rendez-vous, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-<p>Nous intervenons aussi dans les villes voisines : <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-langres">{"Cafards et blattes à Langres"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-nogent">{"Cafards et blattes à Nogent"}</Link>. Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour les autres communes desservies.</p>
-</> },
-      ]}
-      nearbyCities={{ title: "Près de Bourbonne-les-Bains : nos pages locales", items: [
-{ label: "Cafards et blattes à Langres", to: "/cafards-blattes-langres" },
-{ label: "Cafards et blattes à Nogent", to: "/cafards-blattes-nogent" },
-] }}
-      faqItems={FAQ_ITEMS}
-      relatedLinks={[
-        { label: "Cafards & Blattes (52)", to: "/cafards-blattes" },
-        { label: "Dératisation à Bourbonne-les-Bains", to: "/deratisation-bourbonne-les-bains" },
-        { label: "Zone d'intervention", to: "/zone-intervention" },
-      ]}
-      cta={"Cafards ou blattes à Bourbonne-les-Bains : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits, pour votre logement ou votre établissement."}
-    />
-  </>
-);
+const CafardsBlattesBourbonneLesBains = () => <RodentTownPage town={town} />;
 
 export default CafardsBlattesBourbonneLesBains;

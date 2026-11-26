@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
-import { CircleCheck, CircleX, LucideIcon, Rat } from "lucide-react";
+import { Bug, CircleCheck, CircleX, LucideIcon, Rat } from "lucide-react";
 import openStation from "@/assets/poste-appat-ouvert.jpg";
 import gnawedBait from "@/assets/appat-entame.jpg";
 import facadeStation from "@/assets/poste-appat-facade.jpg";
@@ -10,6 +10,10 @@ import jointsStation from "@/assets/mur-pierre-joints.jpg";
 import Navbar from "@/components/Navbar";
 import Reassurance from "@/components/Reassurance";
 import RodentSteps from "@/components/RodentSteps";
+import CockroachSteps from "@/components/CockroachSteps";
+import roachKitchen from "@/assets/blatte-cuisine.jpg";
+import roachCrack from "@/assets/blatte-fissure.jpg";
+import roachCloseUp from "@/assets/blatte-gros-plan.jpg";
 import Footer from "@/components/Footer";
 import ClientReviews from "@/components/ClientReviews";
 import SEO from "@/components/SEO";
@@ -33,6 +37,47 @@ const STATIONS = {
   joints: { src: jointsStation, alt: "Poste d'appâtage sous un mur de pierre aux joints creusés", className: "object-bottom" },
 };
 
+type KindPhoto = { src: string; alt: string; className?: string };
+
+/** What changes from one service to another; the page layout stays the same. */
+const KINDS = {
+  rodents: {
+    service: "Dératisation",
+    serviceType: "Dératisation",
+    parent: { name: "Dératisation", url: "https://gf-nuisibles.fr/deratisation" },
+    h1: (city: string, cp: string) => `Dératisation à ${city} (${cp})\u00a0: rats et souris`,
+    pests: "les rats et les souris",
+    priceTitle: (city: string) => `Quel est le prix d'une dératisation à ${city} ?`,
+    expert: "Un dératiseur",
+    price: RODENT_PRICE,
+    minPrice: 100 as number | undefined,
+    icon: Rat,
+    Steps: RodentSteps,
+    photos: null as KindPhoto[] | null,
+    howFirst: false,
+  },
+  cockroaches: {
+    service: "Traitement des cafards",
+    serviceType: "Désinsectisation : cafards et blattes",
+    parent: { name: "Cafards & Blattes", url: "https://gf-nuisibles.fr/cafards-blattes" },
+    h1: (city: string, cp: string) => `Cafards et blattes à ${city} (${cp})\u00a0: traitement`,
+    pests: "les cafards",
+    priceTitle: (city: string) => `Quel est le prix d'un traitement contre les cafards à ${city} ?`,
+    expert: "Un spécialiste des cafards",
+    price: "Devis gratuit, prix annoncé avant le traitement",
+    minPrice: undefined as number | undefined,
+    icon: Bug,
+    Steps: CockroachSteps,
+    photos: [
+      { src: roachKitchen, alt: "Cuisine avec évier et placards en bois, là où les blattes se cachent le plus souvent" },
+      { src: roachCrack, alt: "Blatte brune au bord d'une fissure dans le béton" },
+      { src: roachCloseUp, alt: "Blatte vue de dessus sur un fond clair" },
+    ] as KindPhoto[] | null,
+    /** People want the method before the hiding places. */
+    howFirst: true,
+  },
+};
+
 /** One section of a town page. `target` marks the section the hero link jumps to. */
 export type TownBlock = { title: string; intro?: string; target?: boolean; after?: ReactNode } & (
   | { kind: "cards" | "places"; items: IconItem[]; columns?: string }
@@ -47,6 +92,8 @@ export interface RodentTown {
   city: string;
   postalCode: string;
   region: string;
+  /** Service of the page; rodents when left out. */
+  kind?: keyof typeof KINDS;
   slug: string;
   title: string;
   description: string;
@@ -54,7 +101,7 @@ export interface RodentTown {
   reviews: ClientReviewKey[];
   why: { title: string; intro: string; items: IconItem[] };
   where: { intro: string; items: IconItem[] };
-  how: { title: string; intro: string; photo: keyof typeof STATIONS; steps: { title: string; text: string }[]; after: ReactNode };
+  how: { title: string; intro: string; photo?: keyof typeof STATIONS; steps: { title: string; text: string }[]; after: ReactNode };
   price: { paragraphs: ReactNode[]; aside: Aside };
   /** The sections only this town has, after the shared base. */
   local: TownBlock[];
@@ -167,8 +214,9 @@ const BlockBody = ({ block }: { block: TownBlock }) => {
 /** Rodent page of a town: same base as Chaumont (steps, why, where, how, price), then the town's own sections. */
 const RodentTownPage = ({ town }: { town: RodentTown }) => {
   const { city, hero } = town;
-  const photos = [
-    STATIONS[town.how.photo],
+  const kind = KINDS[town.kind ?? "rodents"];
+  const photos: KindPhoto[] = kind.photos ?? [
+    STATIONS[town.how.photo ?? "facade"],
     { src: openStation, alt: "Intérieur d'un poste d'appâtage avec trois blocs verts sur une tige" },
     { src: gnawedBait, alt: "Appât bleu rongé, vu lors d'un contrôle" },
   ];
@@ -184,8 +232,8 @@ const RodentTownPage = ({ town }: { town: RodentTown }) => {
       LOCAL_BUSINESS,
       {
         "@type": "Service",
-        name: `Dératisation à ${city}`,
-        serviceType: "Dératisation",
+        name: `${kind.service} à ${city}`,
+        serviceType: kind.serviceType,
         url,
         description: town.description,
         provider: { "@id": "https://gf-nuisibles.fr/#organization" },
@@ -194,13 +242,13 @@ const RodentTownPage = ({ town }: { town: RodentTown }) => {
           name: city,
           address: { "@type": "PostalAddress", postalCode: town.postalCode, addressLocality: city, addressRegion: town.region, addressCountry: "FR" },
         },
-        offers: { "@type": "Offer", priceSpecification: { "@type": "PriceSpecification", minPrice: 100, priceCurrency: "EUR" } },
+        ...(kind.minPrice && { offers: { "@type": "Offer", priceSpecification: { "@type": "PriceSpecification", minPrice: kind.minPrice, priceCurrency: "EUR" } } }),
       },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Accueil", item: "https://gf-nuisibles.fr/" },
-          { "@type": "ListItem", position: 2, name: "Dératisation", item: "https://gf-nuisibles.fr/deratisation" },
+          { "@type": "ListItem", position: 2, name: kind.parent.name, item: kind.parent.url },
           { "@type": "ListItem", position: 3, name: city, item: url },
         ],
       },
@@ -226,7 +274,7 @@ const RodentTownPage = ({ town }: { town: RodentTown }) => {
       <ServiceHero
         breadcrumbs={breadcrumbsFrom(jsonLd)}
         eyebrow={hero.eyebrow}
-        title={`Dératisation à ${city} (${town.postalCode})\u00a0: rats et souris`}
+        title={kind.h1(city, town.postalCode)}
         text={hero.text}
         highlight={hero.highlight}
         signsLabel={hero.signsLabel}
@@ -234,27 +282,51 @@ const RodentTownPage = ({ town }: { town: RodentTown }) => {
         imageAlt={hero.imageAlt}
         imageClassName={hero.imageClassName}
         area={hero.area}
-        price={RODENT_PRICE}
+        price={kind.price}
         delay={CALL_DELAY}
-        icon={Rat}
+        icon={kind.icon}
       />
 
       <main>
-        <RodentSteps city={city} />
+        <kind.Steps city={city} />
 
         <Section title={town.why.title} intro={town.why.intro}>
           <CardGrid items={town.why.items} />
         </Section>
 
-        <Section muted title={`Où se cachent les rats et les souris à ${city} ?`} intro={town.where.intro}>
-          <PlaceGrid items={town.where.items} columns={town.where.items.length === 4 ? "lg:grid-cols-2" : undefined} />
-        </Section>
-
-        <Section title={town.how.title} intro={town.how.intro}>
+        {kind.howFirst ? (
+          <>
+        <Section muted={kind.howFirst} title={town.how.title} intro={town.how.intro}>
           <div className="grid gap-6 md:grid-cols-3">
             {town.how.steps.map((step, i) => (
               <figure key={step.title} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-                <img src={photos[i].src} alt={photos[i].alt} loading="lazy" className={`h-56 w-full object-cover ${"className" in photos[i] ? "object-bottom" : ""}`} />
+                <img src={photos[i].src} alt={photos[i].alt} loading="lazy" className={`h-56 w-full object-cover ${photos[i].className ? "object-bottom" : ""}`} />
+                <figcaption className="p-5">
+                  <h3 className="mb-1 font-heading text-lg font-bold text-primary">{step.title}</h3>
+                  <p className="leading-relaxed text-muted-foreground">{step.text}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <p className="mt-8 max-w-3xl leading-relaxed text-muted-foreground">{town.how.after}</p>
+          <ClientReviews keys={town.reviews} />
+        </Section>
+        <CallBand {...town.call} muted />
+
+        <Section muted={!kind.howFirst} title={`Où se cachent ${kind.pests} à ${city} ?`} intro={town.where.intro}>
+          <PlaceGrid items={town.where.items} columns={town.where.items.length === 4 ? "lg:grid-cols-2" : undefined} />
+        </Section>
+          </>
+        ) : (
+          <>
+        <Section muted={!kind.howFirst} title={`Où se cachent ${kind.pests} à ${city} ?`} intro={town.where.intro}>
+          <PlaceGrid items={town.where.items} columns={town.where.items.length === 4 ? "lg:grid-cols-2" : undefined} />
+        </Section>
+        <Section muted={kind.howFirst} title={town.how.title} intro={town.how.intro}>
+          <div className="grid gap-6 md:grid-cols-3">
+            {town.how.steps.map((step, i) => (
+              <figure key={step.title} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                <img src={photos[i].src} alt={photos[i].alt} loading="lazy" className={`h-56 w-full object-cover ${photos[i].className ? "object-bottom" : ""}`} />
                 <figcaption className="p-5">
                   <h3 className="mb-1 font-heading text-lg font-bold text-primary">{step.title}</h3>
                   <p className="leading-relaxed text-muted-foreground">{step.text}</p>
@@ -267,8 +339,11 @@ const RodentTownPage = ({ town }: { town: RodentTown }) => {
         </Section>
 
         <CallBand {...town.call} />
+          </>
+        )}
 
-        <Section muted title={`Quel est le prix d'une dératisation à ${city} ?`}>
+
+        <Section muted title={kind.priceTitle(city)}>
           <BlockBody block={{ kind: "text", title: "", ...town.price }} />
         </Section>
 
@@ -281,11 +356,11 @@ const RodentTownPage = ({ town }: { town: RodentTown }) => {
           </div>
         ))}
 
-        <Section title={`Vos questions sur les rats et souris à ${city}`} muted={town.local.length % 2 === 1}>
+        <Section title={`Vos questions sur ${kind.pests} à ${city}`} muted={town.local.length % 2 === 1}>
           <FaqList items={town.faq} />
         </Section>
 
-        <Section title={`Un dératiseur autour ${around}`} intro={town.nearby.intro} muted={town.local.length % 2 === 0}>
+        <Section title={`${kind.expert} autour ${around}`} intro={town.nearby.intro} muted={town.local.length % 2 === 0}>
           <CityPills links={town.nearby.links} />
           <p className="mb-4 mt-8 leading-relaxed text-muted-foreground">{town.nearby.also}</p>
           <CityPills links={[...otherServices, { label: "Punaises de lit", to: "/punaises-de-lit" }]} />

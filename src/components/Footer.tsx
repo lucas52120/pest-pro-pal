@@ -15,7 +15,7 @@ const Footer = () => {
           <div>
             <h4 className="mb-4 font-heading text-lg font-bold">GF NUISIBLES</h4>
             <p className="text-sm text-primary-foreground/60">
-              Expert en gestion des nuisibles en Haute-Marne et communes limitrophes. Intervention rapide, discrète et garantie.
+              Expert en gestion des nuisibles en Haute-Marne et communes limitrophes. Intervention rapide et discrète.
             </p>
             <a
               href="https://www.facebook.com/gfnuisibles"

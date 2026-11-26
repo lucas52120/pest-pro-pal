@@ -7,7 +7,7 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dépigeonnisation Neufchâteau 88 - Intervention 24h, Devis Gratuit";
+const TITLE = "Entreprise de dépigeonnage à Neufchâteau (88) | Devis gratuit";
 const DESCRIPTION = "Marre des pigeons sur votre toit à Neufchâteau ? Des protections adaptées à votre bâtiment, sans les tuer. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-neufchateau";
 

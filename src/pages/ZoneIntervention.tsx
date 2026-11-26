@@ -14,7 +14,7 @@ const SECTEURS = [
   {
     titre: "Haute-Marne (52) — notre département de base",
     texte:
-      "Basés à Semoutiers-Montsaon, à 5 minutes de Chaumont, nous couvrons l'intégralité de la Haute-Marne : Chaumont, Langres, Saint-Dizier, Joinville, Nogent, Wassy, Bologne, Froncles, Châteauvillain, Arc-en-Barrois, Chalindrey, Montier-en-Der et Bourbonne-les-Bains. Sur ce secteur, nous intervenons généralement dans la journée, et en moins de 2 h pour les urgences guêpes et frelons.",
+      "Basés à Semoutiers-Montsaon, à 5 minutes de Chaumont, nous couvrons l'intégralité de la Haute-Marne : Chaumont, Langres, Saint-Dizier, Joinville, Nogent, Wassy, Bologne, Froncles, Châteauvillain, Arc-en-Barrois, Chalindrey, Montier-en-Der et Bourbonne-les-Bains. Quand vous appelez, je vous dis tout de suite quand je peux passer.",
   },
   {
     titre: "Aube (10) et Marne (51)",
@@ -29,9 +29,9 @@ const SECTEURS = [
 ];
 
 const DELAIS = [
-  { zone: "Chaumont et 20 km alentour", delai: "Sous 2 h en urgence, sinon le jour même" },
-  { zone: "Haute-Marne (52)", delai: "Sous 24 h, souvent le jour même" },
-  { zone: "Communes des départements voisins", delai: "Sous 24 à 48 h" },
+  { zone: "Chaumont et ses environs", delai: "Une date donnée dès votre appel" },
+  { zone: "Reste de la Haute-Marne (52)", delai: "Une date donnée dès votre appel" },
+  { zone: "Communes des départements voisins", delai: "Sur rendez-vous, fixé ensemble au téléphone" },
 ];
 
 const FAQ = [
@@ -47,7 +47,9 @@ const FAQ = [
   },
   {
     q: "Quel est le délai d'intervention en urgence ?",
-    a: "Pour une urgence guêpes ou frelons à Chaumont et dans un rayon de 20 km, nous intervenons généralement en moins de 2 heures. Sur le reste de la Haute-Marne, l'intervention a lieu dans les 24 heures, week-end compris.",
+    a: "Appelez le " +
+      PHONE +
+      ", 7j/7 de 7h à 23h, week-ends compris : je vous dis tout de suite quand je peux passer. Un nid de guêpes près d'un passage ou d'une personne allergique passe en priorité.",
   },
   {
     q: "Ma commune n'apparaît pas dans la liste, pouvez-vous venir ?",
@@ -145,8 +147,8 @@ const ZoneIntervention = () => {
           <div className="container-narrow px-4 grid gap-6 sm:grid-cols-3">
             {[
               { icon: MapPin, t: "Toute la Haute-Marne", d: "Et les communes proches, dans les départements voisins." },
-              { icon: Clock, t: "Urgence sous 2 h", d: "Guêpes et frelons à Chaumont et dans un rayon de 20 km." },
-              { icon: ShieldCheck, t: "Certibiocide", d: "Technicien certifié, produits homologués, intervention garantie." },
+              { icon: Clock, t: "Une date dès l'appel", d: "Je vous dis tout de suite quand je peux passer, 7j/7 de 7h à 23h." },
+              { icon: ShieldCheck, t: "Certibiocide", d: "Technicien certifié, produits professionnels homologués." },
             ].map(({ icon: Icon, t, d }) => (
               <div key={t} className="rounded-lg border border-border bg-card p-6">
                 <Icon className="h-8 w-8 text-accent mb-3" />
@@ -185,7 +187,7 @@ const ZoneIntervention = () => {
                 <thead className="bg-muted">
                   <tr>
                     <th className="px-4 py-3 font-semibold text-primary">Secteur</th>
-                    <th className="px-4 py-3 font-semibold text-primary">Délai constaté</th>
+                    <th className="px-4 py-3 font-semibold text-primary">Délai</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -199,7 +201,7 @@ const ZoneIntervention = () => {
               </table>
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
-              Délais moyens constatés, hors périodes de forte affluence (pic guêpes et frelons de juillet à septembre).
+              De juillet à septembre, saison des guêpes et des frelons, les demandes sont plus nombreuses : appelez tôt.
             </p>
           </div>
         </section>

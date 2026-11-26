@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Shield, Users, MapPin, Clock, Award } from "lucide-react";
-import vanImage from "@/assets/van-gf.png";
+import stationImage from "@/assets/poste-appat-mur-pierre.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 
 const APropos = () => {
@@ -129,8 +129,8 @@ const APropos = () => {
             className="flex items-center"
           >
             <img
-              src={vanImage}
-              alt="Véhicule d'intervention GF Nuisibles"
+              src={stationImage}
+              alt="Poste d'appâtage posé au pied d'un mur en pierre lors d'une intervention"
               className="w-full rounded-xl shadow-lg object-cover"
               loading="lazy"
             />
@@ -172,13 +172,13 @@ const APropos = () => {
               },
               {
                 icon: <Award className="h-8 w-8" />,
-                title: "Résultats garantis",
-                desc: "Chaque intervention fait l'objet d'un suivi. Nous nous engageons sur l'efficacité de nos traitements.",
+                title: "Un suivi après l'intervention",
+                desc: "Je repasse contrôler quand c'est prévu au devis, et j'ajuste le traitement si besoin.",
               },
               {
                 icon: <MapPin className="h-8 w-8" />,
                 title: "Devis gratuit",
-                desc: "Diagnostic et estimation offerts. Contactez-nous pour une évaluation précise de votre situation.",
+                desc: "Vous connaissez le prix avant toute intervention. Contactez-nous pour une évaluation précise de votre situation.",
               },
             ].map((item, i) => (
               <motion.div

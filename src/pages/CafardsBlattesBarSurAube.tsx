@@ -1,97 +1,133 @@
-import { Bug } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-desinsectisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Boxes, Church, Droplets, FileText, Grape, House, Landmark, Mountain, Route, Store, ThermometerSun, Wine } from "lucide-react";
+import heroImage from "@/assets/blatte-fissure.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Traitement cafards et blattes à Bar-sur-Aube (10)";
-const DESCRIPTION = "Des cafards chez vous à Bar-sur-Aube ? Ne les laissez pas s'installer : un pro intervient discrètement, 7j/7. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/cafards-blattes-bar-sur-aube";
+const town: RodentTown = {
+  kind: "cockroaches",
+  city: "Bar-sur-Aube",
+  postalCode: "10200",
+  region: "Aube",
+  slug: "/cafards-blattes-bar-sur-aube",
+  title: "Traitement cafards et blattes à Bar-sur-Aube (10)",
+  description:
+    "Des cafards chez vous à Bar-sur-Aube ? Ne les laissez pas s'installer : un pro intervient discrètement, 7j/7. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Maisons, caves et commerces",
+    text: "Caves humides, maisons mitoyennes, réserves de commerce : je trouve où se cachent les blattes et je traite.",
+    highlight: "Les vignerons et commerçants aussi",
+    signsLabel: "Une blatte noire à la cave ? Ce qu'il faut savoir",
+    image: heroImage,
+    imageAlt: "Blatte brune près d'une fissure dans le béton",
+    imageClassName: "max-lg:brightness-50",
+    area: "Entreprise de la Haute-Marne voisine, à une quarantaine de kilomètres",
+  },
+  reviews: ["coustillet", "soucelier", "bromann"],
+  why: {
+    title: "Pourquoi y a-t-il des cafards dans votre maison ?",
+    intro: "Dans une vieille rue, ils arrivent souvent par le bas : la cave, les tuyaux, le mur du voisin. Puis ils montent vers ce qui les intéresse.",
+    items: [
+      { icon: Wine, title: "Une cave humide", text: "voûtes, sol en terre battue, évacuation ancienne : le refuge idéal de la blatte orientale." },
+      { icon: ThermometerSun, title: "Une cuisine chaude", text: "four, frigo et chaudière gardent une chaleur constante, été comme hiver." },
+      { icon: House, title: "Un mur mitoyen", text: "les maisons collées partagent tuyaux et vides techniques." },
+      { icon: Boxes, title: "Des cartons stockés", text: "emballages de bouteilles, cartons de livraison, vieux journaux en cave." },
+    ],
+  },
+  how: {
+    title: "Comment éliminer les cafards efficacement ?",
+    intro: "La cave et la cuisine ne se traitent pas de la même façon. Je repère d'abord les deux, puis j'associe les méthodes qui conviennent à chacune.",
+    steps: [
+      { title: "Je descends à la cave", text: "C'est souvent là que tout commence : je suis les murs, les tuyaux et les évacuations jusqu'au foyer." },
+      { title: "Deux traitements, deux endroits", text: "Pulvérisation ciblée dans la cave humide, gel discret dans la cuisine : chaque pièce reçoit la bonne méthode." },
+      { title: "Je reviens contrôler", text: "Pour toucher les jeunes sortis des capsules d'œufs et vérifier qu'il ne reste rien." },
+    ],
+    after: (
+      <>
+        Je vous dis toujours avant s'il faut sortir d'une pièce et pendant combien de temps. Plus de détails sur la page{" "}
+        <Link to="/cafards-blattes" className={textLink}>cafards et blattes : notre méthode</Link>.
+      </>
+    ),
+  },
+  where: {
+    intro: "Du centre historique aux villages de vignes, voici où je regarde en arrivant.",
+    items: [
+      { icon: Church, title: "Autour de Saint-Pierre", text: "maisons anciennes, caves voûtées et cuisines au rez-de-chaussée." },
+      { icon: Landmark, title: "Vers Saint-Maclou", text: "immeubles étroits, logements au-dessus des commerces, colonnes d'eau communes." },
+      { icon: Store, title: "Les commerces de bouche", text: "réserves, chambres froides, dessous des vitrines et local poubelles." },
+      { icon: Droplets, title: "La Gravière et les bords de l'Aube", text: "sous-sols et garages où l'humidité attire la blatte orientale." },
+      { icon: Mountain, title: "Vers la colline Sainte-Germaine", text: "pavillons : buanderie, chaufferie et dessous d'évier." },
+      { icon: Grape, title: "Les villages de vignes", text: "Baroville, Colombé-le-Sec, Couvignon : cuveries, salles de pause et vestiaires." },
+    ],
+  },
+  price: {
+    paragraphs: [
+      "Le prix dépend de l'espèce, des pièces touchées et du nombre de passages. Pour une exploitation ou un commerce, du nombre de locaux.",
+      "Je traverse la limite du département : le déplacement compte, et je vous l'annonce dès l'appel.",
+    ],
+    aside: { icon: FileText, title: "Devis gratuit", text: "Vous connaissez le montant exact avant le traitement, sans engagement." },
+  },
+  local: [
+    {
+      kind: "text",
+      target: true,
+      title: "Une blatte noire à la cave : faut-il s'inquiéter ?",
+      paragraphs: [
+        "Grande, presque noire et lente : c'est probablement la blatte orientale. Elle vit dans les endroits humides et frais, et remonte parfois par les évacuations jusqu'à la salle de bains.",
+        "Elle se reproduit moins vite que la petite blatte de cuisine, mais elle revient tant que l'humidité reste. Le traitement va donc de pair avec quelques travaux simples : ventiler la cave, réparer une fuite, poser une grille sur une évacuation.",
+      ],
+      aside: {
+        icon: Droplets,
+        title: "Un geste qui aide tout de suite",
+        text: "Laissez la porte de la cave ouverte quelques heures par jour quand il fait sec, et retirez les cartons posés au sol.",
+      },
+    },
+    {
+      kind: "list",
+      title: "Viticulteur ou commerçant : comment protéger vos locaux ?",
+      intro: "Les salles de pause, vestiaires et réserves attirent les blattes plus que les cuveries elles-mêmes.",
+      items: [
+        { text: "Pas de nourriture dans les vestiaires ni dans les casiers des saisonniers." },
+        { text: "Les cartons d'emballage rangés en hauteur, loin des murs." },
+        { text: "Le coin repas nettoyé et la poubelle vidée chaque soir." },
+        { text: "Les fuites et les condensations signalées rapidement." },
+      ],
+      aside: {
+        icon: Route,
+        title: "Avant les vendanges",
+        text: <>Un contrôle des logements et des salles de pause avant l'arrivée des équipes évite les mauvaises surprises. <Link to="/contact" className={textLink}>Prévoyons-le ensemble</Link>.</>,
+      },
+    },
+  ],
+  call: {
+    title: "Des cafards à Bar-sur-Aube ?",
+    text: "Dites-moi si vous les voyez à la cave ou à la cuisine : je vous donne une date dès l'appel.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Quel est le prix d'un traitement contre les cafards à Bar-sur-Aube ?", answer: "Il dépend de l'espèce, des pièces et des passages, et le déplacement depuis la Haute-Marne s'y ajoute : je vous l'annonce au téléphone. Le devis est gratuit." },
+    { question: "Venez-vous vraiment dans l'Aube ?", answer: "Oui, Bar-sur-Aube est à une quarantaine de kilomètres de ma base. On fixe ensemble la date du traitement et celle du contrôle." },
+    { question: "Les cafards peuvent-ils abîmer le vin ou les bouteilles ?", answer: "Non, pas le vin lui-même. Ils salissent en revanche les cartons, les étiquettes et les zones de stockage, ce qui pose un problème d'hygiène dans un local professionnel." },
+    { question: "Pourquoi en vois-je plus après le traitement ?", answer: "C'est fréquent les premiers jours : le traitement les fait sortir de leurs cachettes. N'ajoutez pas de produit et ne lavez pas les endroits traités ; l'activité baisse ensuite." },
+    { question: "Faut-il traiter la cave et la cuisine ?", answer: "Souvent oui, si les deux sont touchées. La blatte de cave et celle de la cuisine ne sont pas toujours la même espèce, et ne se traitent pas de la même façon." },
+    { question: "Quelles communes autour de Bar-sur-Aube ?", answer: "Proverville, Fontaine, Bayel, Arsonval, Baroville, Couvignon, Colombé-le-Sec, Ailleville, et côté Haute-Marne Colombey-les-Deux-Églises ou Châteauvillain. Mon numéro : 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Bar-sur-Aube est à la limite de mon secteur haut-marnais.",
+    links: [
+      { label: "Cafards Chaumont", to: "/cafards-blattes-chaumont" },
+      { label: "Cafards Langres", to: "/cafards-blattes-langres" },
+    ],
+    also: "À Bar-sur-Aube, je m'occupe aussi de :",
+    note: (
+      <>
+        Pour tout savoir sur les blattes et les traitements, voyez la page{" "}
+        <Link to="/cafards-blattes" className={textLink}>cafards en Haute-Marne et alentours</Link>.
+      </>
+    ),
+  },
+};
 
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Comment reconnaître une blatte germanique à Bar-sur-Aube ?", answer: "La blatte germanique mesure environ 1 à 1,5 cm, elle est brun clair avec deux bandes sombres sur le thorax. Elle vit surtout dans les cuisines et salles de bains, près de la chaleur et de l'eau. La blatte orientale, plus grande et presque noire, préfère les caves et sous-sols. Une photo nette aide à préparer le diagnostic." },
-  { question: "Intervenez-vous dans l'Aube alors que vous êtes en Haute-Marne ?", answer: "Oui. Les secteurs cités sur cette page font partie de la zone desservie, ainsi que les communes voisines comme Bayel, Proverville, Fontaine, Arsonval, Colombey-les-Deux-Églises (52), Châteauvillain (52) ou Arc-en-Barrois (52). GF Nuisibles est basée à Montsaon et n'a pas d'agence à Bar-sur-Aube : précisez votre adresse et les accès lors de votre demande." },
-  { question: "Les produits du commerce suffisent-ils contre les cafards ?", answer: "Ils peuvent tuer quelques individus visibles mais atteignent rarement les refuges et les oothèques (capsules d'œufs). Des pulvérisations répétées peuvent aussi disperser les blattes et rendre les appâts moins attractifs. Indiquez les produits déjà utilisés pour que la stratégie en tienne compte." },
-  { question: "Combien de passages faut-il prévoir ?", answer: "Cela dépend de l'espèce, de l'étendue de l'infestation et du bâtiment. Le nombre de passages et le contrôle de suivi sont précisés dans le devis gratuit ; aucun chiffre unique ne convient à toutes les situations." },
-  { question: "Proposez-vous un suivi pour les professionnels de Bar-sur-Aube ?", answer: "Oui. Restaurants, commerces alimentaires, hébergements, bailleurs et entreprises peuvent mettre en place un contrat avec contrôles réguliers et compte rendu écrit, utile dans une démarche d'hygiène de type HACCP. La fréquence est définie selon l'activité et les locaux." },
-];
-
-const jsonLd = {"@context": "https://schema.org", "@graph": [LOCAL_BUSINESS, {"@type": "Service", "url": "https://gf-nuisibles.fr/cafards-blattes-bar-sur-aube", "name": "Cafards et Blattes à Bar-sur-Aube (10200) | GF Nuisibles", "description": "Des cafards chez vous à Bar-sur-Aube ? Ne les laissez pas s'installer : un pro intervient discrètement, 7j/7. Devis gratuit : 07 65 25 67 92.", "serviceType": "Traitement cafards et blattes", "provider": {"@id": "https://gf-nuisibles.fr/#organization"}, "areaServed": {"@type": "City", "name": "Bar-sur-Aube", "address": {"@type": "PostalAddress", "postalCode": "10200", "addressRegion": "Aube", "addressCountry": "FR"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/"}, {"@type": "ListItem", "position": 2, "name": "Cafards & Blattes", "item": "https://gf-nuisibles.fr/cafards-blattes"}, {"@type": "ListItem", "position": 3, "name": "Cafards et Blattes à Bar-sur-Aube", "item": "https://gf-nuisibles.fr/cafards-blattes-bar-sur-aube"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Comment reconnaître une blatte germanique à Bar-sur-Aube ?", "acceptedAnswer": {"@type": "Answer", "text": "La blatte germanique mesure environ 1 à 1,5 cm, elle est brun clair avec deux bandes sombres sur le thorax. Elle vit surtout dans les cuisines et salles de bains, près de la chaleur et de l'eau. La blatte orientale, plus grande et presque noire, préfère les caves et sous-sols. Une photo nette aide à préparer le diagnostic."}}, {"@type": "Question", "name": "Intervenez-vous dans l'Aube alors que vous êtes en Haute-Marne ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Les secteurs cités sur cette page font partie de la zone desservie, ainsi que les communes voisines comme Bayel, Proverville, Fontaine, Arsonval, Colombey-les-Deux-Églises (52), Châteauvillain (52) ou Arc-en-Barrois (52). GF Nuisibles est basée à Montsaon et n'a pas d'agence à Bar-sur-Aube : précisez votre adresse et les accès lors de votre demande."}}, {"@type": "Question", "name": "Les produits du commerce suffisent-ils contre les cafards ?", "acceptedAnswer": {"@type": "Answer", "text": "Ils peuvent tuer quelques individus visibles mais atteignent rarement les refuges et les oothèques (capsules d'œufs). Des pulvérisations répétées peuvent aussi disperser les blattes et rendre les appâts moins attractifs. Indiquez les produits déjà utilisés pour que la stratégie en tienne compte."}}, {"@type": "Question", "name": "Combien de passages faut-il prévoir ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend de l'espèce, de l'étendue de l'infestation et du bâtiment. Le nombre de passages et le contrôle de suivi sont précisés dans le devis gratuit ; aucun chiffre unique ne convient à toutes les situations."}}, {"@type": "Question", "name": "Proposez-vous un suivi pour les professionnels de Bar-sur-Aube ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Restaurants, commerces alimentaires, hébergements, bailleurs et entreprises peuvent mettre en place un contrat avec contrôles réguliers et compte rendu écrit, utile dans une démarche d'hygiène de type HACCP. La fréquence est définie selon l'activité et les locaux."}}]}]};
-
-const CafardsBlattesBarSurAube = () => (
-  <>
-    <Helmet>
-      <title>{TITLE}</title>
-      <meta name="description" content={DESCRIPTION} />
-      <link rel="canonical" href={URL} />
-      <meta property="og:title" content={TITLE} />
-      <meta property="og:description" content={DESCRIPTION} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={URL} />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={TITLE} />
-      <meta name="twitter:description" content={DESCRIPTION} />
-      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-    </Helmet>
-    <CityServicePage
-      breadcrumbs={breadcrumbsFrom(jsonLd)}
-      city="Bar-sur-Aube"
-      department="Aube (10)"
-      serviceTitle={"Cafards et blattes à Bar-sur-Aube (10200) : traitement pour particuliers et professionnels"}
-      icon={<Bug className="h-8 w-8" />}
-      heroImage={heroImage}
-      metaDescription={DESCRIPTION}
-      serviceCallTitle="DES CAFARDS À BAR-SUR-AUBE ?"
-      serviceCallSubtitle="GF NUISIBLES TRAITE BLATTES ET CAFARDS EN LOGEMENT COMME EN COMMERCE !"
-      intro={"Des cafards dans la cuisine, des blattes qui sortent la nuit ou des traces noires dans les placards à Bar-sur-Aube (10200) ? GF Nuisibles traite les blattes germaniques, orientales et américaines chez les particuliers comme chez les professionnels de Bar-sur-Aube et des communes voisines. Plus l'intervention est rapide, plus elle est simple : ces insectes se reproduisent vite et se cachent dans des recoins inaccessibles. Le diagnostic et le devis sont gratuits."}
-      expertise={"Basée à Montsaon, en Haute-Marne, GF Nuisibles intervient à Bar-sur-Aube pour les maisons, appartements, locations, restaurants, commerces alimentaires, hébergements et entreprises. Le choix de la méthode dépend de l'espèce identifiée, des refuges trouvés et de l'usage des pièces. Signalez la présence d'enfants, d'animaux et les produits déjà utilisés : les consignes de protection et de réintégration sont adaptées au protocole retenu."}
-      method={"L'inspection localise les refuges : moteurs d'électroménager, dessous d'évier, plinthes, gaines et passages de canalisations. Le devis précise la stratégie, généralement des gels appâts posés en points ciblés, complétés si nécessaire par d'autres traitements professionnels, ainsi que le contrôle de suivi. Des conseils d'hygiène et de colmatage accompagnent le traitement pour limiter le retour des insectes."}
-      localContext={{ title: "Centre historique et Côte des Bar : les blattes à Bar-sur-Aube", content: <>
-<p>{"Ancienne cité des foires de Champagne traversée par l'Aube, Bar-sur-Aube a un centre historique dense autour des églises Saint-Pierre et Saint-Maclou, avec des maisons mitoyennes et des caves. Les blattes y trouvent refuge près des canalisations, chaudières et caves humides. Ces repères, comme la colline Sainte-Germaine ou la promenade de la Gravière, situent le secteur desservi, à la limite de la Haute-Marne ; ils ne sont pas des références clients."}</p>
-<p>{"Sur la Côte des Bar, les domaines viticoles, caves de champagne, restaurants et commerces alimentaires ont des locaux de stockage, vestiaires et cuisines où une infestation peut s'installer discrètement. Un plan de suivi documenté aide à répondre aux exigences d'hygiène. GF Nuisibles intervient depuis Montsaon, via Châteauvillain, pour les particuliers comme pour les professionnels du Barsuraubois."}</p>
-</> }}
-      neighborhoods={{ title: "Quartiers et secteurs desservis à Bar-sur-Aube (10200)", intro: "Précisez votre adresse et les accès lors de votre demande. Ces repères aident à situer votre logement ou votre local ; ils ne signalent aucune infestation dans ces secteurs.", items: ["Centre historique de Bar-sur-Aube", "Secteur de l'église Saint-Pierre", "Secteur de l'église Saint-Maclou", "Colline Sainte-Germaine", "Promenade de la Gravière, bords de l'Aube", "Direction des vignobles de la Côte des Bar"] }}
-      extraSections={[
-        { title: "Blatte germanique, orientale ou américaine : quelle espèce à Bar-sur-Aube ?", content: <>
-<p>{"À Bar-sur-Aube, la blatte germanique est l'espèce la plus fréquente dans les logements et cuisines professionnelles : petite, brun clair, elle se reproduit vite et se cache derrière le réfrigérateur, le four, le lave-vaisselle ou dans les charnières des placards. Une femelle transporte une oothèque contenant plusieurs dizaines d'œufs, ce qui explique qu'une petite présence devienne vite une infestation."}</p>
-<p>{"La blatte orientale, plus grande et sombre, vit plutôt dans les caves, vides sanitaires, regards et chaufferies ; elle remonte par les évacuations. La blatte américaine, rare en habitation, se rencontre parfois dans des locaux techniques chauffés. Identifier l'espèce oriente les zones d'inspection et le choix des produits : un gel appât en cuisine ne répond pas au même problème qu'une colonie installée dans un sous-sol."}</p>
-<p>{"Signes à surveiller : insectes qui fuient à l'allumage de la lumière, petites déjections noires semblables à du poivre moulu, capsules d'œufs vides, mues, ou odeur âcre persistante dans les placards. Ne videz pas les placards au hasard avant le diagnostic : notez simplement où vous avez vu les insectes."}</p>
-</> },
-        { title: "Particuliers à Bar-sur-Aube : maison, appartement ou location", content: <>
-<p>{"Pour un particulier, le diagnostic à domicile est gratuit. Il porte sur la cuisine, la salle de bains, les WC, les arrivées d'eau et les zones chaudes. En appartement, signalez si vos voisins observent aussi des blattes : un traitement isolé dans un immeuble peut être recontaminé par les gaines communes. Locataire, vous pouvez prévenir votre bailleur ; propriétaire en copropriété, le syndic peut être associé pour les parties communes."}</p>
-<p>{"Le traitement privilégie généralement des gels appâts posés en points ciblés, peu visibles et compatibles avec une occupation du logement, complétés si besoin par d'autres produits professionnels. Les consignes de protection des aliments, des enfants et des animaux, ainsi que le délai avant nettoyage des zones traitées, vous sont expliqués avant l'intervention."}</p>
-<p>{"Dans les communes autour de Bar-sur-Aube, comme Bayel, Proverville, Fontaine, Arsonval, Colombey-les-Deux-Églises (52), Châteauvillain (52) ou Arc-en-Barrois (52), les conditions sont identiques : diagnostic, devis écrit, traitement et contrôle de suivi selon la situation."}</p>
-</> },
-        { title: "Professionnels à Bar-sur-Aube : restaurants, commerces, bailleurs et entreprises", content: <>
-<p>{"À Bar-sur-Aube, la viticulture champenoise, la restauration et le commerce local s'appuient sur des caves, cuisines et réserves. Pour ces locaux, la présence de blattes engage l'image de l'établissement et peut être relevée lors d'un contrôle sanitaire. GF Nuisibles intervient sur rendez-vous, si possible en dehors des heures d'ouverture, avec une discrétion adaptée (véhicule et tenue sans mise en avant du nuisible quand vous le demandez)."}</p>
-<p>{"Les professionnels peuvent souscrire un contrat de suivi : visites régulières, contrôle des points sensibles (réserves, plonge, chambres froides, vestiaires, locaux poubelles), traçabilité écrite des passages et des produits utilisés, utile dans un plan de maîtrise sanitaire de type HACCP. Bailleurs sociaux et syndics peuvent organiser des campagnes coordonnées par bâtiment."}</p>
-<p>{"Le devis tient compte des surfaces, du nombre de locaux, des contraintes d'accès et de la fréquence de suivi souhaitée. Il est gratuit et sans engagement."}</p>
-</> },
-        { title: "Préparer l'intervention et éviter le retour des cafards à Bar-sur-Aube", content: <>
-<p>{"Avant le passage : dégagez l'accès sous l'évier, derrière l'électroménager quand c'est possible, et rangez les denrées dans des boîtes fermées. Évitez les insecticides en bombe dans les jours précédents. Après le traitement : ne nettoyez pas les points de gel et respectez les consignes données."}</p>
-<p>{"Ensuite, réduisez ce qui attire les blattes : fuites d'eau réparées, miettes et graisses nettoyées, poubelles fermées, cartons de livraison sortis rapidement, joints et passages de tuyaux colmatés. Ces gestes accompagnent le traitement mais ne remplacent pas un diagnostic lorsque les insectes sont déjà installés."}</p>
-</> },
-        { title: "Votre service cafards et blattes à Bar-sur-Aube et alentour", content: <>
-<p>Pour découvrir l'ensemble de nos méthodes, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes">{"service cafards et blattes en Haute-Marne"}</Link>. Pour un rendez-vous, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-<p>Nous intervenons aussi dans les villes voisines : <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-chaumont">{"Cafards et blattes à Chaumont"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-langres">{"Cafards et blattes à Langres"}</Link>. Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour les autres communes desservies.</p>
-</> },
-      ]}
-      nearbyCities={{ title: "Près de Bar-sur-Aube : nos pages locales", items: [
-{ label: "Cafards et blattes à Chaumont", to: "/cafards-blattes-chaumont" },
-{ label: "Cafards et blattes à Langres", to: "/cafards-blattes-langres" },
-] }}
-      faqItems={FAQ_ITEMS}
-      relatedLinks={[
-        { label: "Cafards & Blattes (52)", to: "/cafards-blattes" },
-        { label: "Dératisation à Bar-sur-Aube", to: "/deratisation-bar-sur-aube" },
-        { label: "Zone d'intervention", to: "/zone-intervention" },
-      ]}
-      cta={"Cafards ou blattes à Bar-sur-Aube : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits, pour votre logement ou votre établissement."}
-    />
-  </>
-);
+const CafardsBlattesBarSurAube = () => <RodentTownPage town={town} />;
 
 export default CafardsBlattesBarSurAube;

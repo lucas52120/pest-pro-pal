@@ -7,7 +7,7 @@ import heroImage from "@/assets/service-depigeonnage.jpg";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
 
-const TITLE = "Dépigeonnisation Joinville 52 - Intervention 24h, Devis Gratuit";
+const TITLE = "Entreprise de dépigeonnage à Joinville (52) | Devis gratuit";
 const DESCRIPTION = "Marre de nettoyer les fientes de pigeons à Joinville ? On protège balcons et toitures, sans leur faire de mal. Devis gratuit : 07 65 25 67 92.";
 const URL = "https://gf-nuisibles.fr/depigeonnisation-joinville";
 

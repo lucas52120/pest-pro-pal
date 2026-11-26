@@ -1,98 +1,140 @@
-import { Bug } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-desinsectisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { BedDouble, BrickWall, Castle, Droplets, FileText, House, Landmark, Luggage, Package, ThermometerSun, Trees, UtensilsCrossed } from "lucide-react";
+import heroImage from "@/assets/blatte-hero.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Traitement cafards et blattes à Langres (52) | Devis gratuit";
-const DESCRIPTION = "Cafards ou blattes à Langres ? Plus on agit tôt, plus c'est simple. Appelez, on intervient discrètement, 7j/7. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/cafards-blattes-langres";
+const town: RodentTown = {
+  kind: "cockroaches",
+  city: "Langres",
+  postalCode: "52200",
+  region: "Haute-Marne",
+  slug: "/cafards-blattes-langres",
+  title: "Traitement cafards et blattes à Langres (52) | Devis gratuit",
+  description:
+    "Cafards ou blattes à Langres ? Plus on agit tôt, plus c'est simple. Appelez, on intervient discrètement, 7j/7. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Maisons anciennes, gîtes et restaurants",
+    text: "Murs épais, caves voûtées, vieilles canalisations : je trouve où les blattes se cachent et je traite, discrètement.",
+    highlight: "Passage possible entre deux séjours pour les gîtes",
+    signsLabel: "Cafard, poisson d'argent ou cloporte ? Faire la différence",
+    image: heroImage,
+    imageClassName: "max-lg:brightness-50",
+    imageAlt: "Blatte posée sur une surface en verre, vue de profil",
+  },
+  reviews: ["mathieu", "duverne", "coustillet"],
+  why: {
+    title: "Pourquoi les cafards s'installent-ils chez vous ?",
+    intro: "Une vieille maison n'est pas sale pour autant. Elle offre simplement plus de recoins chauds et humides, en toute saison.",
+    items: [
+      { icon: Droplets, title: "Une humidité qui dure", text: "cave voûtée, mur enterré, évacuation ancienne : la blatte orientale adore." },
+      { icon: ThermometerSun, title: "La chaleur des appareils", text: "chaudière, ballon d'eau chaude, frigo collé au mur : la blatte germanique s'y loge." },
+      { icon: BrickWall, title: "Des murs pleins de vides", text: "doublages, plinthes décollées, vieux conduits : autant de couloirs cachés." },
+      { icon: Luggage, title: "Des arrivées fréquentes", text: "valises, cartons de livraison, meubles chinés : un passager suffit pour commencer." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser des cafards et des blattes ?",
+    intro: "Dans une maison sur plusieurs niveaux, on ne traite pas qu'une pièce. Je repère d'où elles viennent, puis j'associe les méthodes qui conviennent à chaque endroit.",
+    steps: [
+      { title: "De la cave à la cuisine", text: "Je suis les tuyaux et les murs humides, étage par étage, pour trouver le foyer et pas seulement les blattes visibles." },
+      { title: "Plusieurs méthodes ensemble", text: "Gel dans les fentes de la cuisine, pulvérisation ciblée dans la cave ou la chaufferie : chaque zone reçoit le bon traitement." },
+      { title: "Un second passage", text: "Je reviens quand les œufs ont éclos, pour traiter les jeunes et vérifier que l'activité a cessé." },
+    ],
+    after: (
+      <>
+        Je vous dis toujours avant s'il faut laisser une pièce libre et pendant combien de temps. Pour aller plus loin, voyez la page{" "}
+        <Link to="/cafards-blattes" className={textLink}>cafards et blattes en Haute-Marne</Link>.
+      </>
+    ),
+  },
+  where: {
+    intro: "Entre la vieille ville et les quartiers plus récents, les blattes ne choisissent pas les mêmes cachettes.",
+    items: [
+      { icon: Castle, title: "Dans les remparts", text: "autour de la place Diderot et de la cathédrale : caves voûtées, cuisines en sous-sol, colonnes d'eau anciennes." },
+      { icon: UtensilsCrossed, title: "Restaurants et commerces du centre", text: "plonge, réserve, dessous des meubles réfrigérés et local à poubelles." },
+      { icon: BedDouble, title: "Gîtes et chambres d'hôtes", text: "kitchenettes, salles d'eau et placards où les visiteurs laissent des provisions." },
+      { icon: Landmark, title: "La Citadelle et Saint-Gilles", text: "petits immeubles : gaines techniques, vide-ordures et caves partagées." },
+      { icon: House, title: "Les Franchises et Les Fourches", text: "pavillons : chaufferie, buanderie, dessous de l'évier et garage." },
+      { icon: Trees, title: "Corlée et le lac de la Liez", text: "maisons secondaires fermées l'hiver, où les blattes s'installent sans être dérangées." },
+    ],
+  },
+  price: {
+    paragraphs: [
+      "Une cuisine seule, une maison sur trois niveaux ou un restaurant ne demandent pas le même travail. Le prix dépend de l'espèce, des pièces touchées et du nombre de passages.",
+      "Je regarde d'abord, puis je vous donne un prix clair, sans engagement.",
+    ],
+    aside: { icon: FileText, title: "Devis gratuit", text: "Il détaille le traitement, les pièces concernées et les passages prévus. Le déplacement est annoncé au téléphone." },
+  },
+  local: [
+    {
+      kind: "cards",
+      target: true,
+      columns: "lg:grid-cols-3",
+      title: "Cafard, poisson d'argent ou cloporte ?",
+      intro: "Dans une maison ancienne, on croise souvent de petites bêtes qui ne sont pas des cafards. Voici comment les distinguer.",
+      items: [
+        { icon: Package, title: "La blatte", text: "corps plat et brun, longues antennes, elle court vite et fuit la lumière. Elle laisse de petits points noirs." },
+        { icon: Droplets, title: "Le poisson d'argent", text: "gris argenté, en forme de goutte, trois filaments au bout du corps. Il aime la salle de bains, mais ne se traite pas pareil." },
+        { icon: BrickWall, title: "Le cloporte", text: "gris, bombé, il se roule parfois en boule. Il vient de l'humidité du jardin ou de la cave, et ne vit pas dans la cuisine." },
+      ],
+      after: "Un doute ? Une photo envoyée au 07 65 25 67 92 suffit souvent pour savoir s'il faut un traitement.",
+    },
+    {
+      kind: "list",
+      title: "Gîte ou chambre d'hôtes : comment éviter les mauvaises surprises ?",
+      intro: "Un client qui voit un cafard le soir, c'est un avis négatif le lendemain. Quatre habitudes réduisent le risque.",
+      items: [
+        { text: "Videz les placards de la kitchenette après chaque séjour, même les paquets fermés." },
+        { text: "Contrôlez derrière le frigo et sous l'évier à chaque ménage, lampe à la main." },
+        { text: "Ne stockez pas de cartons de livraison dans le logement." },
+        { text: "Faites réparer tout de suite une fuite ou un joint de douche abîmé." },
+      ],
+      aside: {
+        icon: BedDouble,
+        title: "Un client vous a prévenu ?",
+        text: "Demandez une photo et l'endroit, puis appelez-moi avant la prochaine arrivée : on organise le passage entre deux séjours.",
+      },
+    },
+    {
+      kind: "text",
+      title: "Pourquoi les blattes reviennent-elles après un traitement ?",
+      paragraphs: [
+        "Le plus souvent, ce n'est pas le produit qui a échoué. Ce sont les œufs : une capsule protège plusieurs dizaines de petits, et ils sortent après le premier passage.",
+        "Les autres raisons : une fuite toujours là, un voisin non traité, ou des sprays du commerce qui ont dispersé les blattes loin du traitement. C'est pour cela que le contrôle fait partie du travail.",
+      ],
+    },
+  ],
+  call: {
+    title: "Des blattes à Langres ?",
+    text: "Dites-moi à quel étage et dans quelle pièce : je vous dis quand je peux venir.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Quel est le prix d'un traitement contre les cafards à Langres ?", answer: "Il dépend de l'espèce, du nombre de pièces et des passages. Après avoir vu les lieux, je vous remets un devis gratuit, avec le prix exact. Le déplacement est indiqué au téléphone." },
+    { question: "Les cafards peuvent-ils passer d'une maison à l'autre ?", answer: "Oui, surtout dans les maisons mitoyennes du centre : ils suivent les canalisations, les caves et les vides des murs. Si votre voisin en a aussi, traiter les deux en même temps donne un bien meilleur résultat." },
+    { question: "Un cafard dans la salle de bains, est-ce grave ?", answer: "Un seul peut venir de l'évacuation, surtout la blatte orientale. Si vous en revoyez, ou si vous trouvez de petites crottes noires, il y a probablement un foyer à proximité : mieux vaut le faire vérifier." },
+    { question: "Peut-on traiter pendant que le gîte est occupé ?", answer: "C'est possible dans certaines pièces, mais mieux vaut profiter d'un logement vide : on traite partout, sans gêner personne, et le contrôle est plus simple." },
+    { question: "Le froid de l'hiver fait-il disparaître les cafards ?", answer: "Non. Dans une maison chauffée, les blattes vivent et se reproduisent toute l'année. Elles sont simplement moins visibles quand elles restent près des appareils." },
+    { question: "Venez-vous dans les villages autour de Langres ?", answer: "Oui : Saints-Geosmes, Humes-Jorquenay, Peigney, Champigny-lès-Langres, Rolampont, Chalindrey et les autres communes du Pays de Langres. Appelez le 07 65 25 67 92, 7j/7 de 7h à 23h." },
+  ],
+  nearby: {
+    intro: "Basé aux portes de Chaumont, j'interviens dans tout le sud de la Haute-Marne.",
+    links: [
+      { label: "Cafards Chaumont", to: "/cafards-blattes-chaumont" },
+      { label: "Cafards Nogent", to: "/cafards-blattes-nogent" },
+      { label: "Cafards Bourbonne-les-Bains", to: "/cafards-blattes-bourbonne-les-bains" },
+    ],
+    also: "À Langres, j'interviens aussi pour :",
+    note: (
+      <>
+        Des piqûres au réveil dans une chambre ? Ce n'est pas un cafard : voyez les{" "}
+        <Link to="/punaises-de-lit" className={textLink}>punaises de lit</Link>.
+      </>
+    ),
+  },
+};
 
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Comment reconnaître une blatte germanique à Langres ?", answer: "La blatte germanique mesure environ 1 à 1,5 cm, elle est brun clair avec deux bandes sombres sur le thorax. Elle vit surtout dans les cuisines et salles de bains, près de la chaleur et de l'eau. La blatte orientale, plus grande et presque noire, préfère les caves et sous-sols. Une photo nette aide à préparer le diagnostic." },
-  { question: "Intervenez-vous à la Citadelle, aux Franchises et aux Fourches ?", answer: "Oui. Les secteurs cités sur cette page font partie de la zone desservie, ainsi que les communes voisines comme Saints-Geosmes, Humes-Jorquenay, Rolampont, Peigney, Chalindrey, Champigny-lès-Langres ou Val-de-Meuse. GF Nuisibles est basée à Montsaon et n'a pas d'agence à Langres : précisez votre adresse et les accès lors de votre demande." },
-  { question: "Les produits du commerce suffisent-ils contre les cafards ?", answer: "Ils peuvent tuer quelques individus visibles mais atteignent rarement les refuges et les oothèques (capsules d'œufs). Des pulvérisations répétées peuvent aussi disperser les blattes et rendre les appâts moins attractifs. Indiquez les produits déjà utilisés pour que la stratégie en tienne compte." },
-  { question: "Combien de passages faut-il prévoir ?", answer: "Cela dépend de l'espèce, de l'étendue de l'infestation et du bâtiment. Le nombre de passages et le contrôle de suivi sont précisés dans le devis gratuit ; aucun chiffre unique ne convient à toutes les situations." },
-  { question: "Proposez-vous un suivi pour les professionnels de Langres ?", answer: "Oui. Restaurants, commerces alimentaires, hébergements, bailleurs et entreprises peuvent mettre en place un contrat avec contrôles réguliers et compte rendu écrit, utile dans une démarche d'hygiène de type HACCP. La fréquence est définie selon l'activité et les locaux." },
-];
-
-const jsonLd = {"@context": "https://schema.org", "@graph": [LOCAL_BUSINESS, {"@type": "Service", "url": "https://gf-nuisibles.fr/cafards-blattes-langres", "name": "Cafards et Blattes à Langres (52200) | GF Nuisibles", "description": "Cafards ou blattes à Langres ? Plus on agit tôt, plus c'est simple. Appelez, on intervient discrètement, 7j/7. Devis gratuit : 07 65 25 67 92.", "serviceType": "Traitement cafards et blattes", "provider": {"@id": "https://gf-nuisibles.fr/#organization"}, "areaServed": {"@type": "City", "name": "Langres", "address": {"@type": "PostalAddress", "postalCode": "52200", "addressRegion": "Haute-Marne", "addressCountry": "FR"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/"}, {"@type": "ListItem", "position": 2, "name": "Cafards & Blattes", "item": "https://gf-nuisibles.fr/cafards-blattes"}, {"@type": "ListItem", "position": 3, "name": "Cafards et Blattes à Langres", "item": "https://gf-nuisibles.fr/cafards-blattes-langres"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Comment reconnaître une blatte germanique à Langres ?", "acceptedAnswer": {"@type": "Answer", "text": "La blatte germanique mesure environ 1 à 1,5 cm, elle est brun clair avec deux bandes sombres sur le thorax. Elle vit surtout dans les cuisines et salles de bains, près de la chaleur et de l'eau. La blatte orientale, plus grande et presque noire, préfère les caves et sous-sols. Une photo nette aide à préparer le diagnostic."}}, {"@type": "Question", "name": "Intervenez-vous à la Citadelle, aux Franchises et aux Fourches ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Les secteurs cités sur cette page font partie de la zone desservie, ainsi que les communes voisines comme Saints-Geosmes, Humes-Jorquenay, Rolampont, Peigney, Chalindrey, Champigny-lès-Langres ou Val-de-Meuse. GF Nuisibles est basée à Montsaon et n'a pas d'agence à Langres : précisez votre adresse et les accès lors de votre demande."}}, {"@type": "Question", "name": "Les produits du commerce suffisent-ils contre les cafards ?", "acceptedAnswer": {"@type": "Answer", "text": "Ils peuvent tuer quelques individus visibles mais atteignent rarement les refuges et les oothèques (capsules d'œufs). Des pulvérisations répétées peuvent aussi disperser les blattes et rendre les appâts moins attractifs. Indiquez les produits déjà utilisés pour que la stratégie en tienne compte."}}, {"@type": "Question", "name": "Combien de passages faut-il prévoir ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend de l'espèce, de l'étendue de l'infestation et du bâtiment. Le nombre de passages et le contrôle de suivi sont précisés dans le devis gratuit ; aucun chiffre unique ne convient à toutes les situations."}}, {"@type": "Question", "name": "Proposez-vous un suivi pour les professionnels de Langres ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Restaurants, commerces alimentaires, hébergements, bailleurs et entreprises peuvent mettre en place un contrat avec contrôles réguliers et compte rendu écrit, utile dans une démarche d'hygiène de type HACCP. La fréquence est définie selon l'activité et les locaux."}}]}]};
-
-const CafardsBlattesLangres = () => (
-  <>
-    <Helmet>
-      <title>{TITLE}</title>
-      <meta name="description" content={DESCRIPTION} />
-      <link rel="canonical" href={URL} />
-      <meta property="og:title" content={TITLE} />
-      <meta property="og:description" content={DESCRIPTION} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={URL} />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={TITLE} />
-      <meta name="twitter:description" content={DESCRIPTION} />
-      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-    </Helmet>
-    <CityServicePage
-      breadcrumbs={breadcrumbsFrom(jsonLd)}
-      city="Langres"
-      department="Haute-Marne (52)"
-      serviceTitle={"Cafards et blattes à Langres (52200) : traitement pour particuliers et professionnels"}
-      icon={<Bug className="h-8 w-8" />}
-      heroImage={heroImage}
-      metaDescription={DESCRIPTION}
-      serviceCallTitle="DES CAFARDS À LANGRES ?"
-      serviceCallSubtitle="GF NUISIBLES TRAITE BLATTES ET CAFARDS EN LOGEMENT COMME EN COMMERCE !"
-      intro={"Des cafards dans la cuisine, des blattes qui sortent la nuit ou des traces noires dans les placards à Langres (52200) ? GF Nuisibles traite les blattes germaniques, orientales et américaines chez les particuliers comme chez les professionnels de Langres et des communes voisines. Plus l'intervention est rapide, plus elle est simple : ces insectes se reproduisent vite et se cachent dans des recoins inaccessibles. Le diagnostic et le devis sont gratuits."}
-      expertise={"Basée à Montsaon, en Haute-Marne, GF Nuisibles intervient à Langres pour les maisons, appartements, locations, restaurants, commerces alimentaires, hébergements et entreprises. Le choix de la méthode dépend de l'espèce identifiée, des refuges trouvés et de l'usage des pièces. Signalez la présence d'enfants, d'animaux et les produits déjà utilisés : les consignes de protection et de réintégration sont adaptées au protocole retenu."}
-      method={"L'inspection localise les refuges : moteurs d'électroménager, dessous d'évier, plinthes, gaines et passages de canalisations. Le devis précise la stratégie, généralement des gels appâts posés en points ciblés, complétés si nécessaire par d'autres traitements professionnels, ainsi que le contrôle de suivi. Des conseils d'hygiène et de colmatage accompagnent le traitement pour limiter le retour des insectes."}
-      localContext={{ title: "Remparts, place Diderot, Citadelle : traiter les blattes dans les maisons anciennes de Langres", content: <>
-<p>{"À l'intérieur des remparts, autour de la place Diderot et de la cathédrale Saint-Mammès, les maisons de ville anciennes de Langres ont des murs épais, des caves voûtées et des réseaux d'eau souvent modifiés au fil du temps. Ces cavités offrent des refuges chauds et humides aux blattes : le diagnostic suit les canalisations, les plinthes et les doublages. Ces monuments servent uniquement de repères géographiques, pas de références clients."}</p>
-<p>{"La ville accueille de nombreux visiteurs : restaurants, hôtels, chambres d'hôtes et commerces de bouche du centre historique doivent pouvoir traiter rapidement et discrètement, sans fermer leur établissement si la méthode le permet. À la Citadelle, à Saint-Gilles, aux Franchises ou aux Fourches, les logements collectifs et pavillons ont des contraintes différentes ; précisez le type de bâtiment lors de votre demande."}</p>
-</> }}
-      neighborhoods={{ title: "Quartiers et secteurs desservis à Langres (52200)", intro: "Précisez votre adresse et les accès lors de votre demande. Ces repères aident à situer votre logement ou votre local ; ils ne signalent aucune infestation dans ces secteurs.", items: ["Centre historique, place Diderot", "Secteur de la cathédrale Saint-Mammès et des remparts", "La Citadelle", "Saint-Gilles", "Les Franchises", "Les Fourches", "Corlée et abords du lac de la Liez"] }}
-      extraSections={[
-        { title: "Blatte germanique, orientale ou américaine : quelle espèce à Langres ?", content: <>
-<p>{"À Langres, la blatte germanique est l'espèce la plus fréquente dans les logements et cuisines professionnelles : petite, brun clair, elle se reproduit vite et se cache derrière le réfrigérateur, le four, le lave-vaisselle ou dans les charnières des placards. Une femelle transporte une oothèque contenant plusieurs dizaines d'œufs, ce qui explique qu'une petite présence devienne vite une infestation."}</p>
-<p>{"La blatte orientale, plus grande et sombre, vit plutôt dans les caves, vides sanitaires, regards et chaufferies ; elle remonte par les évacuations. La blatte américaine, rare en habitation, se rencontre parfois dans des locaux techniques chauffés. Identifier l'espèce oriente les zones d'inspection et le choix des produits : un gel appât en cuisine ne répond pas au même problème qu'une colonie installée dans un sous-sol."}</p>
-<p>{"Signes à surveiller : insectes qui fuient à l'allumage de la lumière, petites déjections noires semblables à du poivre moulu, capsules d'œufs vides, mues, ou odeur âcre persistante dans les placards. Ne videz pas les placards au hasard avant le diagnostic : notez simplement où vous avez vu les insectes."}</p>
-</> },
-        { title: "Particuliers à Langres : maison, appartement ou location", content: <>
-<p>{"Pour un particulier, le diagnostic à domicile est gratuit. Il porte sur la cuisine, la salle de bains, les WC, les arrivées d'eau et les zones chaudes. En appartement, signalez si vos voisins observent aussi des blattes : un traitement isolé dans un immeuble peut être recontaminé par les gaines communes. Locataire, vous pouvez prévenir votre bailleur ; propriétaire en copropriété, le syndic peut être associé pour les parties communes."}</p>
-<p>{"Le traitement privilégie généralement des gels appâts posés en points ciblés, peu visibles et compatibles avec une occupation du logement, complétés si besoin par d'autres produits professionnels. Les consignes de protection des aliments, des enfants et des animaux, ainsi que le délai avant nettoyage des zones traitées, vous sont expliqués avant l'intervention."}</p>
-<p>{"Dans les communes autour de Langres, comme Saints-Geosmes, Humes-Jorquenay, Rolampont, Peigney, Chalindrey, Champigny-lès-Langres ou Val-de-Meuse, les conditions sont identiques : diagnostic, devis écrit, traitement et contrôle de suivi selon la situation."}</p>
-</> },
-        { title: "Professionnels à Langres : restaurants, commerces, bailleurs et entreprises", content: <>
-<p>{"À Langres, le tourisme fait vivre restaurants, hôtels, gîtes, boulangeries et commerces alimentaires. Pour ces locaux, la présence de blattes engage l'image de l'établissement et peut être relevée lors d'un contrôle sanitaire. GF Nuisibles intervient sur rendez-vous, si possible en dehors des heures d'ouverture, avec une discrétion adaptée (véhicule et tenue sans mise en avant du nuisible quand vous le demandez)."}</p>
-<p>{"Les professionnels peuvent souscrire un contrat de suivi : visites régulières, contrôle des points sensibles (réserves, plonge, chambres froides, vestiaires, locaux poubelles), traçabilité écrite des passages et des produits utilisés, utile dans un plan de maîtrise sanitaire de type HACCP. Bailleurs sociaux et syndics peuvent organiser des campagnes coordonnées par bâtiment."}</p>
-<p>{"Le devis tient compte des surfaces, du nombre de locaux, des contraintes d'accès et de la fréquence de suivi souhaitée. Il est gratuit et sans engagement."}</p>
-</> },
-        { title: "Préparer l'intervention et éviter le retour des cafards à Langres", content: <>
-<p>{"Avant le passage : dégagez l'accès sous l'évier, derrière l'électroménager quand c'est possible, et rangez les denrées dans des boîtes fermées. Évitez les insecticides en bombe dans les jours précédents. Après le traitement : ne nettoyez pas les points de gel et respectez les consignes données."}</p>
-<p>{"Ensuite, réduisez ce qui attire les blattes : fuites d'eau réparées, miettes et graisses nettoyées, poubelles fermées, cartons de livraison sortis rapidement, joints et passages de tuyaux colmatés. Ces gestes accompagnent le traitement mais ne remplacent pas un diagnostic lorsque les insectes sont déjà installés."}</p>
-</> },
-        { title: "Votre service cafards et blattes à Langres et alentour", content: <>
-<p>Pour découvrir l'ensemble de nos méthodes, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes">{"page sur le traitement des blattes en Haute-Marne"}</Link>. Pour un rendez-vous, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-<p>Nous intervenons aussi dans les villes voisines : <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-nogent">{"Cafards et blattes à Nogent"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-chaumont">{"Cafards et blattes à Chaumont"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-bourbonne-les-bains">{"Cafards et blattes à Bourbonne-les-Bains"}</Link>. Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour les autres communes desservies.</p>
-</> },
-      ]}
-      nearbyCities={{ title: "Près de Langres : nos pages locales", items: [
-{ label: "Cafards et blattes à Nogent", to: "/cafards-blattes-nogent" },
-{ label: "Cafards et blattes à Chaumont", to: "/cafards-blattes-chaumont" },
-{ label: "Cafards et blattes à Bourbonne-les-Bains", to: "/cafards-blattes-bourbonne-les-bains" },
-] }}
-      faqItems={FAQ_ITEMS}
-      relatedLinks={[
-        { label: "Cafards & Blattes (52)", to: "/cafards-blattes" },
-        { label: "Dératisation à Langres", to: "/deratisation-langres" },
-        { label: "Zone d'intervention", to: "/zone-intervention" },
-      ]}
-      cta={"Cafards ou blattes à Langres : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits, pour votre logement ou votre établissement."}
-    />
-  </>
-);
+const CafardsBlattesLangres = () => <RodentTownPage town={town} />;
 
 export default CafardsBlattesLangres;

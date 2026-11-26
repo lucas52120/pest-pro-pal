@@ -1,97 +1,137 @@
-import { Bug } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-desinsectisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Building2, DoorOpen, Droplets, Factory, FileText, House, Landmark, MessageSquare, Package, ShoppingBag, ThermometerSun, Trash2, Utensils } from "lucide-react";
+import heroImage from "@/assets/blatte-fissure.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Traitement cafards et blattes à Saint-Dizier (52)";
-const DESCRIPTION = "Des blattes qui sortent la nuit à Saint-Dizier ? Logement ou restaurant, on s'en occupe en toute discrétion, 7j/7. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/cafards-blattes-saint-dizier";
+const town: RodentTown = {
+  kind: "cockroaches",
+  city: "Saint-Dizier",
+  postalCode: "52100",
+  region: "Haute-Marne",
+  slug: "/cafards-blattes-saint-dizier",
+  title: "Traitement cafards et blattes à Saint-Dizier (52)",
+  description:
+    "Des blattes qui sortent la nuit à Saint-Dizier ? Logement ou restaurant, on s'en occupe en toute discrétion, 7j/7. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Appartements, immeubles et restaurants",
+    text: "En immeuble, les blattes passent d'un logement à l'autre. Je trouve d'où elles viennent et je traite, sans bruit.",
+    highlight: "Interventions coordonnées pour bailleurs et syndics",
+    signsLabel: "Vous êtes en immeuble ? Comment s'organiser",
+    image: heroImage,
+    imageAlt: "Blatte brune au bord d'une fissure dans du béton",
+    imageClassName: "max-lg:brightness-50",
+  },
+  reviews: ["soucelier", "bromann", "jc"],
+  why: {
+    title: "Pourquoi y a-t-il des cafards chez vous ?",
+    intro: "Un appartement bien tenu peut en avoir. Les blattes cherchent la chaleur et l'eau, et suivent les tuyaux pour les trouver.",
+    items: [
+      { icon: Building2, title: "Le logement d'à côté", text: "gaines, colonnes d'eau et vide-ordures relient les appartements d'un même immeuble." },
+      { icon: ThermometerSun, title: "Les appareils chauds", text: "réfrigérateur, lave-vaisselle, box internet : leurs moteurs servent de refuge." },
+      { icon: Utensils, title: "De quoi manger la nuit", text: "miettes sous le grille-pain, gamelle, sac poubelle ouvert dans la cuisine." },
+      { icon: Package, title: "Un déménagement", text: "cartons récupérés, meubles d'occasion, électroménager acheté d'occasion." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser des cafards efficacement ?",
+    intro: "En immeuble, traiter un appartement seul revient souvent à déplacer le problème. Je cherche d'où elles arrivent et je choisis les méthodes en conséquence.",
+    steps: [
+      { title: "Je remonte jusqu'au foyer", text: "Cuisine, salle de bains, gaine, local poubelles : je regarde chez vous et, si besoin, dans les parties communes." },
+      { title: "J'adapte le traitement", text: "Gel dans les charnières et les fentes, pulvérisation ciblée le long des tuyaux, ou les deux selon ce que je trouve." },
+      { title: "Je reviens à la date prévue", text: "Le contrôle est fixé dès le départ, pour atteindre les jeunes sortis des œufs entre-temps." },
+    ],
+    after: (
+      <>
+        Si une pièce doit rester libre un moment, je vous le dis avant. Plus d'informations sur la page{" "}
+        <Link to="/cafards-blattes" className={textLink}>se débarrasser des cafards</Link>.
+      </>
+    ),
+  },
+  where: {
+    intro: "Grand ensemble, maison de quartier ou cuisine professionnelle : les cachettes changent avec le bâtiment.",
+    items: [
+      { icon: Building2, title: "Le Vert-Bois", text: "dans les immeubles, je vérifie les gaines techniques, les colonnes d'eau et le local poubelles en plus de l'appartement." },
+      { icon: Landmark, title: "Le centre-ville", text: "autour de l'église Notre-Dame et des Petites Halles : logements anciens au-dessus des commerces." },
+      { icon: Trash2, title: "La Noue", text: "vide-ordures, caves communes et cuisines qui partagent les mêmes tuyaux." },
+      { icon: House, title: "Gigny et Marnaval", text: "maisons avec sous-sol humide, où la blatte orientale s'installe près des évacuations." },
+      { icon: ShoppingBag, title: "Restaurants et snacks", text: "dessous des friteuses, plonge, réserve sèche et vestiaires." },
+      { icon: Factory, title: "Zones d'activités", text: "réfectoires, salles de pause et entrepôts où arrivent les palettes." },
+    ],
+  },
+  price: {
+    paragraphs: [
+      "Le prix dépend du nombre de pièces, de l'espèce et des passages. Pour un immeuble, il dépend aussi du nombre de logements et de parties communes à traiter.",
+      "Vous recevez le montant exact avant le traitement, sans engagement.",
+    ],
+    aside: { icon: FileText, title: "Bailleur ou syndic ?", text: "Je peux établir un devis par cage d'escalier ou pour tout le bâtiment. Le déplacement est annoncé au téléphone." },
+  },
+  local: [
+    {
+      kind: "cards",
+      target: true,
+      columns: "lg:grid-cols-3",
+      title: "Des cafards dans l'immeuble : comment s'organiser ?",
+      intro: "Quand plusieurs logements sont touchés, la façon de faire compte autant que le produit.",
+      items: [
+        { icon: MessageSquare, title: "Prévenir le bailleur ou le syndic", text: "par écrit, avec des photos et la date. C'est lui qui peut organiser le traitement des voisins et des parties communes." },
+        { icon: DoorOpen, title: "Traiter le même jour", text: "plusieurs logements et les locaux communs en une seule fois, pour que les blattes ne passent pas d'un appartement traité à un autre." },
+        { icon: Droplets, title: "Réparer les fuites", text: "une fuite dans une gaine ou sous un évier nourrit le problème. Signalez-la en même temps." },
+      ],
+    },
+    {
+      kind: "levels",
+      title: "Quels signes montrent qu'il y a des cafards ?",
+      intro: "On voit rarement les blattes en plein jour. Ce sont leurs traces qui les trahissent.",
+      items: [
+        { title: "De petits points noirs", text: "Comme du poivre, dans les charnières des placards, derrière les appareils ou sous l'évier." },
+        { title: "Des mues brunes", text: "De fines peaux vides, laissées par les jeunes qui grandissent." },
+        { title: "Des capsules d'œufs", text: "Petits étuis bruns de moins d'un centimètre, souvent près des cachettes." },
+        { title: "Une odeur", text: "Rance et persistante quand elles sont nombreuses, surtout dans un placard fermé." },
+      ],
+    },
+    {
+      kind: "text",
+      title: "Restaurant ou commerce : un suivi régulier",
+      paragraphs: [
+        "Dans une cuisine professionnelle, les livraisons apportent régulièrement de nouveaux insectes. Un traitement isolé règle le problème du moment, un suivi évite qu'il revienne.",
+        <>
+          Je passe en dehors du service, je laisse un compte rendu écrit après chaque visite, utile pour votre plan de maîtrise sanitaire.{" "}
+          <Link to="/contact" className={textLink}>Demandez un devis professionnel</Link>.
+        </>,
+      ],
+    },
+  ],
+  call: {
+    title: "Des blattes chez vous à Saint-Dizier ?",
+    text: "Dites-moi si vous êtes en maison ou en immeuble : je vous donne une date dès l'appel.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Combien coûte un traitement anti-cafards à Saint-Dizier ?", answer: "Le prix dépend de la surface, de l'espèce et du nombre de passages. Je vous remets un devis gratuit avant de traiter, avec le montant exact et le déplacement." },
+    { question: "Mon voisin a des cafards, vais-je en avoir ?", answer: "C'est possible dans un immeuble, car les blattes suivent les tuyaux. Surveillez le dessous de l'évier et l'arrière des appareils. Le mieux reste que le bailleur ou le syndic organise un traitement commun." },
+    { question: "Est-ce au propriétaire de payer le traitement ?", answer: "Cela dépend de l'origine du problème et de votre bail. Prévenez votre propriétaire ou votre bailleur par écrit dès les premières traces : c'est le point de départ, quelle que soit la réponse." },
+    { question: "Est-ce dangereux pour mon chat ou mon chien ?", answer: "Dites-moi dès l'appel quels animaux vivent chez vous. Je place les produits hors de leur portée et je vous dis s'ils doivent rester dans une autre pièce pendant un temps." },
+    { question: "Les pièges collants vendus en magasin suffisent-ils ?", answer: "Ils aident à repérer où passent les blattes, mais ne règlent pas le problème : la plupart restent cachées et continuent à pondre." },
+    { question: "Venez-vous autour de Saint-Dizier ?", answer: "Oui : Bettancourt-la-Ferrée, Chancenay, Valcourt, Hallignicourt, Perthes, Eurville-Bienville, Chamouilley, Roches-sur-Marne et les autres villages du nord haut-marnais. Appelez le 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Basé aux portes de Chaumont, je me déplace dans tout le nord de la Haute-Marne.",
+    links: [
+      { label: "Cafards Joinville", to: "/cafards-blattes-joinville" },
+      { label: "Cafards Chaumont", to: "/cafards-blattes-chaumont" },
+      { label: "Cafards Langres", to: "/cafards-blattes-langres" },
+    ],
+    also: "À Saint-Dizier, je traite aussi :",
+    note: (
+      <>
+        Une question sur les espèces ou les produits ? Lisez notre page{" "}
+        <Link to="/cafards-blattes" className={textLink}>traitement des blattes</Link>.
+      </>
+    ),
+  },
+};
 
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Comment reconnaître une blatte germanique à Saint-Dizier ?", answer: "La blatte germanique mesure environ 1 à 1,5 cm, elle est brun clair avec deux bandes sombres sur le thorax. Elle vit surtout dans les cuisines et salles de bains, près de la chaleur et de l'eau. La blatte orientale, plus grande et presque noire, préfère les caves et sous-sols. Une photo nette aide à préparer le diagnostic." },
-  { question: "Intervenez-vous au Vert-Bois, à La Noue et à Marnaval ?", answer: "Oui. Les secteurs cités sur cette page font partie de la zone desservie, ainsi que les communes voisines comme Bettancourt-la-Ferrée, Chancenay, Valcourt, Hallignicourt, Perthes, Eurville-Bienville, Chamouilley ou Roches-sur-Marne. GF Nuisibles est basée à Montsaon et n'a pas d'agence à Saint-Dizier : précisez votre adresse et les accès lors de votre demande." },
-  { question: "Les produits du commerce suffisent-ils contre les cafards ?", answer: "Ils peuvent tuer quelques individus visibles mais atteignent rarement les refuges et les oothèques (capsules d'œufs). Des pulvérisations répétées peuvent aussi disperser les blattes et rendre les appâts moins attractifs. Indiquez les produits déjà utilisés pour que la stratégie en tienne compte." },
-  { question: "Combien de passages faut-il prévoir ?", answer: "Cela dépend de l'espèce, de l'étendue de l'infestation et du bâtiment. Le nombre de passages et le contrôle de suivi sont précisés dans le devis gratuit ; aucun chiffre unique ne convient à toutes les situations." },
-  { question: "Proposez-vous un suivi pour les professionnels de Saint-Dizier ?", answer: "Oui. Restaurants, commerces alimentaires, hébergements, bailleurs et entreprises peuvent mettre en place un contrat avec contrôles réguliers et compte rendu écrit, utile dans une démarche d'hygiène de type HACCP. La fréquence est définie selon l'activité et les locaux." },
-];
-
-const jsonLd = {"@context": "https://schema.org", "@graph": [LOCAL_BUSINESS, {"@type": "Service", "url": "https://gf-nuisibles.fr/cafards-blattes-saint-dizier", "name": "Cafards et Blattes à Saint-Dizier (52100) | GF Nuisibles", "description": "Des blattes qui sortent la nuit à Saint-Dizier ? Logement ou restaurant, on s'en occupe en toute discrétion, 7j/7. Devis gratuit : 07 65 25 67 92.", "serviceType": "Traitement cafards et blattes", "provider": {"@id": "https://gf-nuisibles.fr/#organization"}, "areaServed": {"@type": "City", "name": "Saint-Dizier", "address": {"@type": "PostalAddress", "postalCode": "52100", "addressRegion": "Haute-Marne", "addressCountry": "FR"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/"}, {"@type": "ListItem", "position": 2, "name": "Cafards & Blattes", "item": "https://gf-nuisibles.fr/cafards-blattes"}, {"@type": "ListItem", "position": 3, "name": "Cafards et Blattes à Saint-Dizier", "item": "https://gf-nuisibles.fr/cafards-blattes-saint-dizier"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Comment reconnaître une blatte germanique à Saint-Dizier ?", "acceptedAnswer": {"@type": "Answer", "text": "La blatte germanique mesure environ 1 à 1,5 cm, elle est brun clair avec deux bandes sombres sur le thorax. Elle vit surtout dans les cuisines et salles de bains, près de la chaleur et de l'eau. La blatte orientale, plus grande et presque noire, préfère les caves et sous-sols. Une photo nette aide à préparer le diagnostic."}}, {"@type": "Question", "name": "Intervenez-vous au Vert-Bois, à La Noue et à Marnaval ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Les secteurs cités sur cette page font partie de la zone desservie, ainsi que les communes voisines comme Bettancourt-la-Ferrée, Chancenay, Valcourt, Hallignicourt, Perthes, Eurville-Bienville, Chamouilley ou Roches-sur-Marne. GF Nuisibles est basée à Montsaon et n'a pas d'agence à Saint-Dizier : précisez votre adresse et les accès lors de votre demande."}}, {"@type": "Question", "name": "Les produits du commerce suffisent-ils contre les cafards ?", "acceptedAnswer": {"@type": "Answer", "text": "Ils peuvent tuer quelques individus visibles mais atteignent rarement les refuges et les oothèques (capsules d'œufs). Des pulvérisations répétées peuvent aussi disperser les blattes et rendre les appâts moins attractifs. Indiquez les produits déjà utilisés pour que la stratégie en tienne compte."}}, {"@type": "Question", "name": "Combien de passages faut-il prévoir ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend de l'espèce, de l'étendue de l'infestation et du bâtiment. Le nombre de passages et le contrôle de suivi sont précisés dans le devis gratuit ; aucun chiffre unique ne convient à toutes les situations."}}, {"@type": "Question", "name": "Proposez-vous un suivi pour les professionnels de Saint-Dizier ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Restaurants, commerces alimentaires, hébergements, bailleurs et entreprises peuvent mettre en place un contrat avec contrôles réguliers et compte rendu écrit, utile dans une démarche d'hygiène de type HACCP. La fréquence est définie selon l'activité et les locaux."}}]}]};
-
-const CafardsBlattesSaintDizier = () => (
-  <>
-    <Helmet>
-      <title>{TITLE}</title>
-      <meta name="description" content={DESCRIPTION} />
-      <link rel="canonical" href={URL} />
-      <meta property="og:title" content={TITLE} />
-      <meta property="og:description" content={DESCRIPTION} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={URL} />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={TITLE} />
-      <meta name="twitter:description" content={DESCRIPTION} />
-      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-    </Helmet>
-    <CityServicePage
-      breadcrumbs={breadcrumbsFrom(jsonLd)}
-      city="Saint-Dizier"
-      department="Haute-Marne (52)"
-      serviceTitle={"Cafards et blattes à Saint-Dizier (52100) : traitement pour particuliers et professionnels"}
-      icon={<Bug className="h-8 w-8" />}
-      heroImage={heroImage}
-      metaDescription={DESCRIPTION}
-      serviceCallTitle="DES CAFARDS À SAINT-DIZIER ?"
-      serviceCallSubtitle="GF NUISIBLES TRAITE BLATTES ET CAFARDS EN LOGEMENT COMME EN COMMERCE !"
-      intro={"Des cafards dans la cuisine, des blattes qui sortent la nuit ou des traces noires dans les placards à Saint-Dizier (52100) ? GF Nuisibles traite les blattes germaniques, orientales et américaines chez les particuliers comme chez les professionnels de Saint-Dizier et des communes voisines. Plus l'intervention est rapide, plus elle est simple : ces insectes se reproduisent vite et se cachent dans des recoins inaccessibles. Le diagnostic et le devis sont gratuits."}
-      expertise={"Basée à Montsaon, en Haute-Marne, GF Nuisibles intervient à Saint-Dizier pour les maisons, appartements, locations, restaurants, commerces alimentaires, hébergements et entreprises. Le choix de la méthode dépend de l'espèce identifiée, des refuges trouvés et de l'usage des pièces. Signalez la présence d'enfants, d'animaux et les produits déjà utilisés : les consignes de protection et de réintégration sont adaptées au protocole retenu."}
-      method={"L'inspection localise les refuges : moteurs d'électroménager, dessous d'évier, plinthes, gaines et passages de canalisations. Le devis précise la stratégie, généralement des gels appâts posés en points ciblés, complétés si nécessaire par d'autres traitements professionnels, ainsi que le contrôle de suivi. Des conseils d'hygiène et de colmatage accompagnent le traitement pour limiter le retour des insectes."}
-      localContext={{ title: "Vert-Bois, La Noue, Marnaval : cafards et blattes dans les immeubles de Saint-Dizier", content: <>
-<p>{"Première ville de Haute-Marne, Saint-Dizier réunit un centre ancien autour de l'église Notre-Dame, du château et des Petites Halles, et de grands ensembles comme le Vert-Bois ou La Noue. Dans les immeubles collectifs, les blattes circulent par les gaines, les colonnes d'évacuation et les vide-ordures : traiter un seul appartement sans regarder les logements voisins limite souvent le résultat. Ces repères situent le secteur ; ils ne désignent aucun lieu infesté ni aucun client."}</p>
-<p>{"Le long de la Marne et du canal, à Gigny ou à Marnaval, les maisons avec caves et sous-sols humides sont plus exposées à la blatte orientale. Les zones d'activités, entrepôts logistiques et cuisines professionnelles de l'agglomération bragarde demandent un plan de suivi régulier plutôt qu'un traitement ponctuel. Pour un bailleur ou un syndic, une campagne coordonnée par cage d'escalier évite que les insectes se déplacent d'un logement traité vers un logement non traité."}</p>
-</> }}
-      neighborhoods={{ title: "Quartiers et secteurs desservis à Saint-Dizier (52100)", intro: "Précisez votre adresse et les accès lors de votre demande. Ces repères aident à situer votre logement ou votre local ; ils ne signalent aucune infestation dans ces secteurs.", items: ["Centre-ville, église Notre-Dame et château", "Secteur des Petites Halles et de la Tour Miko", "Le Vert-Bois", "La Noue", "Gigny", "Marnaval", "Bords de Marne et du canal", "Zones d'activités bragardes"] }}
-      extraSections={[
-        { title: "Blatte germanique, orientale ou américaine : quelle espèce à Saint-Dizier ?", content: <>
-<p>{"À Saint-Dizier, la blatte germanique est l'espèce la plus fréquente dans les logements et cuisines professionnelles : petite, brun clair, elle se reproduit vite et se cache derrière le réfrigérateur, le four, le lave-vaisselle ou dans les charnières des placards. Une femelle transporte une oothèque contenant plusieurs dizaines d'œufs, ce qui explique qu'une petite présence devienne vite une infestation."}</p>
-<p>{"La blatte orientale, plus grande et sombre, vit plutôt dans les caves, vides sanitaires, regards et chaufferies ; elle remonte par les évacuations. La blatte américaine, rare en habitation, se rencontre parfois dans des locaux techniques chauffés. Identifier l'espèce oriente les zones d'inspection et le choix des produits : un gel appât en cuisine ne répond pas au même problème qu'une colonie installée dans un sous-sol."}</p>
-<p>{"Signes à surveiller : insectes qui fuient à l'allumage de la lumière, petites déjections noires semblables à du poivre moulu, capsules d'œufs vides, mues, ou odeur âcre persistante dans les placards. Ne videz pas les placards au hasard avant le diagnostic : notez simplement où vous avez vu les insectes."}</p>
-</> },
-        { title: "Particuliers à Saint-Dizier : maison, appartement ou location", content: <>
-<p>{"Pour un particulier, le diagnostic à domicile est gratuit. Il porte sur la cuisine, la salle de bains, les WC, les arrivées d'eau et les zones chaudes. En appartement, signalez si vos voisins observent aussi des blattes : un traitement isolé dans un immeuble peut être recontaminé par les gaines communes. Locataire, vous pouvez prévenir votre bailleur ; propriétaire en copropriété, le syndic peut être associé pour les parties communes."}</p>
-<p>{"Le traitement privilégie généralement des gels appâts posés en points ciblés, peu visibles et compatibles avec une occupation du logement, complétés si besoin par d'autres produits professionnels. Les consignes de protection des aliments, des enfants et des animaux, ainsi que le délai avant nettoyage des zones traitées, vous sont expliqués avant l'intervention."}</p>
-<p>{"Dans les communes autour de Saint-Dizier, comme Bettancourt-la-Ferrée, Chancenay, Valcourt, Hallignicourt, Perthes, Eurville-Bienville, Chamouilley ou Roches-sur-Marne, les conditions sont identiques : diagnostic, devis écrit, traitement et contrôle de suivi selon la situation."}</p>
-</> },
-        { title: "Professionnels à Saint-Dizier : restaurants, commerces, bailleurs et entreprises", content: <>
-<p>{"À Saint-Dizier, l'agglomération compte de nombreux logements sociaux, sites industriels, entrepôts, restaurants et établissements recevant du public. Pour ces locaux, la présence de blattes engage l'image de l'établissement et peut être relevée lors d'un contrôle sanitaire. GF Nuisibles intervient sur rendez-vous, si possible en dehors des heures d'ouverture, avec une discrétion adaptée (véhicule et tenue sans mise en avant du nuisible quand vous le demandez)."}</p>
-<p>{"Les professionnels peuvent souscrire un contrat de suivi : visites régulières, contrôle des points sensibles (réserves, plonge, chambres froides, vestiaires, locaux poubelles), traçabilité écrite des passages et des produits utilisés, utile dans un plan de maîtrise sanitaire de type HACCP. Bailleurs sociaux et syndics peuvent organiser des campagnes coordonnées par bâtiment."}</p>
-<p>{"Le devis tient compte des surfaces, du nombre de locaux, des contraintes d'accès et de la fréquence de suivi souhaitée. Il est gratuit et sans engagement."}</p>
-</> },
-        { title: "Préparer l'intervention et éviter le retour des cafards à Saint-Dizier", content: <>
-<p>{"Avant le passage : dégagez l'accès sous l'évier, derrière l'électroménager quand c'est possible, et rangez les denrées dans des boîtes fermées. Évitez les insecticides en bombe dans les jours précédents. Après le traitement : ne nettoyez pas les points de gel et respectez les consignes données."}</p>
-<p>{"Ensuite, réduisez ce qui attire les blattes : fuites d'eau réparées, miettes et graisses nettoyées, poubelles fermées, cartons de livraison sortis rapidement, joints et passages de tuyaux colmatés. Ces gestes accompagnent le traitement mais ne remplacent pas un diagnostic lorsque les insectes sont déjà installés."}</p>
-</> },
-        { title: "Votre service cafards et blattes à Saint-Dizier et alentour", content: <>
-<p>Pour découvrir l'ensemble de nos méthodes, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes">{"page cafards et blattes en Haute-Marne"}</Link>. Pour un rendez-vous, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-<p>Nous intervenons aussi dans les villes voisines : <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-joinville">{"Cafards et blattes à Joinville"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-chaumont">{"Cafards et blattes à Chaumont"}</Link>. Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour les autres communes desservies.</p>
-</> },
-      ]}
-      nearbyCities={{ title: "Près de Saint-Dizier : nos pages locales", items: [
-{ label: "Cafards et blattes à Joinville", to: "/cafards-blattes-joinville" },
-{ label: "Cafards et blattes à Chaumont", to: "/cafards-blattes-chaumont" },
-] }}
-      faqItems={FAQ_ITEMS}
-      relatedLinks={[
-        { label: "Cafards & Blattes (52)", to: "/cafards-blattes" },
-        { label: "Dératisation à Saint-Dizier", to: "/deratisation-saint-dizier" },
-        { label: "Zone d'intervention", to: "/zone-intervention" },
-      ]}
-      cta={"Cafards ou blattes à Saint-Dizier : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits, pour votre logement ou votre établissement."}
-    />
-  </>
-);
+const CafardsBlattesSaintDizier = () => <RodentTownPage town={town} />;
 
 export default CafardsBlattesSaintDizier;

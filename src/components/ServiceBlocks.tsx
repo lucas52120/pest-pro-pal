@@ -109,8 +109,8 @@ export const ContactButtons = ({ callLabel, contactLabel }: { callLabel: string;
   </>
 );
 
-export const CallBand = ({ title, text, contactLabel }: { title: string; text: string; contactLabel: string }) => (
-  <section className="bg-background px-4 pb-16 md:px-8 lg:px-16 lg:pb-24">
+export const CallBand = ({ title, text, contactLabel, muted }: { title: string; text: string; contactLabel: string; muted?: boolean }) => (
+  <section className={`${muted ? "bg-secondary" : "bg-background"} px-4 pb-16 md:px-8 lg:px-16 lg:pb-24`}>
     <div className="container-narrow flex flex-col gap-6 rounded-3xl bg-primary p-8 md:p-10 lg:flex-row lg:items-center lg:justify-between">
       <div>
         <p className="font-heading text-xl font-extrabold text-primary-foreground md:text-2xl">{title}</p>
@@ -198,7 +198,7 @@ export const ServiceHero = ({ breadcrumbs, eyebrow, title, text, highlight, sign
   <section className="relative overflow-hidden bg-primary px-4 pb-16 pt-32 md:px-8 md:pb-24 md:pt-36 lg:px-16">
     <div className={`absolute right-0 top-0 lg:block lg:h-full lg:w-1/2 ${delay ? "h-[32rem] w-full" : "hidden"}`}>
       <img src={image} alt={imageAlt} className={`h-full w-full object-cover ${delay ? "opacity-80" : "opacity-80"} ${imageClassName}`} />
-      <div className={`absolute inset-0 ${delay ? "bg-gradient-to-t from-primary via-primary/60 to-primary/40 lg:bg-gradient-to-r lg:from-primary lg:via-primary/50 lg:to-primary/10" : "bg-gradient-to-r from-primary via-primary/50 to-primary/10"}`} />
+      <div className={`absolute inset-0 ${delay ? "bg-gradient-to-t from-primary from-10% via-primary/60 to-primary/40 lg:bg-gradient-to-r lg:from-primary lg:via-primary/50 lg:to-primary/10" : "bg-gradient-to-r from-primary via-primary/50 to-primary/10"}`} />
     </div>
     {!delay && (
       <Icon

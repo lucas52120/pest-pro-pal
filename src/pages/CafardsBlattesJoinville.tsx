@@ -1,97 +1,129 @@
-import { Bug } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-desinsectisation.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Bed, Boxes, Castle, Church, Droplets, FileText, House, Store, ThermometerSun, Utensils, Waves, Wrench } from "lucide-react";
+import heroImage from "@/assets/blatte-hero.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Traitement cafards et blattes à Joinville (52)";
-const DESCRIPTION = "Un cafard chez vous à Joinville ? Il est rarement seul. Faites traiter votre logement ou commerce discrètement, 7j/7. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/cafards-blattes-joinville";
+const town: RodentTown = {
+  kind: "cockroaches",
+  city: "Joinville",
+  postalCode: "52300",
+  region: "Haute-Marne",
+  slug: "/cafards-blattes-joinville",
+  title: "Traitement cafards et blattes à Joinville (52)",
+  description:
+    "Un cafard chez vous à Joinville ? Il est rarement seul. Faites traiter votre logement ou commerce discrètement, 7j/7. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Vieille ville, quais et commerces",
+    text: "Un cafard aperçu est rarement seul. Je trouve d'où ils viennent dans votre maison ou votre commerce, et je traite.",
+    highlight: "Intervention discrète, en dehors des heures d'ouverture",
+    signsLabel: "Blatte germanique ou blatte des meubles ? Voir la différence",
+    image: heroImage,
+    imageClassName: "max-lg:brightness-50",
+    imageAlt: "Blatte vue de profil sur une surface brillante",
+  },
+  reviews: ["fontanive", "soucelier", "duverne"],
+  why: {
+    title: "Pourquoi les cafards s'installent-ils chez vous ?",
+    intro: "Ils ne viennent pas par hasard. Dans une maison ancienne près de l'eau, ils trouvent vite ce qui leur manque dehors.",
+    items: [
+      { icon: Droplets, title: "L'humidité du sous-sol", text: "près de la Marne, les caves et les murs bas restent humides une grande partie de l'année." },
+      { icon: ThermometerSun, title: "Une chaleur constante", text: "chaudière, cumulus, moteurs d'appareils : les blattes s'y regroupent." },
+      { icon: Utensils, title: "La cuisine du voisin", text: "dans les maisons mitoyennes, les tuyaux communs leur servent de passage." },
+      { icon: Boxes, title: "Les livraisons", text: "cartons et cagettes de commerce, sacs de farine ou de croquettes." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser des cafards et des blattes efficacement ?",
+    intro: "Je ne me contente pas de traiter là où on les voit. Je cherche leur nid, puis j'associe les méthodes qui conviennent à chaque pièce.",
+    steps: [
+      { title: "Je cherche leur nid", text: "Les blattes visibles ne sont qu'une partie du groupe. Le reste est caché près d'un point d'eau ou d'une source de chaleur." },
+      { title: "Je combine les méthodes", text: "Gel appât, pulvérisation ciblée ou autre produit professionnel : je choisis selon l'espèce et l'usage de la pièce." },
+      { title: "Je contrôle le résultat", text: "Je reviens pour atteindre la génération suivante, avant qu'elle ne ponde à son tour." },
+    ],
+    after: (
+      <>
+        Les précautions à prendre, et le temps éventuel à attendre avant de revenir dans une pièce, vous sont donnés avant le traitement. En savoir plus :{" "}
+        <Link to="/cafards-blattes" className={textLink}>cafards et blattes, la méthode</Link>.
+      </>
+    ),
+  },
+  where: {
+    intro: "Des quais à la vieille ville, les bâtiments de Joinville offrent des cachettes bien différentes.",
+    items: [
+      { icon: Church, title: "La vieille ville", text: "autour de l'église Notre-Dame et de l'Auditoire : maisons mitoyennes avec caves et cuisines anciennes." },
+      { icon: Waves, title: "Le quai des Peceaux et le quai des Mailles", text: "sous-sols humides, évacuations et chaufferies où la blatte orientale se plaît." },
+      { icon: Store, title: "Les commerces du centre", text: "réserves, arrière-cuisines, dessous des vitrines réfrigérées." },
+      { icon: Castle, title: "Vers le Grand Jardin", text: "maisons avec dépendances, buanderies et cuisines d'été." },
+      { icon: House, title: "Les quartiers plus récents", text: "dessous d'évier, lave-vaisselle et arrière du frigo." },
+      { icon: Wrench, title: "Les zones d'activités", text: "vestiaires, salles de pause et ateliers où l'on mange sur place." },
+    ],
+  },
+  price: {
+    paragraphs: [
+      "Une cuisine, une maison entière ou un commerce : le prix suit la surface à traiter, l'espèce et le nombre de passages.",
+      "Après ma visite, vous savez exactement ce que vous paierez, avant que je commence.",
+    ],
+    aside: { icon: FileText, title: "Devis gratuit", text: "Il précise le traitement choisi et les passages. Le déplacement est annoncé au téléphone." },
+  },
+  local: [
+    {
+      kind: "compare",
+      target: true,
+      title: "Blatte germanique ou blatte des meubles ?",
+      intro: "Toutes les blattes ne vivent pas dans la cuisine. Savoir laquelle vous avez aide à chercher au bon endroit.",
+      heads: ["Blatte germanique", "Blatte des meubles"],
+      rows: [
+        { label: "Son allure", left: "Brun clair, deux bandes sombres derrière la tête.", right: "Plus petite, brune, avec deux bandes claires en travers du corps." },
+        { label: "Où la trouver", left: "Cuisine et salle de bains, près de l'eau.", right: "Chambres, salons, meubles, cadres et appareils électriques." },
+        { label: "Ce qu'elle aime", left: "L'humidité et les restes de nourriture.", right: "La chaleur sèche, en hauteur, loin des points d'eau." },
+      ],
+      after: "Une blatte noire et lente dans la cave ? C'est plutôt la blatte orientale. Envoyez une photo au 07 65 25 67 92 pour en être sûr.",
+    },
+    {
+      kind: "text",
+      title: "Commerce ou restaurant : traiter sans fermer",
+      paragraphs: [
+        "Un client qui voit un cafard ne revient pas. Je passe avant l'ouverture ou après la fermeture, et je traite la cuisine, la réserve et les locaux du personnel.",
+        "Gardez les cartons de livraison à l'extérieur de la réserve, nettoyez sous les appareils chaque semaine et signalez toute fuite. Ces trois gestes rendent le traitement beaucoup plus durable.",
+      ],
+      aside: {
+        icon: Bed,
+        title: "Un logement au-dessus ?",
+        text: "Si vous habitez à l'étage, dites-le-moi : on traite les deux le même jour, car les blattes montent par les tuyaux.",
+      },
+    },
+  ],
+  call: {
+    title: "Des cafards à Joinville ?",
+    text: "Dites-moi où et depuis combien de temps : je vous propose une date tout de suite.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Combien coûte un traitement contre les cafards à Joinville ?", answer: "Le prix dépend de l'espèce, de la surface et du nombre de passages. Vous recevez un devis gratuit après ma visite, avec le montant exact. Le déplacement vous est annoncé au téléphone." },
+    { question: "Un seul cafard aperçu, faut-il s'inquiéter ?", answer: "Pas forcément, mais surveillez. S'il en revient d'autres, ou si vous trouvez de petits points noirs dans les placards, il y a probablement un groupe installé à proximité." },
+    { question: "Les cafards peuvent-ils venir de la Marne ?", answer: "Pas directement. En revanche, l'humidité des sous-sols près de l'eau favorise la blatte orientale, qui remonte par les caves et les évacuations." },
+    { question: "Peut-on rester dans le logement pendant le traitement ?", answer: "Avec un gel, oui le plus souvent. Si une pulvérisation est nécessaire, je vous dis à l'avance combien de temps la pièce doit rester libre." },
+    { question: "Combien de temps avant de ne plus en voir ?", answer: "On en voit souvent plus les premiers jours, car le traitement les fait sortir. L'activité baisse ensuite nettement ; le passage de contrôle sert à atteindre les jeunes qui naissent entre-temps." },
+    { question: "Venez-vous autour de Joinville ?", answer: "Oui : Thonnance-lès-Joinville, Vecqueville, Rupt, Suzannecourt, Fronville, Gudmont-Villiers, Donjeux, Froncles et les autres villages de la vallée. Appelez le 07 65 25 67 92, 7j/7." },
+  ],
+  nearby: {
+    intro: "Depuis Chaumont, j'interviens dans toute la vallée de la Marne.",
+    links: [
+      { label: "Cafards Saint-Dizier", to: "/cafards-blattes-saint-dizier" },
+      { label: "Cafards Chaumont", to: "/cafards-blattes-chaumont" },
+      { label: "Cafards Nogent", to: "/cafards-blattes-nogent" },
+    ],
+    also: "Autres nuisibles à Joinville :",
+    note: (
+      <>
+        Les espèces et les produits sont détaillés sur la page{" "}
+        <Link to="/cafards-blattes" className={textLink}>désinsectisation des cafards</Link>.
+      </>
+    ),
+  },
+};
 
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Comment reconnaître une blatte germanique à Joinville ?", answer: "La blatte germanique mesure environ 1 à 1,5 cm, elle est brun clair avec deux bandes sombres sur le thorax. Elle vit surtout dans les cuisines et salles de bains, près de la chaleur et de l'eau. La blatte orientale, plus grande et presque noire, préfère les caves et sous-sols. Une photo nette aide à préparer le diagnostic." },
-  { question: "Intervenez-vous dans la vieille ville et près des quais ?", answer: "Oui. Les secteurs cités sur cette page font partie de la zone desservie, ainsi que les communes voisines comme Thonnance-lès-Joinville, Vecqueville, Rupt, Suzannecourt, Fronville, Gudmont-Villiers, Donjeux ou Froncles. GF Nuisibles est basée à Montsaon et n'a pas d'agence à Joinville : précisez votre adresse et les accès lors de votre demande." },
-  { question: "Les produits du commerce suffisent-ils contre les cafards ?", answer: "Ils peuvent tuer quelques individus visibles mais atteignent rarement les refuges et les oothèques (capsules d'œufs). Des pulvérisations répétées peuvent aussi disperser les blattes et rendre les appâts moins attractifs. Indiquez les produits déjà utilisés pour que la stratégie en tienne compte." },
-  { question: "Combien de passages faut-il prévoir ?", answer: "Cela dépend de l'espèce, de l'étendue de l'infestation et du bâtiment. Le nombre de passages et le contrôle de suivi sont précisés dans le devis gratuit ; aucun chiffre unique ne convient à toutes les situations." },
-  { question: "Proposez-vous un suivi pour les professionnels de Joinville ?", answer: "Oui. Restaurants, commerces alimentaires, hébergements, bailleurs et entreprises peuvent mettre en place un contrat avec contrôles réguliers et compte rendu écrit, utile dans une démarche d'hygiène de type HACCP. La fréquence est définie selon l'activité et les locaux." },
-];
-
-const jsonLd = {"@context": "https://schema.org", "@graph": [LOCAL_BUSINESS, {"@type": "Service", "url": "https://gf-nuisibles.fr/cafards-blattes-joinville", "name": "Cafards et Blattes à Joinville (52300) | GF Nuisibles", "description": "Un cafard chez vous à Joinville ? Il est rarement seul. Faites traiter votre logement ou commerce discrètement, 7j/7. Devis gratuit : 07 65 25 67 92.", "serviceType": "Traitement cafards et blattes", "provider": {"@id": "https://gf-nuisibles.fr/#organization"}, "areaServed": {"@type": "City", "name": "Joinville", "address": {"@type": "PostalAddress", "postalCode": "52300", "addressRegion": "Haute-Marne", "addressCountry": "FR"}}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/"}, {"@type": "ListItem", "position": 2, "name": "Cafards & Blattes", "item": "https://gf-nuisibles.fr/cafards-blattes"}, {"@type": "ListItem", "position": 3, "name": "Cafards et Blattes à Joinville", "item": "https://gf-nuisibles.fr/cafards-blattes-joinville"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Comment reconnaître une blatte germanique à Joinville ?", "acceptedAnswer": {"@type": "Answer", "text": "La blatte germanique mesure environ 1 à 1,5 cm, elle est brun clair avec deux bandes sombres sur le thorax. Elle vit surtout dans les cuisines et salles de bains, près de la chaleur et de l'eau. La blatte orientale, plus grande et presque noire, préfère les caves et sous-sols. Une photo nette aide à préparer le diagnostic."}}, {"@type": "Question", "name": "Intervenez-vous dans la vieille ville et près des quais ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Les secteurs cités sur cette page font partie de la zone desservie, ainsi que les communes voisines comme Thonnance-lès-Joinville, Vecqueville, Rupt, Suzannecourt, Fronville, Gudmont-Villiers, Donjeux ou Froncles. GF Nuisibles est basée à Montsaon et n'a pas d'agence à Joinville : précisez votre adresse et les accès lors de votre demande."}}, {"@type": "Question", "name": "Les produits du commerce suffisent-ils contre les cafards ?", "acceptedAnswer": {"@type": "Answer", "text": "Ils peuvent tuer quelques individus visibles mais atteignent rarement les refuges et les oothèques (capsules d'œufs). Des pulvérisations répétées peuvent aussi disperser les blattes et rendre les appâts moins attractifs. Indiquez les produits déjà utilisés pour que la stratégie en tienne compte."}}, {"@type": "Question", "name": "Combien de passages faut-il prévoir ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend de l'espèce, de l'étendue de l'infestation et du bâtiment. Le nombre de passages et le contrôle de suivi sont précisés dans le devis gratuit ; aucun chiffre unique ne convient à toutes les situations."}}, {"@type": "Question", "name": "Proposez-vous un suivi pour les professionnels de Joinville ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Restaurants, commerces alimentaires, hébergements, bailleurs et entreprises peuvent mettre en place un contrat avec contrôles réguliers et compte rendu écrit, utile dans une démarche d'hygiène de type HACCP. La fréquence est définie selon l'activité et les locaux."}}]}]};
-
-const CafardsBlattesJoinville = () => (
-  <>
-    <Helmet>
-      <title>{TITLE}</title>
-      <meta name="description" content={DESCRIPTION} />
-      <link rel="canonical" href={URL} />
-      <meta property="og:title" content={TITLE} />
-      <meta property="og:description" content={DESCRIPTION} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={URL} />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={TITLE} />
-      <meta name="twitter:description" content={DESCRIPTION} />
-      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-    </Helmet>
-    <CityServicePage
-      breadcrumbs={breadcrumbsFrom(jsonLd)}
-      city="Joinville"
-      department="Haute-Marne (52)"
-      serviceTitle={"Cafards et blattes à Joinville (52300) : traitement pour particuliers et professionnels"}
-      icon={<Bug className="h-8 w-8" />}
-      heroImage={heroImage}
-      metaDescription={DESCRIPTION}
-      serviceCallTitle="DES CAFARDS À JOINVILLE ?"
-      serviceCallSubtitle="GF NUISIBLES TRAITE BLATTES ET CAFARDS EN LOGEMENT COMME EN COMMERCE !"
-      intro={"Des cafards dans la cuisine, des blattes qui sortent la nuit ou des traces noires dans les placards à Joinville (52300) ? GF Nuisibles traite les blattes germaniques, orientales et américaines chez les particuliers comme chez les professionnels de Joinville et des communes voisines. Plus l'intervention est rapide, plus elle est simple : ces insectes se reproduisent vite et se cachent dans des recoins inaccessibles. Le diagnostic et le devis sont gratuits."}
-      expertise={"Basée à Montsaon, en Haute-Marne, GF Nuisibles intervient à Joinville pour les maisons, appartements, locations, restaurants, commerces alimentaires, hébergements et entreprises. Le choix de la méthode dépend de l'espèce identifiée, des refuges trouvés et de l'usage des pièces. Signalez la présence d'enfants, d'animaux et les produits déjà utilisés : les consignes de protection et de réintégration sont adaptées au protocole retenu."}
-      method={"L'inspection localise les refuges : moteurs d'électroménager, dessous d'évier, plinthes, gaines et passages de canalisations. Le devis précise la stratégie, généralement des gels appâts posés en points ciblés, complétés si nécessaire par d'autres traitements professionnels, ainsi que le contrôle de suivi. Des conseils d'hygiène et de colmatage accompagnent le traitement pour limiter le retour des insectes."}
-      localContext={{ title: "Vieille ville, quais de la Marne, Grand Jardin : les blattes à Joinville", content: <>
-<p>{"La vieille ville de Joinville, autour de l'église Notre-Dame et de l'Auditoire de Justice, est faite de maisons mitoyennes anciennes, souvent avec caves. Le long du quai des Peceaux et du quai des Mailles, la proximité de la Marne et de la Blaise entretient l'humidité des sous-sols, appréciée de la blatte orientale. Ces repères, comme le château du Grand Jardin ou le pont du Poncelot, situent le secteur desservi et ne sont pas des références clients."}</p>
-<p>{"Dans les petits immeubles du centre, une blatte germanique installée dans une cuisine peut gagner les logements voisins par les canalisations communes. Les commerces alimentaires, restaurants et entreprises de la vallée de la Marne entre Joinville et Saint-Dizier ont besoin d'un suivi documenté. Indiquez si votre bâtiment est mitoyen et si d'autres occupants ont signalé des insectes."}</p>
-</> }}
-      neighborhoods={{ title: "Quartiers et secteurs desservis à Joinville (52300)", intro: "Précisez votre adresse et les accès lors de votre demande. Ces repères aident à situer votre logement ou votre local ; ils ne signalent aucune infestation dans ces secteurs.", items: ["Vieille ville et église Notre-Dame", "Secteur de l'Auditoire de Justice", "Quai des Peceaux", "Quai des Mailles", "Pont du Poncelot", "Secteur du château du Grand Jardin", "Zones d'activités de Joinville"] }}
-      extraSections={[
-        { title: "Blatte germanique, orientale ou américaine : quelle espèce à Joinville ?", content: <>
-<p>{"À Joinville, la blatte germanique est l'espèce la plus fréquente dans les logements et cuisines professionnelles : petite, brun clair, elle se reproduit vite et se cache derrière le réfrigérateur, le four, le lave-vaisselle ou dans les charnières des placards. Une femelle transporte une oothèque contenant plusieurs dizaines d'œufs, ce qui explique qu'une petite présence devienne vite une infestation."}</p>
-<p>{"La blatte orientale, plus grande et sombre, vit plutôt dans les caves, vides sanitaires, regards et chaufferies ; elle remonte par les évacuations. La blatte américaine, rare en habitation, se rencontre parfois dans des locaux techniques chauffés. Identifier l'espèce oriente les zones d'inspection et le choix des produits : un gel appât en cuisine ne répond pas au même problème qu'une colonie installée dans un sous-sol."}</p>
-<p>{"Signes à surveiller : insectes qui fuient à l'allumage de la lumière, petites déjections noires semblables à du poivre moulu, capsules d'œufs vides, mues, ou odeur âcre persistante dans les placards. Ne videz pas les placards au hasard avant le diagnostic : notez simplement où vous avez vu les insectes."}</p>
-</> },
-        { title: "Particuliers à Joinville : maison, appartement ou location", content: <>
-<p>{"Pour un particulier, le diagnostic à domicile est gratuit. Il porte sur la cuisine, la salle de bains, les WC, les arrivées d'eau et les zones chaudes. En appartement, signalez si vos voisins observent aussi des blattes : un traitement isolé dans un immeuble peut être recontaminé par les gaines communes. Locataire, vous pouvez prévenir votre bailleur ; propriétaire en copropriété, le syndic peut être associé pour les parties communes."}</p>
-<p>{"Le traitement privilégie généralement des gels appâts posés en points ciblés, peu visibles et compatibles avec une occupation du logement, complétés si besoin par d'autres produits professionnels. Les consignes de protection des aliments, des enfants et des animaux, ainsi que le délai avant nettoyage des zones traitées, vous sont expliqués avant l'intervention."}</p>
-<p>{"Dans les communes autour de Joinville, comme Thonnance-lès-Joinville, Vecqueville, Rupt, Suzannecourt, Fronville, Gudmont-Villiers, Donjeux ou Froncles, les conditions sont identiques : diagnostic, devis écrit, traitement et contrôle de suivi selon la situation."}</p>
-</> },
-        { title: "Professionnels à Joinville : restaurants, commerces, bailleurs et entreprises", content: <>
-<p>{"À Joinville, la ville réunit commerces de bouche, restaurants, maisons de retraite et entreprises industrielles de la vallée. Pour ces locaux, la présence de blattes engage l'image de l'établissement et peut être relevée lors d'un contrôle sanitaire. GF Nuisibles intervient sur rendez-vous, si possible en dehors des heures d'ouverture, avec une discrétion adaptée (véhicule et tenue sans mise en avant du nuisible quand vous le demandez)."}</p>
-<p>{"Les professionnels peuvent souscrire un contrat de suivi : visites régulières, contrôle des points sensibles (réserves, plonge, chambres froides, vestiaires, locaux poubelles), traçabilité écrite des passages et des produits utilisés, utile dans un plan de maîtrise sanitaire de type HACCP. Bailleurs sociaux et syndics peuvent organiser des campagnes coordonnées par bâtiment."}</p>
-<p>{"Le devis tient compte des surfaces, du nombre de locaux, des contraintes d'accès et de la fréquence de suivi souhaitée. Il est gratuit et sans engagement."}</p>
-</> },
-        { title: "Préparer l'intervention et éviter le retour des cafards à Joinville", content: <>
-<p>{"Avant le passage : dégagez l'accès sous l'évier, derrière l'électroménager quand c'est possible, et rangez les denrées dans des boîtes fermées. Évitez les insecticides en bombe dans les jours précédents. Après le traitement : ne nettoyez pas les points de gel et respectez les consignes données."}</p>
-<p>{"Ensuite, réduisez ce qui attire les blattes : fuites d'eau réparées, miettes et graisses nettoyées, poubelles fermées, cartons de livraison sortis rapidement, joints et passages de tuyaux colmatés. Ces gestes accompagnent le traitement mais ne remplacent pas un diagnostic lorsque les insectes sont déjà installés."}</p>
-</> },
-        { title: "Votre service cafards et blattes à Joinville et alentour", content: <>
-<p>Pour découvrir l'ensemble de nos méthodes, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes">{"page consacrée aux cafards en Haute-Marne"}</Link>. Pour un rendez-vous, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-<p>Nous intervenons aussi dans les villes voisines : <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-saint-dizier">{"Cafards et blattes à Saint-Dizier"}</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/cafards-blattes-chaumont">{"Cafards et blattes à Chaumont"}</Link>. Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour les autres communes desservies.</p>
-</> },
-      ]}
-      nearbyCities={{ title: "Près de Joinville : nos pages locales", items: [
-{ label: "Cafards et blattes à Saint-Dizier", to: "/cafards-blattes-saint-dizier" },
-{ label: "Cafards et blattes à Chaumont", to: "/cafards-blattes-chaumont" },
-] }}
-      faqItems={FAQ_ITEMS}
-      relatedLinks={[
-        { label: "Cafards & Blattes (52)", to: "/cafards-blattes" },
-        { label: "Dératisation à Joinville", to: "/deratisation-joinville" },
-        { label: "Zone d'intervention", to: "/zone-intervention" },
-      ]}
-      cta={"Cafards ou blattes à Joinville : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits, pour votre logement ou votre établissement."}
-    />
-  </>
-);
+const CafardsBlattesJoinville = () => <RodentTownPage town={town} />;
 
 export default CafardsBlattesJoinville;
