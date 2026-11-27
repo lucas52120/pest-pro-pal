@@ -1,280 +1,146 @@
-import { Bug } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-guepes.jpg";
-import nidChaumontImg from "@/assets/nid-frelons-chaumont.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Blinds, Briefcase, Building2, Droplets, FileText, House, Landmark, Leaf, School, Store, TreeDeciduous, Utensils } from "lucide-react";
+import heroImage from "@/assets/frelon-hero.jpg";
+import brottesNest from "@/assets/nid-frelons-chaumont.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Destruction nid de guêpes et frelons à Chaumont (52)";
-const DESCRIPTION = "Un nid de guêpes ou de frelons à Chaumont ? N'y touchez pas, on s'en occupe 7j/7 ! À partir de 80 €, devis gratuit. Appelez le 07 65 25 67 92.";
-
-const URL = "https://gf-nuisibles.fr/guepes-frelons-chaumont";
-
-const FAQ_ITEMS: FaqItem[] = [
-  {
-    question: "Quel est le prix pour détruire un nid de frelons à Chaumont ?",
-    answer: "Nos tarifs à Chaumont débutent à 80 € pour un nid de guêpes et à 110 € pour un nid de frelons. Le prix dépend de la hauteur et de l'accessibilité du nid. Nous validons toujours un prix ferme avec vous avant l'intervention : aucune mauvaise surprise sur la facture finale.",
+const town: RodentTown = {
+  kind: "wasps",
+  city: "Chaumont",
+  postalCode: "52000",
+  region: "Haute-Marne",
+  slug: "/guepes-frelons-chaumont",
+  title: "Destruction nid de guêpes et frelons à Chaumont (52)",
+  description:
+    "Un nid de guêpes ou de frelons à Chaumont ? N'y touchez pas, on s'en occupe 7j/7 ! À partir de 80 €, devis gratuit. Appelez le 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Votre spécialiste des nids à Chaumont",
+    text: "Sous le toit, dans un volet ou dans le jardin : n'y touchez pas, je viens le détruire en sécurité.",
+    highlight: "Paiement après l'intervention",
+    signsLabel: "Guêpe, frelon ou frelon asiatique ? Faire la différence",
+    image: heroImage,
+    imageAlt: "Frelon européen en gros plan, tête jaune et antennes",
+    imageClassName: "max-lg:brightness-75",
   },
-  {
-    question: "Est-il dangereux de détruire le nid soi-même ?",
-    answer: "Oui, c'est extrêmement dangereux. Les méthodes artisanales ou les bombes du commerce provoquent souvent des attaques collectives massives. Nos techniciens en Haute-Marne utilisent des combinaisons spécialisées et du matériel professionnel pour neutraliser le nid en toute sécurité.",
+  reviews: ["hanuszekChaumont", "moockBrethenay", "babinski"],
+  why: {
+    title: "Pourquoi avez-vous un nid de guêpes chez vous ?",
+    intro: "Au printemps, une seule reine suffit. Elle cherche un abri sec et tranquille, et votre maison en offre souvent plusieurs.",
+    items: [
+      { icon: House, title: "Un toit qui laisse passer", text: "une tuile décalée ou une rive mal fermée, et la reine s'installe sous la couverture." },
+      { icon: Blinds, title: "Un volet qu'on ouvre peu", text: "le coffre d'un volet roulant reste sombre et sec toute la saison." },
+      { icon: Utensils, title: "De quoi manger", text: "fruits tombés, poubelles, restes de barbecue : les guêpes adorent le sucré en fin d'été." },
+      { icon: Leaf, title: "Un jardin tranquille", text: "un trou dans la pelouse ou une haie épaisse que l'on taille rarement." },
+    ],
   },
-  {
-    question: "Comment différencier un nid de guêpes d'un nid de frelons ?",
-    answer: "La guêpe est petite et jaune vif, tandis que le frelon est bien plus gros et bruyant. Le frelon asiatique se reconnaît à ses pattes jaunes et son corps très sombre. Leurs nids ressemblent à de grosses boules de papier mâché souvent haut perchées. Dans tous les cas, gardez une distance de sécurité de 5 mètres.",
+  how: {
+    title: "Comment se débarrasser d'un nid de guêpes efficacement ?",
+    intro: "Une bombe du commerce vide sur l'entrée tue quelques guêpes et énerve les autres. Ce qui compte, c'est d'atteindre la reine et les larves, au cœur du nid.",
+    steps: [
+      { title: "Je trouve l'entrée", text: "Je regarde de loin où les guêpes entrent et sortent, pour viser juste sans les provoquer." },
+      { title: "Je traite au cœur du nid", text: "Protégé, j'injecte un produit professionnel dans le nid, avec une perche si le nid est en hauteur." },
+      { title: "Je vous explique la suite", text: "Quand l'activité retombe, quand vous pouvez repasser à côté, et s'il faut retirer le nid." },
+    ],
+    after: (
+      <>
+        Les guêpes qui étaient dehors reviennent au nid dans la soirée et sont touchées à leur tour : c'est voulu. Plus d'explications sur la page{" "}
+        <Link to="/guepes-frelons" className={textLink}>nids de guêpes et frelons en Haute-Marne</Link>.
+      </>
+    ),
   },
-  {
-    question: "En combien de temps intervenez-vous à Chaumont ?",
-    answer: "Pour un nid à Chaumont, à Brottes ou dans les communes voisines comme Chamarandes-Choignes et Bologne, décrivez son emplacement et les risques d’exposition. Notre base est à Montsaon. Le créneau est confirmé lors de votre appel selon les disponibilités et les conditions d’accès.",
+  where: {
+    intro: "Maison de ville, pavillon ou immeuble : chaque quartier a ses emplacements préférés.",
+    items: [
+      { icon: Landmark, title: "Centre historique", text: "toits anciens près de la basilique et du donjon : nids sous les tuiles, dans les corniches et les volets." },
+      { icon: House, title: "Brottes", text: "pavillons et jardins : abris, haies, coffres de volets et pelouses." },
+      { icon: Building2, title: "Le Cavalier et La Rochotte", text: "immeubles : balcons, coffres de volets roulants et bouches d'aération." },
+      { icon: Briefcase, title: "Quartier Foch", text: "bureaux et maisons : avant-toits, gouttières et faux plafonds extérieurs." },
+      { icon: Store, title: "La Vendue", text: "bâtiments d'activités : bardages, auvents et quais de livraison." },
+      { icon: Droplets, title: "Vallées de la Suize et de la Marne", text: "arbres et talus, où le frelon asiatique accroche ses gros nids." },
+    ],
   },
-  {
-    question: "Qui doit payer la destruction d'un nid de guêpes : locataire ou propriétaire ?",
-    answer: "La répartition dépend de la situation, notamment de la date d’apparition du nid, des parties concernées et des obligations du bail. Prévenez le propriétaire ou le syndic avant l’intervention. Si vous cherchez une aide locale, vérifiez directement auprès de la mairie les conditions en vigueur : aucune prise en charge n’est présumée.",
+  price: {
+    paragraphs: [
+      <>Le tarif commence à <strong className="whitespace-nowrap text-primary">80 €</strong> pour un nid de guêpes et à <strong className="whitespace-nowrap text-primary">110 €</strong> pour un nid de frelons asiatiques.</>,
+      "Hauteur, accès et espèce font évoluer le prix. Le dimanche et les jours fériés, un supplément peut s'ajouter : je vous le dis toujours avant de venir.",
+    ],
+    aside: { icon: FileText, title: "Un prix ferme, sans surprise", text: "On le fixe ensemble, souvent dès votre appel. Vous ne réglez qu'une fois le nid traité." },
   },
-  {
-    question: "Faut-il vraiment détruire un nid de guêpes en hiver ?",
-    answer: "Non. Les colonies de guêpes et frelons européens meurent naturellement avec les premières gelées en Haute-Marne (généralement fin octobre/novembre). Seules les reines hivernent. Le nid abandonné ne sera pas réoccupé l'année suivante. Inutile donc de payer une intervention l'hiver, sauf nid de frelons asiatiques actif.",
-  },
-  {
-    question: "Intervenez-vous chez les professionnels à Chaumont ?",
-    answer: "Oui. GF Nuisibles intervient pour les particuliers comme pour les professionnels de Chaumont : commerces du centre-ville, restaurants, écoles, copropriétés, sites industriels de la zone de la Vendue ou du Cavalier, exploitations agricoles. Nous fournissons facture et rapport d'intervention.",
-  },
-  {
-    question: "Le nid revient-il après destruction ?",
-    answer: "Après traitement, une activité résiduelle peut demander une vérification selon les consignes données. Ne vous approchez pas du nid pour le contrôler vous-même. Un autre nid peut apparaître ultérieurement ailleurs ; le suivi et les conditions de réintervention sont expliqués pour votre situation.",
-  },
-];
-
-const REVIEWS = [
-  {
-    author: "Ema Hanuszek",
-    location: "Chaumont",
-    rating: 5,
-    text: "Très satisfaite de la prestation de ce professionnel. Il a traité un nid de frelon sous ma table de jardin à Chaumont de manière très sécurisée. Devis clair et respecté. C'est un excellent désinsectiseur local. Un grand merci pour votre réactivité !",
-  },
-  {
-    author: "Sebastien Babinski",
-    location: "Chaumont",
-    rating: 5,
-    text: "Contact agréable. Intervention rapide et efficace sur un nid de guêpes. Je recommande ce professionnel.",
-  },
-  {
-    author: "Valerie Moock",
-    location: "Brethenay (Chaumont)",
-    rating: 5,
-    text: "Intervention très rapide et efficace sur un nid de guêpes sur Brethenay. Contact super et agréable. Je recommande ce professionnel.",
-  },
-];
-
-const GuepesFrelonsChaumont = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service",
-        "url": "https://gf-nuisibles.fr/guepes-frelons-chaumont",
-        "name": TITLE,
-        "description": DESCRIPTION,
-        "provider": {
-          "@id": "https://gf-nuisibles.fr/#organization"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Chaumont"
-        },
-        "offers": {
-          "@type": "AggregateOffer",
-          "priceCurrency": "EUR",
-          "lowPrice": "80",
-          "offerCount": "4"
-        }
+  local: [
+    {
+      kind: "cards",
+      target: true,
+      title: "Guêpe, frelon ou frelon asiatique : comment les reconnaître ?",
+      intro: "Inutile de vous approcher : la couleur et la taille, vues de loin, suffisent souvent.",
+      items: [
+        { icon: Leaf, title: "La guêpe commune", text: "petite, jaune et noire, elle tourne autour des repas. Nid gris dans un toit, un mur ou le sol." },
+        { icon: Blinds, title: "La guêpe poliste", text: "élancée, pattes pendantes. Petit nid ouvert, alvéoles visibles, sous un rebord ou un volet." },
+        { icon: TreeDeciduous, title: "Le frelon européen", text: "gros, roux et jaune, il vole aussi la nuit. Nid dans un grenier, une cheminée ou un arbre creux." },
+        { icon: Droplets, title: "Le frelon asiatique", text: "sombre, tête orange, pattes au bout jaune. Nid souvent très haut dans un arbre, parfois sous un toit." },
+      ],
+      after: "Gardez au moins cinq mètres entre vous et le nid. Une photo prise de loin, envoyée au 07 65 25 67 92, me permet de vous répondre vite.",
+    },
+    {
+      kind: "list",
+      title: "Un nid de frelons asiatiques à Brottes",
+      intro: "Un exemple réel : un nid de frelons asiatiques installé sous une toiture, dans le quartier de Brottes.",
+      items: [
+        { title: "L'emplacement", text: "sous le toit, au-dessus d'un passage : impossible de le laisser grossir." },
+        { title: "Le risque", text: "le frelon asiatique défend son nid à plusieurs dès qu'on s'en approche." },
+        { title: "L'intervention", text: "combinaison, perche et produit professionnel, sans monter sur la toiture." },
+        { title: "La leçon", text: "un nid au-dessus d'un passage se traite dès qu'on le repère, sans attendre qu'il grossisse." },
+      ],
+      photo: { src: brottesNest, alt: "Nid de frelons asiatiques sous une toiture à Brottes, Chaumont, pendant l'intervention", caption: "Le nid de Brottes, au moment du traitement.", className: "object-[50%_30%]" },
+    },
+    {
+      kind: "text",
+      title: "Commerces, écoles, copropriétés : on s'organise",
+      paragraphs: [
+        "Un nid près d'une terrasse de café, d'une cour d'école ou d'une entrée d'immeuble ne peut pas attendre. On choisit ensemble un moment où il y a le moins de monde, et je sécurise la zone le temps de l'intervention.",
+        <>
+          Je vous remets une facture et un compte rendu, utiles pour votre syndic ou votre direction.{" "}
+          <Link to="/contact" className={textLink}>Demandez un devis professionnel</Link>.
+        </>,
+      ],
+      aside: {
+        icon: School,
+        title: "Locataire ?",
+        text: "Prévenez votre propriétaire ou votre syndic avant l'intervention : selon la situation, c'est à l'un ou à l'autre de la prendre en charge.",
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-          { "@type": "ListItem", "position": 2, "name": "Guêpes & Frelons", "item": "https://gf-nuisibles.fr/guepes-frelons" },
-          { "@type": "ListItem", "position": 3, "name": "Chaumont", "item": "https://gf-nuisibles.fr/guepes-frelons-chaumont" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": FAQ_ITEMS.map((item) => ({
-          "@type": "Question",
-          "name": item.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": item.answer
-          }
-        }))
-      }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Chaumont"
-        department="Haute-Marne (52)"
-        serviceTitle="Destruction de nids de guêpes et frelons à Chaumont (52000)"
-        icon={<Bug className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle="NID DE GUÊPES OU FRELONS À CHAUMONT ?"
-        serviceCallSubtitle="GF NUISIBLES INTERVIENT EN URGENCE POUR VOTRE SÉCURITÉ !"
-        intro="À Chaumont (52000), les guêpes et frelons s'installent sous les toitures, dans les combles ou les jardins des secteurs Cavalier, La Vendue, Brottes ou Foch. Leurs piqûres représentent un danger réel, surtout pour les personnes allergiques. GF Nuisibles détruit les nids de guêpes et frelons à Chaumont en toute sécurité avec un équipement professionnel adapté."
-        expertise="Nos techniciens certifiés interviennent à Chaumont et dans les communes proches — Chamarandes-Choignes, Brottes, Bologne, Froncles, Nogent — pour la destruction de nids de guêpes, frelons européens et frelons asiatiques en Haute-Marne (52). Les mesures de protection et les conditions de suivi sont expliquées avant le passage."
-        method="Localisation précise du nid et évaluation des risques. Traitement par injection d'insecticide professionnel ou retrait mécanique. Vérification de l'élimination complète de la colonie. Conseils de prévention."
-        cta="Nid de guêpes à Chaumont ? Appelez GF Nuisibles au 07 65 25 67 92 pour une intervention rapide et sécurisée 7j/7."
-        faqItems={FAQ_ITEMS}
-        localImage={{
-          src: nidChaumontImg,
-          alt: "Destruction d'un nid de frelons asiatiques à Chaumont (Brottes) par GF Nuisibles",
-          caption: "Nid de frelons asiatiques sous une toiture à Brottes (Chaumont, 52) — intervention GF Nuisibles.",
-        }}
-        extraSections={[
-          {
-            title: "Guêpes, frelons européens, frelons asiatiques : bien identifier l'espèce à Chaumont",
-            content: (
-              <>
-                <p>
-                  À Chaumont et en Haute-Marne, trois espèces principales construisent
-                  des nids près des habitations. La <strong>guêpe commune</strong> (jaune vif,
-                  2 cm) niche souvent dans les volets, les coffres de stores ou sous les tuiles.
-                  Le <strong>frelon européen</strong>, plus gros (3 cm, brun-jaune), apprécie
-                  les greniers, les granges et les arbres creux des jardins de Brottes
-                  ou de Foch. Le <strong>frelon asiatique</strong> (corps très sombre, pattes
-                  jaunes) est désormais bien implanté en Haute-Marne : ses nids sphériques,
-                  parfois de plus de 60 cm, se trouvent en hauteur dans les arbres, sous les
-                  avancées de toit ou les abris de jardin.
-                </p>
-                <p>
-                  Une mauvaise identification fait perdre du temps et augmente le risque.
-                  Nos techniciens valident l'espèce dès l'arrivée à Chaumont et adaptent
-                  le protocole : un nid de frelons asiatiques en hauteur ne se traite pas
-                  comme un nid de guêpes dans un volet.
-                </p>
-              </>
-            ),
-          },
-          {
-            title: "Tarifs destruction de nid à Chaumont (52)",
-            content: (
-              <>
-                <p>
-                  Nos prix sont annoncés <strong>fermes avant l'intervention</strong>,
-                  sans frais cachés. Voici les fourchettes pratiquées à Chaumont&nbsp;:
-                </p>
-                <ul className="ml-5 list-disc space-y-1">
-                  <li>Nid de guêpes accessible (volet, sol, &lt; 3 m) : <strong>à partir de 80 €</strong></li>
-                  <li>Nid de frelons européens (toiture, combles) : <strong>110 € à 150 €</strong></li>
-                  <li>Nid de frelons asiatiques en hauteur (perche télescopique) : <strong>à partir de 110 €</strong></li>
-                  <li>Intervention week-end ou urgence soir : <strong>+ 20 à 30 €</strong></li>
-                </ul>
-                <p>
-                  Devis gratuit par téléphone au <strong>07 65 25 67 92</strong>, paiement
-                  après intervention, facture remise systématiquement.
-                </p>
-              </>
-            ),
-          },
-          {
-            title: "Quand intervenir ? Saisonnalité à Chaumont",
-            content: (
-              <>
-                <p>
-                  En Haute-Marne, la saison des guêpes et frelons s'étend
-                  d'<strong>avril à octobre</strong>. Les premiers nids apparaissent au
-                  printemps (taille d'une balle de ping-pong, fondés par une seule reine)
-                  et grossissent jusqu'en août-septembre, période la plus dangereuse à
-                  Chaumont où les colonies peuvent compter <strong>plusieurs milliers
-                  d'individus</strong>.
-                </p>
-                <p>
-                  Le bon réflexe : intervenir <strong>dès la découverte du nid</strong>,
-                  même petit. Un nid détruit au printemps coûte moins cher, prend moins de
-                  temps et présente beaucoup moins de risques qu'un nid mature en plein été.
-                </p>
-              </>
-            ),
-          },
-          {
-            title: "Préparer votre demande sans approcher le nid",
-            content: <>
-              <p>Depuis un endroit sûr, notez si les insectes entrent dans un volet, sous une tuile ou dans un arbre. Décrivez la hauteur approximative, l’accès depuis la rue ou le jardin et la proximité d’une porte, d’une terrasse ou d’un passage. Une photo prise à distance peut aider ; il n’est pas nécessaire de monter sur une échelle ni de dégager la toiture pour la réaliser.</p>
-              <p>N’obstruez pas l’entrée d’un nid dans un mur et ne tentez pas de le brûler, de le noyer ou de le décrocher. Éloignez enfants et animaux, évitez les vibrations à proximité et demandez conseil avant de manœuvrer un volet occupé. En cas de réaction allergique ou de difficulté à respirer après une piqûre, appelez le 15 ou le 112 : une entreprise de lutte contre les nuisibles ne remplace pas les secours médicaux.</p>
-            </>
-          },
-          {
-            title: "Des liens utiles pour Chaumont et ses environs",
-            content: <>
-              <p>Retrouvez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service de destruction de nids de guêpes et frelons en Haute-Marne</Link> pour comprendre les méthodes. Pour votre adresse à Chaumont, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un devis</Link> en précisant l’emplacement du nid.</p>
-              <p>Vous êtes à proximité ? Consultez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-bologne">guêpes et frelons à Bologne</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-nogent">guêpes et frelons à Nogent</Link>, ainsi que notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link>.</p>
-            </>
-          },
-          {
-            title: "Avis Google de nos clients à Chaumont",
-            content: (
-              <div className="space-y-4">
-                {REVIEWS.map((r) => (
-                  <div
-                    key={r.author}
-                    className="rounded-lg border border-border bg-background p-4 shadow-sm"
-                  >
-                    <div className="mb-1 flex items-center gap-2">
-                      <span className="text-accent">{"★".repeat(r.rating)}</span>
-                      <span className="font-semibold text-primary">{r.author}</span>
-                      <span className="text-xs text-muted-foreground">— {r.location}</span>
-                    </div>
-                    <p className="text-sm italic text-muted-foreground">« {r.text} »</p>
-                  </div>
-                ))}
-              </div>
-            ),
-          },
-        ]}
-        localContext={{ title: "Un nid dans le centre de Chaumont ou dans un jardin de Brottes", content: <>
-          <p>Autour de la basilique Saint-Jean-Baptiste et du donjon, comme dans le secteur de la gare et du viaduc, l’accès au bâtiment compte autant que l’emplacement du nid. Précisez si la cour est fermée, si l’entrée donne sur une rue passante ou si un passage commun doit être protégé. Ces monuments sont des repères locaux et ne sont pas présentés comme des lieux d’intervention ou d’infestation.</p>
-          <p>Au Cavalier, à Foch, à La Rochotte et à Brottes, les demandes peuvent concerner une haie, un abri ou une toiture. À La Vendue, signalez aussi les zones de livraison et les horaires d’activité afin de préparer la sécurisation des abords. La méthode dépend du nid observé, pas d’un risque supposé identique pour tout le quartier.</p>
-          <p>Ces repères figurent dans les informations de la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.ville-chaumont.fr/decouvrir-chaumont/tourisme-et-patrimoine/" target="_blank" rel="noopener noreferrer">Ville de Chaumont et son patrimoine</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs desservis à Chaumont (52000)", intro: "Brottes fait partie de Chaumont. Chamarandes-Choignes et Treix sont des communes voisines ; précisez votre adresse lors de l’appel.", items: ["Centre historique, basilique et donjon", "Cavalier", "Foch", "La Rochotte", "Brottes", "Gare et viaduc", "La Vendue"] }}
-        nearbyCities={{ title: "Guêpes et frelons dans les communes voisines", items: [
-          { label: "Guêpes et frelons à Bologne", to: "/guepes-frelons-bologne" },
-          { label: "Guêpes et frelons à Nogent", to: "/guepes-frelons-nogent" },
-          { label: "Guêpes et frelons à Semoutiers-Montsaon", to: "/guepes-frelons-semoutiers-montsaon" },
-        ] }}
-        relatedLinks={[
-          { label: "Service guêpes et frelons en Haute-Marne", to: "/guepes-frelons" },
-          { label: "Guêpes & Frelons Bologne", to: "/guepes-frelons-bologne" },
-          { label: "Guêpes & Frelons Froncles", to: "/guepes-frelons-froncles" },
-          { label: "Guêpes & Frelons Nogent", to: "/guepes-frelons-nogent" },
-          { label: "Guêpes & Frelons à Semoutiers-Montsaon", to: "/guepes-frelons-semoutiers-montsaon" },
-          { label: "Dératisation à Chaumont", to: "/deratisation-chaumont" },
-          { label: "Dépigeonnisation à Chaumont", to: "/depigeonnisation-chaumont" },
-          { label: "Taupes à Chaumont", to: "/taupes-chaumont" },
-        ]}
-      />
-    </>
-  );
+    },
+  ],
+  call: {
+    title: "Un nid de guêpes à Chaumont ?",
+    text: "Dites-moi où il est et à quelle hauteur : je vous donne une date tout de suite.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Quel est le prix pour détruire un nid à Chaumont ?", answer: "À partir de 80 € pour un nid de guêpes, et de 110 € pour un nid de frelons asiatiques. Le montant dépend de la hauteur et de l'accès ; il est fixé avec vous avant l'intervention, et vous payez une fois le nid traité." },
+    { question: "Est-ce dangereux de détruire un nid soi-même ?", answer: "Oui. Une bombe du commerce ou un coup de bâton peut déclencher une attaque de toute la colonie, et l'échelle ajoute le risque de chute. Mieux vaut s'éloigner et appeler." },
+    { question: "Les pompiers de Chaumont viennent-ils pour un nid ?", answer: "Non, ils n'interviennent plus pour les nids chez les particuliers en Haute-Marne. En cas de danger immédiat pour une personne, appelez le 18 ou le 15." },
+    { question: "Qui paie : le locataire ou le propriétaire ?", answer: "Cela dépend du bail et de l'endroit du nid. Prévenez votre propriétaire ou votre syndic avant l'intervention, et vérifiez auprès de la mairie si une aide existe pour le frelon asiatique." },
+    { question: "Faut-il détruire un vieux nid en hiver ?", answer: "Pas un nid de guêpes ou de frelons européens : la colonie meurt avec les gelées et le nid n'est pas réutilisé. Seul un nid de frelons asiatiques encore actif mérite d'être traité." },
+    { question: "Venez-vous autour de Chaumont ?", answer: "Oui : Chamarandes-Choignes, Brethenay, Condes, Treix, Riaucourt, Jonchery, Euffigneix, Luzy-sur-Marne, Verbiesles, Semoutiers-Montsaon et toutes les communes voisines. Joignable 7j/7 de 7h à 23h au 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Basé aux portes de Chaumont, j'interviens partout en Haute-Marne.",
+    links: [
+      { label: "Guêpes et frelons Semoutiers-Montsaon", to: "/guepes-frelons-semoutiers-montsaon" },
+      { label: "Guêpes et frelons Bologne", to: "/guepes-frelons-bologne" },
+      { label: "Guêpes et frelons Nogent", to: "/guepes-frelons-nogent" },
+      { label: "Guêpes et frelons Langres", to: "/guepes-frelons-langres" },
+    ],
+    also: "Un autre nuisible à Chaumont ?",
+    note: (
+      <>
+        Un nid de frelons asiatiques peut être signalé à la mairie ou à la FREDON Grand Est. Tout savoir sur la page{" "}
+        <Link to="/guepes-frelons" className={textLink}>guêpes et frelons</Link>.
+      </>
+    ),
+  },
 };
+
+const GuepesFrelonsChaumont = () => <RodentTownPage town={town} />;
 
 export default GuepesFrelonsChaumont;

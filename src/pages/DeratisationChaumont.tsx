@@ -266,8 +266,12 @@ const DeratisationChaumont = () => (
       <Section muted title="Appartement, copropriété, rue : qui prévenir ?" intro="Les rongeurs ne s'arrêtent pas à la porte du palier. Voici vers qui vous tourner, selon l'endroit où ils circulent.">
         <CardGrid items={WHO_TO_CALL} columns="lg:grid-cols-3" />
         <p className="mt-8 max-w-3xl leading-relaxed text-muted-foreground">
-          <strong className="text-primary">Restaurant, commerce ou bureau à Chaumont ?</strong> Je passe si possible en dehors de vos heures d'ouverture, avec un véhicule non logoté sur demande, et on définit ensemble un suivi adapté.{" "}
-          <Link to="/contact" className={textLink}>Demandez un devis professionnel</Link>.
+          <strong className="text-primary">Restaurant, commerce ou bureau à Chaumont ?</strong> Je passe si possible en dehors de vos heures d'ouverture, avec un véhicule non logoté sur demande, et on définit ensemble un suivi adapté. Voyez le{" "}
+          <Link to="/deratisation-professionnels" className={textLink}>contrat de dératisation pour les professionnels</Link> et l'offre pour les{" "}
+          <Link to="/deratisation-restaurants" className={textLink}>restaurants et boulangeries</Link>, les{" "}
+          <Link to="/deratisation-collectivites" className={textLink}>communes</Link> et les{" "}
+          <Link to="/deratisation-coproprietes" className={textLink}>copropriétés</Link>, ou{" "}
+          <Link to="/contact" className={textLink}>demandez un devis professionnel</Link>.
         </p>
       </Section>
 

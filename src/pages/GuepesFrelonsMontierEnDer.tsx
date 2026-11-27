@@ -1,107 +1,125 @@
-import { Zap } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
+import { Church, Droplets, FileText, Fence, Hammer, Home, Layers, Tractor, Warehouse, Waves, Wheat, Wind } from "lucide-react";
 import heroImage from "@/assets/service-guepes.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Destruction nid de guêpes et frelons à Montier-en-Der (52)";
-const DESCRIPTION = "Un nid de guêpes ou de frelons à Montier-en-Der ? Protégez votre famille, on s'en occupe. À partir de 80 €, devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/guepes-frelons-montier-en-der";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Intervenez-vous sur les nids à Montier-en-Der (52220) ?", answer: "Oui, précisez l’adresse, le support, la hauteur approximative et les accès. Le créneau et les moyens nécessaires sont confirmés selon la situation." },
-  { question: "Un nid dans un trou au sol peut-il être dangereux ?", answer: "Oui, un nid actif peut être dérangé par la tonte ou le passage. Éloignez les personnes et les animaux et ne versez aucun produit dans l’entrée. L’identification se fait sans manipuler le nid." },
-  { question: "Faut-il boucher l’entrée sous une tuile ?", answer: "Non. Obstruer un accès actif peut déplacer les sorties, notamment vers l’intérieur. Gardez vos distances et attendez l’évaluation du professionnel." },
-  { question: "Retirez-vous toujours le nid après le traitement ?", answer: "Le retrait dépend du support et de l’accessibilité. Il n’est pas systématique ni nécessairement immédiat. Les prestations retenues et les consignes sont précisées avant l’intervention." },
-  { question: "Quel est le prix pour un nid de frelons à Montier-en-Der ?", answer: "Le prix dépend de l’identification, de la hauteur, de l’accès et des moyens nécessaires. Le diagnostic et le devis gratuits permettent de confirmer la prestation avant votre accord." },
-];
-
-const GuepesFrelonsMontierEnDer = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Nid de guêpes et frelons à Montier-en-Der (52220)", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Montier-en-Der", "containedInPlace": { "@type": "AdministrativeArea", "name": "La Porte du Der" }, "address": { "@type": "PostalAddress", "postalCode": "52220", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
-      },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Guêpes et frelons", "item": "https://gf-nuisibles.fr/guepes-frelons" },
-        { "@type": "ListItem", "position": 3, "name": "Montier-en-Der", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Montier-en-Der"
-        department="Haute-Marne (52)"
-        serviceTitle={"Nid de guêpes et frelons à Montier-en-Der (52220)"}
-        icon={<Zap className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"UN NID DE GUÊPES OU DE FRELONS À MONTIER-EN-DER ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un va-et-vient d’insectes sous une tuile, dans une haie ou près d’un trou au sol peut signaler un nid, même lorsque celui-ci est invisible. GF Nuisibles intervient pour les nids de guêpes et de frelons à Montier-en-Der (52220), commune déléguée de La Porte du Der. La demande commence par l’identification et l’évaluation de l’accès : hauteur, support, proximité des occupants et activité observée. Ne vous approchez pas pour obtenir une photo et ne tentez pas de décrocher le nid vous-même."}
-        expertise={"Les guêpes, les frelons européens et les frelons asiatiques nécessitent une identification adaptée aux indices disponibles. Les abeilles ne sont pas à traiter comme un nid de guêpes : un essaim peut relever d’un apiculteur. Le diagnostic prend en compte les accès au bâtiment, le passage des personnes et les animaux. Un nid dans un volume fermé ne se traite pas comme un nid visible dans un arbre. Les possibilités techniques sont confirmées selon la configuration et non à partir du seul nom de la commune."}
-        method={"À partir de votre description, nous préparons l’évaluation du nid et des moyens d’accès. Le périmètre à éviter et les précautions sont définis avant le traitement professionnel. La neutralisation et le retrait éventuel dépendent du support et de l’accessibilité ; le retrait immédiat n’est pas systématique. Les consignes après intervention précisent les comportements à respecter et les observations à signaler. Le devis tient compte de l’espèce identifiée, de la hauteur, de l’accès et de la méthode retenue."}
-        localContext={{ title: "Toitures du centre, haies et jardins de Montier-en-Der", content: <>
-            <p>{"Dans le centre de Montier-en-Der, autour de l’abbatiale Saint-Pierre-et-Saint-Paul et de la halle au blé, signalez un accès sous toiture, dans un volet ou une dépendance. Un passage régulier d’insectes au même point est une information utile même si le nid reste caché."}</p>
-            <p>{"Dans les secteurs du haras et de l’hippodrome de la Crouée, précisez la présence d’un jardin, d’une haie ou d’un bâtiment annexe à votre adresse. Éloignez les personnes et les animaux du point d’activité, sans tailler ni secouer la végétation pour chercher le nid."}</p>
-            <p>{"Pour un terrain près de la Voire, indiquez les accès praticables et la position du nid par rapport aux chemins utilisés. La rivière est un repère local, pas la preuve d’une infestation. Les sites patrimoniaux cités ne sont pas des références d’intervention."}</p>
-            <p>Les noms ci-dessus situent votre demande ; aucun monument n’est présenté comme infesté ou client. Retrouvez ces repères sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.laporteduder.fr/tourisme-decouverte-patrimoine/montier-en-der" target="_blank" rel="noopener noreferrer">site de la mairie de La Porte du Der</a> et dans la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.lacduder.com/decouvrir-explorer/nos-incontournables/montier-en-der/" target="_blank" rel="noopener noreferrer">présentation de Montier-en-Der par l’office de tourisme du lac du Der</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Montier-en-Der (52220)", intro: "Montier-en-Der est une commune déléguée de La Porte du Der. Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre de Montier-en-Der", "Secteur de l’abbatiale Saint-Pierre-et-Saint-Paul", "Secteur du haras", "Abords de la halle au blé", "Abords de la Voire", "Direction de l’hippodrome de la Crouée"] }}
-        extraSections={[
-          { title: "Les précautions avant la venue du professionnel", content: <>
-            <p>{"Ne bouchez pas un trou d’entrée dans une façade ou un toit : les insectes peuvent chercher une autre sortie. Ne versez ni eau, ni carburant, ni produit ménager dans un nid au sol. N’utilisez pas une échelle pour vous rapprocher d’un nid actif et ne le brûlez jamais."}</p>
-            <p>{"Suspendez la tonte ou la taille près de l’activité observée. Gardez les enfants et les animaux à distance. Une photo prise sans s’approcher, une estimation de la hauteur et une description des accès suffisent pour préparer le premier échange."}</p>
-          </> },
-          { title: "Nid inaccessible, devis et suites de l’intervention", content: <>
-            <p>{"Pour une toiture, un arbre ou un volume fermé, précisez la hauteur approximative et les obstacles. Le professionnel confirme les moyens nécessaires et la faisabilité. Un devis ne peut pas être déduit d’un tarif unique pour tous les nids ; la configuration et les prestations retenues comptent."}</p>
-            <p>{"Après le traitement, respectez les consignes et signalez une activité persistante au même point. Ne manipulez pas un nid traité sans accord. En cas de piqûres multiples, de difficulté à respirer ou de gonflement du visage ou de la gorge, appelez immédiatement le 15 ou le 112 : la destruction du nid ne remplace pas une prise en charge médicale."}</p>
-          </> },
-          { title: "Votre service à Montier-en-Der et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service guêpes et frelons en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Montier-en-Der, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-wassy">Guêpes et frelons à Wassy</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-saint-dizier">Guêpes et frelons à Saint-Dizier</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-joinville">Guêpes et frelons à Joinville</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Montier-en-Der", items: [
-          { label: "Guêpes et frelons à Wassy", to: "/guepes-frelons-wassy" },
-          { label: "Guêpes et frelons à Saint-Dizier", to: "/guepes-frelons-saint-dizier" },
-          { label: "Guêpes et frelons à Joinville", to: "/guepes-frelons-joinville" },
-        ] }}
-        relatedLinks={[
-          { label: "Dératisation à Montier-en-Der", to: "/deratisation-montier-en-der" },
-          { label: "Dépigeonnisation à Montier-en-Der", to: "/depigeonnisation-montier-en-der" },
-          { label: "Taupier à Montier-en-Der", to: "/taupes-montier-en-der" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Guêpes et frelons à Montier-en-Der : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+const town: RodentTown = {
+  kind: "wasps",
+  city: "Montier-en-Der",
+  postalCode: "52220",
+  region: "Haute-Marne",
+  slug: "/guepes-frelons-montier-en-der",
+  title: "Destruction nid de guêpes et frelons à Montier-en-Der (52)",
+  description:
+    "Un nid de guêpes ou de frelons à Montier-en-Der ? Protégez votre famille, on s'en occupe. À partir de 80 €, devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Pans de bois, granges et étangs",
+    text: "Un nid dans une poutre, sous un bardage ou dans la grange ? Je le traite sans abîmer votre bâtiment.",
+    highlight: "Sans percer le bois ni le torchis",
+    signsLabel: "Un nid dans une maison à pans de bois ? À lire",
+    image: heroImage,
+    imageAlt: "Nid de guêpes suspendu à une branche",
+    imageClassName: "max-lg:brightness-75",
+  },
+  reviews: ["buke", "babinski", "petitfourt"],
+  why: {
+    title: "Pourquoi les guêpes aiment-elles les maisons du Der ?",
+    intro: "Bois, torchis, granges : les bâtiments du Der offrent tout ce qu'il faut pour construire un nid, et même la matière première.",
+    items: [
+      { icon: Hammer, title: "Du vieux bois", text: "les guêpes grattent les poutres et les bardages pour fabriquer la pâte de leur nid." },
+      { icon: Layers, title: "Des bardages", text: "entre les planches et le mur, un espace sec et caché court jusqu'au toit." },
+      { icon: Warehouse, title: "Des granges ouvertes", text: "charpentes hautes et coins sombres où personne ne monte." },
+      { icon: Waves, title: "Les étangs et le lac", text: "de l'eau et des insectes en abondance pour nourrir la colonie." },
+    ],
+  },
+  how: {
+    title: "Comment détruire un nid de guêpes ou de frelons sans abîmer la maison ?",
+    intro: "Dans une maison à pans de bois, on ne démonte rien. Le nid se traite par l'ouverture qu'utilisent les insectes.",
+    steps: [
+      { title: "Je trouve l'ouverture", text: "Fente entre poutre et torchis, planche décollée, trou d'aération : je suis le va-et-vient." },
+      { title: "Je traite par ce passage", text: "Le produit professionnel est glissé dans l'ouverture et atteint le nid caché derrière." },
+      { title: "Je vous dis quand reboucher", text: "Une fois l'activité terminée, avec un matériau adapté au bois ou au torchis." },
+    ],
+    after: (
+      <>
+        Ne colmatez pas l'ouverture avec de la mousse expansive avant le traitement : les guêpes ressortiraient ailleurs. Plus d'informations sur la page{" "}
+        <Link to="/guepes-frelons" className={textLink}>guêpes et frelons</Link>.
+      </>
+    ),
+  },
+  where: {
+    intro: "De l'abbatiale aux étangs, voici les endroits où je trouve le plus de nids dans le secteur.",
+    items: [
+      { icon: Church, title: "Autour de l'abbatiale", text: "maisons de bourg : génoises, volets et combles." },
+      { icon: Home, title: "La halle au blé et le centre", text: "toits anciens, corniches et coffres de volets." },
+      { icon: Tractor, title: "Le secteur du haras", text: "écuries, selleries et granges à foin." },
+      { icon: Droplets, title: "Les abords de la Voire", text: "saules et frênes, où s'accrochent les nids de frelons asiatiques." },
+      { icon: Fence, title: "Robert-Magny", text: "maisons de village et dépendances." },
+      { icon: Waves, title: "Vers le lac du Der", text: "chalets, gîtes et résidences de week-end souvent fermés." },
+    ],
+  },
+  price: {
+    paragraphs: [
+      <>Un nid de guêpes se traite <strong className="whitespace-nowrap text-primary">à partir de 80 €</strong>, un nid de frelons asiatiques <strong className="whitespace-nowrap text-primary">à partir de 110 €</strong>.</>,
+      "La hauteur, l'accès et le type de bâtiment font varier le prix. Un dimanche ou un jour férié, un supplément peut s'ajouter : il est annoncé avant.",
+    ],
+    aside: { icon: FileText, title: "Le Der, c'est loin ?", text: "Un peu : c'est pour cela que le déplacement vous est annoncé au téléphone, avant de prendre rendez-vous." },
+  },
+  local: [
+    {
+      kind: "list",
+      target: true,
+      title: "Un nid dans une maison à pans de bois : les bons réflexes",
+      intro: "Le bourdonnement vient du mur et vous ne voyez rien ? Le nid est sans doute dans le remplissage.",
+      items: [
+        { title: "Écoutez", text: "un bruit sourd et continu derrière le torchis ou le doublage indique la place du nid." },
+        { title: "Repérez la fente", text: "des guêpes qui entrent toujours au même endroit, entre une poutre et le mur." },
+        { title: "Ne cassez rien", text: "ouvrir le mur libérerait la colonie dans la pièce." },
+        { title: "Fermez la pièce", text: "si des guêpes apparaissent à l'intérieur, gardez la porte close jusqu'au traitement." },
+      ],
+      aside: { icon: Wind, title: "Après le traitement", text: "Attendez quelques jours sans activité avant de reboucher, avec un mortier de chaux ou un matériau adapté." },
+    },
+    {
+      kind: "text",
+      title: "Haras, granges et fenaison : attention en été",
+      paragraphs: [
+        "C'est souvent en rentrant le foin ou en déplaçant du matériel qu'on tombe sur un nid caché depuis des semaines. Les chevaux, eux, peuvent réagir très fort à quelques piqûres.",
+        "Jetez un œil aux poutres et aux recoins des granges dès le mois de mai. Si vous repérez un nid, éloignez les animaux de cette zone et appelez-moi avant de commencer les travaux.",
+      ],
+      aside: { icon: Wheat, title: "Des chevaux à proximité ?", text: "Dites-le-moi à l'appel : on choisit le moment et la méthode pour ne pas les stresser." },
+    },
+  ],
+  call: {
+    title: "Un nid de guêpes dans le Der ?",
+    text: "Dites-moi s'il est dans un mur, une grange ou un arbre : je vous propose une date.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Quel est le prix d'un nid de guêpes à Montier-en-Der ?", answer: "À partir de 80 € pour des guêpes et de 110 € pour des frelons asiatiques, selon la hauteur et l'accès. Le déplacement est annoncé au téléphone et le paiement se fait après." },
+    { question: "Le traitement abîme-t-il les poutres ?", answer: "Non. Le produit est appliqué par l'ouverture existante, sans percer ni démonter. Seul le rebouchage, après coup, demande un peu de soin." },
+    { question: "Un nid dans le foin est-il dangereux pour les chevaux ?", answer: "Oui, s'ils le dérangent. Éloignez-les de la zone et faites traiter le nid avant de manipuler le foin." },
+    { question: "Les frelons asiatiques sont-ils nombreux près du lac ?", answer: "Les zones humides et boisées leur conviennent. Un gros nid haut dans un arbre près de l'eau doit vous faire penser à eux." },
+    { question: "Mon gîte est fermé, puis-je faire intervenir sans être là ?", answer: "Oui, si quelqu'un peut m'ouvrir l'accès au jardin ou au bâtiment. Je vous appelle ensuite pour vous dire comment ça s'est passé." },
+    { question: "Vous venez jusqu'où autour de Montier-en-Der ?", answer: "Planrupt, Frampas, Ceffonds, Thilleux, Sommevoire, Laneuville-à-Rémy, Rives Dervoises, Voillecomte, Éclaron-Braucourt-Sainte-Livière et les villages autour. Appelez le 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Je viens depuis Chaumont dans tout le nord-ouest du département.",
+    links: [
+      { label: "Guêpes et frelons Wassy", to: "/guepes-frelons-wassy" },
+      { label: "Guêpes et frelons Saint-Dizier", to: "/guepes-frelons-saint-dizier" },
+      { label: "Guêpes et frelons Joinville", to: "/guepes-frelons-joinville" },
+    ],
+    also: "D'autres soucis à Montier-en-Der ?",
+    note: (
+      <>
+        Les espèces et la saison des nids sont expliquées sur la page{" "}
+        <Link to="/guepes-frelons" className={textLink}>nids de guêpes en Haute-Marne</Link>.
+      </>
+    ),
+  },
 };
+
+const GuepesFrelonsMontierEnDer = () => <RodentTownPage town={town} />;
 
 export default GuepesFrelonsMontierEnDer;

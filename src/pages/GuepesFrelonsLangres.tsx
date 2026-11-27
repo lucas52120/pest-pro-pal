@@ -1,111 +1,130 @@
-import { Zap } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-guepes.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
+import { BedDouble, BrickWall, Castle, Church, FileText, Flame, Home, Landmark, Trees, Waves, Wind, Wine } from "lucide-react";
+import heroImage from "@/assets/guepes-nid-bois.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Destruction nid de guêpes et frelons à Langres (52)";
-const DESCRIPTION = "Guêpes ou frelons à Langres ? Ne risquez pas la piqûre, on détruit le nid pour vous, 7j/7. À partir de 80 €, devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/guepes-frelons-langres";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Quel est le tarif pour un nid de guêpes ou de frelons à Langres ?", answer: "Les tarifs commencent à 80 € pour les guêpes et à 110 € pour les frelons. La hauteur, l'accès et les moyens nécessaires peuvent modifier le montant. Le devis gratuit précise le tarif applicable à votre situation avant l'intervention." },
-  { question: "Faut-il retirer soi-même un nid situé dans un volet ?", answer: "Non. Ne démontez pas le coffre et ne bouchez pas l'entrée. Éloignez les occupants et décrivez les accès au professionnel. Le traitement et l'éventuel retrait dépendent de la configuration du volet et du nid." },
-  { question: "Pouvez-vous intervenir dans les quartiers de Langres ?", answer: "Oui, le centre historique, la Citadelle, Saint-Gilles, les Franchises et les Fourches font partie des secteurs desservis. L'accès et les disponibilités sont à confirmer lors de l'appel. L'entreprise est basée à Montsaon, en Haute-Marne." },
-  { question: "Retirez-vous toujours le nid après traitement ?", answer: "Le retrait dépend de l'accessibilité et de la situation. Certains nids sont dissimulés dans une paroi ou sous une toiture. Les modalités de traitement et de retrait éventuel sont expliquées pour votre cas ; ne démontez pas vous-même les matériaux pour accéder au nid." },
-  { question: "Comment transmettre une photo pour identifier les insectes ?", answer: "Prenez une photo uniquement depuis un emplacement protégé et sans vous rapprocher. À défaut, décrivez l'aspect des insectes, leur point d'entrée et les heures d'activité observées. L'identification doit être confirmée avant de choisir la méthode." },
-];
-
-const GuepesFrelonsLangres = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service",
-        "url": URL,
-        "name": TITLE,
-        "description": DESCRIPTION,
-        "provider": {
-          "@id": "https://gf-nuisibles.fr/#organization"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Langres"
-        }
+const town: RodentTown = {
+  kind: "wasps",
+  city: "Langres",
+  postalCode: "52200",
+  region: "Haute-Marne",
+  slug: "/guepes-frelons-langres",
+  title: "Destruction nid de guêpes et frelons à Langres (52)",
+  description:
+    "Guêpes ou frelons à Langres ? Ne risquez pas la piqûre, on détruit le nid pour vous, 7j/7. À partir de 80 €, devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Vieille ville, remparts et villages",
+    text: "Dans un mur épais, une cheminée ou sous un toit haut : je traite le nid sans que vous preniez de risque.",
+    highlight: "Matériel adapté aux toits hauts",
+    signsLabel: "Un nid dans un mur ou une cheminée ? Ce qu'il faut savoir",
+    image: heroImage,
+    imageAlt: "Guêpes sur un nid ouvert aux alvéoles visibles, contre une planche",
+    imageClassName: "max-lg:brightness-50",
+  },
+  reviews: ["genest", "patricia", "petitfourt"],
+  why: {
+    title: "Pourquoi les guêpes s'installent-elles chez vous ?",
+    intro: "Les vieilles maisons ont des milliers de petits creux. Pour une reine qui cherche un abri au printemps, c'est l'embarras du choix.",
+    items: [
+      { icon: BrickWall, title: "Des joints creusés", text: "entre deux pierres, un trou de quelques millimètres mène à un vide où le nid grossit à l'abri." },
+      { icon: Flame, title: "Une cheminée inutilisée", text: "un conduit fermé en bas mais ouvert en haut est un refuge sec et tranquille." },
+      { icon: Home, title: "Des combles peu visités", text: "greniers et charpentes anciennes, où l'on ne monte qu'une fois par an." },
+      { icon: Wine, title: "Des terrasses gourmandes", text: "verres sucrés et assiettes en fin d'été : les guêpes suivent l'odeur jusqu'au nid voisin." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser d'un nid de guêpes ou de frelons ?",
+    intro: "Dans une maison de pierre, le nid est souvent invisible : on n'en voit que l'entrée. Le traitement passe par là, sans démonter le mur.",
+    steps: [
+      { title: "Je suis le va-et-vient", text: "Joint, fissure, tuile ou bouche d'aération : l'entrée me dit où se trouve le nid, même derrière la pierre." },
+      { title: "Je traite par l'entrée", text: "Un produit professionnel glissé dans le passage atteint la colonie sans casser votre mur." },
+      { title: "Je vous dis quand reboucher", text: "Une fois l'activité terminée, et seulement là, vous pourrez fermer le trou." },
+    ],
+    after: (
+      <>
+        Ne bouchez jamais l'entrée avant le traitement : les guêpes chercheraient une autre sortie, parfois vers l'intérieur. Méthodes détaillées sur la page{" "}
+        <Link to="/guepes-frelons" className={textLink}>destruction de nids en Haute-Marne</Link>.
+      </>
+    ),
+  },
+  where: {
+    intro: "Entre les remparts et les quartiers plus récents, les nids ne se cachent pas aux mêmes endroits.",
+    items: [
+      { icon: Castle, title: "Dans les remparts", text: "maisons hautes autour de la place Diderot : nids dans les joints, sous les tuiles et dans les combles." },
+      { icon: Church, title: "Vers la cathédrale Saint-Mammès", text: "corniches, avancées de toit et cheminées anciennes." },
+      { icon: Landmark, title: "La Citadelle et Saint-Gilles", text: "immeubles : balcons, coffres de volets et bouches d'aération." },
+      { icon: Home, title: "Les Franchises et Les Fourches", text: "pavillons : abris de jardin, haies et pelouses." },
+      { icon: Waves, title: "Corlée et le lac de la Liez", text: "maisons de bord de lac et arbres où le frelon asiatique s'installe." },
+      { icon: Trees, title: "Les villages du Pays de Langres", text: "granges, hangars et vergers des communes voisines." },
+    ],
+  },
+  price: {
+    paragraphs: [
+      <>Comptez <strong className="whitespace-nowrap text-primary">à partir de 80 €</strong> pour des guêpes, et <strong className="whitespace-nowrap text-primary">à partir de 110 €</strong> pour des frelons asiatiques.</>,
+      "Un nid sous un toit de trois étages ou dans une cheminée demande plus de matériel qu'un nid au ras du sol. Si l'intervention tombe un dimanche ou un jour férié, un supplément peut s'appliquer, toujours annoncé avant.",
+    ],
+    aside: { icon: FileText, title: "Vous savez avant", text: "Le montant est fixé avant ma venue, la plupart du temps au téléphone. Le paiement se fait après." },
+  },
+  local: [
+    {
+      kind: "list",
+      target: true,
+      title: "Un nid dans un mur ou une cheminée : que faire ?",
+      intro: "C'est fréquent dans les maisons anciennes de Langres, et souvent impressionnant. Voici les bons réflexes.",
+      items: [
+        { title: "Repérez le trou d'entrée", text: "de loin, sans vous mettre dans l'axe des allers-retours." },
+        { title: "Fermez la pièce", text: "si vous entendez bourdonner derrière une cloison ou dans le conduit, gardez la porte close." },
+        { title: "N'allumez pas de feu", text: "dans une cheminée habitée, la fumée affole la colonie et peut l'envoyer dans la maison." },
+        { title: "Ne percez pas", text: "un trou dans le mur ou le plafond libérerait les guêpes dans la pièce." },
+      ],
+      aside: {
+        icon: Wind,
+        title: "Après le traitement",
+        text: "Attendez que plus rien ne bouge pendant quelques jours avant de reboucher. Le vieux nid, lui, ne sera pas réoccupé.",
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": FAQ_ITEMS.map((item) => ({
-          "@type": "Question",
-          "name": item.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": item.answer
-          }
-        }))
-      }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-      <meta property="og:title" content={TITLE} />
-      <meta property="og:description" content={DESCRIPTION} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={URL} />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={TITLE} />
-      <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={[{ label: "Accueil", to: "/" }, { label: "Guêpes et frelons", to: "/guepes-frelons" }, { label: "Langres", to: "/guepes-frelons-langres" }]}
-        city="Langres"
-        department="Haute-Marne (52)"
-        serviceTitle={"Destruction de nids de guêpes et frelons à Langres (52200)"}
-        icon={<Zap className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle="NID DE GUÊPES OU FRELONS À LANGRES ?"
-        serviceCallSubtitle="GF NUISIBLES INTERVIENT EN URGENCE POUR VOTRE SÉCURITÉ !"
-        intro={"Un va-et-vient de guêpes sous une toiture ou des frelons autour d'un arbre à Langres ? GF Nuisibles intervient pour la destruction de nids de guêpes, de frelons européens et de frelons asiatiques à Langres (52200). La localisation du nid, son accès et l'activité observée guident l'évaluation. N'approchez pas pour confirmer l'espèce : décrivez ce que vous voyez depuis un endroit protégé."}
-        expertise={"Depuis Montsaon, GF Nuisibles dessert les particuliers et professionnels du Pays de Langres. Un nid dans un coffre de volet, sous des tuiles ou dans un arbre ne présente pas les mêmes contraintes. L'évaluation permet de choisir le matériel et les précautions adaptés, sans promettre à distance un délai ou un accès possible dans toutes les configurations."}
-        method={"Avant le traitement, le nid ou son point d'entrée est repéré et le périmètre à protéger est défini. L'intervention est adaptée à l'espèce et à l'emplacement. Le retrait physique du nid dépend de son accessibilité et de la situation : il ne doit pas être tenté par l'occupant. Les consignes après traitement sont expliquées pour éviter une remise en contact prématurée avec la zone."}
-        localContext={{ title: "Toitures du centre ancien et jardins de Langres : des accès à préciser", content: <>
-<p>{"Dans le centre historique, autour de la place Diderot ou de la cathédrale Saint-Mammès, indiquez si l'activité se situe côté rue, dans une cour ou sous une toiture. Le passage par le logement, la présence de voisins et les accès disponibles influencent l'organisation. La mention de ces monuments sert uniquement de repère géographique ; elle ne signifie pas que nous y avons traité des nids."}</p>
-<p>{"À Saint-Gilles, aux Franchises, aux Fourches ou dans le secteur de la Citadelle, précisez si le nid est visible depuis le sol et s'il se trouve près d'une porte, d'une terrasse ou d'un passage. Dans un jardin, tenez compte des occupants voisins et des animaux. Ces informations sont plus utiles qu'une tentative d'approche pour mesurer exactement le nid."}</p>
-</> }}
-      neighborhoods={{ title: "Secteurs desservis à Langres (52200)", intro: "Précisez votre adresse et les accès lors de votre demande. Le diagnostic porte sur votre logement ou votre terrain, sans présumer de la présence de nuisibles dans tout un quartier.", items: ["Centre historique, place Diderot", "Secteur de la cathédrale Saint-Mammès et des remparts", "La Citadelle", "Saint-Gilles", "Les Franchises", "Les Fourches"] }}
-      extraSections={[
-        { title: "Que faire en attendant le traitement du nid ?", content: <>
-<p>{"Éloignez les personnes et les animaux de la zone et évitez les vibrations à proximité. Ne bouchez pas l'entrée d'un nid dans un mur ou un volet : les insectes peuvent rechercher un autre passage. N'utilisez ni feu, ni jet d'eau, ni tentative de décrochage. Une photo n'est utile que si elle peut être prise sans s'approcher."}</p>
-<p>{"Des insectes en déplacement ne prouvent pas à eux seuls qu'un nid se trouve sur votre propriété. Un regroupement d'abeilles nécessite une identification différente : ne le faites pas traiter comme un nid de guêpes. En cas de difficulté respiratoire, de malaise ou de réaction grave après une piqûre, appelez le 15 ou le 112 ; le traitement d'un nid ne remplace pas les secours médicaux."}</p>
-</> },
-        { title: "Prix et préparation d’une intervention à Langres", content: <>
-<p>{"Les tarifs affichés commencent à 80 € pour un nid de guêpes et à 110 € pour un nid de frelons. Le montant dépend notamment de la hauteur, de l'accès et des moyens nécessaires. Un devis gratuit permet de préciser le prix et le périmètre de la prestation avant votre accord."}</p>
-<p>{"Pour préparer votre appel, donnez votre adresse à Langres, l'emplacement estimé, les voies d'accès et les contraintes de voisinage. Signalez également un précédent traitement. Après le passage, respectez les consignes sur les déplacements près du nid et sur toute manipulation : une activité résiduelle doit être signalée, pas traitée soi-même."}</p>
-</> },
-        { title: "Votre service à Langres et dans les communes voisines", content: <>
-<p>Pour découvrir les méthodes et les prestations, consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">page sur les nids de guêpes et frelons en Haute-Marne</Link>. Pour un rendez-vous à Langres, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-<p>Vous êtes dans une commune voisine ? Retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-nogent">{"Guêpes et frelons à Nogent"}</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-chalindrey">{"Guêpes et frelons à Chalindrey"}</Link>, ou consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link> pour les autres secteurs desservis.</p>
-</> },
-      ]}
-      nearbyCities={{ title: "Près de Langres : nos pages locales", items: [
-{ label: "Guêpes et frelons à Nogent", to: "/guepes-frelons-nogent" },
-{ label: "Guêpes et frelons à Chalindrey", to: "/guepes-frelons-chalindrey" },
-] }}
-      faqItems={FAQ_ITEMS}
-      cta={"Guêpes et frelons à Langres : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits adaptés à votre situation."}
-      />
-    </>
-  );
+    },
+    {
+      kind: "text",
+      title: "Gîtes, restaurants, chambres d'hôtes : ne pas gâcher la saison",
+      paragraphs: [
+        "Un nid au-dessus d'une terrasse ou d'une fenêtre de chambre, et ce sont des clients qui se plaignent. Je passe tôt le matin ou entre deux arrivées, et je délimite la zone le temps du traitement.",
+        "Jetez un œil aux avant-toits dès le mois de mai : un nid de la taille d'une orange se traite vite et facilement, bien avant les grosses chaleurs.",
+      ],
+      aside: { icon: BedDouble, title: "Un client a été piqué ?", text: "En cas de gonflement du visage, de gêne pour respirer ou de malaise, appelez le 15 sans attendre." },
+    },
+  ],
+  call: {
+    title: "Un nid de guêpes à Langres ?",
+    text: "Dites-moi où vous voyez le va-et-vient : je vous donne une date dès l'appel.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Combien coûte la destruction d'un nid à Langres ?", answer: "80 € au minimum pour des guêpes, 110 € pour des frelons asiatiques. Le prix tient compte de la hauteur et de l'accès, et il est fixé avant l'intervention. Vous payez après." },
+    { question: "Peut-on traiter un nid caché dans un mur en pierre ?", answer: "Oui, en passant par l'entrée que les guêpes utilisent. Pas besoin de démonter le mur : le produit atteint la colonie par ce passage." },
+    { question: "Un nid dans la cheminée est-il dangereux ?", answer: "Il peut l'être si les guêpes trouvent un chemin vers la pièce. N'allumez pas de feu, fermez le trappon si vous en avez un, et faites traiter le nid." },
+    { question: "Qui appeler pour un nid de guêpes à Langres ?", answer: "Une entreprise certifiée pour les produits professionnels. Les pompiers ne se déplacent plus pour les nids chez les particuliers en Haute-Marne." },
+    { question: "Les guêpes reviendront-elles au même endroit ?", answer: "Pas dans l'ancien nid. Mais l'endroit reste attirant : une nouvelle reine peut s'installer à côté au printemps suivant. Faites reboucher les trous une fois l'activité terminée." },
+    { question: "Intervenez-vous autour de Langres ?", answer: "Oui : Saints-Geosmes, Humes-Jorquenay, Peigney, Champigny-lès-Langres, Rolampont, Chalindrey et les autres villages du Pays de Langres. Appelez le 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Basé aux portes de Chaumont, j'interviens dans tout le sud de la Haute-Marne.",
+    links: [
+      { label: "Guêpes et frelons Chalindrey", to: "/guepes-frelons-chalindrey" },
+      { label: "Guêpes et frelons Nogent", to: "/guepes-frelons-nogent" },
+      { label: "Guêpes et frelons Bourbonne-les-Bains", to: "/guepes-frelons-bourbonne-les-bains" },
+      { label: "Guêpes et frelons Chaumont", to: "/guepes-frelons-chaumont" },
+    ],
+    also: "À Langres, je m'occupe aussi de :",
+    note: (
+      <>
+        Tout sur les espèces et la saison des nids :{" "}
+        <Link to="/guepes-frelons" className={textLink}>guêpes et frelons en Haute-Marne</Link>.
+      </>
+    ),
+  },
 };
+
+const GuepesFrelonsLangres = () => <RodentTownPage town={town} />;
 
 export default GuepesFrelonsLangres;

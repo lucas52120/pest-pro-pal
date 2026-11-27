@@ -1,107 +1,127 @@
-import { Zap } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
+import { Blinds, Building2, CookingPot, Droplets, FileText, Home, Landmark, Sun, TrainFront, Trash2, Trees, Users } from "lucide-react";
 import heroImage from "@/assets/service-guepes.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Destruction nid de guêpes et frelons à Saint-Dizier (52)";
-const DESCRIPTION = "Des guêpes ou des frelons gâchent vos repas dehors à Saint-Dizier ? On s'en occupe 7j/7, à partir de 80 €. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/guepes-frelons-saint-dizier";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Que faire si des guêpes entrent dans mon volet à Saint-Dizier ?", answer: "Évitez de le manœuvrer et n’obstruez pas l’entrée. Décrivez l’emplacement depuis un endroit sûr et demandez conseil. Un nid dans une cavité peut nécessiter une méthode différente d’un nid apparent." },
-  { question: "Intervenez-vous à Marnaval et au Vert-Bois ?", answer: "Oui, ces secteurs de Saint-Dizier sont desservis, ainsi que La Noue, Gigny et le centre-ville. Précisez l’adresse, la hauteur approximative et les possibilités d’accès ; la disponibilité est confirmée lors de l’appel." },
-  { question: "Faut-il détruire un ancien nid en hiver ?", answer: "Un nid réellement abandonné ne nécessite pas automatiquement de traitement. La décision dépend de l’activité observée et de l’identification, pas du calendrier seul. Ne vous approchez pas pour vérifier vous-même si vous avez un doute." },
-  { question: "Le prix dépend-il de la hauteur du nid ?", answer: "La hauteur, les accès, l’espèce et le matériel nécessaire influencent le devis. Signalez une cour fermée, une toiture difficile d’accès ou un passage commun. Le prix est annoncé avant l’intervention selon ces éléments." },
-  { question: "Quand les enfants et les animaux peuvent-ils revenir à proximité ?", answer: "Les consignes dépendent du procédé et de la configuration. Elles sont expliquées avant le passage et doivent être respectées après le traitement. Ne vous approchez pas du nid pour vérifier l’activité de votre propre initiative." },
-];
-
-const GuepesFrelonsSaintDizier = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Destruction de nids de guêpes et frelons à Saint-Dizier (52100)", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Saint-Dizier", "address": { "@type": "PostalAddress", "postalCode": "52100", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
-      },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Guêpes et frelons", "item": "https://gf-nuisibles.fr/guepes-frelons" },
-        { "@type": "ListItem", "position": 3, "name": "Saint-Dizier", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Saint-Dizier"
-        department="Haute-Marne (52)"
-        serviceTitle={"Destruction de nids de guêpes et frelons à Saint-Dizier (52100)"}
-        icon={<Zap className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"NID DE GUÊPES OU FRELONS À SAINT-DIZIER ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un va-et-vient d’insectes dans un volet, sous une toiture ou près d’un abri de jardin à Saint-Dizier ? GF Nuisibles prend en charge les demandes de destruction de nids de guêpes et de frelons à Saint-Dizier (52100). L’espèce, l’emplacement et l’accès sont évalués avant l’intervention. Un nid dans une cavité de façade ne se traite pas comme un nid apparent dans un arbre ; n’obstruez pas l’entrée avant d’avoir demandé conseil."}
-        expertise={"Basée à Montsaon, l’entreprise dessert la cité bragarde pour les particuliers et les professionnels. La préparation tient compte des passages, des personnes allergiques, des enfants et des animaux. L’équipement et le procédé sont adaptés au nid observé. Les protections et les conditions de suivi sont expliquées avant le passage ; le retrait physique d’un nid n’est pas automatiquement possible ni nécessaire dans toutes les configurations."}
-        method={"Nous identifions les indices de l’espèce et examinons la hauteur, les accès et les risques d’exposition. Le périmètre est organisé avant le traitement professionnel. Les consignes après passage précisent la zone à éviter et les signes éventuels à signaler. Le devis annonce les prestations retenues, les contraintes de matériel et les conditions de suivi sans promettre un résultat immédiat quelle que soit la situation."}
-        localContext={{ title: "Du centre de Saint-Dizier aux jardins de Marnaval", content: <>
-<p>{"Dans le centre, l’église Notre-Dame et le château permettent de situer votre adresse, sans signaler de nid sur ces monuments. Pour un accès sur rue ou une cour commune, précisez les passages à protéger et les possibilités d’approche du bâtiment. Une photo n’est utile que si elle peut être prise depuis un endroit sûr."}</p>
-<p>{"Au Vert-Bois, à La Noue, à Gigny ou à Marnaval, décrivez si le nid se trouve dans un volet, sous un appentis, en toiture ou dans un arbre. La proximité de la Marne ou du canal ne permet pas d’identifier l’espèce. Dans un local professionnel, les accès de livraison et la fréquentation des abords peuvent modifier l’organisation du passage."}</p>
-<p>{"Près de la Tour Miko ou des Petites Halles, signalez surtout un passage public ou une entrée commune à protéger. Ces repères ne constituent pas des références d’intervention."}</p>
-<p>Pour situer les repères patrimoniaux, consultez le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.lacduder.com/offres/au-fil-des-rues-de-saint-dizier-saint-dizier-fr-5122370/" target="_blank" rel="noopener noreferrer">parcours de Saint-Dizier présenté par l’office de tourisme du lac du Der</a> et les <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://reveler.saint-dizier.fr/les-lieux/" target="_blank" rel="noopener noreferrer">lieux présentés par la Ville de Saint-Dizier</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs desservis à Saint-Dizier (52100)", intro: "Indiquez votre rue, le type de bien et les accès. Bettancourt-la-Ferrée et Chancenay sont des communes voisines, distinctes de Saint-Dizier ; les quartiers cités ne sont pas présentés comme infestés.", items: ["Centre-ville, église Notre-Dame et château", "Vert-Bois", "La Noue", "Gigny", "Marnaval", "Secteur gare, Marne et canal"] }}
-        extraSections={[
-          { title: "Guêpe, frelon européen, frelon asiatique ou abeille ?", content: <>
-<p>{"Le frelon asiatique présente notamment un corps sombre, une bande orangée sur l’abdomen et des extrémités de pattes jaunes ; le frelon européen est plus largement jaune et brun-roux. L’aspect général et l’observation à distance orientent l’identification, mais ne justifient pas de s’approcher pour examiner un insecte."}</p>
-<p>{"Si vous pensez observer des abeilles ou un essaim, signalez-le avant toute demande de destruction. Un apiculteur peut être l’interlocuteur approprié selon la situation. La taille ou la forme d’un nid ne suffit pas à décider seule du procédé à employer."}</p>
-          </> },
-          { title: "Les précautions avant une intervention à Saint-Dizier", content: <>
-<p>{"Ne montez pas sur une échelle pour photographier le nid. N’essayez pas de le brûler, de le noyer, de le décrocher ou de pulvériser un produit dans une ouverture. Éloignez les enfants et les animaux et évitez les vibrations à proximité. Signalez la présence d’une personne allergique et d’un passage très fréquenté lors de l’appel."}</p>
-<p>{"En cas de difficulté à respirer ou de réaction allergique après une piqûre, appelez le 15 ou le 112 : la destruction du nid ne remplace pas les secours médicaux. Le tarif de l’intervention dépend de la hauteur, de l’accès et du matériel ; le devis gratuit et le créneau sont confirmés pour votre situation."}</p>
-          </> },
-          { title: "Votre service à Saint-Dizier et dans le nord de la Haute-Marne", content: <>
-<p>Découvrez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service de destruction de nids de guêpes en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Saint-Dizier, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez votre diagnostic et votre devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-<p>Vous êtes dans une autre commune du secteur ? Retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-wassy">Guêpes et frelons à Wassy</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-joinville">Guêpes et frelons à Joinville</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-montier-en-der">Guêpes et frelons à Montier-en-Der</Link>. Consultez également notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d’intervention</Link>.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Saint-Dizier", items: [
-          { label: "Guêpes et frelons à Wassy", to: "/guepes-frelons-wassy" },
-          { label: "Guêpes et frelons à Joinville", to: "/guepes-frelons-joinville" },
-          { label: "Guêpes et frelons à Montier-en-Der", to: "/guepes-frelons-montier-en-der" },
-        ] }}
-        relatedLinks={[
-          { label: "Dératisation à Saint-Dizier", to: "/deratisation-saint-dizier" },
-          { label: "Dépigeonnisation à Saint-Dizier", to: "/depigeonnisation-saint-dizier" },
-          { label: "Taupier à Saint-Dizier", to: "/taupes-saint-dizier" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Guêpes et frelons à Saint-Dizier : appelez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+const town: RodentTown = {
+  kind: "wasps",
+  city: "Saint-Dizier",
+  postalCode: "52100",
+  region: "Haute-Marne",
+  slug: "/guepes-frelons-saint-dizier",
+  title: "Destruction nid de guêpes et frelons à Saint-Dizier (52)",
+  description:
+    "Des guêpes ou des frelons gâchent vos repas dehors à Saint-Dizier ? On s'en occupe 7j/7, à partir de 80 €. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Maisons, balcons et immeubles",
+    text: "Des guêpes qui gâchent vos repas dehors ? Je trouve le nid et je le détruis, même en hauteur.",
+    highlight: "Intervention possible en immeuble",
+    signsLabel: "Un nid sur un balcon ? Que faire en immeuble",
+    image: heroImage,
+    imageAlt: "Guêpes sur un nid suspendu à une branche",
+    imageClassName: "max-lg:brightness-75",
+  },
+  reviews: ["babinski", "genest", "patricia"],
+  why: {
+    title: "Pourquoi y a-t-il des guêpes autour de chez vous ?",
+    intro: "Quand elles tournent autour de la table, c'est qu'un nid n'est pas loin. Elles cherchent à manger, et elles ont trouvé où vivre.",
+    items: [
+      { icon: CookingPot, title: "Les repas en extérieur", text: "jus de fruits, viande, desserts : en août, elles sont attirées par tout ce qui est sucré ou carné." },
+      { icon: Trash2, title: "Les poubelles", text: "un bac mal fermé près de la terrasse devient leur cantine." },
+      { icon: Blinds, title: "Un volet ou une aération", text: "un caisson de volet roulant ou une grille d'aération ouverte suffit à abriter un nid." },
+      { icon: Sun, title: "Un mur au soleil", text: "façades chaudes et toits exposés plein sud accélèrent la croissance de la colonie." },
+    ],
+  },
+  how: {
+    title: "Comment détruire un nid de guêpes efficacement ?",
+    intro: "Le piège à guêpes du jardin attrape les ouvrières, pas la reine. Pour arrêter le va-et-vient, il faut traiter le nid lui-même.",
+    steps: [
+      { title: "Je localise le nid", text: "Je suis le trajet des guêpes depuis votre terrasse jusqu'à leur entrée : souvent plus près qu'on ne croit." },
+      { title: "Je le neutralise", text: "Équipé, j'applique un produit professionnel dans le nid, depuis le sol ou un balcon grâce à la perche." },
+      { title: "Je sécurise les lieux", text: "Je vous dis combien de temps éviter la zone et quoi faire du nid ensuite." },
+    ],
+    after: (
+      <>
+        Évitez les pièges à base de sucre près de la maison pendant l'été : ils attirent plus de guêpes qu'ils n'en capturent. En savoir plus :{" "}
+        <Link to="/guepes-frelons" className={textLink}>guêpes et frelons, la méthode</Link>.
+      </>
+    ),
+  },
+  where: {
+    intro: "Grand ensemble, maison de quartier ou bord de Marne : voici où je trouve les nids le plus souvent.",
+    items: [
+      { icon: Building2, title: "Le Vert-Bois", text: "balcons, coffres de volets roulants et bouches de ventilation des immeubles." },
+      { icon: Landmark, title: "Le centre-ville", text: "toits anciens et corniches autour de l'église Notre-Dame." },
+      { icon: Home, title: "La Noue et Gigny", text: "maisons avec jardin : abris, haies, pelouses et dessous de terrasses." },
+      { icon: Trees, title: "Marnaval", text: "grands terrains et arbres où le frelon asiatique accroche son nid en hauteur." },
+      { icon: Droplets, title: "Le long de la Marne et du canal", text: "berges boisées, saules et peupliers." },
+      { icon: TrainFront, title: "Vers la gare", text: "bâtiments anciens, auvents et entrepôts." },
+    ],
+  },
+  price: {
+    paragraphs: [
+      <>Le prix part de <strong className="whitespace-nowrap text-primary">80 €</strong> pour les guêpes et de <strong className="whitespace-nowrap text-primary">110 €</strong> pour les frelons asiatiques.</>,
+      "Un nid au 4e étage ou en haut d'un peuplier n'a pas le même coût qu'un nid dans une haie. Un supplément peut s'appliquer le dimanche ou un jour férié : vous le savez au téléphone.",
+    ],
+    aside: { icon: FileText, title: "Devis gratuit", text: "Le prix est fixé avant que je me déplace. Vous payez seulement une fois le nid traité." },
+  },
+  local: [
+    {
+      kind: "cards",
+      target: true,
+      columns: "lg:grid-cols-3",
+      title: "Un nid sur un balcon : comment faire en immeuble ?",
+      intro: "En immeuble, un nid concerne souvent plusieurs logements. Quelques étapes simples évitent les mauvaises surprises.",
+      items: [
+        { icon: Users, title: "Prévenez les voisins", text: "ceux du dessus et du dessous, qui voient peut-être l'entrée du nid mieux que vous." },
+        { icon: Building2, title: "Avertissez le bailleur ou le syndic", text: "si le nid est dans une façade, une toiture ou une partie commune, c'est à eux d'organiser l'intervention." },
+        { icon: Blinds, title: "Fermez fenêtres et volets", text: "sans toucher au caisson s'il est habité, et gardez les enfants à l'intérieur." },
+      ],
+      after: "Je peux intervenir depuis votre balcon avec la perche, sans nacelle, dans la plupart des cas.",
+    },
+    {
+      kind: "levels",
+      title: "La saison des nids, mois par mois",
+      intro: "Savoir où en est la colonie aide à agir au bon moment.",
+      items: [
+        { title: "Avril et mai", text: "La reine construit seule un petit nid, de la taille d'une balle de ping-pong. C'est le moment le plus simple pour agir." },
+        { title: "Juin et juillet", text: "Les ouvrières se multiplient. Le nid grossit chaque semaine." },
+        { title: "Août et septembre", text: "Pic d'activité : les guêpes sont nombreuses et plus nerveuses autour des repas." },
+        { title: "Octobre et novembre", text: "La colonie s'éteint avec le froid. Le frelon asiatique reste actif plus longtemps." },
+      ],
+    },
+  ],
+  call: {
+    title: "Un nid de guêpes à Saint-Dizier ?",
+    text: "Maison ou appartement, dites-moi où il est : je vous propose une date tout de suite.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Quel tarif pour un nid de guêpes à Saint-Dizier ?", answer: "Il commence à 80 € pour un nid de guêpes et à 110 € pour un nid de frelons asiatiques, selon la hauteur et l'accès. Le montant est connu avant l'intervention, et réglé après." },
+    { question: "Le nid est dans la façade de l'immeuble, qui s'en occupe ?", answer: "Une façade ou une toiture fait en général partie des parties communes : prévenez le bailleur ou le syndic. Je peux leur adresser un devis directement." },
+    { question: "Les pièges à guêpes suffisent-ils ?", answer: "Non. Ils capturent quelques ouvrières, mais la reine continue de pondre au nid. Ils peuvent même attirer davantage de guêpes près de la maison." },
+    { question: "Peut-on rester chez soi pendant l'intervention ?", answer: "Oui, en gardant portes et fenêtres fermées du côté du nid. Je vous dis quand vous pouvez ressortir sur le balcon ou dans le jardin." },
+    { question: "Les pompiers peuvent-ils intervenir ?", answer: "Non, plus pour les nids chez les particuliers en Haute-Marne. Le 18 et le 15 restent à appeler si quelqu'un fait un malaise après une piqûre." },
+    { question: "Venez-vous autour de Saint-Dizier ?", answer: "Oui : Bettancourt-la-Ferrée, Chancenay, Valcourt, Hallignicourt, Perthes, Eurville-Bienville, Chamouilley, Roches-sur-Marne et les autres villages du nord haut-marnais. Appelez le 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Basé aux portes de Chaumont, je me déplace dans tout le nord de la Haute-Marne.",
+    links: [
+      { label: "Guêpes et frelons Wassy", to: "/guepes-frelons-wassy" },
+      { label: "Guêpes et frelons Joinville", to: "/guepes-frelons-joinville" },
+      { label: "Guêpes et frelons Montier-en-Der", to: "/guepes-frelons-montier-en-der" },
+    ],
+    also: "À Saint-Dizier, je traite aussi :",
+    note: (
+      <>
+        Pour reconnaître les espèces et comprendre les risques, lisez la page{" "}
+        <Link to="/guepes-frelons" className={textLink}>nids de guêpes et de frelons</Link>.
+      </>
+    ),
+  },
 };
+
+const GuepesFrelonsSaintDizier = () => <RodentTownPage town={town} />;
 
 export default GuepesFrelonsSaintDizier;

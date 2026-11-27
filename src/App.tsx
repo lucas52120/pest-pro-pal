@@ -10,6 +10,15 @@ import GuepesFrelons from "./pages/GuepesFrelons.tsx";
 import Taupes from "./pages/Taupes.tsx";
 import CafardsBlattes from "./pages/CafardsBlattes.tsx";
 import PunaisesDeLit from "./pages/PunaisesDeLit.tsx";
+import DeratisationProfessionnels from "./pages/DeratisationProfessionnels.tsx";
+import DeratisationRestaurants from "./pages/DeratisationRestaurants.tsx";
+import DeratisationCollectivites from "./pages/DeratisationCollectivites.tsx";
+import DeratisationCoproprietes from "./pages/DeratisationCoproprietes.tsx";
+import PunaisesDeLitBourbonne from "./pages/PunaisesDeLitBourbonne.tsx";
+import PunaisesDeLitJoinville from "./pages/PunaisesDeLitJoinville.tsx";
+import PunaisesDeLitSaintDizier from "./pages/PunaisesDeLitSaintDizier.tsx";
+import PunaisesDeLitLangres from "./pages/PunaisesDeLitLangres.tsx";
+import PunaisesDeLitChaumont from "./pages/PunaisesDeLitChaumont.tsx";
 import CafardsBlattesChaumont from "./pages/CafardsBlattesChaumont.tsx";
 import CafardsBlattesSaintDizier from "./pages/CafardsBlattesSaintDizier.tsx";
 import CafardsBlattesLangres from "./pages/CafardsBlattesLangres.tsx";
@@ -139,6 +148,15 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
           <Route path="/taupes" element={<Taupes />} />
           <Route path="/cafards-blattes" element={<CafardsBlattes />} />
           <Route path="/punaises-de-lit" element={<PunaisesDeLit />} />
+          <Route path="/deratisation-professionnels" element={<DeratisationProfessionnels />} />
+          <Route path="/deratisation-restaurants" element={<DeratisationRestaurants />} />
+          <Route path="/deratisation-collectivites" element={<DeratisationCollectivites />} />
+          <Route path="/deratisation-coproprietes" element={<DeratisationCoproprietes />} />
+          <Route path="/punaises-de-lit-bourbonne-les-bains" element={<PunaisesDeLitBourbonne />} />
+          <Route path="/punaises-de-lit-joinville" element={<PunaisesDeLitJoinville />} />
+          <Route path="/punaises-de-lit-saint-dizier" element={<PunaisesDeLitSaintDizier />} />
+          <Route path="/punaises-de-lit-langres" element={<PunaisesDeLitLangres />} />
+          <Route path="/punaises-de-lit-chaumont" element={<PunaisesDeLitChaumont />} />
           <Route path="/cafards-blattes-chaumont" element={<CafardsBlattesChaumont />} />
           <Route path="/cafards-blattes-saint-dizier" element={<CafardsBlattesSaintDizier />} />
           <Route path="/cafards-blattes-langres" element={<CafardsBlattesLangres />} />

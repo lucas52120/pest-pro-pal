@@ -14,6 +14,7 @@ const serviceItems = [
 
 const navItems = [
   { label: "Accueil", path: "/" },
+  { label: "Professionnels", path: "/deratisation-professionnels" },
   { label: "À propos", path: "/a-propos" },
   { label: "Contact", path: "/contact" },
 ];

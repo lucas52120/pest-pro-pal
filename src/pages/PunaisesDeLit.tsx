@@ -52,6 +52,7 @@ import {
   Callout,
   CardGrid,
   CheckList,
+  CityPills,
   GuideBlock,
   IconBadge,
   InfoCard,
@@ -109,6 +110,14 @@ const TREATMENT_STEPS = [
   { step: 2, icon: SprayCan, title: "Premier passage de traitement", text: "application de biocides professionnels sur les zones de cachette, piégeage, et vapeur sèche haute température si nécessaire." },
   { step: 3, icon: Repeat, title: "Deuxième passage, 10 à 15 jours plus tard", text: "nouveau traitement pour atteindre les punaises sorties des œufs depuis le premier passage." },
   { step: 4, icon: ClipboardCheck, title: "Troisième passage de vérification", text: "contrôle de l'efficacité, avec un traitement complémentaire si des punaises sont encore présentes." },
+];
+
+const CITY_LINKS = [
+  { label: "Punaises de lit Chaumont", to: "/punaises-de-lit-chaumont" },
+  { label: "Punaises de lit Saint-Dizier", to: "/punaises-de-lit-saint-dizier" },
+  { label: "Punaises de lit Langres", to: "/punaises-de-lit-langres" },
+  { label: "Punaises de lit Joinville", to: "/punaises-de-lit-joinville" },
+  { label: "Punaises de lit Bourbonne-les-Bains", to: "/punaises-de-lit-bourbonne-les-bains" },
 ];
 
 const AMELI_SIGNS_URL = "https://www.ameli.fr/assure/sante/themes/punaises-lit/definition-symptomes-signes-infestation";
@@ -452,6 +461,8 @@ const PunaisesDeLit = () => (
         <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
           Les documents remis après l'intervention sont adaptés à chaque client, particulier ou professionnel.
         </p>
+        <p className="mb-4 mt-8 leading-relaxed text-muted-foreground">Punaises de lit dans votre ville :</p>
+        <CityPills links={CITY_LINKS} />
         <Link
           to="/zone-intervention"
           className="mt-4 inline-flex items-center gap-2 font-heading font-semibold text-primary underline underline-offset-4 hover:text-accent"

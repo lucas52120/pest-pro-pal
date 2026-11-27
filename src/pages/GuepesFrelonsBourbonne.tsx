@@ -1,106 +1,127 @@
-import { Zap } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-guepes.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Castle, CalendarDays, Droplets, FileText, Home, Hotel, Luggage, Sun, Trees, Utensils, Waves } from "lucide-react";
+import heroImage from "@/assets/frelon-hero.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Nid de guêpes et frelons à Bourbonne-les-Bains (52)";
-const DESCRIPTION = "Un nid de guêpes ou de frelons à Bourbonne-les-Bains ? On vient le détruire 7j/7, à partir de 80 €. Devis gratuit : 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/guepes-frelons-bourbonne-les-bains";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Intervenez-vous sur les nids à Bourbonne-les-Bains (52400) ?", answer: "Oui, précisez l'adresse, le support, la hauteur approximative et les accès. Le créneau et les moyens nécessaires sont confirmés selon la situation." },
-  { question: "Un nid dans un trou au sol peut-il être dangereux ?", answer: "Oui, un nid actif peut être dérangé par la tonte ou le passage. Éloignez les personnes et les animaux et ne versez aucun produit dans l'entrée. L'identification se fait sans manipuler le nid." },
-  { question: "Faut-il boucher l'entrée sous une tuile ?", answer: "Non. Obstruer un accès actif peut déplacer les sorties, notamment vers l'intérieur. Gardez vos distances et attendez l'évaluation du professionnel." },
-  { question: "Retirez-vous toujours le nid après le traitement ?", answer: "Le retrait dépend du support et de l'accessibilité. Il n'est pas systématique ni nécessairement immédiat. Les prestations retenues et les consignes sont précisées avant l'intervention." },
-  { question: "Quel est le prix pour un nid de frelons à Bourbonne-les-Bains ?", answer: "Le prix dépend de l'identification, de la hauteur, de l'accès et des moyens nécessaires. Le diagnostic et le devis gratuits permettent de confirmer la prestation avant votre accord." },
-];
-
-const GuepesFrelonsBourbonne = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Nid de guêpes et frelons à Bourbonne-les-Bains (52400)", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Bourbonne-les-Bains", "containedInPlace": { "@type": "AdministrativeArea", "name": "la Communauté de communes des Savoir-Faire" }, "address": { "@type": "PostalAddress", "postalCode": "52400", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
-      },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Guêpes et frelons", "item": "https://gf-nuisibles.fr/guepes-frelons" },
-        { "@type": "ListItem", "position": 3, "name": "Bourbonne-les-Bains", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Bourbonne-les-Bains"
-        department="Haute-Marne (52)"
-        serviceTitle={"Nid de guêpes et frelons à Bourbonne-les-Bains (52400)"}
-        icon={<Zap className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"UN NID DE GUÊPES OU DE FRELONS À BOURBONNE-LES-BAINS ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un va-et-vient d'insectes sous une tuile, dans une haie ou près d'un trou au sol peut signaler un nid, même lorsque celui-ci est invisible. GF Nuisibles intervient pour les nids de guêpes et de frelons à Bourbonne-les-Bains (52400), au sein de la Communauté de communes des Savoir-Faire. La demande commence par l'identification et l'évaluation de l'accès : hauteur, support, proximité des occupants et activité observée. Ne vous approchez pas pour obtenir une photo et ne tentez pas de décrocher le nid vous-même."}
-        expertise={"Les guêpes, les frelons européens et les frelons asiatiques nécessitent une identification adaptée aux indices disponibles. Les abeilles ne sont pas à traiter comme un nid de guêpes : un essaim peut relever d'un apiculteur. Le diagnostic prend en compte les accès au bâtiment, le passage des personnes et les animaux. Un nid dans un volume fermé ne se traite pas comme un nid visible dans un arbre. Les possibilités techniques sont confirmées selon la configuration et non à partir du seul nom de la commune."}
-        method={"À partir de votre description, nous préparons l'évaluation du nid et des moyens d'accès. Le périmètre à éviter et les précautions sont définis avant le traitement professionnel. La neutralisation et le retrait éventuel dépendent du support et de l'accessibilité ; le retrait immédiat n'est pas systématique. Les consignes après intervention précisent les comportements à respecter et les observations à signaler. Le devis tient compte de l'espèce identifiée, de la hauteur, de l'accès et de la méthode retenue."}
-        localContext={{ title: "Centre thermal, Porte-Galon et abords de l'Apance", content: <>
-            <p>{"Autour des Thermes de Bourbonne-les-Bains et du centre-ville, précisez si la demande concerne un hôtel, une résidence de curistes, un commerce ou un logement. L'activité saisonnière liée au thermalisme implique souvent des locaux occupés de façon temporaire, ce qui doit être signalé pour organiser l'accès."}</p>
-            <p>{"La Porte-Galon, vestige des anciens remparts, et le secteur du casino situent le centre historique. Pour une adresse proche de ces repères, décrivez les caves, les dépendances et les éventuels passages communs avec un bâtiment voisin."}</p>
-            <p>{"L'Apance traverse la commune et le ruisseau de Borne arrose aussi le centre. Pour un bien situé près de ces cours d'eau, le diagnostic porte sur vos accès, vos canalisations et les indices observés dans le bâtiment : la présence de l'eau à proximité ne permet pas à elle seule de conclure à une infestation."}</p>
-            <p>Les noms ci-dessus situent votre demande ; aucun lieu n'est présenté comme infesté ou client. Retrouvez ces repères sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://bourbonne.com/geographie/" target="_blank" rel="noopener noreferrer">site officiel de la ville thermale de Bourbonne-les-Bains</a> et sur la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://bourbonne.com/les-thermes/" target="_blank" rel="noopener noreferrer">page dédiée aux thermes de Bourbonne-les-Bains</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Bourbonne-les-Bains (52400)", intro: "Bourbonne-les-Bains fait partie de la Communauté de communes des Savoir-Faire. Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre-ville et secteur des Thermes", "Abords de la Porte-Galon", "Secteur du casino et du pôle culturel", "Abords de l'Apance", "Abords du ruisseau de Borne", "Hameaux et écarts de la commune"] }}
-        extraSections={[
-          { title: "Les précautions avant la venue du professionnel", content: <>
-            <p>{"Ne bouchez pas un trou d'entrée dans une façade ou un toit : les insectes peuvent chercher une autre sortie. Ne versez ni eau, ni carburant, ni produit ménager dans un nid au sol. N'utilisez pas une échelle pour vous rapprocher d'un nid actif et ne le brûlez jamais."}</p>
-            <p>{"Suspendez la tonte ou la taille près de l'activité observée. Gardez les enfants et les animaux à distance. Une photo prise sans s'approcher, une estimation de la hauteur et une description des accès suffisent pour préparer le premier échange."}</p>
-          </> },
-          { title: "Nid inaccessible, devis et suites de l'intervention à Bourbonne-les-Bains", content: <>
-            <p>{"Pour une toiture, un arbre ou un volume fermé, précisez la hauteur approximative et les obstacles. Le professionnel confirme les moyens nécessaires et la faisabilité. Un devis ne peut pas être déduit d'un tarif unique pour tous les nids ; la configuration et les prestations retenues comptent."}</p>
-            <p>{"Après le traitement, respectez les consignes et signalez une activité persistante au même point. Ne manipulez pas un nid traité sans accord. En cas de piqûres multiples, de difficulté à respirer ou de gonflement du visage ou de la gorge, appelez immédiatement le 15 ou le 112 : la destruction du nid ne remplace pas une prise en charge médicale."}</p>
-          </> },
-          { title: "Votre service à Bourbonne-les-Bains et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service guêpes et frelons en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Bourbonne-les-Bains, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-chalindrey">Guêpes et frelons à Chalindrey</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-chateauvillain">Guêpes et frelons à Châteauvillain</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Bourbonne-les-Bains", items: [
-          { label: "Guêpes et frelons à Chalindrey", to: "/guepes-frelons-chalindrey" },
-          { label: "Guêpes et frelons à Châteauvillain", to: "/guepes-frelons-chateauvillain" },
-        ] }}
-        relatedLinks={[
-          { label: "Dératisation à Bourbonne-les-Bains", to: "/deratisation-bourbonne-les-bains" },
-          { label: "Dépigeonnisation à Bourbonne-les-Bains", to: "/depigeonnisation-bourbonne-les-bains" },
-          { label: "Taupier à Bourbonne-les-Bains", to: "/taupes-bourbonne-les-bains" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Guêpes et frelons à Bourbonne-les-Bains : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+const town: RodentTown = {
+  kind: "wasps",
+  city: "Bourbonne-les-Bains",
+  postalCode: "52400",
+  region: "Haute-Marne",
+  slug: "/guepes-frelons-bourbonne-les-bains",
+  title: "Nid de guêpes et frelons à Bourbonne-les-Bains (52)",
+  description:
+    "Un nid de guêpes ou de frelons à Bourbonne-les-Bains ? On vient le détruire 7j/7, à partir de 80 €. Devis gratuit : 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Meublés, hôtels et maisons",
+    text: "Un nid au-dessus de la terrasse ou près d'une fenêtre de location ? Je le traite vite, en toute discrétion.",
+    highlight: "Véhicule non logoté sur demande",
+    signsLabel: "Vous louez à des curistes ? Comment s'organiser",
+    image: heroImage,
+    imageAlt: "Frelon européen vu de près, tête jaune",
+    imageClassName: "max-lg:brightness-75",
+  },
+  reviews: ["genest", "moock", "buke"],
+  why: {
+    title: "Pourquoi un nid de guêpes près de chez vous ?",
+    intro: "Dans une ville thermale, beaucoup de logements sont vides une partie de l'année. Une reine y trouve le calme qu'elle cherche.",
+    items: [
+      { icon: Luggage, title: "Des logements fermés", text: "volets clos tout l'hiver, puis personne au printemps : le nid démarre sans être vu." },
+      { icon: Sun, title: "Des façades au soleil", text: "le centre est abrité, et les murs chauds font grossir la colonie plus vite." },
+      { icon: Utensils, title: "Les terrasses", text: "restaurants et cafés offrent du sucre et de la viande en fin d'été." },
+      { icon: Trees, title: "Les parcs et les grands arbres", text: "le frelon asiatique y installe ses gros nids, bien au-dessus des promeneurs." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser d'un nid de guêpes efficacement ?",
+    intro: "Pour un hébergement, il faut faire vite et sans déranger les clients. Je m'adapte à vos horaires et à vos arrivées.",
+    steps: [
+      { title: "Je trouve le nid", text: "Souvent dans un coffre de volet, sous une génoise ou derrière une gouttière, au-dessus d'une fenêtre." },
+      { title: "Je le traite discrètement", text: "Protégé, avec un produit professionnel et une perche si besoin, à l'heure qui gêne le moins." },
+      { title: "Je vous dis quand relouer", text: "Combien de temps garder la fenêtre fermée et quand la chambre peut être réoccupée." },
+    ],
+    after: (
+      <>
+        Prévenez les occupants de ne pas ouvrir la fenêtre côté nid le temps indiqué. Plus d'informations sur la page{" "}
+        <Link to="/guepes-frelons" className={textLink}>guêpes et frelons</Link>.
+      </>
+    ),
+  },
+  where: {
+    intro: "Côté thermes ou côté campagne, voici les endroits où je trouve le plus de nids.",
+    items: [
+      { icon: Waves, title: "Autour des Thermes", text: "meublés et résidences : coffres de volets, balcons et génoises." },
+      { icon: Hotel, title: "Hôtels et pensions", text: "avant-toits, auvents de terrasse et combles." },
+      { icon: Castle, title: "Vers la Porte-Galon", text: "maisons anciennes, murs en pierre et cheminées." },
+      { icon: Trees, title: "Le parc et les grands arbres", text: "frelons asiatiques en hauteur, visibles quand les feuilles tombent." },
+      { icon: Droplets, title: "Le long de l'Apance", text: "jardins et talus, où les guêpes nichent dans le sol." },
+      { icon: Home, title: "Villars-Saint-Marcellin et Genrupt", text: "maisons de village, granges et vergers." },
+    ],
+  },
+  price: {
+    paragraphs: [
+      <>Destruction d'un nid de guêpes : <strong className="whitespace-nowrap text-primary">à partir de 80 €</strong>. Nid de frelons asiatiques : <strong className="whitespace-nowrap text-primary">à partir de 110 €</strong>.</>,
+      "Le prix varie avec la hauteur et l'accès. Un dimanche ou un jour férié, un supplément peut s'appliquer : vous le connaissez avant de confirmer.",
+    ],
+    aside: { icon: FileText, title: "Plusieurs nids ?", text: "Dites-le-moi au téléphone : on les traite dans la même visite. Le déplacement est annoncé à l'appel." },
+  },
+  local: [
+    {
+      kind: "levels",
+      target: true,
+      title: "Un nid repéré dans un logement loué : que faire ?",
+      intro: "Un curiste qui vous signale des guêpes près de sa fenêtre ? Voici l'ordre que je conseille.",
+      items: [
+        { title: "Tout de suite", text: "Demandez-lui de garder la fenêtre fermée et de ne pas toucher au volet." },
+        { title: "Dans l'heure", text: "Appelez-moi avec l'adresse, l'étage et une photo prise de loin si possible." },
+        { title: "Le jour même ou le lendemain", text: "On fixe le passage à un moment où la chambre peut rester fermée." },
+        { title: "Après", text: "Je vous dis quand la fenêtre peut être rouverte et la chambre louée normalement." },
+      ],
+    },
+    {
+      kind: "list",
+      title: "Avant la saison : prévenir plutôt que guérir",
+      intro: "En avril et mai, un nid fait la taille d'une balle. Un tour rapide de vos logements évite les mauvaises surprises en plein été.",
+      items: [
+        { text: "Ouvrez et refermez chaque volet roulant : un bourdonnement dans le caisson ne trompe pas." },
+        { text: "Regardez sous les avant-toits, les balcons et les auvents de terrasse." },
+        { text: "Vérifiez les cabanons et abris de jardin restés fermés l'hiver." },
+        { text: "Notez les endroits à surveiller et appelez dès qu'un va-et-vient apparaît." },
+      ],
+      aside: { icon: CalendarDays, title: "Un passage en début de saison", text: <>On peut prévoir une visite de contrôle avant l'arrivée des curistes. <Link to="/contact" className={textLink}>Demandez-la ici</Link>.</> },
+    },
+  ],
+  call: {
+    title: "Un nid de guêpes à Bourbonne ?",
+    text: "Dites-moi où il est et quand le logement est libre : on s'organise.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Quel est le prix d'un nid de guêpes à Bourbonne-les-Bains ?", answer: "Le tarif commence à 80 € pour des guêpes et à 110 € pour des frelons asiatiques, selon la hauteur et l'accès. Vous le connaissez avant mon passage, et vous payez après." },
+    { question: "Peut-on laisser les clients dans le logement pendant l'intervention ?", answer: "Oui, s'ils restent à l'intérieur fenêtres fermées du côté du nid. Je leur indique quand ils peuvent rouvrir." },
+    { question: "Un nid de frelons dans le parc, qui s'en occupe ?", answer: "Sur l'espace public, prévenez la mairie. Sur un terrain privé, c'est au propriétaire de faire intervenir un professionnel." },
+    { question: "Que faire en cas de piqûre d'un client ?", answer: "Retirez les bagues et appliquez du froid. Si le visage gonfle, si la personne a du mal à respirer ou fait un malaise, appelez le 15 immédiatement." },
+    { question: "Le vieux nid doit-il être retiré en hiver ?", answer: "Ce n'est pas indispensable : il ne sera pas réutilisé. Le retirer évite simplement que vos clients s'inquiètent en le voyant." },
+    { question: "Intervenez-vous autour de Bourbonne-les-Bains ?", answer: "Oui : Serqueux, Coiffy-le-Haut, Coiffy-le-Bas, Montcharvot, Laneuvelle, Fresnes-sur-Apance, Damrémont, Melay, Voisey et les villages du secteur. Appelez le 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Je couvre Bourbonne et tout l'est de la Haute-Marne.",
+    links: [
+      { label: "Guêpes et frelons Langres", to: "/guepes-frelons-langres" },
+      { label: "Guêpes et frelons Chalindrey", to: "/guepes-frelons-chalindrey" },
+      { label: "Guêpes et frelons Nogent", to: "/guepes-frelons-nogent" },
+    ],
+    also: "Aussi à Bourbonne-les-Bains :",
+    note: (
+      <>
+        Des piqûres signalées la nuit dans un lit ? Ce ne sont pas des guêpes : voyez les{" "}
+        <Link to="/punaises-de-lit" className={textLink}>punaises de lit</Link>.
+      </>
+    ),
+  },
 };
+
+const GuepesFrelonsBourbonne = () => <RodentTownPage town={town} />;
 
 export default GuepesFrelonsBourbonne;

@@ -383,8 +383,20 @@ const Deratisation = () => (
         </Link>
         <p className="mt-4 leading-relaxed text-muted-foreground">
           <strong className="text-primary">Vous êtes professionnel ?</strong> Restaurant, commerce, collectivité, bailleur, exploitation agricole :{" "}
-          <Link to="/contact" className={textLink}>
-            demandez un devis adapté
+          <Link to="/deratisation-professionnels" className={textLink}>
+            voyez le contrat de dératisation pour les professionnels
+          </Link>
+          , et les offres pour les{" "}
+          <Link to="/deratisation-restaurants" className={textLink}>
+            restaurants et boulangeries
+          </Link>
+          , les{" "}
+          <Link to="/deratisation-collectivites" className={textLink}>
+            communes
+          </Link>{" "}
+          et les{" "}
+          <Link to="/deratisation-coproprietes" className={textLink}>
+            copropriétés
           </Link>
           .
         </p>
@@ -515,6 +527,13 @@ const Deratisation = () => (
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
               Pour les établissements alimentaires, la lutte contre les nuisibles est <strong>obligatoire</strong> (Règlement CE 852/2004 et Paquet Hygiène). L'absence de plan de lutte est sanctionnée lors des contrôles DDPP.
+            </p>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Tous les détails sur la page{" "}
+              <Link to="/deratisation-professionnels" className={textLink}>dératisation pour les professionnels</Link> et{" "}
+              <Link to="/deratisation-restaurants" className={textLink}>dératisation des restaurants et boulangeries</Link>,{" "}
+              <Link to="/deratisation-collectivites" className={textLink}>dératisation des communes et collectivités</Link> et{" "}
+              <Link to="/deratisation-coproprietes" className={textLink}>dératisation des copropriétés</Link>.
             </p>
           </GuideBlock>
           <GuideBlock

@@ -20,9 +20,10 @@ export const breadcrumbsFrom = (jsonLd: { "@graph"?: unknown[] }): Crumb[] => {
   }));
 };
 
-const Breadcrumbs = ({ items }: { items: Crumb[] }) => (
+/** `light`: on a light background instead of the dark hero. */
+const Breadcrumbs = ({ items, light }: { items: Crumb[]; light?: boolean }) => (
   <nav aria-label="Fil d'Ariane" className="mb-4">
-    <ol className="flex flex-wrap items-center gap-x-1.5 text-sm text-primary-foreground/70">
+    <ol className={`flex flex-wrap items-center gap-x-1.5 text-sm ${light ? "text-muted-foreground" : "text-primary-foreground/70"}`}>
       {items.map((item, i) => (
         <Fragment key={item.to}>
           {i > 0 && <li aria-hidden="true">›</li>}

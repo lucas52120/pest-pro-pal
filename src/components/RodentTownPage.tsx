@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
-import { Bug, CircleCheck, CircleX, LucideIcon, Rat } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Bug, CircleCheck, CircleX, LucideIcon, Rat, Zap } from "lucide-react";
 import openStation from "@/assets/poste-appat-ouvert.jpg";
 import gnawedBait from "@/assets/appat-entame.jpg";
 import facadeStation from "@/assets/poste-appat-facade.jpg";
@@ -11,6 +12,14 @@ import Navbar from "@/components/Navbar";
 import Reassurance from "@/components/Reassurance";
 import RodentSteps from "@/components/RodentSteps";
 import CockroachSteps from "@/components/CockroachSteps";
+import WaspSteps from "@/components/WaspSteps";
+import BedbugSteps from "@/components/BedbugSteps";
+import bugTraces from "@/assets/punaise-traces.jpg";
+import bugBackpack from "@/assets/punaise-bagage.jpg";
+import bugNymph from "@/assets/punaise-larve.jpg";
+import nestEntrance from "@/assets/nid-papier.jpg";
+import nestTreated from "@/assets/nid-frelons-chaumont.jpg";
+import nestTree from "@/assets/nid-arbre.jpg";
 import roachKitchen from "@/assets/blatte-cuisine.jpg";
 import roachCrack from "@/assets/blatte-fissure.jpg";
 import roachCloseUp from "@/assets/blatte-gros-plan.jpg";
@@ -18,7 +27,7 @@ import Footer from "@/components/Footer";
 import ClientReviews from "@/components/ClientReviews";
 import SEO from "@/components/SEO";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
-import { CallBand, Callout, CardGrid, CheckList, CityPills, FaqList, PlaceGrid, Section, ServiceHero } from "@/components/ServiceBlocks";
+import { CallBand, Callout, CardGrid, CheckList, CityPills, FaqList, PlaceGrid, Section, ServiceHero, textLink } from "@/components/ServiceBlocks";
 import { LOCAL_BUSINESS } from "@/data/business";
 import { ClientReviewKey } from "@/data/clientReviews";
 import { CALL_DELAY, RODENT_PRICE } from "@/data/rodentOffer";
@@ -37,7 +46,10 @@ const STATIONS = {
   joints: { src: jointsStation, alt: "Poste d'appâtage sous un mur de pierre aux joints creusés", className: "object-bottom" },
 };
 
-type KindPhoto = { src: string; alt: string; className?: string };
+/** `credit`: the author and license some photos require; shown once at the bottom of the page. */
+type KindPhoto = { src: string; alt: string; className?: string; credit?: ReactNode };
+const creditLink = "underline underline-offset-2 hover:text-accent";
+const where = (what: string) => (city: string) => `${what} à ${city} ?`;
 
 /** What changes from one service to another; the page layout stays the same. */
 const KINDS = {
@@ -47,6 +59,8 @@ const KINDS = {
     parent: { name: "Dératisation", url: "https://gf-nuisibles.fr/deratisation" },
     h1: (city: string, cp: string) => `Dératisation à ${city} (${cp})\u00a0: rats et souris`,
     pests: "les rats et les souris",
+    whereTitle: where("Où se cachent les rats et les souris"),
+    faqTitle: (city: string) => `Vos questions sur les rats et souris à ${city}`,
     priceTitle: (city: string) => `Quel est le prix d'une dératisation à ${city} ?`,
     expert: "Un dératiseur",
     price: RODENT_PRICE,
@@ -62,6 +76,8 @@ const KINDS = {
     parent: { name: "Cafards & Blattes", url: "https://gf-nuisibles.fr/cafards-blattes" },
     h1: (city: string, cp: string) => `Cafards et blattes à ${city} (${cp})\u00a0: traitement`,
     pests: "les cafards",
+    whereTitle: where("Où se cachent les cafards"),
+    faqTitle: (city: string) => `Vos questions sur les cafards à ${city}`,
     priceTitle: (city: string) => `Quel est le prix d'un traitement contre les cafards à ${city} ?`,
     expert: "Un spécialiste des cafards",
     price: "Devis gratuit, prix annoncé avant le traitement",
@@ -75,6 +91,68 @@ const KINDS = {
     ] as KindPhoto[] | null,
     /** People want the method before the hiding places. */
     howFirst: true,
+  },
+  wasps: {
+    service: "Destruction de nids de guêpes et de frelons",
+    serviceType: "Destruction de nids de guêpes et de frelons",
+    parent: { name: "Guêpes et frelons", url: "https://gf-nuisibles.fr/guepes-frelons" },
+    h1: (city: string, cp: string) => `Nid de guêpes ou de frelons à ${city} (${cp})`,
+    pests: "les guêpes et les frelons",
+    whereTitle: where("Où les guêpes et les frelons font-ils leur nid"),
+    faqTitle: (city: string) => `Vos questions sur les nids de guêpes à ${city}`,
+    priceTitle: (city: string) => `Quel est le prix pour détruire un nid à ${city} ?`,
+    expert: "Un spécialiste des nids",
+    price: "Nid de guêpes dès 80 €, frelon asiatique dès 110 €",
+    minPrice: 80 as number | undefined,
+    icon: Zap,
+    Steps: WaspSteps,
+    photos: [
+      { src: nestEntrance, alt: "Nid de guêpes en papier gris avec son trou d'entrée" },
+      { src: nestTreated, alt: "Nid de frelons sous une toiture, traité avec une perche", className: "object-[50%_35%]" },
+      { src: nestTree, alt: "Gros nid de frelons accroché dans un arbre sans feuilles" },
+    ] as KindPhoto[] | null,
+    howFirst: true,
+  },
+  bedbugs: {
+    service: "Traitement des punaises de lit",
+    serviceType: "Désinsectisation : punaises de lit",
+    parent: { name: "Punaises de lit", url: "https://gf-nuisibles.fr/punaises-de-lit" },
+    h1: (city: string, cp: string) => `Punaises de lit à ${city} (${cp})\u00a0: traitement`,
+    pests: "les punaises de lit",
+    whereTitle: where("Où se cachent les punaises de lit"),
+    faqTitle: (city: string) => `Vos questions sur les punaises de lit à ${city}`,
+    priceTitle: (city: string) => `Quel est le prix d'un traitement contre les punaises de lit à ${city} ?`,
+    expert: "Un spécialiste des punaises de lit",
+    /** No price at the top: it depends too much on the infestation. */
+    price: undefined as string | undefined,
+    minPrice: undefined as number | undefined,
+    icon: Bug,
+    Steps: BedbugSteps,
+    photos: [
+      {
+        src: bugTraces,
+        alt: "Nombreux points noirs de déjections sur une latte de sommier en bois",
+        credit: (
+          <>
+            <a href="https://commons.wikimedia.org/wiki/File:Bed_Bug_Evidence.jpg" target="_blank" rel="noopener noreferrer" className={creditLink}>NY State IPM Program, Cornell University</a>,{" "}
+            <a href="https://creativecommons.org/licenses/by/2.0/deed.fr" target="_blank" rel="noopener noreferrer" className={creditLink}>CC BY 2.0</a>, redimensionnée
+          </>
+        ),
+      },
+      {
+        src: bugBackpack,
+        alt: "Punaises de lit et œufs cachés sous les bretelles d'un sac à dos",
+        credit: (
+          <>
+            <a href="https://commons.wikimedia.org/wiki/File:Bed_Bug_Infestation.jpg" target="_blank" rel="noopener noreferrer" className={creditLink}>Ventriloquist</a>,{" "}
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener noreferrer" className={creditLink}>CC BY-SA 4.0</a>, redimensionnée
+          </>
+        ),
+      },
+      { src: bugNymph, alt: "Jeune punaise de lit translucide, gorgée de sang, sur une peau humaine" },
+    ] as KindPhoto[] | null,
+    howFirst: true,
+    contactLabel: "Demander un diagnostic",
   },
 };
 
@@ -222,7 +300,10 @@ const RodentTownPage = ({ town }: { town: RodentTown }) => {
   ];
   const around = /^[AEIOUYÉ]/.test(city) ? `d'${city}` : `de ${city}`;
   const url = `https://gf-nuisibles.fr${town.slug}`;
-  const otherServices = (CITIES.find((entry) => entry.name === city)?.links ?? [])
+  const cityLinks = CITIES.find((entry) => entry.name === city)?.links ?? [];
+  // The general bed bug page only when the town has no bed bug page of its own.
+  const bedbugLink = cityLinks.some((link) => link.to.startsWith("/punaises-de-lit")) ? [] : [{ label: "Punaises de lit", to: "/punaises-de-lit" }];
+  const otherServices = cityLinks
     .filter((link) => link.to !== town.slug)
     .map((link) => ({ label: `${link.label} ${city}`, to: link.to }));
 
@@ -282,6 +363,7 @@ const RodentTownPage = ({ town }: { town: RodentTown }) => {
         imageAlt={hero.imageAlt}
         imageClassName={hero.imageClassName}
         area={hero.area}
+        contactLabel={"contactLabel" in kind ? kind.contactLabel : undefined}
         price={kind.price}
         delay={CALL_DELAY}
         icon={kind.icon}
@@ -300,7 +382,7 @@ const RodentTownPage = ({ town }: { town: RodentTown }) => {
           <div className="grid gap-6 md:grid-cols-3">
             {town.how.steps.map((step, i) => (
               <figure key={step.title} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-                <img src={photos[i].src} alt={photos[i].alt} loading="lazy" className={`h-56 w-full object-cover ${photos[i].className ? "object-bottom" : ""}`} />
+                <img src={photos[i].src} alt={photos[i].alt} loading="lazy" className={`h-56 w-full object-cover ${photos[i].className ?? ""}`} />
                 <figcaption className="p-5">
                   <h3 className="mb-1 font-heading text-lg font-bold text-primary">{step.title}</h3>
                   <p className="leading-relaxed text-muted-foreground">{step.text}</p>
@@ -313,20 +395,20 @@ const RodentTownPage = ({ town }: { town: RodentTown }) => {
         </Section>
         <CallBand {...town.call} muted />
 
-        <Section muted={!kind.howFirst} title={`Où se cachent ${kind.pests} à ${city} ?`} intro={town.where.intro}>
+        <Section muted={!kind.howFirst} title={kind.whereTitle(city)} intro={town.where.intro}>
           <PlaceGrid items={town.where.items} columns={town.where.items.length === 4 ? "lg:grid-cols-2" : undefined} />
         </Section>
           </>
         ) : (
           <>
-        <Section muted={!kind.howFirst} title={`Où se cachent ${kind.pests} à ${city} ?`} intro={town.where.intro}>
+        <Section muted={!kind.howFirst} title={kind.whereTitle(city)} intro={town.where.intro}>
           <PlaceGrid items={town.where.items} columns={town.where.items.length === 4 ? "lg:grid-cols-2" : undefined} />
         </Section>
         <Section muted={kind.howFirst} title={town.how.title} intro={town.how.intro}>
           <div className="grid gap-6 md:grid-cols-3">
             {town.how.steps.map((step, i) => (
               <figure key={step.title} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-                <img src={photos[i].src} alt={photos[i].alt} loading="lazy" className={`h-56 w-full object-cover ${photos[i].className ? "object-bottom" : ""}`} />
+                <img src={photos[i].src} alt={photos[i].alt} loading="lazy" className={`h-56 w-full object-cover ${photos[i].className ?? ""}`} />
                 <figcaption className="p-5">
                   <h3 className="mb-1 font-heading text-lg font-bold text-primary">{step.title}</h3>
                   <p className="leading-relaxed text-muted-foreground">{step.text}</p>
@@ -356,15 +438,38 @@ const RodentTownPage = ({ town }: { town: RodentTown }) => {
           </div>
         ))}
 
-        <Section title={`Vos questions sur ${kind.pests} à ${city}`} muted={town.local.length % 2 === 1}>
+        <Section title={kind.faqTitle(city)} muted={town.local.length % 2 === 1}>
           <FaqList items={town.faq} />
         </Section>
 
         <Section title={`${kind.expert} autour ${around}`} intro={town.nearby.intro} muted={town.local.length % 2 === 0}>
           <CityPills links={town.nearby.links} />
           <p className="mb-4 mt-8 leading-relaxed text-muted-foreground">{town.nearby.also}</p>
-          <CityPills links={[...otherServices, { label: "Punaises de lit", to: "/punaises-de-lit" }]} />
+          <CityPills links={[...otherServices, ...bedbugLink]} />
           <p className="mt-8 max-w-3xl leading-relaxed text-muted-foreground">{town.nearby.note}</p>
+          {kind === KINDS.rodents && (
+            <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
+              Restaurant, boulangerie, commune ou syndic à {city} ? Voyez le{" "}
+              <Link to="/deratisation-professionnels" className={textLink}>contrat de dératisation pour les professionnels</Link>, et les offres pour les{" "}
+              <Link to="/deratisation-restaurants" className={textLink}>restaurants et boulangeries</Link>, les{" "}
+              <Link to="/deratisation-collectivites" className={textLink}>communes</Link> et les{" "}
+              <Link to="/deratisation-coproprietes" className={textLink}>copropriétés</Link>.
+            </p>
+          )}
+          {photos.some((photo) => photo.credit) && (
+            <p className="mt-10 text-xs text-muted-foreground">
+              Crédits photos :{" "}
+              {photos
+                .filter((photo) => photo.credit)
+                .map((photo, i) => (
+                  <span key={photo.src}>
+                    {i > 0 && " ; "}
+                    {photo.credit}
+                  </span>
+                ))}
+              .
+            </p>
+          )}
         </Section>
       </main>
 

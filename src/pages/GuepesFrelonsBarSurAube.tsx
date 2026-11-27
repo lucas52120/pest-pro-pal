@@ -1,107 +1,125 @@
-import { Zap } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-guepes.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Church, Droplets, FileText, Grape, Home, Landmark, Mountain, Route, Store, Sun, Utensils, Wine } from "lucide-react";
+import heroImage from "@/assets/guepes-nid-bois.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Destruction nid de guêpes et frelons à Bar-sur-Aube (10)";
-const DESCRIPTION = "Un nid de guêpes ou de frelons à Bar-sur-Aube ? N'y touchez pas, appelez un pro : 7j/7 de 7h à 23h, devis gratuit au 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/guepes-frelons-bar-sur-aube";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Intervenez-vous sur les nids à Bar-sur-Aube (10200) ?", answer: "Oui, précisez l'adresse, le support, la hauteur approximative et les accès. Le créneau et les moyens nécessaires sont confirmés selon la situation." },
-  { question: "Un nid dans une vigne ou un talus peut-il être dangereux ?", answer: "Oui, un nid actif peut être dérangé par un travail de la vigne ou le passage à proximité. Éloignez les personnes et ne versez aucun produit dans l'entrée. L'identification se fait sans manipuler le nid." },
-  { question: "Faut-il boucher l'entrée sous une tuile ?", answer: "Non. Obstruer un accès actif peut déplacer les sorties, notamment vers l'intérieur. Gardez vos distances et attendez l'évaluation du professionnel." },
-  { question: "Retirez-vous toujours le nid après le traitement ?", answer: "Le retrait dépend du support et de l'accessibilité. Il n'est pas systématique ni nécessairement immédiat. Les prestations retenues et les consignes sont précisées avant l'intervention." },
-  { question: "Quel est le prix pour un nid de frelons à Bar-sur-Aube ?", answer: "Le prix dépend de l'identification, de la hauteur, de l'accès et des moyens nécessaires. Le diagnostic et le devis gratuits permettent de confirmer la prestation avant votre accord." },
-];
-
-const GuepesFrelonsBarSurAube = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Nid de guêpes et frelons à Bar-sur-Aube (10200)", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Bar-sur-Aube", "containedInPlace": { "@type": "AdministrativeArea", "name": "Aube" }, "address": { "@type": "PostalAddress", "postalCode": "10200", "addressRegion": "Aube", "addressCountry": "FR" } }
-      },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Guêpes et frelons", "item": "https://gf-nuisibles.fr/guepes-frelons" },
-        { "@type": "ListItem", "position": 3, "name": "Bar-sur-Aube", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Bar-sur-Aube"
-        department="Aube (10)"
-        serviceTitle={"Nid de guêpes et frelons à Bar-sur-Aube (10200)"}
-        icon={<Zap className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"UN NID DE GUÊPES OU DE FRELONS À BAR-SUR-AUBE ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un va-et-vient d'insectes sous une tuile, dans une haie ou près d'un trou au sol peut signaler un nid, même lorsque celui-ci est invisible. GF Nuisibles intervient pour les nids de guêpes et de frelons à Bar-sur-Aube (10200), ville traversée par l'Aube et bordée par les vignobles de la Côte des Bar. La demande commence par l'identification et l'évaluation de l'accès : hauteur, support, proximité des occupants et activité observée. Ne vous approchez pas pour obtenir une photo et ne tentez pas de décrocher le nid vous-même."}
-        expertise={"Les guêpes, les frelons européens et les frelons asiatiques nécessitent une identification adaptée aux indices disponibles. Les abeilles ne sont pas à traiter comme un nid de guêpes : un essaim peut relever d'un apiculteur. Le diagnostic prend en compte les accès au bâtiment, le passage des personnes et les animaux, ainsi que la proximité éventuelle d'une parcelle de vigne ou d'un jardin. Un nid dans un volume fermé ne se traite pas comme un nid visible dans un arbre. Les possibilités techniques sont confirmées selon la configuration et non à partir du seul nom de la commune."}
-        method={"À partir de votre description, nous préparons l'évaluation du nid et des moyens d'accès. Le périmètre à éviter et les précautions sont définis avant le traitement professionnel. La neutralisation et le retrait éventuel dépendent du support et de l'accessibilité ; le retrait immédiat n'est pas systématique. Les consignes après intervention précisent les comportements à respecter et les observations à signaler. Le devis tient compte de l'espèce identifiée, de la hauteur, de l'accès et de la méthode retenue."}
-        localContext={{ title: "Toitures du centre historique, jardins et vignobles autour de Bar-sur-Aube", content: <>
-            <p>{"Dans le centre de Bar-sur-Aube, autour de l'église Saint-Pierre et de son halloy, ou de l'église Saint-Maclou, signalez un accès sous toiture, dans un volet ou une dépendance. Un passage régulier d'insectes au même point est une information utile même si le nid reste caché."}</p>
-            <p>{"Sur la colline Sainte-Germaine ou le long des promenades de la Gravière et de Mathaux, précisez la présence d'un jardin, d'une haie ou d'un bâtiment annexe à votre adresse. Éloignez les personnes et les animaux du point d'activité, sans tailler ni secouer la végétation pour chercher le nid."}</p>
-            <p>{"Pour une parcelle située dans les vignobles de la Côte des Bar, indiquez les accès praticables et la position du nid par rapport aux rangs de vigne et aux chemins utilisés. L'activité viticole du secteur est un repère local, pas la preuve d'une infestation."}</p>
-            <p>Les noms ci-dessus situent votre demande ; aucun monument n'est présenté comme infesté ou client. Retrouvez ces repères sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://barsuraube.org/bouger-et-sortir-decouvrir-notre-territoire/notre-patrimoine-bati" target="_blank" rel="noopener noreferrer">site de la Communauté de communes de la région de Bar-sur-Aube</a> et dans la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.tourisme-cotedesbar.com/patrimoine/bar-sur-aube/" target="_blank" rel="noopener noreferrer">présentation de Bar-sur-Aube par l'office de tourisme Côte des Bar</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Bar-sur-Aube (10200)", intro: "Bar-sur-Aube est une ancienne cité des foires de Champagne, traversée par l'Aube. Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre historique de Bar-sur-Aube", "Secteur de l'église Saint-Pierre", "Secteur de l'église Saint-Maclou", "Colline Sainte-Germaine", "Promenade de la Gravière, bords de l'Aube", "Direction des vignobles de la Côte des Bar"] }}
-        extraSections={[
-          { title: "Les précautions avant la venue du professionnel", content: <>
-            <p>{"Ne bouchez pas un trou d'entrée dans une façade ou un toit : les insectes peuvent chercher une autre sortie. Ne versez ni eau, ni carburant, ni produit ménager dans un nid au sol ou dans un talus de vigne. N'utilisez pas une échelle pour vous rapprocher d'un nid actif et ne le brûlez jamais."}</p>
-            <p>{"Suspendez la tonte, la taille ou le travail de la vigne près de l'activité observée. Gardez les enfants et les animaux à distance. Une photo prise sans s'approcher, une estimation de la hauteur et une description des accès suffisent pour préparer le premier échange."}</p>
-          </> },
-          { title: "Nid inaccessible, devis et suites de l'intervention", content: <>
-            <p>{"Pour une toiture, un arbre ou un volume fermé, précisez la hauteur approximative et les obstacles. Le professionnel confirme les moyens nécessaires et la faisabilité. Un devis ne peut pas être déduit d'un tarif unique pour tous les nids ; la configuration et les prestations retenues comptent."}</p>
-            <p>{"Après le traitement, respectez les consignes et signalez une activité persistante au même point. Ne manipulez pas un nid traité sans accord. En cas de piqûres multiples, de difficulté à respirer ou de gonflement du visage ou de la gorge, appelez immédiatement le 15 ou le 112 : la destruction du nid ne remplace pas une prise en charge médicale."}</p>
-          </> },
-          { title: "Votre service à Bar-sur-Aube et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service guêpes et frelons en Haute-Marne et dans l'Aube</Link> pour les méthodes et les prestations. Pour votre adresse à Bar-sur-Aube, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-chaumont">Guêpes et frelons à Chaumont</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-langres">Guêpes et frelons à Langres</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-chateauvillain">Guêpes et frelons à Châteauvillain</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Bar-sur-Aube", items: [
-          { label: "Guêpes et frelons à Chaumont", to: "/guepes-frelons-chaumont" },
-          { label: "Guêpes et frelons à Langres", to: "/guepes-frelons-langres" },
-          { label: "Guêpes et frelons à Châteauvillain", to: "/guepes-frelons-chateauvillain" },
-        ] }}
-        relatedLinks={[
-          { label: "Dératisation à Bar-sur-Aube", to: "/deratisation-bar-sur-aube" },
-          { label: "Dépigeonnisation à Bar-sur-Aube", to: "/depigeonnisation-bar-sur-aube" },
-          { label: "Taupier à Bar-sur-Aube", to: "/taupes-bar-sur-aube" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Guêpes et frelons à Bar-sur-Aube : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+const town: RodentTown = {
+  kind: "wasps",
+  city: "Bar-sur-Aube",
+  postalCode: "10200",
+  region: "Aube",
+  slug: "/guepes-frelons-bar-sur-aube",
+  title: "Destruction nid de guêpes et frelons à Bar-sur-Aube (10)",
+  description:
+    "Un nid de guêpes ou de frelons à Bar-sur-Aube ? N'y touchez pas, appelez un pro : 7j/7 de 7h à 23h, devis gratuit au 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Maisons, vignes et commerces",
+    text: "Un nid sous le toit, dans une cave ou près des vignes ? N'y touchez pas : je viens de la Haute-Marne voisine.",
+    highlight: "Vignerons et commerçants aussi",
+    signsLabel: "Les vendanges approchent ? Les précautions",
+    image: heroImage,
+    imageAlt: "Guêpes sur un nid aux alvéoles visibles",
+    imageClassName: "max-lg:brightness-50",
+    area: "Entreprise de la Haute-Marne voisine, à une quarantaine de kilomètres",
+  },
+  reviews: ["genest", "patricia", "buke"],
+  why: {
+    title: "Pourquoi les guêpes s'installent-elles chez vous ?",
+    intro: "Entre la vieille ville et les coteaux, elles trouvent des abris, du sucre et de l'eau. De quoi passer l'été.",
+    items: [
+      { icon: Grape, title: "Le raisin mûr", text: "en fin d'été, les grappes attirent les guêpes par centaines." },
+      { icon: Home, title: "Les toits anciens", text: "tuiles, génoises et cheminées de la vieille ville offrent des abris secs." },
+      { icon: Utensils, title: "Les terrasses", text: "cafés et restaurants les attirent avec le sucré et la viande." },
+      { icon: Droplets, title: "L'Aube toute proche", text: "de l'eau pour boire et humidifier le nid." },
+    ],
+  },
+  how: {
+    title: "Comment éliminer un nid de guêpes efficacement ?",
+    intro: "Le piège à vin ou à sirop ne fait pas disparaître le nid. Pour arrêter les allers-retours, il faut traiter la colonie entière.",
+    steps: [
+      { title: "Je localise le nid", text: "Dans un toit, un mur, une cave ou un arbre : je suis le va-et-vient jusqu'à l'entrée." },
+      { title: "Je le traite", text: "Avec une tenue de protection et un produit professionnel, à la perche si le nid est haut." },
+      { title: "Je vous conseille", text: "Quand reprendre le travail à côté, et comment éviter un nouveau nid au même endroit." },
+    ],
+    after: (
+      <>
+        Le déplacement depuis la Haute-Marne vous est annoncé au téléphone, avant tout rendez-vous. Plus d'infos sur la page{" "}
+        <Link to="/guepes-frelons" className={textLink}>guêpes et frelons</Link>.
+      </>
+    ),
+  },
+  where: {
+    intro: "Du centre historique aux villages de vignes, voici où je trouve le plus de nids.",
+    items: [
+      { icon: Church, title: "Autour de Saint-Pierre", text: "toits anciens, génoises et cheminées du vieux centre." },
+      { icon: Landmark, title: "Vers Saint-Maclou", text: "immeubles étroits : volets, corniches et balcons." },
+      { icon: Store, title: "Les commerces", text: "enseignes, stores et arrière-cours." },
+      { icon: Droplets, title: "La Gravière et les bords de l'Aube", text: "grands arbres, terrain du frelon asiatique." },
+      { icon: Mountain, title: "Vers la colline Sainte-Germaine", text: "pavillons et jardins boisés." },
+      { icon: Wine, title: "Les villages de vignes", text: "Baroville, Colombé-le-Sec, Couvignon : cuveries, abris et haies." },
+    ],
+  },
+  price: {
+    paragraphs: [
+      <>Le tarif de base est de <strong className="whitespace-nowrap text-primary">80 €</strong> pour les guêpes et de <strong className="whitespace-nowrap text-primary">110 €</strong> pour les frelons asiatiques.</>,
+      "Je viens de la Haute-Marne : le déplacement s'ajoute et vous est annoncé à l'appel. Un supplément peut aussi s'appliquer le dimanche et les jours fériés.",
+    ],
+    aside: { icon: FileText, title: "Devis gratuit", text: "Le montant total est connu avant que je prenne la route. Paiement après l'intervention." },
+  },
+  local: [
+    {
+      kind: "list",
+      target: true,
+      title: "Les vendanges approchent : les précautions à prendre",
+      intro: "En septembre, les guêpes sont nombreuses et attirées par le raisin. Un nid près des rangs ou du pressoir peut gâcher la récolte.",
+      items: [
+        { title: "Repérez les nids avant", text: "faites le tour des rangs, des cabanes et des cuveries quelques semaines avant." },
+        { title: "Prévenez les équipes", text: "signalez les allergiques et gardez une trousse de secours à portée de main." },
+        { title: "Balisez les nids", text: "un piquet ou un ruban évite qu'un vendangeur tombe dessus." },
+        { title: "Faites traiter tôt", text: "un nid détruit avant la récolte, c'est une journée sereine pour tout le monde." },
+      ],
+      aside: { icon: Sun, title: "Un vendangeur piqué ?", text: "Si le visage gonfle, s'il a du mal à respirer ou fait un malaise, appelez le 15 immédiatement." },
+    },
+    {
+      kind: "text",
+      title: "Terrasses et commerces de la vieille ville",
+      paragraphs: [
+        "Un nid au-dessus d'une terrasse ou d'une vitrine fait fuir les clients. Je peux intervenir tôt le matin, avant l'ouverture, et je délimite la zone le temps du traitement.",
+        "Débarrassez vite les verres sucrés, fermez les poubelles et regardez sous les stores dès le mois de mai : un petit nid se traite bien plus simplement.",
+      ],
+      aside: { icon: Route, title: "Plusieurs nids dans le secteur ?", text: "Voisins, collègues, vignerons : prévenez-moi, je peux regrouper les passages dans la même journée." },
+    },
+  ],
+  call: {
+    title: "Un nid de guêpes à Bar-sur-Aube ?",
+    text: "Dites-moi où il est : je vous donne le prix, le déplacement et une date.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Combien coûte un nid de guêpes à Bar-sur-Aube ?", answer: "80 € minimum pour des guêpes, 110 € pour des frelons asiatiques, plus le déplacement depuis la Haute-Marne, annoncé au téléphone. Paiement après." },
+    { question: "Venez-vous vraiment dans l'Aube ?", answer: "Oui, Bar-sur-Aube est à une quarantaine de kilomètres de ma base. On fixe la date ensemble au téléphone." },
+    { question: "Les guêpes abîment-elles le raisin ?", answer: "Elles profitent surtout des grains déjà fendus ou éclatés, et gênent la cueillette. Un nid près des rangs est surtout un risque de piqûres pour les vendangeurs." },
+    { question: "Un nid dans une cave, est-ce possible ?", answer: "Oui, près d'un soupirail ou d'une ouverture. Ne bouchez pas l'ouverture et appelez : le nid se traite par là." },
+    { question: "Qui appeler pour un nid de guêpes ?", answer: "Un professionnel certifié pour les produits utilisés. Ne tentez pas de le détruire seul avec une bombe ou du feu." },
+    { question: "Quelles communes autour de Bar-sur-Aube ?", answer: "Proverville, Fontaine, Bayel, Arsonval, Baroville, Couvignon, Colombé-le-Sec, Ailleville et, côté Haute-Marne, Colombey-les-Deux-Églises ou Châteauvillain. Mon numéro : 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Bar-sur-Aube est à la limite de mon secteur haut-marnais.",
+    links: [
+      { label: "Guêpes et frelons Châteauvillain", to: "/guepes-frelons-chateauvillain" },
+      { label: "Guêpes et frelons Chaumont", to: "/guepes-frelons-chaumont" },
+    ],
+    also: "À Bar-sur-Aube, on m'appelle aussi pour :",
+    note: (
+      <>
+        Pour reconnaître les espèces, voyez la page{" "}
+        <Link to="/guepes-frelons" className={textLink}>guêpes et frelons en Haute-Marne et alentours</Link>.
+      </>
+    ),
+  },
 };
+
+const GuepesFrelonsBarSurAube = () => <RodentTownPage town={town} />;
 
 export default GuepesFrelonsBarSurAube;

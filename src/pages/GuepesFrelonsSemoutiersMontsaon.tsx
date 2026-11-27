@@ -1,107 +1,154 @@
-import { Zap } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
+import {
+  Apple,
+  Blinds,
+  Bug,
+  Fence,
+  FileText,
+  Flower2,
+  House,
+  Leaf,
+  Stethoscope,
+  Sun,
+  TreeDeciduous,
+  Warehouse,
+} from "lucide-react";
 import heroImage from "@/assets/service-guepes.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Nid de guêpes et frelons à Semoutiers-Montsaon (52)";
-const DESCRIPTION = "Guêpes ou frelons à Semoutiers-Montsaon ? Votre voisin s'en occupe : on est sur place, 7j/7, à partir de 80 €. Appelez le 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/guepes-frelons-semoutiers-montsaon";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "GF Nuisibles est-il vraiment basé à Semoutiers-Montsaon ?", answer: "Oui, notre siège est situé à Montsaon, l'un des deux villages de la commune. Précisez l'adresse et l'emplacement du nid (toiture, charpente, arbre, sous-sol) pour préparer l'intervention." },
-  { question: "Comment distinguer un nid de guêpes d'un nid de frelons ?", answer: "La forme, la taille et l'emplacement du nid diffèrent selon l'espèce, mais seule une observation à distance par un technicien permet de confirmer l'identification en toute sécurité. Ne vous approchez pas du nid vous-même." },
-  { question: "Le frelon asiatique est-il présent à Semoutiers-Montsaon ?", answer: "Le frelon asiatique progresse en Haute-Marne. Nos techniciens identifient l'espèce sur place et adaptent le protocole, car la neutralisation d'un nid de frelon asiatique, souvent en hauteur, nécessite un équipement spécifique." },
-  { question: "Intervenez-vous sur une grange ou un bâtiment agricole ?", answer: "Oui, les charpentes de granges, les hangars et les combles sont des emplacements fréquents de nidification dans ce secteur rural. Décrivez le bâtiment et l'accès pour préparer l'intervention." },
-  { question: "Quel est le prix d'une destruction de nid à Semoutiers-Montsaon ?", answer: "Le prix dépend de l'espèce, de l'emplacement et de l'accessibilité du nid (hauteur, toiture, sous-sol). Un devis gratuit est établi après identification, avant toute intervention." },
-];
-
-const GuepesFrelonsSemoutiersMontsaon = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Destruction de nids de guêpes et de frelons à Semoutiers-Montsaon (52000)", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Semoutiers-Montsaon", "containedInPlace": { "@type": "AdministrativeArea", "name": "Haute-Marne" }, "address": { "@type": "PostalAddress", "postalCode": "52000", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
+const town: RodentTown = {
+  kind: "wasps",
+  city: "Semoutiers-Montsaon",
+  postalCode: "52000",
+  region: "Haute-Marne",
+  slug: "/guepes-frelons-semoutiers-montsaon",
+  title: "Nid de guêpes et frelons à Semoutiers-Montsaon (52)",
+  description:
+    "Guêpes ou frelons à Semoutiers-Montsaon ? Votre voisin s'en occupe : on est sur place, 7j/7, à partir de 80 €. Appelez le 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Votre voisin à Montsaon",
+    text: "Je suis installé à Montsaon : nid sous le toit, dans la grange ou dans une haie, j'ai peu de route pour venir.",
+    highlight: "Paiement après l'intervention",
+    signsLabel: "Guêpe ou frelon asiatique ? Les reconnaître",
+    image: heroImage,
+    imageAlt: "Guêpes sur un nid accroché à une branche",
+    imageClassName: "max-lg:brightness-75",
+  },
+  reviews: ["genest", "babinski", "buke"],
+  why: {
+    title: "Pourquoi les guêpes font-elles leur nid chez vous ?",
+    intro: "Au printemps, chaque reine cherche un endroit sec, abrité et tranquille. Une maison de village ou une grange en offre beaucoup.",
+    items: [
+      { icon: House, title: "Un abri au sec", text: "sous les tuiles, dans un coffre de volet ou sous une avancée de toit." },
+      { icon: Warehouse, title: "Un endroit calme", text: "grange, hangar, appentis ou grenier où personne ne passe pendant des semaines." },
+      { icon: TreeDeciduous, title: "Du bois à mâcher", text: "vieux bardages, piquets et poutres : elles en font la pâte de leur nid." },
+      { icon: Apple, title: "De quoi se nourrir", text: "fruits tombés, poubelles, insectes du jardin et, pour le frelon asiatique, les abeilles." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser d'un nid de guêpes ou de frelons ?",
+    intro: "Il ne suffit pas de tuer les insectes que l'on voit : il faut atteindre le nid lui-même, là où se trouvent la reine et les larves.",
+    steps: [
+      { title: "Je repère l'entrée du nid", text: "De loin, j'observe le va-et-vient pour savoir où il se trouve et quel insecte l'a construit." },
+      { title: "Je traite le nid", text: "En combinaison, avec une perche qui monte à 8 mètres, je dépose un produit professionnel au cœur du nid, même sous un faîtage." },
+      { title: "Je vous laisse les consignes", text: "Quand l'activité cesse, quand vous pouvez approcher, et quoi faire du nid ensuite." },
+    ],
+    after: (
+      <>
+        Le soir même, vous verrez encore quelques guêpes tourner : ce sont celles qui étaient dehors, elles rentrent au nid et sont touchées à leur tour. Tout est détaillé sur la page{" "}
+        <Link to="/guepes-frelons" className={textLink}>guêpes et frelons en Haute-Marne</Link>.
+      </>
+    ),
+  },
+  where: {
+    intro: "Entre les deux villages, les maisons, les fermes et les jardins, voici les endroits où je trouve le plus souvent des nids.",
+    items: [
+      { icon: House, title: "Sous la toiture", text: "des allers-retours réguliers entre deux tuiles ou au ras de la gouttière." },
+      { icon: Blinds, title: "Derrière un volet roulant", text: "un bourdonnement dans le caisson, et des guêpes dès qu'on remonte le tablier." },
+      { icon: Warehouse, title: "Granges et hangars", text: "une boule de papier pendue à la charpente, que l'on remarque souvent au moment des foins." },
+      { icon: Fence, title: "Dans les murets et les haies", text: "un nid au ras du sol, que l'on dérange en taillant ou en débroussaillant." },
+      { icon: Leaf, title: "Dans la pelouse", text: "un trou d'où sortent des guêpes : attention à la tondeuse." },
+      { icon: TreeDeciduous, title: "En haut des arbres", text: "une grosse boule grise, souvent repérée à l'automne quand les feuilles tombent : c'est souvent le frelon asiatique." },
+    ],
+  },
+  price: {
+    paragraphs: [
+      <>Comptez <strong className="whitespace-nowrap text-primary">80 € minimum</strong> pour des guêpes et <strong className="whitespace-nowrap text-primary">110 € minimum</strong> pour des frelons asiatiques.</>,
+      "Ce qui fait varier le montant : l'espèce, la hauteur et la facilité d'accès. Le dimanche et les jours fériés, une majoration est possible, et vous la connaissez avant de dire oui.",
+    ],
+    aside: { icon: FileText, title: "Le prix avant, le paiement après", text: "Vous connaissez le prix avant que je vienne, souvent dès le téléphone. Vous payez une fois l'intervention faite." },
+  },
+  local: [
+    {
+      kind: "cards",
+      target: true,
+      title: "Comment savoir si c'est une guêpe ou un frelon ?",
+      intro: "Regardez de loin, sans vous approcher. La couleur et la taille donnent déjà une bonne idée.",
+      items: [
+        { icon: Bug, title: "La guêpe", text: "1 à 2 cm, jaune vif et noire. Nid gris en papier, sous un toit, dans un mur ou dans le sol." },
+        { icon: Flower2, title: "La guêpe poliste", text: "silhouette élancée, pattes qui pendent quand elle vole. Son petit nid laisse voir ses cellules, accroché sous un rebord." },
+        { icon: Sun, title: "Le frelon européen", text: "2,5 à 3,5 cm, roux, noir et jaune. Nid dans un arbre creux, un grenier ou une grange." },
+        { icon: TreeDeciduous, title: "Le frelon asiatique", text: "presque noir, tête orange, extrémité des pattes jaune. Son nid finit souvent tout en haut d'un grand arbre." },
+      ],
+      after: "Prenez une photo de loin et envoyez-la au 07 65 25 67 92 : je vous dis de quel insecte il s'agit et combien ça coûtera.",
+    },
+    {
+      kind: "list",
+      title: "En attendant mon passage : les bons réflexes",
+      intro: "Un nid n'est pas dangereux tant qu'on ne le dérange pas. Quelques précautions suffisent.",
+      items: [
+        { title: "Gardez vos distances", text: "enfants, chiens et chats restent loin, et l'on évite de passer dans l'axe du trou d'entrée." },
+        { title: "Laissez le trou ouvert", text: "en le colmatant, vous risquez de les voir ressortir par le plafond ou une prise." },
+        { title: "Coupez les moteurs", text: "le bruit et les vibrations d'une tondeuse ou d'un tracteur les rendent agressives." },
+        { title: "Pas de bombe ni de feu", text: "sur un gros nid, une bombe du commerce suffit rarement, et le feu peut tout embraser dans une grange." },
+      ],
+      aside: {
+        icon: Stethoscope,
+        title: "Quelqu'un est allergique ?",
+        text: "Dites-le-moi dès l'appel, l'intervention passe en priorité. Si une piqûre provoque un gonflement du visage, une difficulté à respirer ou un malaise : le 15, tout de suite.",
       },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Guêpes et frelons", "item": "https://gf-nuisibles.fr/guepes-frelons" },
-        { "@type": "ListItem", "position": 3, "name": "Semoutiers-Montsaon", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Semoutiers-Montsaon"
-        department="Haute-Marne (52)"
-        serviceTitle={"Nid de guêpes ou de frelons à Semoutiers-Montsaon (52000)"}
-        icon={<Zap className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"NID DE GUÊPES OU DE FRELONS À SEMOUTIERS-MONTSAON ?"}
-        serviceCallSubtitle="GF NUISIBLES — VOTRE VOISIN À MONTSAON"
-        intro={"Un va-et-vient d'insectes sous une avancée de toit, un nid visible dans une charpente de grange ou un bourdonnement dans un mur extérieur méritent une identification avant toute approche. GF Nuisibles, dont le siège est installé à Montsaon, intervient pour la destruction de nids de guêpes et de frelons à Semoutiers-Montsaon (52000), commune rurale née en 1972 de la fusion des villages de Semoutiers et de Montsaon, à quelques kilomètres de Chaumont. Le diagnostic identifie l'espèce, l'emplacement exact du nid et les risques pour les occupants avant toute intervention."}
-        expertise={"Les guêpes installent souvent leur nid dans un auvent, une haie ou une cavité de mur, tandis que les frelons, dont le frelon asiatique en progression en Haute-Marne, nichent fréquemment en hauteur, dans les charpentes de granges ou la cime des arbres. Ces indices ne remplacent pas l'identification sur place par un technicien équipé. Nous examinons l'emplacement, l'accessibilité et le niveau d'activité du nid avant de choisir le protocole de traitement, avec un équipement de protection individuelle adapté à chaque intervention."}
-        method={"L'inspection commence par une observation à distance pour localiser et identifier précisément le nid, sans provoquer les insectes. Selon l'espèce et l'emplacement, un traitement par insecticide professionnel homologué est appliqué directement sur le nid, suivi si possible de son retrait. La zone est ensuite sécurisée et des conseils sont donnés pour limiter le risque de réinstallation à proximité. Un devis gratuit précise l'intervention selon l'accessibilité du nid, notamment en toiture ou en hauteur dans un arbre."}
-        localContext={{ title: "Deux villages et un territoire agricole aux portes de Chaumont", content: <>
-            <p>{"Semoutiers-Montsaon est une commune rurale de l'agglomération de Chaumont, née de la fusion administrative de deux villages en 1972. La Suize traverse ce territoire, et une partie de la commune est proche de la base aérienne 113 de Chaumont-Semoutiers. Selon que votre adresse se trouve à Semoutiers ou à Montsaon, les bâtiments concernés (maison, grange, hangar) peuvent varier : précisez votre village et votre rue lors de la demande."}</p>
-            <p>{"Montsaon, où se trouve notre siège rue Principale, et Semoutiers, où se situe la mairie historique rue de Neuilly, forment un territoire agricole où les charpentes de granges, les hangars et les haies sont des emplacements fréquents de nidification pour les guêpes et les frelons."}</p>
-            <p>{"Chaumont, préfecture de la Haute-Marne, se trouve à quelques kilomètres. La proximité d'une exploitation agricole ou d'un boisement ne signifie pas automatiquement la présence d'un nid : seule une observation directe permet de le confirmer."}</p>
-            <p>Les repères ci-dessus situent votre demande ; aucun lieu n'est présenté comme infesté ou client. Retrouvez des informations sur la commune sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.semoutiers.fr/" target="_blank" rel="noopener noreferrer">site officiel de la mairie de Semoutiers-Montsaon</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Semoutiers-Montsaon (52000)", intro: "Semoutiers-Montsaon réunit les villages de Semoutiers et de Montsaon. Les repères suivants aident à situer votre adresse, sans constituer une liste de lieux infestés. Précisez votre village et votre rue lors de votre demande.", items: ["Village de Montsaon", "Village de Semoutiers", "Secteur de la rue Principale", "Abords de la mairie, rue de Neuilly", "Exploitations agricoles et dépendances", "Abords de la Suize"] }}
-        extraSections={[
-          { title: "Nid de guêpes ou de frelons : les informations utiles avant la visite", content: <>
-            <p>{"Notez l'emplacement précis du nid (toiture, charpente, arbre, sous-sol, mur), sa taille approximative et l'intensité du va-et-vient observé. Ne vous approchez pas et ne bouchez pas l'entrée vous-même : une tentative mal maîtrisée peut provoquer des piqûres en série, surtout en fin d'été lorsque les colonies sont les plus actives."}</p>
-            <p>{"Signalez toute allergie connue d'un occupant aux piqûres d'hyménoptères : cette information est prise en compte pour organiser l'intervention en toute sécurité."}</p>
-          </> },
-          { title: "Prévention dans une maison, une grange ou un corps de ferme", content: <>
-            <p>{"Inspectez régulièrement les charpentes de granges, les avancées de toit et les cavités de mur au printemps, période où les nids commencent à se former. Rebouchez les petites cavités extérieures inoccupées pour limiter les sites potentiels de nidification."}</p>
-            <p>{"Pour une exploitation agricole, précisez les bâtiments concernés et les zones de passage fréquent. Le devis indique l'intervention retenue selon l'accessibilité du nid, sans déduire un prix du seul village."}</p>
-          </> },
-          { title: "Votre service à Semoutiers-Montsaon et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service guêpes et frelons en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Semoutiers-Montsaon, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un devis gratuit</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-chaumont">Guêpes et frelons à Chaumont</Link>, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-bologne">Guêpes et frelons à Bologne</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-chateauvillain">Guêpes et frelons à Châteauvillain</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Semoutiers-Montsaon", items: [
-          { label: "Guêpes et frelons à Chaumont", to: "/guepes-frelons-chaumont" },
-          { label: "Guêpes et frelons à Bologne", to: "/guepes-frelons-bologne" },
-          { label: "Guêpes et frelons à Châteauvillain", to: "/guepes-frelons-chateauvillain" },
-        ] }}
-        relatedLinks={[
-          { label: "Dératisation à Semoutiers-Montsaon", to: "/deratisation-semoutiers-montsaon" },
-          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
-          { label: "Taupier à Semoutiers-Montsaon", to: "/taupes-semoutiers-montsaon" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Nid de guêpes ou de frelons à Semoutiers-Montsaon : contactez GF Nuisibles au 07 65 25 67 92 pour une intervention sécurisée et un devis gratuit."}
-      />
-    </>
-  );
+    },
+    {
+      kind: "text",
+      title: "Ferme, rucher, grange : à la campagne",
+      paragraphs: [
+        "Dans une grange ou un hangar, un nid peut grossir tout l'été sans que personne ne le voie, jusqu'au jour où l'on déplace le foin ou le matériel. Jetez un œil aux poutres et aux coins sombres dès le printemps : un petit nid se traite bien plus simplement.",
+        "Vous avez des ruches ? Le frelon asiatique se poste devant pour capturer les abeilles au vol. Si vous en voyez voler en stationnaire devant le rucher, son nid n'est sans doute pas loin : signalez-le à la mairie, puis appelez-moi.",
+      ],
+    },
+  ],
+  call: {
+    title: "Un nid à Semoutiers ou à Montsaon ?",
+    text: "Dites-moi où il est et à quelle hauteur : je suis à côté, je vous donne une date tout de suite.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Quel est le tarif pour enlever un nid de guêpes à Semoutiers-Montsaon ?", answer: "80 € minimum pour des guêpes, 110 € minimum pour des frelons asiatiques, selon la hauteur et l'accès. Je vous donne le montant avant de venir, et vous réglez une fois le travail fait." },
+    { question: "Les pompiers peuvent-ils venir détruire un nid ?", answer: "Non. En Haute-Marne, ils ne se déplacent plus pour un nid chez un particulier : c'est le rôle d'un professionnel certifié. Gardez le 18 et le 15 pour une personne en danger." },
+    { question: "Peut-on faire enlever un nid gratuitement ?", answer: "Pour un nid de guêpes, non. Pour le frelon asiatique, certaines communes participent au coût : renseignez-vous auprès de la mairie avant l'intervention." },
+    { question: "Combien de temps dure l'intervention ?", answer: "Moins d'une heure dans la grande majorité des cas, repérage compris. Un nid très haut ou très gros prend un peu plus de temps." },
+    { question: "Le nid peut-il être réutilisé l'année suivante ?", answer: "Non. Les guêpes meurent avec le froid et personne ne revient dans l'ancien nid. Une nouvelle reine peut en revanche construire un autre nid tout près : surveillez les mêmes endroits au printemps." },
+    { question: "Venez-vous dans les villages voisins ?", answer: "Oui : Blessonville, Villiers-le-Sec, Buxières-lès-Villiers, Richebourg, Bricon, Neuilly-sur-Suize, Euffigneix, Orges, Jonchery, Foulain et Chaumont. Un seul numéro, tous les jours : 07 65 25 67 92." },
+  ],
+  nearby: {
+    intro: "Depuis Montsaon, je rayonne dans toute la Haute-Marne.",
+    links: [
+      { label: "Guêpes et frelons Chaumont", to: "/guepes-frelons-chaumont" },
+      { label: "Guêpes et frelons Châteauvillain", to: "/guepes-frelons-chateauvillain" },
+      { label: "Guêpes et frelons Arc-en-Barrois", to: "/guepes-frelons-arc-en-barrois" },
+      { label: "Guêpes et frelons Bologne", to: "/guepes-frelons-bologne" },
+    ],
+    also: "Mes autres services à Semoutiers-Montsaon :",
+    note: (
+      <>
+        Un frelon asiatique à signaler ? Votre mairie ou la FREDON Grand Est peuvent recenser le nid. Plus d'informations sur la page{" "}
+        <Link to="/guepes-frelons" className={textLink}>destruction de nids en Haute-Marne</Link>.
+      </>
+    ),
+  },
 };
+
+const GuepesFrelonsSemoutiersMontsaon = () => <RodentTownPage town={town} />;
 
 export default GuepesFrelonsSemoutiersMontsaon;

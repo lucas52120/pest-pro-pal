@@ -9,6 +9,7 @@ export const CITIES: CityEntry[] = [
     { label: "Dépigeonnisation", to: "/depigeonnisation-chaumont" },
     { label: "Taupes", to: "/taupes-chaumont" },
     { label: "Cafards & Blattes", to: "/cafards-blattes-chaumont" },
+    { label: "Punaises de lit", to: "/punaises-de-lit-chaumont" },
   ]},
   { name: "Langres", links: [
     { label: "Dératisation", to: "/deratisation-langres" },
@@ -16,6 +17,7 @@ export const CITIES: CityEntry[] = [
     { label: "Dépigeonnisation", to: "/depigeonnisation-langres" },
     { label: "Taupes", to: "/taupes-langres" },
     { label: "Cafards & Blattes", to: "/cafards-blattes-langres" },
+    { label: "Punaises de lit", to: "/punaises-de-lit-langres" },
   ]},
   { name: "Nogent", links: [
     { label: "Dératisation", to: "/deratisation-nogent" },
@@ -30,6 +32,7 @@ export const CITIES: CityEntry[] = [
     { label: "Dépigeonnisation", to: "/depigeonnisation-saint-dizier" },
     { label: "Taupes", to: "/taupes-saint-dizier" },
     { label: "Cafards & Blattes", to: "/cafards-blattes-saint-dizier" },
+    { label: "Punaises de lit", to: "/punaises-de-lit-saint-dizier" },
   ]},
   { name: "Joinville", links: [
     { label: "Dératisation", to: "/deratisation-joinville" },
@@ -37,6 +40,7 @@ export const CITIES: CityEntry[] = [
     { label: "Dépigeonnisation", to: "/depigeonnisation-joinville" },
     { label: "Taupes", to: "/taupes-joinville" },
     { label: "Cafards & Blattes", to: "/cafards-blattes-joinville" },
+    { label: "Punaises de lit", to: "/punaises-de-lit-joinville" },
   ]},
   { name: "Wassy", links: [
     { label: "Dératisation", to: "/deratisation-wassy" },
@@ -50,6 +54,7 @@ export const CITIES: CityEntry[] = [
     { label: "Dépigeonnisation", to: "/depigeonnisation-bourbonne-les-bains" },
     { label: "Taupes", to: "/taupes-bourbonne-les-bains" },
     { label: "Cafards & Blattes", to: "/cafards-blattes-bourbonne-les-bains" },
+    { label: "Punaises de lit", to: "/punaises-de-lit-bourbonne-les-bains" },
   ]},
   { name: "Bologne", links: [
     { label: "Dératisation", to: "/deratisation-bologne" },

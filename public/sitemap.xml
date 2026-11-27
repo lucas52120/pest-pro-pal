@@ -26,6 +26,51 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://gf-nuisibles.fr/deratisation-professionnels</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gf-nuisibles.fr/deratisation-restaurants</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gf-nuisibles.fr/deratisation-collectivites</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gf-nuisibles.fr/deratisation-coproprietes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gf-nuisibles.fr/punaises-de-lit-bourbonne-les-bains</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gf-nuisibles.fr/punaises-de-lit-joinville</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gf-nuisibles.fr/punaises-de-lit-saint-dizier</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gf-nuisibles.fr/punaises-de-lit-langres</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gf-nuisibles.fr/punaises-de-lit-chaumont</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://gf-nuisibles.fr/cafards-blattes-chaumont</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

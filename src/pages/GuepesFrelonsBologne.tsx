@@ -1,106 +1,124 @@
-import { Zap } from "lucide-react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import CityServicePage from "@/components/CityServicePage";
-import type { FaqItem } from "@/components/CityServicePage";
-import heroImage from "@/assets/service-guepes.jpg";
-import { LOCAL_BUSINESS } from "@/data/business";
-import { breadcrumbsFrom } from "@/components/Breadcrumbs";
+import { Anchor, Apple, Church, Factory, FileText, Fence, Home, Leaf, Shovel, Sprout, TreeDeciduous, Waves } from "lucide-react";
+import heroImage from "@/assets/guepes-nid-bois.jpg";
+import RodentTownPage, { RodentTown } from "@/components/RodentTownPage";
+import { textLink } from "@/components/ServiceBlocks";
 
-const TITLE = "Destruction nid de guêpes et frelons à Bologne (52)";
-const DESCRIPTION = "Un nid de guêpes ou de frelons à Bologne ? On s'en débarrasse pour vous, 7j/7. À partir de 80 €, devis gratuit. Appelez le 07 65 25 67 92.";
-const URL = "https://gf-nuisibles.fr/guepes-frelons-bologne";
-
-const FAQ_ITEMS: FaqItem[] = [
-  { question: "Intervenez-vous sur les nids à Bologne (52310) ?", answer: "Oui, précisez l'adresse, le support, la hauteur approximative et les accès. Le créneau et les moyens nécessaires sont confirmés selon la situation." },
-  { question: "Un nid près du canal peut-il être dangereux ?", answer: "Oui, un nid actif peut être dérangé par le passage sur le chemin de halage ou la tonte d'un jardin proche. Éloignez les personnes et les animaux et ne versez aucun produit dans l'entrée. L'identification se fait sans manipuler le nid." },
-  { question: "Faut-il boucher l'entrée sous une tuile ?", answer: "Non. Obstruer un accès actif peut déplacer les sorties, notamment vers l'intérieur. Gardez vos distances et attendez l'évaluation du professionnel." },
-  { question: "Retirez-vous toujours le nid après le traitement ?", answer: "Le retrait dépend du support et de l'accessibilité. Il n'est pas systématique ni nécessairement immédiat. Les prestations retenues et les consignes sont précisées avant l'intervention." },
-  { question: "Quel est le prix pour un nid de frelons à Bologne ?", answer: "Le prix dépend de l'identification, de la hauteur, de l'accès et des moyens nécessaires. Le diagnostic et le devis gratuits permettent de confirmer la prestation avant votre accord." },
-];
-
-const GuepesFrelonsBologne = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      LOCAL_BUSINESS,
-      {
-        "@type": "Service", "url": URL, "name": "Nid de guêpes et frelons à Bologne (52310)", "description": DESCRIPTION,
-        "provider": { "@id": "https://gf-nuisibles.fr/#organization" },
-        "areaServed": { "@type": "City", "name": "Bologne", "containedInPlace": { "@type": "AdministrativeArea", "name": "Communauté d'agglomération de Chaumont" }, "address": { "@type": "PostalAddress", "postalCode": "52310", "addressRegion": "Haute-Marne", "addressCountry": "FR" } }
-      },
-      { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://gf-nuisibles.fr/" },
-        { "@type": "ListItem", "position": 2, "name": "Guêpes et frelons", "item": "https://gf-nuisibles.fr/guepes-frelons" },
-        { "@type": "ListItem", "position": 3, "name": "Bologne", "item": URL }
-      ] },
-      { "@type": "FAQPage", "mainEntity": FAQ_ITEMS.map((item) => ({ "@type": "Question", "name": item.question, "acceptedAnswer": { "@type": "Answer", "text": item.answer } })) }
-    ]
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{TITLE}</title>
-        <meta name="description" content={DESCRIPTION} />
-        <link rel="canonical" href={URL} />
-        <meta property="og:title" content={TITLE} />
-        <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={URL} />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={TITLE} />
-        <meta name="twitter:description" content={DESCRIPTION} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-      <CityServicePage
-        breadcrumbs={breadcrumbsFrom(jsonLd)}
-        city="Bologne"
-        department="Haute-Marne (52)"
-        serviceTitle={"Nid de guêpes et frelons à Bologne (52310)"}
-        icon={<Zap className="h-8 w-8" />}
-        heroImage={heroImage}
-        metaDescription={DESCRIPTION}
-        serviceCallTitle={"UN NID DE GUÊPES OU DE FRELONS À BOLOGNE ?"}
-        serviceCallSubtitle="GF NUISIBLES — UN DIAGNOSTIC ADAPTÉ À VOTRE SITUATION"
-        intro={"Un va-et-vient d'insectes sous une tuile, dans une haie ou près d'un trou au sol peut signaler un nid, même lorsque celui-ci est invisible. GF Nuisibles intervient pour les nids de guêpes et de frelons à Bologne (52310), bourg-centre niché dans un méandre de la Marne. La demande commence par l'identification et l'évaluation de l'accès : hauteur, support, proximité des occupants et activité observée. Ne vous approchez pas pour obtenir une photo et ne tentez pas de décrocher le nid vous-même."}
-        expertise={"Les guêpes, les frelons européens et les frelons asiatiques nécessitent une identification adaptée aux indices disponibles. Les abeilles ne sont pas à traiter comme un nid de guêpes : un essaim peut relever d'un apiculteur. Le diagnostic prend en compte les accès au bâtiment, le passage des personnes et les animaux. Un nid dans un volume fermé ne se traite pas comme un nid visible dans un arbre ou une haie près du canal. Les possibilités techniques sont confirmées selon la configuration et non à partir du seul nom de la commune."}
-        method={"À partir de votre description, nous préparons l'évaluation du nid et des moyens d'accès. Le périmètre à éviter et les précautions sont définis avant le traitement professionnel. La neutralisation et le retrait éventuel dépendent du support et de l'accessibilité ; le retrait immédiat n'est pas systématique. Les consignes après intervention précisent les comportements à respecter et les observations à signaler. Le devis tient compte de l'espèce identifiée, de la hauteur, de l'accès et de la méthode retenue."}
-        localContext={{ title: "Toitures du centre-bourg, biefs et jardins de Bologne", content: <>
-            <p>{"Dans le centre-bourg, autour de l'église Sainte-Bologne, signalez un accès sous toiture, dans un volet ou une dépendance. Un passage régulier d'insectes au même point est une information utile même si le nid reste caché."}</p>
-            <p>{"Le long du canal entre Champagne et Bourgogne et du chemin de halage, les biefs et les boisements favorisent la présence de haies et de berges où un nid peut s'installer. Précisez la position du nid par rapport aux chemins utilisés, sans tailler ni secouer la végétation pour le chercher."}</p>
-            <p>{"Pour un terrain à Marault ou à Roôcourt-la-Côte, communes associées de Bologne, indiquez la présence d'un jardin, d'une grange ou d'un bâtiment annexe à votre adresse. Les monuments et équipements mentionnés sont des repères géographiques, pas des références d'intervention."}</p>
-            <p>Les noms ci-dessus situent votre demande ; aucun monument n'est présenté comme infesté ou client. Retrouvez ces repères sur le <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.mairie-bologne.fr/patrimoine/" target="_blank" rel="noopener noreferrer">site du patrimoine de la mairie de Bologne</a> et dans la <a className="font-semibold text-primary underline underline-offset-4 hover:text-accent" href="https://www.agglo-chaumont.fr/mon-agglomeration/presentation/les-communes-adherentes/bologne/" target="_blank" rel="noopener noreferrer">présentation de Bologne par l'agglomération de Chaumont</a>.</p>
-        </> }}
-        neighborhoods={{ title: "Secteurs et repères à Bologne (52310)", intro: "Bologne est un bourg-centre de l'agglomération de Chaumont, avec les communes associées de Marault et de Roôcourt-la-Côte. Les repères suivants aident à situer votre adresse, sans constituer une liste de quartiers administratifs ou de lieux infestés. Précisez votre rue et les accès lors de votre demande.", items: ["Centre-bourg de Bologne", "Secteur de l'église Sainte-Bologne", "Abords de la Marne et du canal", "Chemin de halage", "Marault", "Roôcourt-la-Côte"] }}
-        extraSections={[
-          { title: "Les précautions avant la venue du professionnel", content: <>
-            <p>{"Ne bouchez pas un trou d'entrée dans une façade ou un toit : les insectes peuvent chercher une autre sortie. Ne versez ni eau, ni carburant, ni produit ménager dans un nid au sol. N'utilisez pas une échelle pour vous rapprocher d'un nid actif et ne le brûlez jamais."}</p>
-            <p>{"Suspendez la tonte ou la taille près de l'activité observée, notamment le long des berges ou du chemin de halage. Gardez les enfants et les animaux à distance. Une photo prise sans s'approcher, une estimation de la hauteur et une description des accès suffisent pour préparer le premier échange."}</p>
-          </> },
-          { title: "Nid inaccessible, devis et suites de l'intervention", content: <>
-            <p>{"Pour une toiture, un arbre ou un volume fermé, précisez la hauteur approximative et les obstacles. Le professionnel confirme les moyens nécessaires et la faisabilité. Un devis ne peut pas être déduit d'un tarif unique pour tous les nids ; la configuration et les prestations retenues comptent."}</p>
-            <p>{"Après le traitement, respectez les consignes et signalez une activité persistante au même point. Ne manipulez pas un nid traité sans accord. En cas de piqûres multiples, de difficulté à respirer ou de gonflement du visage ou de la gorge, appelez immédiatement le 15 ou le 112 : la destruction du nid ne remplace pas une prise en charge médicale."}</p>
-          </> },
-          { title: "Votre service à Bologne et dans le secteur", content: <>
-            <p>Consultez notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons">service guêpes et frelons en Haute-Marne</Link> pour les méthodes et les prestations. Pour votre adresse à Bologne, <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/contact">demandez un diagnostic et un devis gratuits</Link> ou appelez le 07 65 25 67 92.</p>
-            <p>Pour un bien dans une autre ville du secteur, retrouvez nos pages <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-chaumont">Guêpes et frelons à Chaumont</Link> et <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/guepes-frelons-froncles">Guêpes et frelons à Froncles</Link>. Notre <Link className="font-semibold text-primary underline underline-offset-4 hover:text-accent" to="/zone-intervention">zone d'intervention</Link> permet aussi de situer votre demande. Le créneau et les prestations sont confirmés selon votre situation.</p>
-          </> },
-        ]}
-        nearbyCities={{ title: "Nos pages locales autour de Bologne", items: [
-          { label: "Guêpes et frelons à Chaumont", to: "/guepes-frelons-chaumont" },
-          { label: "Guêpes et frelons à Froncles", to: "/guepes-frelons-froncles" },
-        ] }}
-        relatedLinks={[
-          { label: "Dératisation à Bologne", to: "/deratisation-bologne" },
-          { label: "Dépigeonnage en Haute-Marne", to: "/depigeonnage" },
-          { label: "Taupier à Bologne", to: "/taupes-bologne" },
-        ]}
-        faqItems={FAQ_ITEMS}
-        cta={"Guêpes et frelons à Bologne : contactez GF Nuisibles au 07 65 25 67 92 pour un diagnostic et un devis gratuits. Le périmètre, les prestations et le créneau sont confirmés selon votre situation."}
-      />
-    </>
-  );
+const town: RodentTown = {
+  kind: "wasps",
+  city: "Bologne",
+  postalCode: "52310",
+  region: "Haute-Marne",
+  slug: "/guepes-frelons-bologne",
+  title: "Destruction nid de guêpes et frelons à Bologne (52)",
+  description:
+    "Un nid de guêpes ou de frelons à Bologne ? On s'en débarrasse pour vous, 7j/7. À partir de 80 €, devis gratuit. Appelez le 07 65 25 67 92.",
+  hero: {
+    eyebrow: "Maisons, jardins et bords de Marne",
+    text: "Un nid au fond du jardin, dans l'abri ou sous le toit ? À dix kilomètres de Chaumont, je viens le détruire.",
+    highlight: "À une dizaine de kilomètres de Chaumont",
+    signsLabel: "Trou dans la pelouse ou boule dans un arbre ? Les repérer",
+    image: heroImage,
+    imageAlt: "Nid ouvert couvert de guêpes contre une planche",
+    imageClassName: "max-lg:brightness-50",
+  },
+  reviews: ["moock", "genest", "patricia"],
+  why: {
+    title: "Pourquoi les guêpes ont-elles choisi votre jardin ?",
+    intro: "Un jardin au bord de l'eau, avec un potager et des arbres fruitiers, c'est tout ce qu'une colonie demande.",
+    items: [
+      { icon: Apple, title: "Les fruitiers", text: "prunes et poires tombées en août : un festin pour les ouvrières." },
+      { icon: Waves, title: "L'eau toute proche", text: "la Marne et le canal leur permettent de boire et de mouiller la pâte du nid." },
+      { icon: Fence, title: "L'abri de jardin", text: "un plafond en planches, jamais dérangé, abrite parfaitement un nid." },
+      { icon: Sprout, title: "Le potager", text: "des insectes en quantité pour nourrir les larves." },
+    ],
+  },
+  how: {
+    title: "Comment se débarrasser d'un nid de guêpes au jardin ?",
+    intro: "Au jardin, le nid peut être dans le sol, dans une haie, dans l'abri ou en haut d'un arbre. Chaque cas demande une approche différente.",
+    steps: [
+      { title: "Je cherche par où elles passent", text: "Je suis les allers-retours jusqu'au nid, même s'il est caché sous l'herbe ou dans le feuillage." },
+      { title: "J'adapte le matériel", text: "Au sol, dans une haie ou à huit mètres de haut : la méthode change, le produit professionnel aussi." },
+      { title: "Je vous rends le jardin", text: "Je vous dis quand tondre, tailler ou récolter à nouveau près de l'endroit traité." },
+    ],
+    after: (
+      <>
+        Ne cueillez pas les fruits juste au-dessus d'un nid traité avant mon feu vert. Méthodes et espèces sur la page{" "}
+        <Link to="/guepes-frelons" className={textLink}>guêpes et frelons en Haute-Marne</Link>.
+      </>
+    ),
+  },
+  where: {
+    intro: "Entre le bourg, le canal et les deux villages rattachés, voici les endroits où je trouve les nids.",
+    items: [
+      { icon: Church, title: "Le bourg", text: "maisons anciennes près de l'église : tuiles, génoises et volets." },
+      { icon: Waves, title: "La boucle de la Marne", text: "saules et peupliers des berges, terrain du frelon asiatique." },
+      { icon: Anchor, title: "Le canal et le chemin de halage", text: "murets et talus, où les guêpes nichent dans les creux." },
+      { icon: Factory, title: "Le secteur industriel", text: "auvents, bardages et poutres des ateliers." },
+      { icon: TreeDeciduous, title: "Marault", text: "grands arbres, granges et propriétés à l'écart du bourg." },
+      { icon: Home, title: "Roôcourt-la-Côte", text: "maisons de pierre et vergers sur la hauteur." },
+    ],
+  },
+  price: {
+    paragraphs: [
+      <>Prévoyez <strong className="whitespace-nowrap text-primary">80 €</strong> minimum pour un nid de guêpes, et <strong className="whitespace-nowrap text-primary">110 €</strong> minimum pour un nid de frelons asiatiques.</>,
+      "Un nid dans l'herbe se traite plus simplement qu'un nid en haut d'un peuplier. Un supplément est possible le dimanche et les jours fériés, et vous le savez avant.",
+    ],
+    aside: { icon: FileText, title: "Tout près de chez moi", text: "Bologne est à deux pas de ma base : le déplacement reste léger, et je vous l'annonce au téléphone." },
+  },
+  local: [
+    {
+      kind: "cards",
+      target: true,
+      columns: "lg:grid-cols-3",
+      title: "Trou dans la pelouse ou boule dans un arbre : comment les repérer ?",
+      intro: "Au jardin, le nid se trahit par le va-et-vient. Encore faut-il savoir où regarder.",
+      items: [
+        { icon: Shovel, title: "Dans le sol", text: "un trou de la taille d'une pièce, d'où sortent des guêpes à ras de l'herbe. Le plus dangereux pour la tondeuse." },
+        { icon: Leaf, title: "Dans une haie", text: "des guêpes qui plongent toujours au même endroit dans le feuillage." },
+        { icon: TreeDeciduous, title: "En haut d'un arbre", text: "une grosse boule grise, souvent repérée à l'automne quand les feuilles tombent : pensez au frelon asiatique." },
+      ],
+      after: "Une photo prise de loin, envoyée au 07 65 25 67 92, me suffit souvent pour vous dire de quoi il s'agit.",
+    },
+    {
+      kind: "text",
+      title: "Chemin de halage, pêche, balade : prudence près de l'eau",
+      paragraphs: [
+        "Les berges sont un endroit idéal pour les frelons asiatiques : ils chassent au-dessus de l'eau et nichent dans les grands arbres voisins.",
+        "Si vous voyez un nid sur un terrain public ou au bord du chemin, ne vous en approchez pas et signalez-le à la mairie. S'il est sur votre terrain, appelez-moi.",
+      ],
+    },
+  ],
+  call: {
+    title: "Un nid de guêpes à Bologne ?",
+    text: "Dites-moi s'il est au sol, dans une haie ou en hauteur : je vous propose une date.",
+    contactLabel: "Devis gratuit",
+  },
+  faq: [
+    { question: "Combien coûte la destruction d'un nid à Bologne ?", answer: "80 € minimum pour un nid de guêpes, 110 € minimum pour un nid de frelons asiatiques, selon l'emplacement. Le prix est fixé avant l'intervention et payé après." },
+    { question: "Un nid dans la haie, faut-il couper la haie ?", answer: "Non. Le nid se traite sur place, sans tailler. Attendez simplement mon feu vert avant de reprendre la taille." },
+    { question: "Le frelon asiatique est-il présent à Bologne ?", answer: "Il est présent en Haute-Marne et apprécie les bords de rivière. Un gros nid haut dans un arbre à l'automne doit vous faire penser à lui." },
+    { question: "Un nid de guêpes dans le sol peut-il être noyé ?", answer: "Non, c'est rarement efficace et les guêpes sortent en colère. Le nid se traite par son entrée, avec un produit professionnel." },
+    { question: "Peut-on manger les fruits de l'arbre où était le nid ?", answer: "Oui, en suivant les consignes que je vous donne : on évite de cueillir juste au-dessus du nid tant qu'il n'a pas été retiré." },
+    { question: "Intervenez-vous autour de Bologne ?", answer: "Oui : Lamancine, Vraincourt, Viéville, Riaucourt, Brethenay, Meures, Soncourt-sur-Marne, Vignory et les autres communes voisines. Un appel au 07 65 25 67 92 suffit." },
+  ],
+  nearby: {
+    intro: "Bologne est à deux pas de ma base, entre Chaumont et la vallée.",
+    links: [
+      { label: "Guêpes et frelons Chaumont", to: "/guepes-frelons-chaumont" },
+      { label: "Guêpes et frelons Froncles", to: "/guepes-frelons-froncles" },
+      { label: "Guêpes et frelons Semoutiers-Montsaon", to: "/guepes-frelons-semoutiers-montsaon" },
+    ],
+    also: "Je viens aussi à Bologne pour :",
+    note: (
+      <>
+        Tout sur la saison des nids sur la page{" "}
+        <Link to="/guepes-frelons" className={textLink}>destruction de nids de guêpes et frelons</Link>.
+      </>
+    ),
+  },
 };
+
+const GuepesFrelonsBologne = () => <RodentTownPage town={town} />;
 
 export default GuepesFrelonsBologne;

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Phone } from "lucide-react";
 
 /** Pages whose hero has its own call buttons: on phones the bubble waits for a first scroll so it never covers them. */
-const hasHeroButtons = (path: string) => path === "/" || path.startsWith("/deratisation") || path.startsWith("/cafards-blattes-");
+const hasHeroButtons = (path: string) => path === "/" || path.startsWith("/deratisation") || path.startsWith("/cafards-blattes-") || path.startsWith("/guepes-frelons-") || path.startsWith("/punaises-de-lit-");
 
 const FloatingCallButton = () => {
   const waits = hasHeroButtons(useLocation().pathname);
