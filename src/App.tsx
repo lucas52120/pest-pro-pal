@@ -14,6 +14,8 @@ import DeratisationProfessionnels from "./pages/DeratisationProfessionnels.tsx";
 import DeratisationRestaurants from "./pages/DeratisationRestaurants.tsx";
 import DeratisationCollectivites from "./pages/DeratisationCollectivites.tsx";
 import DeratisationCoproprietes from "./pages/DeratisationCoproprietes.tsx";
+import DeratisationEntreprises from "./pages/DeratisationEntreprises.tsx";
+import DeratisationAgricole from "./pages/DeratisationAgricole.tsx";
 import PunaisesDeLitBourbonne from "./pages/PunaisesDeLitBourbonne.tsx";
 import PunaisesDeLitJoinville from "./pages/PunaisesDeLitJoinville.tsx";
 import PunaisesDeLitSaintDizier from "./pages/PunaisesDeLitSaintDizier.tsx";
@@ -152,6 +154,8 @@ const App = ({ Router = BrowserRouter, routerProps = {} }: AppProps) => (
           <Route path="/deratisation-restaurants" element={<DeratisationRestaurants />} />
           <Route path="/deratisation-collectivites" element={<DeratisationCollectivites />} />
           <Route path="/deratisation-coproprietes" element={<DeratisationCoproprietes />} />
+          <Route path="/deratisation-entreprises" element={<DeratisationEntreprises />} />
+          <Route path="/deratisation-agricole" element={<DeratisationAgricole />} />
           <Route path="/punaises-de-lit-bourbonne-les-bains" element={<PunaisesDeLitBourbonne />} />
           <Route path="/punaises-de-lit-joinville" element={<PunaisesDeLitJoinville />} />
           <Route path="/punaises-de-lit-saint-dizier" element={<PunaisesDeLitSaintDizier />} />

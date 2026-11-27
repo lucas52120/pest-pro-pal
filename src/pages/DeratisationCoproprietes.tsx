@@ -23,7 +23,7 @@ import {
   Trees,
   Warehouse,
 } from "lucide-react";
-import buildingImage from "@/assets/pro-immeuble.jpg";
+import buildingImage from "@/assets/pro-copropriete.jpg";
 import Navbar from "@/components/Navbar";
 import Reassurance from "@/components/Reassurance";
 import Footer from "@/components/Footer";
@@ -205,7 +205,7 @@ const DeratisationCoproprietes = () => (
       aside={
         <HeroPhotoCard
           image={buildingImage}
-          alt="Façade d'immeuble ancien aux volets blancs et balcons fleuris"
+          alt="Façade d'immeuble d'habitation avec balcons, fenêtres bleues et plantes"
           cardTitle="Pour votre immeuble"
           items={["Postes sécurisés et numérotés", "Plan des postes par bâtiment", "Rapport pour le conseil syndical", "Registre des interventions"]}
         />

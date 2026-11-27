@@ -269,8 +269,10 @@ const DeratisationChaumont = () => (
           <strong className="text-primary">Restaurant, commerce ou bureau à Chaumont ?</strong> Je passe si possible en dehors de vos heures d'ouverture, avec un véhicule non logoté sur demande, et on définit ensemble un suivi adapté. Voyez le{" "}
           <Link to="/deratisation-professionnels" className={textLink}>contrat de dératisation pour les professionnels</Link> et l'offre pour les{" "}
           <Link to="/deratisation-restaurants" className={textLink}>restaurants et boulangeries</Link>, les{" "}
-          <Link to="/deratisation-collectivites" className={textLink}>communes</Link> et les{" "}
-          <Link to="/deratisation-coproprietes" className={textLink}>copropriétés</Link>, ou{" "}
+          <Link to="/deratisation-collectivites" className={textLink}>communes</Link>, les{" "}
+          <Link to="/deratisation-coproprietes" className={textLink}>copropriétés</Link>, les{" "}
+          <Link to="/deratisation-entreprises" className={textLink}>entreprises</Link> et les{" "}
+          <Link to="/deratisation-agricole" className={textLink}>exploitations agricoles et viticoles</Link>, ou{" "}
           <Link to="/contact" className={textLink}>demandez un devis professionnel</Link>.
         </p>
       </Section>

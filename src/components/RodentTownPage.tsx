@@ -452,8 +452,10 @@ const RodentTownPage = ({ town }: { town: RodentTown }) => {
               Restaurant, boulangerie, commune ou syndic à {city} ? Voyez le{" "}
               <Link to="/deratisation-professionnels" className={textLink}>contrat de dératisation pour les professionnels</Link>, et les offres pour les{" "}
               <Link to="/deratisation-restaurants" className={textLink}>restaurants et boulangeries</Link>, les{" "}
-              <Link to="/deratisation-collectivites" className={textLink}>communes</Link> et les{" "}
-              <Link to="/deratisation-coproprietes" className={textLink}>copropriétés</Link>.
+              <Link to="/deratisation-collectivites" className={textLink}>communes</Link>, les{" "}
+              <Link to="/deratisation-coproprietes" className={textLink}>copropriétés</Link>, les{" "}
+              <Link to="/deratisation-entreprises" className={textLink}>entreprises</Link> et les{" "}
+              <Link to="/deratisation-agricole" className={textLink}>exploitations agricoles et viticoles</Link>.
             </p>
           )}
           {photos.some((photo) => photo.credit) && (

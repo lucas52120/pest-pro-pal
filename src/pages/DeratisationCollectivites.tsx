@@ -1,10 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import {
-  Building,
   CalendarCheck,
   CarFront,
   ClipboardList,
+  Droplets,
   Clock,
   FileSignature,
   Home,
@@ -33,14 +33,14 @@ import SEO from "@/components/SEO";
 import ProHero from "@/components/ProHero";
 import { FactsBand, FinalCta, HeroPhotoCard, ProgramCards, PromiseCards, RiskCards, RulesCompare } from "@/components/ProBlocks";
 import { breadcrumbsFrom } from "@/components/Breadcrumbs";
-import { CityPills, FaqList, PlaceGrid, Section, ServiceStep, StepRow, textLink } from "@/components/ServiceBlocks";
+import { CheckList, CityPills, FaqList, PlaceGrid, Section, ServiceStep, StepRow, textLink } from "@/components/ServiceBlocks";
 import { LOCAL_BUSINESS } from "@/data/business";
 
 const SLUG = "/deratisation-collectivites";
 const PAGE_URL = `https://gf-nuisibles.fr${SLUG}`;
 const TITLE = "Dératisation commune et collectivité Haute-Marne | Mairies";
 const DESCRIPTION =
-  "Dératiseur pour mairies et collectivités en Haute-Marne ✓ Écoles, cantines, bâtiments communaux ✓ Contrat à l'année ✓ Chorus Pro. Devis gratuit.";
+  "Dératiseur pour mairies et collectivités en Haute-Marne ✓ Égouts, écoles, cantines ✓ Contrat à l'année ✓ Chorus Pro. Devis gratuit.";
 
 const FACTS = [
   { value: "3 à 4", label: "passages par an dans vos bâtiments communaux" },
@@ -72,6 +72,7 @@ const RISKS: { icon: LucideIcon; title: string; text: string }[] = [
 ];
 
 const PLACES: { icon: LucideIcon; title: string; text: string }[] = [
+  { icon: Droplets, title: "Réseaux d'égouts et regards", text: "la première source de rats dans une commune, traitée regard par regard." },
   { icon: School, title: "Écoles et crèches", text: "salles de classe, préaux, réserves, sous-sols et cours." },
   { icon: UtensilsCrossed, title: "Cantines et cuisines", text: "réserves, chambres froides, local poubelles, offices de réchauffage." },
   { icon: Music, title: "Salles des fêtes", text: "cuisines, bars, réserves et locaux de rangement, souvent fermés en semaine." },
@@ -79,7 +80,6 @@ const PLACES: { icon: LucideIcon; title: string; text: string }[] = [
   { icon: Wrench, title: "Ateliers et services techniques", text: "garages, stocks, sel de déneigement, abords des bâtiments." },
   { icon: Home, title: "Logements communaux", text: "caves, parties communes et locaux poubelles des logements loués par la commune." },
   { icon: Trash2, title: "Abords des points de collecte", text: "autour des conteneurs et des points d'apport volontaire, où les rats trouvent à manger." },
-  { icon: Building, title: "Gymnases et équipements sportifs", text: "vestiaires, buvettes et locaux de rangement." },
 ];
 
 const PROGRAM = [
@@ -131,6 +131,10 @@ const FAQ = [
   {
     question: "Une commune est-elle obligée de dératiser ?",
     answer: "Aucun texte n'impose un nombre de passages. Mais le maire doit veiller à la salubrité publique, et une cantine scolaire doit disposer d'un plan de lutte contre les nuisibles, vérifié par la DDPP. Un contrat de dératisation à l'année est la façon la plus simple de répondre aux deux.",
+  },
+  {
+    question: "Qui doit dératiser les égouts de la commune ?",
+    answer: "La collectivité qui gère l'assainissement : la commune, ou la communauté de communes ou le syndicat à qui elle l'a confié. Le tuyau qui relie une maison au réseau public reste, lui, à la charge du propriétaire.",
   },
   {
     question: "Un habitant se plaint de rats chez son voisin : que peut faire la mairie ?",
@@ -204,7 +208,7 @@ const DeratisationCollectivites = () => (
       badge="Communes, mairies, collectivités"
       title="Dératisation pour communes et collectivités"
       accent="en Haute-Marne"
-      text="Écoles, cantines, salles des fêtes, ateliers municipaux : un dératiseur local protège vos bâtiments communaux des rats et des souris toute l'année, en dehors de la présence du public, avec des rapports clairs pour les élus."
+      text="Réseaux d'égouts, écoles, cantines, salles des fêtes : un dératiseur local protège votre commune et ses bâtiments des rats et des souris toute l'année, en dehors de la présence du public, avec des rapports clairs pour les élus."
       checks={["Devis pour engager la dépense", "Facturation Chorus Pro", "Passages 7j/7"]}
       aside={
         <HeroPhotoCard
@@ -226,7 +230,25 @@ const DeratisationCollectivites = () => (
         <RiskCards items={RISKS} />
       </Section>
 
-      <Section muted title="Dératisation des collectivités : les obligations de la commune et du maire">
+      <Section
+        muted
+        title="Les réseaux d'égouts, première source de rats dans une commune"
+        intro="Les rats trouvent dans les égouts de l'eau, de la chaleur et de la nourriture. Quand le réseau est très peuplé ou abîmé, ils remontent par les regards, les canalisations cassées et les branchements des maisons : c'est souvent de là que viennent les plaintes des habitants."
+      >
+        <CheckList
+          items={[
+            { text: "Repérage des regards et des rues où les rats sont signalés." },
+            { text: "Appâts autorisés pour les égouts, fixés dans les regards, hors de l'eau, et notés sur un plan du réseau." },
+            { text: "Contrôle et renouvellement tant que les appâts sont consommés, puis retrait." },
+            { text: "Une ou deux campagnes par an, au printemps et à l'automne, en même temps que le suivi des bâtiments." },
+          ]}
+        />
+        <p className="mt-8 max-w-3xl leading-relaxed text-muted-foreground">
+          Si l'assainissement est géré par votre communauté de communes ou un syndicat, le devis peut lui être adressé directement.
+        </p>
+      </Section>
+
+      <Section title="Dératisation des collectivités : les obligations de la commune et du maire">
         <RulesCompare
           asks={{
             title: "Ce que disent les textes",
@@ -249,15 +271,15 @@ const DeratisationCollectivites = () => (
         />
       </Section>
 
-      <Section title="Les bâtiments de la collectivité que je prends en charge" intro="Chaque bâtiment a ses points faibles. Le contrat de dératisation peut tous les regrouper, ou ne concerner que ceux qui en ont besoin.">
+      <Section muted title="Les bâtiments de la collectivité que je prends en charge" intro="Chaque bâtiment a ses points faibles. Le contrat de dératisation peut tous les regrouper, ou ne concerner que ceux qui en ont besoin.">
         <PlaceGrid items={PLACES} columns="lg:grid-cols-4" />
       </Section>
 
-      <Section muted title="Un plan de lutte contre les rongeurs en trois volets" intro="Le contrat de dératisation couvre tout ce qu'on attend d'un plan de lutte contre les rats et les souris dans des bâtiments publics.">
+      <Section title="Un plan de lutte contre les rongeurs en trois volets" intro="Le contrat de dératisation couvre tout ce qu'on attend d'un plan de lutte contre les rats et les souris dans des bâtiments publics.">
         <ProgramCards parts={PROGRAM} />
       </Section>
 
-      <Section title="Écoles et cantines : une attention particulière">
+      <Section muted title="Écoles et cantines : une attention particulière">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <img src={canteenImage} alt="Agente de restauration scolaire servant des légumes au self d'une cantine" loading="lazy" className="h-64 w-full rounded-3xl object-cover shadow-md md:h-80" />
           <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
@@ -271,7 +293,7 @@ const DeratisationCollectivites = () => (
         </div>
       </Section>
 
-      <Section muted title="Des rats dans la commune : qui fait quoi ?" intro="Quand un habitant appelle la mairie, la réponse dépend de l'endroit où les rats ont été vus.">
+      <Section title="Des rats dans la commune : qui fait quoi ?" intro="Quand un habitant appelle la mairie, la réponse dépend de l'endroit où les rats ont été vus.">
         <ol className="grid list-none gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {WHO.map((item) => (
             <li key={item.title} className="rounded-2xl border-t-4 border-accent bg-card p-6 shadow-sm">
@@ -282,11 +304,11 @@ const DeratisationCollectivites = () => (
         </ol>
       </Section>
 
-      <Section title="Comment démarre le contrat avec votre commune ?" intro="De l'appel de la mairie au premier passage de suivi, tout est cadré et écrit.">
+      <Section muted title="Comment démarre le contrat avec votre commune ?" intro="De l'appel de la mairie au premier passage de suivi, tout est cadré et écrit.">
         <StepRow steps={STEPS} />
       </Section>
 
-      <Section muted title="Un dératiseur local, au service des communes">
+      <Section title="Un dératiseur local, au service des communes">
         <PromiseCards items={PROMISES} />
         <p className="mt-8 max-w-3xl leading-relaxed text-muted-foreground">
           Je travaille déjà avec des communes de Haute-Marne, dont la commune de Lefond, ainsi qu'avec des syndics et des restaurants. Pour une cantine gérée par un prestataire ou un commerce de votre commune, voyez aussi la page{" "}
@@ -295,7 +317,7 @@ const DeratisationCollectivites = () => (
         <ClientReviews keys={["jc", "mathieu", "coustillet"]} />
       </Section>
 
-      <Section title="Vos questions sur la dératisation des communes">
+      <Section muted title="Vos questions sur la dératisation des communes">
         <FaqList items={FAQ} />
       </Section>
 

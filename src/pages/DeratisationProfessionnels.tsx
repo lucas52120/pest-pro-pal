@@ -20,8 +20,9 @@ import {
 } from "lucide-react";
 import bakeryImage from "@/assets/pro-boulangerie.jpg";
 import townHallImage from "@/assets/pro-mairie.jpg";
-import buildingImage from "@/assets/pro-immeuble.jpg";
+import buildingImage from "@/assets/pro-copropriete.jpg";
 import warehouseImage from "@/assets/pro-entrepot.jpg";
+import farmImage from "@/assets/pro-hangar.jpg";
 import Navbar from "@/components/Navbar";
 import Reassurance from "@/components/Reassurance";
 import Footer from "@/components/Footer";
@@ -111,7 +112,7 @@ const AUDIENCES: Audience[] = [
     cta: "Un devis pour votre immeuble",
     page: { to: "/deratisation-coproprietes", label: "Découvrir l'offre copropriétés et syndics" },
     image: buildingImage,
-    imageAlt: "Façade d'immeuble ancien aux volets blancs et balcons fleuris",
+    imageAlt: "Façade d'immeuble d'habitation avec balcons, fenêtres bleues et plantes",
   },
   {
     id: "entreprises",
@@ -125,8 +126,25 @@ const AUDIENCES: Audience[] = [
       { text: "Conseils pour fermer les accès : bas de portes, gaines, trous dans les murs." },
     ],
     cta: "Un devis pour votre entreprise",
+    page: { to: "/deratisation-entreprises", label: "Découvrir l'offre entreprises et entrepôts" },
     image: warehouseImage,
     imageAlt: "Entrepôt avec rayonnages et palettes de marchandises",
+  },
+  {
+    id: "agricole",
+    short: "Exploitation agricole ou viticole",
+    label: "Exploitations agricoles et viticoles",
+    title: "Une exploitation protégée, du silo au chai",
+    text: "Grain, aliment, chais, chaleur des bâtiments : une exploitation attire les rats toute l'année. Je combine postes sécurisés et tir de nuit à la carabine, sans poison près des animaux.",
+    points: [
+      { text: "Étables, poulaillers, porcheries, silos, hangars, chais et caves." },
+      { text: "Tir de nuit avec vision nocturne là où les appâts ne conviennent pas." },
+      { text: "Plan des postes et registre pour votre plan de biosécurité." },
+    ],
+    cta: "Un devis pour votre exploitation",
+    page: { to: "/deratisation-agricole", label: "Découvrir l'offre agricole et viticole" },
+    image: farmImage,
+    imageAlt: "Bottes de foin rondes stockées sous un hangar agricole",
   },
 ];
 
@@ -190,7 +208,7 @@ const jsonLd = {
       description: DESCRIPTION,
       provider: { "@id": "https://gf-nuisibles.fr/#organization" },
       areaServed: { "@type": "AdministrativeArea", name: "Haute-Marne" },
-      audience: ["Restaurants", "Boulangeries", "Collectivités", "Syndics de copropriété", "Commerces et entreprises"].map((audienceType) => ({
+      audience: ["Restaurants", "Boulangeries", "Collectivités", "Syndics de copropriété", "Commerces et entreprises", "Exploitations agricoles", "Domaines viticoles"].map((audienceType) => ({
         "@type": "BusinessAudience",
         audienceType,
       })),
@@ -242,8 +260,12 @@ const AudienceMosaic = () => (
   <>
     <p className="mb-3 font-heading text-lg font-bold text-primary">Vous êtes…</p>
     <div className="grid grid-cols-2 gap-3 md:gap-4">
-      {AUDIENCES.map((audience) => (
-        <a key={audience.id} href={`#${audience.id}`} className="group relative block h-36 overflow-hidden rounded-2xl shadow-md sm:h-44 lg:h-56">
+      {AUDIENCES.map((audience, i) => (
+        <a
+          key={audience.id}
+          href={`#${audience.id}`}
+          className={`group relative block h-32 overflow-hidden rounded-2xl shadow-md sm:h-40 lg:h-44 ${i === AUDIENCES.length - 1 && AUDIENCES.length % 2 === 1 ? "col-span-2" : ""}`}
+        >
           <img src={audience.image} alt="" className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
           <span className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent" />
           <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-3 font-heading text-sm font-bold leading-tight text-primary-foreground md:p-4 md:text-base">
@@ -269,7 +291,7 @@ const DeratisationProfessionnels = () => (
       badge="Contrats professionnels en Haute-Marne"
       title="Dératisation pour les professionnels"
       accent="en Haute-Marne"
-      text="Restaurants, boulangeries, communes, syndics, entreprises : vos locaux protégés des rats et des souris toute l'année, un classeur sanitaire à jour, et un dératiseur local qui passe quand ça vous arrange."
+      text="Restaurants, boulangeries, communes, syndics, entreprises, exploitations agricoles et viticoles : vos locaux protégés des rats et des souris toute l'année, un classeur sanitaire à jour, et un dératiseur local qui passe quand ça vous arrange."
       checks={["Sur devis, après visite", "7j/7, de 7h à 23h", "Facturation Chorus Pro"]}
       aside={<AudienceMosaic />}
     />

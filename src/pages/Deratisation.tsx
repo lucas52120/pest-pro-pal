@@ -393,10 +393,18 @@ const Deratisation = () => (
           , les{" "}
           <Link to="/deratisation-collectivites" className={textLink}>
             communes
-          </Link>{" "}
-          et les{" "}
+          </Link>
+          , les{" "}
           <Link to="/deratisation-coproprietes" className={textLink}>
             copropriétés
+          </Link>
+          , les{" "}
+          <Link to="/deratisation-entreprises" className={textLink}>
+            entreprises
+          </Link>{" "}
+          et les{" "}
+          <Link to="/deratisation-agricole" className={textLink}>
+            exploitations agricoles et viticoles
           </Link>
           .
         </p>
@@ -532,8 +540,10 @@ const Deratisation = () => (
               Tous les détails sur la page{" "}
               <Link to="/deratisation-professionnels" className={textLink}>dératisation pour les professionnels</Link> et{" "}
               <Link to="/deratisation-restaurants" className={textLink}>dératisation des restaurants et boulangeries</Link>,{" "}
-              <Link to="/deratisation-collectivites" className={textLink}>dératisation des communes et collectivités</Link> et{" "}
-              <Link to="/deratisation-coproprietes" className={textLink}>dératisation des copropriétés</Link>.
+              <Link to="/deratisation-collectivites" className={textLink}>dératisation des communes et collectivités</Link>,{" "}
+              <Link to="/deratisation-coproprietes" className={textLink}>dératisation des copropriétés</Link>,{" "}
+              <Link to="/deratisation-entreprises" className={textLink}>dératisation des entreprises</Link> et{" "}
+              <Link to="/deratisation-agricole" className={textLink}>dératisation agricole et viticole</Link>.
             </p>
           </GuideBlock>
           <GuideBlock
